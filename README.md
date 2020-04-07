@@ -1,4 +1,4 @@
-# Fabric Example Mod
+# Damp Fabric
 
 ## Setup
 
