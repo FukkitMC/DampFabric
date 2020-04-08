@@ -17,7 +17,7 @@ public class CraftBanner extends CraftBlockState implements Banner {
 
     private final TileEntityBanner banner;
     private DyeColor base;
-    private List<Pattern> patterns = new ArrayList<Pattern>();
+    private List<Pattern> patterns = new ArrayList<>();
 
     public CraftBanner(final Block block) {
         super(block);
@@ -25,7 +25,7 @@ public class CraftBanner extends CraftBlockState implements Banner {
         CraftWorld world = (CraftWorld) block.getWorld();
         banner = (TileEntityBanner) world.getTileEntityAt(getX(), getY(), getZ());
 
-        base = DyeColor.getByDyeData((byte) banner.color);
+        base = DyeColor.getByDyeData((byte) banner.color);//TODO: use no
 
         if (banner.patterns != null) {
             for (int i = 0; i < banner.patterns.size(); i++) {

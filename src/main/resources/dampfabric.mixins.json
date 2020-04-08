@@ -4,6 +4,7 @@
   "package": "me.hydos.dampfabric.mixin",
   "compatibilityLevel": "JAVA_8",
   "mixins": [
+    "MinecraftServerMixin"
   ],
   "client": [
   ],

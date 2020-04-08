@@ -31,8 +31,8 @@ repositories {
 		url = 'https://hydos.github.io/'
 	}
 	maven {
-		name = 'spigot'
-		url = 'https://hub.spigotmc.org/nexus/content/repositories/snapshots'
+		name = 'spigotandbukkit'
+		url = 'https://hub.spigotmc.org/nexus/content/repositories/public'
 	}
 }
 
