@@ -1,4 +1,4 @@
-package me.hydos.dampfabric.mixin;
+package me.hydos.dampfabric.mixin.craftbukkit;
 
 import net.minecraft.server.MinecraftServer;
 import org.spongepowered.asm.mixin.Mixin;

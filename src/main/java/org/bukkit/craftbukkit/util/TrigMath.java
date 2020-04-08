@@ -1,4 +1,4 @@
-package org.bukkit.craftbukkit;
+package org.bukkit.craftbukkit.util;
 
 /**
  * Credits for this class goes to user aioobe on stackoverflow.com
