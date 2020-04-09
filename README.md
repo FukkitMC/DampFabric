@@ -9,4 +9,4 @@
 
 ## License
 
-All Rights Reserved
+GPL
