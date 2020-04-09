@@ -23,14 +23,7 @@ public class RestartCommand extends Command
     {
         if ( testPermission( sender ) )
         {
-            MinecraftServer.getServer().processQueue.add( new Runnable()
-            {
-                @Override
-                public void run()
-                {
-                    restart();
-                }
-            } );
+            MinecraftServer.getServer().processQueue.add((Runnable) RestartCommand::restart); //Damp Fabric
         }
         return true;
     }
@@ -79,35 +72,30 @@ public class RestartCommand extends Command
                 try
                 {
                     MinecraftServer.getServer().stop();
-                } catch ( Throwable t )
+                } catch ( Throwable ignored)
                 {
                 }
 
                 // This will be done AFTER the server has completely halted
-                Thread shutdownHook = new Thread()
-                {
-                    @Override
-                    public void run()
+                Thread shutdownHook = new Thread(() -> { //Lambda
+                    try
                     {
-                        try
+                        String os = System.getProperty( "os.name" ).toLowerCase();
+                        if ( os.contains( "win" ) )
                         {
-                            String os = System.getProperty( "os.name" ).toLowerCase();
-                            if ( os.contains( "win" ) )
-                            {
-                                Runtime.getRuntime().exec( "cmd /c start " + script.getPath() );
-                            } else
-                            {
-                                Runtime.getRuntime().exec( new String[]
-                                {
-                                    "sh", script.getPath()
-                                } );
-                            }
-                        } catch ( Exception e )
+                            Runtime.getRuntime().exec( "cmd /c start " + script.getPath() );
+                        } else
                         {
-                            e.printStackTrace();
+                            Runtime.getRuntime().exec( new String[]
+                            {
+                                "sh", script.getPath()
+                            } );
                         }
+                    } catch ( Exception e )
+                    {
+                        e.printStackTrace();
                     }
-                };
+                });
 
                 shutdownHook.setDaemon( true );
                 Runtime.getRuntime().addShutdownHook( shutdownHook );
