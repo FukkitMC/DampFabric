@@ -1,18 +1,6 @@
 package org.spigotmc;
 
 import com.google.common.base.Throwables;
-import java.io.File;
-import java.io.IOException;
-import java.lang.reflect.InvocationTargetException;
-import java.lang.reflect.Method;
-import java.lang.reflect.Modifier;
-import java.util.Arrays;
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Map;
-import java.util.Set;
-import java.util.logging.Level;
 import gnu.trove.map.hash.TObjectIntHashMap;
 import net.minecraft.server.AttributeRanged;
 import net.minecraft.server.GenericAttributes;
@@ -27,11 +15,19 @@ import org.bukkit.configuration.ConfigurationSection;
 import org.bukkit.configuration.InvalidConfigurationException;
 import org.bukkit.configuration.file.YamlConfiguration;
 
+import java.io.File;
+import java.io.IOException;
+import java.lang.reflect.InvocationTargetException;
+import java.lang.reflect.Method;
+import java.lang.reflect.Modifier;
+import java.util.*;
+import java.util.logging.Level;
+
 public class SpigotConfig
 {
 
     private static File CONFIG_FILE;
-    private static final String HEADER = "This is the main configuration file for Spigot.\n"
+    private static final String HEADER = "This is the main configuration file for Damp Fabric.\n"
             + "As you can see, there's tons to configure. Some options may impact gameplay, so use\n"
             + "with caution, and make sure you know what each option does before configuring.\n"
             + "For a reference for any variable inside this file, check out the Spigot wiki at\n"
@@ -318,8 +314,8 @@ public class SpigotConfig
             set( "commands.replace-commands", config.getStringList( "replace-commands" ) );
             config.set( "replace-commands", null );
         }
-        replaceCommands = new HashSet<String>( (List<String>) getList( "commands.replace-commands",
-                Arrays.asList( "setblock", "summon", "testforblock", "tellraw" ) ) );
+        replaceCommands = new HashSet<>((List<String>) getList("commands.replace-commands",
+                Arrays.asList("setblock", "summon", "testforblock", "tellraw")));
     }
     
     public static int userCacheCap;

@@ -1,21 +1,12 @@
 package org.bukkit.craftbukkit.block;
 
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.Collections;
-import java.util.List;
-
-import net.minecraft.server.*;
-
+import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.Direction;
 import org.bukkit.Chunk;
 import org.bukkit.Location;
 import org.bukkit.Material;
 import org.bukkit.World;
-import org.bukkit.block.Biome;
-import org.bukkit.block.Block;
-import org.bukkit.block.BlockFace;
-import org.bukkit.block.BlockState;
-import org.bukkit.block.PistonMoveReaction;
+import org.bukkit.block.*;
 import org.bukkit.craftbukkit.CraftChunk;
 import org.bukkit.craftbukkit.inventory.CraftItemStack;
 import org.bukkit.craftbukkit.util.CraftMagicNumbers;
@@ -24,13 +15,18 @@ import org.bukkit.metadata.MetadataValue;
 import org.bukkit.plugin.Plugin;
 import org.bukkit.util.BlockVector;
 
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Collections;
+import java.util.List;
+
 public class CraftBlock implements Block {
     private final CraftChunk chunk;
     private final int x;
     private final int y;
     private final int z;
     private static final Biome BIOME_MAPPING[];
-    private static final BiomeBase BIOMEBASE_MAPPING[];
+    private static final net.minecraft.world.biome.Biome BIOMEBASE_MAPPING[];
 
     public CraftBlock(CraftChunk chunk, int x, int y, int z) {
         this.x = x;
@@ -39,11 +35,11 @@ public class CraftBlock implements Block {
         this.chunk = chunk;
     }
 
-    private net.minecraft.server.Block getNMSBlock() {
-        return CraftMagicNumbers.getBlock(this); // TODO: UPDATE THIS
+    private net.minecraft.block.Block getNMSBlock() {
+        return CraftMagicNumbers.getBlock(this);
     }
 
-    private static net.minecraft.server.Block getNMSBlock(int type) {
+    private static net.minecraft.block.Block getNMSBlock(int type) {
         return CraftMagicNumbers.getBlock(type);
     }
 
@@ -101,8 +97,8 @@ public class CraftBlock implements Block {
     }
 
     private void setData(final byte data, int flag) {
-        net.minecraft.server.World world = chunk.getHandle().getWorld();
-        BlockPosition position = new BlockPosition(x, y, z);
+        net.minecraft.world.World world = chunk.getHandle().getWorld();
+        BlockPos position = new BlockPos(x, y, z);
         IBlockData blockData = world.getType(position);
         world.setTypeAndData(position, blockData.getBlock().fromLegacyData(data), flag);
     }
@@ -207,7 +203,7 @@ public class CraftBlock implements Block {
         return "CraftBlock{" + "chunk=" + chunk + ",x=" + x + ",y=" + y + ",z=" + z + ",type=" + getType() + ",data=" + getData() + '}';
     }
 
-    public static BlockFace notchToBlockFace(EnumDirection notch) {
+    public static BlockFace notchToBlockFace(Direction notch) {
         if (notch == null) return BlockFace.SELF;
         switch (notch) {
         case DOWN:
@@ -227,20 +223,20 @@ public class CraftBlock implements Block {
         }
     }
 
-    public static EnumDirection blockFaceToNotch(BlockFace face) {
+    public static Direction blockFaceToNotch(BlockFace face) {
         switch (face) {
         case DOWN:
-            return EnumDirection.DOWN;
+            return Direction.DOWN;
         case UP:
-            return EnumDirection.UP;
+            return Direction.UP;
         case NORTH:
-            return EnumDirection.NORTH;
+            return Direction.NORTH;
         case SOUTH:
-            return EnumDirection.SOUTH;
+            return Direction.SOUTH;
         case WEST:
-            return EnumDirection.WEST;
+            return Direction.WEST;
         case EAST:
-            return EnumDirection.EAST;
+            return Direction.EAST;
         default:
             return null;
         }
@@ -297,15 +293,15 @@ public class CraftBlock implements Block {
         getWorld().setBiome(x, z, bio);
     }
 
-    public static Biome biomeBaseToBiome(BiomeBase base) {
+    public static Biome biomeBaseToBiome(net.minecraft.world.biome.Biome base) {
         if (base == null) {
             return null;
         }
 
-        return BIOME_MAPPING[base.id];
+        return BIOME_MAPPING[base.field_405];
     }
 
-    public static BiomeBase biomeToBiomeBase(Biome bio) {
+    public static net.minecraft.world.biome.Biome biomeToBiomeBase(Biome bio) {
         if (bio == null) {
             return null;
         }
@@ -321,7 +317,7 @@ public class CraftBlock implements Block {
     }
 
     public boolean isBlockPowered() {
-        return chunk.getHandle().getWorld().getBlockPower(new BlockPosition(x, y, z)) > 0;
+        return chunk.getHandle().getWorld().getBlockPower(new BlockPos(x, y, z)) > 0;
     }
 
     public boolean isBlockIndirectlyPowered() {

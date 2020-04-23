@@ -34,6 +34,10 @@ repositories {
 		name = 'spigotandbukkit'
 		url = 'https://hub.spigotmc.org/nexus/content/repositories/public'
 	}
+	maven {
+		name = 'legacy-fabric'
+		url = 'https://dl.bintray.com/legacy-fabric/Legacy-Fabric-Maven'
+	}
 }
 
 dependencies {
@@ -43,10 +47,12 @@ dependencies {
 	//to change the versions see the gradle.properties file
 	minecraft "com.mojang:minecraft:${project.minecraft_version}"
 	mappings "net.fabricmc:yarn:${project.yarn_mappings}"
-	modImplementation "net.fabricmc:fabric-loader:${project.loader_version}"
+	modImplementation ("net.fabricmc:fabric-loader:2020")
 
+	compile group: 'org.spigotmc', name: 'spigot-api', version: '1.8.8-R0.1-SNAPSHOT'
+	compile group: 'org.yaml', name: 'snakeyaml', version: '1.26'
+	
 	implementation "net.sf.trove4j:trove4j:3.0.3"
-	implementation "org.spigotmc:spigot-api:1.8.8-R0.1-SNAPSHOT"
 	implementation "net.sf.jopt-simple:jopt-simple:3.2"
 	implementation "jline:jline:2.12"
 

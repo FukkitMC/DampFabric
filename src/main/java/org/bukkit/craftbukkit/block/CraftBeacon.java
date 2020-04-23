@@ -1,5 +1,6 @@
 package org.bukkit.craftbukkit.block;
 
+import net.minecraft.block.entity.BeaconBlockEntity;
 import net.minecraft.server.TileEntityBeacon;
 import org.bukkit.Material;
 
@@ -11,16 +12,16 @@ import org.bukkit.inventory.Inventory;
 
 public class CraftBeacon extends CraftBlockState implements Beacon {
     private final CraftWorld world;
-    private final TileEntityBeacon beacon;
+    private final BeaconBlockEntity beacon;
 
     public CraftBeacon(final Block block) {
         super(block);
 
         world = (CraftWorld) block.getWorld();
-        beacon = (TileEntityBeacon) world.getTileEntityAt(getX(), getY(), getZ());
+        beacon = (BeaconBlockEntity) world.getBlockAt(getX(), getY(), getZ());
     }
 
-    public CraftBeacon(final Material material, final TileEntityBeacon te) {
+    public CraftBeacon(final Material material, final BeaconBlockEntity te) {
         super(material);
         world = null;
         beacon = te;

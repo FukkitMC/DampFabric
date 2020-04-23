@@ -2,10 +2,12 @@ package org.spigotmc;
 
 import gnu.trove.set.TByteSet;
 import gnu.trove.set.hash.TByteHashSet;
+import net.minecraft.block.BlockPos;
 import net.minecraft.server.Block;
 import net.minecraft.server.BlockPosition;
 import net.minecraft.server.Blocks;
 import net.minecraft.server.World;
+import net.minecraft.world.World;
 import org.bukkit.craftbukkit.util.CraftMagicNumbers;
 
 public class AntiXray
@@ -211,7 +213,7 @@ public class AntiXray
                 && isLoaded( world, position.north(), radius - 1 ) ) );
     }
 
-    private static boolean hasTransparentBlockAdjacent(World world, BlockPosition position, int radius)
+    private static boolean hasTransparentBlockAdjacent(World world, BlockPos position, int radius)
     {
         return !isSolidBlock(world.getType(position, false).getBlock()) /* isSolidBlock */
                 || ( radius > 0

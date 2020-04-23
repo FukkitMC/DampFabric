@@ -23,6 +23,7 @@ import java.util.regex.Pattern;
 
 import javax.imageio.ImageIO;
 
+import net.minecraft.entity.PlayerEntity;
 import net.minecraft.server.*;
 
 import org.bukkit.BanList;
@@ -429,13 +430,13 @@ public final class CraftServer implements Server {
     public Player getPlayerExact(String name) {
         Validate.notNull(name, "Name cannot be null");
 
-        EntityPlayer player = playerList.getPlayer(name);
+        PlayerEntity player = playerList.getPlayer(name);
         return (player != null) ? player.getBukkitEntity() : null;
     }
 
     @Override
     public Player getPlayer(UUID id) {
-        EntityPlayer player = playerList.a(id);
+        PlayerEntity player = playerList.a(id);
 
         if (player != null) {
             return player.getBukkitEntity();
@@ -449,7 +450,7 @@ public final class CraftServer implements Server {
         return broadcast(message, BROADCAST_CHANNEL_USERS);
     }
 
-    public Player getPlayer(final EntityPlayer entity) {
+    public Player getPlayer(final PlayerEntity entity) {
         return entity.getBukkitEntity();
     }
 
@@ -1258,7 +1259,7 @@ public final class CraftServer implements Server {
     public CraftMapView createMap(World world) {
         Validate.notNull(world, "World cannot be null");
 
-        net.minecraft.server.ItemStack stack = new net.minecraft.server.ItemStack(Items.MAP, 1, -1);
+        net.minecraft.item.ItemStack stack = new net.minecraft.item.ItemStack(Items.MAP, 1, -1);
         WorldMap worldmap = Items.FILLED_MAP.getSavedMap(stack, ((CraftWorld) world).getHandle());
         return worldmap.mapView;
     }
@@ -1494,7 +1495,7 @@ public final class CraftServer implements Server {
 
     @Override
     public Set<String> getListeningPluginChannels() {
-        Set<String> result = new HashSet<String>();
+        Set<String> result = new HashSet<>();
 
         for (Player player : getOnlinePlayers()) {
             result.addAll(player.getListeningPluginChannels());

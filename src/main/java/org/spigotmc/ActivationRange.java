@@ -3,6 +3,8 @@ package org.spigotmc;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Set;
+
+import net.minecraft.entity.Entity;
 import net.minecraft.server.AxisAlignedBB;
 import net.minecraft.server.Chunk;
 import net.minecraft.server.Entity;

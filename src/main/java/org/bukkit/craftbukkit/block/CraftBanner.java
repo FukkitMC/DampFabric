@@ -2,9 +2,10 @@ package org.bukkit.craftbukkit.block;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import net.minecraft.block.entity.BannerBlockEntity;
 import net.minecraft.server.NBTTagCompound;
 import net.minecraft.server.NBTTagList;
-import net.minecraft.server.TileEntityBanner;
 import org.bukkit.DyeColor;
 import org.bukkit.Material;
 import org.bukkit.block.Banner;
@@ -15,7 +16,7 @@ import org.bukkit.craftbukkit.CraftWorld;
 
 public class CraftBanner extends CraftBlockState implements Banner {
 
-    private final TileEntityBanner banner;
+    private final BannerBlockEntity banner;
     private DyeColor base;
     private List<Pattern> patterns = new ArrayList<>();
 
@@ -23,9 +24,9 @@ public class CraftBanner extends CraftBlockState implements Banner {
         super(block);
 
         CraftWorld world = (CraftWorld) block.getWorld();
-        banner = (TileEntityBanner) world.getTileEntityAt(getX(), getY(), getZ());
+        banner = (BannerBlockEntity) world.getBlockAt(getX(), getY(), getZ());
 
-        base = DyeColor.getByDyeData((byte) banner.color);//TODO: use no
+        base = DyeColor.getByDyeData((byte) banner.color);
 
         if (banner.patterns != null) {
             for (int i = 0; i < banner.patterns.size(); i++) {
@@ -35,7 +36,7 @@ public class CraftBanner extends CraftBlockState implements Banner {
         }
     }
 
-    public CraftBanner(final Material material, final TileEntityBanner te) {
+    public CraftBanner(final Material material, final BannerBlockEntity te) {
         super(material);
         banner = te;
 

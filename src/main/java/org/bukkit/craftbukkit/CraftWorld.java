@@ -14,6 +14,8 @@ import java.util.UUID;
 
 import net.minecraft.server.*;
 
+import net.minecraft.server.world.ServerWorld;
+import net.minecraft.util.math.BlockPos;
 import org.apache.commons.lang.Validate;
 import org.bukkit.BlockChangeDelegate;
 import org.bukkit.Bukkit;
@@ -59,7 +61,7 @@ import org.bukkit.util.Vector;
 public class CraftWorld implements World {
     public static final int CUSTOM_DIMENSION_OFFSET = 10;
 
-    private final WorldServer world;
+    private final ServerWorld world;
     private WorldBorder worldBorder;
     private Environment environment;
     private final CraftServer server = (CraftServer) Bukkit.getServer();
@@ -75,7 +77,7 @@ public class CraftWorld implements World {
 
     private static final Random rand = new Random();
 
-    public CraftWorld(WorldServer world, ChunkGenerator gen, Environment env) {
+    public CraftWorld(ServerWorld world, ChunkGenerator gen, Environment env) {
         this.world = world;
         this.generator = gen;
 
@@ -91,7 +93,7 @@ public class CraftWorld implements World {
     }
 
     public int getBlockTypeIdAt(int x, int y, int z) {
-        return CraftMagicNumbers.getId(world.getType(new BlockPosition(x, y, z)).getBlock());
+        return CraftMagicNumbers.getId(world.getType(new BlockPos(x, y, z)).getBlock());
     }
 
     public int getHighestBlockYAt(int x, int z) {
@@ -99,18 +101,18 @@ public class CraftWorld implements World {
             loadChunk(x >> 4, z >> 4);
         }
 
-        return world.getHighestBlockYAt(new BlockPosition(x, 0, z)).getY();
+        return world.getHighestBlockYAt(new BlockPos(x, 0, z)).getY();
     }
 
     public Location getSpawnLocation() {
-        BlockPosition spawn = world.getSpawn();
+        BlockPos spawn = world.getSpawn();
         return new Location(this, spawn.getX(), spawn.getY(), spawn.getZ());
     }
 
     public boolean setSpawnLocation(int x, int y, int z) {
         try {
             Location previousLocation = getSpawnLocation();
-            world.worldData.setSpawn(new BlockPosition(x, y, z));
+            world.worldData.setSpawn(new BlockPos(x, y, z));
 
             // Notify anyone who's listening.
             SpawnChangeEvent event = new SpawnChangeEvent(this, previousLocation);
@@ -234,9 +236,9 @@ public class CraftWorld implements World {
         // This flags 65 blocks distributed across all the sections of the chunk, so that everything is sent, including biomes
         int height = getMaxHeight() / 16;
         for (int idx = 0; idx < 64; idx++) {
-            world.notify(new BlockPosition(px + (idx / height), ((idx % height) * 16), pz));
+            world.notify(new BlockPos(px + (idx / height), ((idx % height) * 16), pz));
         }
-        world.notify(new BlockPosition(px + 15, (height * 16) - 1, pz + 15));
+        world.notify(new BlockPos(px + 15, (height * 16) - 1, pz + 15));
 
         return true;
     }

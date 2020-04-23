@@ -8,15 +8,8 @@ import java.util.Set;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-import net.minecraft.server.Block;
-import net.minecraft.server.Blocks;
-import net.minecraft.server.Item;
-import net.minecraft.server.MinecraftKey;
-import net.minecraft.server.MojangsonParseException;
-import net.minecraft.server.MojangsonParser;
-import net.minecraft.server.NBTTagCompound;
-import net.minecraft.server.StatisticList;
-
+import net.minecraft.block.Block;
+import net.minecraft.item.Item;
 import org.bukkit.Achievement;
 import org.bukkit.Material;
 import org.bukkit.Statistic;
