@@ -27,10 +27,6 @@ repositories {
 		url = 'https://libraries.minecraft.net/'
 	}
 	maven {
-		name = 'hydosMavenRepo'
-		url = 'https://hydos.github.io/'
-	}
-	maven {
 		name = 'spigotandbukkit'
 		url = 'https://hub.spigotmc.org/nexus/content/repositories/public'
 	}
@@ -42,12 +38,15 @@ repositories {
 
 dependencies {
 
-	compile group: 'com.google.guava', name: 'guava', version: '23.5-jre'
+	compile("com.google.guava:guava:23.5-jre")
+	minecraft("com.mojang:minecraft:${minecraft_version}")
+	mappings("net.fabricmc:yarn:1.8.9+build.${yarn_mappings}:v2")
+	modImplementation("net.fabricmc:fabric-loader-1.8.9:0.8.2+build.${loader_version}") {
+		exclude module: "guava"
+	}
 
-	//to change the versions see the gradle.properties file
-	minecraft "com.mojang:minecraft:${project.minecraft_version}"
-	mappings "net.fabricmc:yarn:${project.yarn_mappings}"
-	modImplementation ("net.fabricmc:fabric-loader:2020")
+	//Fabric api
+	modImplementation "net.fabricmc.fabric-api:fabric-api:${fabric_version}"
 
 	compile group: 'org.spigotmc', name: 'spigot-api', version: '1.8.8-R0.1-SNAPSHOT'
 	compile group: 'org.yaml', name: 'snakeyaml', version: '1.26'
@@ -56,6 +55,12 @@ dependencies {
 	implementation "net.sf.jopt-simple:jopt-simple:3.2"
 	implementation "jline:jline:2.12"
 
+}
+
+minecraft {
+	intermediaryUrl = {
+		return "https://dl.bintray.com/legacy-fabric/Legacy-Fabric-Maven/net/fabricmc/intermediary/" + it + "/intermediary-" + it + "-v2.jar";
+	}
 }
 
 processResources {
