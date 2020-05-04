@@ -1,6 +1,7 @@
 plugins {
 	id 'maven-publish'
-	id 'fabric-loom' version "0.2.7-SNAPSHOT"
+	id 'fabric-loom' version "0.4.3"
+	id("io.github.fukkitmc.crusty") version "1.1.5"
 }
 
 sourceCompatibility = JavaVersion.VERSION_1_8
@@ -17,6 +18,10 @@ repositories {
 	maven {
 		name = 'Fabric'
 		url = 'http://maven.modmuss50.me/'
+	}
+	maven {
+		name = "Yes"
+		url = "https://maven.fabricmc.net/"
 	}
 	maven {
 		name = 'SpongePowered'
@@ -40,14 +45,10 @@ dependencies {
 
 	compile("com.google.guava:guava:23.5-jre")
 	minecraft("com.mojang:minecraft:${minecraft_version}")
-	mappings("net.fabricmc:yarn:1.8.9+build.${yarn_mappings}:v2")
+	mappings(fukkit.mappings("1.8.9"))
 	modImplementation("net.fabricmc:fabric-loader-1.8.9:0.8.2+build.${loader_version}") {
 		exclude module: "guava"
 	}
-
-	//Fabric api
-	modImplementation "net.fabricmc.fabric-api:fabric-api:${fabric_version}"
-
 	compile group: 'org.spigotmc', name: 'spigot-api', version: '1.8.8-R0.1-SNAPSHOT'
 	compile group: 'org.yaml', name: 'snakeyaml', version: '1.26'
 	
