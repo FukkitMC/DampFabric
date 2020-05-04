@@ -1,4 +1,4 @@
-package me.hydos.dampfabric;
+package io.github.fukkitmc.dampfabric;
 
 import net.fabricmc.api.ModInitializer;
 

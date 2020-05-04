@@ -33,7 +33,7 @@ public class CraftProfileBanList implements org.bukkit.BanList {
             return null;
         }
 
-        GameProfileBanEntry entry = (GameProfileBanEntry) list.get(profile);
+        GameProfileBanEntry entry = list.get(profile);
         if (entry == null) {
             return null;
         }
