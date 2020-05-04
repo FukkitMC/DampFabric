@@ -1,7 +1,7 @@
 plugins {
 	id 'maven-publish'
 	id 'fabric-loom' version "0.4.3"
-	id("io.github.fukkitmc.crusty") version "1.1.5"
+	id("io.github.fukkitmc.crusty") version "1.0.0-legacy"
 }
 
 sourceCompatibility = JavaVersion.VERSION_1_8
@@ -45,7 +45,8 @@ dependencies {
 
 	compile("com.google.guava:guava:23.5-jre")
 	minecraft("com.mojang:minecraft:${minecraft_version}")
-	mappings(fukkit.mappings("1.8.9"))
+
+	mappings(fukkit.mappings("1.8.8", "1.8.9"))
 	modImplementation("net.fabricmc:fabric-loader-1.8.9:0.8.2+build.${loader_version}") {
 		exclude module: "guava"
 	}
