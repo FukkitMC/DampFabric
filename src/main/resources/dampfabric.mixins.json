@@ -1,10 +1,10 @@
 {
   "required": true,
   "minVersion": "0.8",
-  "package": "me.hydos.dampfabric.mixin",
+  "package": "me.hydos.dampfabric.mixins",
   "compatibilityLevel": "JAVA_8",
   "mixins": [
-    "MinecraftServerMixin"
+
   ],
   "client": [
   ],

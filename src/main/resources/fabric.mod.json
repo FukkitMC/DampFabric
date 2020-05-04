@@ -1,35 +1,28 @@
 {
   "schemaVersion": 1,
-  "id": "modid",
+  "id": "dampfabric",
   "version": "${version}",
 
-  "name": "Example Mod",
-  "description": "This is an example description! Tell everyone what your mod is about!",
+  "name": "Damp Fabric",
+  "description": "This is cursed but good",
   "authors": [
-    "Me!"
+    "hydos"
   ],
-  "contact": {
-    "homepage": "https://fabricmc.net/",
-    "sources": "https://github.com/FabricMC/fabric-example-mod"
-  },
 
   "license": "CC0-1.0",
-  "icon": "assets/modid/icon.png",
+  "icon": "assets/dampfabric/icon.png",
 
   "environment": "*",
   "entrypoints": {
     "main": [
-      "net.fabricmc.example.ExampleMod"
+      "me.hydos.dampfabric.DampFabric"
     ]
   },
   "mixins": [
-    "modid.mixins.json"
+    "dampfabric.mixins.json"
   ],
 
   "depends": {
     "fabricloader": ">=0.7.4"
-  },
-  "suggests": {
-    "flamingo": "*"
   }
 }
