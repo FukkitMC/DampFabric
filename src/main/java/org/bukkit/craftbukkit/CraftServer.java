@@ -642,12 +642,12 @@ public final class CraftServer implements Server {
         boolean animals = config.getBoolean("spawn-animals", console.getSpawnAnimals());
         boolean monsters = config.getBoolean("spawn-monsters", console.worlds.get(0).getDifficulty() != EnumDifficulty.PEACEFUL);
         EnumDifficulty difficulty = EnumDifficulty.getById(config.getInt("difficulty", console.worlds.get(0).getDifficulty().ordinal()));
-
-        online.value = config.getBoolean("online-mode", console.getOnlineMode());
-        console.setSpawnAnimals(config.getBoolean("spawn-animals", console.getSpawnAnimals()));
-        console.setPVP(config.getBoolean("pvp", console.getPVP()));
-        console.setAllowFlight(config.getBoolean("allow-flight", console.getAllowFlight()));
-        console.setMotd(config.getString("motd", console.getMotd()));
+//          TODO: fukkit legacy yes
+//        online.value = config.getBoolean("online-mode", console.getOnlineMode());
+//        console.setSpawnAnimals(config.getBoolean("spawn-animals", console.getSpawnAnimals()));
+//        console.setPVP(config.getBoolean("pvp", console.getPVP()));
+//        console.setAllowFlight(config.getBoolean("allow-flight", console.getAllowFlight()));
+//        console.setMotd(config.getString("motd", console.getMotd()));
         monsterSpawn = configuration.getInt("spawn-limits.monsters");
         animalSpawn = configuration.getInt("spawn-limits.animals");
         waterAnimalSpawn = configuration.getInt("spawn-limits.water-animals");
@@ -938,7 +938,7 @@ public final class CraftServer implements Server {
             return false;
         }
 
-        WorldUnloadEvent e = new WorldUnloadEvent(handle.getWo rld());
+        WorldUnloadEvent e = new WorldUnloadEvent(handle.getWorld());
         pluginManager.callEvent(e);
 
         if (e.isCancelled()) {

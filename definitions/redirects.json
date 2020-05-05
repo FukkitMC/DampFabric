@@ -14,5 +14,37 @@
         }
       }
     ]
+  },
+  {
+    "name": "net/minecraft/server/WorldChunkManager",
+    "syntheticMethods": [
+      {
+        "opcode": 182,
+        "name": "getBiomes",
+        "descriptor": "([Lnet/minecraft/server/BiomeBase;IIII)[Lnet/minecraft/server/BiomeBase;",
+        "access": 1,
+        "redirect": {
+          "owner": "net/minecraft/server/WorldChunkManager",
+          "name": "a",
+          "descriptor": "([Lnet/minecraft/server/BiomeBase;IIII)[Lnet/minecraft/server/BiomeBase;"
+        }
+      }
+    ]
+  },
+  {
+    "name": "net/minecraft/server/World",
+    "syntheticMethods": [
+      {
+        "opcode": 182,
+        "name": "getBiome",
+        "descriptor": "(Lnet/minecraft/server/BlockPosition;)Lnet/minecraft/server/BiomeBase;",
+        "access": 1,
+        "redirect": {
+          "owner": "net/minecraft/server/World",
+          "name": "b",
+          "descriptor": "(Lnet/minecraft/server/BlockPosition;)Lnet/minecraft/server/BiomeBase;"
+        }
+      }
+    ]
   }
 ]

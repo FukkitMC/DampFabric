@@ -1,28 +1,30 @@
 {
   "schemaVersion": 1,
-  "id": "dampfabric",
+  "id": "legacyfukkit",
   "version": "${version}",
 
-  "name": "Damp Fabric",
-  "description": "This is cursed but good",
+  "name": "Legacy Fukkit",
+  "description": "This is cursed",
   "authors": [
-    "hydos"
+    "hydos",
+    "ramidzk"
   ],
 
   "license": "CC0-1.0",
-  "icon": "assets/dampfabric/icon.png",
+  "icon": "assets/legacy/icon.png",
 
   "environment": "*",
   "entrypoints": {
     "main": [
-      "me.hydos.dampfabric.DampFabric"
+      "me.hydos.legacy.DampFabric"
     ]
   },
   "mixins": [
-    "dampfabric.mixins.json"
+    "legacy.mixins.json"
   ],
 
   "depends": {
     "fabricloader": ">=0.7.4"
-  }
+  },
+  "accesswidener": "legacyfukkit.aw"
 }

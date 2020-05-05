@@ -1,4 +1,4 @@
-package io.github.fukkitmc.dampfabric.redirects;
+package io.github.fukkitmc.legacy.redirects;
 
 import net.minecraft.server.MinecraftServer;
 import org.bukkit.Bukkit;

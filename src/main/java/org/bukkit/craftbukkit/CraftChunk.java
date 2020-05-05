@@ -24,10 +24,10 @@ public class CraftChunk implements Chunk {
 
     public CraftChunk(net.minecraft.server.Chunk chunk) {
         if (!(chunk instanceof EmptyChunk)) {
-            this.weakChunk = new WeakReference<net.minecraft.server.Chunk>(chunk);
+            this.weakChunk = new WeakReference<>(chunk);
         }
 
-        worldServer = (WorldServer) getHandle().world;
+        worldServer = (WorldServer)getHandle().world;
         x = getHandle().locX;
         z = getHandle().locZ;
     }
@@ -47,7 +47,7 @@ public class CraftChunk implements Chunk {
             c = worldServer.getChunkAt(x, z);
 
             if (!(c instanceof EmptyChunk)) {
-                weakChunk = new WeakReference<net.minecraft.server.Chunk>(c);
+                weakChunk = new WeakReference<>(c);
             }
         }
 

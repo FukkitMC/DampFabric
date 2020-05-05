@@ -1,4 +1,4 @@
-package io.github.fukkitmc.dampfabric;
+package io.github.fukkitmc.legacy;
 
 import net.fabricmc.api.ModInitializer;
 

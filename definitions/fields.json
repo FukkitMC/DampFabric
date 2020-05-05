@@ -1,0 +1,22 @@
+[
+  {
+    "name": "net/minecraft/server/Entity",
+    "syntheticFields": [
+      {
+        "name": "bukkitEntity",
+        "type": "Lorg/bukkit/craftbukkit/entity/CraftEntity;",
+        "access": 1
+      }
+    ]
+  },
+  {
+    "name": "net/minecraft/server/World",
+    "syntheticFields": [
+      {
+        "name": "world",
+        "type": "Lorg/bukkit/craftbukkit/CraftWorld;",
+        "access": 1
+      }
+    ]
+  }
+]

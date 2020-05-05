@@ -1,10 +1,12 @@
 {
   "required": true,
   "minVersion": "0.8",
-  "package": "me.hydos.dampfabric.mixins",
+  "package": "io.github.fukkitmc.legacy.mixins",
   "compatibilityLevel": "JAVA_8",
   "mixins": [
-
+    "ChunkMixin",
+    "EntityMixin",
+    "WorldMixin"
   ],
   "client": [
   ],
