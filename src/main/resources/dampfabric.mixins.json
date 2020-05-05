@@ -4,8 +4,10 @@
   "package": "io.github.fukkitmc.legacy.mixins",
   "compatibilityLevel": "JAVA_8",
   "mixins": [
+    "ArmorStandMixin",
     "ChunkMixin",
     "EntityMixin",
+    "MinecraftServerMixin",
     "WorldMixin"
   ],
   "client": [

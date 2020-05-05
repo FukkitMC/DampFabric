@@ -3,7 +3,7 @@ import java.util.function.Function
 
 plugins {
     id("fabric-loom") version "g0.2.7-20200411.095632-3"
-    id("io.github.fukkitmc.crusty") version "1.0.0-legacy"
+    id("io.github.fukkitmc.crusty") version "1.1.7"
 }
 
 
@@ -29,14 +29,14 @@ repositories {
 
 dependencies {
     compile("com.google.guava:guava:23.5-jre")
-    minecraft("com.mojang:minecraft:1.8.9")
+    minecraft("net.minecraft:minecraft:1.8.9")
 
-    mappings(fukkit.mappings("1.8.8", "1.8.9"))
+    mappings(fukkit.mappings("1.8.8", "net.fabricmc:intermediary:1.8.9"))
     modImplementation("net.fabricmc:fabric-loader-1.8.9:0.8.2+build.202004210808") {
         exclude(module = "guava")
     }
 
-	compile("org.spigotmc", "spigot-api", "1.8.8-R0.1-SNAPSHOT")
+	compile("org.bukkit", "bukkit", "1.8.8-R0.1-SNAPSHOT")
 	compile("org.yaml", "snakeyaml", "1.26")
 
 	implementation("net.sf.trove4j:trove4j:3.0.3")

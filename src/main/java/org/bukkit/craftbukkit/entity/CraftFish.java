@@ -21,7 +21,7 @@ public class CraftFish extends AbstractProjectile implements Fish {
 
     public ProjectileSource getShooter() {
         if (getHandle().owner != null) {
-            return getHandle().owner.getBukkitEntity();
+            return (ProjectileSource) getHandle().owner.getBukkitEntity();
         }
 
         return null;

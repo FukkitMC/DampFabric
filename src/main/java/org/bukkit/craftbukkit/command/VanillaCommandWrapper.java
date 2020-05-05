@@ -81,11 +81,8 @@ public final class VanillaCommandWrapper extends VanillaCommand {
                     String s2 = as[i];
                     
                     icommandlistener.a(CommandObjectiveExecutor.EnumCommandResult.AFFECTED_ENTITIES, list.size());
-                    Iterator<Entity> iterator = list.iterator();
 
-                    while (iterator.hasNext()) {
-                        Entity entity = iterator.next();
-
+                    for (Entity entity : list) {
                         CommandSender oldSender = lastSender;
                         lastSender = bSender;
                         try {
@@ -93,7 +90,7 @@ public final class VanillaCommandWrapper extends VanillaCommand {
                             vanillaCommand.execute(icommandlistener, as);
                             j++;
                         } catch (ExceptionUsage exceptionusage) {
-                            ChatMessage chatmessage = new ChatMessage("commands.generic.usage", new Object[] { new ChatMessage(exceptionusage.getMessage(), exceptionusage.getArgs())});
+                            ChatMessage chatmessage = new ChatMessage("commands.generic.usage", new Object[]{new ChatMessage(exceptionusage.getMessage(), exceptionusage.getArgs())});
                             chatmessage.getChatModifier().setColor(EnumChatFormat.RED);
                             icommandlistener.sendMessage(chatmessage);
                         } catch (CommandException commandexception) {
@@ -129,7 +126,7 @@ public final class VanillaCommandWrapper extends VanillaCommand {
                 CommandBlockListenerAbstract listener = (CommandBlockListenerAbstract) icommandlistener;
                 MinecraftServer.LOGGER.log(Level.WARN, String.format("CommandBlock at (%d,%d,%d) failed to handle command", listener.getChunkCoordinates().getX(), listener.getChunkCoordinates().getY(), listener.getChunkCoordinates().getZ()), throwable);
             } else {
-                MinecraftServer.LOGGER.log(Level.WARN, String.format("Unknown CommandBlock failed to handle command"), throwable);
+                MinecraftServer.LOGGER.log(Level.WARN, "Unknown CommandBlock failed to handle command", throwable);
             }
         } finally {
             MinecraftServer.getServer().worldServer = prev;

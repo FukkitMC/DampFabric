@@ -1,10 +1,30 @@
 [
   {
+    "name": "net/minecraft/server/EntityLiving",
+    "syntheticFields": [
+      {
+        "name": "maxAirTicks",
+        "type": "I",
+        "access": 1
+      }
+    ]
+  },
+  {
     "name": "net/minecraft/server/Entity",
     "syntheticFields": [
       {
         "name": "bukkitEntity",
         "type": "Lorg/bukkit/craftbukkit/entity/CraftEntity;",
+        "access": 1
+      },
+      {
+        "name": "projectileSource",
+        "type": "Lorg/bukkit/projectiles/ProjectileSource;",
+        "access": 1
+      },
+      {
+        "name": "valid",
+        "type": "Z",
         "access": 1
       }
     ]
@@ -15,6 +35,52 @@
       {
         "name": "world",
         "type": "Lorg/bukkit/craftbukkit/CraftWorld;",
+        "access": 1
+      }
+    ]
+  },
+  {
+    "name": "net/minecraft/server/MinecraftServer",
+    "syntheticFields": [
+      {
+        "name": "worldServer",
+        "type": "[Lnet/minecraft/server/WorldServer;",
+        "access": 1
+      },
+      {
+        "name": "worlds",
+        "type": "Ljava/util/List;",
+        "signature": "Ljava/util/List<Lnet/minecraft/server/WorldServer;>;",
+        "access": 1
+      }
+    ]
+  },
+  {
+    "name": "net/minecraft/server/EntityFireball",
+    "syntheticFields": [
+      {
+        "name": "isIncendiary",
+        "type": "Z",
+        "access": 1
+      },
+      {
+        "name": "bukkitYield",
+        "type": "F",
+        "access": 1
+      }
+    ]
+  },
+  {
+    "name": "net/minecraft/server/EntityTNTPrimed",
+    "syntheticFields": [
+      {
+        "name": "isIncendiary",
+        "type": "Z",
+        "access": 1
+      },
+      {
+        "name": "yield",
+        "type": "F",
         "access": 1
       }
     ]
