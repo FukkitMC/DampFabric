@@ -7,13 +7,16 @@
     "ArmorStandMixin",
     "ChunkMixin",
     "ContainerMixin",
+    "EntityArrowMixin",
+    "EntityCreeperMixin",
     "EntityMixin",
     "EntityPlayerMixin",
     "EntityRabbitMixin",
     "JsonListMixin",
     "MinecraftServerMixin",
     "PlayerConnectionMixin",
-    "WorldMixin"
+    "WorldMixin",
+    "WorldServerMixin"
   ],
   "client": [
   ],

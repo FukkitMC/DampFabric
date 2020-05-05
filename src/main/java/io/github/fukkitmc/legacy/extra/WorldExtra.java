@@ -8,4 +8,7 @@ public interface WorldExtra {
     CraftWorld getWorld();
 
     CraftServer getServer();
+
+    void checkSleepStatus();
+
 }

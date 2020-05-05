@@ -15,6 +15,46 @@
     ]
   },
   {
+    "name": "net/minecraft/server/WorldServer",
+    "syntheticFields": [
+      {
+        "name": "dimension",
+        "type": "I",
+        "access": 1
+      }
+    ]
+  },
+  {
+    "name": "net/minecraft/server/EntityAgeable",
+    "syntheticFields": [
+      {
+        "name": "ageLocked",
+        "type": "Z",
+        "access": 1
+      }
+    ]
+  },
+  {
+    "name": "net/minecraft/server/EntityLightning",
+    "syntheticFields": [
+      {
+        "name": "isEffect",
+        "type": "Z",
+        "access": 1
+      }
+    ]
+  },
+  {
+    "name": "net/minecraft/server/EntityHorse",
+    "syntheticFields": [
+      {
+        "name": "maxDomestication",
+        "type": "I",
+        "access": 1
+      }
+    ]
+  },
+  {
     "name": "net/minecraft/server/EntityPlayer",
     "syntheticFields": [
       {
@@ -133,6 +173,11 @@
         "name": "LOGGER",
         "type": "Lorg/apache/logging/log4j/Logger;",
         "access": 9
+      },
+      {
+        "name": "server",
+        "type": "Lorg/bukkit/craftbukkit/CraftServer;",
+        "access": 1
       }
     ]
   },
@@ -188,6 +233,51 @@
         "name": "checkReachable",
         "type": "Z",
         "access": 1
+      }
+    ]
+  },
+  {
+    "name": "net/minecraft/server/EntityBoat",
+    "syntheticFields": [
+      {
+        "name": "maxSpeed",
+        "type": "D",
+        "accessor": 1
+      },
+      {
+        "name": "occupiedDeceleration",
+        "type": "D",
+        "accessor": 1
+      },
+      {
+        "name": "unoccupiedDeceleration",
+        "type": "D",
+        "accessor": 1
+      },
+      {
+        "name": "landBoats",
+        "type": "Z",
+        "accessor": 1
+      }
+    ]
+  },
+  {
+    "name": "net/minecraft/server/EntityMinecartAbstract",
+    "syntheticFields": [
+      {
+        "name": "maxSpeed",
+        "type": "D",
+        "accessor": 1
+      },
+      {
+        "name": "flyingVelocityMod",
+        "type": "Lorg/bukkit/util/Vector;",
+        "accessor": 1
+      },
+      {
+        "name": "slowWhenEmpty",
+        "type": "Z",
+        "accessor": 1
       }
     ]
   }

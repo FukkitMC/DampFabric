@@ -538,4 +538,9 @@ public abstract class CraftEntity implements org.bukkit.entity.Entity {
     public void setOp(boolean value) {
         perm.setOp(value);
     }
+
+    public boolean canSee(CraftPlayer craftPlayer){
+        //TODO: fukkit: do something here
+        return true;
+    }
 }
