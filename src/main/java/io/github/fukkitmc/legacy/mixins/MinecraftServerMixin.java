@@ -1,15 +1,21 @@
 package io.github.fukkitmc.legacy.mixins;
 
 import io.github.fukkitmc.legacy.extra.MinecraftServerExtra;
+import net.fabricmc.api.EnvType;
+import net.fabricmc.api.Environment;
 import net.minecraft.server.MinecraftServer;
-import net.minecraft.server.PropertyManager;
+import net.minecraft.server.UserCache;
+import org.bukkit.craftbukkit.OptionsParser;
 import org.spongepowered.asm.mixin.Mixin;
+import org.spongepowered.asm.mixin.Overwrite;
 import org.spongepowered.asm.mixin.Shadow;
 
 @Mixin(MinecraftServer.class)
 public class MinecraftServerMixin implements MinecraftServerExtra {
 
-    @Shadow private int G;
+    @Shadow public int G;
+
+    @Shadow public UserCache Z;
 
     @Override
     public int getIdleTimeout() {
@@ -50,6 +56,21 @@ public class MinecraftServerMixin implements MinecraftServerExtra {
 
     @Override
     public String getMotd() {
-        return "Fuck forge";
+        return "MOTD IS NOT SETUP YET";
+    }
+
+    @Override
+    public UserCache getUserCache() {
+        return this.Z;
+    }
+
+    /**
+     * @author hydos
+     * @reason bukkit
+     */
+    @Environment(EnvType.SERVER)
+    @Overwrite
+    public static void main(String[] args){
+        OptionsParser.main(args);
     }
 }

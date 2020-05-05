@@ -181,7 +181,7 @@ public class CraftPlayer extends CraftHumanEntity implements Player {
             name = getName();
         }
         getHandle().listName = name.equals(getName()) ? null : CraftChatMessage.fromString(name)[0];
-        for (EntityPlayer player : (List<EntityPlayer>)server.getHandle().players) {
+        for (EntityPlayer player : server.getHandle().players) {
             if (player.getBukkitEntity().canSee(this)) {
                 player.playerConnection.sendPacket(new PacketPlayOutPlayerInfo(PacketPlayOutPlayerInfo.EnumPlayerInfoAction.UPDATE_DISPLAY_NAME, getHandle()));
             }
@@ -510,8 +510,8 @@ public class CraftPlayer extends CraftHumanEntity implements Player {
     }
 
     @Override
-    public void setSleepingIgnored(boolean isSleeping) {
-        getHandle().fauxSleeping = isSleeping;
+    public void setSleepingIgnored(boolean ignoreSleeping) {
+        getHandle().fauxSleeping = ignoreSleeping;
         ((CraftWorld) getWorld()).getHandle().checkSleepStatus();
     }
 

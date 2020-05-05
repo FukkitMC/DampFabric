@@ -65,7 +65,6 @@ import org.bukkit.event.inventory.InventoryType;
 import org.bukkit.event.player.PlayerChatTabCompleteEvent;
 import org.bukkit.event.world.WorldInitEvent;
 import org.bukkit.event.world.WorldLoadEvent;
-import org.bukkit.event.world.WorldSaveEvent;
 import org.bukkit.event.world.WorldUnloadEvent;
 import org.bukkit.generator.ChunkGenerator;
 import org.bukkit.help.HelpMap;
@@ -102,9 +101,7 @@ import com.avaje.ebean.config.ServerConfig;
 import com.avaje.ebean.config.dbplatform.SQLitePlatform;
 import com.avaje.ebeaninternal.server.lib.sql.TransactionIsolation;
 import com.google.common.base.Charsets;
-import com.google.common.base.Function;
 import com.google.common.collect.ImmutableList;
-import com.google.common.collect.Lists;
 import com.google.common.collect.MapMaker;
 import com.mojang.authlib.GameProfile;
 
@@ -182,7 +179,7 @@ public class CraftServer implements Server {
         PotionEffectType.stopAcceptingRegistrations();
         // Ugly hack :(
 
-        if (!Main.useConsole) {
+        if (!OptionsParser.useConsole) {
             getLogger().info("Console input is disabled due to --noconsole command argument");
         }
 
@@ -1338,7 +1335,7 @@ public class CraftServer implements Server {
 
     @Override
     public Set<OfflinePlayer> getOperators() {
-        Set<OfflinePlayer> result = new HashSet<OfflinePlayer>();
+        Set<OfflinePlayer> result = new HashSet<>();
 
         for (JsonListEntry entry : playerList.getOPs().getValues()) {
             result.add(getOfflinePlayer((GameProfile) entry.getKey()));

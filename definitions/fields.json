@@ -6,7 +6,83 @@
         "name": "maxAirTicks",
         "type": "I",
         "access": 1
+      },
+      {
+        "name": "expToDrop",
+        "type": "I",
+        "access": 1
       }
+    ]
+  },
+  {
+    "name": "net/minecraft/server/EntityPlayer",
+    "syntheticFields": [
+      {
+        "name": "newExp",
+        "type": "I",
+        "access": 1
+      },
+      {
+        "name": "newLevel",
+        "type": "I",
+        "access": 1
+      },
+      {
+        "name": "newTotalExp",
+        "type": "I",
+        "access": 1
+      },
+      {
+        "name": "keepLevel",
+        "type": "Z",
+        "access": 1
+      },
+      {
+        "name": "joining",
+        "type": "Z",
+        "access": 1
+      },
+      {
+        "name": "maxHealthCache",
+        "type": "D",
+        "access": 1
+      },
+      {
+        "name": "compassTarget",
+        "type": "Lorg/bukkit/Location;",
+        "access": 1
+      },
+      {
+        "name": "listName",
+        "type": "Lnet/minecraft/server/IChatBaseComponent;",
+        "access": 1
+      },
+      {
+        "name": "displayName",
+        "type": "Ljava/lang/String;",
+        "access": 1
+      },
+      {
+        "name": "timeOffset",
+        "type": "J",
+        "access": 1
+      },
+      {
+        "name": "relativeTime",
+        "type": "Z",
+        "access": 1
+      },
+      {
+        "name": "fauxSleeping",
+        "type": "Z",
+        "access": 1
+      },
+      {
+        "name": "spawnWorld",
+        "type": "Ljava/lang/String;",
+        "access": 1
+      }
+
     ]
   },
   {
@@ -52,6 +128,26 @@
         "type": "Ljava/util/List;",
         "signature": "Ljava/util/List<Lnet/minecraft/server/WorldServer;>;",
         "access": 1
+      },
+      {
+        "name": "LOGGER",
+        "type": "Lorg/apache/logging/log4j/Logger;",
+        "access": 9
+      }
+    ]
+  },
+  {
+    "name": "net/minecraft/server/EntityFireball",
+    "syntheticFields": [
+      {
+        "name": "isIncendiary",
+        "type": "Z",
+        "access": 1
+      },
+      {
+        "name": "bukkitYield",
+        "type": "F",
+        "access": 1
       }
     ]
   },
@@ -81,6 +177,16 @@
       {
         "name": "yield",
         "type": "F",
+        "access": 1
+      }
+    ]
+  },
+  {
+    "name": "net/minecraft/server/Container",
+    "syntheticFields": [
+      {
+        "name": "checkReachable",
+        "type": "Z",
         "access": 1
       }
     ]

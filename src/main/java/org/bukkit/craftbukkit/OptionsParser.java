@@ -12,7 +12,11 @@ import joptsimple.OptionSet;
 import net.minecraft.server.MinecraftServer;
 import org.fusesource.jansi.AnsiConsole;
 
-public class Main {
+
+/**
+ * this is a modified version which gets run from Main.main();
+ */
+public class OptionsParser {
     public static boolean useJline = true;
     public static boolean useConsole = true;
 
@@ -122,14 +126,14 @@ public class Main {
         try {
             options = parser.parse(args);
         } catch (joptsimple.OptionException ex) {
-            Logger.getLogger(Main.class.getName()).log(Level.SEVERE, ex.getLocalizedMessage());
+            Logger.getLogger(OptionsParser.class.getName()).log(Level.SEVERE, ex.getLocalizedMessage());
         }
 
         if ((options == null) || (options.has("?"))) {
             try {
                 parser.printHelpOn(System.out);
             } catch (IOException ex) {
-                Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
+                Logger.getLogger(OptionsParser.class.getName()).log(Level.SEVERE, null, ex);
             }
         } else if (options.has("v")) {
             System.out.println(CraftServer.class.getPackage().getImplementationVersion());
@@ -166,7 +170,7 @@ public class Main {
                 }
 
                 System.out.println("Loading libraries, please wait...");
-                MinecraftServer.main(options);
+                MinecraftServer.bukkitEntrypoint(options);
             } catch (Throwable t) {
                 t.printStackTrace();
             }
