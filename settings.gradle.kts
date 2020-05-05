@@ -12,3 +12,4 @@ pluginManagement {
         gradlePluginPortal()
     }
 }
+rootProject.name="LegacyFukkit"
