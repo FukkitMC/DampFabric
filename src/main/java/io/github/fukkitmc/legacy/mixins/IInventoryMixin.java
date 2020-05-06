@@ -13,34 +13,34 @@ import org.spongepowered.asm.mixin.Mixin;
 import java.util.List;
 
 @Mixin(IInventory.class)
-public class IInventoryMixin implements IInventoryExtra {
+public interface IInventoryMixin extends IInventoryExtra {
     @Override
-    public ItemStack[] getContents() {
+    default ItemStack[] getContents() {
         return new ItemStack[0];
     }
 
     @Override
-    public void onOpen(CraftHumanEntity who) {
+    default void onOpen(CraftHumanEntity who) {
 
     }
 
     @Override
-    public void onClose(CraftHumanEntity who) {
+    default void onClose(CraftHumanEntity who) {
 
     }
 
     @Override
-    public List<HumanEntity> getViewers() {
+    default List<HumanEntity> getViewers() {
         return null;
     }
 
     @Override
-    public InventoryHolder getOwner() {
+    default InventoryHolder getOwner() {
         return null;
     }
 
     @Override
-    public void setMaxStackSize(int size) {
+    default void setMaxStackSize(int size) {
 
     }
 }

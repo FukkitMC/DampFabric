@@ -16,7 +16,7 @@
   "environment": "*",
   "entrypoints": {
     "main": [
-      "me.hydos.legacy.DampFabric"
+      "io.github.fukkitmc.legacy.LegacyFukkit"
     ]
   },
   "mixins": [

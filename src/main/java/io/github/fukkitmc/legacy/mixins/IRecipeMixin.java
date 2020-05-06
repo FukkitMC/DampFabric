@@ -8,9 +8,9 @@ import org.bukkit.inventory.Recipe;
 import org.spongepowered.asm.mixin.Mixin;
 
 @Mixin(IRecipe.class)
-public class IRecipeMixin implements IRecipeExtra {
+public interface IRecipeMixin extends IRecipeExtra {
     @Override
-    public Recipe toBukkitRecipe() {
+    default Recipe toBukkitRecipe() {
         return null;
     }
 }
