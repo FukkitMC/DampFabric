@@ -2,6 +2,7 @@ package org.bukkit.craftbukkit.inventory;
 
 import java.util.Iterator;
 
+import net.minecraft.server.ItemStack;
 import org.bukkit.inventory.Recipe;
 
 import net.minecraft.server.CraftingManager;
@@ -10,7 +11,7 @@ import net.minecraft.server.RecipesFurnace;
 
 public class RecipeIterator implements Iterator<Recipe> {
     private final Iterator<IRecipe> recipes;
-    private final Iterator<net.minecraft.server.ItemStack> smeltingCustom;
+    private final Iterator smeltingCustom;
     private final Iterator<net.minecraft.server.ItemStack> smeltingVanilla;
     private Iterator<?> removeFrom = null;
 
@@ -32,7 +33,7 @@ public class RecipeIterator implements Iterator<Recipe> {
             net.minecraft.server.ItemStack item;
             if (smeltingCustom.hasNext()) {
                 removeFrom = smeltingCustom;
-                item = smeltingCustom.next();
+                item = (ItemStack) smeltingCustom.next();
             } else {
                 removeFrom = smeltingVanilla;
                 item = smeltingVanilla.next();

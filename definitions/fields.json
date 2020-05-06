@@ -194,6 +194,11 @@
         "name": "world",
         "type": "Lorg/bukkit/craftbukkit/CraftWorld;",
         "access": 1
+      },
+      {
+        "name": "keepSpawnInMemory",
+        "type": "Z",
+        "access": 1
       }
     ]
   },
@@ -240,6 +245,31 @@
       {
         "name": "console",
         "type": "Lorg/bukkit/command/ConsoleCommandSender;",
+        "access": 1
+      }
+    ]
+  },
+  {
+    "name": "net/minecraft/server/InventoryCrafting",
+    "syntheticFields": [
+      {
+        "name": "currentRecipe",
+        "type": "Lnet/minecraft/server/IRecipe;",
+        "access": 1
+      },
+      {
+        "name": "resultInventory",
+        "type": "Lnet/minecraft/server/IInventory;",
+        "access": 1
+      },
+      {
+        "name": "owner",
+        "type": "Lnet/minecraft/server/EntityHuman;",
+        "access": 1
+      },
+      {
+        "name": "MAX_STACK",
+        "type": "I",
         "access": 1
       }
     ]
