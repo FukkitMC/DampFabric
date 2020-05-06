@@ -32,7 +32,7 @@ dependencies {
     minecraft("net.minecraft:minecraft:1.8.9")
 
     mappings(fukkit.mappings("1.8.8", "net.fabricmc:intermediary:1.8.9"))
-    modImplementation("net.fabricmc:fabric-loader-1.8.9:0.8.2+build.202004210808") {
+    modImplementation("net.fabricmc:fabric-loader-1.8.9:0.8.2+build.202005040913") {
         exclude(module = "guava")
     }
 
