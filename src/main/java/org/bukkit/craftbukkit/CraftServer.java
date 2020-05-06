@@ -397,7 +397,7 @@ public class CraftServer implements Server {
         Validate.notNull(name, "Name cannot be null");
 
         EntityPlayer player = playerList.getPlayer(name);
-        return (player != null) ? player.getBukkitEntity() : null;
+        return (player != null) ? (Player) player.getBukkitEntity() : null;
     }
 
     @Override
@@ -405,7 +405,7 @@ public class CraftServer implements Server {
         EntityPlayer player = playerList.a(id);
 
         if (player != null) {
-            return player.getBukkitEntity();
+            return (Player) player.getBukkitEntity();
         }
 
         return null;
@@ -417,7 +417,7 @@ public class CraftServer implements Server {
     }
 
     public Player getPlayer(final EntityPlayer entity) {
-        return entity.getBukkitEntity();
+        return (Player) entity.getBukkitEntity();
     }
 
     @Override
@@ -680,7 +680,7 @@ public class CraftServer implements Server {
         while (pollCount < 50 && getScheduler().getActiveWorkers().size() > 0) {
             try {
                 Thread.sleep(50);
-            } catch (InterruptedException e) {}
+            } catch (InterruptedException ignored) {}
             pollCount++;
         }
 
@@ -814,11 +814,19 @@ public class CraftServer implements Server {
 
                 public void a(String s) {}
 
+                @Override
+                public void b(String string) {}
+
                 public void a(int i) {
                     if (System.currentTimeMillis() - this.b >= 1000L) {
                         this.b = System.currentTimeMillis();
                         MinecraftServer.LOGGER.info("Converting... " + i + "%");
                     }
+
+                }
+
+                @Override
+                public void a() {
 
                 }
 

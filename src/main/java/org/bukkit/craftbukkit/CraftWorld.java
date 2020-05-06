@@ -251,7 +251,7 @@ public class CraftWorld implements World {
         }
 
         world.chunkProviderServer.unloadQueue.remove(LongHash.toLong(x,z));
-        net.minecraft.server.Chunk chunk = world.chunkProviderServer.chunks.get(LongHash.toLong(x, z));
+        net.minecraft.server.Chunk chunk = world.chunkProviderServer.chunks.getEntry(LongHash.toLong(x, z));
 
         if (chunk == null) {
             chunk = world.chunkProviderServer.loadChunk(x, z);
@@ -724,7 +724,7 @@ public class CraftWorld implements World {
         List<Player> list = new ArrayList<Player>(world.players.size());
 
         for (EntityHuman human : world.players) {
-            HumanEntity bukkitEntity = human.getBukkitEntity();
+            HumanEntity bukkitEntity = (HumanEntity) human.getBukkitEntity();
 
             if ((bukkitEntity != null) && (bukkitEntity instanceof Player)) {
                 list.add((Player) bukkitEntity);
@@ -1372,7 +1372,7 @@ public class CraftWorld implements World {
             }
 
             // Already unloading?
-            if (cps.unloadQueue.contains(chunk.locX, chunk.locZ)) {
+            if (cps.unloadQueue.contains(LongHash.toLong(chunk.locX, chunk.locZ))) {
                 continue;
             }
 

@@ -8,9 +8,25 @@
         "descriptor": "()Lnet/minecraft/server/MinecraftServer;",
         "access": 9,
         "redirect": {
-          "owner": "io/github/fukkitmc/dampfabric/redirects/MinecraftServerRedirects",
+          "owner": "io/github/fukkitmc/legacy/redirects/MinecraftServerRedirects",
           "name": "getServer",
           "descriptor": "()Lnet/minecraft/server/MinecraftServer;"
+        }
+      }
+    ]
+  },
+  {
+    "name": "net/minecraft/server/EntityHanging",
+    "syntheticMethods": [
+      {
+        "opcode": 184,
+        "name": "calculateBoundingBox",
+        "descriptor": "(Lnet/minecraft/server/BlockPosition;Lnet/minecraft/server/EnumDirection;II)Lnet/minecraft/server/AxisAlignedBB;",
+        "access": 9,
+        "redirect": {
+          "owner": "io/github/fukkitmc/legacy/redirects/EntityHangingRedirects",
+          "name": "calculateBoundingBox",
+          "descriptor": "(Lnet/minecraft/server/BlockPosition;Lnet/minecraft/server/EnumDirection;II)Lnet/minecraft/server/AxisAlignedBB;"
         }
       }
     ]

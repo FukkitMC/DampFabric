@@ -94,13 +94,13 @@ public final class CraftMagicNumbers implements UnsafeValues {
 
     @Override
     public Material getMaterialFromInternalName(String name) {
-        return getMaterial((Item) Item.REGISTRY.get(new MinecraftKey(name)));
+        return getMaterial((Item) Item.REGISTRY.a(new MinecraftKey(name)));
     }
 
     @Override
     public List<String> tabCompleteInternalMaterialName(String token, List<String> completions) {
         ArrayList<String> results = Lists.newArrayList();
-        for (MinecraftKey key : (Set<MinecraftKey>)Item.REGISTRY.keySet()) {
+        for (MinecraftKey key : Item.REGISTRY.keySet()) {
             results.add(key.toString());
         }
         return StringUtil.copyPartialMatches(token, results, completions);

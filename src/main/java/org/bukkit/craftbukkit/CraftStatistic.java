@@ -135,11 +135,11 @@ public class CraftStatistic {
     public static Material getMaterialFromStatistic(net.minecraft.server.Statistic statistic) {
         String statisticString = statistic.name;
         String val = statisticString.substring(statisticString.lastIndexOf(".") + 1);
-        Item item = (Item) Item.REGISTRY.get(new MinecraftKey(val));
+        Item item = (Item) Item.REGISTRY.a(new MinecraftKey(val));
         if (item != null) {
             return Material.getMaterial(Item.getId(item));
         }
-        Block block = (Block) Block.REGISTRY.get(new MinecraftKey(val));
+        Block block = (Block) Block.REGISTRY.a(new MinecraftKey(val));
         if (block != null) {
             return Material.getMaterial(Block.getId(block));
         }

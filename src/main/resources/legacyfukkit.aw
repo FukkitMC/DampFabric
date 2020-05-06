@@ -2388,6 +2388,10 @@ mutable field net/minecraft/server/WorldProvider j [F
 mutable field net/minecraft/server/World worldProvider Lnet/minecraft/server/WorldProvider;
 extendable method net/minecraft/server/WorldProvider a ()V
 accessible method net/minecraft/server/WorldProvider a ()V
+
+accessible method net/minecraft/server/CraftingManager <init> ()V
+accessible method net/minecraft/server/RecipesFurnace <init> ()V
+
 extendable method net/minecraft/server/WorldProvider b ()V
 accessible method net/minecraft/server/WorldProvider b ()V
 accessible class net/minecraft/server/WorldProviderHell$1

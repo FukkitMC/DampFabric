@@ -17,7 +17,7 @@ public class LazyPlayerSet extends LazyHashSet<Player> {
         List<EntityPlayer> players = MinecraftServer.getServer().getPlayerList().players;
         HashSet<Player> reference = new HashSet<Player>(players.size());
         for (EntityPlayer player : players) {
-            reference.add(player.getBukkitEntity());
+            reference.add((Player) player.getBukkitEntity());
         }
         return reference;
     }

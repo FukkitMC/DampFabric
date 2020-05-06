@@ -28,7 +28,22 @@
         "access": 1
       },
       {
+        "name": "ticksPerAnimalSpawns",
+        "type": "J",
+        "access": 1
+      },
+      {
+        "name": "ticksPerMonsterSpawns",
+        "type": "J",
+        "access": 1
+      },
+      {
         "name": "captureBlockStates",
+        "type": "Z",
+        "access": 1
+      },
+      {
+        "name": "pvpMode",
         "type": "Z",
         "access": 1
       },
@@ -197,6 +212,17 @@
         "access": 1
       },
       {
+        "name": "processQueue",
+        "type": "Ljava/util/Queue;",
+        "signature": "Ljava/util/Queue<Ljava/lang/Runnable;>;",
+        "access": 1
+      },
+      {
+        "name": "reader",
+        "type": "Ljline/console/ConsoleReader;",
+        "access": 1
+      },
+      {
         "name": "LOGGER",
         "type": "Lorg/apache/logging/log4j/Logger;",
         "access": 9
@@ -205,6 +231,11 @@
         "name": "server",
         "type": "Lorg/bukkit/craftbukkit/CraftServer;",
         "access": 1
+      },
+      {
+        "name": "options",
+        "type": "Ljoptsimple/OptionSet;",
+        "signature": 1
       }
     ]
   },
@@ -314,6 +345,41 @@
       {
         "name": "bukkitChunk",
         "type": "Lorg/bukkit/Chunk;",
+        "access": 1
+      },
+      {
+        "name": "mustSave",
+        "type": "Z",
+        "access": 1
+      }
+    ]
+  },
+  {
+    "name": "net/minecraft/server/RecipesFurnace",
+    "syntheticFields": [
+      {
+        "name": "customRecipes",
+        "type": "Ljava/util/Map;",
+        "access": 1
+      }
+    ]
+  },
+  {
+    "name": "net/minecraft/server/WorldMap",
+    "syntheticFields": [
+      {
+        "name": "mapView",
+        "type": "Lorg/bukkit/craftbukkit/map/CraftMapView;",
+        "access": 1
+      },
+      {
+        "name": "uniqueId",
+        "type": "Ljava/util/UUID;",
+        "access": 1
+      },
+      {
+        "name": "server",
+        "type": "Lorg/bukkit/craftbukkit/CraftServer;",
         "access": 1
       }
     ]

@@ -14,12 +14,10 @@ public class ServerShutdownThread extends Thread {
     public void run() {
         try {
             server.stop();
-        } catch (ExceptionWorldConflict ex) {
-            ex.printStackTrace();
         } finally {
             try {
                 server.reader.getTerminal().restore();
-            } catch (Exception e) {
+            } catch (Exception ignored) {
             }
         }
     }

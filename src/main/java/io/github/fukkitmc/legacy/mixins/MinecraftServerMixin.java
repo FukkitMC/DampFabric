@@ -4,6 +4,7 @@ import io.github.fukkitmc.legacy.extra.MinecraftServerExtra;
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
 import net.minecraft.server.MinecraftServer;
+import net.minecraft.server.PlayerList;
 import net.minecraft.server.UserCache;
 import org.bukkit.craftbukkit.OptionsParser;
 import org.spongepowered.asm.mixin.Mixin;
@@ -16,6 +17,8 @@ public class MinecraftServerMixin implements MinecraftServerExtra {
     @Shadow public int G;
 
     @Shadow public UserCache Z;
+
+    @Shadow public PlayerList v;
 
     @Override
     public int getIdleTimeout() {
@@ -62,6 +65,16 @@ public class MinecraftServerMixin implements MinecraftServerExtra {
     @Override
     public UserCache getUserCache() {
         return this.Z;
+    }
+
+    @Override
+    public void stop() {
+
+    }
+
+    @Override
+    public PlayerList getPlayerList() {
+        return this.v;
     }
 
     /**
