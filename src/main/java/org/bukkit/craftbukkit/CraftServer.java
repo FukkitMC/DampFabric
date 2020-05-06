@@ -1354,7 +1354,8 @@ public class CraftServer implements Server {
 
     @Override
     public GameMode getDefaultGameMode() {
-        return GameMode.getByValue(console.worlds.get(0).getWorldData().getGameType().getId());
+//        return GameMode.getByValue(console.worlds.get(0).getWorldData().getGameType().getId()); TODO: fukkit implement worlds
+        return GameMode.CREATIVE;
     }
 
     @Override

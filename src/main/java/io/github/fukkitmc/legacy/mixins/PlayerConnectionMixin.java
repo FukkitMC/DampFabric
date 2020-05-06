@@ -2,9 +2,14 @@ package io.github.fukkitmc.legacy.mixins;
 
 import io.github.fukkitmc.legacy.extra.PlayerConnectionExtra;
 import net.minecraft.server.*;
+import org.apache.logging.log4j.Logger;
 import org.bukkit.Location;
+import org.bukkit.craftbukkit.entity.CraftPlayer;
+import org.bukkit.craftbukkit.util.LazyPlayerSet;
+import org.bukkit.event.player.PlayerCommandPreprocessEvent;
 import org.spongepowered.asm.mixin.Final;
 import org.spongepowered.asm.mixin.Mixin;
+import org.spongepowered.asm.mixin.Overwrite;
 import org.spongepowered.asm.mixin.Shadow;
 
 import java.util.Collections;
@@ -21,6 +26,8 @@ public class PlayerConnectionMixin implements PlayerConnectionExtra {
     @Shadow public EntityPlayer player;
 
     @Shadow @Final public NetworkManager networkManager;
+
+    @Shadow public static Logger c;
 
     @Override
     public boolean isDisconnected() {
@@ -151,4 +158,36 @@ public class PlayerConnectionMixin implements PlayerConnectionExtra {
 //            }
 //        }
     }
+
+    /**
+     * @author Legacy Fukkit
+     */
+    @Overwrite
+    public void handleCommand(String s) {
+        // CraftBukkit start - whole method
+        c.info(this.player.getName() + " issued server command: " + s);
+
+        CraftPlayer player = this.getPlayer();
+
+        PlayerCommandPreprocessEvent event = new PlayerCommandPreprocessEvent(player, s, new LazyPlayerSet());
+        ((PlayerConnection)(Object)this).minecraftServer.server.getPluginManager().callEvent(event);
+
+        if (event.isCancelled()) {
+            return;
+        }
+
+        try {
+            ((PlayerConnection) (Object) this).minecraftServer.server.dispatchCommand(event.getPlayer(), event.getMessage().substring(1));
+        } catch (org.bukkit.command.CommandException ex) {
+            player.sendMessage(org.bukkit.ChatColor.RED + "An internal error occurred while attempting to perform this command");
+            java.util.logging.Logger.getLogger(PlayerConnection.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        }
+        // this.minecraftServer.getCommandHandler().a(this.player, s);
+    }
+
+    @Override
+    public CraftPlayer getPlayer() {
+        return (this.player == null) ? null : (CraftPlayer) this.player.getBukkitEntity();
+    }
+
 }
