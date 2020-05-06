@@ -235,7 +235,12 @@
       {
         "name": "options",
         "type": "Ljoptsimple/OptionSet;",
-        "signature": 1
+        "access": 1
+      },
+      {
+        "name": "console",
+        "type": "Lorg/bukkit/command/ConsoleCommandSender;",
+        "access": 1
       }
     ]
   },
