@@ -14,7 +14,6 @@ import java.util.stream.Collectors;
 
 import javax.imageio.ImageIO;
 
-import com.google.common.cache.CacheBuilder;
 import net.minecraft.server.*;
 
 import org.bukkit.BanList;
@@ -114,10 +113,10 @@ import jline.console.ConsoleReader;
 
 public class CraftServer implements Server {
     private static final Player[] EMPTY_PLAYER_ARRAY = new Player[0];
-    private final String serverName = "CraftBukkit";
+    private final String serverName = "Fukkit";
     private final String serverVersion;
     private final String bukkitVersion = Versioning.getBukkitVersion();
-    private final Logger logger = Logger.getLogger("Minecraft");
+    public static final Logger LOGGER = Logger.getLogger("Minecraft");
     private final ServicesManager servicesManager = new SimpleServicesManager();
     private final CraftScheduler scheduler = new CraftScheduler();
     private final SimpleCommandMap commandMap = new SimpleCommandMap(this);
@@ -126,7 +125,7 @@ public class CraftServer implements Server {
     private final PluginManager pluginManager = new SimplePluginManager(this, commandMap);
     protected final MinecraftServer console;
     protected final DedicatedPlayerList playerList;
-    private final Map<String, World> worlds = new LinkedHashMap<String, World>();
+    private final Map<String, World> worlds = new LinkedHashMap<>();
     private YamlConfiguration configuration;
     private YamlConfiguration commandsConfiguration;
     private final Yaml yaml = new Yaml(new SafeConstructor());
@@ -641,12 +640,12 @@ public class CraftServer implements Server {
         try {
             playerList.getIPBans().load();
         } catch (IOException ex) {
-            logger.log(Level.WARNING, "Failed to load banned-ips.json, " + ex.getMessage());
+            LOGGER.log(Level.WARNING, "Failed to load banned-ips.json, " + ex.getMessage());
         }
         try {
             playerList.getProfileBans().load();
         } catch (IOException ex) {
-            logger.log(Level.WARNING, "Failed to load banned-players.json, " + ex.getMessage());
+            LOGGER.log(Level.WARNING, "Failed to load banned-players.json, " + ex.getMessage());
         }
 
         for (WorldServer world : console.worlds) {
@@ -978,7 +977,7 @@ public class CraftServer implements Server {
 
     @Override
     public Logger getLogger() {
-        return logger;
+        return LOGGER;
     }
 
     public ConsoleReader getReader() {

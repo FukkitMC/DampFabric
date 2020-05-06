@@ -10,9 +10,7 @@ public interface MinecraftServerExtra {
 
     void setIdleTimeout(int timeout);
 
-    default PropertyManager getPropertyManager(){
-        throw new RuntimeException("No. not yet tm");
-    }
+    PropertyManager getPropertyManager();
 
     String getVersion();
 

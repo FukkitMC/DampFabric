@@ -6,12 +6,14 @@ import joptsimple.OptionSet;
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
 import net.minecraft.server.*;
+import org.bukkit.craftbukkit.CraftServer;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Overwrite;
 import org.spongepowered.asm.mixin.Shadow;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
+import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
 import java.io.File;
 import java.net.Proxy;
@@ -26,13 +28,24 @@ public class MinecraftServerMixin implements MinecraftServerExtra {
     @Shadow public PlayerList v;
 
 
+    @Shadow public CraftServer server;
+
     @Inject(method = "<init>(Ljava/io/File;Ljava/net/Proxy;Ljava/io/File;)V", at=@At("TAIL"))
     public void cursedConstructor(File file, Proxy proxy, File file2, CallbackInfo ci){
         ((MinecraftServer)(Object)this).options = CursedOptionLoader.bukkitOptions;
     }
 
+    @Inject(method = "O", at=@At("HEAD"), cancellable = true)
+    public void o(CallbackInfoReturnable<Boolean> cir){
+        cir.setReturnValue(true);
+    }
+
+    public String getServerModName() {
+        return server.getName();
+    }
+
     /**
-     * @author
+     * @author fukkit
      */
     @Environment(EnvType.SERVER)
     @Overwrite
@@ -72,6 +85,11 @@ public class MinecraftServerMixin implements MinecraftServerExtra {
     @Override
     public void setIdleTimeout(int timeout) {
         this.G = timeout;
+    }
+
+    @Override
+    public PropertyManager getPropertyManager() {
+        return ((DedicatedServer)(Object)this).propertyManager;
     }
 
     @Override

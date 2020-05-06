@@ -97,6 +97,16 @@
     ]
   },
   {
+    "name": "net/minecraft/server/PlayerList",
+    "syntheticFields": [
+      {
+        "name": "cserver",
+        "type": "Lorg/bukkit/craftbukkit/CraftServer;",
+        "access": 1
+      }
+    ]
+  },
+  {
     "name": "net/minecraft/server/EntityPlayer",
     "syntheticFields": [
       {
