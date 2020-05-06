@@ -31,4 +31,18 @@ public interface MinecraftServerExtra {
     void stop();
 
     PlayerList getPlayerList();
+
+    boolean getOnlineMode();
+
+    void setOnlineMode(boolean flag);
+
+    void setPVP(boolean flag);
+
+    boolean getPVP();
+
+    void setSpawnAnimals(boolean flag);
+
+    void setAllowFlight(boolean flag);
+
+    void setMotd(String s);
 }

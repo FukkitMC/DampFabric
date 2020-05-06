@@ -625,12 +625,11 @@ public class CraftServer implements Server {
         boolean animals = config.getBoolean("spawn-animals", console.getSpawnAnimals());
         boolean monsters = config.getBoolean("spawn-monsters", console.worlds.get(0).getDifficulty() != EnumDifficulty.PEACEFUL);
         EnumDifficulty difficulty = EnumDifficulty.getById(config.getInt("difficulty", console.worlds.get(0).getDifficulty().ordinal()));
-//          TODO: fukkit legacy yes
-//        online.value = config.getBoolean("online-mode", console.getOnlineMode());
-//        console.setSpawnAnimals(config.getBoolean("spawn-animals", console.getSpawnAnimals()));
-//        console.setPVP(config.getBoolean("pvp", console.getPVP()));
-//        console.setAllowFlight(config.getBoolean("allow-flight", console.getAllowFlight()));
-//        console.setMotd(config.getString("motd", console.getMotd()));
+        online.value = config.getBoolean("online-mode", console.getOnlineMode());
+        console.setSpawnAnimals(config.getBoolean("spawn-animals", console.getSpawnAnimals()));
+        console.setPVP(config.getBoolean("pvp", console.getPVP()));
+        console.setAllowFlight(config.getBoolean("allow-flight", console.getAllowFlight()));
+        console.setMotd(config.getString("motd", console.getMotd()));
         monsterSpawn = configuration.getInt("spawn-limits.monsters");
         animalSpawn = configuration.getInt("spawn-limits.animals");
         waterAnimalSpawn = configuration.getInt("spawn-limits.water-animals");
@@ -1404,8 +1403,8 @@ public class CraftServer implements Server {
     @Override
     public OfflinePlayer[] getOfflinePlayers() {
         WorldNBTStorage storage = (WorldNBTStorage) console.worlds.get(0).getDataManager();
-        String[] files = storage.getPlayerDir().list(new DatFileFilter());
-        Set<OfflinePlayer> players = new HashSet<OfflinePlayer>();
+        String[] files = storage.playerDir.list(new DatFileFilter());
+        Set<OfflinePlayer> players = new HashSet<>();
 
         for (String file : files) {
             try {
@@ -1517,7 +1516,7 @@ public class CraftServer implements Server {
             return ImmutableList.of();
         }
 
-        Player player = ((EntityPlayer) sender).getBukkitEntity();
+        Player player = (Player) ((EntityPlayer) sender).getBukkitEntity();
         if (message.startsWith("/")) {
             return tabCompleteCommand(player, message);
         } else {

@@ -246,6 +246,26 @@
         "name": "console",
         "type": "Lorg/bukkit/command/ConsoleCommandSender;",
         "access": 1
+      },
+      {
+        "name": "universe",
+        "type": "Ljava/io/File;",
+        "access": 1
+      },
+      {
+        "name": "methodProfiler",
+        "type": "Lnet/minecraft/server/MethodProfiler;",
+        "access": 1
+      },
+      {
+        "name": "autosavePeriod",
+        "type": "I",
+        "access": 1
+      },
+      {
+        "name": "primaryThread",
+        "type": "Ljava/lang/Thread;",
+        "access": 1
       }
     ]
   },
