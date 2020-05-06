@@ -40,7 +40,6 @@ import java.io.IOException;
 import java.util.Arrays;
 import java.util.EnumSet;
 import java.util.HashSet;
-import java.util.Iterator;
 import java.util.Set;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -279,7 +278,7 @@ class CraftMetaItem implements ItemMeta, Repairable {
                 if (!(nbttaglist.get(i) instanceof NBTTagCompound)) {
                     continue;
                 }
-                NBTTagCompound nbttagcompound = (NBTTagCompound) nbttaglist.get(i);
+                NBTTagCompound nbttagcompound = nbttaglist.get(i);
 
                 if (!nbttagcompound.hasKeyOfType(ATTRIBUTES_UUID_HIGH.NBT, 99)) {
                     continue;
@@ -334,8 +333,8 @@ class CraftMetaItem implements ItemMeta, Repairable {
         Map<Enchantment, Integer> enchantments = new HashMap<Enchantment, Integer>(ench.size());
 
         for (int i = 0; i < ench.size(); i++) {
-            int id = 0xffff & ((NBTTagCompound) ench.get(i)).getShort(ENCHANTMENTS_ID.NBT);
-            int level = 0xffff & ((NBTTagCompound) ench.get(i)).getShort(ENCHANTMENTS_LVL.NBT);
+            int id = 0xffff & ench.get(i).getShort(ENCHANTMENTS_ID.NBT);
+            int level = 0xffff & ench.get(i).getShort(ENCHANTMENTS_LVL.NBT);
 
             enchantments.put(Enchantment.getById(id), level);
         }
@@ -520,7 +519,7 @@ class CraftMetaItem implements ItemMeta, Repairable {
     }
 
     public Map<Enchantment, Integer> getEnchants() {
-        return hasEnchants() ? ImmutableMap.copyOf(enchantments) : ImmutableMap.<Enchantment, Integer>of();
+        return hasEnchants() ? ImmutableMap.copyOf(enchantments) : ImmutableMap.of();
     }
 
     public boolean addEnchant(Enchantment ench, int level, boolean ignoreRestrictions) {

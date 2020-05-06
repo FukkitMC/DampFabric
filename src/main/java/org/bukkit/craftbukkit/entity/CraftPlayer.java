@@ -9,6 +9,7 @@ import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.net.InetSocketAddress;
 import java.net.SocketAddress;
+import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.HashSet;
@@ -27,7 +28,6 @@ import org.apache.commons.lang.Validate;
 import org.apache.commons.lang.NotImplementedException;
 import org.bukkit.*;
 import org.bukkit.Achievement;
-import org.bukkit.BanList;
 import org.bukkit.Statistic;
 import org.bukkit.Material;
 import org.bukkit.Statistic.Type;
@@ -148,7 +148,7 @@ public class CraftPlayer extends CraftHumanEntity implements Player {
 
     @Override
     public void sendMessage(String message) {
-        if (!conversationTracker.isConversingModaly()) {
+        if (conversationTracker.isConversingModaly()) {
             this.sendRawMessage(message);
         }
     }
@@ -879,7 +879,7 @@ public class CraftPlayer extends CraftHumanEntity implements Player {
         //remove this player from the hidden player's EntityTrackerEntry
         EntityTracker tracker = ((WorldServer) entity.world).tracker;
         EntityPlayer other = ((CraftPlayer) player).getHandle();
-        EntityTrackerEntry entry = (EntityTrackerEntry) tracker.trackedEntities.get(other.getId());
+        EntityTrackerEntry entry = tracker.trackedEntities.get(other.getId());
         if (entry != null) {
             entry.clear(getHandle());
         }
@@ -901,7 +901,7 @@ public class CraftPlayer extends CraftHumanEntity implements Player {
 
         getHandle().playerConnection.sendPacket(new PacketPlayOutPlayerInfo(PacketPlayOutPlayerInfo.EnumPlayerInfoAction.ADD_PLAYER, other));
 
-        EntityTrackerEntry entry = (EntityTrackerEntry) tracker.trackedEntities.get(other.getId());
+        EntityTrackerEntry entry = tracker.trackedEntities.get(other.getId());
         if (entry != null && !entry.trackedPlayers.contains(getHandle())) {
             entry.updatePlayer(getHandle());
         }
@@ -1083,7 +1083,7 @@ public class CraftPlayer extends CraftHumanEntity implements Player {
 
             for (String channel : listening) {
                 try {
-                    stream.write(channel.getBytes("UTF8"));
+                    stream.write(channel.getBytes(StandardCharsets.UTF_8));
                     stream.write((byte) 0);
                 } catch (IOException ex) {
                     Logger.getLogger(CraftPlayer.class.getName()).log(Level.SEVERE, "Could not send Plugin Channel REGISTER to " + getName(), ex);
@@ -1288,7 +1288,7 @@ public class CraftPlayer extends CraftHumanEntity implements Player {
 
         injectScaledMaxHealth(set, true);
 
-        getHandle().getDataWatcher().watch(6, (float) getScaledHealth());
+        getHandle().getDataWatcher().watch(6, getScaledHealth());
         getHandle().playerConnection.sendPacket(new PacketPlayOutUpdateHealth(getScaledHealth(), getHandle().getFoodData().getFoodLevel(), getHandle().getFoodData().getSaturationLevel()));
         getHandle().playerConnection.sendPacket(new PacketPlayOutUpdateAttributes(getHandle().getId(), set));
 

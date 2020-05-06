@@ -45,7 +45,7 @@ public final class CraftScoreboard implements org.bukkit.scoreboard.Scoreboard {
         Validate.notNull(criteria, "Criteria cannot be null");
 
         ImmutableSet.Builder<Objective> objectives = ImmutableSet.builder();
-        for (ScoreboardObjective netObjective : (Collection<ScoreboardObjective>) this.board.getObjectives()) {
+        for (ScoreboardObjective netObjective : this.board.getObjectives()) {
             CraftObjective objective = new CraftObjective(this, netObjective);
             if (objective.getCriteria().equals(criteria)) {
                 objectives.add(objective);
@@ -55,7 +55,7 @@ public final class CraftScoreboard implements org.bukkit.scoreboard.Scoreboard {
     }
 
     public ImmutableSet<Objective> getObjectives() {
-        return ImmutableSet.copyOf(Iterables.transform((Collection<ScoreboardObjective>) this.board.getObjectives(), new Function<ScoreboardObjective, Objective>() {
+        return ImmutableSet.copyOf(Iterables.transform(this.board.getObjectives(), new Function<ScoreboardObjective, Objective>() {
 
             @Override
             public Objective apply(ScoreboardObjective input) {
@@ -83,7 +83,7 @@ public final class CraftScoreboard implements org.bukkit.scoreboard.Scoreboard {
         Validate.notNull(entry, "Entry cannot be null");
 
         ImmutableSet.Builder<Score> scores = ImmutableSet.builder();
-        for (ScoreboardObjective objective : (Collection<ScoreboardObjective>) this.board.getObjectives()) {
+        for (ScoreboardObjective objective : this.board.getObjectives()) {
             scores.add(new CraftScore(new CraftObjective(this, objective), entry));
         }
         return scores.build();
@@ -98,7 +98,7 @@ public final class CraftScoreboard implements org.bukkit.scoreboard.Scoreboard {
     public void resetScores(String entry) throws IllegalArgumentException {
         Validate.notNull(entry, "Entry cannot be null");
 
-        for (ScoreboardObjective objective : (Collection<ScoreboardObjective>) this.board.getObjectives()) {
+        for (ScoreboardObjective objective : this.board.getObjectives()) {
             board.resetPlayerScores(entry, objective);
         }
     }
@@ -125,7 +125,7 @@ public final class CraftScoreboard implements org.bukkit.scoreboard.Scoreboard {
     }
 
     public ImmutableSet<Team> getTeams() {
-        return ImmutableSet.copyOf(Iterables.transform((Collection<ScoreboardTeam>) this.board.getTeams(), new Function<ScoreboardTeam, Team>() {
+        return ImmutableSet.copyOf(Iterables.transform(this.board.getTeams(), new Function<ScoreboardTeam, Team>() {
 
             @Override
             public Team apply(ScoreboardTeam input) {

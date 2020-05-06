@@ -3,19 +3,12 @@ package io.github.fukkitmc.legacy.mixins;
 import io.github.fukkitmc.legacy.extra.PlayerConnectionExtra;
 import net.minecraft.server.*;
 import org.bukkit.Location;
-import org.bukkit.craftbukkit.util.CraftChatMessage;
-import org.bukkit.craftbukkit.util.LazyPlayerSet;
-import org.bukkit.craftbukkit.util.Waitable;
-import org.bukkit.entity.Player;
-import org.bukkit.event.player.AsyncPlayerChatEvent;
-import org.bukkit.event.player.PlayerChatEvent;
 import org.spongepowered.asm.mixin.Final;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
 
 import java.util.Collections;
 import java.util.Set;
-import java.util.concurrent.ExecutionException;
 
 @Mixin(PlayerConnection.class)
 public class PlayerConnectionMixin implements PlayerConnectionExtra {

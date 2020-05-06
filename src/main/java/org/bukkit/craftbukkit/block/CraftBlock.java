@@ -29,8 +29,8 @@ public class CraftBlock implements Block {
     private final int x;
     private final int y;
     private final int z;
-    private static final Biome BIOME_MAPPING[];
-    private static final BiomeBase BIOMEBASE_MAPPING[];
+    private static final Biome[] BIOME_MAPPING;
+    private static final BiomeBase[] BIOMEBASE_MAPPING;
 
     public CraftBlock(CraftChunk chunk, int x, int y, int z) {
         this.x = x;
@@ -442,7 +442,7 @@ public class CraftBlock implements Block {
                         drops.add(CraftItemStack.asBukkitCopy(nmsStack));
                         // We don't want to drop cocoa blocks, we want to drop cocoa beans.
                     } else if (Blocks.COCOA == block) {
-                        int age = (Integer) block.fromLegacyData(data).get(BlockCocoa.AGE);
+                        int age = block.fromLegacyData(data).get(BlockCocoa.AGE);
                         int dropAmount = (age >= 2 ? 3 : 1);
                         for (int j = 0; j < dropAmount; ++j) {
                             drops.add(new ItemStack(Material.INK_SACK, 1, (short) 3));

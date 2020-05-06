@@ -31,9 +31,7 @@ public class ConversationTracker {
             if (conversationQueue.getFirst() == conversation) {
                 conversation.abandon(details);
             }
-            if (conversationQueue.contains(conversation)) {
-                conversationQueue.remove(conversation);
-            }
+            conversationQueue.remove(conversation);
             if (!conversationQueue.isEmpty()) {
                 conversationQueue.getFirst().outputNextPrompt();
             }
@@ -64,6 +62,6 @@ public class ConversationTracker {
     }
 
     public synchronized boolean isConversingModaly() {
-        return isConversing() && conversationQueue.getFirst().isModal();
+        return !isConversing() || !conversationQueue.getFirst().isModal();
     }
 }

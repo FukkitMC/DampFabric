@@ -12,7 +12,6 @@ import com.google.common.base.Functions;
 import net.minecraft.server.*;
 
 import net.minecraft.server.Entity;
-import net.minecraft.server.Item;
 import org.bukkit.Bukkit;
 import org.bukkit.Material;
 import org.bukkit.Server;

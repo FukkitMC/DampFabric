@@ -4,7 +4,6 @@ import com.google.common.collect.Lists;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
-import java.util.Set;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -54,8 +53,7 @@ public final class CraftMagicNumbers implements UnsafeValues {
 
     public static Item getItem(Material material) {
         // TODO: Don't use ID
-        Item item = Item.getById(material.getId());
-        return item;
+        return Item.getById(material.getId());
     }
 
     @Deprecated
@@ -94,7 +92,7 @@ public final class CraftMagicNumbers implements UnsafeValues {
 
     @Override
     public Material getMaterialFromInternalName(String name) {
-        return getMaterial((Item) Item.REGISTRY.a(new MinecraftKey(name)));
+        return getMaterial(Item.REGISTRY.a(new MinecraftKey(name)));
     }
 
     @Override
@@ -111,7 +109,7 @@ public final class CraftMagicNumbers implements UnsafeValues {
         net.minecraft.server.ItemStack nmsStack = CraftItemStack.asNMSCopy(stack);
 
         try {
-            nmsStack.setTag((NBTTagCompound) MojangsonParser.parse(arguments));
+            nmsStack.setTag(MojangsonParser.parse(arguments));
         } catch (MojangsonParseException ex) {
             Logger.getLogger(CraftMagicNumbers.class.getName()).log(Level.SEVERE, null, ex);
         }

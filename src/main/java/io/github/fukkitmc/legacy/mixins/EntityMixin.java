@@ -10,7 +10,8 @@ import org.spongepowered.asm.mixin.Shadow;
 @Mixin(Entity.class)
 public class EntityMixin implements EntityExtra {
 
-    @Shadow protected DataWatcher datawatcher;
+    @Shadow
+    public DataWatcher datawatcher;
 
     @Override
     public CraftEntity getBukkitEntity() {

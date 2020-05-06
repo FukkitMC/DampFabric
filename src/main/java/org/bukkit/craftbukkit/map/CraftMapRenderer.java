@@ -36,13 +36,13 @@ public class CraftMapRenderer extends MapRenderer {
 
         for (Object key : worldMap.decorations.keySet()) {
             // If this cursor is for a player check visibility with vanish system
-            Player other = Bukkit.getPlayerExact((String) key);
+            Player other = Bukkit.getPlayer((String) key);
             if (other != null && !player.canSee(other)) {
                 continue;
             }
 
       
-            MapIcon decoration = (MapIcon) worldMap.decorations.get(key);
+            MapIcon decoration = worldMap.decorations.get(key);
             cursors.addCursor(decoration.getX(), decoration.getY(), (byte) (decoration.getRotation() & 15), decoration.getType());
         }
     }

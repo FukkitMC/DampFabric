@@ -89,12 +89,7 @@ class CraftMetaSkull extends CraftMetaItem implements SkullMeta {
 
     @Override
     boolean applicableTo(Material type) {
-        switch(type) {
-            case SKULL_ITEM:
-                return true;
-            default:
-                return false;
-        }
+        return type == Material.SKULL_ITEM;
     }
 
     @Override

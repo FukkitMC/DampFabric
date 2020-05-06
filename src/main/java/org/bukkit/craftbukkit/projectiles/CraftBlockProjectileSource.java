@@ -96,7 +96,7 @@ public class CraftBlockProjectileSource implements BlockProjectileSource {
             } else if (WitherSkull.class.isAssignableFrom(projectile)) {
                 launch = new EntityWitherSkull(world);
                 launch.setPosition(d0, d1, d2);
-                double d6 = (double) MathHelper.sqrt(d3 * d3 + d4 * d4 + d5 * d5);
+                double d6 = MathHelper.sqrt(d3 * d3 + d4 * d4 + d5 * d5);
 
                 ((EntityFireball) launch).dirX = d3 / d6 * 0.1D;
                 ((EntityFireball) launch).dirY = d4 / d6 * 0.1D;
@@ -104,7 +104,7 @@ public class CraftBlockProjectileSource implements BlockProjectileSource {
             } else {
                 launch = new EntityLargeFireball(world);
                 launch.setPosition(d0, d1, d2);
-                double d6 = (double) MathHelper.sqrt(d3 * d3 + d4 * d4 + d5 * d5);
+                double d6 = MathHelper.sqrt(d3 * d3 + d4 * d4 + d5 * d5);
 
                 ((EntityFireball) launch).dirX = d3 / d6 * 0.1D;
                 ((EntityFireball) launch).dirY = d4 / d6 * 0.1D;
@@ -129,7 +129,7 @@ public class CraftBlockProjectileSource implements BlockProjectileSource {
                 b *= 1.25F;
             }
             // Copied from DispenseBehaviorProjectile
-            ((IProjectile) launch).shoot((double) enumdirection.getAdjacentX(), (double) ((float) enumdirection.getAdjacentY() + 0.1F), (double) enumdirection.getAdjacentZ(), b, a);
+            ((IProjectile) launch).shoot(enumdirection.getAdjacentX(), (float) enumdirection.getAdjacentY() + 0.1F, enumdirection.getAdjacentZ(), b, a);
         }
 
         if (velocity != null) {

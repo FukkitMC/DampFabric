@@ -1,6 +1,5 @@
 package io.github.fukkitmc.legacy.extra;
 
-import joptsimple.OptionSet;
 import net.minecraft.server.PlayerList;
 import net.minecraft.server.PropertyManager;
 import net.minecraft.server.UserCache;

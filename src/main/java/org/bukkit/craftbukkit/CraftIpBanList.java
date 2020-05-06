@@ -7,7 +7,6 @@ import java.util.Set;
 
 import net.minecraft.server.IpBanEntry;
 import net.minecraft.server.IpBanList;
-import net.minecraft.server.MinecraftServer;
 import org.apache.commons.lang.StringUtils;
 import org.apache.commons.lang.Validate;
 
@@ -26,7 +25,7 @@ public class CraftIpBanList implements org.bukkit.BanList {
     public org.bukkit.BanEntry getBanEntry(String target) {
         Validate.notNull(target, "Target cannot be null");
 
-        IpBanEntry entry = (IpBanEntry) list.get(target);
+        IpBanEntry entry = list.get(target);
         if (entry == null) {
             return null;
         }
@@ -57,7 +56,7 @@ public class CraftIpBanList implements org.bukkit.BanList {
     public Set<org.bukkit.BanEntry> getBanEntries() {
         ImmutableSet.Builder<org.bukkit.BanEntry> builder = ImmutableSet.builder();
         for (String target : list.getEntries()) {
-            builder.add(new CraftIpBanEntry(target, (IpBanEntry) list.get(target), list));
+            builder.add(new CraftIpBanEntry(target, list.get(target), list));
         }
 
         return builder.build();

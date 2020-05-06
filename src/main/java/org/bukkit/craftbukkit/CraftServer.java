@@ -733,7 +733,7 @@ public class CraftServer implements Server {
         Map<String, Map<String, Object>> perms;
 
         try {
-            perms = (Map<String, Map<String, Object>>) yaml.load(stream);
+            perms = yaml.load(stream);
         } catch (MarkedYAMLException ex) {
             getLogger().log(Level.WARNING, "Server permissions file " + file + " is not valid YAML: " + ex.toString());
             return;
@@ -946,7 +946,7 @@ public class CraftServer implements Server {
         }
 
         worlds.remove(world.getName().toLowerCase());
-        console.worlds.remove(console.worlds.indexOf(handle));
+        console.worlds.remove(handle);
         return true;
     }
 
@@ -1099,7 +1099,7 @@ public class CraftServer implements Server {
                     commands = ImmutableList.of(section.getString(key));
                 }
 
-                result.put(key, commands.toArray(new String[commands.size()]));
+                result.put(key, commands.toArray(new String[0]));
             }
         }
 
@@ -1417,7 +1417,7 @@ public class CraftServer implements Server {
 
         players.addAll(getOnlinePlayers());
 
-        return players.toArray(new OfflinePlayer[players.size()]);
+        return players.toArray(new OfflinePlayer[0]);
     }
 
     @Override
@@ -1534,7 +1534,7 @@ public class CraftServer implements Server {
             getLogger().log(Level.SEVERE, "Exception when " + player.getName() + " attempted to tab complete " + message, ex);
         }
 
-        return completions == null ? ImmutableList.<String>of() : completions;
+        return completions == null ? ImmutableList.of() : completions;
     }
 
     public List<String> tabCompleteChat(Player player, String message) {

@@ -45,8 +45,6 @@ import org.bukkit.entity.minecart.PoweredMinecart;
 import org.bukkit.entity.minecart.SpawnerMinecart;
 import org.bukkit.entity.minecart.StorageMinecart;
 import org.bukkit.event.entity.CreatureSpawnEvent.SpawnReason;
-import org.bukkit.event.weather.ThunderChangeEvent;
-import org.bukkit.event.weather.WeatherChangeEvent;
 import org.bukkit.event.world.SpawnChangeEvent;
 import org.bukkit.generator.BlockPopulator;
 import org.bukkit.generator.ChunkGenerator;
@@ -1062,7 +1060,7 @@ public class CraftWorld implements World {
                 if (nmsBlock.getMaterial().isBuildable() || BlockDiodeAbstract.d(nmsBlock)) {
                     boolean taken = false;
                     AxisAlignedBB bb = EntityHanging.calculateBoundingBox(pos,CraftBlock.blockFaceToNotch(dir).opposite(),width,height);
-                    List<net.minecraft.server.Entity> list = (List<net.minecraft.server.Entity>) world.getEntities(null, bb);
+                    List<net.minecraft.server.Entity> list = world.getEntities(null, bb);
                     for (Iterator<net.minecraft.server.Entity> it = list.iterator(); !taken && it.hasNext();) {
                         net.minecraft.server.Entity e = it.next();
                         if (e instanceof EntityHanging) {
@@ -1117,7 +1115,7 @@ public class CraftWorld implements World {
         Preconditions.checkArgument(entity != null, "Cannot spawn null entity");
 
         if (entity instanceof EntityInsentient) {
-            ((EntityInsentient) entity).prepare(getHandle().E(new BlockPosition(entity)), (GroupDataEntity) null);
+            ((EntityInsentient) entity).prepare(getHandle().E(new BlockPosition(entity)), null);
         }
 
         world.addEntity(entity, reason);
@@ -1202,7 +1200,7 @@ public class CraftWorld implements World {
     }
 
     public File getWorldFolder() {
-        return ((WorldNBTStorage) world.getDataManager()).getDirectory();
+        return world.getDataManager().getDirectory();
     }
 
     public void sendPluginMessage(Plugin source, String channel, byte[] message) {

@@ -1,8 +1,7 @@
 package org.bukkit.craftbukkit.entity;
 
 import com.google.common.base.Preconditions;
-import java.util.ArrayList;
-import java.util.Collection;
+
 import java.util.List;
 import java.util.Set;
 import java.util.UUID;
@@ -491,7 +490,7 @@ public abstract class CraftEntity implements org.bukkit.entity.Entity {
 
     @Override
     public boolean hasPermission(Permission perm) {
-        return this.perm.hasPermission(perm);
+        return CraftEntity.perm.hasPermission(perm);
     }
 
     @Override
