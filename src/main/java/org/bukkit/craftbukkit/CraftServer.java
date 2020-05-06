@@ -114,9 +114,7 @@ import jline.console.ConsoleReader;
 public class CraftServer implements Server {
     private static final Player[] EMPTY_PLAYER_ARRAY = new Player[0];
     private final String serverName = "Fukkit";
-    private final String serverVersion;
-    private final String bukkitVersion = Versioning.getBukkitVersion();
-    public static final Logger LOGGER = Logger.getLogger("Minecraft");
+    private final String serverVersion;private final String bukkitVersion = Versioning.getBukkitVersion();
     private final ServicesManager servicesManager = new SimpleServicesManager();
     private final CraftScheduler scheduler = new CraftScheduler();
     private final SimpleCommandMap commandMap = new SimpleCommandMap(this);
@@ -640,12 +638,12 @@ public class CraftServer implements Server {
         try {
             playerList.getIPBans().load();
         } catch (IOException ex) {
-            LOGGER.log(Level.WARNING, "Failed to load banned-ips.json, " + ex.getMessage());
+            MinecraftServer.LOGGER.warn("Failed to load banned-ips.json, " + ex.getMessage());
         }
         try {
             playerList.getProfileBans().load();
         } catch (IOException ex) {
-            LOGGER.log(Level.WARNING, "Failed to load banned-players.json, " + ex.getMessage());
+            MinecraftServer.LOGGER.warn("Failed to load banned-players.json, " + ex.getMessage());
         }
 
         for (WorldServer world : console.worlds) {
@@ -977,7 +975,7 @@ public class CraftServer implements Server {
 
     @Override
     public Logger getLogger() {
-        return LOGGER;
+        return Logger.getLogger("Minecraft");
     }
 
     public ConsoleReader getReader() {
@@ -1360,7 +1358,7 @@ public class CraftServer implements Server {
 
     @Override
     public void setDefaultGameMode(GameMode mode) {
-        Validate.notNull(mode, "Mode cannot be null");
+        Validate.notNull(mode, "GameMode cannot be null");
 
         for (World world : getWorlds()) {
             ((CraftWorld) world).getHandle().worldData.setGameType(WorldSettings.EnumGamemode.getById(mode.getValue()));

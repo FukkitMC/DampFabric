@@ -50,6 +50,7 @@ public class MinecraftServerMixin implements MinecraftServerExtra {
     @Environment(EnvType.SERVER)
     @Overwrite
     public static void main(String[] args){
+        System.setProperty("java.util.logging.manager", "org.apache.logging.log4j.jul.LogManager");
         OptionSet options = CursedOptionLoader.loadOptions(args);
         DispenserRegistry.c();
 
@@ -172,5 +173,10 @@ public class MinecraftServerMixin implements MinecraftServerExtra {
     @Override
     public void setMotd(String s) {
 
+    }
+
+    @Inject(method = "s", at= @At("TAIL"))
+    public void enablePluginsPostWorld(CallbackInfo ci){
+        ((MinecraftServer)(Object)this).server.enablePlugins(org.bukkit.plugin.PluginLoadOrder.POSTWORLD);
     }
 }
