@@ -77,6 +77,41 @@ public class MinecraftServerMixin implements MinecraftServerExtra {
         return this.v;
     }
 
+    @Override
+    public boolean getOnlineMode() {
+        return false;
+    }
+
+    @Override
+    public void setOnlineMode(boolean flag) {
+
+    }
+
+    @Override
+    public void setPVP(boolean flag) {
+
+    }
+
+    @Override
+    public boolean getPVP() {
+        return false;
+    }
+
+    @Override
+    public void setSpawnAnimals(boolean flag) {
+
+    }
+
+    @Override
+    public void setAllowFlight(boolean flag) {
+
+    }
+
+    @Override
+    public void setMotd(String s) {
+
+    }
+
     /**
      * @author hydos
      * @reason bukkit
