@@ -36,7 +36,7 @@
     "syntheticMethods": [
       {
         "opcode": 184,
-        "name": "<init>",
+        "name": "create",
         "descriptor": "(IZ[C)V",
         "access": 9,
         "redirect": {
