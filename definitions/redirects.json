@@ -32,6 +32,22 @@
     ]
   },
   {
+    "name": "net/minecraft/server/ChunkSection",
+    "syntheticMethods": [
+      {
+        "opcode": 184,
+        "name": "<init>",
+        "descriptor": "(IZ[C)V",
+        "access": 9,
+        "redirect": {
+          "owner": "io/github/fukkitmc/legacy/redirects/ChunkSectionRedirects",
+          "name": "createChunkSection",
+          "descriptor": "(IZ[C)Lnet/minecraft/server/ChunkSection;"
+        }
+      }
+    ]
+  },
+  {
     "name": "net/minecraft/server/WorldChunkManager",
     "syntheticMethods": [
       {

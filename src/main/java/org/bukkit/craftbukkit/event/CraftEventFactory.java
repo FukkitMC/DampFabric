@@ -25,6 +25,7 @@ import org.bukkit.craftbukkit.CraftWorld;
 import org.bukkit.craftbukkit.block.CraftBlock;
 import org.bukkit.craftbukkit.block.CraftBlockState;
 import org.bukkit.craftbukkit.entity.CraftEntity;
+import org.bukkit.craftbukkit.entity.CraftHumanEntity;
 import org.bukkit.craftbukkit.entity.CraftLivingEntity;
 import org.bukkit.craftbukkit.entity.CraftPlayer;
 import org.bukkit.craftbukkit.inventory.CraftInventoryCrafting;
@@ -822,7 +823,7 @@ public class CraftEventFactory {
     public static void handleInventoryCloseEvent(EntityHuman human) {
         InventoryCloseEvent event = new InventoryCloseEvent(human.activeContainer.getBukkitView());
         human.world.getServer().getPluginManager().callEvent(event);
-        human.activeContainer.transferTo(human.defaultContainer, human.getBukkitEntity());
+        human.activeContainer.transferTo(human.defaultContainer, (CraftHumanEntity) human.getBukkitEntity());
     }
 
     public static void handleEditBookEvent(EntityPlayer player, ItemStack newBookItem) {
