@@ -21,6 +21,33 @@
         "name": "dimension",
         "type": "I",
         "access": 1
+      },
+      {
+        "name": "captureTreeGeneration",
+        "type": "Z",
+        "access": 1
+      },
+      {
+        "name": "captureBlockStates",
+        "type": "Z",
+        "access": 1
+      },
+      {
+        "name": "capturedBlockStates",
+        "type": "Ljava/util/ArrayList;",
+        "signature": "Ljava/util/ArrayList<Lorg/bukkit/block/BlockState;>;",
+        "access": 1
+      }
+
+    ]
+  },
+  {
+    "name": "net/minecraft/server/Explosion",
+    "syntheticFields": [
+      {
+        "name": "wasCanceled",
+        "type": "Z",
+        "access": 1
       }
     ]
   },
@@ -278,6 +305,16 @@
         "name": "slowWhenEmpty",
         "type": "Z",
         "accessor": 1
+      }
+    ]
+  },
+  {
+    "name": "net/minecraft/server/Chunk",
+    "syntheticFields": [
+      {
+        "name": "bukkitChunk",
+        "type": "Lorg/bukkit/Chunk;",
+        "access": 1
       }
     ]
   }

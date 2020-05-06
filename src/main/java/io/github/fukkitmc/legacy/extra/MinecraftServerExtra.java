@@ -27,4 +27,6 @@ public interface MinecraftServerExtra {
     String getMotd();
 
     UserCache getUserCache();
+
+    void stop();
 }

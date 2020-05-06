@@ -135,7 +135,7 @@ public class CraftWorld implements World {
     }
 
     public Chunk[] getLoadedChunks() {
-        Object[] chunks = world.chunkProviderServer.chunks.values().toArray();
+        Object[] chunks = world.chunkProviderServer.chunks.entries; //FIXME: fukkit:not a long object hashmap so this wont work
         org.bukkit.Chunk[] craftChunks = new CraftChunk[chunks.length];
 
         for (int i = 0; i < chunks.length; i++) {
@@ -193,7 +193,7 @@ public class CraftWorld implements World {
             world.chunkProviderServer.saveChunkNOP(chunk);
         }
 
-        world.chunkProviderServer.unloadQueue.remove(x, z);
+        world.chunkProviderServer.unloadQueue.remove(LongHash.toLong(x,z));
         world.chunkProviderServer.chunks.remove(LongHash.toLong(x, z));
 
         return true;
@@ -202,7 +202,7 @@ public class CraftWorld implements World {
     public boolean regenerateChunk(int x, int z) {
         unloadChunk(x, z, false, false);
 
-        world.chunkProviderServer.unloadQueue.remove(x, z);
+        world.chunkProviderServer.unloadQueue.remove(LongHash.toLong(x,z));
 
         net.minecraft.server.Chunk chunk = null;
 
@@ -250,7 +250,7 @@ public class CraftWorld implements World {
             return world.chunkProviderServer.getChunkAt(x, z) != null;
         }
 
-        world.chunkProviderServer.unloadQueue.remove(x, z);
+        world.chunkProviderServer.unloadQueue.remove(LongHash.toLong(x,z));
         net.minecraft.server.Chunk chunk = world.chunkProviderServer.chunks.get(LongHash.toLong(x, z));
 
         if (chunk == null) {

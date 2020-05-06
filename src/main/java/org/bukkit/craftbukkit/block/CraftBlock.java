@@ -466,7 +466,7 @@ public class CraftBlock implements Block {
 
     /* Build biome index based lookup table for BiomeBase to Biome mapping */
     static {
-        BIOME_MAPPING = new Biome[BiomeBase.getBiomes().length];
+        BIOME_MAPPING = new Biome[BiomeBase.biomes.length]; //fukkit: was getBiomes()
         BIOMEBASE_MAPPING = new BiomeBase[Biome.values().length];
         BIOME_MAPPING[BiomeBase.OCEAN.id] = Biome.OCEAN;
         BIOME_MAPPING[BiomeBase.PLAINS.id] = Biome.PLAINS;

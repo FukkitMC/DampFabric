@@ -6,6 +6,7 @@
   "mixins": [
     "ArmorStandMixin",
     "ChunkMixin",
+    "ChunkRegionLoaderMixin",
     "ContainerMixin",
     "EntityArrowMixin",
     "EntityCreeperMixin",

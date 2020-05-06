@@ -2385,6 +2385,7 @@ accessible field net/minecraft/server/WorldProvider dimension I
 mutable field net/minecraft/server/WorldProvider dimension I
 accessible field net/minecraft/server/WorldProvider j [F
 mutable field net/minecraft/server/WorldProvider j [F
+mutable field net/minecraft/server/World worldProvider Lnet/minecraft/server/WorldProvider;
 extendable method net/minecraft/server/WorldProvider a ()V
 accessible method net/minecraft/server/WorldProvider a ()V
 extendable method net/minecraft/server/WorldProvider b ()V
