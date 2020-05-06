@@ -37,6 +37,7 @@ import org.bukkit.craftbukkit.inventory.CraftItemStack;
 import org.bukkit.craftbukkit.metadata.BlockMetadataStore;
 import org.bukkit.craftbukkit.util.CraftMagicNumbers;
 import org.bukkit.craftbukkit.util.LongHash;
+import org.bukkit.craftbukkit.util.LongObjectHashMap;
 import org.bukkit.entity.*;
 import org.bukkit.entity.Entity;
 import org.bukkit.entity.minecart.ExplosiveMinecart;
@@ -378,7 +379,7 @@ public class CraftWorld implements World {
     }
 
     public LightningStrike strikeLightningEffect(Location loc) {
-        EntityLightning lightning = new EntityLightning(world, loc.getX(), loc.getY(), loc.getZ(), true);
+        EntityLightning lightning = new EntityLightning(world, loc.getX(), loc.getY(), loc.getZ());
         world.strikeLightning(lightning);
         return new CraftLightningStrike(server, lightning);
     }
@@ -1361,9 +1362,10 @@ public class CraftWorld implements World {
         } else {
             return;
         }
-
         ChunkProviderServer cps = world.chunkProviderServer;
-        for (net.minecraft.server.Chunk chunk : cps.chunks.values()) {
+        LongObjectHashMap<net.minecraft.server.Chunk> chunks = (LongObjectHashMap)cps.chunks;
+        //TODO: fukkit: a less cursed way would be better
+        for (net.minecraft.server.Chunk chunk : chunks.values()) {
             // If in use, skip it
             if (isChunkInUse(chunk.locX, chunk.locZ)) {
                 continue;

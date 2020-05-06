@@ -14,6 +14,7 @@ import java.util.stream.Collectors;
 
 import javax.imageio.ImageIO;
 
+import com.google.common.cache.CacheBuilder;
 import net.minecraft.server.*;
 
 import org.bukkit.BanList;
@@ -129,7 +130,7 @@ public class CraftServer implements Server {
     private YamlConfiguration configuration;
     private YamlConfiguration commandsConfiguration;
     private final Yaml yaml = new Yaml(new SafeConstructor());
-    private final Map<UUID, OfflinePlayer> offlinePlayers = new MapMaker().softValues().makeMap();
+    private final Map<UUID, OfflinePlayer> offlinePlayers = new MapMaker().makeMap(); //fukkit: was soft values not anymore :yortfuckinhaw:
     private final EntityMetadataStore entityMetadata = new EntityMetadataStore();
     private final PlayerMetadataStore playerMetadata = new PlayerMetadataStore();
     private final WorldMetadataStore worldMetadata = new WorldMetadataStore();

@@ -1,14 +1,10 @@
 package io.github.fukkitmc.legacy.mixins;
 
 import io.github.fukkitmc.legacy.extra.MinecraftServerExtra;
-import net.fabricmc.api.EnvType;
-import net.fabricmc.api.Environment;
 import net.minecraft.server.MinecraftServer;
 import net.minecraft.server.PlayerList;
 import net.minecraft.server.UserCache;
-import org.bukkit.craftbukkit.OptionsParser;
 import org.spongepowered.asm.mixin.Mixin;
-import org.spongepowered.asm.mixin.Overwrite;
 import org.spongepowered.asm.mixin.Shadow;
 
 @Mixin(MinecraftServer.class)
@@ -110,15 +106,5 @@ public class MinecraftServerMixin implements MinecraftServerExtra {
     @Override
     public void setMotd(String s) {
 
-    }
-
-    /**
-     * @author hydos
-     * @reason bukkit
-     */
-    @Environment(EnvType.SERVER)
-    @Overwrite
-    public static void main(String[] args){
-        OptionsParser.main(args);
     }
 }

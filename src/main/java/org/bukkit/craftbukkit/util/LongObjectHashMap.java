@@ -1,5 +1,7 @@
 package org.bukkit.craftbukkit.util;
 
+import net.minecraft.server.LongHashMap;
+
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
@@ -16,7 +18,7 @@ import java.util.NoSuchElementException;
 import java.util.Set;
 
 @SuppressWarnings("unchecked")
-public class LongObjectHashMap<V> implements Cloneable, Serializable {
+public class LongObjectHashMap<V> extends LongHashMap<V> implements Cloneable, Serializable {
     static final long serialVersionUID = 2841537710170573815L;
 
     private static final long EMPTY_KEY = Long.MIN_VALUE;
@@ -75,7 +77,7 @@ public class LongObjectHashMap<V> implements Cloneable, Serializable {
         return null;
     }
 
-    public V put(long key, V value) {
+    public V putObject(long key, V value) {
         int index = (int) (keyIndex(key) & (BUCKET_SIZE - 1));
         long[] innerKeys = keys[index];
         V[] innerValues = values[index];
@@ -159,7 +161,7 @@ public class LongObjectHashMap<V> implements Cloneable, Serializable {
 
     public void putAll(Map<? extends Long, ? extends V> map) {
         for (Map.Entry entry : map.entrySet()) {
-            put((Long) entry.getKey(), (V) entry.getValue());
+            putObject((Long) entry.getKey(), (V) entry.getValue());
         }
     }
 
@@ -210,7 +212,7 @@ public class LongObjectHashMap<V> implements Cloneable, Serializable {
         // Iterate through the data normally to do a safe clone
         for (long key : keySet()) {
             final V value = get(key);
-            clone.put(key, value);
+            clone.putObject(key, value);
         }
 
         return clone;
@@ -254,7 +256,7 @@ public class LongObjectHashMap<V> implements Cloneable, Serializable {
                 break;
             }
 
-            put(key, value);
+            putObject(key, value);
         }
     }
 
@@ -415,7 +417,7 @@ public class LongObjectHashMap<V> implements Cloneable, Serializable {
         public V setValue(V v) {
             V old = value;
             value = v;
-            put(key, v);
+            putObject(key, v);
             return old;
         }
     }
