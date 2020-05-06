@@ -438,5 +438,15 @@
         "access": 1
       }
     ]
+  },
+  {
+    "name": "net/minecraft/server/PropertyManager",
+    "syntheticFields": [
+      {
+        "name": "options",
+        "type": "Ljoptsimple/OptionSet;",
+        "access": 1
+      }
+    ]
   }
 ]

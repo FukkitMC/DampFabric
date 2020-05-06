@@ -178,11 +178,6 @@ public class CraftServer implements Server {
         Potion.setPotionBrewer(new CraftPotionBrewer());
         MobEffectList.BLINDNESS.getClass();
         PotionEffectType.stopAcceptingRegistrations();
-        // Ugly hack :(
-
-        if (!OptionsParser.useConsole) {
-            getLogger().info("Console input is disabled due to --noconsole command argument");
-        }
 
         configuration = YamlConfiguration.loadConfiguration(getConfigFile());
         configuration.options().copyDefaults(true);
@@ -619,7 +614,8 @@ public class CraftServer implements Server {
         reloadCount++;
         configuration = YamlConfiguration.loadConfiguration(getConfigFile());
         commandsConfiguration = YamlConfiguration.loadConfiguration(getCommandsConfigFile());
-        PropertyManager config = new PropertyManager(console.options);
+        PropertyManager config = new PropertyManager((File)console.options.valueOf("config"));
+        config.options = console.options;
 
         ((DedicatedServer) console).propertyManager = config;
 
@@ -855,7 +851,7 @@ public class CraftServer implements Server {
             worlddata = new WorldData(worldSettings, name);
         }
         worlddata.checkName(name); // CraftBukkit - Migration did not rewrite the level.dat; This forces 1.8 to take the last loaded world as respawn (in this case the end)
-        WorldServer internal = (WorldServer) new WorldServer(console, sdm, worlddata, dimension, console.methodProfiler, creator.environment(), generator).b();
+        WorldServer internal = (WorldServer) new WorldServer(console, sdm, worlddata, dimension, console.methodProfiler).b();
 
         if (!(worlds.containsKey(name.toLowerCase()))) {
             return null;
