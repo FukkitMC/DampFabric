@@ -51,14 +51,6 @@ public abstract class EntityHumanMixin extends EntityLiving implements EntityHum
         spawnWorld = "";
     }
 
-    @Inject(method = "b(Lnet/minecraft/server/NBTTagCompound;)V", at = @At("TAIL"))
-    public void loadNbtData(NBTTagCompound nBTTagCompound, CallbackInfo ci){
-        spawnWorld = nBTTagCompound.getString("SpawnWorld");
-        if ("".equals(spawnWorld)) {
-            this.spawnWorld = world.getServer().getWorlds().get(0).getName();
-        }
-    }
-
     @Override
     public String getSpawnWorld() {
         return this.spawnWorld;
