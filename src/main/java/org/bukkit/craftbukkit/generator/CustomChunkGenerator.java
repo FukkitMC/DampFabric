@@ -61,7 +61,7 @@ public class CustomChunkGenerator extends InternalChunkGenerator {
                 }
                 // Build chunk section
                 if (emptyTest != 0) {
-                    csect[sec] = new ChunkSection(sec << 4, true, section);
+                    csect[sec] = new ChunkSection(sec << 4, true);
                 }
             }
         } else {
@@ -85,7 +85,7 @@ public class CustomChunkGenerator extends InternalChunkGenerator {
                         secBlkID[i] = (char) Block.d.b(b.getBlockData());
                     }
                     // Build chunk section
-                    csect[sec] = new ChunkSection(sec << 4, true, secBlkID);
+                    csect[sec] = new ChunkSection(sec << 4, true);
                 }
             } else { // Else check for byte-per-block section data
                 byte[][] btypes = generator.generateBlockSections(this.world.getWorld(), this.random, x, z, biomegrid);
@@ -106,7 +106,7 @@ public class CustomChunkGenerator extends InternalChunkGenerator {
                             Block b = Block.getById(btypes[sec][i] & 0xFF);
                             secBlkID[i] = (char) Block.d.b(b.getBlockData());
                         }
-                        csect[sec] = new ChunkSection(sec << 4, true, secBlkID);
+                        csect[sec] = new ChunkSection(sec << 4, true);
                     }
                 } else { // Else, fall back to pre 1.2 method
                     @SuppressWarnings("deprecation")

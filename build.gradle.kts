@@ -25,6 +25,7 @@ repositories {
         name = "legacy-fabric"
         url = uri("https://dl.bintray.com/legacy-fabric/Legacy-Fabric-Maven")
     }
+
 }
 
 dependencies {
@@ -36,24 +37,26 @@ dependencies {
         exclude(module = "guava")
     }
 
-	compile("org.bukkit", "bukkit", "1.8.8-R0.1-SNAPSHOT")
-	compile("org.yaml", "snakeyaml", "1.26")
+    implementation("org.bukkit:bukkit:1.8.8-R0.1-SNAPSHOT")
+    implementation("org.yaml:snakeyaml:1.26")
+    implementation("org.xerial:sqlite-jdbc:3.7.2")
+    implementation("mysql:mysql-connector-java:5.1.14")
+    implementation("net.sf.trove4j:trove4j:3.0.3")
+    implementation("net.sf.jopt-simple:jopt-simple:3.2")
+    implementation("jline:jline:2.12")
 
-	implementation("net.sf.trove4j:trove4j:3.0.3")
-	implementation("net.sf.jopt-simple:jopt-simple:3.2")
-	implementation("jline:jline:2.12")
 
 }
 
 minecraft {
-	intermediaryUrl = Function {
-		"https://dl.bintray.com/legacy-fabric/Legacy-Fabric-Maven/net/fabricmc/intermediary/1.8.9/intermediary-1.8.9-v2.jar"
+    intermediaryUrl = Function {
+        "https://dl.bintray.com/legacy-fabric/Legacy-Fabric-Maven/net/fabricmc/intermediary/1.8.9/intermediary-1.8.9-v2.jar"
     }
 
     accessWidener = File("src/main/resources/legacyfukkit.aw")
 
-	loadDefinitions("definitions/fields.json")
-	loadDefinitions("definitions/redirects.json")
+    loadDefinitions("definitions/fields.json")
+    loadDefinitions("definitions/redirects.json")
 
     // Automatically add extras
     for (f in File("src/main/java/io/github/fukkitmc/legacy/extra").list() ?: return@minecraft) {

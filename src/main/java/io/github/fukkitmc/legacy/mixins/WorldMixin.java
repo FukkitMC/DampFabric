@@ -6,6 +6,7 @@ import org.bukkit.Bukkit;
 import org.bukkit.craftbukkit.CraftServer;
 import org.bukkit.craftbukkit.CraftWorld;
 import org.bukkit.event.entity.CreatureSpawnEvent;
+import org.bukkit.generator.ChunkGenerator;
 import org.spongepowered.asm.mixin.Final;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
@@ -42,5 +43,10 @@ public abstract class WorldMixin implements WorldExtra {
     @Override
     public boolean addEntity(Entity entity, CreatureSpawnEvent.SpawnReason spawnReason) { // Changed signature, added SpawnReason
         return this.addEntity(entity);
+    }
+
+    @Override
+    public void bukkitInit(ChunkGenerator gen, org.bukkit.World.Environment env) {
+        this.world = new CraftWorld(((WorldServer) (Object)this), gen, env);
     }
 }

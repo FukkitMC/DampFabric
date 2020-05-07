@@ -7,6 +7,7 @@ import net.minecraft.server.Entity;
 import org.bukkit.craftbukkit.CraftServer;
 import org.bukkit.craftbukkit.CraftWorld;
 import org.bukkit.event.entity.CreatureSpawnEvent;
+import org.bukkit.generator.ChunkGenerator;
 
 public interface WorldExtra {
 
@@ -20,4 +21,5 @@ public interface WorldExtra {
 
     boolean addEntity(Entity entity, CreatureSpawnEvent.SpawnReason spawnReason);
 
+    void bukkitInit(ChunkGenerator gen, org.bukkit.World.Environment env);
 }
