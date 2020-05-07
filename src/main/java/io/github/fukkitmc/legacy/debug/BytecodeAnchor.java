@@ -9,4 +9,7 @@ public class BytecodeAnchor {
         iterator++;
     }
 
+    public static void reset() {
+        iterator = 0;
+    }
 }

@@ -83,8 +83,6 @@ public abstract class MinecraftServerMixin implements MinecraftServerExtra {
 
     @Shadow public boolean x;
 
-    @Shadow public abstract void t();
-
     @Shadow public abstract void z();
 
     @Shadow public String E;
@@ -110,6 +108,12 @@ public abstract class MinecraftServerMixin implements MinecraftServerExtra {
     @Shadow public String O;
 
     @Shadow public String P;
+
+    @Shadow public abstract void a(boolean bl);
+
+    @Shadow public MojangStatisticsGenerator n;
+
+    @Shadow public boolean N;
 
     @Inject(method = "<init>(Ljava/io/File;Ljava/net/Proxy;Ljava/io/File;)V", at = @At("TAIL"))
     public void constructor(File file, Proxy proxy, File file2, CallbackInfo ci){
@@ -657,5 +661,38 @@ public abstract class MinecraftServerMixin implements MinecraftServerExtra {
         }
 
         this.methodProfiler.b();
+    }
+
+    /**
+     * @author fukkit
+     */
+    @Overwrite
+    public void t() {
+        if (!this.N) {
+            k.info("Stopping server");
+            if (this.aq() != null) {
+                this.aq().b();
+            }
+
+            if (this.v != null) {
+                k.info("Saving players");
+                this.v.savePlayers();
+                this.v.u();
+            }
+
+            if (this.d != null) {
+                k.info("Saving worlds");
+                this.a(false);
+
+                for (WorldServer worldServer : this.worlds) {
+                    worldServer.saveLevel();
+                }
+            }
+
+            if (this.n.d()) {
+                this.n.e();
+            }
+
+        }
     }
 }

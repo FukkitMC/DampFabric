@@ -74,7 +74,6 @@ public abstract class PlayerListMixin implements PlayerListExtra {
     public NBTTagCompound a(EntityPlayer entityplayer) {
         NBTTagCompound nbttagcompound = this.server.worlds.get(0).getWorldData().i(); // CraftBukkit
         NBTTagCompound nbttagcompound1;
-        BytecodeAnchor.next();
         if (entityplayer.getName().equals(this.server.S()) && nbttagcompound != null) {
             entityplayer.f(nbttagcompound);
             nbttagcompound1 = nbttagcompound;
@@ -243,5 +242,13 @@ public abstract class PlayerListMixin implements PlayerListExtra {
             // CraftBukkit end
         }
 
+    }
+
+    /**
+     * @author fukkit
+     */
+    @Overwrite
+    public String[] getSeenPlayers() {
+        return this.server.worlds.get(0).getDataManager().getPlayerFileData().getSeenPlayers();
     }
 }

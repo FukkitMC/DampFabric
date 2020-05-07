@@ -4,7 +4,10 @@ import com.mojang.authlib.GameProfile;
 import io.github.fukkitmc.legacy.extra.EntityPlayerExtra;
 import net.minecraft.server.*;
 import org.bukkit.WeatherType;
+import org.bukkit.craftbukkit.entity.CraftPlayer;
+import org.spongepowered.asm.mixin.Final;
 import org.spongepowered.asm.mixin.Mixin;
+import org.spongepowered.asm.mixin.Overwrite;
 import org.spongepowered.asm.mixin.Shadow;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
@@ -26,6 +29,8 @@ public abstract class EntityPlayerMixin extends EntityHuman implements EntityPla
     @Shadow public PlayerConnection playerConnection;
 
     @Shadow public WeatherType weather;
+
+    @Shadow @Final public PlayerInteractManager playerInteractManager;
 
     @Override
     public WeatherType getPlayerWeather() {
@@ -84,6 +89,17 @@ public abstract class EntityPlayerMixin extends EntityHuman implements EntityPla
                 this.playerConnection.sendPacket(new PacketPlayOutGameStateChange(8, 0));
             }
         }
+    }
+
+    /**
+     * @author
+     */
+    @Overwrite
+    public void b(NBTTagCompound nbttagcompound) {
+        super.b(nbttagcompound);
+        nbttagcompound.setInt("playerGameType", this.playerInteractManager.getGameMode().getId());
+
+        ((CraftPlayer)this.getBukkitEntity()).setExtraData(nbttagcompound); // CraftBukkit
     }
 
     @Override

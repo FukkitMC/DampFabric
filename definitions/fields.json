@@ -464,6 +464,16 @@
     ]
   },
   {
+    "name": "net/minecraft/server/WorldNBTStorage",
+    "syntheticFields": [
+      {
+        "name": "uuid",
+        "type": "Ljava/util/UUID;",
+        "access": 1
+      }
+    ]
+  },
+  {
     "name": "net/minecraft/server/WorldMap",
     "syntheticFields": [
       {
