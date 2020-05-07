@@ -18,6 +18,7 @@
     "EntityDamageSourceIndirectMixin",
     "EntityFireballMixin",
     "EntityHorseMixin",
+    "EntityHumanMixin",
     "EntityLivingMixin",
     "EntityMinecartAbstractMixin",
     "EntityMixin",

@@ -125,6 +125,10 @@
     "name": "net/minecraft/server/EntityPlayer",
     "syntheticFields": [
       {
+        "name": "weather",
+        "type": "Lorg/bukkit/WeatherType;"
+      },
+      {
         "name": "newExp",
         "type": "I",
         "access": 1
@@ -231,11 +235,6 @@
     "name": "net/minecraft/server/MinecraftServer",
     "syntheticFields": [
       {
-        "name": "worldServer",
-        "type": "[Lnet/minecraft/server/WorldServer;",
-        "access": 1
-      },
-      {
         "name": "ticks",
         "type": "I",
         "access": 1
@@ -300,6 +299,16 @@
       {
         "name": "spawnAnimals",
         "type": "Z",
+        "access": 1
+      }
+    ]
+  },
+  {
+    "name": "net/minecraft/server/EntityHuman",
+    "syntheticFields": [
+      {
+        "name": "spawnWorld",
+        "type": "Ljava/lang/String;",
         "access": 1
       }
     ]

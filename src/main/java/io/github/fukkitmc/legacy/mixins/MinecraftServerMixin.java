@@ -47,8 +47,6 @@ public abstract class MinecraftServerMixin implements MinecraftServerExtra {
 
     @Shadow public List<WorldServer> worlds;
 
-    @Shadow public WorldServer[] worldServer;
-
     @Shadow public abstract void b(String string);
 
     @Shadow public abstract boolean X();
@@ -108,6 +106,10 @@ public abstract class MinecraftServerMixin implements MinecraftServerExtra {
     @Shadow public List<IUpdatePlayerListBox> p;
 
     @Shadow public Queue<Runnable> processQueue;
+
+    @Shadow public String O;
+
+    @Shadow public String P;
 
     @Inject(method = "<init>(Ljava/io/File;Ljava/net/Proxy;Ljava/io/File;)V", at = @At("TAIL"))
     public void constructor(File file, Proxy proxy, File file2, CallbackInfo ci){
@@ -277,7 +279,7 @@ public abstract class MinecraftServerMixin implements MinecraftServerExtra {
     public void a(String s, String s1, long i, WorldType worldtype, String s2) {
         ((MinecraftServer)(Object)this).a(s);
         this.b("menu.loadingLevel");
-        this.worldServer = new WorldServer[3];
+        this.d = new WorldServer[3];
         int worldCount = 3;
 
         for (int j = 0; j < worldCount; ++j) {
@@ -532,8 +534,39 @@ public abstract class MinecraftServerMixin implements MinecraftServerExtra {
 
     }
 
+    public String getResourcePack() {
+        return this.O;
+    }
+
+    public String getResourcePackHash() {
+        return this.P;
+    }
+
+    public WorldServer getWorldServer(int i) {
+        // CraftBukkit start
+        for (WorldServer world : worlds) {
+            if (world.dimension == i) {
+                return world;
+            }
+        }
+        return worlds.get(0);
+        // CraftBukkit end
+    }
+
     /**
-     * @author
+     * @author fukkit
+     */
+    @Overwrite
+    public WorldServer a(int i) {
+        if (i == -1) {
+            return this.worlds.get(1);
+        } else {
+            return i == 1 ? this.worlds.get(2) : this.worlds.get(0);
+        }
+    }
+
+    /**
+     * @author fukkit
      */
     @Overwrite
     public void B() {

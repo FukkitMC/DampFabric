@@ -23,6 +23,10 @@ public abstract class EntityPlayerMixin extends EntityHuman implements EntityPla
 
     @Shadow public double maxHealthCache;
 
+    @Shadow public PlayerConnection playerConnection;
+
+    @Shadow public WeatherType weather;
+
     @Override
     public WeatherType getPlayerWeather() {
         return null;
@@ -57,6 +61,39 @@ public abstract class EntityPlayerMixin extends EntityHuman implements EntityPla
         for (IChatBaseComponent component : ichatbasecomponent) {
             this.sendMessage(component);
         }
+    }
+
+    public void updateWeather(float oldRain, float newRain, float oldThunder, float newThunder){
+        if (this.weather == null) {
+            // Vanilla
+            if (oldRain != newRain) {
+                this.playerConnection.sendPacket(new PacketPlayOutGameStateChange(7, newRain));
+            }
+        } else {
+            // Plugin
+            //TODO: fukkit implement plugin weather
+//            if (pluginRainPositionPrevious != pluginRainPosition) {
+//                this.playerConnection.sendPacket(new PacketPlayOutGameStateChange(7, pluginRainPosition));
+//            }
+        }
+
+        if (oldThunder != newThunder) {
+            if (weather == WeatherType.DOWNFALL || weather == null) {
+                this.playerConnection.sendPacket(new PacketPlayOutGameStateChange(8, newThunder));
+            } else {
+                this.playerConnection.sendPacket(new PacketPlayOutGameStateChange(8, 0));
+            }
+        }
+    }
+
+    @Override
+    public String getSpawnWorld() {
+        return super.spawnWorld;
+    }
+
+    @Override
+    public void setSpawnWorld(String s){
+        super.spawnWorld = s;
     }
 
 }

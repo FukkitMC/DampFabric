@@ -14,4 +14,10 @@ public interface EntityPlayerExtra {
     long getPlayerTime();
 
     void sendMessages(IChatBaseComponent[] ichatbasecomponent);
+
+    void updateWeather(float oldRain, float newRain, float oldThunder, float newThunder);
+
+    String getSpawnWorld();
+
+    void setSpawnWorld(String s);
 }

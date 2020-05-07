@@ -10,4 +10,6 @@ public interface PlayerListExtra {
 
 
     void setPlayerFileData(WorldServer[] aworldserver);
+
+    void onPlayerJoin(EntityPlayer player, String joinMessage);
 }

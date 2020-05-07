@@ -65,4 +65,10 @@ public interface MinecraftServerExtra {
     }
 
     boolean isRunning();
+
+    String getResourcePack();
+
+    String getResourcePackHash();
+
+    WorldServer getWorldServer(int i);
 }
