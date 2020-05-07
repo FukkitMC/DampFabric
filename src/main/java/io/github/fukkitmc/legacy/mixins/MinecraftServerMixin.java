@@ -10,6 +10,7 @@ import net.fabricmc.api.Environment;
 import net.minecraft.server.*;
 import org.bukkit.craftbukkit.CraftServer;
 import org.bukkit.plugin.PluginLoadOrder;
+import org.spongepowered.asm.mixin.Final;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Overwrite;
 import org.spongepowered.asm.mixin.Shadow;
@@ -22,8 +23,12 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 import java.io.File;
 import java.io.IOException;
 import java.net.Proxy;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
+import java.util.Queue;
+import java.util.concurrent.FutureTask;
 
 import static net.minecraft.server.MinecraftServer.*;
 
@@ -36,9 +41,7 @@ public abstract class MinecraftServerMixin implements MinecraftServerExtra {
 
     @Shadow public PlayerList v;
 
-
     @Shadow public CraftServer server;
-
 
     @Shadow public ConsoleReader reader;
 
@@ -58,11 +61,59 @@ public abstract class MinecraftServerMixin implements MinecraftServerExtra {
 
     @Shadow public abstract boolean v();
 
+    @Shadow public abstract boolean i() throws IOException;
+
+    @Shadow public long ab;
+
+    @Shadow public ServerPing r;
+
+    @Shadow public abstract void a(ServerPing serverPing);
+
+    @Shadow public boolean w;
+
+    @Shadow public long R;
+
+    @Shadow public abstract void A();
+
+    @Shadow public boolean Q;
+
+    @Shadow public abstract void a(CrashReport crashReport);
+
+    @Shadow public abstract CrashReport b(CrashReport crashReport);
+
+    @Shadow public abstract File y();
+
+    @Shadow public boolean x;
+
+    @Shadow public abstract void t();
+
+    @Shadow public abstract void z();
+
+    @Shadow public String E;
+
+    @Shadow @Final public MethodProfiler c;
+
+    @Shadow public long[][] i;
+
+    @Shadow public int y;
+
     @Shadow public WorldServer[] d;
+
+    @Shadow public abstract boolean C();
+
+    @Shadow public Queue<FutureTask<?>> j;
+
+    @Shadow public abstract ServerConnection aq();
+
+    @Shadow public List<IUpdatePlayerListBox> p;
+
+    @Shadow public Queue<Runnable> processQueue;
 
     @Inject(method = "<init>(Ljava/io/File;Ljava/net/Proxy;Ljava/io/File;)V", at = @At("TAIL"))
     public void constructor(File file, Proxy proxy, File file2, CallbackInfo ci){
         try{
+            methodProfiler = new MethodProfiler();
+            processQueue = new java.util.concurrent.ConcurrentLinkedQueue<>();
             worlds = new ArrayList<>();
             ((MinecraftServer)(Object)this).options = CursedOptionLoader.bukkitOptions;
             this.reader = new ConsoleReader(System.in, System.out);
@@ -161,7 +212,7 @@ public abstract class MinecraftServerMixin implements MinecraftServerExtra {
 
     @Override
     public String getMotd() {
-        return "MOTD IS NOT SETUP YET";
+        return this.E;
     }
 
     @Override
@@ -403,5 +454,175 @@ public abstract class MinecraftServerMixin implements MinecraftServerExtra {
     @Override
     public boolean isRunning() {
         return true;
+    }
+
+    /**
+     * @author fukkit
+     */
+    @Overwrite
+    public void run() {
+        try {
+            if (this.i()) {
+                this.ab = az();
+                long l = 0L;
+                this.r.setMOTD(new ChatComponentText(this.E));
+                this.r.setServerInfo(new ServerPing.ServerData("1.8.9", 47));
+                this.a(this.r);
+
+                while(this.w) {
+                    long m = az();
+                    long n = m - this.ab;
+                    if (n > 2000L && this.ab - this.R >= 15000L) {
+                        k.warn("Can't keep up! Did the system time change, or is the server overloaded? Running {}ms behind, skipping {} tick(s)", new Object[]{n, n / 50L});
+                        n = 2000L;
+                        this.R = this.ab;
+                    }
+
+                    if (n < 0L) {
+                        k.warn("Time ran backwards! Did the system time change?");
+                        n = 0L;
+                    }
+
+                    l += n;
+                    this.ab = m;
+                    if (((MinecraftServer)(Object)this).worlds.get(0).everyoneDeeplySleeping()) {
+                        this.A();
+                        l = 0L;
+                    } else {
+                        while(l > 50L) {
+                            l -= 50L;
+                            this.A();
+                        }
+                    }
+
+                    Thread.sleep(Math.max(1L, 50L - l));
+                    this.Q = true;
+                }
+            } else {
+                this.a((CrashReport)null);
+            }
+        } catch (Throwable var46) {
+            k.error("Encountered an unexpected exception", var46);
+            CrashReport crashReport = null;
+            if (var46 instanceof ReportedException) {
+                crashReport = this.b(((ReportedException)var46).a());
+            } else {
+                crashReport = this.b(new CrashReport("Exception in server tick loop", var46));
+            }
+
+            File file = new File(new File(this.y(), "crash-reports"), "crash-" + (new SimpleDateFormat("yyyy-MM-dd_HH.mm.ss")).format(new Date()) + "-server.txt");
+            if (crashReport.a(file)) {
+                k.error("This crash report has been saved to: " + file.getAbsolutePath());
+            } else {
+                k.error("We were unable to save this crash report to disk.");
+            }
+
+            this.a(crashReport);
+        } finally {
+            try {
+                this.x = true;
+                this.t();
+            } catch (Throwable var44) {
+                k.error("Exception stopping the server", var44);
+            } finally {
+                this.z();
+            }
+
+        }
+
+    }
+
+    /**
+     * @author
+     */
+    @Overwrite
+    public void B() {
+        this.methodProfiler.a("jobs");
+        Queue queue = this.j;
+
+        synchronized (this.j) {
+            while (!this.j.isEmpty()) {
+                SystemUtils.a((FutureTask) this.j.poll(), MinecraftServer.LOGGER);
+            }
+        }
+
+        this.methodProfiler.c("levels");
+
+        // CraftBukkit start
+        this.server.getScheduler().mainThreadHeartbeat(((MinecraftServer)(Object)this).ticks);
+
+        // Run tasks that are waiting on processing
+        while (!processQueue.isEmpty()) {
+            processQueue.remove().run();
+        }
+
+        org.bukkit.craftbukkit.chunkio.ChunkIOExecutor.tick();
+
+        // Send time updates to everyone, it will get the right time from the world the player is in.
+        if (((MinecraftServer)(Object)this).ticks % 20 == 0) {
+            for (int i = 0; i < this.getPlayerList().players.size(); ++i) {
+                EntityPlayer entityplayer = (EntityPlayer) this.getPlayerList().players.get(i);
+                entityplayer.playerConnection.sendPacket(new PacketPlayOutUpdateTime(entityplayer.world.getTime(), entityplayer.getPlayerTime(), entityplayer.world.getGameRules().getBoolean("doDaylightCycle"))); // Add support for per player time
+            }
+        }
+
+        int i;
+
+        for (i = 0; i < this.worlds.size(); ++i) {
+            long j = System.nanoTime();
+
+            // if (i == 0 || this.getAllowNether()) {
+            WorldServer worldserver = this.worlds.get(i);
+
+            this.methodProfiler.a(worldserver.getWorldData().getName());
+                /* Drop global time updates
+                if (this.ticks % 20 == 0) {
+                    this.methodProfiler.a("timeSync");
+                    this.v.a(new PacketPlayOutUpdateTime(worldserver.getTime(), worldserver.getDayTime(), worldserver.getGameRules().getBoolean("doDaylightCycle")), worldserver.worldProvider.getDimension());
+                    this.methodProfiler.b();
+                }
+                // CraftBukkit end */
+
+            this.methodProfiler.a("tick");
+
+            CrashReport crashreport;
+
+            try {
+                worldserver.doTick();
+            } catch (Throwable throwable) {
+                crashreport = CrashReport.a(throwable, "Exception ticking world");
+                worldserver.a(crashreport);
+                throw new ReportedException(crashreport);
+            }
+
+            try {
+                worldserver.tickEntities();
+            } catch (Throwable throwable1) {
+                crashreport = CrashReport.a(throwable1, "Exception ticking world entities");
+                worldserver.a(crashreport);
+                throw new ReportedException(crashreport);
+            }
+
+            this.methodProfiler.b();
+            this.methodProfiler.a("tracker");
+            worldserver.getTracker().updatePlayers();
+            this.methodProfiler.b();
+            this.methodProfiler.b();
+            // } // CraftBukkit
+
+            // this.i[i][this.ticks % 100] = System.nanoTime() - j; // CraftBukkit
+        }
+
+        this.methodProfiler.c("connection");
+        this.aq().c();
+        this.methodProfiler.c("players");
+        this.v.tick();
+        this.methodProfiler.c("tickables");
+
+        for (i = 0; i < this.p.size(); ++i) {
+            ((IUpdatePlayerListBox) this.p.get(i)).c();
+        }
+
+        this.methodProfiler.b();
     }
 }

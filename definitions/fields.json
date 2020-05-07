@@ -236,6 +236,11 @@
         "access": 1
       },
       {
+        "name": "ticks",
+        "type": "I",
+        "access": 1
+      },
+      {
         "name": "worlds",
         "type": "Ljava/util/List;",
         "signature": "Ljava/util/List<Lnet/minecraft/server/WorldServer;>;",
