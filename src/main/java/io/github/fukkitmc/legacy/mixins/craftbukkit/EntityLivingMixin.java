@@ -6,7 +6,7 @@ import org.spongepowered.asm.mixin.Shadow;
 
 import java.util.Map;
 
-@Mixin(EntityLiving.class)
+@Mixin(value = EntityLiving.class, remap = false)
 public abstract class EntityLivingMixin {
 
     @Shadow

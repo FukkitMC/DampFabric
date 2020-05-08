@@ -7,7 +7,7 @@ import org.spongepowered.asm.mixin.Shadow;
 
 import java.util.UUID;
 
-@Mixin(Entity.class)
+@Mixin(value = Entity.class, remap = false)
 public abstract class EntityMixin {
 
     @Shadow
@@ -70,7 +70,7 @@ public abstract class EntityMixin {
     /**
      * @author fukkit
      */
-    @Overwrite
+    @Overwrite(remap = false)
     public void e(NBTTagCompound nbttagcompound) {
         try {
             nbttagcompound.set("Pos", this.a(this.locX, this.locY, this.locZ));

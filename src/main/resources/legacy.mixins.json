@@ -8,6 +8,7 @@
     "craftbukkit.EntityLivingMixin",
     "craftbukkit.EntityMixin",
     "craftbukkit.MinecraftServerMixin",
+    "craftbukkit.PlayerListMixin",
     "extra.ArmorStandMixin",
     "extra.ChunkMixin",
     "extra.ChunkProviderServerMixin",

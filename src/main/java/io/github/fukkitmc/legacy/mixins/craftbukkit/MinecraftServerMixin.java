@@ -28,130 +28,71 @@ import java.util.Queue;
 import java.util.concurrent.FutureTask;
 
 import static net.minecraft.server.MinecraftServer.*;
-import static net.minecraft.server.MinecraftServer.az;
 
-@Mixin(MinecraftServer.class)
+@Mixin(value = MinecraftServer.class, remap = false)
 public abstract class MinecraftServerMixin {
-
 
     @Shadow
     public int G;
 
-    @Shadow public UserCache Z;
+    @Shadow
+    public UserCache Z;
 
-    @Shadow public PlayerList v;
+    @Shadow
+    public PlayerList v;
 
-    @Shadow public CraftServer server;
+    @Shadow
+    public CraftServer server;
 
-    @Shadow public ConsoleReader reader;
+    @Shadow
+    public ConsoleReader reader;
 
-    @Shadow public List<WorldServer> worlds;
-
-    @Shadow public abstract void b(String string);
-
-    @Shadow public abstract boolean X();
-
-    @Shadow public MethodProfiler methodProfiler;
-
-    @Shadow public abstract void s();
-
-    @Shadow public abstract void a_(String string, int i);
-
-    @Shadow public abstract boolean v();
-
-    @Shadow public abstract boolean i() throws IOException;
-
-    @Shadow public long ab;
-
-    @Shadow public ServerPing r;
-
-    @Shadow public abstract void a(ServerPing serverPing);
-
-    @Shadow public boolean w;
-
-    @Shadow public long R;
-
-    @Shadow public abstract void A();
-
-    @Shadow public boolean Q;
-
-    @Shadow public abstract void a(CrashReport crashReport);
-
-    @Shadow public abstract CrashReport b(CrashReport crashReport);
-
-    @Shadow public abstract File y();
-
-    @Shadow public boolean x;
-
-    @Shadow public abstract void z();
-
-    @Shadow public String E;
-
-    @Shadow @Final
+    @Shadow
+    public MethodProfiler methodProfiler;
+    @Shadow
+    public long ab;
+    @Shadow
+    public ServerPing r;
+    @Shadow
+    public boolean w;
+    @Shadow
+    public long R;
+    @Shadow
+    public boolean Q;
+    @Shadow
+    public boolean x;
+    @Shadow
+    public String E;
+    @Shadow
+    @Final
     public MethodProfiler c;
-
-    @Shadow public long[][] i;
-
-    @Shadow public int y;
-
-    @Shadow public WorldServer[] d;
-
-    @Shadow public abstract boolean C();
-
-    @Shadow public Queue<FutureTask<?>> j;
-
-    @Shadow public abstract ServerConnection aq();
-
-    @Shadow public List<IUpdatePlayerListBox> p;
-
-    @Shadow public Queue<Runnable> processQueue;
-
-    @Shadow public String O;
-
-    @Shadow public String P;
-
-    @Shadow public abstract void a(boolean bl);
-
-    @Shadow public MojangStatisticsGenerator n;
-
-    @Shadow public boolean N;
-
-    @Inject(method = "<init>(Ljava/io/File;Ljava/net/Proxy;Ljava/io/File;)V", at = @At("TAIL"))
-    public void constructor(File file, Proxy proxy, File file2, CallbackInfo ci){
-        try{
-            methodProfiler = new MethodProfiler();
-            processQueue = new java.util.concurrent.ConcurrentLinkedQueue<>();
-            worlds = new ArrayList<>();
-            ((MinecraftServer)(Object)this).options = CursedOptionLoader.bukkitOptions;
-            this.reader = new ConsoleReader(System.in, System.out);
-            if (System.console() == null && System.getProperty("jline.terminal") == null) {
-                System.setProperty("jline.terminal", "jline.UnsupportedTerminal");
-            }
-            LOGGER = k;
-        }catch (Exception exception){
-            throw new RuntimeException("Fukkit died CRAB", exception);
-        }
-    }
-
-    @Inject(method = "O", at=@At("HEAD"), cancellable = true)
-    public void o(CallbackInfoReturnable<Boolean> cir){
-        cir.setReturnValue(true);
-    }
-
-    /**
-     * @author fukkit
-     */
-    @Overwrite
-    public String getServerModName() {
-        return server.getName();
-    }
+    @Shadow
+    public long[][] i;
+    @Shadow
+    public int y;
+    @Shadow
+    public WorldServer[] d;
+    @Shadow
+    public Queue<FutureTask<?>> j;
+    @Shadow
+    public List<IUpdatePlayerListBox> p;
+    @Shadow
+    public Queue<Runnable> processQueue;
+    @Shadow
+    public String O;
+    @Shadow
+    public String P;
+    @Shadow
+    public MojangStatisticsGenerator n;
+    @Shadow
+    public boolean N;
 
     /**
      * @author fukkit
      */
     @Environment(EnvType.SERVER)
     @Overwrite
-    public static void main(String[] args){
+    public static void main(String[] args) {
         System.setProperty("java.util.logging.manager", "org.apache.logging.log4j.jul.LogManager");
         OptionSet options = CursedOptionLoader.loadOptions(args);
         DispenserRegistry.c();
@@ -169,6 +110,7 @@ public abstract class MinecraftServerMixin {
         dedicatedServer.D();
         Runtime.getRuntime().addShutdownHook(new Thread(dedicatedServer::t, "Server Shutdown Thread"));
 
+        assert options != null;
         if (options.has("universe")) {
             dedicatedServer.universe = (File) options.valueOf("universe");
         }
@@ -179,6 +121,80 @@ public abstract class MinecraftServerMixin {
 
     }
 
+    @Shadow
+    public abstract void b(String string);
+
+    @Shadow
+    public abstract boolean X();
+
+    @Shadow
+    public abstract void s();
+
+    @Shadow
+    public abstract void a_(String string, int i);
+
+    @Shadow
+    public abstract boolean v();
+
+    @Shadow
+    public abstract boolean i() throws IOException;
+
+    @Shadow
+    public abstract void a(ServerPing serverPing);
+
+    @Shadow
+    public abstract void A();
+
+    @Shadow
+    public abstract void a(CrashReport crashReport);
+
+    @Shadow
+    public abstract CrashReport b(CrashReport crashReport);
+
+    @Shadow
+    public abstract File y();
+
+    @Shadow
+    public abstract void z();
+
+    @Shadow
+    public abstract boolean C();
+
+    @Shadow
+    public abstract ServerConnection aq();
+
+    @Shadow
+    public abstract void a(boolean bl);
+
+    @Inject(method = "<init>(Ljava/io/File;Ljava/net/Proxy;Ljava/io/File;)V", at = @At("TAIL"))
+    public void constructor(File file, Proxy proxy, File file2, CallbackInfo ci) {
+        try {
+            methodProfiler = new MethodProfiler();
+            processQueue = new java.util.concurrent.ConcurrentLinkedQueue<>();
+            ((MinecraftServer)(Object)this).worlds = new ArrayList<>();
+            ((MinecraftServer) (Object) this).options = CursedOptionLoader.bukkitOptions;
+            this.reader = new ConsoleReader(System.in, System.out);
+            if (System.console() == null && System.getProperty("jline.terminal") == null) {
+                System.setProperty("jline.terminal", "jline.UnsupportedTerminal");
+            }
+            LOGGER = k;
+        } catch (Exception exception) {
+            throw new RuntimeException("Fukkit died CRAB", exception);
+        }
+    }
+
+    @Inject(method = "O", at = @At("HEAD"), cancellable = true)
+    public void o(CallbackInfoReturnable<Boolean> cir) {
+        cir.setReturnValue(true);
+    }
+
+    /**
+     * @author fukkit
+     */
+    @Overwrite
+    public String getServerModName() {
+        return server.getName();
+    }
 
     /**
      * @author fukkit
@@ -186,21 +202,19 @@ public abstract class MinecraftServerMixin {
     @Overwrite
     public WorldServer a(int i) {
         if (i == -1) {
-            return this.worlds.get(1);
+            return ((MinecraftServer)(Object)this).worlds.get(1);
         } else {
-            return i == 1 ? this.worlds.get(2) : this.worlds.get(0);
+            return i == 1 ? ((MinecraftServer)(Object)this).worlds.get(2) : ((MinecraftServer)(Object)this).worlds.get(0);
         }
     }
 
     /**
      * @author fukkit
      */
-    @Overwrite
+    @Overwrite(remap = false)
     public void B() {
         this.methodProfiler.a("jobs");
-        Queue queue = this.j;
-
-        synchronized (this.j) {
+        synchronized (j) {
             while (!this.j.isEmpty()) {
                 SystemUtils.a((FutureTask) this.j.poll(), MinecraftServer.LOGGER);
             }
@@ -209,7 +223,7 @@ public abstract class MinecraftServerMixin {
         this.methodProfiler.c("levels");
 
         // CraftBukkit start
-        this.server.getScheduler().mainThreadHeartbeat(((MinecraftServer)(Object)this).ticks);
+        this.server.getScheduler().mainThreadHeartbeat(((MinecraftServer) (Object) this).ticks);
 
         // Run tasks that are waiting on processing
         while (!processQueue.isEmpty()) {
@@ -219,20 +233,20 @@ public abstract class MinecraftServerMixin {
         org.bukkit.craftbukkit.chunkio.ChunkIOExecutor.tick();
 
         // Send time updates to everyone, it will get the right time from the world the player is in.
-        if (((MinecraftServer)(Object)this).ticks % 20 == 0) {
-            for (int i = 0; i < ((MinecraftServer)(Object)this).getPlayerList().players.size(); ++i) {
-                EntityPlayer entityplayer = (EntityPlayer) ((MinecraftServer)(Object)this).getPlayerList().players.get(i);
+        if (((MinecraftServer) (Object) this).ticks % 20 == 0) {
+            for (int i = 0; i < ((MinecraftServer) (Object) this).getPlayerList().players.size(); ++i) {
+                EntityPlayer entityplayer = (EntityPlayer) ((MinecraftServer) (Object) this).getPlayerList().players.get(i);
                 entityplayer.playerConnection.sendPacket(new PacketPlayOutUpdateTime(entityplayer.world.getTime(), entityplayer.getPlayerTime(), entityplayer.world.getGameRules().getBoolean("doDaylightCycle"))); // Add support for per player time
             }
         }
 
         int i;
 
-        for (i = 0; i < this.worlds.size(); ++i) {
+        for (i = 0; i < ((MinecraftServer)(Object)this).worlds.size(); ++i) {
             long j = System.nanoTime();
 
             // if (i == 0 || this.getAllowNether()) {
-            WorldServer worldserver = this.worlds.get(i);
+            WorldServer worldserver = ((MinecraftServer)(Object)this).worlds.get(i);
 
             this.methodProfiler.a(worldserver.getWorldData().getName());
                 /* Drop global time updates
@@ -307,7 +321,7 @@ public abstract class MinecraftServerMixin {
                 k.info("Saving worlds");
                 this.a(false);
 
-                for (WorldServer worldServer : this.worlds) {
+                for (WorldServer worldServer : ((MinecraftServer)(Object)this).worlds) {
                     worldServer.saveLevel();
                 }
             }
@@ -332,7 +346,7 @@ public abstract class MinecraftServerMixin {
                 this.r.setServerInfo(new ServerPing.ServerData("1.8.9", 47));
                 this.a(this.r);
 
-                while(this.w) {
+                while (this.w) {
                     long m = az();
                     long n = m - this.ab;
                     if (n > 2000L && this.ab - this.R >= 15000L) {
@@ -348,11 +362,11 @@ public abstract class MinecraftServerMixin {
 
                     l += n;
                     this.ab = m;
-                    if (((MinecraftServer)(Object)this).worlds.get(0).everyoneDeeplySleeping()) {
+                    if (((MinecraftServer) (Object) this).worlds.get(0).everyoneDeeplySleeping()) {
                         this.A();
                         l = 0L;
                     } else {
-                        while(l > 50L) {
+                        while (l > 50L) {
                             l -= 50L;
                             this.A();
                         }
@@ -362,13 +376,13 @@ public abstract class MinecraftServerMixin {
                     this.Q = true;
                 }
             } else {
-                this.a((CrashReport)null);
+                this.a((CrashReport) null);
             }
         } catch (Throwable var46) {
             k.error("Encountered an unexpected exception", var46);
             CrashReport crashReport = null;
             if (var46 instanceof ReportedException) {
-                crashReport = this.b(((ReportedException)var46).a());
+                crashReport = this.b(((ReportedException) var46).a());
             } else {
                 crashReport = this.b(new CrashReport("Exception in server tick loop", var46));
             }
@@ -396,17 +410,17 @@ public abstract class MinecraftServerMixin {
     }
 
 
-    @Inject(method = "s", at= @At("TAIL"))
-    public void enablePluginsPostWorld(CallbackInfo ci){
-        ((MinecraftServer)(Object)this).server.enablePlugins(PluginLoadOrder.POSTWORLD);
+    @Inject(method = "s", at = @At("TAIL"))
+    public void enablePluginsPostWorld(CallbackInfo ci) {
+        ((MinecraftServer) (Object) this).server.enablePlugins(PluginLoadOrder.POSTWORLD);
     }
 
     /**
      * @author fukkit
      */
-    @Overwrite
+    @Overwrite(remap = false)
     public void a(String s, String s1, long i, WorldType worldtype, String s2) {
-        ((MinecraftServer)(Object)this).a(s);
+        ((MinecraftServer) (Object) this).a(s);
         this.b("menu.loadingLevel");
         this.d = new WorldServer[3];
         int worldCount = 3;
@@ -416,7 +430,7 @@ public abstract class MinecraftServerMixin {
             byte dimension = 0;
 
             if (j == 1) {
-                if (((MinecraftServer)(Object)this).getAllowNether()) {
+                if (((MinecraftServer) (Object) this).getAllowNether()) {
                     dimension = -1;
                 } else {
                     continue;
@@ -435,7 +449,7 @@ public abstract class MinecraftServerMixin {
             String name = (dimension == 0) ? s : s + "_" + worldType;
 
             org.bukkit.generator.ChunkGenerator gen = this.server.getGenerator(name);
-            WorldSettings worldsettings = new WorldSettings(i, ((MinecraftServer)(Object)this).getGamemode(), ((MinecraftServer)(Object)this).getGenerateStructures(), ((MinecraftServer)(Object)this).isHardcore(), worldtype);
+            WorldSettings worldsettings = new WorldSettings(i, ((MinecraftServer) (Object) this).getGamemode(), ((MinecraftServer) (Object) this).getGenerateStructures(), ((MinecraftServer) (Object) this).isHardcore(), worldtype);
             worldsettings.setGeneratorSettings(s2);
 
             if (j == 0) {
@@ -446,9 +460,9 @@ public abstract class MinecraftServerMixin {
                 }
                 worlddata.checkName(s1); // CraftBukkit - Migration did not rewrite the level.dat; This forces 1.8 to take the last loaded world as respawn (in this case the end)
                 if (this.X()) {
-                    world = (WorldServer) (new DemoWorldServer(((MinecraftServer)(Object)this), idatamanager, worlddata, dimension, this.methodProfiler)).b();
+                    world = (WorldServer) (new DemoWorldServer(((MinecraftServer) (Object) this), idatamanager, worlddata, dimension, this.methodProfiler)).b();
                 } else {
-                    WorldServer sworld = new WorldServer(((MinecraftServer)(Object)this), idatamanager, worlddata, dimension, this.methodProfiler);
+                    WorldServer sworld = new WorldServer(((MinecraftServer) (Object) this), idatamanager, worlddata, dimension, this.methodProfiler);
                     sworld.bukkitInit(gen, org.bukkit.World.Environment.getEnvironment(dimension));
                     world = (WorldServer) (sworld).b();
 
@@ -498,34 +512,34 @@ public abstract class MinecraftServerMixin {
                     worlddata = new WorldData(worldsettings, name);
                 }
                 worlddata.checkName(name); // CraftBukkit - Migration did not rewrite the level.dat; This forces 1.8 to take the last loaded world as respawn (in this case the end)
-                WorldServer wsrver = new SecondaryWorldServer(((MinecraftServer)(Object)this), idatamanager, dimension, this.worlds.get(0), this.methodProfiler);
+                WorldServer wsrver = new SecondaryWorldServer(((MinecraftServer) (Object) this), idatamanager, dimension, ((MinecraftServer)(Object)this).worlds.get(0), this.methodProfiler);
                 wsrver.bukkitInit(gen, org.bukkit.World.Environment.getEnvironment(dimension));
-                world = (WorldServer)wsrver.b();
+                world = (WorldServer) wsrver.b();
             }
 
             this.server.getPluginManager().callEvent(new org.bukkit.event.world.WorldInitEvent(world.getWorld()));
 
-            world.addIWorldAccess(new WorldManager(((MinecraftServer)(Object)this), world));
-            if (!((MinecraftServer)(Object)this).T()) {
-                world.getWorldData().setGameType(((MinecraftServer)(Object)this).getGamemode());
+            world.addIWorldAccess(new WorldManager(((MinecraftServer) (Object) this), world));
+            if (!((MinecraftServer) (Object) this).T()) {
+                world.getWorldData().setGameType(((MinecraftServer) (Object) this).getGamemode());
             }
 
-            ((MinecraftServer)(Object)this).worlds.add(world);
-            ((MinecraftServer)(Object)this).getPlayerList().setPlayerFileData(worlds.toArray(new WorldServer[worlds.size()]));
+            ((MinecraftServer) (Object) this).worlds.add(world);
+            ((MinecraftServer) (Object) this).getPlayerList().setPlayerFileData(((MinecraftServer)(Object)this).worlds.toArray(new WorldServer[((MinecraftServer)(Object)this).worlds.size()]));
         }
 
         // CraftBukkit end
-        this.a(((MinecraftServer)(Object)this).getDifficulty());
+        this.a(((MinecraftServer) (Object) this).getDifficulty());
         this.k();
     }
 
     /**
      * @author fukkit
      */
-    @Overwrite
+    @Overwrite(remap = false)
     public void a(EnumDifficulty enumdifficulty) {
         // CraftBukkit start
-        for (WorldServer worldserver : this.worlds) {
+        for (WorldServer worldserver : ((MinecraftServer)(Object)this).worlds) {
             // CraftBukkit end
 
             if (worldserver != null) {
@@ -537,7 +551,7 @@ public abstract class MinecraftServerMixin {
                     worldserver.setSpawnFlags(worldserver.getDifficulty() != EnumDifficulty.PEACEFUL, true);
                 } else {
                     worldserver.getWorldData().setDifficulty(enumdifficulty);
-                    worldserver.setSpawnFlags(((MinecraftServer)(Object)this).getSpawnMonsters(), ((MinecraftServer) (Object) this).spawnAnimals);
+                    worldserver.setSpawnFlags(((MinecraftServer) (Object) this).getSpawnMonsters(), ((MinecraftServer) (Object) this).spawnAnimals);
                 }
             }
         }
@@ -545,15 +559,15 @@ public abstract class MinecraftServerMixin {
     }
 
     /**
-     * @author
+     * @author fukkit
      */
-    @Overwrite
+    @Overwrite(remap = false)
     public void k() {
         int i = 0;
         this.b("menu.generatingTerrain");
         // CraftBukkit start - fire WorldLoadEvent and handle whether or not to keep the spawn in memory
-        for (int m = 0; m < worlds.size(); m++) {
-            WorldServer worldserver = this.worlds.get(m);
+        for (int m = 0; m < ((MinecraftServer)(Object)this).worlds.size(); m++) {
+            WorldServer worldserver = ((MinecraftServer)(Object)this).worlds.get(m);
             LOGGER.info("Preparing start region for level " + m + " (Seed: " + worldserver.getSeed() + ")");
 
             if (!worldserver.getWorld().getKeepSpawnInMemory()) {
@@ -564,8 +578,8 @@ public abstract class MinecraftServerMixin {
             long j = az();
             i = 0;
 
-            for (int k = -192; k <= 192 && ((MinecraftServer)(Object)this).isRunning(); k += 16) {
-                for (int l = -192; l <= 192 && ((MinecraftServer)(Object)this).isRunning(); l += 16) {
+            for (int k = -192; k <= 192 && ((MinecraftServer) (Object) this).isRunning(); k += 16) {
+                for (int l = -192; l <= 192 && ((MinecraftServer) (Object) this).isRunning(); l += 16) {
                     long i1 = az();
 
                     if (i1 - j > 1000L) {
@@ -579,11 +593,21 @@ public abstract class MinecraftServerMixin {
             }
         }
 
-        for (WorldServer world : this.worlds) {
+        for (WorldServer world : ((MinecraftServer)(Object)this).worlds) {
             this.server.getPluginManager().callEvent(new org.bukkit.event.world.WorldLoadEvent(world.getWorld()));
         }
         // CraftBukkit end
         this.s();
+    }
+
+    /**
+     * @author fukkit
+     * @funcName tabCompleteCommand
+     */
+    @Overwrite
+    public List<String> a(ICommandListener icommandlistener, String s, BlockPosition blockposition) {
+        return server.tabComplete(icommandlistener, s);
+        // CraftBukkit end
     }
 
 }

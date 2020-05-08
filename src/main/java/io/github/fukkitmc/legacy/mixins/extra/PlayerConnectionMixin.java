@@ -26,7 +26,7 @@ import java.util.Set;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.atomic.AtomicIntegerFieldUpdater;
 
-@Mixin(PlayerConnection.class)
+@Mixin(value = PlayerConnection.class, remap = false)
 public abstract class PlayerConnectionMixin implements PlayerConnectionExtra {
 
     @Shadow public MinecraftServer minecraftServer;
@@ -178,9 +178,11 @@ public abstract class PlayerConnectionMixin implements PlayerConnectionExtra {
         }
     }
 
-    @Inject(method = "a(Lnet/minecraft/server/PacketPlayInChat;)V", at = @At("HEAD"), cancellable = true)
-    public void onChatPacket(PacketPlayInChat packetPlayInChat, CallbackInfo ci){
-        ci.cancel();
+    /**
+     * @author fukkit
+     */
+    @Overwrite(remap = false)
+    public void a(PacketPlayInChat packetPlayInChat){
         // CraftBukkit start - async chat
         boolean isSync = packetPlayInChat.a().startsWith("/");
         if (packetPlayInChat.a().startsWith("/")) {

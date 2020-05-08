@@ -1,135 +1,26 @@
 package io.github.fukkitmc.legacy.mixins.extra;
 
 import io.github.fukkitmc.legacy.extra.MinecraftServerExtra;
-import jline.console.ConsoleReader;
 import net.minecraft.server.*;
-import org.bukkit.craftbukkit.CraftServer;
 import org.spongepowered.asm.mixin.Final;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
 
-import java.io.File;
-import java.io.IOException;
 import java.util.List;
 import java.util.Queue;
 import java.util.concurrent.FutureTask;
 
 @Mixin(value = MinecraftServer.class, remap = false)
-public abstract class MinecraftServerMixin implements MinecraftServerExtra {
-
-    @Shadow
-    public int G;
-
-    @Shadow
-    public UserCache Z;
-
-    @Shadow
-    public PlayerList v;
-
-    @Shadow
-    public CraftServer server;
-
-    @Shadow
-    public ConsoleReader reader;
-
-    @Shadow
-    public List<WorldServer> worlds;
-    @Shadow
-    public MethodProfiler methodProfiler;
-    @Shadow
-    public long ab;
-    @Shadow
-    public ServerPing r;
-    @Shadow
-    public boolean w;
-    @Shadow
-    public long R;
-    @Shadow
-    public boolean Q;
-    @Shadow
-    public boolean x;
-    @Shadow
-    public String E;
-    @Shadow
-    @Final
-    public MethodProfiler c;
-    @Shadow
-    public long[][] i;
-    @Shadow
-    public int y;
-    @Shadow
-    public WorldServer[] d;
-    @Shadow
-    public Queue<FutureTask<?>> j;
-    @Shadow
-    public List<IUpdatePlayerListBox> p;
-    @Shadow
-    public Queue<Runnable> processQueue;
-    @Shadow
-    public String O;
-    @Shadow
-    public String P;
-    @Shadow
-    public MojangStatisticsGenerator n;
-    @Shadow
-    public boolean N;
-
-    @Shadow
-    public abstract void b(String string);
-
-    @Shadow
-    public abstract boolean X();
-
-    @Shadow
-    public abstract void s();
-
-    @Shadow
-    public abstract void a_(String string, int i);
-
-    @Shadow
-    public abstract boolean v();
-
-    @Shadow
-    public abstract boolean i() throws IOException;
-
-    @Shadow
-    public abstract void a(ServerPing serverPing);
-
-    @Shadow
-    public abstract void A();
-
-    @Shadow
-    public abstract void a(CrashReport crashReport);
-
-    @Shadow
-    public abstract CrashReport b(CrashReport crashReport);
-
-    @Shadow
-    public abstract File y();
-
-    @Shadow
-    public abstract void z();
-
-    @Shadow
-    public abstract boolean C();
-
-    @Shadow
-    public abstract ServerConnection aq();
-
-    @Shadow
-    public abstract void a(boolean bl);
-
-    @Shadow
-    public abstract void t();
+public class MinecraftServerMixin implements MinecraftServerExtra {
 
     @Override
     public int getIdleTimeout() {
-        return this.G;
+        return ((MinecraftServer)(Object)this).G;
     }
 
     @Override
     public void setIdleTimeout(int timeout) {
-        this.G = timeout;
+        ((MinecraftServer)(Object)this).G = timeout;
     }
 
     @Override
@@ -141,8 +32,6 @@ public abstract class MinecraftServerMixin implements MinecraftServerExtra {
     public String getVersion() {
         return "1.8.9";
     }
-
-    //TODO: properly add these later
 
     @Override
     public boolean getSpawnAnimals() {
@@ -176,7 +65,7 @@ public abstract class MinecraftServerMixin implements MinecraftServerExtra {
 
     @Override
     public String getMotd() {
-        return this.E;
+        return ((MinecraftServer)(Object)this).E;
     }
 
     @Override
@@ -185,8 +74,13 @@ public abstract class MinecraftServerMixin implements MinecraftServerExtra {
     }
 
     @Override
+    public void a(EnumDifficulty enumdifficulty) {
+
+    }
+
+    @Override
     public UserCache getUserCache() {
-        return this.Z;
+        return ((MinecraftServer)(Object)this).Z;
     }
 
     @Override
@@ -196,7 +90,7 @@ public abstract class MinecraftServerMixin implements MinecraftServerExtra {
 
     @Override
     public PlayerList getPlayerList() {
-        return this.v;
+        return ((MinecraftServer)(Object)this).v;
     }
 
     @Override
@@ -226,23 +120,23 @@ public abstract class MinecraftServerMixin implements MinecraftServerExtra {
 
     @Override
     public String getResourcePack() {
-        return this.O;
+        return ((MinecraftServer)(Object)this).O;
     }
 
     @Override
     public String getResourcePackHash() {
-        return this.P;
+        return ((MinecraftServer)(Object)this).P;
     }
 
     @Override
     public WorldServer getWorldServer(int i) {
         // CraftBukkit start
-        for (WorldServer world : worlds) {
+        for (WorldServer world : ((MinecraftServer)(Object)this).worlds) {
             if (world.dimension == i) {
                 return world;
             }
         }
-        return worlds.get(0);
+        return ((MinecraftServer)(Object)this).worlds.get(0);
         // CraftBukkit end
     }
 }
