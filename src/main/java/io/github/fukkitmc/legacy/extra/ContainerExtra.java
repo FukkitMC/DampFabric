@@ -9,8 +9,6 @@ public interface ContainerExtra {
         throw new RuntimeException("getBukkitView not implemented for class " + getClass().getName());
     }
 
-    default void transferTo(Container other, org.bukkit.craftbukkit.entity.CraftHumanEntity player){
-        throw new RuntimeException("transferTo not implemented for class " + getClass().getName());
-    }
+    void transferTo(Container other, org.bukkit.craftbukkit.entity.CraftHumanEntity player);
 
 }

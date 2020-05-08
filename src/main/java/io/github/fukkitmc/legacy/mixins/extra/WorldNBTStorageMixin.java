@@ -11,7 +11,7 @@ import org.spongepowered.asm.mixin.Shadow;
 import java.io.*;
 import java.util.UUID;
 
-@Mixin(WorldNBTStorage.class)
+@Mixin(value = WorldNBTStorage.class, remap = false)
 public abstract class WorldNBTStorageMixin implements IDataManager, IPlayerFileData, WorldNBTStorageExtra{
     @Shadow public File playerDir;
 

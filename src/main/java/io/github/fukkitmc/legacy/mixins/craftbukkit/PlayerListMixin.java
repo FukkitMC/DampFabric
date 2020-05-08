@@ -5,7 +5,11 @@ import io.netty.buffer.Unpooled;
 import net.minecraft.server.*;
 import org.apache.logging.log4j.Logger;
 import org.bukkit.craftbukkit.CraftServer;
+import org.bukkit.craftbukkit.chunkio.ChunkIOExecutor;
 import org.bukkit.craftbukkit.entity.CraftPlayer;
+import org.bukkit.entity.Player;
+import org.bukkit.event.player.PlayerJoinEvent;
+import org.bukkit.event.player.PlayerQuitEvent;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Overwrite;
 import org.spongepowered.asm.mixin.Shadow;
@@ -40,6 +44,12 @@ public abstract class PlayerListMixin {
     @Shadow public CraftServer cserver;
 
     @Shadow public Map<UUID, EntityPlayer> j;
+
+    @Shadow public Map<UUID, ServerStatisticManager> o;
+
+    @Shadow public abstract int getPlayerCount();
+
+    @Shadow public abstract void savePlayerFile(EntityPlayer entityPlayer);
 
     @Inject(method = "<init>", at = @At("TAIL"))
     public void constructor(MinecraftServer minecraftServer, CallbackInfo ci){
@@ -157,6 +167,60 @@ public abstract class PlayerListMixin {
 
         // CraftBukkit - Moved from above, added world
         PlayerList.f.info(entityplayer.getName() + "[" + s1 + "] logged in with entity id " + entityplayer.getId() + " at ([" + entityplayer.world.worldData.getName() + "]" + entityplayer.locX + ", " + entityplayer.locY + ", " + entityplayer.locZ + ")");
+    }
+
+    /**
+     * @author fukkit
+     */
+    @Overwrite
+    public void disconnect(EntityPlayer entityplayer) { // CraftBukkit - return string
+        entityplayer.b(StatisticList.f);
+
+        // CraftBukkit start - Quitting must be before we do final save of data, in case plugins need to modify it
+        org.bukkit.craftbukkit.event.CraftEventFactory.handleInventoryCloseEvent(entityplayer);
+
+        PlayerQuitEvent playerQuitEvent = new PlayerQuitEvent(cserver.getPlayer(entityplayer), "\u00A7e" + entityplayer.getName() + " left the game.");
+        cserver.getPluginManager().callEvent(playerQuitEvent);
+        ((CraftPlayer)entityplayer.getBukkitEntity()).disconnect(playerQuitEvent.getQuitMessage());
+        // CraftBukkit end
+
+        this.savePlayerFile(entityplayer);
+        WorldServer worldserver = entityplayer.u();
+
+        if (entityplayer.vehicle != null && !(entityplayer.vehicle instanceof EntityPlayer)) { // CraftBukkit - Don't remove players
+            worldserver.removeEntity(entityplayer.vehicle);
+            PlayerList.f.debug("removing player mount");
+        }
+
+        worldserver.kill(entityplayer);
+        worldserver.getPlayerChunkMap().removePlayer(entityplayer);
+        this.players.remove(entityplayer);
+        UUID uuid = entityplayer.getUniqueID();
+        EntityPlayer entityplayer1 = this.j.get(uuid);
+
+        if (entityplayer1 == entityplayer) {
+            this.j.remove(uuid);
+            this.o.remove(uuid);
+        }
+
+        // CraftBukkit start
+        //  this.sendAll(new PacketPlayOutPlayerInfo(EnumPlayerInfoAction.REMOVE_PLAYER, new EntityPlayer[] { entityplayer}));
+        PacketPlayOutPlayerInfo packet = new PacketPlayOutPlayerInfo(PacketPlayOutPlayerInfo.EnumPlayerInfoAction.REMOVE_PLAYER, entityplayer);
+        for (EntityPlayer player : players) {
+            EntityPlayer entityplayer2 = (EntityPlayer) player;
+
+            if (entityplayer2.getBukkitEntity().canSee((CraftPlayer) entityplayer.getBukkitEntity())) {
+                entityplayer2.playerConnection.sendPacket(packet);
+            } else {
+                ((CraftPlayer) entityplayer2.getBukkitEntity()).removeDisconnectingPlayer((Player) entityplayer.getBukkitEntity());
+            }
+        }
+        // This removes the scoreboard (and player reference) for the specific player in the manager
+        cserver.getScoreboardManager().removePlayer((Player) entityplayer.getBukkitEntity());
+        // CraftBukkit end
+
+        ChunkIOExecutor.adjustPoolSize(this.players.size()); // CraftBukkit
+
     }
 
 }

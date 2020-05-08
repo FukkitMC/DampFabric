@@ -304,6 +304,21 @@
     ]
   },
   {
+    "name": "net/minecraft/server/ContainerPlayer",
+    "syntheticFields": [
+      {
+        "name": "bukkitEntity",
+        "type": "Lorg/bukkit/craftbukkit/inventory/CraftInventoryView;",
+        "access": 1
+      },
+      {
+        "name": "player",
+        "type": "Lnet/minecraft/server/PlayerInventory;",
+        "access": 1
+      }
+    ]
+  },
+  {
     "name": "net/minecraft/server/EntityHuman",
     "syntheticFields": [
       {

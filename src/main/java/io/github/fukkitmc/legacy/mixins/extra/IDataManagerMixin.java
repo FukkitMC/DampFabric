@@ -7,10 +7,12 @@ import org.spongepowered.asm.mixin.Mixin;
 
 import java.util.UUID;
 
-@Mixin(IDataManager.class)
+@Mixin(value = IDataManager.class, remap = false)
 public interface IDataManagerMixin extends IDataManagerExtra {
+
     @Override
     default UUID getUUID() {
         return null;
     }
+
 }

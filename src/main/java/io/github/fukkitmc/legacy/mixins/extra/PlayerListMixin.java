@@ -12,6 +12,7 @@ import org.bukkit.Location;
 import org.bukkit.craftbukkit.CraftServer;
 import org.bukkit.craftbukkit.chunkio.ChunkIOExecutor;
 import org.bukkit.craftbukkit.entity.CraftPlayer;
+import org.bukkit.entity.Player;
 import org.bukkit.event.player.PlayerJoinEvent;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Overwrite;
@@ -60,6 +61,7 @@ public abstract class PlayerListMixin implements PlayerListExtra {
         aworldserver[0].getWorldBorder().a(new PlayerListWorldBorderListener(((PlayerList)(Object)this)));
     }
 
+    @Override
     public void onPlayerJoin(EntityPlayer entityplayer, String joinMessage) { // CraftBukkit added param
         this.players.add(entityplayer);
         this.j.put(entityplayer.getUniqueID(), entityplayer);
@@ -84,8 +86,8 @@ public abstract class PlayerListMixin implements PlayerListExtra {
         // CraftBukkit start - sendAll above replaced with this loop
         PacketPlayOutPlayerInfo packet = new PacketPlayOutPlayerInfo(PacketPlayOutPlayerInfo.EnumPlayerInfoAction.ADD_PLAYER, entityplayer);
 
-        for (int i = 0; i < this.players.size(); ++i) {
-            EntityPlayer entityplayer1 = (EntityPlayer) this.players.get(i);
+        for (EntityPlayer player : this.players) {
+            EntityPlayer entityplayer1 = (EntityPlayer) player;
 
             if (entityplayer1.getBukkitEntity().canSee((CraftPlayer) entityplayer.getBukkitEntity())) {
                 entityplayer1.playerConnection.sendPacket(packet);
@@ -95,7 +97,7 @@ public abstract class PlayerListMixin implements PlayerListExtra {
                 continue;
             }
 
-            entityplayer.playerConnection.sendPacket(new PacketPlayOutPlayerInfo(PacketPlayOutPlayerInfo.EnumPlayerInfoAction.ADD_PLAYER, new EntityPlayer[] { entityplayer1}));
+            entityplayer.playerConnection.sendPacket(new PacketPlayOutPlayerInfo(PacketPlayOutPlayerInfo.EnumPlayerInfoAction.ADD_PLAYER, entityplayer1));
         }
         // CraftBukkit end
 

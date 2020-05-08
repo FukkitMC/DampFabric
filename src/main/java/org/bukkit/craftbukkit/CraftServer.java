@@ -147,7 +147,7 @@ public class CraftServer implements Server {
     private boolean overrideAllCommandBlockCommands = false;
     private final Pattern validUserPattern = Pattern.compile("^[a-zA-Z0-9_]{2,16}$");
     private final UUID invalidUserUUID = UUID.nameUUIDFromBytes("InvalidUsername".getBytes(Charsets.UTF_8));
-    private final List<CraftPlayer> playerView;
+    public final List<CraftPlayer> playerView;
     public int reloadCount;
 
     private final class BooleanWrapper {
