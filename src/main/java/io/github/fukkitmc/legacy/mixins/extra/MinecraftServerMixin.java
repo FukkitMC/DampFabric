@@ -2,6 +2,7 @@ package io.github.fukkitmc.legacy.mixins.extra;
 
 import io.github.fukkitmc.legacy.extra.MinecraftServerExtra;
 import net.minecraft.server.*;
+import org.bukkit.craftbukkit.CraftServer;
 import org.spongepowered.asm.mixin.Final;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
@@ -12,6 +13,8 @@ import java.util.concurrent.FutureTask;
 
 @Mixin(value = MinecraftServer.class, remap = false)
 public class MinecraftServerMixin implements MinecraftServerExtra {
+
+    @Shadow public CraftServer server;
 
     @Override
     public int getIdleTimeout() {
@@ -138,5 +141,10 @@ public class MinecraftServerMixin implements MinecraftServerExtra {
         }
         return ((MinecraftServer)(Object)this).worlds.get(0);
         // CraftBukkit end
+    }
+
+    @Override
+    public String getServerIp() {
+        return this.server.getIp();
     }
 }

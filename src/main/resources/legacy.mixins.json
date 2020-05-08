@@ -5,6 +5,7 @@
   "compatibilityLevel": "JAVA_8",
   "mixins": [
     "craftbukkit.ChunkMixin",
+    "craftbukkit.DedicatedServerMixin",
     "craftbukkit.EntityLivingMixin",
     "craftbukkit.EntityMixin",
     "craftbukkit.MinecraftServerMixin",

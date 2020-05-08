@@ -71,4 +71,6 @@ public interface MinecraftServerExtra {
     String getResourcePackHash();
 
     WorldServer getWorldServer(int i);
+
+    String getServerIp();
 }
