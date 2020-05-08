@@ -59,18 +59,18 @@ public final class VanillaCommandWrapper extends VanillaCommand {
         int j = 0;
         // Some commands use the worldserver variable but we leave it full of null values,
         // so we must temporarily populate it with the world of the commandsender
-        WorldServer[] prev = MinecraftServer.getServer().worldServer;
+        WorldServer[] prev = MinecraftServer.getServer().d;
         MinecraftServer server = MinecraftServer.getServer();
-        server.worldServer = new WorldServer[server.worlds.size()];
-        server.worldServer[0] = (WorldServer) icommandlistener.getWorld();
+        server.d = new WorldServer[server.worlds.size()];
+        server.d[0] = (WorldServer) icommandlistener.getWorld();
         int bpos = 0;
-        for (int pos = 1; pos < server.worldServer.length; pos++) {
+        for (int pos = 1; pos < server.d.length; pos++) {
             WorldServer world = server.worlds.get(bpos++);
-            if (server.worldServer[0] == world) {
+            if (server.d[0] == world) {
                 pos--;
                 continue;
             }
-            server.worldServer[pos] = world;
+            server.d[pos] = world;
         }
 
         try {
@@ -128,7 +128,7 @@ public final class VanillaCommandWrapper extends VanillaCommand {
                 MinecraftServer.LOGGER.log(Level.WARN, "Unknown CommandBlock failed to handle command", throwable);
             }
         } finally {
-            MinecraftServer.getServer().worldServer = prev;
+            MinecraftServer.getServer().d = prev;
         }
         icommandlistener.a(CommandObjectiveExecutor.EnumCommandResult.SUCCESS_COUNT, j);
         return j;
