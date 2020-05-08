@@ -18,14 +18,12 @@ public class ChunkMixin implements ChunkExtra {
     public void constructor(World world, int i, int j, CallbackInfo ci){
         // CraftBukkit start
         if (!((Object)this instanceof EmptyChunk)) {
-            this.bukkitChunk = new org.bukkit.craftbukkit.CraftChunk(((Chunk)(Object)this));
+            ((Chunk)(Object)this).bukkitChunk = new org.bukkit.craftbukkit.CraftChunk(((Chunk)(Object)this));
         }
     }
 
     @Shadow
     public ChunkSection[] sections;
-
-    @Shadow public org.bukkit.Chunk bukkitChunk;
 
     @Override
     public ChunkSection[] getSections() {
