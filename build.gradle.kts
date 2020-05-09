@@ -57,10 +57,4 @@ minecraft {
 
     loadDefinitions("definitions/fields.json")
     loadDefinitions("definitions/redirects.json")
-
-    // Automatically add extras
-    for (f in File("src/main/java/io/github/fukkitmc/legacy/extra").list() ?: return@minecraft) {
-        val file = f.substring(0, f.length - 10)
-        addDefinitions(ClassDefinition("net/minecraft/server/$file", setOf("io/github/fukkitmc/legacy/extra/${file}Extra"), setOf(), setOf(), setOf(), setOf(), setOf()))
-    }
 }

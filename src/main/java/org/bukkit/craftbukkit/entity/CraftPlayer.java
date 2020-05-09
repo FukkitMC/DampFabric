@@ -3,6 +3,7 @@ package org.bukkit.craftbukkit.entity;
 import com.google.common.base.Preconditions;
 import com.google.common.collect.ImmutableSet;
 import com.mojang.authlib.GameProfile;
+import io.github.fukkitmc.legacy.extra.*;
 import io.netty.buffer.Unpooled;
 
 import java.io.ByteArrayOutputStream;
@@ -182,7 +183,7 @@ public class CraftPlayer extends CraftHumanEntity implements Player {
         }
         getHandle().listName = name.equals(getName()) ? null : CraftChatMessage.fromString(name)[0];
         for (EntityPlayer player : server.getHandle().players) {
-            if (player.getBukkitEntity().canSee(this)) {
+            if (((EntityExtra)player).getBukkitEntity().canSee(this)) {
                 player.playerConnection.sendPacket(new PacketPlayOutPlayerInfo(PacketPlayOutPlayerInfo.EnumPlayerInfoAction.UPDATE_DISPLAY_NAME, getHandle()));
             }
         }
@@ -232,7 +233,7 @@ public class CraftPlayer extends CraftHumanEntity implements Player {
     public void chat(String msg) {
         if (getHandle().playerConnection == null) return;
 
-        getHandle().playerConnection.chat(msg, false);
+        ((PlayerConnectionExtra)getHandle().playerConnection).chat(msg, false);
     }
 
     @Override
@@ -427,7 +428,7 @@ public class CraftPlayer extends CraftHumanEntity implements Player {
             return false;
         }
 
-        if (entity.playerConnection == null || entity.playerConnection.isDisconnected()) {
+        if (entity.playerConnection == null || ((PlayerConnectionExtra)entity.playerConnection).isDisconnected()) {
            return false;
         }
 
@@ -466,9 +467,9 @@ public class CraftPlayer extends CraftHumanEntity implements Player {
 
         // Check if the fromWorld and toWorld are the same.
         if (fromWorld == toWorld) {
-            entity.playerConnection.teleport(to);
+            ((PlayerConnectionExtra)entity.playerConnection).teleport(to);
         } else {
-            server.getHandle().moveToWorld(entity, toWorld.dimension, true, to, true);
+            ((PlayerListExtra)server.getHandle()).moveToWorld(entity, toWorld.dimension, true, to, true);
         }
         return true;
     }
@@ -512,7 +513,8 @@ public class CraftPlayer extends CraftHumanEntity implements Player {
     @Override
     public void setSleepingIgnored(boolean ignoreSleeping) {
         getHandle().fauxSleeping = ignoreSleeping;
-        ((CraftWorld) getWorld()).getHandle().checkSleepStatus();
+        WorldServer worldServer = ((CraftWorld) getWorld()).getHandle();
+        ((WorldExtra)worldServer).checkSleepStatus();
     }
 
     @Override
@@ -684,7 +686,7 @@ public class CraftPlayer extends CraftHumanEntity implements Player {
 
     @Override
     public long getPlayerTime() {
-        return getHandle().getPlayerTime();
+        return ((EntityPlayerExtra)getHandle()).getPlayerTime();
     }
 
     @Override
@@ -699,17 +701,17 @@ public class CraftPlayer extends CraftHumanEntity implements Player {
 
     @Override
     public void setPlayerWeather(WeatherType type) {
-        getHandle().setPlayerWeather(type, true);
+        ((EntityPlayerExtra)getHandle()).setPlayerWeather(type, true);
     }
 
     @Override
     public WeatherType getPlayerWeather() {
-        return getHandle().getPlayerWeather();
+        return ((EntityPlayerExtra)getHandle()).getPlayerWeather();
     }
 
     @Override
     public void resetPlayerWeather() {
-        getHandle().resetPlayerWeather();
+        ((EntityPlayerExtra)getHandle()).resetPlayerWeather();
     }
 
     @Override
@@ -841,7 +843,7 @@ public class CraftPlayer extends CraftHumanEntity implements Player {
 
     @Override
     public Location getBedSpawnLocation() {
-        World world = getServer().getWorld(getHandle().getSpawnWorld());
+        World world = getServer().getWorld(((EntityPlayerExtra)getHandle()).getSpawnWorld());
         BlockPosition bed = getHandle().getBed();
 
         if (world != null && bed != null) {
@@ -864,7 +866,7 @@ public class CraftPlayer extends CraftHumanEntity implements Player {
             getHandle().setRespawnPosition(null, override);
         } else {
             getHandle().setRespawnPosition(new BlockPosition(location.getBlockX(), location.getBlockY(), location.getBlockZ()), override);
-            getHandle().setSpawnWorld(location.getWorld().getName());
+            (((EntityPlayerExtra)getHandle())).setSpawnWorld(location.getWorld().getName());
         }
     }
 
@@ -1122,7 +1124,7 @@ public class CraftPlayer extends CraftHumanEntity implements Player {
     @Override
     public boolean setWindowProperty(Property prop, int value) {
         Container container = getHandle().activeContainer;
-        if (container.getBukkitView().getType() != prop.getType()) {
+        if (((ContainerExtra)container).getBukkitView().getType() != prop.getType()) {
             return false;
         }
         getHandle().setContainerData(container, prop.getId(), value);
@@ -1237,7 +1239,7 @@ public class CraftPlayer extends CraftHumanEntity implements Player {
         if (playerConnection == null) {
             throw new IllegalStateException("Cannot set scoreboard yet");
         }
-        if (playerConnection.isDisconnected()) {
+        if (((PlayerConnectionExtra)playerConnection).isDisconnected()) {
             throw new IllegalStateException("Cannot set scoreboard for invalid CraftPlayer");
         }
 
@@ -1313,7 +1315,7 @@ public class CraftPlayer extends CraftHumanEntity implements Player {
     @Override
     public org.bukkit.entity.Entity getSpectatorTarget() {
         Entity followed = getHandle().C(); // PAIL
-        return followed == getHandle() ? null : followed.getBukkitEntity();
+        return followed == getHandle() ? null : ((EntityExtra)followed).getBukkitEntity();
     }
 
     @Override

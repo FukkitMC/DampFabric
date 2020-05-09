@@ -1,6 +1,7 @@
 package io.github.fukkitmc.legacy.mixins.craftbukkit;
 
 import io.github.fukkitmc.legacy.CursedOptionLoader;
+import io.github.fukkitmc.legacy.extra.*;
 import jline.console.ConsoleReader;
 import joptsimple.OptionSet;
 import net.fabricmc.api.EnvType;
@@ -238,9 +239,9 @@ public abstract class MinecraftServerMixin {
 
         // Send time updates to everyone, it will get the right time from the world the player is in.
         if (this.y % 20 == 0) {
-            for (int i = 0; i < ((MinecraftServer)(Object)this).getPlayerList().players.size(); ++i) {
-                EntityPlayer entityplayer = (EntityPlayer) ((MinecraftServer)(Object)this).getPlayerList().players.get(i);
-                entityplayer.playerConnection.sendPacket(new PacketPlayOutUpdateTime(entityplayer.world.getTime(), entityplayer.getPlayerTime(), entityplayer.world.getGameRules().getBoolean("doDaylightCycle"))); // Add support for per player time
+            for (int i = 0; i < ((MinecraftServerExtra)this).getPlayerList().players.size(); ++i) {
+                EntityPlayer entityplayer = (EntityPlayer) ((MinecraftServerExtra)this).getPlayerList().players.get(i);
+                entityplayer.playerConnection.sendPacket(new PacketPlayOutUpdateTime(entityplayer.world.getTime(), ((EntityPlayerExtra)entityplayer).getPlayerTime(), entityplayer.world.getGameRules().getBoolean("doDaylightCycle"))); // Add support for per player time
             }
         }
 
@@ -434,7 +435,7 @@ public abstract class MinecraftServerMixin {
             byte dimension = 0;
 
             if (j == 1) {
-                if (((MinecraftServer) (Object) this).getAllowNether()) {
+                if (((MinecraftServerExtra)this).getAllowNether()) {
                     dimension = -1;
                 } else {
                     continue;
@@ -453,7 +454,7 @@ public abstract class MinecraftServerMixin {
             String name = (dimension == 0) ? s : s + "_" + worldType;
 
             org.bukkit.generator.ChunkGenerator gen = this.server.getGenerator(name);
-            WorldSettings worldsettings = new WorldSettings(i, ((MinecraftServer) (Object) this).getGamemode(), ((MinecraftServer) (Object) this).getGenerateStructures(), ((MinecraftServer) (Object) this).isHardcore(), worldtype);
+            WorldSettings worldsettings = new WorldSettings(i, ((MinecraftServerExtra)this).getGamemode(), ((MinecraftServerExtra)this).getGenerateStructures(), ((MinecraftServerExtra)this).isHardcore(), worldtype);
             worldsettings.setGeneratorSettings(s2);
 
             if (j == 0) {
@@ -462,12 +463,12 @@ public abstract class MinecraftServerMixin {
                 if (worlddata == null) {
                     worlddata = new WorldData(worldsettings, s1);
                 }
-                worlddata.checkName(s1); // CraftBukkit - Migration did not rewrite the level.dat; This forces 1.8 to take the last loaded world as respawn (in this case the end)
+                ((WorldDataExtra)worlddata).checkName(s1); // CraftBukkit - Migration did not rewrite the level.dat; This forces 1.8 to take the last loaded world as respawn (in this case the end)
                 if (this.X()) {
                     world = (WorldServer) (new DemoWorldServer(((MinecraftServer) (Object) this), idatamanager, worlddata, dimension, this.methodProfiler)).b();
                 } else {
                     WorldServer sworld = new WorldServer(((MinecraftServer) (Object) this), idatamanager, worlddata, dimension, this.methodProfiler);
-                    sworld.bukkitInit(gen, org.bukkit.World.Environment.getEnvironment(dimension));
+                    ((WorldExtra)sworld).bukkitInit(gen, org.bukkit.World.Environment.getEnvironment(dimension));
                     world = (WorldServer) (sworld).b();
 
                 }
@@ -515,25 +516,25 @@ public abstract class MinecraftServerMixin {
                 if (worlddata == null) {
                     worlddata = new WorldData(worldsettings, name);
                 }
-                worlddata.checkName(name); // CraftBukkit - Migration did not rewrite the level.dat; This forces 1.8 to take the last loaded world as respawn (in this case the end)
+                ((WorldDataExtra)worlddata).checkName(name); // CraftBukkit - Migration did not rewrite the level.dat; This forces 1.8 to take the last loaded world as respawn (in this case the end)
                 WorldServer wsrver = new SecondaryWorldServer(((MinecraftServer) (Object) this), idatamanager, dimension, ((MinecraftServer)(Object)this).worlds.get(0), this.methodProfiler);
-                wsrver.bukkitInit(gen, org.bukkit.World.Environment.getEnvironment(dimension));
+                ((WorldExtra)wsrver).bukkitInit(gen, org.bukkit.World.Environment.getEnvironment(dimension));
                 world = (WorldServer) wsrver.b();
             }
 
-            this.server.getPluginManager().callEvent(new org.bukkit.event.world.WorldInitEvent(world.getWorld()));
+            this.server.getPluginManager().callEvent(new org.bukkit.event.world.WorldInitEvent(((WorldExtra)world).getWorld()));
 
             world.addIWorldAccess(new WorldManager(((MinecraftServer) (Object) this), world));
             if (!((MinecraftServer) (Object) this).T()) {
-                world.getWorldData().setGameType(((MinecraftServer) (Object) this).getGamemode());
+                world.getWorldData().setGameType(((MinecraftServerExtra)this).getGamemode());
             }
 
             ((MinecraftServer) (Object) this).worlds.add(world);
-            ((MinecraftServer) (Object) this).getPlayerList().setPlayerFileData(((MinecraftServer)(Object)this).worlds.toArray(new WorldServer[((MinecraftServer)(Object)this).worlds.size()]));
+            ((PlayerListExtra)((MinecraftServerExtra)this).getPlayerList()).setPlayerFileData(((MinecraftServer)(Object)this).worlds.toArray(new WorldServer[((MinecraftServer)(Object)this).worlds.size()]));
         }
 
         // CraftBukkit end
-        this.a(((MinecraftServer) (Object) this).getDifficulty());
+        this.a((((MinecraftServerExtra)this)).getDifficulty());
         this.k();
     }
 
@@ -555,7 +556,7 @@ public abstract class MinecraftServerMixin {
                     worldserver.setSpawnFlags(worldserver.getDifficulty() != EnumDifficulty.PEACEFUL, true);
                 } else {
                     worldserver.getWorldData().setDifficulty(enumdifficulty);
-                    worldserver.setSpawnFlags(((MinecraftServer) (Object) this).getSpawnMonsters(), ((MinecraftServer) (Object) this).spawnAnimals);
+                    worldserver.setSpawnFlags(((MinecraftServerExtra) this).getSpawnMonsters(), ((MinecraftServer) (Object) this).spawnAnimals);
                 }
             }
         }
@@ -574,7 +575,7 @@ public abstract class MinecraftServerMixin {
             WorldServer worldserver = ((MinecraftServer)(Object)this).worlds.get(m);
             LOGGER.info("Preparing start region for level " + m + " (Seed: " + worldserver.getSeed() + ")");
 
-            if (!worldserver.getWorld().getKeepSpawnInMemory()) {
+            if (!((WorldExtra)worldserver).getWorld().getKeepSpawnInMemory()) {
                 continue;
             }
 
@@ -582,8 +583,8 @@ public abstract class MinecraftServerMixin {
             long j = az();
             i = 0;
 
-            for (int k = -192; k <= 192 && ((MinecraftServer) (Object) this).isRunning(); k += 16) {
-                for (int l = -192; l <= 192 && ((MinecraftServer) (Object) this).isRunning(); l += 16) {
+            for (int k = -192; k <= 192 && ((MinecraftServerExtra)this).isRunning(); k += 16) {
+                for (int l = -192; l <= 192 && ((MinecraftServerExtra)this).isRunning(); l += 16) {
                     long i1 = az();
 
                     if (i1 - j > 1000L) {
@@ -598,7 +599,7 @@ public abstract class MinecraftServerMixin {
         }
 
         for (WorldServer world : ((MinecraftServer)(Object)this).worlds) {
-            this.server.getPluginManager().callEvent(new org.bukkit.event.world.WorldLoadEvent(world.getWorld()));
+            this.server.getPluginManager().callEvent(new org.bukkit.event.world.WorldLoadEvent(((WorldExtra)world).getWorld()));
         }
         // CraftBukkit end
         this.s();

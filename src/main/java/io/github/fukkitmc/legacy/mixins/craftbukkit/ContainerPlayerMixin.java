@@ -1,5 +1,7 @@
 package io.github.fukkitmc.legacy.mixins.craftbukkit;
 
+import io.github.fukkitmc.legacy.extra.ContainerExtra;
+import io.github.fukkitmc.legacy.extra.EntityExtra;
 import net.minecraft.server.*;
 import org.bukkit.craftbukkit.inventory.CraftInventoryCrafting;
 import org.bukkit.craftbukkit.inventory.CraftInventoryView;
@@ -11,7 +13,7 @@ import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
 @Mixin(ContainerPlayer.class)
-public abstract class ContainerPlayerMixin extends Container {
+public abstract class ContainerPlayerMixin extends Container implements ContainerExtra {
 
     @Shadow public InventoryCrafting craftInventory;
 
@@ -33,7 +35,7 @@ public abstract class ContainerPlayerMixin extends Container {
         }
 
         CraftInventoryCrafting inventory = new CraftInventoryCrafting(this.craftInventory, this.resultInventory);
-        bukkitEntity = new CraftInventoryView((HumanEntity) this.player.player.getBukkitEntity(), inventory, this);
+        bukkitEntity = new CraftInventoryView((HumanEntity) ((EntityExtra)this.player.player).getBukkitEntity(), inventory, this);
         return bukkitEntity;
     }
     // CraftBukkit end

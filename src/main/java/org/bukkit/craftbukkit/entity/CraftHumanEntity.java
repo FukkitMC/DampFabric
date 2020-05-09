@@ -2,6 +2,7 @@ package org.bukkit.craftbukkit.entity;
 
 import java.util.Set;
 
+import io.github.fukkitmc.legacy.extra.ContainerExtra;
 import net.minecraft.server.*;
 
 import org.bukkit.GameMode;
@@ -167,7 +168,7 @@ public class CraftHumanEntity extends CraftLivingEntity implements HumanEntity {
     }
 
     public InventoryView getOpenInventory() {
-        return getHandle().activeContainer.getBukkitView();
+        return ((ContainerExtra)getHandle().activeContainer).getBukkitView();
     }
 
     public InventoryView openInventory(Inventory inventory) {
@@ -249,7 +250,7 @@ public class CraftHumanEntity extends CraftLivingEntity implements HumanEntity {
             return null;
         }
         getHandle().activeContainer.checkReachable = false;
-        return getHandle().activeContainer.getBukkitView();
+        return ((ContainerExtra)getHandle().activeContainer).getBukkitView();
     }
 
     private void openCustomInventory(Inventory inventory, EntityPlayer player, String windowType) {
@@ -260,8 +261,8 @@ public class CraftHumanEntity extends CraftLivingEntity implements HumanEntity {
         container = CraftEventFactory.callInventoryOpenEvent(player, container);
         if(container == null) return;
 
-        String title = container.getBukkitView().getTitle();
-        int size = container.getBukkitView().getTopInventory().getSize();
+        String title = ((ContainerExtra)container).getBukkitView().getTitle();
+        int size = ((ContainerExtra)container).getBukkitView().getTopInventory().getSize();
 
         // Special cases
         if (windowType.equals("minecraft:crafting_table") 
@@ -290,7 +291,7 @@ public class CraftHumanEntity extends CraftLivingEntity implements HumanEntity {
         if (force) {
             getHandle().activeContainer.checkReachable = false;
         }
-        return getHandle().activeContainer.getBukkitView();
+        return ((ContainerExtra)getHandle().activeContainer).getBukkitView();
     }
 
     public InventoryView openEnchanting(Location location, boolean force) {
@@ -314,7 +315,7 @@ public class CraftHumanEntity extends CraftLivingEntity implements HumanEntity {
         if (force) {
             getHandle().activeContainer.checkReachable = false;
         }
-        return getHandle().activeContainer.getBukkitView();
+        return ((ContainerExtra)getHandle().activeContainer).getBukkitView();
     }
 
     public void openInventory(InventoryView inventory) {

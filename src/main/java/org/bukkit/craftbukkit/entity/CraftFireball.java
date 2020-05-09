@@ -1,5 +1,6 @@
 package org.bukkit.craftbukkit.entity;
 
+import io.github.fukkitmc.legacy.extra.EntityExtra;
 import net.minecraft.server.EntityFireball;
 import net.minecraft.server.MathHelper;
 
@@ -82,7 +83,7 @@ public class CraftFireball extends AbstractProjectile implements Fireball {
     @Deprecated
     public LivingEntity _INVALID_getShooter() {
         if (getHandle().shooter != null) {
-            return (LivingEntity) getHandle().shooter.getBukkitEntity();
+            return (LivingEntity) ((EntityExtra)getHandle().shooter).getBukkitEntity();
         }
         return null;
     }

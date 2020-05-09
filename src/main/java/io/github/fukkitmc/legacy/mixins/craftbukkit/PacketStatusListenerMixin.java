@@ -1,6 +1,9 @@
 package io.github.fukkitmc.legacy.mixins.craftbukkit;
 
 import com.mojang.authlib.GameProfile;
+import io.github.fukkitmc.legacy.extra.EntityExtra;
+import io.github.fukkitmc.legacy.extra.EntityPlayerExtra;
+import io.github.fukkitmc.legacy.extra.MinecraftServerExtra;
 import net.minecraft.server.*;
 import org.bukkit.craftbukkit.util.CraftIconCache;
 import org.bukkit.entity.Player;
@@ -32,12 +35,12 @@ public class PacketStatusListenerMixin {
         }
         this.d = true;
         // this.networkManager.handle(new PacketStatusOutServerInfo(this.minecraftServer.aG()));
-        final Object[] players = minecraftServer.getPlayerList().players.toArray();
+        final Object[] players = ((MinecraftServerExtra)minecraftServer).getPlayerList().players.toArray();
         class ServerListPingEvent extends org.bukkit.event.server.ServerListPingEvent {
             CraftIconCache icon = minecraftServer.server.getServerIcon();
 
             ServerListPingEvent() {
-                super(((InetSocketAddress) networkManager.getSocketAddress()).getAddress(), minecraftServer.getMotd(), minecraftServer.getPlayerList().getMaxPlayers());
+                super(((InetSocketAddress) networkManager.getSocketAddress()).getAddress(), ((MinecraftServerExtra)minecraftServer).getMotd(), ((MinecraftServerExtra)minecraftServer).getPlayerList().getMaxPlayers());
             }
 
             @Override
@@ -79,7 +82,7 @@ public class PacketStatusListenerMixin {
                         final EntityPlayer player = this.player;
                         this.player = null;
                         this.ret = this.i - 1;
-                        return (Player) player.getBukkitEntity();
+                        return (Player) ((EntityExtra)player).getBukkitEntity();
                     }
 
                     @Override
@@ -111,7 +114,7 @@ public class PacketStatusListenerMixin {
         ping.setFavicon(event.icon.value);
         ping.setMOTD(new ChatComponentText(event.getMotd()));
         ping.setPlayerSample(playerSample);
-        ping.setServerInfo(new ServerPing.ServerData(minecraftServer.getServerModName() + " " + minecraftServer.getVersion(), 47)); // TODO: Update when protocol changes
+        ping.setServerInfo(new ServerPing.ServerData(minecraftServer.getServerModName() + " " + ((MinecraftServerExtra)minecraftServer).getVersion(), 47)); // TODO: Update when protocol changes
 
         this.networkManager.handle(new PacketStatusOutServerInfo(ping));
         // CraftBukkit end

@@ -1,5 +1,8 @@
 package io.github.fukkitmc.legacy.mixins.extra;
 
+import io.github.fukkitmc.legacy.extra.EntityExtra;
+import io.github.fukkitmc.legacy.extra.EntityPlayerExtra;
+import io.github.fukkitmc.legacy.extra.MinecraftServerExtra;
 import io.github.fukkitmc.legacy.extra.PlayerConnectionExtra;
 import net.minecraft.server.*;
 import org.apache.commons.lang3.StringUtils;
@@ -136,8 +139,8 @@ public abstract class PlayerConnectionMixin implements PlayerConnectionExtra {
                         String message = String.format(queueEvent.getFormat(), queueEvent.getPlayer().getDisplayName(), queueEvent.getMessage());
                         minecraftServer.console.sendMessage(message);
                         if (((LazyPlayerSet) queueEvent.getRecipients()).isLazy()) {
-                            for (Object plr : minecraftServer.getPlayerList().players) {
-                                ((EntityPlayer) plr).sendMessages(CraftChatMessage.fromString(message));
+                            for (Object plr : ((MinecraftServerExtra)minecraftServer).getPlayerList().players) {
+                                ((EntityPlayerExtra) plr).sendMessages(CraftChatMessage.fromString(message));
                             }
                         } else {
                             for (Player plr : queueEvent.getRecipients()) {
@@ -166,8 +169,8 @@ public abstract class PlayerConnectionMixin implements PlayerConnectionExtra {
                 s = String.format(event.getFormat(), event.getPlayer().getDisplayName(), event.getMessage());
                 minecraftServer.console.sendMessage(s);
                 if (((LazyPlayerSet) event.getRecipients()).isLazy()) {
-                    for (Object recipient : minecraftServer.getPlayerList().players) {
-                        ((EntityPlayer) recipient).sendMessages(CraftChatMessage.fromString(s));
+                    for (Object recipient : ((MinecraftServerExtra)minecraftServer).getPlayerList().players) {
+                        ((EntityPlayerExtra) recipient).sendMessages(CraftChatMessage.fromString(s));
                     }
                 } else {
                     for (Player recipient : event.getRecipients()) {
@@ -249,7 +252,7 @@ public abstract class PlayerConnectionMixin implements PlayerConnectionExtra {
 
             // CraftBukkit start - replaced with thread safe throttle
             // this.bukkitChatThrottle += 20;
-            if (((PlayerConnection)(Object)this).chatSpamField.addAndGet(this, 20) > 200 && !this.minecraftServer.getPlayerList().isOp(this.player.getProfile())) {
+            if (((PlayerConnection)(Object)this).chatSpamField.addAndGet(this, 20) > 200 && !((MinecraftServerExtra)minecraftServer).getPlayerList().isOp(this.player.getProfile())) {
                 if (!isSync) {
                     Waitable waitable = new Waitable.Wrapper(()-> {
                             disconnect("disconnect.spam");
@@ -300,7 +303,7 @@ public abstract class PlayerConnectionMixin implements PlayerConnectionExtra {
 
     @Override
     public CraftPlayer getPlayer() {
-        return (this.player == null) ? null : (CraftPlayer) this.player.getBukkitEntity();
+        return (this.player == null) ? null : (CraftPlayer) ((EntityExtra)this.player).getBukkitEntity();
     }
 
 }

@@ -2,6 +2,8 @@ package org.bukkit.craftbukkit.inventory;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import io.github.fukkitmc.legacy.extra.IInventoryExtra;
 import net.minecraft.server.EntityHuman;
 import net.minecraft.server.IChatBaseComponent;
 import net.minecraft.server.IInventory;
@@ -12,7 +14,7 @@ import org.bukkit.entity.HumanEntity;
 import org.bukkit.inventory.Inventory;
 import org.bukkit.inventory.InventoryHolder;
 
-public class InventoryWrapper implements IInventory {
+public class InventoryWrapper implements IInventory, IInventoryExtra {
 
     private final Inventory inventory;
     private final List<HumanEntity> viewers = new ArrayList<HumanEntity>();

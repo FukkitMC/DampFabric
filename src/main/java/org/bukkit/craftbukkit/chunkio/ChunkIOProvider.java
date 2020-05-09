@@ -1,6 +1,11 @@
 package org.bukkit.craftbukkit.chunkio;
 
 import java.io.IOException;
+
+import io.github.fukkitmc.legacy.extra.ChunkExtra;
+import io.github.fukkitmc.legacy.extra.ChunkProviderServerExtra;
+import io.github.fukkitmc.legacy.extra.ChunkRegionLoaderExtra;
+import io.github.fukkitmc.legacy.extra.WorldExtra;
 import net.minecraft.server.Chunk;
 import net.minecraft.server.ChunkRegionLoader;
 import net.minecraft.server.NBTTagCompound;
@@ -18,7 +23,7 @@ class ChunkIOProvider implements AsynchronousExecutor.CallBackProvider<QueuedChu
     public Chunk callStage1(QueuedChunk queuedChunk) throws RuntimeException {
         try {
             ChunkRegionLoader loader = queuedChunk.loader;
-            Object[] data = loader.loadChunk(queuedChunk.world, queuedChunk.x, queuedChunk.z);
+            Object[] data = ((ChunkRegionLoaderExtra)loader).loadChunk(queuedChunk.world, queuedChunk.x, queuedChunk.z);
             
             if (data != null) {
                 queuedChunk.compound = (NBTTagCompound) data[1];
@@ -35,11 +40,11 @@ class ChunkIOProvider implements AsynchronousExecutor.CallBackProvider<QueuedChu
     public void callStage2(QueuedChunk queuedChunk, Chunk chunk) throws RuntimeException {
         if (chunk == null) {
             // If the chunk loading failed just do it synchronously (may generate)
-            queuedChunk.provider.originalGetChunkAt(queuedChunk.x, queuedChunk.z);
+            ((ChunkProviderServerExtra)queuedChunk.provider).originalGetChunkAt(queuedChunk.x, queuedChunk.z);
             return;
         }
 
-        queuedChunk.loader.loadEntities(chunk, queuedChunk.compound.getCompound("Level"), queuedChunk.world);
+        ((ChunkRegionLoaderExtra)queuedChunk.loader).loadEntities(chunk, queuedChunk.compound.getCompound("Level"), queuedChunk.world);
         chunk.setLastSaved(queuedChunk.provider.world.getTime());
         queuedChunk.provider.chunks.put(LongHash.toLong(queuedChunk.x, queuedChunk.z), chunk);
         chunk.addEntities();
@@ -48,7 +53,7 @@ class ChunkIOProvider implements AsynchronousExecutor.CallBackProvider<QueuedChu
             queuedChunk.provider.chunkProvider.recreateStructures(chunk, queuedChunk.x, queuedChunk.z);
         }
 
-        Server server = queuedChunk.provider.world.getServer();
+        Server server = ((WorldExtra)queuedChunk.provider.world).getServer();
         if (server != null) {
             server.getPluginManager().callEvent(new org.bukkit.event.world.ChunkLoadEvent(chunk.bukkitChunk, false));
         }
@@ -60,10 +65,10 @@ class ChunkIOProvider implements AsynchronousExecutor.CallBackProvider<QueuedChu
                     continue;
                 }
 
-                Chunk neighbor = queuedChunk.provider.getChunkIfLoaded(chunk.locX + x, chunk.locZ + z);
+                Chunk neighbor = ((ChunkProviderServerExtra)queuedChunk.provider).getChunkIfLoaded(chunk.locX + x, chunk.locZ + z);
                 if (neighbor != null) {
-                    neighbor.setNeighborLoaded(-x, -z);
-                    chunk.setNeighborLoaded(x, z);
+                    ((ChunkExtra)neighbor).setNeighborLoaded(-x, -z);
+                    ((ChunkExtra)chunk).setNeighborLoaded(x, z);
                 }
             }
         }

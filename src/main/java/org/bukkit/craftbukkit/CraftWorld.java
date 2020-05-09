@@ -12,6 +12,7 @@ import java.util.Random;
 import java.util.Set;
 import java.util.UUID;
 
+import io.github.fukkitmc.legacy.extra.*;
 import net.minecraft.server.*;
 
 import org.apache.commons.lang.Validate;
@@ -240,7 +241,7 @@ public class CraftWorld implements World {
     }
 
     public boolean isChunkInUse(int x, int z) {
-        return world.getPlayerChunkMap().isChunkInUse(x, z);
+        return ((PlayerChunkMapExtra)world.getPlayerChunkMap()).isChunkInUse(x, z);
     }
 
     public boolean loadChunk(int x, int z, boolean generate) {
@@ -274,10 +275,10 @@ public class CraftWorld implements World {
                         continue;
                     }
 
-                    net.minecraft.server.Chunk neighbor = world.chunkProviderServer.getChunkIfLoaded(chunk.locX + x, chunk.locZ + z);
+                    net.minecraft.server.Chunk neighbor = ((ChunkProviderServerExtra)world.chunkProviderServer).getChunkIfLoaded(chunk.locX + x, chunk.locZ + z);
                     if (neighbor != null) {
-                        neighbor.setNeighborLoaded(-x, -z);
-                        chunk.setNeighborLoaded(x, z);
+                        ((ChunkExtra)neighbor).setNeighborLoaded(-x, -z);
+                        ((ChunkExtra)chunk).setNeighborLoaded(x, z);
                     }
                 }
             }
@@ -308,7 +309,7 @@ public class CraftWorld implements World {
         world.addEntity(entity);
         // TODO this is inconsistent with how Entity.getBukkitEntity() works.
         // However, this entity is not at the moment backed by a server entity class so it may be left.
-        return new CraftItem(world.getServer(), entity);
+        return new CraftItem(((WorldExtra)world).getServer(), entity);
     }
 
     private static void randomLocationWithinBlock(Location loc, double xs, double ys, double zs) {
@@ -355,7 +356,7 @@ public class CraftWorld implements World {
         arrow.setPositionRotation(loc.getX(), loc.getY(), loc.getZ(), loc.getYaw(), loc.getPitch());
         arrow.shoot(velocity.getX(), velocity.getY(), velocity.getZ(), speed, spread);
         world.addEntity(arrow);
-        return (Arrow) arrow.getBukkitEntity();
+        return (Arrow) ((EntityExtra) arrow).getBukkitEntity();
     }
 
     @Deprecated
@@ -468,7 +469,7 @@ public class CraftWorld implements World {
                 int flag = ((CraftBlockState)blockstate).getFlag();
                 delegate.setTypeIdAndData(x, y, z, typeId, data);
                 net.minecraft.server.Block newBlock = world.getType(position).getBlock();
-                world.notifyAndUpdatePhysics(position, null, oldBlock, newBlock, flag);
+                ((WorldExtra)world).notifyAndUpdatePhysics(position, null, oldBlock, newBlock, flag);
             }
             world.capturedBlockStates.clear();
             return true;
@@ -492,7 +493,7 @@ public class CraftWorld implements World {
     }
 
     public UUID getUID() {
-        return world.getDataManager().getUUID();
+        return ((IDataManagerExtra)world.getDataManager()).getUUID();
     }
 
     @Override
@@ -524,7 +525,7 @@ public class CraftWorld implements World {
             CraftPlayer cp = (CraftPlayer) p;
             if (cp.getHandle().playerConnection == null) continue;
 
-            cp.getHandle().playerConnection.sendPacket(new PacketPlayOutUpdateTime(cp.getHandle().world.getTime(), cp.getHandle().getPlayerTime(), cp.getHandle().world.getGameRules().getBoolean("doDaylightCycle")));
+            cp.getHandle().playerConnection.sendPacket(new PacketPlayOutUpdateTime(cp.getHandle().world.getTime(), ((EntityPlayerExtra)cp.getHandle()).getPlayerTime(), cp.getHandle().world.getGameRules().getBoolean("doDaylightCycle")));
         }
     }
 
@@ -621,7 +622,7 @@ public class CraftWorld implements World {
         for (Object o : world.entityList) {
             if (o instanceof net.minecraft.server.Entity) {
                 net.minecraft.server.Entity mcEnt = (net.minecraft.server.Entity) o;
-                Entity bukkitEntity = mcEnt.getBukkitEntity();
+                Entity bukkitEntity = ((EntityExtra)mcEnt).getBukkitEntity();
 
                 // Assuming that bukkitEntity isn't null
                 if (bukkitEntity != null) {
@@ -639,7 +640,7 @@ public class CraftWorld implements World {
         for (Object o : world.entityList) {
             if (o instanceof net.minecraft.server.Entity) {
                 net.minecraft.server.Entity mcEnt = (net.minecraft.server.Entity) o;
-                Entity bukkitEntity = mcEnt.getBukkitEntity();
+                Entity bukkitEntity = ((EntityExtra)mcEnt).getBukkitEntity();
 
                 // Assuming that bukkitEntity isn't null
                 if (bukkitEntity != null && bukkitEntity instanceof LivingEntity) {
@@ -663,7 +664,7 @@ public class CraftWorld implements World {
 
         for (Object entity: world.entityList) {
             if (entity instanceof net.minecraft.server.Entity) {
-                Entity bukkitEntity = ((net.minecraft.server.Entity) entity).getBukkitEntity();
+                Entity bukkitEntity = ((EntityExtra) entity).getBukkitEntity();
 
                 if (bukkitEntity == null) {
                     continue;
@@ -685,7 +686,7 @@ public class CraftWorld implements World {
 
         for (Object entity: world.entityList) {
             if (entity instanceof net.minecraft.server.Entity) {
-                Entity bukkitEntity = ((net.minecraft.server.Entity) entity).getBukkitEntity();
+                Entity bukkitEntity = ((EntityExtra) entity).getBukkitEntity();
 
                 if (bukkitEntity == null) {
                     continue;
@@ -715,7 +716,7 @@ public class CraftWorld implements World {
         List<net.minecraft.server.Entity> entityList = getHandle().a((net.minecraft.server.Entity) null, bb, null); // PAIL : rename
         List<Entity> bukkitEntityList = new ArrayList<org.bukkit.entity.Entity>(entityList.size());
         for (Object entity : entityList) {
-            bukkitEntityList.add(((net.minecraft.server.Entity) entity).getBukkitEntity());
+            bukkitEntityList.add(((EntityExtra) entity).getBukkitEntity());
         }
         return bukkitEntityList;
     }
@@ -724,9 +725,9 @@ public class CraftWorld implements World {
         List<Player> list = new ArrayList<Player>(world.players.size());
 
         for (EntityHuman human : world.players) {
-            HumanEntity bukkitEntity = (HumanEntity) human.getBukkitEntity();
+            HumanEntity bukkitEntity = (HumanEntity) ((EntityExtra) human).getBukkitEntity();
 
-            if ((bukkitEntity != null) && (bukkitEntity instanceof Player)) {
+            if ((bukkitEntity instanceof Player)) {
                 list.add((Player) bukkitEntity);
             }
         }
@@ -871,8 +872,8 @@ public class CraftWorld implements World {
         EntityFallingBlock entity = new EntityFallingBlock(world, x, y, z, net.minecraft.server.Block.getById(material.getId()).fromLegacyData(data));
         entity.ticksLived = 1;
 
-        world.addEntity(entity, SpawnReason.CUSTOM);
-        return (FallingBlock) entity.getBukkitEntity();
+        ((WorldExtra)world).addEntity(entity, SpawnReason.CUSTOM);
+        return (FallingBlock) ((EntityExtra)entity).getBukkitEntity();
     }
 
     public FallingBlock spawnFallingBlock(Location location, int blockId, byte blockData) throws IllegalArgumentException {
@@ -931,7 +932,7 @@ public class CraftWorld implements World {
                 }
                 entity.setPositionRotation(x, y, z, yaw, pitch);
                 Vector direction = location.getDirection().multiply(10);
-                ((EntityFireball) entity).setDirection(direction.getX(), direction.getY(), direction.getZ());
+                ((EntityFireballExtra) entity).setDirection(direction.getX(), direction.getY(), direction.getZ());
             }
         } else if (Minecart.class.isAssignableFrom(clazz)) {
             if (PoweredMinecart.class.isAssignableFrom(clazz)) {
@@ -1120,8 +1121,8 @@ public class CraftWorld implements World {
             ((EntityInsentient) entity).prepare(getHandle().E(new BlockPosition(entity)), null);
         }
 
-        world.addEntity(entity, reason);
-        return (T) entity.getBukkitEntity();
+        ((WorldExtra)world).addEntity(entity, reason);
+        return (T) ((EntityExtra)entity).getBukkitEntity();
     }
 
     public <T extends Entity> T spawn(Location location, Class<T> clazz, SpawnReason reason) throws IllegalArgumentException {

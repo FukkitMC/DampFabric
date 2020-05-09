@@ -1,5 +1,7 @@
 package org.bukkit.craftbukkit.inventory;
 
+import io.github.fukkitmc.legacy.extra.IInventoryExtra;
+import io.github.fukkitmc.legacy.extra.PlayerInventoryExtra;
 import net.minecraft.server.EntityPlayer;
 import net.minecraft.server.PacketPlayOutHeldItemSlot;
 import net.minecraft.server.PacketPlayOutSetSlot;
@@ -118,7 +120,7 @@ public class CraftInventoryPlayer extends CraftInventory implements org.bukkit.i
     }
 
     public ItemStack[] getArmorContents() {
-        net.minecraft.server.ItemStack[] mcItems = getInventory().getArmorContents();
+        net.minecraft.server.ItemStack[] mcItems = ((PlayerInventoryExtra)getInventory()).getArmorContents();
         ItemStack[] ret = new ItemStack[mcItems.length];
 
         for (int i = 0; i < mcItems.length; i++) {
@@ -171,7 +173,7 @@ public class CraftInventoryPlayer extends CraftInventory implements org.bukkit.i
 
     @Override
     public HumanEntity getHolder() {
-        return (HumanEntity) inventory.getOwner();
+        return (HumanEntity) ((IInventoryExtra)inventory).getOwner();
     }
 
     public float getItemInHandDropChance() {

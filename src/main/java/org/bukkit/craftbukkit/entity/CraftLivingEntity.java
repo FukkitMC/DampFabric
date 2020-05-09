@@ -7,6 +7,7 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Set;
 
+import io.github.fukkitmc.legacy.extra.EntityExtra;
 import net.minecraft.server.DamageSource;
 import net.minecraft.server.EntityArmorStand;
 import net.minecraft.server.EntityArrow;
@@ -285,7 +286,7 @@ public class CraftLivingEntity extends CraftEntity implements LivingEntity {
     }
 
     public Player getKiller() {
-        return getHandle().killer == null ? null : (Player) getHandle().killer.getBukkitEntity();
+        return getHandle().killer == null ? null : (Player) ((EntityExtra)getHandle().killer).getBukkitEntity();
     }
 
     public boolean addPotionEffect(PotionEffect effect) {
@@ -372,11 +373,11 @@ public class CraftLivingEntity extends CraftEntity implements LivingEntity {
         Validate.notNull(launch, "Projectile not supported");
 
         if (velocity != null) {
-            ((T) launch.getBukkitEntity()).setVelocity(velocity);
+            ((T) ((EntityExtra)launch).getBukkitEntity()).setVelocity(velocity);
         }
 
         world.addEntity(launch);
-        return (T) launch.getBukkitEntity();
+        return (T) ((EntityExtra)launch).getBukkitEntity();
     }
 
     public EntityType getType() {
@@ -431,7 +432,7 @@ public class CraftLivingEntity extends CraftEntity implements LivingEntity {
         if (!isLeashed()) {
             throw new IllegalStateException("Entity not leashed");
         }
-        return ((EntityInsentient) getHandle()).getLeashHolder().getBukkitEntity();
+        return ((EntityExtra)((EntityInsentient) getHandle()).getLeashHolder()).getBukkitEntity();
     }
 
     private boolean unleash() {

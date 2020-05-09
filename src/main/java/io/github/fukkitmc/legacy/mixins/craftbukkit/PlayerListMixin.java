@@ -1,6 +1,9 @@
 package io.github.fukkitmc.legacy.mixins.craftbukkit;
 
 import com.mojang.authlib.GameProfile;
+import io.github.fukkitmc.legacy.extra.EntityExtra;
+import io.github.fukkitmc.legacy.extra.MinecraftServerExtra;
+import io.github.fukkitmc.legacy.extra.PlayerListExtra;
 import io.netty.buffer.Unpooled;
 import net.minecraft.server.*;
 import org.apache.logging.log4j.Logger;
@@ -83,7 +86,7 @@ public abstract class PlayerListMixin {
     @Overwrite
     public void a(NetworkManager networkmanager, EntityPlayer entityplayer) {
         GameProfile gameprofile = entityplayer.getProfile();
-        UserCache usercache = this.server.getUserCache();
+        UserCache usercache = ((MinecraftServerExtra)this.server).getUserCache();
         GameProfile gameprofile1 = usercache.a(gameprofile.getId());
         String s = gameprofile1 == null ? gameprofile.getName() : gameprofile1.getName();
 
@@ -96,7 +99,7 @@ public abstract class PlayerListMixin {
         }
         // CraftBukkit end
 
-        entityplayer.spawnIn(this.server.getWorldServer(entityplayer.dimension));
+        entityplayer.spawnIn(((MinecraftServerExtra)this.server).getWorldServer(entityplayer.dimension));
         entityplayer.playerInteractManager.a((WorldServer) entityplayer.world);
         String s1 = "local";
 
@@ -106,7 +109,7 @@ public abstract class PlayerListMixin {
 
         // CraftBukkit - Moved message to after join
         // PlayerList.f.info(entityplayer.getName() + "[" + s1 + "] logged in with entity id " + entityplayer.getId() + " at (" + entityplayer.locX + ", " + entityplayer.locY + ", " + entityplayer.locZ + ")");
-        WorldServer worldserver = this.server.getWorldServer(entityplayer.dimension);
+        WorldServer worldserver = ((MinecraftServerExtra)this.server).getWorldServer(entityplayer.dimension);
         WorldData worlddata = worldserver.getWorldData();
         BlockPosition blockposition = worldserver.getSpawn();
 
@@ -114,7 +117,7 @@ public abstract class PlayerListMixin {
         PlayerConnection playerconnection = new PlayerConnection(this.server, networkmanager, entityplayer);
 
         playerconnection.sendPacket(new PacketPlayOutLogin(entityplayer.getId(), entityplayer.playerInteractManager.getGameMode(), worlddata.isHardcore(), worldserver.worldProvider.getDimension(), worldserver.getDifficulty(), Math.min(this.getMaxPlayers(), 60), worlddata.getType(), worldserver.getGameRules().getBoolean("reducedDebugInfo"))); // CraftBukkit - cap player list to 60
-        ((CraftPlayer)entityplayer.getBukkitEntity()).sendSupportedChannels(); // CraftBukkit
+        ((CraftPlayer)((EntityExtra)entityplayer).getBukkitEntity()).sendSupportedChannels(); // CraftBukkit
         playerconnection.sendPacket(new PacketPlayOutCustomPayload("MC|Brand", (new PacketDataSerializer(Unpooled.buffer())).a(this.server.getServerModName())));
         playerconnection.sendPacket(new PacketPlayOutServerDifficulty(worlddata.getDifficulty(), worlddata.isDifficultyLocked()));
         playerconnection.sendPacket(new PacketPlayOutSpawnPosition(blockposition));
@@ -136,13 +139,13 @@ public abstract class PlayerListMixin {
             joinMessage = "\u00A7e" + LocaleI18n.a("multiplayer.player.joined", entityplayer.getName());
         }
 
-        ((PlayerList)(Object)this).onPlayerJoin(entityplayer, joinMessage);
+        ((PlayerListExtra)this).onPlayerJoin(entityplayer, joinMessage);
         // CraftBukkit end
-        worldserver = server.getWorldServer(entityplayer.dimension);  // CraftBukkit - Update in case join event changed it
+        worldserver = ((MinecraftServerExtra)this.server).getWorldServer(entityplayer.dimension);  // CraftBukkit - Update in case join event changed it
         playerconnection.a(entityplayer.locX, entityplayer.locY, entityplayer.locZ, entityplayer.yaw, entityplayer.pitch);
         ((PlayerList)(Object)this).b(entityplayer, worldserver);
-        if (this.server.getResourcePack().length() > 0) {
-            entityplayer.setResourcePack(this.server.getResourcePack(), this.server.getResourcePackHash());
+        if (((MinecraftServerExtra)this.server).getResourcePack().length() > 0) {
+            entityplayer.setResourcePack(((MinecraftServerExtra)this.server).getResourcePack(), ((MinecraftServerExtra)this.server).getResourcePackHash());
         }
 
         Iterator iterator = entityplayer.getEffects().iterator();
@@ -181,7 +184,7 @@ public abstract class PlayerListMixin {
 
         PlayerQuitEvent playerQuitEvent = new PlayerQuitEvent(cserver.getPlayer(entityplayer), "\u00A7e" + entityplayer.getName() + " left the game.");
         cserver.getPluginManager().callEvent(playerQuitEvent);
-        ((CraftPlayer)entityplayer.getBukkitEntity()).disconnect(playerQuitEvent.getQuitMessage());
+        ((CraftPlayer)((EntityExtra)entityplayer).getBukkitEntity()).disconnect(playerQuitEvent.getQuitMessage());
         // CraftBukkit end
 
         this.savePlayerFile(entityplayer);
@@ -209,14 +212,14 @@ public abstract class PlayerListMixin {
         for (EntityPlayer player : players) {
             EntityPlayer entityplayer2 = (EntityPlayer) player;
 
-            if (entityplayer2.getBukkitEntity().canSee((CraftPlayer) entityplayer.getBukkitEntity())) {
+            if (((EntityExtra)entityplayer2).getBukkitEntity().canSee((CraftPlayer) ((EntityExtra)entityplayer).getBukkitEntity())) {
                 entityplayer2.playerConnection.sendPacket(packet);
             } else {
-                ((CraftPlayer) entityplayer2.getBukkitEntity()).removeDisconnectingPlayer((Player) entityplayer.getBukkitEntity());
+                ((CraftPlayer) ((EntityExtra)entityplayer2).getBukkitEntity()).removeDisconnectingPlayer((Player) ((EntityExtra)entityplayer).getBukkitEntity());
             }
         }
         // This removes the scoreboard (and player reference) for the specific player in the manager
-        cserver.getScoreboardManager().removePlayer((Player) entityplayer.getBukkitEntity());
+        cserver.getScoreboardManager().removePlayer((Player) ((EntityExtra)entityplayer).getBukkitEntity());
         // CraftBukkit end
 
         ChunkIOExecutor.adjustPoolSize(this.players.size()); // CraftBukkit

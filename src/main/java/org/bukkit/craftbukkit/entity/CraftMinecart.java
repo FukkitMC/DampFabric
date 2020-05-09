@@ -1,5 +1,6 @@
 package org.bukkit.craftbukkit.entity;
 
+import io.github.fukkitmc.legacy.extra.EntityMinecartAbstractExtra;
 import net.minecraft.server.Blocks;
 import net.minecraft.server.EntityMinecartAbstract;
 
@@ -43,19 +44,19 @@ public abstract class CraftMinecart extends CraftVehicle implements Minecart {
     }
 
     public Vector getFlyingVelocityMod() {
-        return getHandle().getFlyingVelocityMod();
+        return ((EntityMinecartAbstractExtra)getHandle()).getFlyingVelocityMod();
     }
 
-    public void setFlyingVelocityMod(Vector flying) {
-        getHandle().setFlyingVelocityMod(flying);
+    public void setFlyingVelocityMod(Vector flying){
+        ((EntityMinecartAbstractExtra)getHandle()).setFlyingVelocityMod(flying);
     }
 
     public Vector getDerailedVelocityMod() {
-        return getHandle().getDerailedVelocityMod();
+        return ((EntityMinecartAbstractExtra)getHandle()).getDerailedVelocityMod();
     }
 
     public void setDerailedVelocityMod(Vector derailed) {
-        getHandle().setDerailedVelocityMod(derailed);
+        ((EntityMinecartAbstractExtra)getHandle()).setDerailedVelocityMod(derailed);
     }
 
     @Override

@@ -1,5 +1,6 @@
 package io.github.fukkitmc.legacy.mixins.craftbukkit;
 
+import io.github.fukkitmc.legacy.extra.IDataManagerExtra;
 import net.minecraft.server.*;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Overwrite;
@@ -97,8 +98,8 @@ public abstract class EntityMixin {
             nbttagcompound.setLong("UUIDMost", this.getUniqueID().getMostSignificantBits());
             nbttagcompound.setLong("UUIDLeast", this.getUniqueID().getLeastSignificantBits());
             // CraftBukkit start
-            nbttagcompound.setLong("WorldUUIDLeast", this.world.getDataManager().getUUID().getLeastSignificantBits());
-            nbttagcompound.setLong("WorldUUIDMost", this.world.getDataManager().getUUID().getMostSignificantBits());
+            nbttagcompound.setLong("WorldUUIDLeast", ((IDataManagerExtra)this.world.getDataManager()).getUUID().getLeastSignificantBits());
+            nbttagcompound.setLong("WorldUUIDMost", ((IDataManagerExtra)this.world.getDataManager()).getUUID().getMostSignificantBits());
             nbttagcompound.setInt("Bukkit.updateLevel", 2);
             // CraftBukkit end
             if (this.getCustomName() != null && this.getCustomName().length() > 0) {

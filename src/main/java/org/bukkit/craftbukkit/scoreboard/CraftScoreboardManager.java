@@ -8,6 +8,7 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 
+import io.github.fukkitmc.legacy.extra.MinecraftServerExtra;
 import net.minecraft.server.EntityPlayer;
 import net.minecraft.server.IScoreboardCriteria;
 import net.minecraft.server.MinecraftServer;
@@ -90,7 +91,7 @@ public final class CraftScoreboardManager implements ScoreboardManager {
         }
 
         // The above is the reverse of the below method.
-        server.getPlayerList().sendScoreboard((ScoreboardServer) newboard, player.getHandle());
+        ((MinecraftServerExtra)server).getPlayerList().sendScoreboard((ScoreboardServer) newboard, player.getHandle());
     }
 
     // CraftBukkit method

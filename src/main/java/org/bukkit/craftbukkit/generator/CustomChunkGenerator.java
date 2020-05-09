@@ -1,5 +1,8 @@
 package org.bukkit.craftbukkit.generator;
 
+import io.github.fukkitmc.legacy.extra.ChunkExtra;
+import io.github.fukkitmc.legacy.extra.WorldChunkManagerExtra;
+import io.github.fukkitmc.legacy.extra.WorldExtra;
 import net.minecraft.server.*;
 import org.bukkit.block.Biome;
 import org.bukkit.craftbukkit.block.CraftBlock;
@@ -34,15 +37,15 @@ public class CustomChunkGenerator extends InternalChunkGenerator {
         // Get default biome data for chunk
         CustomBiomeGrid biomegrid = new CustomBiomeGrid();
         biomegrid.biome = new BiomeBase[256];
-        world.getWorldChunkManager().getBiomeBlock(biomegrid.biome, x << 4, z << 4, 16, 16);
+        ((WorldChunkManagerExtra)world.getWorldChunkManager()).getBiomeBlock(biomegrid.biome, x << 4, z << 4, 16, 16);
 
         // Try ChunkData method (1.8+)
-        CraftChunkData data = (CraftChunkData) generator.generateChunkData(this.world.getWorld(), random, x, z, biomegrid);
+        CraftChunkData data = (CraftChunkData) generator.generateChunkData(((WorldExtra)this.world).getWorld(), random, x, z, biomegrid);
         if (data != null) {
             char[][] sections = data.getRawChunkData();
             chunk = new Chunk(this.world, x, z);
 
-            ChunkSection[] csect = chunk.getSections();
+            ChunkSection[] csect = ((ChunkExtra)chunk).getSections();
             int scnt = Math.min(csect.length, sections.length);
 
             // Loop through returned sections
@@ -66,11 +69,11 @@ public class CustomChunkGenerator extends InternalChunkGenerator {
             }
         } else {
             // Try extended block method (1.2+)
-            short[][] xbtypes = generator.generateExtBlockSections(this.world.getWorld(), this.random, x, z, biomegrid);
+            short[][] xbtypes = generator.generateExtBlockSections(((WorldExtra)this.world).getWorld(), this.random, x, z, biomegrid);
             if (xbtypes != null) {
                 chunk = new Chunk(this.world, x, z);
 
-                ChunkSection[] csect = chunk.getSections();
+                ChunkSection[] csect = ((ChunkExtra)chunk).getSections();
                 int scnt = Math.min(csect.length, xbtypes.length);
 
                 // Loop through returned sections
@@ -88,12 +91,12 @@ public class CustomChunkGenerator extends InternalChunkGenerator {
                     csect[sec] = new ChunkSection(sec << 4, true);
                 }
             } else { // Else check for byte-per-block section data
-                byte[][] btypes = generator.generateBlockSections(this.world.getWorld(), this.random, x, z, biomegrid);
+                byte[][] btypes = generator.generateBlockSections(((WorldExtra)this.world).getWorld(), this.random, x, z, biomegrid);
 
                 if (btypes != null) {
                     chunk = new Chunk(this.world, x, z);
 
-                    ChunkSection[] csect = chunk.getSections();
+                    ChunkSection[] csect = ((ChunkExtra)chunk).getSections();
                     int scnt = Math.min(csect.length, btypes.length);
 
                     for (int sec = 0; sec < scnt; sec++) {
@@ -110,13 +113,13 @@ public class CustomChunkGenerator extends InternalChunkGenerator {
                     }
                 } else { // Else, fall back to pre 1.2 method
                     @SuppressWarnings("deprecation")
-                    byte[] types = generator.generate(this.world.getWorld(), this.random, x, z);
+                    byte[] types = generator.generate(((WorldExtra)this.world).getWorld(), this.random, x, z);
                     int ydim = types.length / 256;
                     int scnt = ydim / 16;
 
                     chunk = new Chunk(this.world, x, z); // Create empty chunk
 
-                    ChunkSection[] csect = chunk.getSections();
+                    ChunkSection[] csect = ((ChunkExtra)chunk).getSections();
 
                     scnt = Math.min(scnt, csect.length);
                     // Loop through sections

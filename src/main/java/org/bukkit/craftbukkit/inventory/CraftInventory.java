@@ -4,6 +4,8 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.ListIterator;
 
+import io.github.fukkitmc.legacy.extra.ContainerExtra;
+import io.github.fukkitmc.legacy.extra.IInventoryExtra;
 import net.minecraft.server.IHopper;
 import net.minecraft.server.IInventory;
 import net.minecraft.server.InventoryCrafting;
@@ -50,7 +52,7 @@ public class CraftInventory implements Inventory {
 
     public ItemStack[] getContents() {
         ItemStack[] items = new ItemStack[getSize()];
-        net.minecraft.server.ItemStack[] mcItems = getInventory().getContents();
+        net.minecraft.server.ItemStack[] mcItems = ((IInventoryExtra)getInventory()).getContents();
 
         int size = Math.min(items.length, mcItems.length);
         for (int i = 0; i < size; i++) {
@@ -60,11 +62,11 @@ public class CraftInventory implements Inventory {
     }
 
     public void setContents(ItemStack[] items) {
-        if (getInventory().getContents().length < items.length) {
-            throw new IllegalArgumentException("Invalid inventory size; expected " + getInventory().getContents().length + " or less");
+        if (((IInventoryExtra)getInventory()).getContents().length < items.length) {
+            throw new IllegalArgumentException("Invalid inventory size; expected " + ((IInventoryExtra)getInventory()).getContents().length + " or less");
         }
 
-        net.minecraft.server.ItemStack[] mcItems = getInventory().getContents();
+        net.minecraft.server.ItemStack[] mcItems = ((IInventoryExtra)getInventory()).getContents();
 
         for (int i = 0; i < mcItems.length; i++) {
             if (i >= items.length) {
@@ -418,7 +420,7 @@ public class CraftInventory implements Inventory {
     }
 
     public List<HumanEntity> getViewers() {
-        return this.inventory.getViewers();
+        return ((IInventoryExtra)this.inventory).getViewers();
     }
 
     public String getTitle() {
@@ -459,7 +461,7 @@ public class CraftInventory implements Inventory {
     }
 
     public InventoryHolder getHolder() {
-        return inventory.getOwner();
+        return ((IInventoryExtra)inventory).getOwner();
     }
 
     public int getMaxStackSize() {
@@ -467,7 +469,7 @@ public class CraftInventory implements Inventory {
     }
 
     public void setMaxStackSize(int size) {
-        inventory.setMaxStackSize(size);
+        ((IInventoryExtra)inventory).setMaxStackSize(size);
     }
 
     @Override

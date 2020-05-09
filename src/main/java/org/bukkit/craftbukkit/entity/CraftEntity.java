@@ -6,6 +6,9 @@ import java.util.List;
 import java.util.Set;
 import java.util.UUID;
 
+import io.github.fukkitmc.legacy.extra.EntityArrowExtra;
+import io.github.fukkitmc.legacy.extra.EntityExtra;
+import io.github.fukkitmc.legacy.extra.WorldExtra;
 import net.minecraft.server.*;
 
 import org.bukkit.EntityEffect;
@@ -212,13 +215,13 @@ public abstract class CraftEntity implements org.bukkit.entity.Entity {
 
     public boolean isOnGround() {
         if (entity instanceof EntityArrow) {
-            return ((EntityArrow) entity).isInGround();
+            return ((EntityArrowExtra) entity).isInGround();
         }
         return entity.onGround;
     }
 
     public World getWorld() {
-        return entity.world.getWorld();
+        return ((WorldExtra)entity.world).getWorld();
     }
 
     public boolean teleport(Location location) {
@@ -252,7 +255,7 @@ public abstract class CraftEntity implements org.bukkit.entity.Entity {
         List<org.bukkit.entity.Entity> bukkitEntityList = new java.util.ArrayList<org.bukkit.entity.Entity>(notchEntityList.size());
 
         for (Entity e : notchEntityList) {
-            bukkitEntityList.add(e.getBukkitEntity());
+            bukkitEntityList.add(((EntityExtra)e).getBukkitEntity());
         }
         return bukkitEntityList;
     }
@@ -298,7 +301,7 @@ public abstract class CraftEntity implements org.bukkit.entity.Entity {
     }
 
     public org.bukkit.entity.Entity getPassenger() {
-        return isEmpty() ? null : getHandle().passenger.getBukkitEntity();
+        return isEmpty() ? null : ((EntityExtra)getHandle().passenger).getBukkitEntity();
     }
 
     public boolean setPassenger(org.bukkit.entity.Entity passenger) {
@@ -425,7 +428,7 @@ public abstract class CraftEntity implements org.bukkit.entity.Entity {
             return null;
         }
 
-        return getHandle().vehicle.getBukkitEntity();
+        return ((EntityExtra)getHandle().vehicle).getBukkitEntity();
     }
 
     @Override

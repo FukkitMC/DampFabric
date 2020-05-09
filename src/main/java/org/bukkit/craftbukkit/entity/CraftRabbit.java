@@ -1,5 +1,7 @@
 package org.bukkit.craftbukkit.entity;
 
+import io.github.fukkitmc.legacy.extra.EntityExtra;
+import io.github.fukkitmc.legacy.extra.EntityRabbitExtra;
 import net.minecraft.server.World;
 import net.minecraft.server.EntityRabbit;
 import net.minecraft.server.PathfinderGoalSelector;
@@ -43,7 +45,7 @@ public class CraftRabbit extends CraftAnimals implements Rabbit {
             World world = ((CraftWorld) this.getWorld()).getHandle();
             entity.goalSelector = new PathfinderGoalSelector(world != null && world.methodProfiler != null ? world.methodProfiler : null);
             entity.targetSelector = new PathfinderGoalSelector(world != null && world.methodProfiler != null ? world.methodProfiler : null);
-            entity.initializePathFinderGoals();
+            ((EntityRabbitExtra)entity).initializePathFinderGoals();
         }
 
         entity.setRabbitType(CraftMagicMapping.toMagic(type)); 

@@ -1,5 +1,7 @@
 package org.bukkit.craftbukkit.inventory;
 
+import io.github.fukkitmc.legacy.extra.IInventoryExtra;
+import io.github.fukkitmc.legacy.extra.IRecipeExtra;
 import net.minecraft.server.IRecipe;
 import net.minecraft.server.IInventory;
 import net.minecraft.server.InventoryCrafting;
@@ -32,8 +34,8 @@ public class CraftInventoryCrafting extends CraftInventory implements CraftingIn
 
     @Override
     public void setContents(ItemStack[] items) {
-        int resultLen = getResultInventory().getContents().length;
-        int len = getMatrixInventory().getContents().length + resultLen;
+        int resultLen = ((IInventoryExtra)getMatrixInventory()).getContents().length;
+        int len = ((IInventoryExtra)getMatrixInventory()).getContents().length + resultLen;
         if (len > items.length) {
             throw new IllegalArgumentException("Invalid inventory size; expected " + len + " or less");
         }
@@ -43,14 +45,14 @@ public class CraftInventoryCrafting extends CraftInventory implements CraftingIn
     @Override
     public ItemStack[] getContents() {
         ItemStack[] items = new ItemStack[getSize()];
-        net.minecraft.server.ItemStack[] mcResultItems = getResultInventory().getContents();
+        net.minecraft.server.ItemStack[] mcResultItems = ((IInventoryExtra)getMatrixInventory()).getContents();
 
         int i = 0;
         for (i = 0; i < mcResultItems.length; i++ ) {
             items[i] = CraftItemStack.asCraftMirror(mcResultItems[i]);
         }
 
-        net.minecraft.server.ItemStack[] mcItems = getMatrixInventory().getContents();
+        net.minecraft.server.ItemStack[] mcItems = ((IInventoryExtra)getMatrixInventory()).getContents();
 
         for (int j = 0; j < mcItems.length; j++) {
             items[i + j] = CraftItemStack.asCraftMirror(mcItems[j]);
@@ -86,7 +88,7 @@ public class CraftInventoryCrafting extends CraftInventory implements CraftingIn
 
     public ItemStack[] getMatrix() {
         ItemStack[] items = new ItemStack[getSize()];
-        net.minecraft.server.ItemStack[] matrix = getMatrixInventory().getContents();
+        net.minecraft.server.ItemStack[] matrix = ((IInventoryExtra)getMatrixInventory()).getContents();
 
         for (int i = 0; i < matrix.length; i++ ) {
             items[i] = CraftItemStack.asCraftMirror(matrix[i]);
@@ -102,11 +104,11 @@ public class CraftInventoryCrafting extends CraftInventory implements CraftingIn
     }
 
     public void setMatrix(ItemStack[] contents) {
-        if (getMatrixInventory().getContents().length > contents.length) {
-            throw new IllegalArgumentException("Invalid inventory size; expected " + getMatrixInventory().getContents().length + " or less");
+        if (((IInventoryExtra)getMatrixInventory()).getContents().length > contents.length) {
+            throw new IllegalArgumentException("Invalid inventory size; expected " + ((IInventoryExtra)getMatrixInventory()).getContents().length + " or less");
         }
 
-        net.minecraft.server.ItemStack[] mcItems = getMatrixInventory().getContents();
+        net.minecraft.server.ItemStack[] mcItems = ((IInventoryExtra)getMatrixInventory()).getContents();
 
         for (int i = 0; i < mcItems.length; i++ ) {
             if (i < contents.length) {
@@ -123,7 +125,7 @@ public class CraftInventoryCrafting extends CraftInventory implements CraftingIn
     }
 
     public void setResult(ItemStack item) {
-        net.minecraft.server.ItemStack[] contents = getResultInventory().getContents();
+        net.minecraft.server.ItemStack[] contents = ((IInventoryExtra)getMatrixInventory()).getContents();
         if (item == null || item.getTypeId() <= 0) {
             contents[0] = null;
         } else {
@@ -133,6 +135,6 @@ public class CraftInventoryCrafting extends CraftInventory implements CraftingIn
 
     public Recipe getRecipe() {
         IRecipe recipe = ((InventoryCrafting)getInventory()).currentRecipe;
-        return recipe == null ? null : recipe.toBukkitRecipe();
+        return recipe == null ? null : ((IRecipeExtra)recipe).toBukkitRecipe();
     }
 }

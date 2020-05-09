@@ -3,6 +3,9 @@ package io.github.fukkitmc.legacy.mixins.extra;
 
 import com.mojang.authlib.GameProfile;
 import io.github.fukkitmc.legacy.debug.BytecodeAnchor;
+import io.github.fukkitmc.legacy.extra.EntityExtra;
+import io.github.fukkitmc.legacy.extra.EntityPlayerExtra;
+import io.github.fukkitmc.legacy.extra.MinecraftServerExtra;
 import io.github.fukkitmc.legacy.extra.PlayerListExtra;
 import io.github.fukkitmc.legacy.misc.PlayerListWorldBorderListener;
 import io.netty.buffer.Unpooled;
@@ -66,7 +69,7 @@ public abstract class PlayerListMixin implements PlayerListExtra {
         this.players.add(entityplayer);
         this.j.put(entityplayer.getUniqueID(), entityplayer);
         // this.sendAll(new PacketPlayOutPlayerInfo(PacketPlayOutPlayerInfo.EnumPlayerInfoAction.ADD_PLAYER, new EntityPlayer[] { entityplayer})); // CraftBukkit - replaced with loop below
-        WorldServer worldserver = this.server.getWorldServer(entityplayer.dimension);
+        WorldServer worldserver = ((MinecraftServerExtra)this.server).getWorldServer(entityplayer.dimension);
 
         // CraftBukkit start
         PlayerJoinEvent playerJoinEvent = new PlayerJoinEvent(cserver.getPlayer(entityplayer), joinMessage);
@@ -76,7 +79,7 @@ public abstract class PlayerListMixin implements PlayerListExtra {
 
         if (joinMessage != null && joinMessage.length() > 0) {
             for (IChatBaseComponent line : org.bukkit.craftbukkit.util.CraftChatMessage.fromString(joinMessage)) {
-                server.getPlayerList().sendAll(new PacketPlayOutChat(line));
+                ((MinecraftServerExtra)this.server).getPlayerList().sendAll(new PacketPlayOutChat(line));
             }
         }
 
@@ -87,13 +90,13 @@ public abstract class PlayerListMixin implements PlayerListExtra {
         PacketPlayOutPlayerInfo packet = new PacketPlayOutPlayerInfo(PacketPlayOutPlayerInfo.EnumPlayerInfoAction.ADD_PLAYER, entityplayer);
 
         for (EntityPlayer player : this.players) {
-            EntityPlayer entityplayer1 = (EntityPlayer) player;
+            EntityPlayer entityplayer1 = player;
 
-            if (entityplayer1.getBukkitEntity().canSee((CraftPlayer) entityplayer.getBukkitEntity())) {
+            if (((EntityExtra)entityplayer1).getBukkitEntity().canSee((CraftPlayer) ((EntityExtra)entityplayer).getBukkitEntity())) {
                 entityplayer1.playerConnection.sendPacket(packet);
             }
 
-            if (!entityplayer.getBukkitEntity().canSee((CraftPlayer) entityplayer1.getBukkitEntity())) {
+            if (!((EntityExtra)entityplayer).getBukkitEntity().canSee((CraftPlayer) ((EntityExtra)entityplayer1).getBukkitEntity())) {
                 continue;
             }
 
@@ -120,8 +123,8 @@ public abstract class PlayerListMixin implements PlayerListExtra {
         entityplayer.playerConnection.sendPacket(new PacketPlayOutUpdateTime(worldserver.getTime(), worldserver.getDayTime(), worldserver.getGameRules().getBoolean("doDaylightCycle")));
         if (worldserver.S()) {
             // CraftBukkit start - handle player weather
-            entityplayer.setPlayerWeather(org.bukkit.WeatherType.DOWNFALL, false);
-            entityplayer.updateWeather(-worldserver.p, worldserver.p, -worldserver.r, worldserver.r);
+            ((EntityPlayerExtra)entityplayer).setPlayerWeather(org.bukkit.WeatherType.DOWNFALL, false);
+            ((EntityPlayerExtra)entityplayer).updateWeather(-worldserver.p, worldserver.p, -worldserver.r, worldserver.r);
             // CraftBukkit end
         }
 
