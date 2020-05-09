@@ -49,8 +49,6 @@ public class CraftGuardian extends CraftMonster implements Guardian {
             // Update pathfinding (random stroll back to 80)
             entityGuardian.goalRandomStroll.setTimeBetweenMovement(80);
 
-            // Tell minecraft that we need persistence since the guardian changed
-            entityGuardian.initAttributes();
         }
     }
 }

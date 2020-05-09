@@ -15100,8 +15100,6 @@ accessible field net/minecraft/server/EntityOcelot bo Lnet/minecraft/server/Path
 mutable field net/minecraft/server/EntityOcelot bo Lnet/minecraft/server/PathfinderGoalAvoidTarget;
 accessible field net/minecraft/server/EntityOcelot bp Lnet/minecraft/server/PathfinderGoalTempt;
 mutable field net/minecraft/server/EntityOcelot bp Lnet/minecraft/server/PathfinderGoalTempt;
-extendable method net/minecraft/server/EntityOcelot h ()V
-accessible method net/minecraft/server/EntityOcelot h ()V
 extendable method net/minecraft/server/EntityOcelot isTypeNotPersistent ()Z
 accessible method net/minecraft/server/EntityOcelot isTypeNotPersistent ()Z
 extendable method net/minecraft/server/EntityOcelot initAttributes ()V

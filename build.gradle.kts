@@ -1,5 +1,27 @@
 import java.util.function.Function
 
+buildscript {
+
+    repositories {
+        jcenter()
+        maven {
+            name = "Fabric"
+            url = uri("https://maven.fabricmc.net/")
+        }
+        maven {
+            name = "FukkitMC"
+            url = uri("../fukkit-repo")
+        }
+    }
+
+    dependencies {
+         configurations.classpath.resolutionStrategy.dependencySubstitution{
+             substitute(module("io.github.fukkitmc:tiny-remapper:0.2.1.0")).with(module("io.github.fukkitmc:tiny-remapper:test-0.2.1.2"))
+         }
+    }
+
+}
+
 plugins {
     id("fabric-loom") version "gs0.2.7-SNAPSHOT"
     id("io.github.fukkitmc.crusty") version "1.1.7"
