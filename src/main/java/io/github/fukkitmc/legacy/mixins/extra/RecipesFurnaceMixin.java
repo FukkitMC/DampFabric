@@ -3,8 +3,7 @@ package io.github.fukkitmc.legacy.mixins.extra;
 
 import com.google.common.collect.Maps;
 import io.github.fukkitmc.legacy.extra.RecipesFurnaceExtra;
-import net.minecraft.server.BiomeBase;
-import net.minecraft.server.ItemStack;
+import net.minecraft.item.ItemStack;
 import net.minecraft.server.RecipesFurnace;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;

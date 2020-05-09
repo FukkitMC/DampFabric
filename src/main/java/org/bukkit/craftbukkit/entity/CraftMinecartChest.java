@@ -1,7 +1,6 @@
 package org.bukkit.craftbukkit.entity;
 
-import net.minecraft.server.EntityMinecartChest;
-
+import net.minecraft.entity.vehicle.ChestMinecartEntity;
 import org.bukkit.craftbukkit.CraftServer;
 import org.bukkit.craftbukkit.inventory.CraftInventory;
 import org.bukkit.entity.EntityType;
@@ -12,7 +11,7 @@ import org.bukkit.inventory.Inventory;
 public class CraftMinecartChest extends CraftMinecart implements StorageMinecart {
     private final CraftInventory inventory;
 
-    public CraftMinecartChest(CraftServer server, EntityMinecartChest entity) {
+    public CraftMinecartChest(CraftServer server, ChestMinecartEntity entity) {
         super(server, entity);
         inventory = new CraftInventory(entity);
     }

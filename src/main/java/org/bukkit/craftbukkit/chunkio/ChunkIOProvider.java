@@ -6,15 +6,14 @@ import io.github.fukkitmc.legacy.extra.ChunkExtra;
 import io.github.fukkitmc.legacy.extra.ChunkProviderServerExtra;
 import io.github.fukkitmc.legacy.extra.ChunkRegionLoaderExtra;
 import io.github.fukkitmc.legacy.extra.WorldExtra;
-import net.minecraft.server.Chunk;
-import net.minecraft.server.ChunkRegionLoader;
-import net.minecraft.server.NBTTagCompound;
-
 import org.bukkit.Server;
 import org.bukkit.craftbukkit.util.AsynchronousExecutor;
 import org.bukkit.craftbukkit.util.LongHash;
 
 import java.util.concurrent.atomic.AtomicInteger;
+import net.minecraft.nbt.CompoundTag;
+import net.minecraft.world.chunk.Chunk;
+import net.minecraft.world.chunk.ThreadedAnvilChunkStorage;
 
 class ChunkIOProvider implements AsynchronousExecutor.CallBackProvider<QueuedChunk, Chunk, Runnable, RuntimeException> {
     private final AtomicInteger threadNumber = new AtomicInteger(1);
@@ -22,11 +21,11 @@ class ChunkIOProvider implements AsynchronousExecutor.CallBackProvider<QueuedChu
     // async stuff
     public Chunk callStage1(QueuedChunk queuedChunk) throws RuntimeException {
         try {
-            ChunkRegionLoader loader = queuedChunk.loader;
+            ThreadedAnvilChunkStorage loader = queuedChunk.loader;
             Object[] data = ((ChunkRegionLoaderExtra)loader).loadChunk(queuedChunk.world, queuedChunk.x, queuedChunk.z);
             
             if (data != null) {
-                queuedChunk.compound = (NBTTagCompound) data[1];
+                queuedChunk.compound = (CompoundTag) data[1];
                 return (Chunk) data[0];
             }
 
@@ -46,7 +45,7 @@ class ChunkIOProvider implements AsynchronousExecutor.CallBackProvider<QueuedChu
 
         ((ChunkRegionLoaderExtra)queuedChunk.loader).loadEntities(chunk, queuedChunk.compound.getCompound("Level"), queuedChunk.world);
         chunk.setLastSaved(queuedChunk.provider.world.getTime());
-        queuedChunk.provider.chunks.put(LongHash.toLong(queuedChunk.x, queuedChunk.z), chunk);
+        queuedChunk.provider.chunks.set(LongHash.toLong(queuedChunk.x, queuedChunk.z), chunk);
         chunk.addEntities();
 
         if (queuedChunk.provider.chunkProvider != null) {

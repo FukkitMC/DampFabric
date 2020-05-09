@@ -1,7 +1,6 @@
 package org.bukkit.craftbukkit.entity;
 
-import net.minecraft.server.EntityFallingBlock;
-
+import net.minecraft.entity.FallingBlockEntity;
 import org.bukkit.Material;
 import org.bukkit.craftbukkit.CraftServer;
 import org.bukkit.craftbukkit.util.CraftMagicNumbers;
@@ -10,13 +9,13 @@ import org.bukkit.entity.FallingSand;
 
 public class CraftFallingSand extends CraftEntity implements FallingSand {
 
-    public CraftFallingSand(CraftServer server, EntityFallingBlock entity) {
+    public CraftFallingSand(CraftServer server, FallingBlockEntity entity) {
         super(server, entity);
     }
 
     @Override
-    public EntityFallingBlock getHandle() {
-        return (EntityFallingBlock) entity;
+    public FallingBlockEntity getHandle() {
+        return (FallingBlockEntity) entity;
     }
 
     @Override
@@ -37,24 +36,24 @@ public class CraftFallingSand extends CraftEntity implements FallingSand {
     }
 
     public byte getBlockData() {
-        return (byte) getHandle().getBlock().getBlock().toLegacyData(getHandle().getBlock());
+        return (byte) getHandle().getBlock().getBlock().getData(getHandle().getBlock());
     }
 
     public boolean getDropItem() {
-        return getHandle().dropItem;
+        return getHandle().dropping;
     }
 
     public void setDropItem(boolean drop) {
-        getHandle().dropItem = drop;
+        getHandle().dropping = drop;
     }
 
     @Override
     public boolean canHurtEntities() {
-        return getHandle().hurtEntities;
+        return getHandle().hurtingEntities;
     }
 
     @Override
     public void setHurtEntities(boolean hurtEntities) {
-        getHandle().hurtEntities = hurtEntities;
+        getHandle().hurtingEntities = hurtEntities;
     }
 }

@@ -1,19 +1,18 @@
 package org.bukkit.craftbukkit.entity;
 
-import net.minecraft.server.EntityMonster;
-
+import net.minecraft.entity.mob.HostileEntity;
 import org.bukkit.craftbukkit.CraftServer;
 import org.bukkit.entity.Monster;
 
 public class CraftMonster extends CraftCreature implements Monster {
 
-    public CraftMonster(CraftServer server, EntityMonster entity) {
+    public CraftMonster(CraftServer server, HostileEntity entity) {
         super(server, entity);
     }
 
     @Override
-    public EntityMonster getHandle() {
-        return (EntityMonster) entity;
+    public HostileEntity getHandle() {
+        return (HostileEntity) entity;
     }
 
     @Override

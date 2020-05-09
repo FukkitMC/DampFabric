@@ -1,6 +1,6 @@
 package io.github.fukkitmc.legacy.extra;
 
-import net.minecraft.server.BlockPosition;
+import net.minecraft.util.math.BlockPos;
 
 public interface PortalTravelAgentExtra {
 
@@ -8,7 +8,7 @@ public interface PortalTravelAgentExtra {
         throw new RuntimeException("createPortal not implemented for class " + getClass().getName());
     }
 
-    default BlockPosition findPortal(double x, double y, double z, int short1){
+    default BlockPos findPortal(double x, double y, double z, int short1){
         throw new RuntimeException("findPortal not implemented for class " + getClass().getName());
     }
 

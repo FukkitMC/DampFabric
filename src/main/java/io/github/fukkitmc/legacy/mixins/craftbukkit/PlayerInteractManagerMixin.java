@@ -2,7 +2,19 @@ package io.github.fukkitmc.legacy.mixins.craftbukkit;
 
 import io.github.fukkitmc.legacy.extra.EntityExtra;
 import io.github.fukkitmc.legacy.extra.WorldExtra;
+import net.minecraft.block.Block;
+import net.minecraft.block.BlockState;
+import net.minecraft.block.Blocks;
+import net.minecraft.block.entity.BlockEntity;
+import net.minecraft.enchantment.EnchantmentHelper;
+import net.minecraft.entity.player.ServerPlayerEntity;
+import net.minecraft.item.ItemStack;
+import net.minecraft.item.SwordItem;
+import net.minecraft.network.packet.s2c.play.BlockUpdateS2CPacket;
 import net.minecraft.server.*;
+import net.minecraft.util.math.BlockPos;
+import net.minecraft.world.World;
+import net.minecraft.world.level.LevelInfo;
 import org.bukkit.entity.Player;
 import org.bukkit.event.block.BlockBreakEvent;
 import org.spongepowered.asm.mixin.Mixin;
@@ -14,11 +26,11 @@ public abstract class PlayerInteractManagerMixin {
 
     @Shadow public World world;
 
-    @Shadow public EntityPlayer player;
+    @Shadow public ServerPlayerEntity player;
 
-    @Shadow public WorldSettings.EnumGamemode gamemode;
+    @Shadow public LevelInfo.GameMode gamemode;
 
-    @Shadow public abstract boolean c(BlockPosition blockPosition);
+    @Shadow public abstract boolean c(BlockPos blockPosition);
 
     @Shadow public abstract boolean isCreative();
 
@@ -26,7 +38,7 @@ public abstract class PlayerInteractManagerMixin {
      * @author Fukkit
      */
     @Overwrite
-    public boolean breakBlock(BlockPosition blockposition) {
+    public boolean breakBlock(BlockPos blockposition) {
         // CraftBukkit start - fire BlockBreakEvent
         BlockBreakEvent event = null;
 
@@ -34,14 +46,14 @@ public abstract class PlayerInteractManagerMixin {
             org.bukkit.block.Block block = ((WorldExtra)this.world).getWorld().getBlockAt(blockposition.getX(), blockposition.getY(), blockposition.getZ());
 
             // Sword + Creative mode pre-cancel
-            boolean isSwordNoBreak = this.gamemode.d() && this.player.bA() != null && this.player.bA().getItem() instanceof ItemSword;
+            boolean isSwordNoBreak = this.gamemode.isCreative() && this.player.bA() != null && this.player.bA().getItem() instanceof SwordItem;
 
             // Tell client the block is gone immediately then process events
             // Don't tell the client if its a creative sword break because its not broken!
-            if (world.getTileEntity(blockposition) == null && !isSwordNoBreak) {
-                PacketPlayOutBlockChange packet = new PacketPlayOutBlockChange(this.world, blockposition);
-                packet.block = Blocks.AIR.getBlockData();
-                ((EntityPlayer) this.player).playerConnection.sendPacket(packet);
+            if (world.getBlockEntity(blockposition) == null && !isSwordNoBreak) {
+                BlockUpdateS2CPacket packet = new BlockUpdateS2CPacket(this.world, blockposition);
+                packet.block = Blocks.AIR.getDefaultState();
+                ((ServerPlayerEntity) this.player).playerConnection.sendPacket(packet);
             }
 
             event = new BlockBreakEvent(block, (Player) ((EntityExtra)this.player).getBukkitEntity());
@@ -50,14 +62,14 @@ public abstract class PlayerInteractManagerMixin {
             event.setCancelled(isSwordNoBreak);
 
             // Calculate default block experience
-            IBlockData nmsData = this.world.getType(blockposition);
+            BlockState nmsData = this.world.getBlockState(blockposition);
             Block nmsBlock = nmsData.getBlock();
 
             if (nmsBlock != null && !event.isCancelled() && !this.isCreative() && this.player.b(nmsBlock)) {
                 // Copied from block.a(World world, EntityHuman entityhuman, BlockPosition blockposition, IBlockData iblockdata, TileEntity tileentity)
-                if (!(nmsBlock.I() && EnchantmentManager.hasSilkTouchEnchantment(this.player))) {
+                if (!(nmsBlock.I() && EnchantmentHelper.hasSilkTouchEnchantment(this.player))) {
                     int data = block.getData();
-                    int bonusLevel = EnchantmentManager.getBonusBlockLootEnchantmentLevel(this.player);
+                    int bonusLevel = EnchantmentHelper.getBonusBlockLootEnchantmentLevel(this.player);
                     event.setExpToDrop(0);//TODO: implement
 //                    event.setExpToDrop(nmsBlock.getExpDrop(this.world, nmsData, bonusLevel));
                 }
@@ -70,18 +82,18 @@ public abstract class PlayerInteractManagerMixin {
                     return false;
                 }
                 // Let the client know the block still exists
-                ((EntityPlayer) this.player).playerConnection.sendPacket(new PacketPlayOutBlockChange(this.world, blockposition));
+                ((ServerPlayerEntity) this.player).playerConnection.sendPacket(new BlockUpdateS2CPacket(this.world, blockposition));
                 // Update any tile entity data for this block
-                TileEntity tileentity = this.world.getTileEntity(blockposition);
+                BlockEntity tileentity = this.world.getBlockEntity(blockposition);
                 if (tileentity != null) {
                     this.player.playerConnection.sendPacket(tileentity.getUpdatePacket());
                 }
                 return false;
             }
         }
-        IBlockData iblockdata = this.world.getType(blockposition);
+        BlockState iblockdata = this.world.getBlockState(blockposition);
         if (iblockdata.getBlock() == Blocks.AIR) return false; // CraftBukkit - A plugin set block to air without cancelling
-        TileEntity tileentity = this.world.getTileEntity(blockposition);
+        BlockEntity tileentity = this.world.getBlockEntity(blockposition);
 
         // CraftBukkit start - Special case skulls, their item data comes from a tile entity
         if (iblockdata.getBlock() == Blocks.SKULL && !this.isCreative()) {
@@ -90,12 +102,12 @@ public abstract class PlayerInteractManagerMixin {
         }
         // CraftBukkit end
 
-        if (this.gamemode.c()) {
-            if (this.gamemode == WorldSettings.EnumGamemode.SPECTATOR) {
+        if (this.gamemode.shouldLimitWorldModification()) {
+            if (this.gamemode == LevelInfo.GameMode.SPECTATOR) {
                 return false;
             }
 
-            if (!this.player.cn()) {
+            if (!this.player.canModifyWorld()) {
                 ItemStack itemstack = this.player.bZ();
 
                 if (itemstack == null) {
@@ -108,11 +120,11 @@ public abstract class PlayerInteractManagerMixin {
             }
         }
 
-        this.world.a(this.player, 2001, blockposition, Block.getCombinedId(iblockdata));
+        this.world.a(this.player, 2001, blockposition, Block.method_717(iblockdata));
         boolean flag = this.c(blockposition);
 
         if (this.isCreative()) {
-            this.player.playerConnection.sendPacket(new PacketPlayOutBlockChange(this.world, blockposition));
+            this.player.playerConnection.sendPacket(new BlockUpdateS2CPacket(this.world, blockposition));
         } else {
             ItemStack itemstack1 = this.player.bZ();
             boolean flag1 = this.player.b(iblockdata.getBlock());

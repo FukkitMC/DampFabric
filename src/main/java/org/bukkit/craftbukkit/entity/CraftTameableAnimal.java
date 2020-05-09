@@ -1,21 +1,21 @@
 package org.bukkit.craftbukkit.entity;
 
-import net.minecraft.server.EntityTameableAnimal;
 import org.bukkit.craftbukkit.CraftServer;
 import org.bukkit.entity.AnimalTamer;
 import org.bukkit.entity.Creature;
 import org.bukkit.entity.Tameable;
 
 import java.util.UUID;
+import net.minecraft.entity.passive.TameableEntity;
 
 public class CraftTameableAnimal extends CraftAnimals implements Tameable, Creature {
-    public CraftTameableAnimal(CraftServer server, EntityTameableAnimal entity) {
+    public CraftTameableAnimal(CraftServer server, TameableEntity entity) {
         super(server, entity);
     }
 
     @Override
-    public EntityTameableAnimal getHandle() {
-        return (EntityTameableAnimal)super.getHandle();
+    public TameableEntity getHandle() {
+        return (TameableEntity)super.getHandle();
     }
 
     public UUID getOwnerUUID() {
@@ -74,7 +74,7 @@ public class CraftTameableAnimal extends CraftAnimals implements Tameable, Creat
     }
 
     public void setSitting(boolean sitting) {
-        getHandle().getGoalSit().setSitting(sitting);
+        getHandle().getSitGoal().setEnabledWithOwner(sitting);
     }
 
     @Override

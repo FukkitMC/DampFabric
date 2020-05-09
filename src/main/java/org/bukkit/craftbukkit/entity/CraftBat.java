@@ -1,18 +1,18 @@
 package org.bukkit.craftbukkit.entity;
 
-import net.minecraft.server.EntityBat;
+import net.minecraft.entity.passive.BatEntity;
 import org.bukkit.craftbukkit.CraftServer;
 import org.bukkit.entity.Bat;
 import org.bukkit.entity.EntityType;
 
 public class CraftBat extends CraftAmbient implements Bat {
-    public CraftBat(CraftServer server, EntityBat entity) {
+    public CraftBat(CraftServer server, BatEntity entity) {
         super(server, entity);
     }
 
     @Override
-    public EntityBat getHandle() {
-        return (EntityBat) entity;
+    public BatEntity getHandle() {
+        return (BatEntity) entity;
     }
 
     @Override
@@ -26,11 +26,11 @@ public class CraftBat extends CraftAmbient implements Bat {
 
     @Override
     public boolean isAwake() {
-        return !getHandle().isAsleep();
+        return !getHandle().isRoosting();
     }
 
     @Override
     public void setAwake(boolean state) {
-        getHandle().setAsleep(!state);
+        getHandle().setRoosting(!state);
     }
 }

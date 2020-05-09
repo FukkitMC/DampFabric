@@ -3,7 +3,18 @@ package io.github.fukkitmc.legacy.mixins.extra;
 import com.mojang.authlib.GameProfile;
 import io.github.fukkitmc.legacy.debug.BytecodeAnchor;
 import io.github.fukkitmc.legacy.extra.EntityHumanExtra;
+import net.minecraft.entity.LivingEntity;
+import net.minecraft.entity.player.HungerManager;
+import net.minecraft.entity.player.PlayerAbilities;
+import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.entity.player.PlayerInventory;
+import net.minecraft.inventory.EnderChestInventory;
+import net.minecraft.item.ItemStack;
+import net.minecraft.nbt.CompoundTag;
+import net.minecraft.nbt.ListTag;
 import net.minecraft.server.*;
+import net.minecraft.util.math.BlockPos;
+import net.minecraft.world.World;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Overwrite;
 import org.spongepowered.asm.mixin.Shadow;
@@ -11,8 +22,8 @@ import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
-@Mixin(value = EntityHuman.class, remap = false)
-public abstract class EntityHumanMixin extends EntityLiving implements EntityHumanExtra {
+@Mixin(value = PlayerEntity.class, remap = false)
+public abstract class EntityHumanMixin extends LivingEntity implements EntityHumanExtra {
 
     @Shadow public String spawnWorld;
 
@@ -34,13 +45,13 @@ public abstract class EntityHumanMixin extends EntityLiving implements EntityHum
 
     @Shadow public boolean d;
 
-    @Shadow public FoodMetaData foodData;
+    @Shadow public HungerManager foodData;
 
     @Shadow public PlayerAbilities abilities;
 
-    @Shadow public InventoryEnderChest enderChest;
+    @Shadow public EnderChestInventory enderChest;
 
-    @Shadow public BlockPosition c;
+    @Shadow public BlockPos c;
 
     public EntityHumanMixin(World world) {
         super(world);
@@ -65,31 +76,31 @@ public abstract class EntityHumanMixin extends EntityLiving implements EntityHum
      * @author fukkit
      */
     @Overwrite
-    public void b(NBTTagCompound nBTTagCompound) {
-        super.b(nBTTagCompound);
-        nBTTagCompound.set("Inventory", this.inventory.a(new NBTTagList()));
-        nBTTagCompound.setInt("SelectedItemSlot", this.inventory.itemInHandIndex);
-        nBTTagCompound.setBoolean("Sleeping", this.sleeping);
-        nBTTagCompound.setShort("SleepTimer", (short) this.sleepTicks);
-        nBTTagCompound.setFloat("XpP", this.exp);
-        nBTTagCompound.setInt("XpLevel", this.expLevel);
-        nBTTagCompound.setInt("XpTotal", this.expTotal);
-        nBTTagCompound.setInt("XpSeed", this.f);
-        nBTTagCompound.setInt("Score", this.getScore());
+    public void writeCustomDataToTag(CompoundTag nBTTagCompound) {
+        super.writeCustomDataToTag(nBTTagCompound);
+        nBTTagCompound.put("Inventory", this.inventory.serialize(new ListTag()));
+        nBTTagCompound.putInt("SelectedItemSlot", this.inventory.selectedSlot);
+        nBTTagCompound.putBoolean("Sleeping", this.sleeping);
+        nBTTagCompound.putShort("SleepTimer", (short) this.sleepTicks);
+        nBTTagCompound.putFloat("XpP", this.exp);
+        nBTTagCompound.putInt("XpLevel", this.expLevel);
+        nBTTagCompound.putInt("XpTotal", this.expTotal);
+        nBTTagCompound.putInt("XpSeed", this.f);
+        nBTTagCompound.putInt("Score", this.getScore());
         if (this.c != null) {
-            nBTTagCompound.setInt("SpawnX", this.c.getX());
-            nBTTagCompound.setInt("SpawnY", this.c.getY());
-            nBTTagCompound.setInt("SpawnZ", this.c.getZ());
-            nBTTagCompound.setBoolean("SpawnForced", this.d);
+            nBTTagCompound.putInt("SpawnX", this.c.getX());
+            nBTTagCompound.putInt("SpawnY", this.c.getY());
+            nBTTagCompound.putInt("SpawnZ", this.c.getZ());
+            nBTTagCompound.putBoolean("SpawnForced", this.d);
         }
-        this.foodData.b(nBTTagCompound);
-        this.abilities.a(nBTTagCompound);
-        nBTTagCompound.set("EnderItems", this.enderChest.h());
-        ItemStack itemstack = this.inventory.getItemInHand();
+        this.foodData.serialize(nBTTagCompound);
+        this.abilities.serialize(nBTTagCompound);
+        nBTTagCompound.put("EnderItems", this.enderChest.getTags());
+        ItemStack itemstack = this.inventory.getMainHandStack();
         if (itemstack != null && itemstack.getItem() != null) {
-            nBTTagCompound.set("SelectedItem", itemstack.save(new NBTTagCompound()));
+            nBTTagCompound.put("SelectedItem", itemstack.toTag(new CompoundTag()));
         }
-        nBTTagCompound.setString("SpawnWorld", getSpawnWorld()); // CraftBukkit - fixes bed spawns for multiworld worlds
+        nBTTagCompound.putString("SpawnWorld", getSpawnWorld()); // CraftBukkit - fixes bed spawns for multiworld worlds
     }
 
 }

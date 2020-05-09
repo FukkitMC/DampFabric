@@ -4,9 +4,7 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 import java.util.Map;
-
-import net.minecraft.server.MobEffect;
-
+import net.minecraft.entity.effect.StatusEffectInstance;
 import org.bukkit.potion.PotionEffectType;
 import org.bukkit.potion.PotionBrewer;
 import org.bukkit.potion.PotionEffect;
@@ -26,9 +24,9 @@ public class CraftPotionBrewer implements PotionBrewer {
             return effects;
 
         for (Object raw : mcEffects) {
-            if (raw == null || !(raw instanceof MobEffect))
+            if (raw == null || !(raw instanceof StatusEffectInstance))
                 continue;
-            MobEffect mcEffect = (MobEffect) raw;
+            StatusEffectInstance mcEffect = (StatusEffectInstance) raw;
             PotionEffect effect = new PotionEffect(PotionEffectType.getById(mcEffect.getEffectId()),
                     mcEffect.getDuration(), mcEffect.getAmplifier());
             // Minecraft PotionBrewer applies duration modifiers automatically.

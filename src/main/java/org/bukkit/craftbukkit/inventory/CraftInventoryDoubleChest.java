@@ -1,33 +1,32 @@
 package org.bukkit.craftbukkit.inventory;
 
 import io.github.fukkitmc.legacy.extra.IInventoryExtra;
+import net.minecraft.inventory.DoubleInventory;
 import net.minecraft.server.ITileInventory;
 import org.bukkit.block.DoubleChest;
 import org.bukkit.inventory.DoubleChestInventory;
 import org.bukkit.inventory.Inventory;
 import org.bukkit.inventory.ItemStack;
 
-import net.minecraft.server.InventoryLargeChest;
-
 public class CraftInventoryDoubleChest extends CraftInventory implements DoubleChestInventory {
     private final CraftInventory left;
     private final CraftInventory right;
 
     public CraftInventoryDoubleChest(CraftInventory left, CraftInventory right) {
-        super(new InventoryLargeChest("Large chest", (ITileInventory) left.getInventory(), (ITileInventory) right.getInventory()));
+        super(new DoubleInventory("Large chest", (ITileInventory) left.getInventory(), (ITileInventory) right.getInventory()));
         this.left = left;
         this.right = right;
     }
 
-    public CraftInventoryDoubleChest(InventoryLargeChest largeChest) {
+    public CraftInventoryDoubleChest(DoubleInventory largeChest) {
         super(largeChest);
-        if (largeChest.left instanceof InventoryLargeChest) {
-            left = new CraftInventoryDoubleChest((InventoryLargeChest) largeChest.left);
+        if (largeChest.left instanceof DoubleInventory) {
+            left = new CraftInventoryDoubleChest((DoubleInventory) largeChest.left);
         } else {
             left = new CraftInventory(largeChest.left);
         }
-        if (largeChest.right instanceof InventoryLargeChest) {
-            right = new CraftInventoryDoubleChest((InventoryLargeChest) largeChest.right);
+        if (largeChest.right instanceof DoubleInventory) {
+            right = new CraftInventoryDoubleChest((DoubleInventory) largeChest.right);
         } else {
             right = new CraftInventory(largeChest.right);
         }

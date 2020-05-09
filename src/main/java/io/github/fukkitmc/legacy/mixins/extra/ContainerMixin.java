@@ -2,7 +2,7 @@ package io.github.fukkitmc.legacy.mixins.extra;
 
 import io.github.fukkitmc.legacy.extra.ContainerExtra;
 import io.github.fukkitmc.legacy.extra.IInventoryExtra;
-import net.minecraft.server.Container;
+import net.minecraft.container.Container;
 import org.bukkit.craftbukkit.inventory.CraftInventory;
 import org.bukkit.inventory.InventoryView;
 import org.spongepowered.asm.mixin.Mixin;

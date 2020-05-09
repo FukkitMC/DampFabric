@@ -10,7 +10,7 @@ public class MinecraftServerRedirects {
     public static MinecraftServer getServer(){
         return ((CraftServer) Bukkit.getServer()).getServer();
     }
-    public static final Logger LOGGER = MinecraftServer.k;
+    public static final Logger LOGGER = MinecraftServer.LOGGER;
 
 
 }

@@ -4,10 +4,8 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
-
-import net.minecraft.server.NBTTagCompound;
-import net.minecraft.server.NBTTagList;
-
+import net.minecraft.nbt.CompoundTag;
+import net.minecraft.nbt.ListTag;
 import org.apache.commons.lang.Validate;
 import org.bukkit.Material;
 import org.bukkit.configuration.serialization.DelegateDeserialization;
@@ -41,16 +39,16 @@ class CraftMetaPotion extends CraftMetaItem implements PotionMeta {
         }
     }
 
-    CraftMetaPotion(NBTTagCompound tag) {
+    CraftMetaPotion(CompoundTag tag) {
         super(tag);
 
-        if (tag.hasKey(POTION_EFFECTS.NBT)) {
-            NBTTagList list = tag.getList(POTION_EFFECTS.NBT, 10);
+        if (tag.contains(POTION_EFFECTS.NBT)) {
+            ListTag list = tag.getList(POTION_EFFECTS.NBT, 10);
             int length = list.size();
             customEffects = new ArrayList<PotionEffect>(length);
 
             for (int i = 0; i < length; i++) {
-                NBTTagCompound effect = list.get(i);
+                CompoundTag effect = list.getCompound(i);
                 PotionEffectType type = PotionEffectType.getById(effect.getByte(ID.NBT));
                 int amp = effect.getByte(AMPLIFIER.NBT);
                 int duration = effect.getInt(DURATION.NBT);
@@ -78,19 +76,19 @@ class CraftMetaPotion extends CraftMetaItem implements PotionMeta {
     }
 
     @Override
-    void applyToItem(NBTTagCompound tag) {
+    void applyToItem(CompoundTag tag) {
         super.applyToItem(tag);
         if (customEffects != null) {
-            NBTTagList effectList = new NBTTagList();
-            tag.set(POTION_EFFECTS.NBT, effectList);
+            ListTag effectList = new ListTag();
+            tag.put(POTION_EFFECTS.NBT, effectList);
 
             for (PotionEffect effect : customEffects) {
-                NBTTagCompound effectData = new NBTTagCompound();
-                effectData.setByte(ID.NBT, (byte) effect.getType().getId());
-                effectData.setByte(AMPLIFIER.NBT, (byte) effect.getAmplifier());
-                effectData.setInt(DURATION.NBT, effect.getDuration());
-                effectData.setBoolean(AMBIENT.NBT, effect.isAmbient());
-                effectData.setBoolean(SHOW_PARTICLES.NBT, effect.hasParticles());
+                CompoundTag effectData = new CompoundTag();
+                effectData.putByte(ID.NBT, (byte) effect.getType().getId());
+                effectData.putByte(AMPLIFIER.NBT, (byte) effect.getAmplifier());
+                effectData.putInt(DURATION.NBT, effect.getDuration());
+                effectData.putBoolean(AMBIENT.NBT, effect.isAmbient());
+                effectData.putBoolean(SHOW_PARTICLES.NBT, effect.hasParticles());
                 effectList.add(effectData);
             }
         }

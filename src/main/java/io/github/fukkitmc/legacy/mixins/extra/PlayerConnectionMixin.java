@@ -4,7 +4,17 @@ import io.github.fukkitmc.legacy.extra.EntityExtra;
 import io.github.fukkitmc.legacy.extra.EntityPlayerExtra;
 import io.github.fukkitmc.legacy.extra.MinecraftServerExtra;
 import io.github.fukkitmc.legacy.extra.PlayerConnectionExtra;
+import net.minecraft.SharedConstants;
+import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.entity.player.ServerPlayerEntity;
+import net.minecraft.network.ClientConnection;
+import net.minecraft.network.Packet;
+import net.minecraft.network.packet.c2s.play.ChatMessageC2SPacket;
+import net.minecraft.network.packet.s2c.play.ChatMessageS2CPacket;
 import net.minecraft.server.*;
+import net.minecraft.server.network.ServerPlayNetworkHandler;
+import net.minecraft.text.TranslatableText;
+import net.minecraft.util.Formatting;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.logging.log4j.Logger;
 import org.bukkit.Location;
@@ -29,16 +39,16 @@ import java.util.Set;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.atomic.AtomicIntegerFieldUpdater;
 
-@Mixin(value = PlayerConnection.class, remap = false)
+@Mixin(value = ServerPlayNetworkHandler.class, remap = false)
 public abstract class PlayerConnectionMixin implements PlayerConnectionExtra {
 
     @Shadow public MinecraftServer minecraftServer;
 
     @Shadow public int chatThrottle;
 
-    @Shadow public EntityPlayer player;
+    @Shadow public ServerPlayerEntity player;
 
-    @Shadow @Final public NetworkManager networkManager;
+    @Shadow @Final public ClientConnection networkManager;
 
     @Shadow public static Logger c;
 
@@ -47,9 +57,9 @@ public abstract class PlayerConnectionMixin implements PlayerConnectionExtra {
     @Shadow public abstract void disconnect(String string);
 
     @Inject(method = "<init>", at=@At("TAIL"))
-    public void constructor(MinecraftServer minecraftServer, NetworkManager networkManager, EntityPlayer entityPlayer, CallbackInfo ci){
-        ((PlayerConnection)(Object)this).minecraftServer = minecraftServer;
-        ((PlayerConnection)(Object)this).chatSpamField = AtomicIntegerFieldUpdater.newUpdater(PlayerConnection.class, "bukkitChatThrottle");
+    public void constructor(MinecraftServer minecraftServer, ClientConnection networkManager, ServerPlayerEntity entityPlayer, CallbackInfo ci){
+        ((ServerPlayNetworkHandler)(Object)this).server = minecraftServer;
+        ((ServerPlayNetworkHandler)(Object)this).chatSpamField = AtomicIntegerFieldUpdater.newUpdater(ServerPlayNetworkHandler.class, "bukkitChatThrottle");
     }
 
     @Override
@@ -113,13 +123,13 @@ public abstract class PlayerConnectionMixin implements PlayerConnectionExtra {
 
     @Override
     public void chat(String s, boolean async) {
-        if (s.isEmpty() || this.player.getChatFlags() == EntityHuman.EnumChatVisibility.HIDDEN) {
+        if (s.isEmpty() || this.player.getChatFlags() == PlayerEntity.EnumChatVisibility.HIDDEN) {
             return;
         }
 
         if (!async && s.startsWith("/")) {
             this.handleCommand(s);
-        } else if (this.player.getChatFlags() == EntityHuman.EnumChatVisibility.SYSTEM) {
+        } else if (this.player.getChatFlags() == PlayerEntity.EnumChatVisibility.SYSTEM) {
             // Do nothing, this is coming from a plugin
         } else {
             Player player = this.getPlayer();
@@ -185,26 +195,26 @@ public abstract class PlayerConnectionMixin implements PlayerConnectionExtra {
      * @author fukkit
      */
     @Overwrite(remap = false)
-    public void a(PacketPlayInChat packetPlayInChat){
+    public void a(ChatMessageC2SPacket packetPlayInChat){
         // CraftBukkit start - async chat
-        boolean isSync = packetPlayInChat.a().startsWith("/");
-        if (packetPlayInChat.a().startsWith("/")) {
-            PlayerConnectionUtils.ensureMainThread(packetPlayInChat, ((PlayerConnection)(Object)this), this.player.u());
+        boolean isSync = packetPlayInChat.getChatMessage().startsWith("/");
+        if (packetPlayInChat.getChatMessage().startsWith("/")) {
+            PlayerConnectionUtils.ensureMainThread(packetPlayInChat, ((ServerPlayNetworkHandler)(Object)this), this.player.u());
         }
         // CraftBukkit end
-        if (this.player.dead || this.player.getChatFlags() == EntityHuman.EnumChatVisibility.HIDDEN) { // CraftBukkit - dead men tell no tales
-            ChatMessage chatmessage = new ChatMessage("chat.cannotSend", new Object[0]);
+        if (this.player.removed || this.player.getChatFlags() == PlayerEntity.EnumChatVisibility.HIDDEN) { // CraftBukkit - dead men tell no tales
+            TranslatableText chatmessage = new TranslatableText("chat.cannotSend", new Object[0]);
 
-            chatmessage.getChatModifier().setColor(EnumChatFormat.RED);
-            this.sendPacket(new PacketPlayOutChat(chatmessage));
+            chatmessage.getStyle().setColor(Formatting.RED);
+            this.sendPacket(new ChatMessageS2CPacket(chatmessage));
         } else {
             this.player.resetIdleTimer();
-            String s = packetPlayInChat.a();
+            String s = packetPlayInChat.getChatMessage();
 
             s = StringUtils.normalizeSpace(s);
 
             for (int i = 0; i < s.length(); ++i) {
-                if (!SharedConstants.isAllowedChatCharacter(s.charAt(i))) {
+                if (!SharedConstants.isValidChar(s.charAt(i))) {
                     // CraftBukkit start - threadsafety
                     if (!isSync) {
                         Waitable waitable = new Waitable.Wrapper(()-> {
@@ -240,11 +250,11 @@ public abstract class PlayerConnectionMixin implements PlayerConnectionExtra {
                 c.warn(this.player.getName() + " tried to send an empty message");
             } else if (getPlayer().isConversing()) {
                 getPlayer().acceptConversationInput(s);
-            } else if (this.player.getChatFlags() == EntityHuman.EnumChatVisibility.SYSTEM) { // Re-add "Command Only" flag check
-                ChatMessage chatmessage = new ChatMessage("chat.cannotSend");
+            } else if (this.player.getChatFlags() == PlayerEntity.EnumChatVisibility.SYSTEM) { // Re-add "Command Only" flag check
+                TranslatableText chatmessage = new TranslatableText("chat.cannotSend");
 
-                chatmessage.getChatModifier().setColor(EnumChatFormat.RED);
-                this.sendPacket(new PacketPlayOutChat(chatmessage));
+                chatmessage.getStyle().setColor(Formatting.RED);
+                this.sendPacket(new ChatMessageS2CPacket(chatmessage));
             } else {
                 this.chat(s, true);
                 // CraftBukkit end - the below is for reference. :)
@@ -252,7 +262,7 @@ public abstract class PlayerConnectionMixin implements PlayerConnectionExtra {
 
             // CraftBukkit start - replaced with thread safe throttle
             // this.bukkitChatThrottle += 20;
-            if (((PlayerConnection)(Object)this).chatSpamField.addAndGet(this, 20) > 200 && !((MinecraftServerExtra)minecraftServer).getPlayerList().isOp(this.player.getProfile())) {
+            if (((ServerPlayNetworkHandler)(Object)this).chatSpamField.addAndGet(this, 20) > 200 && !((MinecraftServerExtra)minecraftServer).getPlayerList().isOperator(this.player.getGameProfile())) {
                 if (!isSync) {
                     Waitable waitable = new Waitable.Wrapper(()-> {
                             disconnect("disconnect.spam");
@@ -287,17 +297,17 @@ public abstract class PlayerConnectionMixin implements PlayerConnectionExtra {
         CraftPlayer player = this.getPlayer();
 
         PlayerCommandPreprocessEvent event = new PlayerCommandPreprocessEvent(player, s, new LazyPlayerSet());
-        ((PlayerConnection)(Object)this).minecraftServer.server.getPluginManager().callEvent(event);
+        ((ServerPlayNetworkHandler)(Object)this).server.server.getPluginManager().callEvent(event);
 
         if (event.isCancelled()) {
             return;
         }
 
         try {
-            ((PlayerConnection) (Object) this).minecraftServer.server.dispatchCommand(event.getPlayer(), event.getMessage().substring(1));
+            ((ServerPlayNetworkHandler) (Object) this).server.server.dispatchCommand(event.getPlayer(), event.getMessage().substring(1));
         } catch (org.bukkit.command.CommandException ex) {
             player.sendMessage(org.bukkit.ChatColor.RED + "An internal error occurred while attempting to perform this command");
-            java.util.logging.Logger.getLogger(PlayerConnection.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ServerPlayNetworkHandler.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
     }
 

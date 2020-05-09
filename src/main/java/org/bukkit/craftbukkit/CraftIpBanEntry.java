@@ -1,28 +1,27 @@
 package org.bukkit.craftbukkit;
 
 import io.github.fukkitmc.legacy.extra.ExpirableListEntryExtra;
-import net.minecraft.server.IpBanEntry;
-import net.minecraft.server.IpBanList;
-
 import java.io.IOException;
 import java.util.Date;
 import java.util.logging.Level;
+import net.minecraft.server.BannedIpEntry;
+import net.minecraft.server.BannedIpList;
 import org.bukkit.Bukkit;
 
 public final class CraftIpBanEntry implements org.bukkit.BanEntry {
-    private final IpBanList list;
+    private final BannedIpList list;
     private final String target;
     private Date created;
     private String source;
     private Date expiration;
     private String reason;
 
-    public CraftIpBanEntry(String target, IpBanEntry entry, IpBanList list) {
+    public CraftIpBanEntry(String target, BannedIpEntry entry, BannedIpList list) {
         this.list = list;
         this.target = target;
         this.created = ((ExpirableListEntryExtra)entry).getCreated() != null ? new Date(((ExpirableListEntryExtra)entry).getCreated().getTime()) : null;
         this.source = ((ExpirableListEntryExtra)entry).getSource();
-        this.expiration = entry.getExpires() != null ? new Date(entry.getExpires().getTime()) : null;
+        this.expiration = entry.getExpiryDate() != null ? new Date(entry.getExpiryDate().getTime()) : null;
         this.reason = entry.getReason();
     }
 
@@ -77,7 +76,7 @@ public final class CraftIpBanEntry implements org.bukkit.BanEntry {
 
     @Override
     public void save() {
-        IpBanEntry entry = new IpBanEntry(target, this.created, this.source, this.expiration, this.reason);
+        BannedIpEntry entry = new BannedIpEntry(target, this.created, this.source, this.expiration, this.reason);
         this.list.add(entry);
         try {
             this.list.save();

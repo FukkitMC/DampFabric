@@ -1,24 +1,22 @@
 package org.bukkit.craftbukkit.entity;
 
-import net.minecraft.server.EntitySheep;
-
-import net.minecraft.server.EnumColor;
+import net.minecraft.entity.passive.SheepEntity;
 import org.bukkit.DyeColor;
 import org.bukkit.craftbukkit.CraftServer;
 import org.bukkit.entity.EntityType;
 import org.bukkit.entity.Sheep;
 
 public class CraftSheep extends CraftAnimals implements Sheep {
-    public CraftSheep(CraftServer server, EntitySheep entity) {
+    public CraftSheep(CraftServer server, SheepEntity entity) {
         super(server, entity);
     }
 
     public DyeColor getColor() {
-        return DyeColor.getByWoolData((byte) getHandle().getColor().getColorIndex());
+        return DyeColor.getByWoolData((byte) getHandle().getColor().getId());
     }
 
     public void setColor(DyeColor color) {
-        getHandle().setColor(EnumColor.fromColorIndex(color.getWoolData()));
+        getHandle().setColor(net.minecraft.util.DyeColor.fromColorIndex(color.getWoolData()));
     }
 
     public boolean isSheared() {
@@ -30,8 +28,8 @@ public class CraftSheep extends CraftAnimals implements Sheep {
     }
 
     @Override
-    public EntitySheep getHandle() {
-        return (EntitySheep) entity;
+    public SheepEntity getHandle() {
+        return (SheepEntity) entity;
     }
 
     @Override

@@ -12,18 +12,13 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.NoSuchElementException;
-
-import net.minecraft.server.NBTBase;
-import net.minecraft.server.NBTTagCompound;
-import net.minecraft.server.NBTTagList;
-import net.minecraft.server.NBTTagString;
-
 import org.apache.commons.lang.Validate;
 import org.bukkit.Material;
 import org.bukkit.configuration.serialization.ConfigurationSerializable;
 import org.bukkit.configuration.serialization.DelegateDeserialization;
 import org.bukkit.configuration.serialization.SerializableAs;
 import org.bukkit.craftbukkit.Overridden;
+import org.bukkit.craftbukkit.inventory.CraftMetaItem.ItemMetaKey;
 import org.bukkit.craftbukkit.inventory.CraftMetaItem.ItemMetaKey.Specific;
 import org.bukkit.enchantments.Enchantment;
 import org.bukkit.inventory.ItemFlag;
@@ -43,7 +38,11 @@ import java.util.HashSet;
 import java.util.Set;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import net.minecraft.server.NBTCompressedStreamTools;
+import net.minecraft.nbt.CompoundTag;
+import net.minecraft.nbt.ListTag;
+import net.minecraft.nbt.NbtIo;
+import net.minecraft.nbt.StringTag;
+import net.minecraft.nbt.Tag;
 import org.apache.commons.codec.binary.Base64;
 
 /**
@@ -219,7 +218,7 @@ class CraftMetaItem implements ItemMeta, Repairable {
 
     private static final Set<String> HANDLED_TAGS = Sets.newHashSet();
 
-    private final Map<String, NBTBase> unhandledTags = new HashMap<String, NBTBase>();
+    private final Map<String, Tag> unhandledTags = new HashMap<String, Tag>();
 
     CraftMetaItem(CraftMetaItem meta) {
         if (meta == null) {
@@ -241,16 +240,16 @@ class CraftMetaItem implements ItemMeta, Repairable {
         this.unhandledTags.putAll(meta.unhandledTags);
     }
 
-    CraftMetaItem(NBTTagCompound tag) {
-        if (tag.hasKey(DISPLAY.NBT)) {
-            NBTTagCompound display = tag.getCompound(DISPLAY.NBT);
+    CraftMetaItem(CompoundTag tag) {
+        if (tag.contains(DISPLAY.NBT)) {
+            CompoundTag display = tag.getCompound(DISPLAY.NBT);
 
-            if (display.hasKey(NAME.NBT)) {
+            if (display.contains(NAME.NBT)) {
                 displayName = display.getString(NAME.NBT);
             }
 
-            if (display.hasKey(LORE.NBT)) {
-                NBTTagList list = display.getList(LORE.NBT, 8);
+            if (display.contains(LORE.NBT)) {
+                ListTag list = display.getList(LORE.NBT, 8);
                 lore = new ArrayList<String>(list.size());
 
                 for (int index = 0; index < list.size(); index++) {
@@ -262,61 +261,61 @@ class CraftMetaItem implements ItemMeta, Repairable {
 
         this.enchantments = buildEnchantments(tag, ENCHANTMENTS);
 
-        if (tag.hasKey(REPAIR.NBT)) {
+        if (tag.contains(REPAIR.NBT)) {
             repairCost = tag.getInt(REPAIR.NBT);
         }
 
-        if (tag.hasKey(HIDEFLAGS.NBT)) {
+        if (tag.contains(HIDEFLAGS.NBT)) {
             hideFlag = tag.getInt(HIDEFLAGS.NBT);
         }
 
-        if (tag.get(ATTRIBUTES.NBT) instanceof NBTTagList) {
-            NBTTagList save = null;
-            NBTTagList nbttaglist = tag.getList(ATTRIBUTES.NBT, 10);
+        if (tag.get(ATTRIBUTES.NBT) instanceof ListTag) {
+            ListTag save = null;
+            ListTag nbttaglist = tag.getList(ATTRIBUTES.NBT, 10);
 
             for (int i = 0; i < nbttaglist.size(); ++i) {
-                if (!(nbttaglist.get(i) instanceof NBTTagCompound)) {
+                if (!(nbttaglist.getCompound(i) instanceof CompoundTag)) {
                     continue;
                 }
-                NBTTagCompound nbttagcompound = nbttaglist.get(i);
+                CompoundTag nbttagcompound = nbttaglist.getCompound(i);
 
-                if (!nbttagcompound.hasKeyOfType(ATTRIBUTES_UUID_HIGH.NBT, 99)) {
+                if (!nbttagcompound.contains(ATTRIBUTES_UUID_HIGH.NBT, 99)) {
                     continue;
                 }
-                if (!nbttagcompound.hasKeyOfType(ATTRIBUTES_UUID_LOW.NBT, 99)) {
+                if (!nbttagcompound.contains(ATTRIBUTES_UUID_LOW.NBT, 99)) {
                     continue;
                 }
-                if (!(nbttagcompound.get(ATTRIBUTES_IDENTIFIER.NBT) instanceof NBTTagString) || !CraftItemFactory.KNOWN_NBT_ATTRIBUTE_NAMES.contains(nbttagcompound.getString(ATTRIBUTES_IDENTIFIER.NBT))) {
+                if (!(nbttagcompound.get(ATTRIBUTES_IDENTIFIER.NBT) instanceof StringTag) || !CraftItemFactory.KNOWN_NBT_ATTRIBUTE_NAMES.contains(nbttagcompound.getString(ATTRIBUTES_IDENTIFIER.NBT))) {
                     continue;
                 }
-                if (!(nbttagcompound.get(ATTRIBUTES_NAME.NBT) instanceof NBTTagString) || nbttagcompound.getString(ATTRIBUTES_NAME.NBT).isEmpty()) {
+                if (!(nbttagcompound.get(ATTRIBUTES_NAME.NBT) instanceof StringTag) || nbttagcompound.getString(ATTRIBUTES_NAME.NBT).isEmpty()) {
                     continue;
                 }
-                if (!nbttagcompound.hasKeyOfType(ATTRIBUTES_VALUE.NBT, 99)) {
+                if (!nbttagcompound.contains(ATTRIBUTES_VALUE.NBT, 99)) {
                     continue;
                 }
-                if (!nbttagcompound.hasKeyOfType(ATTRIBUTES_TYPE.NBT, 99) || nbttagcompound.getInt(ATTRIBUTES_TYPE.NBT) < 0 || nbttagcompound.getInt(ATTRIBUTES_TYPE.NBT) > 2) {
+                if (!nbttagcompound.contains(ATTRIBUTES_TYPE.NBT, 99) || nbttagcompound.getInt(ATTRIBUTES_TYPE.NBT) < 0 || nbttagcompound.getInt(ATTRIBUTES_TYPE.NBT) > 2) {
                     continue;
                 }
 
                 if (save == null) {
-                    save = new NBTTagList();
+                    save = new ListTag();
                 }
 
-                NBTTagCompound entry = new NBTTagCompound();
-                entry.set(ATTRIBUTES_UUID_HIGH.NBT, nbttagcompound.get(ATTRIBUTES_UUID_HIGH.NBT));
-                entry.set(ATTRIBUTES_UUID_LOW.NBT, nbttagcompound.get(ATTRIBUTES_UUID_LOW.NBT));
-                entry.set(ATTRIBUTES_IDENTIFIER.NBT, nbttagcompound.get(ATTRIBUTES_IDENTIFIER.NBT));
-                entry.set(ATTRIBUTES_NAME.NBT, nbttagcompound.get(ATTRIBUTES_NAME.NBT));
-                entry.set(ATTRIBUTES_VALUE.NBT, nbttagcompound.get(ATTRIBUTES_VALUE.NBT));
-                entry.set(ATTRIBUTES_TYPE.NBT, nbttagcompound.get(ATTRIBUTES_TYPE.NBT));
+                CompoundTag entry = new CompoundTag();
+                entry.put(ATTRIBUTES_UUID_HIGH.NBT, nbttagcompound.get(ATTRIBUTES_UUID_HIGH.NBT));
+                entry.put(ATTRIBUTES_UUID_LOW.NBT, nbttagcompound.get(ATTRIBUTES_UUID_LOW.NBT));
+                entry.put(ATTRIBUTES_IDENTIFIER.NBT, nbttagcompound.get(ATTRIBUTES_IDENTIFIER.NBT));
+                entry.put(ATTRIBUTES_NAME.NBT, nbttagcompound.get(ATTRIBUTES_NAME.NBT));
+                entry.put(ATTRIBUTES_VALUE.NBT, nbttagcompound.get(ATTRIBUTES_VALUE.NBT));
+                entry.put(ATTRIBUTES_TYPE.NBT, nbttagcompound.get(ATTRIBUTES_TYPE.NBT));
                 save.add(entry);
             }
 
             unhandledTags.put(ATTRIBUTES.NBT, save);
         }
 
-        Set<String> keys = tag.c();
+        Set<String> keys = tag.getKeys();
         for (String key : keys) {
             if (!getHandledTags().contains(key)) {
                 unhandledTags.put(key, tag.get(key));
@@ -324,17 +323,17 @@ class CraftMetaItem implements ItemMeta, Repairable {
         }
     }
 
-    static Map<Enchantment, Integer> buildEnchantments(NBTTagCompound tag, ItemMetaKey key) {
-        if (!tag.hasKey(key.NBT)) {
+    static Map<Enchantment, Integer> buildEnchantments(CompoundTag tag, ItemMetaKey key) {
+        if (!tag.contains(key.NBT)) {
             return null;
         }
 
-        NBTTagList ench = tag.getList(key.NBT, 10);
+        ListTag ench = tag.getList(key.NBT, 10);
         Map<Enchantment, Integer> enchantments = new HashMap<Enchantment, Integer>(ench.size());
 
         for (int i = 0; i < ench.size(); i++) {
-            int id = 0xffff & ench.get(i).getShort(ENCHANTMENTS_ID.NBT);
-            int level = 0xffff & ench.get(i).getShort(ENCHANTMENTS_LVL.NBT);
+            int id = 0xffff & ench.getCompound(i).getShort(ENCHANTMENTS_ID.NBT);
+            int level = 0xffff & ench.getCompound(i).getShort(ENCHANTMENTS_LVL.NBT);
 
             enchantments.put(Enchantment.getById(id), level);
         }
@@ -374,9 +373,9 @@ class CraftMetaItem implements ItemMeta, Repairable {
         if (internal != null) {
             ByteArrayInputStream buf = new ByteArrayInputStream(Base64.decodeBase64(internal));
             try {
-                NBTTagCompound tag = NBTCompressedStreamTools.a(buf);
+                CompoundTag tag = NbtIo.readCompressed(buf);
                 deserializeInternal(tag);
-                Set<String> keys = tag.c();
+                Set<String> keys = tag.getKeys();
                 for (String key : keys) {
                     if (!getHandledTags().contains(key)) {
                         unhandledTags.put(key, tag.get(key));
@@ -388,7 +387,7 @@ class CraftMetaItem implements ItemMeta, Repairable {
         }
     }
 
-    void deserializeInternal(NBTTagCompound tag) {
+    void deserializeInternal(CompoundTag tag) {
     }
 
     static Map<Enchantment, Integer> buildEnchantments(Map<String, Object> map, ItemMetaKey key) {
@@ -410,9 +409,9 @@ class CraftMetaItem implements ItemMeta, Repairable {
     }
 
     @Overridden
-    void applyToItem(NBTTagCompound itemTag) {
+    void applyToItem(CompoundTag itemTag) {
         if (hasDisplayName()) {
-            setDisplayTag(itemTag, NAME.NBT, new NBTTagString(displayName));
+            setDisplayTag(itemTag, NAME.NBT, new StringTag(displayName));
         }
 
         if (hasLore()) {
@@ -420,60 +419,60 @@ class CraftMetaItem implements ItemMeta, Repairable {
         }
 
         if (hideFlag != 0) {
-            itemTag.setInt(HIDEFLAGS.NBT, hideFlag);
+            itemTag.putInt(HIDEFLAGS.NBT, hideFlag);
         }
 
         applyEnchantments(enchantments, itemTag, ENCHANTMENTS);
 
         if (hasRepairCost()) {
-            itemTag.setInt(REPAIR.NBT, repairCost);
+            itemTag.putInt(REPAIR.NBT, repairCost);
         }
 
-        for (Map.Entry<String, NBTBase> e : unhandledTags.entrySet()) {
-            itemTag.set(e.getKey(), e.getValue());
+        for (Map.Entry<String, Tag> e : unhandledTags.entrySet()) {
+            itemTag.put(e.getKey(), e.getValue());
         }
     }
 
-    static NBTTagList createStringList(List<String> list) {
+    static ListTag createStringList(List<String> list) {
         if (list == null || list.isEmpty()) {
             return null;
         }
 
-        NBTTagList tagList = new NBTTagList();
+        ListTag tagList = new ListTag();
         for (String value : list) {
-            tagList.add(new NBTTagString(value));
+            tagList.add(new StringTag(value));
         }
 
         return tagList;
     }
 
-    static void applyEnchantments(Map<Enchantment, Integer> enchantments, NBTTagCompound tag, ItemMetaKey key) {
+    static void applyEnchantments(Map<Enchantment, Integer> enchantments, CompoundTag tag, ItemMetaKey key) {
         if (enchantments == null || enchantments.size() == 0) {
             return;
         }
 
-        NBTTagList list = new NBTTagList();
+        ListTag list = new ListTag();
 
         for (Map.Entry<Enchantment, Integer> entry : enchantments.entrySet()) {
-            NBTTagCompound subtag = new NBTTagCompound();
+            CompoundTag subtag = new CompoundTag();
 
-            subtag.setShort(ENCHANTMENTS_ID.NBT, (short) entry.getKey().getId());
-            subtag.setShort(ENCHANTMENTS_LVL.NBT, entry.getValue().shortValue());
+            subtag.putShort(ENCHANTMENTS_ID.NBT, (short) entry.getKey().getId());
+            subtag.putShort(ENCHANTMENTS_LVL.NBT, entry.getValue().shortValue());
 
             list.add(subtag);
         }
 
-        tag.set(key.NBT, list);
+        tag.put(key.NBT, list);
     }
 
-    void setDisplayTag(NBTTagCompound tag, String key, NBTBase value) {
-        final NBTTagCompound display = tag.getCompound(DISPLAY.NBT);
+    void setDisplayTag(CompoundTag tag, String key, Tag value) {
+        final CompoundTag display = tag.getCompound(DISPLAY.NBT);
 
-        if (!tag.hasKey(DISPLAY.NBT)) {
-            tag.set(DISPLAY.NBT, display);
+        if (!tag.contains(DISPLAY.NBT)) {
+            tag.put(DISPLAY.NBT, display);
         }
 
-        display.set(key, value);
+        display.put(key, value);
     }
 
     @Overridden
@@ -713,16 +712,16 @@ class CraftMetaItem implements ItemMeta, Repairable {
             builder.put(HIDEFLAGS.BUKKIT, hideFlags);
         }
 
-        final Map<String, NBTBase> internalTags = new HashMap<String, NBTBase>(unhandledTags);
+        final Map<String, Tag> internalTags = new HashMap<String, Tag>(unhandledTags);
         serializeInternal(internalTags);
         if (!internalTags.isEmpty()) {
-            NBTTagCompound internal = new NBTTagCompound();
-            for (Map.Entry<String, NBTBase> e : internalTags.entrySet()) {
-                internal.set(e.getKey(), e.getValue());
+            CompoundTag internal = new CompoundTag();
+            for (Map.Entry<String, Tag> e : internalTags.entrySet()) {
+                internal.put(e.getKey(), e.getValue());
             }
             try {
                 ByteArrayOutputStream buf = new ByteArrayOutputStream();
-                NBTCompressedStreamTools.a(internal, buf);
+                NbtIo.writeCompressed(internal, buf);
                 builder.put("internal", Base64.encodeBase64String(buf.toByteArray()));
             } catch (IOException ex) {
                 Logger.getLogger(CraftMetaItem.class.getName()).log(Level.SEVERE, null, ex);
@@ -732,7 +731,7 @@ class CraftMetaItem implements ItemMeta, Repairable {
         return builder;
     }
 
-    void serializeInternal(final Map<String, NBTBase> unhandledTags) {
+    void serializeInternal(final Map<String, Tag> unhandledTags) {
     }
 
     static void serializeEnchantments(Map<Enchantment, Integer> enchantments, ImmutableMap.Builder<String, Object> builder, ItemMetaKey key) {

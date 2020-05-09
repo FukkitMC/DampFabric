@@ -1,7 +1,6 @@
 package org.bukkit.craftbukkit.inventory;
 
-import net.minecraft.server.EntityInsentient;
-
+import net.minecraft.entity.mob.MobEntity;
 import org.bukkit.craftbukkit.entity.CraftLivingEntity;
 import org.bukkit.entity.Entity;
 import org.bukkit.inventory.EntityEquipment;
@@ -135,10 +134,10 @@ public class CraftEntityEquipment implements EntityEquipment {
     }
 
     private void setDropChance(int slot, float chance) {
-        ((EntityInsentient) entity.getHandle()).dropChances[slot] = chance - 0.1F;
+        ((MobEntity) entity.getHandle()).armorDropChances[slot] = chance - 0.1F;
     }
 
     private float getDropChance(int slot) {
-        return ((EntityInsentient) entity.getHandle()).dropChances[slot] + 0.1F;
+        return ((MobEntity) entity.getHandle()).armorDropChances[slot] + 0.1F;
     }
 }

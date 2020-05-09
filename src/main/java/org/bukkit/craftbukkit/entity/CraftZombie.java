@@ -1,20 +1,19 @@
 package org.bukkit.craftbukkit.entity;
 
-import net.minecraft.server.EntityZombie;
-
+import net.minecraft.entity.mob.ZombieEntity;
 import org.bukkit.craftbukkit.CraftServer;
 import org.bukkit.entity.EntityType;
 import org.bukkit.entity.Zombie;
 
 public class CraftZombie extends CraftMonster implements Zombie {
 
-    public CraftZombie(CraftServer server, EntityZombie entity) {
+    public CraftZombie(CraftServer server, ZombieEntity entity) {
         super(server, entity);
     }
 
     @Override
-    public EntityZombie getHandle() {
-        return (EntityZombie) entity;
+    public ZombieEntity getHandle() {
+        return (ZombieEntity) entity;
     }
 
     @Override

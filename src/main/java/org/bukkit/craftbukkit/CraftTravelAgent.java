@@ -1,10 +1,9 @@
 package org.bukkit.craftbukkit;
 
 import io.github.fukkitmc.legacy.extra.PortalTravelAgentExtra;
-import net.minecraft.server.BlockPosition;
 import net.minecraft.server.PortalTravelAgent;
-import net.minecraft.server.WorldServer;
-
+import net.minecraft.server.world.ServerWorld;
+import net.minecraft.util.math.BlockPos;
 import org.bukkit.Location;
 import org.bukkit.TravelAgent;
 
@@ -16,7 +15,7 @@ public class CraftTravelAgent extends PortalTravelAgent implements TravelAgent {
     private int creationRadius = 16;
     private boolean canCreatePortal = true;
 
-    public CraftTravelAgent(WorldServer worldserver) {
+    public CraftTravelAgent(ServerWorld worldserver) {
         super(worldserver);
         if (DEFAULT == null && worldserver.dimension == 0) {
             DEFAULT = this;
@@ -25,7 +24,7 @@ public class CraftTravelAgent extends PortalTravelAgent implements TravelAgent {
 
     @Override
     public Location findOrCreate(Location target) {
-        WorldServer worldServer = ((CraftWorld) target.getWorld()).getHandle();
+        ServerWorld worldServer = ((CraftWorld) target.getWorld()).getHandle();
         boolean before = worldServer.chunkProviderServer.forceChunkLoad;
         worldServer.chunkProviderServer.forceChunkLoad = true;
 
@@ -45,7 +44,7 @@ public class CraftTravelAgent extends PortalTravelAgent implements TravelAgent {
     @Override
     public Location findPortal(Location location) {
         PortalTravelAgent pta = ((CraftWorld) location.getWorld()).getHandle().getTravelAgent();
-        BlockPosition found = ((PortalTravelAgentExtra)pta).findPortal(location.getX(), location.getY(), location.getZ(), this.getSearchRadius());
+        BlockPos found = ((PortalTravelAgentExtra)pta).findPortal(location.getX(), location.getY(), location.getZ(), this.getSearchRadius());
         return found != null ? new Location(location.getWorld(), found.getX(), found.getY(), found.getZ(), location.getYaw(), location.getPitch()) : null;
     }
 

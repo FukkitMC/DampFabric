@@ -1,9 +1,8 @@
 package org.bukkit.craftbukkit.entity;
 
-import net.minecraft.server.EntityPainting;
-import net.minecraft.server.EntityPainting.EnumArt;
-import net.minecraft.server.WorldServer;
-
+import net.minecraft.entity.decoration.PaintingEntity;
+import net.minecraft.entity.decoration.PaintingEntity.Type;
+import net.minecraft.server.world.ServerWorld;
 import org.bukkit.Art;
 import org.bukkit.block.BlockFace;
 import org.bukkit.craftbukkit.CraftArt;
@@ -14,12 +13,12 @@ import org.bukkit.entity.Painting;
 
 public class CraftPainting extends CraftHanging implements Painting {
 
-    public CraftPainting(CraftServer server, EntityPainting entity) {
+    public CraftPainting(CraftServer server, PaintingEntity entity) {
         super(server, entity);
     }
 
     public Art getArt() {
-        EnumArt art = getHandle().art;
+        Type art = getHandle().art;
         return CraftArt.NotchToBukkit(art);
     }
 
@@ -28,8 +27,8 @@ public class CraftPainting extends CraftHanging implements Painting {
     }
 
     public boolean setArt(Art art, boolean force) {
-        EntityPainting painting = this.getHandle();
-        EnumArt oldArt = painting.art;
+        PaintingEntity painting = this.getHandle();
+        Type oldArt = painting.art;
         painting.art = CraftArt.BukkitToNotch(art);
         painting.setDirection(painting.direction);
         if (!force && !painting.survives()) {
@@ -52,20 +51,20 @@ public class CraftPainting extends CraftHanging implements Painting {
     }
 
     private void update() {
-        WorldServer world = ((CraftWorld) getWorld()).getHandle();
-        EntityPainting painting = new EntityPainting(world);
-        painting.blockPosition = getHandle().blockPosition;
+        ServerWorld world = ((CraftWorld) getWorld()).getHandle();
+        PaintingEntity painting = new PaintingEntity(world);
+        painting.pos = getHandle().pos;
         painting.art = getHandle().art;
         painting.setDirection(getHandle().direction);
-        getHandle().die();
-        getHandle().velocityChanged = true; // because this occurs when the painting is broken, so it might be important
-        world.addEntity(painting);
+        getHandle().remove();
+        getHandle().velocityModified = true; // because this occurs when the painting is broken, so it might be important
+        world.spawnEntity(painting);
         this.entity = painting;
     }
 
     @Override
-    public EntityPainting getHandle() {
-        return (EntityPainting) entity;
+    public PaintingEntity getHandle() {
+        return (PaintingEntity) entity;
     }
 
     @Override

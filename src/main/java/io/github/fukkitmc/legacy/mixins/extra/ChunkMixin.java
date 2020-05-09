@@ -1,10 +1,9 @@
 package io.github.fukkitmc.legacy.mixins.extra;
 
 import io.github.fukkitmc.legacy.extra.ChunkExtra;
-import net.minecraft.server.Chunk;
-import net.minecraft.server.ChunkSection;
+import net.minecraft.class_401;
 import net.minecraft.server.EmptyChunk;
-import net.minecraft.server.World;
+import net.minecraft.world.chunk.Chunk;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
 import org.spongepowered.asm.mixin.injection.At;
@@ -15,10 +14,10 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 public class ChunkMixin implements ChunkExtra {
 
     @Shadow
-    public ChunkSection[] sections;
+    public class_401[] sections;
 
     @Override
-    public ChunkSection[] getSections() {
+    public class_401[] getSections() {
         return this.sections;
     }
 

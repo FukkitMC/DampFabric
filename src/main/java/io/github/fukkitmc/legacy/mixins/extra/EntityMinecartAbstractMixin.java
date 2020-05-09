@@ -2,12 +2,11 @@ package io.github.fukkitmc.legacy.mixins.extra;
 
 
 import io.github.fukkitmc.legacy.extra.EntityMinecartAbstractExtra;
-import net.minecraft.server.BiomeBase;
-import net.minecraft.server.EntityMinecartAbstract;
+import net.minecraft.entity.vehicle.AbstractMinecartEntity;
 import org.bukkit.util.Vector;
 import org.spongepowered.asm.mixin.Mixin;
 
-@Mixin(EntityMinecartAbstract.class)
+@Mixin(AbstractMinecartEntity.class)
 public class EntityMinecartAbstractMixin implements EntityMinecartAbstractExtra {
     @Override
     public Vector getFlyingVelocityMod() {

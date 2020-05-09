@@ -1,16 +1,15 @@
 package io.github.fukkitmc.legacy.extra;
 
-import net.minecraft.server.Chunk;
-import net.minecraft.server.NBTTagCompound;
-import net.minecraft.server.World;
-
 import java.io.IOException;
+import net.minecraft.nbt.CompoundTag;
+import net.minecraft.world.World;
+import net.minecraft.world.chunk.Chunk;
 
 public interface ChunkRegionLoaderExtra {
 
     Object[] loadChunk(World world, int i, int j) throws IOException;
 
-    void loadEntities(Chunk chunk, NBTTagCompound nbttagcompound, World world);
+    void loadEntities(Chunk chunk, CompoundTag nbttagcompound, World world);
 
 
 }

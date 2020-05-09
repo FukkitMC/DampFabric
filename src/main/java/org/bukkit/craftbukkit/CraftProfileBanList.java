@@ -6,11 +6,10 @@ import java.util.Set;
 
 import io.github.fukkitmc.legacy.extra.JsonListExtra;
 import io.github.fukkitmc.legacy.extra.MinecraftServerExtra;
-import net.minecraft.server.GameProfileBanEntry;
-import net.minecraft.server.GameProfileBanList;
-import net.minecraft.server.JsonListEntry;
+import net.minecraft.server.BannedPlayerEntry;
+import net.minecraft.server.BannedPlayerList;
 import net.minecraft.server.MinecraftServer;
-
+import net.minecraft.server.ServerConfigEntry;
 import org.apache.commons.lang.StringUtils;
 import org.apache.commons.lang.Validate;
 
@@ -20,9 +19,9 @@ import java.util.logging.Level;
 import org.bukkit.Bukkit;
 
 public class CraftProfileBanList implements org.bukkit.BanList {
-    private final GameProfileBanList list;
+    private final BannedPlayerList list;
 
-    public CraftProfileBanList(GameProfileBanList list){
+    public CraftProfileBanList(BannedPlayerList list){
         this.list = list;
     }
 
@@ -30,12 +29,12 @@ public class CraftProfileBanList implements org.bukkit.BanList {
     public org.bukkit.BanEntry getBanEntry(String target) {
         Validate.notNull(target, "Target cannot be null");
 
-        GameProfile profile = ((MinecraftServerExtra)MinecraftServer.getServer()).getUserCache().getProfile(target);
+        GameProfile profile = ((MinecraftServerExtra)MinecraftServer.getServer()).getUserCache().findByName(target);
         if (profile == null) {
             return null;
         }
 
-        GameProfileBanEntry entry = list.get(profile);
+        BannedPlayerEntry entry = list.get(profile);
         if (entry == null) {
             return null;
         }
@@ -47,12 +46,12 @@ public class CraftProfileBanList implements org.bukkit.BanList {
     public org.bukkit.BanEntry addBan(String target, String reason, Date expires, String source) {
         Validate.notNull(target, "Ban target cannot be null");
 
-        GameProfile profile = ((MinecraftServerExtra)MinecraftServer.getServer()).getUserCache().getProfile(target);
+        GameProfile profile = ((MinecraftServerExtra)MinecraftServer.getServer()).getUserCache().findByName(target);
         if (profile == null) {
             return null;
         }
 
-        GameProfileBanEntry entry = new GameProfileBanEntry(profile, new Date(),
+        BannedPlayerEntry entry = new BannedPlayerEntry(profile, new Date(),
                 StringUtils.isBlank(source) ? null : source, expires,
                 StringUtils.isBlank(reason) ? null : reason);
 
@@ -71,9 +70,9 @@ public class CraftProfileBanList implements org.bukkit.BanList {
     public Set<org.bukkit.BanEntry> getBanEntries() {
         ImmutableSet.Builder<org.bukkit.BanEntry> builder = ImmutableSet.builder();
         
-        for (JsonListEntry entry : ((JsonListExtra)list).getValues()) {
+        for (ServerConfigEntry entry : ((JsonListExtra)list).getValues()) {
             GameProfile profile = (GameProfile) entry.getKey();
-            builder.add(new CraftProfileBanEntry(profile, (GameProfileBanEntry) entry, list));
+            builder.add(new CraftProfileBanEntry(profile, (BannedPlayerEntry) entry, list));
         }
 
         return builder.build();
@@ -83,19 +82,19 @@ public class CraftProfileBanList implements org.bukkit.BanList {
     public boolean isBanned(String target) {
         Validate.notNull(target, "Target cannot be null");
 
-        GameProfile profile = ((MinecraftServerExtra)MinecraftServer.getServer()).getUserCache().getProfile(target);
+        GameProfile profile = ((MinecraftServerExtra)MinecraftServer.getServer()).getUserCache().findByName(target);
         if (profile == null) {
             return false;
         }
 
-        return list.isBanned(profile);
+        return list.contains(profile);
     }
 
     @Override
     public void pardon(String target) {
         Validate.notNull(target, "Target cannot be null");
 
-        GameProfile profile = ((MinecraftServerExtra)MinecraftServer.getServer()).getUserCache().getProfile(target);
+        GameProfile profile = ((MinecraftServerExtra)MinecraftServer.getServer()).getUserCache().findByName(target);
         list.remove(profile);
     }
 }

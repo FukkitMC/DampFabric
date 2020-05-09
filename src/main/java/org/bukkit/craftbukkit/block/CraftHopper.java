@@ -1,6 +1,6 @@
 package org.bukkit.craftbukkit.block;
 
-import net.minecraft.server.TileEntityHopper;
+import net.minecraft.block.entity.HopperBlockEntity;
 import org.bukkit.Material;
 import org.bukkit.block.Block;
 import org.bukkit.block.Hopper;
@@ -9,15 +9,15 @@ import org.bukkit.craftbukkit.inventory.CraftInventory;
 import org.bukkit.inventory.Inventory;
 
 public class CraftHopper extends CraftBlockState implements Hopper {
-    private final TileEntityHopper hopper;
+    private final HopperBlockEntity hopper;
 
     public CraftHopper(final Block block) {
         super(block);
 
-        hopper = (TileEntityHopper) ((CraftWorld) block.getWorld()).getTileEntityAt(getX(), getY(), getZ());
+        hopper = (HopperBlockEntity) ((CraftWorld) block.getWorld()).getTileEntityAt(getX(), getY(), getZ());
     }
 
-    public CraftHopper(final Material material, final TileEntityHopper te) {
+    public CraftHopper(final Material material, final HopperBlockEntity te) {
         super(material);
 
         hopper = te;
@@ -32,14 +32,14 @@ public class CraftHopper extends CraftBlockState implements Hopper {
         boolean result = super.update(force, applyPhysics);
 
         if (result) {
-            hopper.update();
+            hopper.markDirty();
         }
 
         return result;
     }
 
     @Override
-    public TileEntityHopper getTileEntity() {
+    public HopperBlockEntity getTileEntity() {
         return hopper;
     }
 }

@@ -1,8 +1,7 @@
 package org.bukkit.craftbukkit.entity;
 
 import io.github.fukkitmc.legacy.extra.EntityExtra;
-import net.minecraft.server.EntityArrow;
-
+import net.minecraft.entity.projectile.ArrowEntity;
 import org.apache.commons.lang.Validate;
 import org.bukkit.craftbukkit.CraftServer;
 import org.bukkit.entity.Arrow;
@@ -12,7 +11,7 @@ import org.bukkit.projectiles.ProjectileSource;
 
 public class CraftArrow extends AbstractProjectile implements Arrow {
 
-    public CraftArrow(CraftServer server, EntityArrow entity) {
+    public CraftArrow(CraftServer server, ArrowEntity entity) {
         super(server, entity);
     }
 
@@ -47,8 +46,8 @@ public class CraftArrow extends AbstractProjectile implements Arrow {
     }
 
     @Override
-    public EntityArrow getHandle() {
-        return (EntityArrow) entity;
+    public ArrowEntity getHandle() {
+        return (ArrowEntity) entity;
     }
 
     @Override

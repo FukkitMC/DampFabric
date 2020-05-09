@@ -1,8 +1,7 @@
 package org.bukkit.craftbukkit.scoreboard;
 
-import net.minecraft.server.Scoreboard;
-import net.minecraft.server.ScoreboardObjective;
-
+import net.minecraft.scoreboard.Scoreboard;
+import net.minecraft.scoreboard.ScoreboardObjective;
 import org.apache.commons.lang.Validate;
 import org.bukkit.OfflinePlayer;
 import org.bukkit.scoreboard.DisplaySlot;
@@ -62,12 +61,12 @@ final class CraftObjective extends CraftScoreboardComponent implements Objective
 
         for (int i = 0; i < CraftScoreboardTranslations.MAX_DISPLAY_SLOT; i++) {
             if (board.getObjectiveForSlot(i) == objective) {
-                board.setDisplaySlot(i, null);
+                board.setObjectiveSlot(i, null);
             }
         }
         if (slot != null) {
             int slotNumber = CraftScoreboardTranslations.fromBukkitSlot(slot);
-            board.setDisplaySlot(slotNumber, getHandle());
+            board.setObjectiveSlot(slotNumber, getHandle());
         }
     }
 
@@ -102,12 +101,12 @@ final class CraftObjective extends CraftScoreboardComponent implements Objective
     public void unregister() throws IllegalStateException {
         CraftScoreboard scoreboard = checkState();
 
-        scoreboard.board.unregisterObjective(objective);
+        scoreboard.board.removeObjective(objective);
     }
 
     @Override
     CraftScoreboard checkState() throws IllegalStateException {
-        if (getScoreboard().board.getObjective(objective.getName()) == null) {
+        if (getScoreboard().board.getNullableObjective(objective.getName()) == null) {
             throw new IllegalStateException("Unregistered scoreboard component");
         }
         

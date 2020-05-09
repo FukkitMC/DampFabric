@@ -1,14 +1,14 @@
 package org.bukkit.craftbukkit.entity;
 
-import net.minecraft.server.EntityHanging;
-import net.minecraft.server.EnumDirection;
+import net.minecraft.entity.decoration.DecorationEntity;
+import net.minecraft.util.math.Direction;
 import org.bukkit.block.BlockFace;
 import org.bukkit.craftbukkit.CraftServer;
 import org.bukkit.entity.EntityType;
 import org.bukkit.entity.Hanging;
 
 public class CraftHanging extends CraftEntity implements Hanging {
-    public CraftHanging(CraftServer server, EntityHanging entity) {
+    public CraftHanging(CraftServer server, DecorationEntity entity) {
         super(server, entity);
     }
 
@@ -21,21 +21,21 @@ public class CraftHanging extends CraftEntity implements Hanging {
     }
 
     public boolean setFacingDirection(BlockFace face, boolean force) {
-        EntityHanging hanging = getHandle();
-        EnumDirection dir = hanging.direction;
+        DecorationEntity hanging = getHandle();
+        Direction dir = hanging.direction;
         switch (face) {
             case SOUTH:
             default:
-                getHandle().setDirection(EnumDirection.SOUTH);
+                getHandle().setDirection(Direction.SOUTH);
                 break;
             case WEST:
-                getHandle().setDirection(EnumDirection.WEST);
+                getHandle().setDirection(Direction.WEST);
                 break;
             case NORTH:
-                getHandle().setDirection(EnumDirection.NORTH);
+                getHandle().setDirection(Direction.NORTH);
                 break;
             case EAST:
-                getHandle().setDirection(EnumDirection.EAST);
+                getHandle().setDirection(Direction.EAST);
                 break;
         }
         if (!force && !hanging.survives()) {
@@ -47,7 +47,7 @@ public class CraftHanging extends CraftEntity implements Hanging {
     }
 
     public BlockFace getFacing() {
-        EnumDirection direction = this.getHandle().direction;
+        Direction direction = this.getHandle().direction;
         if (direction == null) return BlockFace.SELF;
         switch (direction) {
             case SOUTH:
@@ -63,8 +63,8 @@ public class CraftHanging extends CraftEntity implements Hanging {
     }
 
     @Override
-    public EntityHanging getHandle() {
-        return (EntityHanging) entity;
+    public DecorationEntity getHandle() {
+        return (DecorationEntity) entity;
     }
 
     @Override

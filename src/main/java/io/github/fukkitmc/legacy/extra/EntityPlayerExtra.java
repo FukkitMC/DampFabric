@@ -1,6 +1,6 @@
 package io.github.fukkitmc.legacy.extra;
 
-import net.minecraft.server.IChatBaseComponent;
+import net.minecraft.text.Text;
 import org.bukkit.WeatherType;
 
 public interface EntityPlayerExtra {
@@ -13,7 +13,7 @@ public interface EntityPlayerExtra {
 
     long getPlayerTime();
 
-    void sendMessages(IChatBaseComponent[] ichatbasecomponent);
+    void sendMessages(Text[] ichatbasecomponent);
 
     void updateWeather(float oldRain, float newRain, float oldThunder, float newThunder);
 

@@ -5,7 +5,7 @@ import java.util.List;
 
 import io.github.fukkitmc.legacy.extra.EntityExtra;
 import io.github.fukkitmc.legacy.extra.MinecraftServerExtra;
-import net.minecraft.server.EntityPlayer;
+import net.minecraft.entity.player.ServerPlayerEntity;
 import net.minecraft.server.MinecraftServer;
 
 import org.bukkit.entity.Player;
@@ -17,9 +17,9 @@ public class LazyPlayerSet extends LazyHashSet<Player> {
         if (reference != null) {
             throw new IllegalStateException("Reference already created!");
         }
-        List<EntityPlayer> players = ((MinecraftServerExtra)MinecraftServer.getServer()).getPlayerList().players;
+        List<ServerPlayerEntity> players = ((MinecraftServerExtra)MinecraftServer.getServer()).getPlayerList().players;
         HashSet<Player> reference = new HashSet<Player>(players.size());
-        for (EntityPlayer player : players) {
+        for (ServerPlayerEntity player : players) {
             reference.add((Player) ((EntityExtra)player).getBukkitEntity());
         }
         return reference;

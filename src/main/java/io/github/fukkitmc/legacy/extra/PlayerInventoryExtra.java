@@ -1,6 +1,6 @@
 package io.github.fukkitmc.legacy.extra;
 
-import net.minecraft.server.ItemStack;
+import net.minecraft.item.ItemStack;
 
 public interface PlayerInventoryExtra {
 

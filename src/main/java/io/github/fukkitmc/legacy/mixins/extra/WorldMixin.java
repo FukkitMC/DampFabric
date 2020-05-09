@@ -1,7 +1,10 @@
 package io.github.fukkitmc.legacy.mixins.extra;
 
 import io.github.fukkitmc.legacy.extra.WorldExtra;
+import net.minecraft.entity.Entity;
 import net.minecraft.server.*;
+import net.minecraft.server.world.ServerWorld;
+import net.minecraft.world.World;
 import org.bukkit.Bukkit;
 import org.bukkit.craftbukkit.CraftServer;
 import org.bukkit.craftbukkit.CraftWorld;
@@ -47,7 +50,7 @@ public abstract class WorldMixin implements WorldExtra {
 
     @Override
     public void bukkitInit(ChunkGenerator gen, org.bukkit.World.Environment env) {
-        this.world = new CraftWorld(((WorldServer) (Object)this), gen, env);
+        this.world = new CraftWorld(((ServerWorld) (Object)this), gen, env);
         this.getServer().addWorld(this.world);
     }
 }

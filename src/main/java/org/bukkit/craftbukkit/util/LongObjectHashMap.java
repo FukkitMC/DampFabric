@@ -1,7 +1,5 @@
 package org.bukkit.craftbukkit.util;
 
-import net.minecraft.server.LongHashMap;
-
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
@@ -16,9 +14,10 @@ import java.util.Iterator;
 import java.util.Map;
 import java.util.NoSuchElementException;
 import java.util.Set;
+import net.minecraft.util.LongObjectStorage;
 
 @SuppressWarnings("unchecked")
-public class LongObjectHashMap<V> extends LongHashMap<V> implements Cloneable, Serializable {
+public class LongObjectHashMap<V> extends LongObjectStorage<V> implements Cloneable, Serializable {
     static final long serialVersionUID = 2841537710170573815L;
 
     private static final long EMPTY_KEY = Long.MIN_VALUE;
@@ -196,7 +195,7 @@ public class LongObjectHashMap<V> extends LongHashMap<V> implements Cloneable, S
     public Set<Map.Entry<Long, V>> entrySet() {
         HashSet<Map.Entry<Long, V>> set = new HashSet<Map.Entry<Long, V>>();
         for (long key : keySet()) {
-            set.add(new Entry(key, get(key)));
+            set.add(new org.bukkit.craftbukkit.util.LongObjectHashMap.Entry(key, get(key)));
         }
 
         return set;

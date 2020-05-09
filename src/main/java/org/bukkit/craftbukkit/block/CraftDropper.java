@@ -1,10 +1,9 @@
 package org.bukkit.craftbukkit.block;
 
-import net.minecraft.server.BlockDropper;
-import net.minecraft.server.BlockPosition;
-import net.minecraft.server.Blocks;
-import net.minecraft.server.TileEntityDropper;
-
+import net.minecraft.block.Blocks;
+import net.minecraft.block.DropperBlock;
+import net.minecraft.block.entity.DropperBlockEntity;
+import net.minecraft.util.math.BlockPos;
 import org.bukkit.Material;
 import org.bukkit.block.Block;
 import org.bukkit.block.Dropper;
@@ -14,16 +13,16 @@ import org.bukkit.inventory.Inventory;
 
 public class CraftDropper extends CraftBlockState implements Dropper {
     private final CraftWorld world;
-    private final TileEntityDropper dropper;
+    private final DropperBlockEntity dropper;
 
     public CraftDropper(final Block block) {
         super(block);
 
         world = (CraftWorld) block.getWorld();
-        dropper = (TileEntityDropper) world.getTileEntityAt(getX(), getY(), getZ());
+        dropper = (DropperBlockEntity) world.getTileEntityAt(getX(), getY(), getZ());
     }
 
-    public CraftDropper(final Material material, TileEntityDropper te) {
+    public CraftDropper(final Material material, DropperBlockEntity te) {
         super(material);
         world = null;
         dropper = te;
@@ -37,9 +36,9 @@ public class CraftDropper extends CraftBlockState implements Dropper {
         Block block = getBlock();
 
         if (block.getType() == Material.DROPPER) {
-            BlockDropper drop = (BlockDropper) Blocks.DROPPER;
+            DropperBlock drop = (DropperBlock) Blocks.DROPPER;
 
-            drop.dispense(world.getHandle(), new BlockPosition(getX(), getY(), getZ()));
+            drop.dispense(world.getHandle(), new BlockPos(getX(), getY(), getZ()));
         }
     }
 
@@ -48,14 +47,14 @@ public class CraftDropper extends CraftBlockState implements Dropper {
         boolean result = super.update(force, applyPhysics);
 
         if (result) {
-            dropper.update();
+            dropper.markDirty();
         }
 
         return result;
     }
 
     @Override
-    public TileEntityDropper getTileEntity() {
+    public DropperBlockEntity getTileEntity() {
         return dropper;
     }
 }

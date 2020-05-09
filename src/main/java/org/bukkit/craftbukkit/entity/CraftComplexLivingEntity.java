@@ -1,17 +1,17 @@
 package org.bukkit.craftbukkit.entity;
 
-import net.minecraft.server.EntityLiving;
+import net.minecraft.entity.LivingEntity;
 import org.bukkit.craftbukkit.CraftServer;
 import org.bukkit.entity.ComplexLivingEntity;
 
 public abstract class CraftComplexLivingEntity extends CraftLivingEntity implements ComplexLivingEntity {
-    public CraftComplexLivingEntity(CraftServer server, EntityLiving entity) {
+    public CraftComplexLivingEntity(CraftServer server, LivingEntity entity) {
         super(server, entity);
     }
 
     @Override
-    public EntityLiving getHandle() {
-        return (EntityLiving) entity;
+    public LivingEntity getHandle() {
+        return (LivingEntity) entity;
     }
 
     @Override

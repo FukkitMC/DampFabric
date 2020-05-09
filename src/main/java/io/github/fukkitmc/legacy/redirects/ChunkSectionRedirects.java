@@ -1,11 +1,11 @@
 package io.github.fukkitmc.legacy.redirects;
 
-import net.minecraft.server.ChunkSection;
+import net.minecraft.class_401;
 
 public class ChunkSectionRedirects {
 
-    public static ChunkSection createChunkSection(int y, boolean flag, char[] blockIds){
-        return new ChunkSection(y, flag);
+    public static class_401 createChunkSection(int y, boolean flag, char[] blockIds){
+        return new class_401(y, flag);
     }
 
 

@@ -2,11 +2,10 @@ package io.github.fukkitmc.legacy.mixins.extra;
 
 
 import io.github.fukkitmc.legacy.extra.CraftingManagerExtra;
-import net.minecraft.server.BiomeBase;
-import net.minecraft.server.CraftingManager;
+import net.minecraft.recipe.Recipes;
 import org.spongepowered.asm.mixin.Mixin;
 
-@Mixin(CraftingManager.class)
+@Mixin(Recipes.class)
 public class CraftingManagerMixin implements CraftingManagerExtra {
     @Override
     public void sort() {

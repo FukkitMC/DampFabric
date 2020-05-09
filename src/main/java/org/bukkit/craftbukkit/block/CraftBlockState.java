@@ -1,7 +1,6 @@
 package org.bukkit.craftbukkit.block;
 
 import io.github.fukkitmc.legacy.extra.WorldExtra;
-import net.minecraft.server.BlockPosition;
 import org.bukkit.Location;
 import org.bukkit.block.Block;
 import org.bukkit.Chunk;
@@ -15,7 +14,8 @@ import org.bukkit.metadata.MetadataValue;
 import org.bukkit.plugin.Plugin;
 
 import java.util.List;
-import net.minecraft.server.TileEntity;
+import net.minecraft.block.entity.BlockEntity;
+import net.minecraft.util.math.BlockPos;
 
 public class CraftBlockState implements BlockState {
     private final CraftWorld world;
@@ -54,11 +54,11 @@ public class CraftBlockState implements BlockState {
         x = y = z = 0;
     }
 
-    public static CraftBlockState getBlockState(net.minecraft.server.World world, int x, int y, int z) {
+    public static CraftBlockState getBlockState(net.minecraft.world.World world, int x, int y, int z) {
         return new CraftBlockState(((WorldExtra)world).getWorld().getBlockAt(x, y, z));
     }
 
-    public static CraftBlockState getBlockState(net.minecraft.server.World world, int x, int y, int z, int flag) {
+    public static CraftBlockState getBlockState(net.minecraft.world.World world, int x, int y, int z, int flag) {
         return new CraftBlockState(((WorldExtra)world).getWorld().getBlockAt(x, y, z), flag);
     }
 
@@ -160,7 +160,7 @@ public class CraftBlockState implements BlockState {
         }
 
         block.setTypeIdAndData(getTypeId(), getRawData(), applyPhysics);
-        world.getHandle().notify(new BlockPosition(x, y, z));
+        world.getHandle().notify(new BlockPos(x, y, z));
 
         return true;
     }
@@ -238,7 +238,7 @@ public class CraftBlockState implements BlockState {
         return hash;
     }
 
-    public TileEntity getTileEntity() {
+    public BlockEntity getTileEntity() {
         return null;
     }
 

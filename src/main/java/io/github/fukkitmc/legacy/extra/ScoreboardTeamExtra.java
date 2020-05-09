@@ -1,11 +1,11 @@
 package io.github.fukkitmc.legacy.extra;
 
-import net.minecraft.server.ScoreboardTeamBase;
+import net.minecraft.scoreboard.AbstractTeam;
 
 public interface ScoreboardTeamExtra {
 
     boolean canSeeFriendlyInvisibles();
 
-    ScoreboardTeamBase.EnumNameTagVisibility getNameTagVisibility();
+    AbstractTeam.VisibilityRule getNameTagVisibility();
 
 }

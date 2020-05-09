@@ -1,18 +1,18 @@
 package org.bukkit.craftbukkit.entity;
 
-import net.minecraft.server.EntityEgg;
+import net.minecraft.entity.thrown.EggEntity;
 import org.bukkit.craftbukkit.CraftServer;
 import org.bukkit.entity.Egg;
 import org.bukkit.entity.EntityType;
 
 public class CraftEgg extends CraftProjectile implements Egg {
-    public CraftEgg(CraftServer server, EntityEgg entity) {
+    public CraftEgg(CraftServer server, EggEntity entity) {
         super(server, entity);
     }
 
     @Override
-    public EntityEgg getHandle() {
-        return (EntityEgg) entity;
+    public EggEntity getHandle() {
+        return (EggEntity) entity;
     }
 
     @Override

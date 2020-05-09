@@ -3,17 +3,22 @@ package org.bukkit.craftbukkit.generator;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
-
+import net.minecraft.entity.EntityCategory;
 import net.minecraft.server.*;
-
+import net.minecraft.util.ProgressListener;
+import net.minecraft.util.math.BlockPos;
+import net.minecraft.world.World;
+import net.minecraft.world.biome.Biome;
+import net.minecraft.world.chunk.Chunk;
+import net.minecraft.world.chunk.ChunkProvider;
 import org.bukkit.craftbukkit.CraftWorld;
 import org.bukkit.generator.BlockPopulator;
 
 public class NormalChunkGenerator extends InternalChunkGenerator {
-    private final IChunkProvider provider;
+    private final ChunkProvider provider;
 
     public NormalChunkGenerator(World world, long seed) {
-        provider = world.worldProvider.getChunkProvider();
+        provider = world.dimension.getChunkProvider();
     }
 
     @Override
@@ -23,7 +28,7 @@ public class NormalChunkGenerator extends InternalChunkGenerator {
 
     @Override
     public boolean canSpawn(org.bukkit.World world, int x, int z) {
-        return ((CraftWorld) world).getHandle().worldProvider.canSpawn(x, z);
+        return ((CraftWorld) world).getHandle().dimension.canSpawn(x, z);
     }
 
     @Override
@@ -37,27 +42,27 @@ public class NormalChunkGenerator extends InternalChunkGenerator {
     }
 
     @Override
-    public Chunk getOrCreateChunk(int i, int i1) {
-        return provider.getOrCreateChunk(i, i1);
+    public Chunk getChunk(int i, int i1) {
+        return provider.getChunk(i, i1);
     }
 
     @Override
-    public Chunk getChunkAt(BlockPosition blockPosition) {
+    public Chunk getChunkAt(BlockPos blockPosition) {
         return provider.getChunkAt(blockPosition);
     }
 
     @Override
-    public void getChunkAt(IChunkProvider icp, int i, int i1) {
+    public void getChunkAt(ChunkProvider icp, int i, int i1) {
         provider.getChunkAt(icp, i, i1);
     }
 
     @Override
-    public boolean a(IChunkProvider iChunkProvider, Chunk chunk, int i, int i1) {
+    public boolean a(ChunkProvider iChunkProvider, Chunk chunk, int i, int i1) {
         return provider.a(provider, chunk, i, i1);
     }
 
     @Override
-    public boolean saveChunks(boolean bln, IProgressUpdate ipu) {
+    public boolean saveChunks(boolean bln, ProgressListener ipu) {
         return provider.saveChunks(bln, ipu);
     }
 
@@ -72,12 +77,12 @@ public class NormalChunkGenerator extends InternalChunkGenerator {
     }
 
     @Override
-    public List<BiomeBase.BiomeMeta> getMobsFor(EnumCreatureType ect, BlockPosition position) {
+    public List<Biome.SpawnEntry> getMobsFor(EntityCategory ect, BlockPos position) {
         return provider.getMobsFor(ect, position);
     }
 
     @Override
-    public BlockPosition findNearestMapFeature(World world, String string, BlockPosition position) {
+    public BlockPos findNearestMapFeature(World world, String string, BlockPos position) {
         return provider.findNearestMapFeature(world, string, position);
     }
 
@@ -93,7 +98,7 @@ public class NormalChunkGenerator extends InternalChunkGenerator {
     }
 
     @Override
-    public String getName() {
+    public String getChunkProviderName() {
         return "NormalWorldGenerator";
     }
 

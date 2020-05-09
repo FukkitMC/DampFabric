@@ -2,9 +2,8 @@ package io.github.fukkitmc.legacy.mixins.extra;
 
 
 import io.github.fukkitmc.legacy.extra.PlayerInventoryExtra;
-import net.minecraft.server.BiomeBase;
-import net.minecraft.server.ItemStack;
-import net.minecraft.server.PlayerInventory;
+import net.minecraft.entity.player.PlayerInventory;
+import net.minecraft.item.ItemStack;
 import org.spongepowered.asm.mixin.Mixin;
 
 @Mixin(PlayerInventory.class)

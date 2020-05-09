@@ -6,16 +6,13 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-
-import net.minecraft.server.Block;
-import net.minecraft.server.Blocks;
-import net.minecraft.server.Item;
-import net.minecraft.server.MinecraftKey;
+import net.minecraft.block.Block;
+import net.minecraft.block.Blocks;
+import net.minecraft.item.Item;
+import net.minecraft.nbt.StringNbtReader;
 import net.minecraft.server.MojangsonParseException;
-import net.minecraft.server.MojangsonParser;
-import net.minecraft.server.NBTTagCompound;
-import net.minecraft.server.StatisticList;
-
+import net.minecraft.stat.Stats;
+import net.minecraft.util.Identifier;
 import org.bukkit.Achievement;
 import org.bukkit.Material;
 import org.bukkit.Statistic;
@@ -44,33 +41,33 @@ public final class CraftMagicNumbers implements UnsafeValues {
     @Deprecated
     // A bad method for bad magic.
     public static int getId(Block block) {
-        return Block.getId(block);
+        return Block.getBlockId(block);
     }
 
     public static Material getMaterial(Block block) {
-        return Material.getMaterial(Block.getId(block));
+        return Material.getMaterial(Block.getBlockId(block));
     }
 
     public static Item getItem(Material material) {
         // TODO: Don't use ID
-        return Item.getById(material.getId());
+        return Item.byRawId(material.getId());
     }
 
     @Deprecated
     // A bad method for bad magic.
     public static Item getItem(int id) {
-        return Item.getById(id);
+        return Item.byRawId(id);
     }
 
     @Deprecated
     // A bad method for bad magic.
     public static int getId(Item item) {
-        return Item.getId(item);
+        return Item.getRawId(item);
     }
 
     public static Material getMaterial(Item item) {
         // TODO: Don't use ID
-        Material material = Material.getMaterial(Item.getId(item));
+        Material material = Material.getMaterial(Item.getRawId(item));
 
         if (material == null) {
             return Material.AIR;
@@ -81,7 +78,7 @@ public final class CraftMagicNumbers implements UnsafeValues {
 
     public static Block getBlock(Material material) {
         // TODO: Don't use ID
-        Block block = Block.getById(material.getId());
+        Block block = Block.byId(material.getId());
 
         if (block == null) {
             return Blocks.AIR;
@@ -92,13 +89,13 @@ public final class CraftMagicNumbers implements UnsafeValues {
 
     @Override
     public Material getMaterialFromInternalName(String name) {
-        return getMaterial(Item.REGISTRY.a(new MinecraftKey(name)));
+        return getMaterial(Item.REGISTRY.a(new Identifier(name)));
     }
 
     @Override
     public List<String> tabCompleteInternalMaterialName(String token, List<String> completions) {
         ArrayList<String> results = Lists.newArrayList();
-        for (MinecraftKey key : Item.REGISTRY.keySet()) {
+        for (Identifier key : Item.REGISTRY.keySet()) {
             results.add(key.toString());
         }
         return StringUtil.copyPartialMatches(token, results, completions);
@@ -106,10 +103,10 @@ public final class CraftMagicNumbers implements UnsafeValues {
 
     @Override
     public ItemStack modifyItemStack(ItemStack stack, String arguments) {
-        net.minecraft.server.ItemStack nmsStack = CraftItemStack.asNMSCopy(stack);
+        net.minecraft.item.ItemStack nmsStack = CraftItemStack.asNMSCopy(stack);
 
         try {
-            nmsStack.setTag(MojangsonParser.parse(arguments));
+            nmsStack.setTag(StringNbtReader.parse(arguments));
         } catch (MojangsonParseException ex) {
             Logger.getLogger(CraftMagicNumbers.class.getName()).log(Level.SEVERE, null, ex);
         }
@@ -132,9 +129,9 @@ public final class CraftMagicNumbers implements UnsafeValues {
     @Override
     public List<String> tabCompleteInternalStatisticOrAchievementName(String token, List<String> completions) {
         List<String> matches = new ArrayList<String>();
-        Iterator iterator = StatisticList.stats.iterator();
+        Iterator iterator = Stats.stats.iterator();
         while (iterator.hasNext()) {
-            String statistic = ((net.minecraft.server.Statistic) iterator.next()).name;
+            String statistic = ((net.minecraft.stat.Stat) iterator.next()).name;
             if (statistic.startsWith(token)) {
                 matches.add(statistic);
             }
