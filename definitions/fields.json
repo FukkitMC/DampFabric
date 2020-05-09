@@ -232,13 +232,24 @@
     ]
   },
   {
-    "name": "net/minecraft/server/MinecraftServer",
+    "name": "net/minecraft/server/HandshakeListener",
     "syntheticFields": [
       {
-        "name": "ticks",
-        "type": "I",
+        "name": "throttleTracker",
+        "type": "Ljava/util/HashMap;",
+        "signature": "Ljava/util/HashMap<Ljava/net/InetAddress;Ljava/lang/Long;>;",
         "access": 1
       },
+      {
+        "name": "throttleCounter",
+        "type": "I",
+        "access": 1
+      }
+    ]
+  },
+  {
+    "name": "net/minecraft/server/MinecraftServer",
+    "syntheticFields": [
       {
         "name": "worlds",
         "type": "Ljava/util/List;",

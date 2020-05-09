@@ -166,6 +166,8 @@ public abstract class MinecraftServerMixin {
     @Shadow
     public abstract void a(boolean bl);
 
+    @Shadow public List<WorldServer> worlds;
+
     @Inject(method = "<init>(Ljava/io/File;Ljava/net/Proxy;Ljava/io/File;)V", at = @At("TAIL"))
     public void constructor(File file, Proxy proxy, File file2, CallbackInfo ci) {
         try {
@@ -211,10 +213,12 @@ public abstract class MinecraftServerMixin {
     /**
      * @author fukkit
      */
-    @Overwrite(remap = false)
+    @Overwrite
     public void B() {
         this.methodProfiler.a("jobs");
-        synchronized (j) {
+        Queue queue = this.j;
+
+        synchronized (this.j) {
             while (!this.j.isEmpty()) {
                 SystemUtils.a((FutureTask) this.j.poll(), MinecraftServer.LOGGER);
             }
@@ -223,7 +227,7 @@ public abstract class MinecraftServerMixin {
         this.methodProfiler.c("levels");
 
         // CraftBukkit start
-        this.server.getScheduler().mainThreadHeartbeat(((MinecraftServer) (Object) this).ticks);
+        this.server.getScheduler().mainThreadHeartbeat(this.y);
 
         // Run tasks that are waiting on processing
         while (!processQueue.isEmpty()) {
@@ -233,20 +237,20 @@ public abstract class MinecraftServerMixin {
         org.bukkit.craftbukkit.chunkio.ChunkIOExecutor.tick();
 
         // Send time updates to everyone, it will get the right time from the world the player is in.
-        if (((MinecraftServer) (Object) this).ticks % 20 == 0) {
-            for (int i = 0; i < ((MinecraftServer) (Object) this).getPlayerList().players.size(); ++i) {
-                EntityPlayer entityplayer = (EntityPlayer) ((MinecraftServer) (Object) this).getPlayerList().players.get(i);
+        if (this.y % 20 == 0) {
+            for (int i = 0; i < ((MinecraftServer)(Object)this).getPlayerList().players.size(); ++i) {
+                EntityPlayer entityplayer = (EntityPlayer) ((MinecraftServer)(Object)this).getPlayerList().players.get(i);
                 entityplayer.playerConnection.sendPacket(new PacketPlayOutUpdateTime(entityplayer.world.getTime(), entityplayer.getPlayerTime(), entityplayer.world.getGameRules().getBoolean("doDaylightCycle"))); // Add support for per player time
             }
         }
 
         int i;
 
-        for (i = 0; i < ((MinecraftServer)(Object)this).worlds.size(); ++i) {
+        for (i = 0; i < this.worlds.size(); ++i) {
             long j = System.nanoTime();
 
             // if (i == 0 || this.getAllowNether()) {
-            WorldServer worldserver = ((MinecraftServer)(Object)this).worlds.get(i);
+            WorldServer worldserver = this.worlds.get(i);
 
             this.methodProfiler.a(worldserver.getWorldData().getName());
                 /* Drop global time updates
@@ -294,7 +298,7 @@ public abstract class MinecraftServerMixin {
         this.methodProfiler.c("tickables");
 
         for (i = 0; i < this.p.size(); ++i) {
-            ((IUpdatePlayerListBox) this.p.get(i)).c();
+            this.p.get(i).c();
         }
 
         this.methodProfiler.b();

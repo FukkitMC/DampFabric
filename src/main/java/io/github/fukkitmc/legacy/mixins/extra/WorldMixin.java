@@ -48,5 +48,6 @@ public abstract class WorldMixin implements WorldExtra {
     @Override
     public void bukkitInit(ChunkGenerator gen, org.bukkit.World.Environment env) {
         this.world = new CraftWorld(((WorldServer) (Object)this), gen, env);
+        this.getServer().addWorld(this.world);
     }
 }
