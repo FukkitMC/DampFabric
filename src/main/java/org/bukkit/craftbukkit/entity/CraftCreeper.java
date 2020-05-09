@@ -1,5 +1,7 @@
 package org.bukkit.craftbukkit.entity;
 
+import io.github.fukkitmc.legacy.extra.EntityCreeperExtra;
+import io.github.fukkitmc.legacy.extra.EntityExtra;
 import net.minecraft.server.EntityCreeper;
 
 import org.bukkit.craftbukkit.CraftServer;
@@ -19,21 +21,21 @@ public class CraftCreeper extends CraftMonster implements Creeper {
 
     public void setPowered(boolean powered) {
         CraftServer server = this.server;
-        Creeper entity = (Creeper) this.getHandle().getBukkitEntity();
+        Creeper entity = (Creeper) ((EntityExtra)this.getHandle()).getBukkitEntity();
 
         if (powered) {
             CreeperPowerEvent event = new CreeperPowerEvent(entity, CreeperPowerEvent.PowerCause.SET_ON);
             server.getPluginManager().callEvent(event);
 
             if (!event.isCancelled()) {
-                getHandle().setPowered(true);
+                ((EntityCreeperExtra)getHandle()).setPowered(true);
             }
         } else {
             CreeperPowerEvent event = new CreeperPowerEvent(entity, CreeperPowerEvent.PowerCause.SET_OFF);
             server.getPluginManager().callEvent(event);
 
             if (!event.isCancelled()) {
-                getHandle().setPowered(false);
+                ((EntityCreeperExtra)getHandle()).setPowered(false);
             }
         }
     }

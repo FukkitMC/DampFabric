@@ -7,6 +7,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.UUID;
 
+import io.github.fukkitmc.legacy.extra.WorldNBTStorageExtra;
 import net.minecraft.server.NBTTagCompound;
 import net.minecraft.server.WorldNBTStorage;
 
@@ -168,7 +169,7 @@ public class CraftOfflinePlayer implements OfflinePlayer, ConfigurationSerializa
     }
 
     private NBTTagCompound getData() {
-        return storage.getPlayerData(getUniqueId().toString());
+        return ((WorldNBTStorageExtra)storage).getPlayerData(getUniqueId().toString());
     }
 
     private NBTTagCompound getBukkitData() {
@@ -185,7 +186,7 @@ public class CraftOfflinePlayer implements OfflinePlayer, ConfigurationSerializa
     }
 
     private File getDataFile() {
-        return new File(storage.getPlayerDir(), getUniqueId() + ".dat");
+        return new File(((WorldNBTStorageExtra)storage).getPlayerDir(), getUniqueId() + ".dat");
     }
 
     public long getFirstPlayed() {

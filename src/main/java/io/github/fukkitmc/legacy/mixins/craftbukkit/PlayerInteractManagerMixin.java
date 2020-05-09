@@ -1,5 +1,7 @@
 package io.github.fukkitmc.legacy.mixins.craftbukkit;
 
+import io.github.fukkitmc.legacy.extra.EntityExtra;
+import io.github.fukkitmc.legacy.extra.WorldExtra;
 import net.minecraft.server.*;
 import org.bukkit.entity.Player;
 import org.bukkit.event.block.BlockBreakEvent;
@@ -29,7 +31,7 @@ public abstract class PlayerInteractManagerMixin {
         BlockBreakEvent event = null;
 
         if (this.player != null) {
-            org.bukkit.block.Block block = this.world.getWorld().getBlockAt(blockposition.getX(), blockposition.getY(), blockposition.getZ());
+            org.bukkit.block.Block block = ((WorldExtra)this.world).getWorld().getBlockAt(blockposition.getX(), blockposition.getY(), blockposition.getZ());
 
             // Sword + Creative mode pre-cancel
             boolean isSwordNoBreak = this.gamemode.d() && this.player.bA() != null && this.player.bA().getItem() instanceof ItemSword;
@@ -42,7 +44,7 @@ public abstract class PlayerInteractManagerMixin {
                 ((EntityPlayer) this.player).playerConnection.sendPacket(packet);
             }
 
-            event = new BlockBreakEvent(block, (Player) this.player.getBukkitEntity());
+            event = new BlockBreakEvent(block, (Player) ((EntityExtra)this.player).getBukkitEntity());
 
             // Sword + Creative mode pre-cancel
             event.setCancelled(isSwordNoBreak);
@@ -61,7 +63,7 @@ public abstract class PlayerInteractManagerMixin {
                 }
             }
 
-            this.world.getServer().getPluginManager().callEvent(event);
+            ((WorldExtra)this.world).getServer().getPluginManager().callEvent(event);
 
             if (event.isCancelled()) {
                 if (isSwordNoBreak) {

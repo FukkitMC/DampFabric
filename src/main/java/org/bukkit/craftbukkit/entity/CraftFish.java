@@ -1,5 +1,6 @@
 package org.bukkit.craftbukkit.entity;
 
+import io.github.fukkitmc.legacy.extra.EntityExtra;
 import net.minecraft.server.BlockPosition;
 import net.minecraft.server.EntityFishingHook;
 import net.minecraft.server.EntityHuman;
@@ -21,7 +22,7 @@ public class CraftFish extends AbstractProjectile implements Fish {
 
     public ProjectileSource getShooter() {
         if (getHandle().owner != null) {
-            return (ProjectileSource) getHandle().owner.getBukkitEntity();
+            return (ProjectileSource) ((EntityExtra)getHandle().owner).getBukkitEntity();
         }
 
         return null;

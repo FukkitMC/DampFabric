@@ -2,6 +2,7 @@ package org.bukkit.craftbukkit.scoreboard;
 
 import java.util.Set;
 
+import io.github.fukkitmc.legacy.extra.ScoreboardTeamExtra;
 import net.minecraft.server.ScoreboardTeamBase.EnumNameTagVisibility;
 import org.apache.commons.lang.Validate;
 import org.bukkit.Bukkit;
@@ -84,7 +85,7 @@ final class CraftTeam extends CraftScoreboardComponent implements Team {
     public boolean canSeeFriendlyInvisibles() throws IllegalStateException {
         CraftScoreboard scoreboard = checkState();
 
-        return team.canSeeFriendlyInvisibles();
+        return ((ScoreboardTeamExtra)team).canSeeFriendlyInvisibles();
     }
 
     public void setCanSeeFriendlyInvisibles(boolean enabled) throws IllegalStateException {
@@ -96,7 +97,7 @@ final class CraftTeam extends CraftScoreboardComponent implements Team {
     public NameTagVisibility getNameTagVisibility() throws IllegalArgumentException {
         CraftScoreboard scoreboard = checkState();
 
-        return notchToBukkit(team.getNameTagVisibility());
+        return notchToBukkit(((ScoreboardTeamExtra)team).getNameTagVisibility());
     }
 
     public void setNameTagVisibility(NameTagVisibility visibility) throws IllegalArgumentException {

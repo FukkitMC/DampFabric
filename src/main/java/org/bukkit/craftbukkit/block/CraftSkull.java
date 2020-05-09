@@ -1,6 +1,7 @@
 package org.bukkit.craftbukkit.block;
 
 import com.mojang.authlib.GameProfile;
+import io.github.fukkitmc.legacy.extra.MinecraftServerExtra;
 import net.minecraft.server.MinecraftServer;
 import net.minecraft.server.TileEntitySkull;
 import org.bukkit.Material;
@@ -159,7 +160,7 @@ public class CraftSkull extends CraftBlockState implements Skull {
             return false;
         }
 
-        GameProfile profile = MinecraftServer.getServer().getUserCache().getProfile(name);
+        GameProfile profile = ((MinecraftServerExtra)MinecraftServer.getServer()).getUserCache().getProfile(name);
         if (profile == null) {
             return false;
         }

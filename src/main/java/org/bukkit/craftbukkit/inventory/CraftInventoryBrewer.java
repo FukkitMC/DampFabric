@@ -1,5 +1,6 @@
 package org.bukkit.craftbukkit.inventory;
 
+import io.github.fukkitmc.legacy.extra.IInventoryExtra;
 import org.bukkit.block.BrewingStand;
 import org.bukkit.inventory.BrewerInventory;
 import org.bukkit.inventory.ItemStack;
@@ -21,6 +22,6 @@ public class CraftInventoryBrewer extends CraftInventory implements BrewerInvent
 
     @Override
     public BrewingStand getHolder() {
-        return (BrewingStand) inventory.getOwner();
+        return (BrewingStand) ((IInventoryExtra)inventory).getOwner();
     }
 }

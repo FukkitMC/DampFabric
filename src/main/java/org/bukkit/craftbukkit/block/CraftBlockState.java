@@ -1,5 +1,6 @@
 package org.bukkit.craftbukkit.block;
 
+import io.github.fukkitmc.legacy.extra.WorldExtra;
 import net.minecraft.server.BlockPosition;
 import org.bukkit.Location;
 import org.bukkit.block.Block;
@@ -54,11 +55,11 @@ public class CraftBlockState implements BlockState {
     }
 
     public static CraftBlockState getBlockState(net.minecraft.server.World world, int x, int y, int z) {
-        return new CraftBlockState(world.getWorld().getBlockAt(x, y, z));
+        return new CraftBlockState(((WorldExtra)world).getWorld().getBlockAt(x, y, z));
     }
 
     public static CraftBlockState getBlockState(net.minecraft.server.World world, int x, int y, int z, int flag) {
-        return new CraftBlockState(world.getWorld().getBlockAt(x, y, z), flag);
+        return new CraftBlockState(((WorldExtra)world).getWorld().getBlockAt(x, y, z), flag);
     }
 
     public World getWorld() {

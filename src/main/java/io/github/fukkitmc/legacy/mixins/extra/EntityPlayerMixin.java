@@ -1,6 +1,7 @@
 package io.github.fukkitmc.legacy.mixins.extra;
 
 import com.mojang.authlib.GameProfile;
+import io.github.fukkitmc.legacy.extra.EntityExtra;
 import io.github.fukkitmc.legacy.extra.EntityPlayerExtra;
 import net.minecraft.server.*;
 import org.bukkit.WeatherType;
@@ -99,7 +100,7 @@ public abstract class EntityPlayerMixin extends EntityHuman implements EntityPla
         super.b(nbttagcompound);
         nbttagcompound.setInt("playerGameType", this.playerInteractManager.getGameMode().getId());
 
-        ((CraftPlayer)this.getBukkitEntity()).setExtraData(nbttagcompound); // CraftBukkit
+        ((CraftPlayer)((EntityExtra)this).getBukkitEntity()).setExtraData(nbttagcompound); // CraftBukkit
     }
 
     @Override

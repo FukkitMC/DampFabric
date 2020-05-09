@@ -1,5 +1,6 @@
 package org.bukkit.craftbukkit.entity;
 
+import io.github.fukkitmc.legacy.extra.EntityExtra;
 import net.minecraft.server.EntityLiving;
 import net.minecraft.server.EntityProjectile;
 
@@ -46,7 +47,7 @@ public abstract class CraftProjectile extends AbstractProjectile implements Proj
         if (getHandle().shooter == null) {
             return null;
         }
-        return (LivingEntity) getHandle().shooter.getBukkitEntity();
+        return (LivingEntity) ((EntityExtra)getHandle().shooter).getBukkitEntity();
     }
 
     @Deprecated

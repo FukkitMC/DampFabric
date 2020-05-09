@@ -1,6 +1,8 @@
 package org.bukkit.craftbukkit.inventory;
 
+import io.github.fukkitmc.legacy.extra.ContainerExtra;
 import net.minecraft.server.ChatComponentText;
+import org.bukkit.craftbukkit.entity.CraftHumanEntity;
 import org.bukkit.craftbukkit.entity.CraftPlayer;
 import org.bukkit.entity.HumanEntity;
 import org.bukkit.event.inventory.InventoryType;
@@ -13,7 +15,7 @@ import net.minecraft.server.IInventory;
 import net.minecraft.server.PacketPlayOutOpenWindow;
 import net.minecraft.server.Slot;
 
-public class CraftContainer extends Container {
+public class CraftContainer extends Container implements ContainerExtra {
     private final InventoryView view;
     private InventoryType cachedType;
     private String cachedTitle;
@@ -58,6 +60,11 @@ public class CraftContainer extends Container {
     @Override
     public InventoryView getBukkitView() {
         return view;
+    }
+
+    @Override
+    public void transferTo(Container other, CraftHumanEntity player) {
+
     }
 
     private int getSize() {

@@ -2,6 +2,7 @@ package org.bukkit.craftbukkit.inventory;
 
 import java.util.Iterator;
 
+import io.github.fukkitmc.legacy.extra.IRecipeExtra;
 import net.minecraft.server.ItemStack;
 import org.bukkit.inventory.Recipe;
 
@@ -28,7 +29,7 @@ public class RecipeIterator implements Iterator<Recipe> {
     public Recipe next() {
         if (recipes.hasNext()) {
             removeFrom = recipes;
-            return recipes.next().toBukkitRecipe();
+            return ((IRecipeExtra)recipes.next()).toBukkitRecipe();
         } else {
             net.minecraft.server.ItemStack item;
             if (smeltingCustom.hasNext()) {

@@ -4,6 +4,8 @@ import java.io.IOException;
 import java.util.Date;
 import java.util.Set;
 
+import io.github.fukkitmc.legacy.extra.JsonListExtra;
+import io.github.fukkitmc.legacy.extra.MinecraftServerExtra;
 import net.minecraft.server.GameProfileBanEntry;
 import net.minecraft.server.GameProfileBanList;
 import net.minecraft.server.JsonListEntry;
@@ -28,7 +30,7 @@ public class CraftProfileBanList implements org.bukkit.BanList {
     public org.bukkit.BanEntry getBanEntry(String target) {
         Validate.notNull(target, "Target cannot be null");
 
-        GameProfile profile = MinecraftServer.getServer().getUserCache().getProfile(target);
+        GameProfile profile = ((MinecraftServerExtra)MinecraftServer.getServer()).getUserCache().getProfile(target);
         if (profile == null) {
             return null;
         }
@@ -45,7 +47,7 @@ public class CraftProfileBanList implements org.bukkit.BanList {
     public org.bukkit.BanEntry addBan(String target, String reason, Date expires, String source) {
         Validate.notNull(target, "Ban target cannot be null");
 
-        GameProfile profile = MinecraftServer.getServer().getUserCache().getProfile(target);
+        GameProfile profile = ((MinecraftServerExtra)MinecraftServer.getServer()).getUserCache().getProfile(target);
         if (profile == null) {
             return null;
         }
@@ -69,7 +71,7 @@ public class CraftProfileBanList implements org.bukkit.BanList {
     public Set<org.bukkit.BanEntry> getBanEntries() {
         ImmutableSet.Builder<org.bukkit.BanEntry> builder = ImmutableSet.builder();
         
-        for (JsonListEntry entry : list.getValues()) {
+        for (JsonListEntry entry : ((JsonListExtra)list).getValues()) {
             GameProfile profile = (GameProfile) entry.getKey();
             builder.add(new CraftProfileBanEntry(profile, (GameProfileBanEntry) entry, list));
         }
@@ -81,7 +83,7 @@ public class CraftProfileBanList implements org.bukkit.BanList {
     public boolean isBanned(String target) {
         Validate.notNull(target, "Target cannot be null");
 
-        GameProfile profile = MinecraftServer.getServer().getUserCache().getProfile(target);
+        GameProfile profile = ((MinecraftServerExtra)MinecraftServer.getServer()).getUserCache().getProfile(target);
         if (profile == null) {
             return false;
         }
@@ -93,7 +95,7 @@ public class CraftProfileBanList implements org.bukkit.BanList {
     public void pardon(String target) {
         Validate.notNull(target, "Target cannot be null");
 
-        GameProfile profile = MinecraftServer.getServer().getUserCache().getProfile(target);
+        GameProfile profile = ((MinecraftServerExtra)MinecraftServer.getServer()).getUserCache().getProfile(target);
         list.remove(profile);
     }
 }

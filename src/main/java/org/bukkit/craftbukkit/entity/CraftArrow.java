@@ -1,5 +1,6 @@
 package org.bukkit.craftbukkit.entity;
 
+import io.github.fukkitmc.legacy.extra.EntityExtra;
 import net.minecraft.server.EntityArrow;
 
 import org.apache.commons.lang.Validate;
@@ -64,7 +65,7 @@ public class CraftArrow extends AbstractProjectile implements Arrow {
         if (getHandle().shooter == null) {
             return null;
         }
-        return (LivingEntity) getHandle().shooter.getBukkitEntity();
+        return (LivingEntity) ((EntityExtra)getHandle().shooter).getBukkitEntity();
     }
 
     @Deprecated

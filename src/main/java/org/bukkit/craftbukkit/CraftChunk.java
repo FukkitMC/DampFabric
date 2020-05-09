@@ -3,6 +3,9 @@ package org.bukkit.craftbukkit;
 import java.lang.ref.WeakReference;
 import java.util.Arrays;
 
+import io.github.fukkitmc.legacy.extra.ChunkExtra;
+import io.github.fukkitmc.legacy.extra.EntityExtra;
+import io.github.fukkitmc.legacy.extra.WorldExtra;
 import net.minecraft.server.*;
 
 import org.bukkit.Chunk;
@@ -33,7 +36,7 @@ public class CraftChunk implements Chunk {
     }
 
     public World getWorld() {
-        return worldServer.getWorld();
+        return ((WorldExtra)worldServer).getWorld();
     }
 
     public CraftWorld getCraftWorld() {
@@ -92,7 +95,7 @@ public class CraftChunk implements Chunk {
                     continue;
                 }
 
-                entities[index++] = ((net.minecraft.server.Entity) obj).getBukkitEntity();
+                entities[index++] = ((EntityExtra) obj).getBukkitEntity();
             }
         }
 
@@ -111,7 +114,7 @@ public class CraftChunk implements Chunk {
             }
 
             BlockPosition position = (BlockPosition) obj;
-            entities[index++] = worldServer.getWorld().getBlockAt(position.getX(), position.getY(), position.getZ()).getState();
+            entities[index++] = ((WorldExtra)worldServer).getWorld().getBlockAt(position.getX(), position.getY(), position.getZ()).getState();
         }
 
         return entities;
@@ -148,7 +151,7 @@ public class CraftChunk implements Chunk {
     public ChunkSnapshot getChunkSnapshot(boolean includeMaxBlockY, boolean includeBiome, boolean includeBiomeTempRain) {
         net.minecraft.server.Chunk chunk = getHandle();
 
-        ChunkSection[] cs = chunk.getSections();
+        ChunkSection[] cs = ((ChunkExtra)chunk).getSections();
         short[][] sectionBlockIDs = new short[cs.length][];
         byte[][] sectionBlockData = new byte[cs.length][];
         byte[][] sectionSkyLights = new byte[cs.length][];

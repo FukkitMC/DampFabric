@@ -1,5 +1,6 @@
 package org.bukkit.craftbukkit.util;
 
+import io.github.fukkitmc.legacy.extra.MinecraftServerExtra;
 import net.minecraft.server.MinecraftServer;
 
 public class ServerShutdownThread extends Thread {
@@ -12,7 +13,7 @@ public class ServerShutdownThread extends Thread {
     @Override
     public void run() {
         try {
-            server.stop();
+            ((MinecraftServerExtra)server).stop();
         } finally {
             try {
                 server.reader.getTerminal().restore();

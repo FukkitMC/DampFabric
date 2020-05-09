@@ -1,8 +1,7 @@
-import io.github.fukkitmc.gloom.definitions.ClassDefinition
 import java.util.function.Function
 
 plugins {
-    id("fabric-loom") version "g0.2.7-20200411.095632-3"
+    id("fabric-loom") version "gs0.2.7-SNAPSHOT"
     id("io.github.fukkitmc.crusty") version "1.1.7"
 }
 

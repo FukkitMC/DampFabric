@@ -2,6 +2,8 @@ package org.bukkit.craftbukkit.projectiles;
 
 import java.util.Random;
 
+import io.github.fukkitmc.legacy.extra.EntityExtra;
+import io.github.fukkitmc.legacy.extra.WorldExtra;
 import org.apache.commons.lang.Validate;
 import org.bukkit.Material;
 import org.bukkit.block.Block;
@@ -48,7 +50,7 @@ public class CraftBlockProjectileSource implements BlockProjectileSource {
 
     @Override
     public Block getBlock() {
-        return dispenserBlock.getWorld().getWorld().getBlockAt(dispenserBlock.getPosition().getX(), dispenserBlock.getPosition().getY(), dispenserBlock.getPosition().getZ());
+        return ((WorldExtra)dispenserBlock.getWorld()).getWorld().getBlockAt(dispenserBlock.getPosition().getX(), dispenserBlock.getPosition().getY(), dispenserBlock.getPosition().getZ());
     }
 
     @Override
@@ -133,10 +135,10 @@ public class CraftBlockProjectileSource implements BlockProjectileSource {
         }
 
         if (velocity != null) {
-            ((T) launch.getBukkitEntity()).setVelocity(velocity);
+            ((T) ((EntityExtra)launch).getBukkitEntity()).setVelocity(velocity);
         }
 
         world.addEntity(launch);
-        return (T) launch.getBukkitEntity();
+        return (T) ((EntityExtra)launch).getBukkitEntity();
     }
 }

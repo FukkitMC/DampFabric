@@ -1,5 +1,6 @@
 package org.bukkit.craftbukkit;
 
+import io.github.fukkitmc.legacy.extra.ExpirableListEntryExtra;
 import net.minecraft.server.IpBanEntry;
 import net.minecraft.server.IpBanList;
 
@@ -19,8 +20,8 @@ public final class CraftIpBanEntry implements org.bukkit.BanEntry {
     public CraftIpBanEntry(String target, IpBanEntry entry, IpBanList list) {
         this.list = list;
         this.target = target;
-        this.created = entry.getCreated() != null ? new Date(entry.getCreated().getTime()) : null;
-        this.source = entry.getSource();
+        this.created = ((ExpirableListEntryExtra)entry).getCreated() != null ? new Date(((ExpirableListEntryExtra)entry).getCreated().getTime()) : null;
+        this.source = ((ExpirableListEntryExtra)entry).getSource();
         this.expiration = entry.getExpires() != null ? new Date(entry.getExpires().getTime()) : null;
         this.reason = entry.getReason();
     }

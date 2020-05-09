@@ -1,5 +1,6 @@
 package org.bukkit.craftbukkit.inventory;
 
+import io.github.fukkitmc.legacy.extra.RecipesFurnaceExtra;
 import net.minecraft.server.RecipesFurnace;
 
 import org.bukkit.inventory.FurnaceRecipe;
@@ -21,6 +22,6 @@ public class CraftFurnaceRecipe extends FurnaceRecipe implements CraftRecipe {
     public void addToCraftingManager() {
         ItemStack result = this.getResult();
         ItemStack input = this.getInput();
-        RecipesFurnace.getInstance().registerRecipe(CraftItemStack.asNMSCopy(input), CraftItemStack.asNMSCopy(result));
+        ((RecipesFurnaceExtra)RecipesFurnace.getInstance()).registerRecipe(CraftItemStack.asNMSCopy(input), CraftItemStack.asNMSCopy(result));
     }
 }

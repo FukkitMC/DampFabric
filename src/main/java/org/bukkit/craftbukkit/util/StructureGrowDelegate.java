@@ -3,6 +3,8 @@ package org.bukkit.craftbukkit.util;
 import java.util.ArrayList;
 import java.util.List;
 
+import io.github.fukkitmc.legacy.extra.MinecraftServerExtra;
+import io.github.fukkitmc.legacy.extra.WorldExtra;
 import net.minecraft.server.Block;
 import net.minecraft.server.Blocks;
 import net.minecraft.server.World;
@@ -17,7 +19,7 @@ public class StructureGrowDelegate implements BlockChangeDelegate {
     private final List<BlockState> blocks = new ArrayList<BlockState>();
 
     public StructureGrowDelegate(World world) {
-        this.world = world.getWorld();
+        this.world = ((WorldExtra)world).getWorld();
     }
 
     public boolean setRawTypeId(int x, int y, int z, int type) {

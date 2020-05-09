@@ -109,8 +109,7 @@ public abstract class MinecraftServerMixin {
 //        }
 
         dedicatedServer.D();
-        Runtime.getRuntime().addShutdownHook(new Thread(dedicatedServer::t, "Server Shutdown Thread"));
-
+        Runtime.getRuntime().addShutdownHook(new Thread(((MinecraftServerMixin) (Object) dedicatedServer)::t, "Server Shutdown Thread"));
         assert options != null;
         if (options.has("universe")) {
             dedicatedServer.universe = (File) options.valueOf("universe");

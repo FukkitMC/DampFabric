@@ -1,5 +1,6 @@
 package org.bukkit.craftbukkit.command;
 
+import io.github.fukkitmc.legacy.extra.WorldExtra;
 import net.minecraft.server.ICommandListener;
 import net.minecraft.server.CommandBlockListenerAbstract;
 import net.minecraft.server.IChatBaseComponent;
@@ -20,7 +21,7 @@ public class CraftBlockCommandSender extends ServerCommandSender implements Bloc
     }
 
     public Block getBlock() {
-        return commandBlock.getWorld().getWorld().getBlockAt(commandBlock.getChunkCoordinates().getX(), commandBlock.getChunkCoordinates().getY(), commandBlock.getChunkCoordinates().getZ());
+        return ((WorldExtra)commandBlock.getWorld()).getWorld().getBlockAt(commandBlock.getChunkCoordinates().getX(), commandBlock.getChunkCoordinates().getY(), commandBlock.getChunkCoordinates().getZ());
     }
 
     public void sendMessage(String message) {

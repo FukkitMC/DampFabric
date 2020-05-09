@@ -809,19 +809,11 @@ public class CraftServer implements Server {
 
                 public void a(String s) {}
 
-                @Override
-                public void b(String string) {}
-
                 public void a(int i) {
                     if (System.currentTimeMillis() - this.b >= 1000L) {
                         this.b = System.currentTimeMillis();
                         MinecraftServer.LOGGER.info("Converting... " + i + "%");
                     }
-
-                }
-
-                @Override
-                public void a() {
 
                 }
 

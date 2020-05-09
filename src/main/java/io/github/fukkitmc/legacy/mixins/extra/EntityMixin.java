@@ -1,6 +1,7 @@
 package io.github.fukkitmc.legacy.mixins.extra;
 
 import io.github.fukkitmc.legacy.extra.EntityExtra;
+import io.github.fukkitmc.legacy.extra.WorldExtra;
 import net.minecraft.server.*;
 import org.bukkit.craftbukkit.entity.CraftEntity;
 import org.spongepowered.asm.mixin.Mixin;
@@ -51,7 +52,7 @@ public abstract class EntityMixin implements EntityExtra {
     @Override
     public CraftEntity getBukkitEntity() {
         if (((Entity) (Object) this).bukkitEntity == null) {
-            ((Entity) (Object) this).bukkitEntity = CraftEntity.getEntity(((Entity) (Object) this).world.getServer(), ((Entity) (Object) this));
+            ((Entity) (Object) this).bukkitEntity = CraftEntity.getEntity(((WorldExtra)((Entity) (Object) this).world).getServer(), ((Entity) (Object) this));
         }
         return ((Entity) (Object) this).bukkitEntity;
     }

@@ -2,6 +2,8 @@ package org.bukkit.craftbukkit.inventory;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import io.github.fukkitmc.legacy.extra.IInventoryExtra;
 import net.minecraft.server.ChatComponentText;
 
 import net.minecraft.server.IChatBaseComponent;
@@ -34,7 +36,7 @@ public class CraftInventoryCustom extends CraftInventory {
 
     static class MinecraftInventory implements IInventory {
         private final ItemStack[] items;
-        private int maxStack = MAX_STACK;
+        private int maxStack = IInventoryExtra.MAX_STACK;
         private final List<HumanEntity> viewers;
         private final String title;
         private InventoryType type;

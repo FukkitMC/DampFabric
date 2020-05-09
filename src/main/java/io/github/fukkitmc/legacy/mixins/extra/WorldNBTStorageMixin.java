@@ -1,6 +1,7 @@
 package io.github.fukkitmc.legacy.mixins.extra;
 
 
+import io.github.fukkitmc.legacy.extra.IDataManagerExtra;
 import io.github.fukkitmc.legacy.extra.WorldNBTStorageExtra;
 import net.minecraft.server.*;
 import org.apache.logging.log4j.Logger;
@@ -11,8 +12,8 @@ import org.spongepowered.asm.mixin.Shadow;
 import java.io.*;
 import java.util.UUID;
 
-@Mixin(value = WorldNBTStorage.class, remap = false)
-public abstract class WorldNBTStorageMixin implements IDataManager, IPlayerFileData, WorldNBTStorageExtra{
+@Mixin(value = WorldNBTStorage.class)
+public abstract class WorldNBTStorageMixin implements IDataManagerExtra, IPlayerFileData, WorldNBTStorageExtra{
     @Shadow public File playerDir;
 
     @Shadow public static Logger a;

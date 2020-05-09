@@ -1,5 +1,6 @@
 package org.bukkit.craftbukkit.entity;
 
+import io.github.fukkitmc.legacy.extra.EntityExtra;
 import net.minecraft.server.EntityLiving;
 import net.minecraft.server.EntityTNTPrimed;
 
@@ -56,7 +57,7 @@ public class CraftTNTPrimed extends CraftEntity implements TNTPrimed {
         EntityLiving source = getHandle().getSource();
 
         if (source != null) {
-            Entity bukkitEntity = source.getBukkitEntity();
+            Entity bukkitEntity = ((EntityExtra)source).getBukkitEntity();
 
             if (bukkitEntity.isValid()) {
                 return bukkitEntity;
