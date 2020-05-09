@@ -7,6 +7,7 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.*;
+import java.util.function.Function;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import java.util.regex.Pattern;
@@ -14,6 +15,7 @@ import java.util.stream.Collectors;
 
 import javax.imageio.ImageIO;
 
+import com.google.common.collect.Lists;
 import net.minecraft.server.*;
 
 import org.bukkit.BanList;
@@ -162,7 +164,7 @@ public class CraftServer implements Server {
     public CraftServer(MinecraftServer console, PlayerList playerList) {
         this.console = console;
         this.playerList = (DedicatedPlayerList) playerList;
-        this.playerView = Collections.unmodifiableList(playerList.players.stream().map(player -> (CraftPlayer) player.getBukkitEntity()).collect(Collectors.toList()));
+        this.playerView = Collections.unmodifiableList(Lists.transform(playerList.players, player -> (CraftPlayer) player.getBukkitEntity()));
         this.serverVersion = CraftServer.class.getPackage().getImplementationVersion();
         online.value = console.getPropertyManager().getBoolean("online-mode", true);
 

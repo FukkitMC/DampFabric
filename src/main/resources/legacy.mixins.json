@@ -46,7 +46,8 @@
     "extra.WorldDataMixin",
     "extra.WorldMixin",
     "extra.WorldNBTStorageMixin",
-    "extra.WorldServerMixin"
+    "extra.WorldServerMixin",
+    "fukkit.DedicatedPlayerListMixin"
   ],
   "client": [
   ],
