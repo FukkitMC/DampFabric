@@ -1,19 +1,20 @@
 package org.bukkit.craftbukkit.entity;
 
-import net.minecraft.entity.mob.GiantEntity;
+import net.minecraft.server.EntityGiantZombie;
+
 import org.bukkit.craftbukkit.CraftServer;
 import org.bukkit.entity.EntityType;
 import org.bukkit.entity.Giant;
 
 public class CraftGiant extends CraftMonster implements Giant {
 
-    public CraftGiant(CraftServer server, GiantEntity entity) {
+    public CraftGiant(CraftServer server, EntityGiantZombie entity) {
         super(server, entity);
     }
 
     @Override
-    public GiantEntity getHandle() {
-        return (GiantEntity) entity;
+    public EntityGiantZombie getHandle() {
+        return (EntityGiantZombie) entity;
     }
 
     @Override

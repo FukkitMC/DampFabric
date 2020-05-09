@@ -2,12 +2,6 @@ package io.github.fukkitmc.legacy.mixins.craftbukkit;
 
 import io.github.fukkitmc.legacy.extra.ContainerExtra;
 import io.github.fukkitmc.legacy.extra.EntityExtra;
-import net.minecraft.container.Container;
-import net.minecraft.container.PlayerContainer;
-import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.entity.player.PlayerInventory;
-import net.minecraft.inventory.CraftingInventory;
-import net.minecraft.inventory.Inventory;
 import net.minecraft.server.*;
 import org.bukkit.craftbukkit.inventory.CraftInventoryCrafting;
 import org.bukkit.craftbukkit.inventory.CraftInventoryView;
@@ -18,19 +12,19 @@ import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
-@Mixin(PlayerContainer.class)
+@Mixin(ContainerPlayer.class)
 public abstract class ContainerPlayerMixin extends Container implements ContainerExtra {
 
-    @Shadow public CraftingInventory craftInventory;
+    @Shadow public InventoryCrafting craftInventory;
 
-    @Shadow public Inventory resultInventory;
+    @Shadow public IInventory resultInventory;
 
     @Shadow public CraftInventoryView bukkitEntity;
 
     @Shadow public PlayerInventory player;
 
     @Inject(method = "<init>", at = @At("TAIL"))
-    public void constructor(PlayerInventory playerInventory, boolean bl, PlayerEntity entityHuman, CallbackInfo ci){
+    public void constructor(PlayerInventory playerInventory, boolean bl, EntityHuman entityHuman, CallbackInfo ci){
         this.player = playerInventory;
     }
 

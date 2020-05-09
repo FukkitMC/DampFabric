@@ -1,6 +1,6 @@
 package org.bukkit.craftbukkit.block;
 
-import net.minecraft.block.entity.MobSpawnerBlockEntity;
+import net.minecraft.server.TileEntityMobSpawner;
 import org.bukkit.Material;
 
 import org.bukkit.block.Block;
@@ -10,15 +10,15 @@ import org.bukkit.entity.CreatureType;
 import org.bukkit.entity.EntityType;
 
 public class CraftCreatureSpawner extends CraftBlockState implements CreatureSpawner {
-    private final MobSpawnerBlockEntity spawner;
+    private final TileEntityMobSpawner spawner;
 
     public CraftCreatureSpawner(final Block block) {
         super(block);
 
-        spawner = (MobSpawnerBlockEntity) ((CraftWorld) block.getWorld()).getTileEntityAt(getX(), getY(), getZ());
+        spawner = (TileEntityMobSpawner) ((CraftWorld) block.getWorld()).getTileEntityAt(getX(), getY(), getZ());
     }
 
-    public CraftCreatureSpawner(final Material material, MobSpawnerBlockEntity te) {
+    public CraftCreatureSpawner(final Material material, TileEntityMobSpawner te) {
         super(material);
         spawner = te;
     }
@@ -77,7 +77,7 @@ public class CraftCreatureSpawner extends CraftBlockState implements CreatureSpa
     }
 
     @Override
-    public MobSpawnerBlockEntity getTileEntity() {
+    public TileEntityMobSpawner getTileEntity() {
         return spawner;
     }
 }

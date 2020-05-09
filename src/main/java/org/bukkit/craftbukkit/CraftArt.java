@@ -1,12 +1,12 @@
 package org.bukkit.craftbukkit;
 
-import net.minecraft.entity.decoration.PaintingEntity.Type;
+import net.minecraft.server.EntityPainting.EnumArt;
 import org.bukkit.Art;
 
 // Safety class, will break if either side changes
 public class CraftArt {
 
-    public static Art NotchToBukkit(Type art) {
+    public static Art NotchToBukkit(EnumArt art) {
         switch (art) {
             case KEBAB: return Art.KEBAB;
             case AZTEC: return Art.AZTEC;
@@ -39,34 +39,34 @@ public class CraftArt {
         }
     }
 
-    public static Type BukkitToNotch(Art art) {
+    public static EnumArt BukkitToNotch(Art art) {
         switch (art) {
-            case KEBAB: return Type.KEBAB;
-            case AZTEC: return Type.AZTEC;
-            case ALBAN: return Type.ALBAN;
-            case AZTEC2: return Type.AZTEC_2;
-            case BOMB: return Type.BOMB;
-            case PLANT: return Type.PLANT;
-            case WASTELAND: return Type.WASTELAND;
-            case POOL: return Type.POOL;
-            case COURBET: return Type.COURBET;
-            case SEA: return Type.SEA;
-            case SUNSET: return Type.SUNSET;
-            case CREEBET: return Type.CREEBET;
-            case WANDERER: return Type.WANDERER;
-            case GRAHAM: return Type.GRAHAM;
-            case MATCH: return Type.MATCH;
-            case BUST: return Type.BUST;
-            case STAGE: return Type.STAGE;
-            case VOID: return Type.VOID;
-            case SKULL_AND_ROSES: return Type.SKULL_AND_ROSES;
-            case FIGHTERS: return Type.FIGHTERS;
-            case POINTER: return Type.POINTER;
-            case PIGSCENE: return Type.PIGSCENE;
-            case BURNINGSKULL: return Type.BURNING_SKULL;
-            case SKELETON: return Type.SKELETON;
-            case DONKEYKONG: return Type.DONKEY_KONG;
-            case WITHER: return Type.WITHER;
+            case KEBAB: return EnumArt.KEBAB;
+            case AZTEC: return EnumArt.AZTEC;
+            case ALBAN: return EnumArt.ALBAN;
+            case AZTEC2: return EnumArt.AZTEC_2;
+            case BOMB: return EnumArt.BOMB;
+            case PLANT: return EnumArt.PLANT;
+            case WASTELAND: return EnumArt.WASTELAND;
+            case POOL: return EnumArt.POOL;
+            case COURBET: return EnumArt.COURBET;
+            case SEA: return EnumArt.SEA;
+            case SUNSET: return EnumArt.SUNSET;
+            case CREEBET: return EnumArt.CREEBET;
+            case WANDERER: return EnumArt.WANDERER;
+            case GRAHAM: return EnumArt.GRAHAM;
+            case MATCH: return EnumArt.MATCH;
+            case BUST: return EnumArt.BUST;
+            case STAGE: return EnumArt.STAGE;
+            case VOID: return EnumArt.VOID;
+            case SKULL_AND_ROSES: return EnumArt.SKULL_AND_ROSES;
+            case FIGHTERS: return EnumArt.FIGHTERS;
+            case POINTER: return EnumArt.POINTER;
+            case PIGSCENE: return EnumArt.PIGSCENE;
+            case BURNINGSKULL: return EnumArt.BURNING_SKULL;
+            case SKELETON: return EnumArt.SKELETON;
+            case DONKEYKONG: return EnumArt.DONKEY_KONG;
+            case WITHER: return EnumArt.WITHER;
             default:
                 throw new AssertionError(art);
         }

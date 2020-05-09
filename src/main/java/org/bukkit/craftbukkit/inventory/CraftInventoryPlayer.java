@@ -2,10 +2,11 @@ package org.bukkit.craftbukkit.inventory;
 
 import io.github.fukkitmc.legacy.extra.IInventoryExtra;
 import io.github.fukkitmc.legacy.extra.PlayerInventoryExtra;
-import net.minecraft.entity.player.PlayerInventory;
-import net.minecraft.entity.player.ServerPlayerEntity;
-import net.minecraft.network.packet.s2c.play.ContainerSlotUpdateS2CPacket;
-import net.minecraft.network.packet.s2c.play.HeldItemChangeS2CPacket;
+import net.minecraft.server.EntityPlayer;
+import net.minecraft.server.PacketPlayOutHeldItemSlot;
+import net.minecraft.server.PacketPlayOutSetSlot;
+import net.minecraft.server.PlayerInventory;
+
 import org.apache.commons.lang.Validate;
 import org.bukkit.craftbukkit.entity.CraftPlayer;
 import org.bukkit.entity.HumanEntity;
@@ -13,7 +14,7 @@ import org.bukkit.inventory.EntityEquipment;
 import org.bukkit.inventory.ItemStack;
 
 public class CraftInventoryPlayer extends CraftInventory implements org.bukkit.inventory.PlayerInventory, EntityEquipment {
-    public CraftInventoryPlayer(net.minecraft.entity.player.PlayerInventory inventory) {
+    public CraftInventoryPlayer(net.minecraft.server.PlayerInventory inventory) {
         super(inventory);
     }
 
@@ -28,7 +29,7 @@ public class CraftInventoryPlayer extends CraftInventory implements org.bukkit.i
     }
 
     public ItemStack getItemInHand() {
-        return CraftItemStack.asCraftMirror(getInventory().getMainHandStack());
+        return CraftItemStack.asCraftMirror(getInventory().getItemInHand());
     }
 
     public void setItemInHand(ItemStack stack) {
@@ -39,7 +40,7 @@ public class CraftInventoryPlayer extends CraftInventory implements org.bukkit.i
     public void setItem(int index, ItemStack item) {
         super.setItem(index, item);
         if (this.getHolder() == null) return;
-        ServerPlayerEntity player = ((CraftPlayer) this.getHolder()).getHandle();
+        EntityPlayer player = ((CraftPlayer) this.getHolder()).getHandle();
         if (player.playerConnection == null) return;
         // PacketPlayOutSetSlot places the items differently than setItem()
         //
@@ -73,17 +74,17 @@ public class CraftInventoryPlayer extends CraftInventory implements org.bukkit.i
             index = index + 36;
         else if (index > 35)
             index = 8 - (index - 36);
-        player.playerConnection.sendPacket(new ContainerSlotUpdateS2CPacket(player.defaultContainer.syncId, index, CraftItemStack.asNMSCopy(item)));
+        player.playerConnection.sendPacket(new PacketPlayOutSetSlot(player.defaultContainer.windowId, index, CraftItemStack.asNMSCopy(item)));
     }
 
     public int getHeldItemSlot() {
-        return getInventory().selectedSlot;
+        return getInventory().itemInHandIndex;
     }
 
     public void setHeldItemSlot(int slot) {
         Validate.isTrue(slot >= 0 && slot < PlayerInventory.getHotbarSize(), "Slot is not between 0 and 8 inclusive");
-        this.getInventory().selectedSlot = slot;
-        ((CraftPlayer) this.getHolder()).getHandle().playerConnection.sendPacket(new HeldItemChangeS2CPacket(slot));
+        this.getInventory().itemInHandIndex = slot;
+        ((CraftPlayer) this.getHolder()).getHandle().playerConnection.sendPacket(new PacketPlayOutHeldItemSlot(slot));
     }
 
     public ItemStack getHelmet() {
@@ -119,7 +120,7 @@ public class CraftInventoryPlayer extends CraftInventory implements org.bukkit.i
     }
 
     public ItemStack[] getArmorContents() {
-        net.minecraft.item.ItemStack[] mcItems = ((PlayerInventoryExtra)getInventory()).getArmorContents();
+        net.minecraft.server.ItemStack[] mcItems = ((PlayerInventoryExtra)getInventory()).getArmorContents();
         ItemStack[] ret = new ItemStack[mcItems.length];
 
         for (int i = 0; i < mcItems.length; i++) {

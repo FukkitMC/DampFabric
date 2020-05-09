@@ -1,6 +1,6 @@
 package org.bukkit.craftbukkit.block;
 
-import net.minecraft.block.entity.FurnaceBlockEntity;
+import net.minecraft.server.TileEntityFurnace;
 import org.bukkit.Material;
 import org.bukkit.block.Block;
 import org.bukkit.block.Furnace;
@@ -9,15 +9,15 @@ import org.bukkit.craftbukkit.inventory.CraftInventoryFurnace;
 import org.bukkit.inventory.FurnaceInventory;
 
 public class CraftFurnace extends CraftBlockState implements Furnace {
-    private final FurnaceBlockEntity furnace;
+    private final TileEntityFurnace furnace;
 
     public CraftFurnace(final Block block) {
         super(block);
 
-        furnace = (FurnaceBlockEntity) ((CraftWorld) block.getWorld()).getTileEntityAt(getX(), getY(), getZ());
+        furnace = (TileEntityFurnace) ((CraftWorld) block.getWorld()).getTileEntityAt(getX(), getY(), getZ());
     }
 
-    public CraftFurnace(final Material material, final FurnaceBlockEntity te) {
+    public CraftFurnace(final Material material, final TileEntityFurnace te) {
         super(material);
         furnace = te;
     }
@@ -31,7 +31,7 @@ public class CraftFurnace extends CraftBlockState implements Furnace {
         boolean result = super.update(force, applyPhysics);
 
         if (result) {
-            furnace.markDirty();
+            furnace.update();
         }
 
         return result;
@@ -54,7 +54,7 @@ public class CraftFurnace extends CraftBlockState implements Furnace {
     }
 
     @Override
-    public FurnaceBlockEntity getTileEntity() {
+    public TileEntityFurnace getTileEntity() {
         return furnace;
     }
 }

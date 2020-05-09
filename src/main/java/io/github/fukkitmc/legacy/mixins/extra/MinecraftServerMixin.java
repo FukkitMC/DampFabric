@@ -2,11 +2,6 @@ package io.github.fukkitmc.legacy.mixins.extra;
 
 import io.github.fukkitmc.legacy.extra.MinecraftServerExtra;
 import net.minecraft.server.*;
-import net.minecraft.server.dedicated.AbstractPropertiesHandler;
-import net.minecraft.server.dedicated.MinecraftDedicatedServer;
-import net.minecraft.server.world.ServerWorld;
-import net.minecraft.util.UserCache;
-import net.minecraft.world.Difficulty;
 import org.bukkit.craftbukkit.CraftServer;
 import org.spongepowered.asm.mixin.Final;
 import org.spongepowered.asm.mixin.Mixin;
@@ -23,17 +18,17 @@ public class MinecraftServerMixin implements MinecraftServerExtra {
 
     @Override
     public int getIdleTimeout() {
-        return ((MinecraftServer)(Object)this).playerIdleTimeout;
+        return ((MinecraftServer)(Object)this).G;
     }
 
     @Override
     public void setIdleTimeout(int timeout) {
-        ((MinecraftServer)(Object)this).playerIdleTimeout = timeout;
+        ((MinecraftServer)(Object)this).G = timeout;
     }
 
     @Override
-    public AbstractPropertiesHandler getPropertyManager() {
-        return ((MinecraftDedicatedServer) (Object) this).propertyManager;
+    public PropertyManager getPropertyManager() {
+        return ((DedicatedServer) (Object) this).propertyManager;
     }
 
     @Override
@@ -73,7 +68,7 @@ public class MinecraftServerMixin implements MinecraftServerExtra {
 
     @Override
     public String getMotd() {
-        return ((MinecraftServer)(Object)this).motd;
+        return ((MinecraftServer)(Object)this).E;
     }
 
     @Override
@@ -82,7 +77,7 @@ public class MinecraftServerMixin implements MinecraftServerExtra {
     }
 
     @Override
-    public void a(Difficulty enumdifficulty) {
+    public void a(EnumDifficulty enumdifficulty) {
 
     }
 
@@ -97,8 +92,8 @@ public class MinecraftServerMixin implements MinecraftServerExtra {
     }
 
     @Override
-    public PlayerManager getPlayerList() {
-        return ((MinecraftServer)(Object)this).playerManager;
+    public PlayerList getPlayerList() {
+        return ((MinecraftServer)(Object)this).v;
     }
 
     @Override
@@ -128,18 +123,18 @@ public class MinecraftServerMixin implements MinecraftServerExtra {
 
     @Override
     public String getResourcePack() {
-        return ((MinecraftServer)(Object)this).resourcePackUrl;
+        return ((MinecraftServer)(Object)this).O;
     }
 
     @Override
     public String getResourcePackHash() {
-        return ((MinecraftServer)(Object)this).resourcePackHash;
+        return ((MinecraftServer)(Object)this).P;
     }
 
     @Override
-    public ServerWorld getWorldServer(int i) {
+    public WorldServer getWorldServer(int i) {
         // CraftBukkit start
-        for (ServerWorld world : ((MinecraftServer)(Object)this).worlds) {
+        for (WorldServer world : ((MinecraftServer)(Object)this).worlds) {
             if (world.dimension == i) {
                 return world;
             }

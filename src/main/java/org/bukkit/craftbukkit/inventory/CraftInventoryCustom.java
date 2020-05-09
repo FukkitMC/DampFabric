@@ -2,18 +2,20 @@ package org.bukkit.craftbukkit.inventory;
 
 import java.util.ArrayList;
 import java.util.List;
-import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.inventory.Inventory;
-import net.minecraft.item.ItemStack;
-import net.minecraft.text.LiteralText;
-import net.minecraft.text.Text;
+
 import io.github.fukkitmc.legacy.extra.IInventoryExtra;
+import net.minecraft.server.ChatComponentText;
+
+import net.minecraft.server.IChatBaseComponent;
 import org.apache.commons.lang.Validate;
 import org.bukkit.craftbukkit.entity.CraftHumanEntity;
-import org.bukkit.craftbukkit.inventory.CraftInventoryCustom.MinecraftInventory;
 import org.bukkit.entity.HumanEntity;
 import org.bukkit.event.inventory.InventoryType;
 import org.bukkit.inventory.InventoryHolder;
+
+import net.minecraft.server.EntityHuman;
+import net.minecraft.server.IInventory;
+import net.minecraft.server.ItemStack;
 
 public class CraftInventoryCustom extends CraftInventory {
     public CraftInventoryCustom(InventoryHolder owner, InventoryType type) {
@@ -32,7 +34,7 @@ public class CraftInventoryCustom extends CraftInventory {
         super(new MinecraftInventory(owner, size, title));
     }
 
-    static class MinecraftInventory implements Inventory {
+    static class MinecraftInventory implements IInventory {
         private final ItemStack[] items;
         private int maxStack = IInventoryExtra.MAX_STACK;
         private final List<HumanEntity> viewers;
@@ -63,35 +65,35 @@ public class CraftInventoryCustom extends CraftInventory {
             this.type = InventoryType.CHEST;
         }
 
-        public int getInvSize() {
+        public int getSize() {
             return items.length;
         }
 
-        public ItemStack getInvStack(int i) {
+        public ItemStack getItem(int i) {
             return items[i];
         }
 
-        public ItemStack takeInvStack(int i, int j) {
-            ItemStack stack = this.getInvStack(i);
+        public ItemStack splitStack(int i, int j) {
+            ItemStack stack = this.getItem(i);
             ItemStack result;
             if (stack == null) return null;
             if (stack.count <= j) {
-                this.setInvStack(i, null);
+                this.setItem(i, null);
                 result = stack;
             } else {
                 result = CraftItemStack.copyNMSStack(stack, j);
                 stack.count -= j;
             }
-            this.markDirty();
+            this.update();
             return result;
         }
 
-        public ItemStack removeInvStack(int i) {
-            ItemStack stack = this.getInvStack(i);
+        public ItemStack splitWithoutUpdate(int i) {
+            ItemStack stack = this.getItem(i);
             ItemStack result;
             if (stack == null) return null;
             if (stack.count <= 1) {
-                this.setInvStack(i, null);
+                this.setItem(i, null);
                 result = stack;
             } else {
                 result = CraftItemStack.copyNMSStack(stack, 1);
@@ -100,14 +102,14 @@ public class CraftInventoryCustom extends CraftInventory {
             return result;
         }
 
-        public void setInvStack(int i, ItemStack itemstack) {
+        public void setItem(int i, ItemStack itemstack) {
             items[i] = itemstack;
-            if (itemstack != null && this.getInvMaxStackAmount() > 0 && itemstack.count > this.getInvMaxStackAmount()) {
-                itemstack.count = this.getInvMaxStackAmount();
+            if (itemstack != null && this.getMaxStackSize() > 0 && itemstack.count > this.getMaxStackSize()) {
+                itemstack.count = this.getMaxStackSize();
             }
         }
 
-        public int getInvMaxStackAmount() {
+        public int getMaxStackSize() {
             return maxStack;
         }
 
@@ -115,9 +117,9 @@ public class CraftInventoryCustom extends CraftInventory {
             maxStack = size;
         }
 
-        public void markDirty() {}
+        public void update() {}
 
-        public boolean canPlayerUseInv(PlayerEntity entityhuman) {
+        public boolean a(EntityHuman entityhuman) {
             return true;
         }
 
@@ -145,17 +147,17 @@ public class CraftInventoryCustom extends CraftInventory {
             return owner;
         }
 
-        public boolean isValidInvStack(int i, ItemStack itemstack) {
+        public boolean b(int i, ItemStack itemstack) {
             return true;
         }
 
         @Override
-        public void onInvOpen(PlayerEntity entityHuman) {
+        public void startOpen(EntityHuman entityHuman) {
 
         }
 
         @Override
-        public void onInvClose(PlayerEntity entityHuman) {
+        public void closeContainer(EntityHuman entityHuman) {
 
         }
 
@@ -190,8 +192,8 @@ public class CraftInventoryCustom extends CraftInventory {
         }
 
         @Override
-        public Text getBossBarTitle() {
-            return new LiteralText(title);
+        public IChatBaseComponent getScoreboardDisplayName() {
+            return new ChatComponentText(title);
         }
     }
 }

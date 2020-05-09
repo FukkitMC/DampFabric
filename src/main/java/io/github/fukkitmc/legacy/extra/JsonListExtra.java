@@ -1,10 +1,11 @@
 package io.github.fukkitmc.legacy.extra;
 
+import net.minecraft.server.JsonListEntry;
+
 import java.util.Collection;
-import net.minecraft.server.ServerConfigEntry;
 
 public interface JsonListExtra {
 
-    Collection<ServerConfigEntry> getValues();
+    Collection<JsonListEntry> getValues();
 
 }

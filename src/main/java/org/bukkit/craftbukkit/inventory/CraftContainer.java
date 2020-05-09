@@ -1,17 +1,19 @@
 package org.bukkit.craftbukkit.inventory;
 
 import io.github.fukkitmc.legacy.extra.ContainerExtra;
-import net.minecraft.class_1484;
-import net.minecraft.container.Container;
-import net.minecraft.container.Slot;
-import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.text.LiteralText;
+import net.minecraft.server.ChatComponentText;
 import org.bukkit.craftbukkit.entity.CraftHumanEntity;
 import org.bukkit.craftbukkit.entity.CraftPlayer;
 import org.bukkit.entity.HumanEntity;
 import org.bukkit.event.inventory.InventoryType;
 import org.bukkit.inventory.Inventory;
 import org.bukkit.inventory.InventoryView;
+
+import net.minecraft.server.Container;
+import net.minecraft.server.EntityHuman;
+import net.minecraft.server.IInventory;
+import net.minecraft.server.PacketPlayOutOpenWindow;
+import net.minecraft.server.Slot;
 
 public class CraftContainer extends Container implements ContainerExtra {
     private final InventoryView view;
@@ -21,10 +23,10 @@ public class CraftContainer extends Container implements ContainerExtra {
 
     public CraftContainer(InventoryView view, int id) {
         this.view = view;
-        this.syncId = id;
+        this.windowId = id;
         // TODO: Do we need to check that it really is a CraftInventory?
-        net.minecraft.inventory.Inventory top = ((CraftInventory)view.getTopInventory()).getInventory();
-        net.minecraft.inventory.Inventory bottom = ((CraftInventory)view.getBottomInventory()).getInventory();
+        IInventory top = ((CraftInventory)view.getTopInventory()).getInventory();
+        IInventory bottom = ((CraftInventory)view.getBottomInventory()).getInventory();
         cachedType = view.getType();
         cachedTitle = view.getTitle();
         cachedSize = getSize();
@@ -70,7 +72,7 @@ public class CraftContainer extends Container implements ContainerExtra {
     }
 
     @Override
-    public boolean isNotRestricted(PlayerEntity entityhuman) {
+    public boolean c(EntityHuman entityhuman) {
         if (cachedType == view.getType() && cachedSize == getSize() && cachedTitle.equals(view.getTitle())) {
             return true;
         }
@@ -83,15 +85,15 @@ public class CraftContainer extends Container implements ContainerExtra {
         if (view.getPlayer() instanceof CraftPlayer) {
             CraftPlayer player = (CraftPlayer) view.getPlayer();
             String type = getNotchInventoryType(cachedType);
-            net.minecraft.inventory.Inventory top = ((CraftInventory)view.getTopInventory()).getInventory();
-            net.minecraft.inventory.Inventory bottom = ((CraftInventory)view.getBottomInventory()).getInventory();
+            IInventory top = ((CraftInventory)view.getTopInventory()).getInventory();
+            IInventory bottom = ((CraftInventory)view.getBottomInventory()).getInventory();
             this.b.clear();
-            this.slots.clear();
+            this.c.clear();
             if (typeChanged) {
                 setupSlots(top, bottom);
             }
             int size = getSize();
-            player.getHandle().playerConnection.sendPacket(new class_1484(this.syncId, type, new LiteralText(cachedTitle), size));
+            player.getHandle().playerConnection.sendPacket(new PacketPlayOutOpenWindow(this.windowId, type, new ChatComponentText(cachedTitle), size));
             player.updateInventory();
         }
         return true;
@@ -120,7 +122,7 @@ public class CraftContainer extends Container implements ContainerExtra {
         }
     }
 
-    private void setupSlots(net.minecraft.inventory.Inventory top, net.minecraft.inventory.Inventory bottom) {
+    private void setupSlots(IInventory top, IInventory bottom) {
         switch(cachedType) {
         case CREATIVE:
             break; // TODO: This should be an error?
@@ -150,161 +152,161 @@ public class CraftContainer extends Container implements ContainerExtra {
         }
     }
 
-    private void setupChest(net.minecraft.inventory.Inventory top, net.minecraft.inventory.Inventory bottom) {
-        int rows = top.getInvSize() / 9;
+    private void setupChest(IInventory top, IInventory bottom) {
+        int rows = top.getSize() / 9;
         int row;
         int col;
         // This code copied from ContainerChest
         int i = (rows - 4) * 18;
         for (row = 0; row < rows; ++row) {
             for (col = 0; col < 9; ++col) {
-                this.addSlot(new Slot(top, col + row * 9, 8 + col * 18, 18 + row * 18));
+                this.a(new Slot(top, col + row * 9, 8 + col * 18, 18 + row * 18));
             }
         }
 
         for (row = 0; row < 3; ++row) {
             for (col = 0; col < 9; ++col) {
-                this.addSlot(new Slot(bottom, col + row * 9 + 9, 8 + col * 18, 103 + row * 18 + i));
+                this.a(new Slot(bottom, col + row * 9 + 9, 8 + col * 18, 103 + row * 18 + i));
             }
         }
 
         for (col = 0; col < 9; ++col) {
-            this.addSlot(new Slot(bottom, col, 8 + col * 18, 161 + i));
+            this.a(new Slot(bottom, col, 8 + col * 18, 161 + i));
         }
         // End copy from ContainerChest
     }
 
-    private void setupWorkbench(net.minecraft.inventory.Inventory top, net.minecraft.inventory.Inventory bottom) {
+    private void setupWorkbench(IInventory top, IInventory bottom) {
         // This code copied from ContainerWorkbench
-        this.addSlot(new Slot(top, 0, 124, 35));
+        this.a(new Slot(top, 0, 124, 35));
 
         int row;
         int col;
 
         for (row = 0; row < 3; ++row) {
             for (col = 0; col < 3; ++col) {
-                this.addSlot(new Slot(top, 1 + col + row * 3, 30 + col * 18, 17 + row * 18));
+                this.a(new Slot(top, 1 + col + row * 3, 30 + col * 18, 17 + row * 18));
             }
         }
 
         for (row = 0; row < 3; ++row) {
             for (col = 0; col < 9; ++col) {
-                this.addSlot(new Slot(bottom, col + row * 9 + 9, 8 + col * 18, 84 + row * 18));
+                this.a(new Slot(bottom, col + row * 9 + 9, 8 + col * 18, 84 + row * 18));
             }
         }
 
         for (col = 0; col < 9; ++col) {
-            this.addSlot(new Slot(bottom, col, 8 + col * 18, 142));
+            this.a(new Slot(bottom, col, 8 + col * 18, 142));
         }
         // End copy from ContainerWorkbench
     }
 
-    private void setupFurnace(net.minecraft.inventory.Inventory top, net.minecraft.inventory.Inventory bottom) {
+    private void setupFurnace(IInventory top, IInventory bottom) {
         // This code copied from ContainerFurnace
-        this.addSlot(new Slot(top, 0, 56, 17));
-        this.addSlot(new Slot(top, 1, 56, 53));
-        this.addSlot(new Slot(top, 2, 116, 35));
+        this.a(new Slot(top, 0, 56, 17));
+        this.a(new Slot(top, 1, 56, 53));
+        this.a(new Slot(top, 2, 116, 35));
 
         int row;
         int col;
 
         for (row = 0; row < 3; ++row) {
             for (col = 0; col < 9; ++col) {
-                this.addSlot(new Slot(bottom, col + row * 9 + 9, 8 + col * 18, 84 + row * 18));
+                this.a(new Slot(bottom, col + row * 9 + 9, 8 + col * 18, 84 + row * 18));
             }
         }
 
         for (col = 0; col < 9; ++col) {
-            this.addSlot(new Slot(bottom, col, 8 + col * 18, 142));
+            this.a(new Slot(bottom, col, 8 + col * 18, 142));
         }
         // End copy from ContainerFurnace
     }
 
-    private void setupDispenser(net.minecraft.inventory.Inventory top, net.minecraft.inventory.Inventory bottom) {
+    private void setupDispenser(IInventory top, IInventory bottom) {
         // This code copied from ContainerDispenser
         int row;
         int col;
 
         for (row = 0; row < 3; ++row) {
             for (col = 0; col < 3; ++col) {
-                this.addSlot(new Slot(top, col + row * 3, 61 + col * 18, 17 + row * 18));
+                this.a(new Slot(top, col + row * 3, 61 + col * 18, 17 + row * 18));
             }
         }
 
         for (row = 0; row < 3; ++row) {
             for (col = 0; col < 9; ++col) {
-                this.addSlot(new Slot(bottom, col + row * 9 + 9, 8 + col * 18, 84 + row * 18));
+                this.a(new Slot(bottom, col + row * 9 + 9, 8 + col * 18, 84 + row * 18));
             }
         }
 
         for (col = 0; col < 9; ++col) {
-            this.addSlot(new Slot(bottom, col, 8 + col * 18, 142));
+            this.a(new Slot(bottom, col, 8 + col * 18, 142));
         }
         // End copy from ContainerDispenser
     }
 
-    private void setupEnchanting(net.minecraft.inventory.Inventory top, net.minecraft.inventory.Inventory bottom) {
+    private void setupEnchanting(IInventory top, IInventory bottom) {
         // This code copied from ContainerEnchantTable
-        this.addSlot((new Slot(top, 0, 25, 47)));
+        this.a((new Slot(top, 0, 25, 47)));
 
         int row;
 
         for (row = 0; row < 3; ++row) {
             for (int i1 = 0; i1 < 9; ++i1) {
-                this.addSlot(new Slot(bottom, i1 + row * 9 + 9, 8 + i1 * 18, 84 + row * 18));
+                this.a(new Slot(bottom, i1 + row * 9 + 9, 8 + i1 * 18, 84 + row * 18));
             }
         }
 
         for (row = 0; row < 9; ++row) {
-            this.addSlot(new Slot(bottom, row, 8 + row * 18, 142));
+            this.a(new Slot(bottom, row, 8 + row * 18, 142));
         }
         // End copy from ContainerEnchantTable
     }
 
-    private void setupBrewing(net.minecraft.inventory.Inventory top, net.minecraft.inventory.Inventory bottom) {
+    private void setupBrewing(IInventory top, IInventory bottom) {
         // This code copied from ContainerBrewingStand
-        this.addSlot(new Slot(top, 0, 56, 46));
-        this.addSlot(new Slot(top, 1, 79, 53));
-        this.addSlot(new Slot(top, 2, 102, 46));
-        this.addSlot(new Slot(top, 3, 79, 17));
+        this.a(new Slot(top, 0, 56, 46));
+        this.a(new Slot(top, 1, 79, 53));
+        this.a(new Slot(top, 2, 102, 46));
+        this.a(new Slot(top, 3, 79, 17));
 
         int i;
 
         for (i = 0; i < 3; ++i) {
             for (int j = 0; j < 9; ++j) {
-                this.addSlot(new Slot(bottom, j + i * 9 + 9, 8 + j * 18, 84 + i * 18));
+                this.a(new Slot(bottom, j + i * 9 + 9, 8 + j * 18, 84 + i * 18));
             }
         }
 
         for (i = 0; i < 9; ++i) {
-            this.addSlot(new Slot(bottom, i, 8 + i * 18, 142));
+            this.a(new Slot(bottom, i, 8 + i * 18, 142));
         }
         // End copy from ContainerBrewingStand
     }
 
-    private void setupHopper(net.minecraft.inventory.Inventory top, net.minecraft.inventory.Inventory bottom) {
+    private void setupHopper(IInventory top, IInventory bottom) {
         // This code copied from ContainerHopper
         byte b0 = 51;
 
         int i;
 
-        for (i = 0; i < top.getInvSize(); ++i) {
-            this.addSlot(new Slot(top, i, 44 + i * 18, 20));
+        for (i = 0; i < top.getSize(); ++i) {
+            this.a(new Slot(top, i, 44 + i * 18, 20));
         }
 
         for (i = 0; i < 3; ++i) {
             for (int j = 0; j < 9; ++j) {
-                this.addSlot(new Slot(bottom, j + i * 9 + 9, 8 + j * 18, i * 18 + b0));
+                this.a(new Slot(bottom, j + i * 9 + 9, 8 + j * 18, i * 18 + b0));
             }
         }
 
         for (i = 0; i < 9; ++i) {
-            this.addSlot(new Slot(bottom, i, 8 + i * 18, 58 + b0));
+            this.a(new Slot(bottom, i, 8 + i * 18, 58 + b0));
         }
         // End copy from ContainerHopper
     }
 
-    public boolean canUse(PlayerEntity entity) {
+    public boolean a(EntityHuman entity) {
         return true;
     }
 }

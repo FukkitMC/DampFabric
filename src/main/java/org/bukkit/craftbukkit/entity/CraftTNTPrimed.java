@@ -1,8 +1,9 @@
 package org.bukkit.craftbukkit.entity;
 
 import io.github.fukkitmc.legacy.extra.EntityExtra;
-import net.minecraft.entity.LivingEntity;
-import net.minecraft.entity.TntEntity;
+import net.minecraft.server.EntityLiving;
+import net.minecraft.server.EntityTNTPrimed;
+
 import org.bukkit.craftbukkit.CraftServer;
 import org.bukkit.entity.Entity;
 import org.bukkit.entity.EntityType;
@@ -10,7 +11,7 @@ import org.bukkit.entity.TNTPrimed;
 
 public class CraftTNTPrimed extends CraftEntity implements TNTPrimed {
 
-    public CraftTNTPrimed(CraftServer server, TntEntity entity) {
+    public CraftTNTPrimed(CraftServer server, EntityTNTPrimed entity) {
         super(server, entity);
     }
 
@@ -31,16 +32,16 @@ public class CraftTNTPrimed extends CraftEntity implements TNTPrimed {
     }
 
     public int getFuseTicks() {
-        return getHandle().fuseTimer;
+        return getHandle().fuseTicks;
     }
 
     public void setFuseTicks(int fuseTicks) {
-        getHandle().fuseTimer = fuseTicks;
+        getHandle().fuseTicks = fuseTicks;
     }
 
     @Override
-    public TntEntity getHandle() {
-        return (TntEntity) entity;
+    public EntityTNTPrimed getHandle() {
+        return (EntityTNTPrimed) entity;
     }
 
     @Override
@@ -53,7 +54,7 @@ public class CraftTNTPrimed extends CraftEntity implements TNTPrimed {
     }
 
     public Entity getSource() {
-        LivingEntity source = getHandle().getSource();
+        EntityLiving source = getHandle().getSource();
 
         if (source != null) {
             Entity bukkitEntity = ((EntityExtra)source).getBukkitEntity();

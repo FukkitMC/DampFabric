@@ -1,11 +1,11 @@
 package io.github.fukkitmc.legacy.mixins.extra;
 
 import io.github.fukkitmc.legacy.extra.EntityArrowExtra;
-import net.minecraft.entity.projectile.ArrowEntity;
+import net.minecraft.server.EntityArrow;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
 
-@Mixin(ArrowEntity.class)
+@Mixin(EntityArrow.class)
 public class EntityArrowMixin implements EntityArrowExtra {
 
 

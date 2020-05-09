@@ -1,11 +1,12 @@
 package io.github.fukkitmc.legacy.extra;
 
+import net.minecraft.server.NBTTagCompound;
+
 import java.io.File;
-import net.minecraft.nbt.CompoundTag;
 
 public interface WorldNBTStorageExtra {
 
-    CompoundTag getPlayerData(String s);
+    NBTTagCompound getPlayerData(String s);
 
     File getPlayerDir();
 

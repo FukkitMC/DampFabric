@@ -1,18 +1,18 @@
 package org.bukkit.craftbukkit.entity;
 
-import net.minecraft.entity.EndCrystalEntity;
+import net.minecraft.server.EntityEnderCrystal;
 import org.bukkit.craftbukkit.CraftServer;
 import org.bukkit.entity.EnderCrystal;
 import org.bukkit.entity.EntityType;
 
 public class CraftEnderCrystal extends CraftEntity implements EnderCrystal {
-    public CraftEnderCrystal(CraftServer server, EndCrystalEntity entity) {
+    public CraftEnderCrystal(CraftServer server, EntityEnderCrystal entity) {
         super(server, entity);
     }
 
     @Override
-    public EndCrystalEntity getHandle() {
-        return (EndCrystalEntity) entity;
+    public EntityEnderCrystal getHandle() {
+        return (EntityEnderCrystal) entity;
     }
 
     @Override

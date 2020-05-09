@@ -1,9 +1,10 @@
 package org.bukkit.craftbukkit.block;
 
-import net.minecraft.block.Blocks;
-import net.minecraft.block.DispenserBlock;
-import net.minecraft.block.entity.DispenserBlockEntity;
-import net.minecraft.util.math.BlockPos;
+import net.minecraft.server.BlockDispenser;
+import net.minecraft.server.BlockPosition;
+import net.minecraft.server.Blocks;
+import net.minecraft.server.TileEntityDispenser;
+
 import org.bukkit.Material;
 import org.bukkit.block.Block;
 import org.bukkit.block.Dispenser;
@@ -15,16 +16,16 @@ import org.bukkit.projectiles.BlockProjectileSource;
 
 public class CraftDispenser extends CraftBlockState implements Dispenser {
     private final CraftWorld world;
-    private final DispenserBlockEntity dispenser;
+    private final TileEntityDispenser dispenser;
 
     public CraftDispenser(final Block block) {
         super(block);
 
         world = (CraftWorld) block.getWorld();
-        dispenser = (DispenserBlockEntity) world.getTileEntityAt(getX(), getY(), getZ());
+        dispenser = (TileEntityDispenser) world.getTileEntityAt(getX(), getY(), getZ());
     }
 
-    public CraftDispenser(final Material material, final DispenserBlockEntity te) {
+    public CraftDispenser(final Material material, final TileEntityDispenser te) {
         super(material);
         world = null;
         dispenser = te;
@@ -48,9 +49,9 @@ public class CraftDispenser extends CraftBlockState implements Dispenser {
         Block block = getBlock();
 
         if (block.getType() == Material.DISPENSER) {
-            DispenserBlock dispense = (DispenserBlock) Blocks.DISPENSER;
+            BlockDispenser dispense = (BlockDispenser) Blocks.DISPENSER;
 
-            dispense.dispense(world.getHandle(), new BlockPos(getX(), getY(), getZ()));
+            dispense.dispense(world.getHandle(), new BlockPosition(getX(), getY(), getZ()));
             return true;
         } else {
             return false;
@@ -62,14 +63,14 @@ public class CraftDispenser extends CraftBlockState implements Dispenser {
         boolean result = super.update(force, applyPhysics);
 
         if (result) {
-            dispenser.markDirty();
+            dispenser.update();
         }
 
         return result;
     }
 
     @Override
-    public DispenserBlockEntity getTileEntity() {
+    public TileEntityDispenser getTileEntity() {
         return dispenser;
     }
 }

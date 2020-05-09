@@ -1,5 +1,9 @@
 package org.bukkit.craftbukkit.entity;
 
+import net.minecraft.server.EntityFireworks;
+import net.minecraft.server.ItemStack;
+import net.minecraft.server.Items;
+
 import org.bukkit.Material;
 import org.bukkit.craftbukkit.CraftServer;
 import org.bukkit.craftbukkit.inventory.CraftItemStack;
@@ -8,9 +12,6 @@ import org.bukkit.entity.Firework;
 import org.bukkit.inventory.meta.FireworkMeta;
 
 import java.util.Random;
-import net.minecraft.entity.FireworkEntity;
-import net.minecraft.item.ItemStack;
-import net.minecraft.item.Items;
 
 public class CraftFirework extends CraftEntity implements Firework {
     private static final int FIREWORK_ITEM_INDEX = 8;
@@ -18,14 +19,14 @@ public class CraftFirework extends CraftEntity implements Firework {
     private final Random random = new Random();
     private final CraftItemStack item;
 
-    public CraftFirework(CraftServer server, FireworkEntity entity) {
+    public CraftFirework(CraftServer server, EntityFireworks entity) {
         super(server, entity);
 
-        ItemStack item = getHandle().getDataTracker().getStack(FIREWORK_ITEM_INDEX);
+        ItemStack item = getHandle().getDataWatcher().getItemStack(FIREWORK_ITEM_INDEX);
 
         if (item == null) {
             item = new ItemStack(Items.FIREWORKS);
-            getHandle().getDataTracker().watch(FIREWORK_ITEM_INDEX, item);
+            getHandle().getDataWatcher().watch(FIREWORK_ITEM_INDEX, item);
         }
 
         this.item = CraftItemStack.asCraftMirror(item);
@@ -37,8 +38,8 @@ public class CraftFirework extends CraftEntity implements Firework {
     }
 
     @Override
-    public FireworkEntity getHandle() {
-        return (FireworkEntity) entity;
+    public EntityFireworks getHandle() {
+        return (EntityFireworks) entity;
     }
 
     @Override
@@ -61,13 +62,13 @@ public class CraftFirework extends CraftEntity implements Firework {
         item.setItemMeta(meta);
 
         // Copied from EntityFireworks constructor, update firework lifetime/power
-        getHandle().lifeTime = 10 * (1 + meta.getPower()) + random.nextInt(6) + random.nextInt(7);
+        getHandle().expectedLifespan = 10 * (1 + meta.getPower()) + random.nextInt(6) + random.nextInt(7);
 
-        getHandle().getDataTracker().update(FIREWORK_ITEM_INDEX);
+        getHandle().getDataWatcher().update(FIREWORK_ITEM_INDEX);
     }
 
     @Override
     public void detonate() {
-        getHandle().lifeTime = 0;
+        getHandle().expectedLifespan = 0;
     }
 }

@@ -3,11 +3,10 @@ package org.bukkit.craftbukkit.inventory;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
-import net.minecraft.nbt.CompoundTag;
-import net.minecraft.nbt.ListTag;
-import net.minecraft.nbt.StringTag;
-import net.minecraft.text.Text;
-import net.minecraft.text.Text.class_1445;
+
+import net.minecraft.server.NBTTagCompound;
+import net.minecraft.server.NBTTagList;
+
 import org.apache.commons.lang.Validate;
 import org.bukkit.Material;
 import org.bukkit.configuration.serialization.DelegateDeserialization;
@@ -18,6 +17,9 @@ import com.google.common.base.Strings;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap.Builder;
 import java.util.AbstractList;
+import net.minecraft.server.IChatBaseComponent.ChatSerializer;
+import net.minecraft.server.IChatBaseComponent;
+import net.minecraft.server.NBTTagString;
 import org.bukkit.craftbukkit.util.CraftChatMessage;
 
 @DelegateDeserialization(SerializableMeta.class)
@@ -32,7 +34,7 @@ public class CraftMetaBook extends CraftMetaItem implements BookMeta {
 
     protected String title;
     protected String author;
-    public List<Text> pages = new ArrayList<Text>();
+    public List<IChatBaseComponent> pages = new ArrayList<IChatBaseComponent>();
     protected Integer generation;
 
     CraftMetaBook(CraftMetaItem meta) {
@@ -47,38 +49,38 @@ public class CraftMetaBook extends CraftMetaItem implements BookMeta {
         }
     }
 
-    CraftMetaBook(CompoundTag tag) {
+    CraftMetaBook(NBTTagCompound tag) {
         this(tag, true);
     }
 
-    CraftMetaBook(CompoundTag tag, boolean handlePages) {
+    CraftMetaBook(NBTTagCompound tag, boolean handlePages) {
         super(tag);
 
-        if (tag.contains(BOOK_TITLE.NBT)) {
+        if (tag.hasKey(BOOK_TITLE.NBT)) {
             this.title = tag.getString(BOOK_TITLE.NBT);
         }
 
-        if (tag.contains(BOOK_AUTHOR.NBT)) {
+        if (tag.hasKey(BOOK_AUTHOR.NBT)) {
             this.author = tag.getString(BOOK_AUTHOR.NBT);
         }
 
         boolean resolved = false;
-        if (tag.contains(RESOLVED.NBT)) {
+        if (tag.hasKey(RESOLVED.NBT)) {
             resolved = tag.getBoolean(RESOLVED.NBT);
         }
         
-        if (tag.contains(GENERATION.NBT)) {
+        if (tag.hasKey(GENERATION.NBT)) {
             generation = tag.getInt(GENERATION.NBT);
         }
 
-        if (tag.contains(BOOK_PAGES.NBT) && handlePages) {
-            ListTag pages = tag.getList(BOOK_PAGES.NBT, 8);
+        if (tag.hasKey(BOOK_PAGES.NBT) && handlePages) {
+            NBTTagList pages = tag.getList(BOOK_PAGES.NBT, 8);
 
             for (int i = 0; i < pages.size(); i++) {
                 String page = pages.getString(i);
                 if (resolved) {
                     try {
-                        this.pages.add(class_1445.a(page));
+                        this.pages.add(ChatSerializer.a(page));
                         continue;
                     } catch (Exception e) {
                         // Ignore and treat as an old book
@@ -109,35 +111,35 @@ public class CraftMetaBook extends CraftMetaItem implements BookMeta {
     }
 
     @Override
-    void applyToItem(CompoundTag itemData) {
+    void applyToItem(NBTTagCompound itemData) {
         applyToItem(itemData, true);
     }
 
-    void applyToItem(CompoundTag itemData, boolean handlePages) {
+    void applyToItem(NBTTagCompound itemData, boolean handlePages) {
         super.applyToItem(itemData);
 
         if (hasTitle()) {
-            itemData.putString(BOOK_TITLE.NBT, this.title);
+            itemData.setString(BOOK_TITLE.NBT, this.title);
         }
 
         if (hasAuthor()) {
-            itemData.putString(BOOK_AUTHOR.NBT, this.author);
+            itemData.setString(BOOK_AUTHOR.NBT, this.author);
         }
 
         if (handlePages) {
             if (hasPages()) {
-                ListTag list = new ListTag();
-                for (Text page : pages) {
-                    list.add(new StringTag(CraftChatMessage.fromComponent(page)));
+                NBTTagList list = new NBTTagList();
+                for (IChatBaseComponent page : pages) {
+                    list.add(new NBTTagString(CraftChatMessage.fromComponent(page)));
                 }
-                itemData.put(BOOK_PAGES.NBT, list);
+                itemData.set(BOOK_PAGES.NBT, list);
             }
 
             itemData.remove(RESOLVED.NBT);
         }
 
         if (generation != null) {
-            itemData.putInt(GENERATION.NBT, generation);
+            itemData.setInt(GENERATION.NBT, generation);
         }
     }
 
@@ -234,7 +236,7 @@ public class CraftMetaBook extends CraftMetaItem implements BookMeta {
     }
 
     public List<String> getPages() {
-        final List<Text> copy = ImmutableList.copyOf(pages);
+        final List<IChatBaseComponent> copy = ImmutableList.copyOf(pages);
         return new AbstractList<String>() {
 
             @Override
@@ -263,7 +265,7 @@ public class CraftMetaBook extends CraftMetaItem implements BookMeta {
     @Override
     public CraftMetaBook clone() {
         CraftMetaBook meta = (CraftMetaBook) super.clone();
-        meta.pages = new ArrayList<Text>(pages);
+        meta.pages = new ArrayList<IChatBaseComponent>(pages);
         return meta;
     }
 
@@ -317,7 +319,7 @@ public class CraftMetaBook extends CraftMetaItem implements BookMeta {
 
         if (hasPages()) {
             List<String> pagesString = new ArrayList<String>();
-            for (Text comp : pages) {
+            for (IChatBaseComponent comp : pages) {
                 pagesString.add(CraftChatMessage.fromComponent(comp));
             }
             builder.put(BOOK_PAGES.BUKKIT, pagesString);

@@ -1,6 +1,6 @@
 package org.bukkit.craftbukkit.entity;
 
-import net.minecraft.entity.passive.VillagerEntity;
+import net.minecraft.server.EntityVillager;
 import org.apache.commons.lang.Validate;
 import org.bukkit.craftbukkit.CraftServer;
 import org.bukkit.craftbukkit.inventory.CraftInventory;
@@ -10,13 +10,13 @@ import org.bukkit.inventory.Inventory;
 import org.bukkit.inventory.InventoryHolder;
 
 public class CraftVillager extends CraftAgeable implements Villager, InventoryHolder {
-    public CraftVillager(CraftServer server, VillagerEntity entity) {
+    public CraftVillager(CraftServer server, EntityVillager entity) {
         super(server, entity);
     }
 
     @Override
-    public VillagerEntity getHandle() {
-        return (VillagerEntity) entity;
+    public EntityVillager getHandle() {
+        return (EntityVillager) entity;
     }
 
     @Override

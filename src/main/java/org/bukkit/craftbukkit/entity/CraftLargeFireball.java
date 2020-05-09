@@ -1,24 +1,24 @@
 package org.bukkit.craftbukkit.entity;
 
-import net.minecraft.entity.projectile.FireballEntity;
+import net.minecraft.server.EntityLargeFireball;
 import org.bukkit.craftbukkit.CraftServer;
 import org.bukkit.entity.EntityType;
 import org.bukkit.entity.LargeFireball;
 
 public class CraftLargeFireball extends CraftFireball implements LargeFireball {
-    public CraftLargeFireball(CraftServer server, FireballEntity entity) {
+    public CraftLargeFireball(CraftServer server, EntityLargeFireball entity) {
         super(server, entity);
     }
 
     @Override
     public void setYield(float yield) {
         super.setYield(yield);
-        getHandle().explosionPower = (int) yield;
+        getHandle().yield = (int) yield;
     }
 
     @Override
-    public FireballEntity getHandle() {
-        return (FireballEntity) entity;
+    public EntityLargeFireball getHandle() {
+        return (EntityLargeFireball) entity;
     }
 
     @Override

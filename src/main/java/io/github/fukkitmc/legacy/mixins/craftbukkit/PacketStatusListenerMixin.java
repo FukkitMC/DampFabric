@@ -4,13 +4,7 @@ import com.mojang.authlib.GameProfile;
 import io.github.fukkitmc.legacy.extra.EntityExtra;
 import io.github.fukkitmc.legacy.extra.EntityPlayerExtra;
 import io.github.fukkitmc.legacy.extra.MinecraftServerExtra;
-import net.minecraft.entity.player.ServerPlayerEntity;
-import net.minecraft.network.ClientConnection;
-import net.minecraft.network.packet.c2s.query.QueryRequestC2SPacket;
-import net.minecraft.network.packet.s2c.query.QueryResponseS2CPacket;
 import net.minecraft.server.*;
-import net.minecraft.server.network.ServerQueryNetworkHandler;
-import net.minecraft.text.LiteralText;
 import org.bukkit.craftbukkit.util.CraftIconCache;
 import org.bukkit.entity.Player;
 import org.spongepowered.asm.mixin.Mixin;
@@ -20,10 +14,10 @@ import org.spongepowered.asm.mixin.Shadow;
 import java.net.InetSocketAddress;
 import java.util.Iterator;
 
-@Mixin(ServerQueryNetworkHandler.class)
+@Mixin(PacketStatusListener.class)
 public class PacketStatusListenerMixin {
 
-    @Shadow public ClientConnection networkManager;
+    @Shadow public NetworkManager networkManager;
 
     @Shadow public MinecraftServer minecraftServer;
 
@@ -33,9 +27,9 @@ public class PacketStatusListenerMixin {
      * @author Fukkit
      */
     @Overwrite
-    public void a(QueryRequestC2SPacket packetstatusinstart) {
+    public void a(PacketStatusInStart packetstatusinstart) {
         if (this.d) {
-            this.networkManager.disconnect(ServerQueryNetworkHandler.a);
+            this.networkManager.close(PacketStatusListener.a);
             // CraftBukkit start - fire ping event
             return;
         }
@@ -46,7 +40,7 @@ public class PacketStatusListenerMixin {
             CraftIconCache icon = minecraftServer.server.getServerIcon();
 
             ServerListPingEvent() {
-                super(((InetSocketAddress) networkManager.getAddress()).getAddress(), ((MinecraftServerExtra)minecraftServer).getMotd(), ((MinecraftServerExtra)minecraftServer).getPlayerList().getMaxPlayerCount());
+                super(((InetSocketAddress) networkManager.getSocketAddress()).getAddress(), ((MinecraftServerExtra)minecraftServer).getMotd(), ((MinecraftServerExtra)minecraftServer).getPlayerList().getMaxPlayers());
             }
 
             @Override
@@ -62,7 +56,7 @@ public class PacketStatusListenerMixin {
                 return new Iterator<Player>() {
                     int i;
                     int ret = Integer.MIN_VALUE;
-                    ServerPlayerEntity player;
+                    EntityPlayer player;
 
                     @Override
                     public boolean hasNext() {
@@ -70,7 +64,7 @@ public class PacketStatusListenerMixin {
                             return true;
                         }
                         for (int length = players.length, i = this.i; i < length; i++) {
-                            final ServerPlayerEntity player = (ServerPlayerEntity) players[i];
+                            final EntityPlayer player = (EntityPlayer) players[i];
                             if (player != null) {
                                 this.i = i + 1;
                                 this.player = player;
@@ -85,7 +79,7 @@ public class PacketStatusListenerMixin {
                         if (!hasNext()) {
                             throw new java.util.NoSuchElementException();
                         }
-                        final ServerPlayerEntity player = this.player;
+                        final EntityPlayer player = this.player;
                         this.player = null;
                         this.ret = this.i - 1;
                         return (Player) ((EntityExtra)player).getBukkitEntity();
@@ -109,20 +103,20 @@ public class PacketStatusListenerMixin {
         java.util.List<GameProfile> profiles = new java.util.ArrayList<GameProfile>(players.length);
         for (Object player : players) {
             if (player != null) {
-                profiles.add(((ServerPlayerEntity) player).getGameProfile());
+                profiles.add(((EntityPlayer) player).getProfile());
             }
         }
 
-        ServerMetadata.Players playerSample = new ServerMetadata.Players(event.getMaxPlayers(), profiles.size());
-        playerSample.setSample(profiles.toArray(new GameProfile[0]));
+        ServerPing.ServerPingPlayerSample playerSample = new ServerPing.ServerPingPlayerSample(event.getMaxPlayers(), profiles.size());
+        playerSample.a(profiles.toArray(new GameProfile[0]));
 
-        ServerMetadata ping = new ServerMetadata();
+        ServerPing ping = new ServerPing();
         ping.setFavicon(event.icon.value);
-        ping.setDescription(new LiteralText(event.getMotd()));
-        ping.setPlayers(playerSample);
-        ping.setVersion(new ServerMetadata.Version(minecraftServer.getServerModName() + " " + ((MinecraftServerExtra)minecraftServer).getVersion(), 47)); // TODO: Update when protocol changes
+        ping.setMOTD(new ChatComponentText(event.getMotd()));
+        ping.setPlayerSample(playerSample);
+        ping.setServerInfo(new ServerPing.ServerData(minecraftServer.getServerModName() + " " + ((MinecraftServerExtra)minecraftServer).getVersion(), 47)); // TODO: Update when protocol changes
 
-        this.networkManager.handle(new QueryResponseS2CPacket(ping));
+        this.networkManager.handle(new PacketStatusOutServerInfo(ping));
         // CraftBukkit end
     }
 

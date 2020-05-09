@@ -1,12 +1,13 @@
 package org.bukkit.craftbukkit.entity;
 
-import net.minecraft.entity.vehicle.AbstractMinecartEntity;
+import net.minecraft.server.EntityMinecartAbstract;
+
 import org.bukkit.craftbukkit.CraftServer;
 import org.bukkit.entity.EntityType;
 import org.bukkit.entity.minecart.RideableMinecart;
 
 public class CraftMinecartRideable extends CraftMinecart implements RideableMinecart {
-    public CraftMinecartRideable(CraftServer server, AbstractMinecartEntity entity) {
+    public CraftMinecartRideable(CraftServer server, EntityMinecartAbstract entity) {
         super(server, entity);
     }
 

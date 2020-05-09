@@ -1,13 +1,14 @@
 package org.bukkit.craftbukkit.inventory;
 
 import io.github.fukkitmc.legacy.extra.IInventoryExtra;
-import net.minecraft.inventory.Inventory;
 import org.bukkit.block.BrewingStand;
 import org.bukkit.inventory.BrewerInventory;
 import org.bukkit.inventory.ItemStack;
 
+import net.minecraft.server.IInventory;
+
 public class CraftInventoryBrewer extends CraftInventory implements BrewerInventory {
-    public CraftInventoryBrewer(Inventory inventory) {
+    public CraftInventoryBrewer(IInventory inventory) {
         super(inventory);
     }
 

@@ -2,6 +2,7 @@ import java.util.function.Function
 
 plugins {
     id("fabric-loom") version "gs0.2.7-SNAPSHOT"
+    id("io.github.fukkitmc.crusty") version "1.1.7"
 }
 
 
@@ -30,7 +31,7 @@ dependencies {
     compile("com.google.guava:guava:23.5-jre")
     minecraft("net.minecraft:minecraft:1.8.9")
 
-    mappings("net.fabricmc:yarn:1.8.9+build.202004290055:v2")
+    mappings(fukkit.mappings("1.8.8", "net.fabricmc:intermediary:1.8.9"))
     modImplementation("net.fabricmc:fabric-loader-1.8.9:0.8.2+build.202005040913") {
         exclude(module = "guava")
     }

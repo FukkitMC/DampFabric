@@ -1,11 +1,6 @@
 package io.github.fukkitmc.legacy.extra;
 
 import net.minecraft.server.*;
-import net.minecraft.server.dedicated.AbstractPropertiesHandler;
-import net.minecraft.server.world.ServerWorld;
-import net.minecraft.util.UserCache;
-import net.minecraft.world.Difficulty;
-import net.minecraft.world.level.LevelInfo;
 
 public interface MinecraftServerExtra {
 
@@ -13,7 +8,7 @@ public interface MinecraftServerExtra {
 
     void setIdleTimeout(int timeout);
 
-    AbstractPropertiesHandler getPropertyManager();
+    PropertyManager getPropertyManager();
 
     String getVersion();
 
@@ -31,7 +26,7 @@ public interface MinecraftServerExtra {
 
     void stop();
 
-    PlayerManager getPlayerList();
+    PlayerList getPlayerList();
 
     boolean getOnlineMode();
 
@@ -51,19 +46,19 @@ public interface MinecraftServerExtra {
         return true;
     }
 
-    default LevelInfo.GameMode getGamemode(){
-        return LevelInfo.GameMode.CREATIVE;
+    default WorldSettings.EnumGamemode getGamemode(){
+        return WorldSettings.EnumGamemode.CREATIVE;
     }
 
     default boolean getGenerateStructures(){
         return true;
     }
 
-    default Difficulty getDifficulty(){
-        return Difficulty.EASY;
+    default EnumDifficulty getDifficulty(){
+        return EnumDifficulty.EASY;
     }
 
-    void a(Difficulty enumdifficulty);
+    void a(EnumDifficulty enumdifficulty);
 
     default boolean getSpawnMonsters(){
         return true;
@@ -75,7 +70,7 @@ public interface MinecraftServerExtra {
 
     String getResourcePackHash();
 
-    ServerWorld getWorldServer(int i);
+    WorldServer getWorldServer(int i);
 
     String getServerIp();
 }

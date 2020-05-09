@@ -1,8 +1,8 @@
 package io.github.fukkitmc.legacy.mixins.craftbukkit;
 
+import net.minecraft.server.Chunk;
 import net.minecraft.server.EmptyChunk;
-import net.minecraft.world.World;
-import net.minecraft.world.chunk.Chunk;
+import net.minecraft.server.World;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;

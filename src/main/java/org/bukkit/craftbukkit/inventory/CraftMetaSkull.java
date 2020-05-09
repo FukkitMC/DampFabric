@@ -1,12 +1,13 @@
 package org.bukkit.craftbukkit.inventory;
 
 import java.util.Map;
-import net.minecraft.nbt.CompoundTag;
-import net.minecraft.nbt.NbtHelper;
-import net.minecraft.nbt.Tag;
+
+import net.minecraft.server.GameProfileSerializer;
+import net.minecraft.server.NBTBase;
+import net.minecraft.server.NBTTagCompound;
+
 import org.bukkit.Material;
 import org.bukkit.configuration.serialization.DelegateDeserialization;
-import org.bukkit.craftbukkit.inventory.CraftMetaItem.ItemMetaKey;
 import org.bukkit.craftbukkit.inventory.CraftMetaItem.SerializableMeta;
 import org.bukkit.inventory.meta.SkullMeta;
 
@@ -33,12 +34,12 @@ class CraftMetaSkull extends CraftMetaItem implements SkullMeta {
         this.profile = skullMeta.profile;
     }
 
-    CraftMetaSkull(CompoundTag tag) {
+    CraftMetaSkull(NBTTagCompound tag) {
         super(tag);
 
-        if (tag.contains(SKULL_OWNER.NBT, 10)) {
-            profile = NbtHelper.toGameProfile(tag.getCompound(SKULL_OWNER.NBT));
-        } else if (tag.contains(SKULL_OWNER.NBT, 8) && !tag.getString(SKULL_OWNER.NBT).isEmpty()) {
+        if (tag.hasKeyOfType(SKULL_OWNER.NBT, 10)) {
+            profile = GameProfileSerializer.deserialize(tag.getCompound(SKULL_OWNER.NBT));
+        } else if (tag.hasKeyOfType(SKULL_OWNER.NBT, 8) && !tag.getString(SKULL_OWNER.NBT).isEmpty()) {
             profile = new GameProfile(null, tag.getString(SKULL_OWNER.NBT));
         }
     }
@@ -51,29 +52,29 @@ class CraftMetaSkull extends CraftMetaItem implements SkullMeta {
     }
 
     @Override
-    void deserializeInternal(CompoundTag tag) {
-        if (tag.contains(SKULL_PROFILE.NBT, 10)) {
-            profile = NbtHelper.toGameProfile(tag.getCompound(SKULL_PROFILE.NBT));
+    void deserializeInternal(NBTTagCompound tag) {
+        if (tag.hasKeyOfType(SKULL_PROFILE.NBT, 10)) {
+            profile = GameProfileSerializer.deserialize(tag.getCompound(SKULL_PROFILE.NBT));
         }
     }
 
     @Override
-    void serializeInternal(final Map<String, Tag> internalTags) {
+    void serializeInternal(final Map<String, NBTBase> internalTags) {
         if (profile != null) {
-            CompoundTag nbtData = new CompoundTag();
-            NbtHelper.fromGameProfile(nbtData, profile);
+            NBTTagCompound nbtData = new NBTTagCompound();
+            GameProfileSerializer.serialize(nbtData, profile);
             internalTags.put(SKULL_PROFILE.NBT, nbtData);
         }
     }
 
     @Override
-    void applyToItem(CompoundTag tag) {
+    void applyToItem(NBTTagCompound tag) {
         super.applyToItem(tag);
 
         if (profile != null) {
-            CompoundTag owner = new CompoundTag();
-            NbtHelper.fromGameProfile(owner, profile);
-            tag.put(SKULL_OWNER.NBT, owner);
+            NBTTagCompound owner = new NBTTagCompound();
+            GameProfileSerializer.serialize(owner, profile);
+            tag.set(SKULL_OWNER.NBT, owner);
         }
     }
 

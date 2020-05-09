@@ -1,5 +1,6 @@
 package org.bukkit.craftbukkit.entity;
 
+import net.minecraft.server.EntityHorse;
 import org.apache.commons.lang.Validate;
 import org.bukkit.craftbukkit.CraftServer;
 import org.bukkit.craftbukkit.inventory.CraftInventoryHorse;
@@ -9,17 +10,16 @@ import org.bukkit.entity.Horse;
 import org.bukkit.inventory.HorseInventory;
 
 import java.util.UUID;
-import net.minecraft.entity.passive.HorseBaseEntity;
 
 public class CraftHorse extends CraftAnimals implements Horse {
 
-    public CraftHorse(CraftServer server, HorseBaseEntity entity) {
+    public CraftHorse(CraftServer server, EntityHorse entity) {
         super(server, entity);
     }
 
     @Override
-    public HorseBaseEntity getHandle() {
-        return (HorseBaseEntity) entity;
+    public EntityHorse getHandle() {
+        return (EntityHorse) entity;
     }
 
     public Variant getVariant() {
@@ -50,7 +50,7 @@ public class CraftHorse extends CraftAnimals implements Horse {
     }
 
     public boolean isCarryingChest() {
-        return getHandle().isBred();
+        return getHandle().hasChest();
     }
 
     public void setCarryingChest(boolean chest) {
@@ -70,7 +70,7 @@ public class CraftHorse extends CraftAnimals implements Horse {
     }
 
     public int getMaxDomestication() {
-        return getHandle().getMaxTemper();
+        return getHandle().getMaxDomestication();
     }
 
     public void setMaxDomestication(int value) {
@@ -84,7 +84,7 @@ public class CraftHorse extends CraftAnimals implements Horse {
 
     public void setJumpStrength(double strength) {
         Validate.isTrue(strength >= 0, "Jump strength cannot be less than zero");
-        getHandle().getAttributeInstance(HorseBaseEntity.attributeJumpStrength).setBaseValue(strength);
+        getHandle().getAttributeInstance(EntityHorse.attributeJumpStrength).setValue(strength);
     }
 
     @Override

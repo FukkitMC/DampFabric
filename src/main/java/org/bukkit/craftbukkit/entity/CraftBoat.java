@@ -1,13 +1,13 @@
 package org.bukkit.craftbukkit.entity;
 
-import net.minecraft.entity.vehicle.BoatEntity;
+import net.minecraft.server.EntityBoat;
 import org.bukkit.craftbukkit.CraftServer;
 import org.bukkit.entity.Boat;
 import org.bukkit.entity.EntityType;
 
 public class CraftBoat extends CraftVehicle implements Boat {
 
-    public CraftBoat(CraftServer server, BoatEntity entity) {
+    public CraftBoat(CraftServer server, EntityBoat entity) {
         super(server, entity);
     }
 
@@ -48,8 +48,8 @@ public class CraftBoat extends CraftVehicle implements Boat {
     }
 
     @Override
-    public BoatEntity getHandle() {
-        return (BoatEntity) entity;
+    public EntityBoat getHandle() {
+        return (EntityBoat) entity;
     }
 
     @Override

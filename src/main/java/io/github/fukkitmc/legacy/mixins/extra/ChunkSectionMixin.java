@@ -2,9 +2,10 @@ package io.github.fukkitmc.legacy.mixins.extra;
 
 
 import io.github.fukkitmc.legacy.extra.ChunkSectionExtra;
-import net.minecraft.class_401;
+import net.minecraft.server.BiomeBase;
+import net.minecraft.server.ChunkSection;
 import org.spongepowered.asm.mixin.Mixin;
 
-@Mixin(class_401.class)
+@Mixin(ChunkSection.class)
 public class ChunkSectionMixin implements ChunkSectionExtra {
 }

@@ -7,7 +7,7 @@ import org.bukkit.WorldBorder;
 public class CraftWorldBorder implements WorldBorder {
 
     private final World world;
-    private final net.minecraft.world.border.WorldBorder handle;
+    private final net.minecraft.server.WorldBorder handle;
 
     public CraftWorldBorder(CraftWorld world) {
         this.world = world;
@@ -49,8 +49,8 @@ public class CraftWorldBorder implements WorldBorder {
 
     @Override
     public Location getCenter() {
-        double x = this.handle.getCornerA(); 
-        double z = this.handle.getCornerB(); 
+        double x = this.handle.getCenterX(); 
+        double z = this.handle.getCenterZ(); 
 
         return new Location(this.world, x, 0, z);
     }
@@ -101,11 +101,11 @@ public class CraftWorldBorder implements WorldBorder {
 
     @Override
     public int getWarningDistance() {
-        return this.handle.getWarningBlocks();
+        return this.handle.getWarningDistance();
     }
 
     @Override
     public void setWarningDistance(int distance) {
-        this.handle.setWarningBlocks(distance); 
+        this.handle.setWarningDistance(distance); 
     }
 }

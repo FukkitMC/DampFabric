@@ -1,7 +1,9 @@
 package org.bukkit.craftbukkit.entity;
 
 import java.util.Set;
-import net.minecraft.entity.vehicle.CommandBlockMinecartEntity;
+
+import net.minecraft.server.EntityMinecartCommandBlock;
+
 import org.bukkit.Bukkit;
 import org.bukkit.Server;
 import org.bukkit.craftbukkit.CraftServer;
@@ -16,23 +18,23 @@ import org.bukkit.plugin.Plugin;
 public class CraftMinecartCommand extends CraftMinecart implements CommandMinecart {
     private final PermissibleBase perm = new PermissibleBase(this);
 
-    public CraftMinecartCommand(CraftServer server, CommandBlockMinecartEntity entity) {
+    public CraftMinecartCommand(CraftServer server, EntityMinecartCommandBlock entity) {
         super(server, entity);
     }
 
     @Override
     public String getCommand() {
-        return ((CommandBlockMinecartEntity) getHandle()).getCommandExecutor().getCommand();
+        return ((EntityMinecartCommandBlock) getHandle()).getCommandBlock().getCommand();
     }
 
     @Override
     public void setCommand(String command) {
-        ((CommandBlockMinecartEntity) getHandle()).getCommandExecutor().setCommand(command != null ? command : "");
+        ((EntityMinecartCommandBlock) getHandle()).getCommandBlock().setCommand(command != null ? command : "");
     }
 
     @Override
     public void setName(String name) {
-        ((CommandBlockMinecartEntity) getHandle()).getCommandExecutor().setCustomName(name != null ? name : "@");
+        ((EntityMinecartCommandBlock) getHandle()).getCommandBlock().setName(name != null ? name : "@");
     }
 
     @Override
@@ -50,7 +52,7 @@ public class CraftMinecartCommand extends CraftMinecart implements CommandMineca
 
     @Override
     public String getName() {
-        return ((CommandBlockMinecartEntity) getHandle()).getCommandExecutor().getName();
+        return ((EntityMinecartCommandBlock) getHandle()).getCommandBlock().getName();
     }
 
     @Override

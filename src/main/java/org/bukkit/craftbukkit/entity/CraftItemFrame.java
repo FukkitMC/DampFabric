@@ -1,10 +1,11 @@
 package org.bukkit.craftbukkit.entity;
 
-import net.minecraft.entity.decoration.ItemFrameEntity;
-import net.minecraft.item.ItemStack;
-import net.minecraft.server.world.ServerWorld;
-import net.minecraft.util.math.BlockPos;
-import net.minecraft.util.math.Direction;
+import net.minecraft.server.BlockPosition;
+import net.minecraft.server.EntityItemFrame;
+import net.minecraft.server.EnumDirection;
+import net.minecraft.server.ItemStack;
+import net.minecraft.server.WorldServer;
+
 import org.apache.commons.lang.Validate;
 
 import org.bukkit.Rotation;
@@ -16,7 +17,7 @@ import org.bukkit.entity.EntityType;
 import org.bukkit.entity.ItemFrame;
 
 public class CraftItemFrame extends CraftHanging implements ItemFrame {
-    public CraftItemFrame(CraftServer server, ItemFrameEntity entity) {
+    public CraftItemFrame(CraftServer server, EntityItemFrame entity) {
         super(server, entity);
     }
 
@@ -31,18 +32,18 @@ public class CraftItemFrame extends CraftHanging implements ItemFrame {
     }
 
     private void update() {
-        ItemFrameEntity old = this.getHandle();
+        EntityItemFrame old = this.getHandle();
 
-        ServerWorld world = ((CraftWorld) getWorld()).getHandle();
-        BlockPos position = old.getBlockPosition();
-        Direction direction = old.getDirection();
-        ItemStack item = old.getItem() != null ? old.getItem().copy() : null;
+        WorldServer world = ((CraftWorld) getWorld()).getHandle();
+        BlockPosition position = old.getBlockPosition();
+        EnumDirection direction = old.getDirection();
+        ItemStack item = old.getItem() != null ? old.getItem().cloneItemStack() : null;
 
-        old.remove();
+        old.die();
 
-        ItemFrameEntity frame = new ItemFrameEntity(world,position,direction);
+        EntityItemFrame frame = new EntityItemFrame(world,position,direction);
         frame.setItem(item);
-        world.spawnEntity(frame);
+        world.addEntity(frame);
         this.entity = frame;
     }
 
@@ -117,8 +118,8 @@ public class CraftItemFrame extends CraftHanging implements ItemFrame {
     }
 
     @Override
-    public ItemFrameEntity getHandle() {
-        return (ItemFrameEntity) entity;
+    public EntityItemFrame getHandle() {
+        return (EntityItemFrame) entity;
     }
 
     @Override

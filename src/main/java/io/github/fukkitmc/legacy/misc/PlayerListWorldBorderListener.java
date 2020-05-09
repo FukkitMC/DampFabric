@@ -1,36 +1,36 @@
 package io.github.fukkitmc.legacy.misc;
 
-import net.minecraft.network.packet.s2c.play.WorldBorderS2CPacket;
-import net.minecraft.server.PlayerManager;
-import net.minecraft.world.border.WorldBorder;
-import net.minecraft.world.border.WorldBorderListener;
+import net.minecraft.server.IWorldBorderListener;
+import net.minecraft.server.PacketPlayOutWorldBorder;
+import net.minecraft.server.PlayerList;
+import net.minecraft.server.WorldBorder;
 
-public class PlayerListWorldBorderListener implements WorldBorderListener {
+public class PlayerListWorldBorderListener implements IWorldBorderListener {
 
-    PlayerManager playerList;
+    PlayerList playerList;
 
-    public PlayerListWorldBorderListener(PlayerManager list){
+    public PlayerListWorldBorderListener(PlayerList list){
         this.playerList = list;
     }
 
-    public void onSizeChange(WorldBorder worldborder, double d0) {
-        playerList.sendToAll(new WorldBorderS2CPacket(worldborder, WorldBorderS2CPacket.Type.SET_SIZE));
+    public void a(WorldBorder worldborder, double d0) {
+        playerList.sendAll(new PacketPlayOutWorldBorder(worldborder, PacketPlayOutWorldBorder.EnumWorldBorderAction.SET_SIZE));
     }
 
-    public void onInterpolateSize(WorldBorder worldborder, double d0, double d1, long i) {
-        playerList.sendToAll(new WorldBorderS2CPacket(worldborder, WorldBorderS2CPacket.Type.LERP_SIZE));
+    public void a(WorldBorder worldborder, double d0, double d1, long i) {
+        playerList.sendAll(new PacketPlayOutWorldBorder(worldborder, PacketPlayOutWorldBorder.EnumWorldBorderAction.LERP_SIZE));
     }
 
-    public void onCenterChanged(WorldBorder worldborder, double d0, double d1) {
-        playerList.sendToAll(new WorldBorderS2CPacket(worldborder, WorldBorderS2CPacket.Type.SET_CENTER));
+    public void a(WorldBorder worldborder, double d0, double d1) {
+        playerList.sendAll(new PacketPlayOutWorldBorder(worldborder, PacketPlayOutWorldBorder.EnumWorldBorderAction.SET_CENTER));
     }
 
-    public void onWarningTimeChanged(WorldBorder worldborder, int i) {
-        playerList.sendToAll(new WorldBorderS2CPacket(worldborder, WorldBorderS2CPacket.Type.SET_WARNING_TIME));
+    public void a(WorldBorder worldborder, int i) {
+        playerList.sendAll(new PacketPlayOutWorldBorder(worldborder, PacketPlayOutWorldBorder.EnumWorldBorderAction.SET_WARNING_TIME));
     }
 
-    public void onWarningBlocksChanged(WorldBorder worldborder, int i) {
-        playerList.sendToAll(new WorldBorderS2CPacket(worldborder, WorldBorderS2CPacket.Type.SET_WARNING_BLOCKS));
+    public void b(WorldBorder worldborder, int i) {
+        playerList.sendAll(new PacketPlayOutWorldBorder(worldborder, PacketPlayOutWorldBorder.EnumWorldBorderAction.SET_WARNING_BLOCKS));
     }
 
     public void b(WorldBorder worldborder, double d0) {}

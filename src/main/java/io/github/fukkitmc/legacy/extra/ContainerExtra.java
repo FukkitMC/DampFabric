@@ -1,6 +1,6 @@
 package io.github.fukkitmc.legacy.extra;
 
-import net.minecraft.container.Container;
+import net.minecraft.server.Container;
 import org.bukkit.inventory.InventoryView;
 
 public interface ContainerExtra {

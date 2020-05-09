@@ -1,11 +1,11 @@
 package org.bukkit.craftbukkit.inventory;
 
-import net.minecraft.block.entity.BeaconBlockEntity;
+import net.minecraft.server.TileEntityBeacon;
 import org.bukkit.inventory.BeaconInventory;
 import org.bukkit.inventory.ItemStack;
 
 public class CraftInventoryBeacon extends CraftInventory implements BeaconInventory {
-    public CraftInventoryBeacon(BeaconBlockEntity beacon) {
+    public CraftInventoryBeacon(TileEntityBeacon beacon) {
         super(beacon);
     }
 

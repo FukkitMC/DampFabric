@@ -1,7 +1,8 @@
 package org.bukkit.craftbukkit.entity;
 
-import net.minecraft.block.BlockState;
-import net.minecraft.entity.mob.EndermanEntity;
+import net.minecraft.server.EntityEnderman;
+
+import net.minecraft.server.IBlockData;
 import org.bukkit.craftbukkit.CraftServer;
 import org.bukkit.craftbukkit.util.CraftMagicNumbers;
 import org.bukkit.entity.Enderman;
@@ -9,22 +10,22 @@ import org.bukkit.entity.EntityType;
 import org.bukkit.material.MaterialData;
 
 public class CraftEnderman extends CraftMonster implements Enderman {
-    public CraftEnderman(CraftServer server, EndermanEntity entity) {
+    public CraftEnderman(CraftServer server, EntityEnderman entity) {
         super(server, entity);
     }
 
     public MaterialData getCarriedMaterial() {
-        BlockState blockData = getHandle().getCarriedBlock();
-        return CraftMagicNumbers.getMaterial(blockData.getBlock()).getNewData((byte) blockData.getBlock().getData(blockData));
+        IBlockData blockData = getHandle().getCarried();
+        return CraftMagicNumbers.getMaterial(blockData.getBlock()).getNewData((byte) blockData.getBlock().toLegacyData(blockData));
     }
 
     public void setCarriedMaterial(MaterialData data) {
-        getHandle().setCarriedBlock(CraftMagicNumbers.getBlock(data.getItemTypeId()).stateFromData(data.getData()));
+        getHandle().setCarried(CraftMagicNumbers.getBlock(data.getItemTypeId()).fromLegacyData(data.getData()));
     }
 
     @Override
-    public EndermanEntity getHandle() {
-        return (EndermanEntity) entity;
+    public EntityEnderman getHandle() {
+        return (EntityEnderman) entity;
     }
 
     @Override

@@ -1,13 +1,13 @@
 package io.github.fukkitmc.legacy.mixins.extra;
 
 import io.github.fukkitmc.legacy.extra.EntityArmorStandExtra;
-import net.minecraft.entity.LivingEntity;
-import net.minecraft.entity.decoration.ArmorStandEntity;
-import net.minecraft.world.World;
+import net.minecraft.server.EntityArmorStand;
+import net.minecraft.server.EntityLiving;
+import net.minecraft.server.World;
 import org.spongepowered.asm.mixin.Mixin;
 
-@Mixin(ArmorStandEntity.class)
-public abstract class ArmorStandMixin extends LivingEntity implements EntityArmorStandExtra{
+@Mixin(EntityArmorStand.class)
+public abstract class ArmorStandMixin extends EntityLiving implements EntityArmorStandExtra{
 
     public ArmorStandMixin(World world) {
         super(world);
@@ -15,7 +15,7 @@ public abstract class ArmorStandMixin extends LivingEntity implements EntityArmo
 
     @Override
     public void n(boolean flag) {
-        byte b0 = this.dataTracker.getByte(10);
+        byte b0 = this.datawatcher.getByte(10);
 
         if (flag) {
             b0 = (byte) (b0 | 16);
@@ -23,6 +23,6 @@ public abstract class ArmorStandMixin extends LivingEntity implements EntityArmo
             b0 &= -17;
         }
 
-        this.dataTracker.watch(10, b0);
+        this.datawatcher.watch(10, b0);
     }
 }

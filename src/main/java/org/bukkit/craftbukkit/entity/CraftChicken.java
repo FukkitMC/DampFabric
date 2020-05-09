@@ -1,19 +1,20 @@
 package org.bukkit.craftbukkit.entity;
 
-import net.minecraft.entity.passive.ChickenEntity;
+import net.minecraft.server.EntityChicken;
+
 import org.bukkit.craftbukkit.CraftServer;
 import org.bukkit.entity.Chicken;
 import org.bukkit.entity.EntityType;
 
 public class CraftChicken extends CraftAnimals implements Chicken {
 
-    public CraftChicken(CraftServer server, ChickenEntity entity) {
+    public CraftChicken(CraftServer server, EntityChicken entity) {
         super(server, entity);
     }
 
     @Override
-    public ChickenEntity getHandle() {
-        return (ChickenEntity) entity;
+    public EntityChicken getHandle() {
+        return (EntityChicken) entity;
     }
 
     @Override

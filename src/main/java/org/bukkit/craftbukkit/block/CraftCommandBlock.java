@@ -1,13 +1,13 @@
 package org.bukkit.craftbukkit.block;
 
-import net.minecraft.block.entity.CommandBlockBlockEntity;
+import net.minecraft.server.TileEntityCommand;
 import org.bukkit.Material;
 import org.bukkit.block.Block;
 import org.bukkit.block.CommandBlock;
 import org.bukkit.craftbukkit.CraftWorld;
 
 public class CraftCommandBlock extends CraftBlockState implements CommandBlock {
-    private final CommandBlockBlockEntity commandBlock;
+    private final TileEntityCommand commandBlock;
     private String command;
     private String name;
 
@@ -15,16 +15,16 @@ public class CraftCommandBlock extends CraftBlockState implements CommandBlock {
         super(block);
 
         CraftWorld world = (CraftWorld) block.getWorld();
-        commandBlock = (CommandBlockBlockEntity) world.getTileEntityAt(getX(), getY(), getZ());
-        command = commandBlock.getCommandExecutor().getCommand();
-        name = commandBlock.getCommandExecutor().getName();
+        commandBlock = (TileEntityCommand) world.getTileEntityAt(getX(), getY(), getZ());
+        command = commandBlock.getCommandBlock().getCommand();
+        name = commandBlock.getCommandBlock().getName();
     }
 
-    public CraftCommandBlock(final Material material, final CommandBlockBlockEntity te) {
+    public CraftCommandBlock(final Material material, final TileEntityCommand te) {
         super(material);
         commandBlock = te;
-        command = commandBlock.getCommandExecutor().getCommand();
-        name = commandBlock.getCommandExecutor().getName();
+        command = commandBlock.getCommandBlock().getCommand();
+        name = commandBlock.getCommandBlock().getName();
     }
 
     public String getCommand() {
@@ -47,15 +47,15 @@ public class CraftCommandBlock extends CraftBlockState implements CommandBlock {
         boolean result = super.update(force, applyPhysics);
 
         if (result) {
-            commandBlock.getCommandExecutor().setCommand(command);
-            commandBlock.getCommandExecutor().setCustomName(name);
+            commandBlock.getCommandBlock().setCommand(command);
+            commandBlock.getCommandBlock().setName(name);
         }
 
         return result;
     }
 
     @Override
-    public CommandBlockBlockEntity getTileEntity() {
+    public TileEntityCommand getTileEntity() {
         return commandBlock;
     }
 }

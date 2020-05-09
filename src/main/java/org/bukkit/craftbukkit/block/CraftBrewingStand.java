@@ -1,6 +1,6 @@
 package org.bukkit.craftbukkit.block;
 
-import net.minecraft.block.entity.BrewingStandBlockEntity;
+import net.minecraft.server.TileEntityBrewingStand;
 import org.bukkit.Material;
 import org.bukkit.block.Block;
 import org.bukkit.block.BrewingStand;
@@ -9,15 +9,15 @@ import org.bukkit.craftbukkit.inventory.CraftInventoryBrewer;
 import org.bukkit.inventory.BrewerInventory;
 
 public class CraftBrewingStand extends CraftBlockState implements BrewingStand {
-    private final BrewingStandBlockEntity brewingStand;
+    private final TileEntityBrewingStand brewingStand;
 
     public CraftBrewingStand(Block block) {
         super(block);
 
-        brewingStand = (BrewingStandBlockEntity) ((CraftWorld) block.getWorld()).getTileEntityAt(getX(), getY(), getZ());
+        brewingStand = (TileEntityBrewingStand) ((CraftWorld) block.getWorld()).getTileEntityAt(getX(), getY(), getZ());
     }
 
-    public CraftBrewingStand(final Material material, final BrewingStandBlockEntity te) {
+    public CraftBrewingStand(final Material material, final TileEntityBrewingStand te) {
         super(material);
         brewingStand = te;
     }
@@ -31,7 +31,7 @@ public class CraftBrewingStand extends CraftBlockState implements BrewingStand {
         boolean result = super.update(force, applyPhysics);
 
         if (result) {
-            brewingStand.markDirty();
+            brewingStand.update();
         }
 
         return result;
@@ -46,7 +46,7 @@ public class CraftBrewingStand extends CraftBlockState implements BrewingStand {
     }
 
     @Override
-    public BrewingStandBlockEntity getTileEntity() {
+    public TileEntityBrewingStand getTileEntity() {
         return brewingStand;
     }
 }

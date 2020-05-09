@@ -1,22 +1,23 @@
 package org.bukkit.craftbukkit.entity;
 
-import net.minecraft.entity.mob.ZombiePigmanEntity;
+import net.minecraft.server.EntityPigZombie;
+
 import org.bukkit.craftbukkit.CraftServer;
 import org.bukkit.entity.EntityType;
 import org.bukkit.entity.PigZombie;
 
 public class CraftPigZombie extends CraftZombie implements PigZombie {
 
-    public CraftPigZombie(CraftServer server, ZombiePigmanEntity entity) {
+    public CraftPigZombie(CraftServer server, EntityPigZombie entity) {
         super(server, entity);
     }
 
     public int getAnger() {
-        return getHandle().anger;
+        return getHandle().angerLevel;
     }
 
     public void setAnger(int level) {
-        getHandle().anger = level;
+        getHandle().angerLevel = level;
     }
 
     public void setAngry(boolean angry) {
@@ -28,8 +29,8 @@ public class CraftPigZombie extends CraftZombie implements PigZombie {
     }
 
     @Override
-    public ZombiePigmanEntity getHandle() {
-        return (ZombiePigmanEntity) entity;
+    public EntityPigZombie getHandle() {
+        return (EntityPigZombie) entity;
     }
 
     @Override

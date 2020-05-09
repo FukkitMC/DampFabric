@@ -1,10 +1,11 @@
 package org.bukkit.craftbukkit.entity;
 
 import io.github.fukkitmc.legacy.extra.EntityExtra;
-import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.entity.projectile.FishingBobberEntity;
-import net.minecraft.util.math.BlockPos;
-import net.minecraft.util.math.MathHelper;
+import net.minecraft.server.BlockPosition;
+import net.minecraft.server.EntityFishingHook;
+import net.minecraft.server.EntityHuman;
+import net.minecraft.server.MathHelper;
+
 import org.apache.commons.lang.Validate;
 import org.bukkit.craftbukkit.CraftServer;
 import org.bukkit.entity.EntityType;
@@ -15,7 +16,7 @@ import org.bukkit.projectiles.ProjectileSource;
 public class CraftFish extends AbstractProjectile implements Fish {
     private double biteChance = -1;
 
-    public CraftFish(CraftServer server, FishingBobberEntity entity) {
+    public CraftFish(CraftServer server, EntityFishingHook entity) {
         super(server, entity);
     }
 
@@ -29,13 +30,13 @@ public class CraftFish extends AbstractProjectile implements Fish {
 
     public void setShooter(ProjectileSource shooter) {
         if (shooter instanceof CraftHumanEntity) {
-            getHandle().owner = (PlayerEntity) ((CraftHumanEntity) shooter).entity;
+            getHandle().owner = (EntityHuman) ((CraftHumanEntity) shooter).entity;
         }
     }
 
     @Override
-    public FishingBobberEntity getHandle() {
-        return (FishingBobberEntity) entity;
+    public EntityFishingHook getHandle() {
+        return (EntityFishingHook) entity;
     }
 
     @Override
@@ -48,10 +49,10 @@ public class CraftFish extends AbstractProjectile implements Fish {
     }
 
     public double getBiteChance() {
-        FishingBobberEntity hook = getHandle();
+        EntityFishingHook hook = getHandle();
 
         if (this.biteChance == -1) {
-            if (hook.world.hasRain(new BlockPos(MathHelper.floor(hook.x), MathHelper.floor(hook.y) + 1, MathHelper.floor(hook.z)))) {
+            if (hook.world.isRainingAt(new BlockPosition(MathHelper.floor(hook.locX), MathHelper.floor(hook.locY) + 1, MathHelper.floor(hook.locZ)))) {
                 return 1/300.0;
             }
             return 1/500.0;

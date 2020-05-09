@@ -1,12 +1,13 @@
 package org.bukkit.craftbukkit.potion;
 
-import net.minecraft.entity.effect.StatusEffect;
+import net.minecraft.server.MobEffectList;
+
 import org.bukkit.potion.PotionEffectType;
 
 public class CraftPotionEffectType extends PotionEffectType {
-    private final StatusEffect handle;
+    private final MobEffectList handle;
 
-    public CraftPotionEffectType(StatusEffect handle) {
+    public CraftPotionEffectType(MobEffectList handle) {
         super(handle.id);
         this.handle = handle;
     }
@@ -16,7 +17,7 @@ public class CraftPotionEffectType extends PotionEffectType {
         return handle.getDurationModifier();
     }
 
-    public StatusEffect getHandle() {
+    public MobEffectList getHandle() {
         return handle;
     }
 

@@ -2,11 +2,12 @@ package io.github.fukkitmc.legacy.mixins.extra;
 
 
 import io.github.fukkitmc.legacy.extra.ScoreboardTeamExtra;
-import net.minecraft.scoreboard.AbstractTeam;
-import net.minecraft.scoreboard.Team;
+import net.minecraft.server.BiomeBase;
+import net.minecraft.server.ScoreboardTeam;
+import net.minecraft.server.ScoreboardTeamBase;
 import org.spongepowered.asm.mixin.Mixin;
 
-@Mixin(Team.class)
+@Mixin(ScoreboardTeam.class)
 public class ScoreboardTeamMixin implements ScoreboardTeamExtra {
     @Override
     public boolean canSeeFriendlyInvisibles() {
@@ -14,7 +15,7 @@ public class ScoreboardTeamMixin implements ScoreboardTeamExtra {
     }
 
     @Override
-    public AbstractTeam.VisibilityRule getNameTagVisibility() {
+    public ScoreboardTeamBase.EnumNameTagVisibility getNameTagVisibility() {
         return null;
     }
 }

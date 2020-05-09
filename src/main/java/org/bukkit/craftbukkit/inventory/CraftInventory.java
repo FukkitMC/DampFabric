@@ -6,16 +6,18 @@ import java.util.ListIterator;
 
 import io.github.fukkitmc.legacy.extra.ContainerExtra;
 import io.github.fukkitmc.legacy.extra.IInventoryExtra;
-import net.minecraft.block.entity.BeaconBlockEntity;
-import net.minecraft.block.entity.BrewingStandBlockEntity;
-import net.minecraft.block.entity.DispenserBlockEntity;
-import net.minecraft.block.entity.DropperBlockEntity;
-import net.minecraft.block.entity.FurnaceBlockEntity;
-import net.minecraft.entity.player.PlayerInventory;
-import net.minecraft.inventory.CraftingInventory;
-import net.minecraft.inventory.EnderChestInventory;
 import net.minecraft.server.IHopper;
+import net.minecraft.server.IInventory;
+import net.minecraft.server.InventoryCrafting;
+import net.minecraft.server.InventoryEnderChest;
 import net.minecraft.server.InventoryMerchant;
+import net.minecraft.server.PlayerInventory;
+import net.minecraft.server.TileEntityBeacon;
+import net.minecraft.server.TileEntityBrewingStand;
+import net.minecraft.server.TileEntityDispenser;
+import net.minecraft.server.TileEntityDropper;
+import net.minecraft.server.TileEntityFurnace;
+
 import org.apache.commons.lang.Validate;
 import org.bukkit.entity.HumanEntity;
 import org.bukkit.event.inventory.InventoryType;
@@ -25,18 +27,18 @@ import org.bukkit.inventory.ItemStack;
 import org.bukkit.Material;
 
 public class CraftInventory implements Inventory {
-    protected final net.minecraft.inventory.Inventory inventory;
+    protected final IInventory inventory;
 
-    public CraftInventory(net.minecraft.inventory.Inventory inventory) {
+    public CraftInventory(IInventory inventory) {
         this.inventory = inventory;
     }
 
-    public net.minecraft.inventory.Inventory getInventory() {
+    public IInventory getInventory() {
         return inventory;
     }
 
     public int getSize() {
-        return getInventory().getInvSize();
+        return getInventory().getSize();
     }
 
     public String getName() {
@@ -44,13 +46,13 @@ public class CraftInventory implements Inventory {
     }
 
     public ItemStack getItem(int index) {
-        net.minecraft.item.ItemStack item = getInventory().getInvStack(index);
+        net.minecraft.server.ItemStack item = getInventory().getItem(index);
         return item == null ? null : CraftItemStack.asCraftMirror(item);
     }
 
     public ItemStack[] getContents() {
         ItemStack[] items = new ItemStack[getSize()];
-        net.minecraft.item.ItemStack[] mcItems = ((IInventoryExtra)getInventory()).getContents();
+        net.minecraft.server.ItemStack[] mcItems = ((IInventoryExtra)getInventory()).getContents();
 
         int size = Math.min(items.length, mcItems.length);
         for (int i = 0; i < size; i++) {
@@ -64,7 +66,7 @@ public class CraftInventory implements Inventory {
             throw new IllegalArgumentException("Invalid inventory size; expected " + ((IInventoryExtra)getInventory()).getContents().length + " or less");
         }
 
-        net.minecraft.item.ItemStack[] mcItems = ((IInventoryExtra)getInventory()).getContents();
+        net.minecraft.server.ItemStack[] mcItems = ((IInventoryExtra)getInventory()).getContents();
 
         for (int i = 0; i < mcItems.length; i++) {
             if (i >= items.length) {
@@ -76,7 +78,7 @@ public class CraftInventory implements Inventory {
     }
 
     public void setItem(int index, ItemStack item) {
-        getInventory().setInvStack(index, ((item == null || item.getTypeId() == 0) ? null : CraftItemStack.asNMSCopy(item)));
+        getInventory().setItem(index, ((item == null || item.getTypeId() == 0) ? null : CraftItemStack.asNMSCopy(item)));
     }
 
     public boolean contains(int materialId) {
@@ -370,7 +372,7 @@ public class CraftInventory implements Inventory {
     }
 
     private int getMaxItemStack() {
-        return getInventory().getInvMaxStackAmount();
+        return getInventory().getMaxStackSize();
     }
 
     public void remove(int materialId) {
@@ -427,27 +429,27 @@ public class CraftInventory implements Inventory {
 
     public InventoryType getType() {
         // Thanks to Droppers extending Dispensers, order is important.
-        if (inventory instanceof CraftingInventory) {
-            return inventory.getInvSize() >= 9 ? InventoryType.WORKBENCH : InventoryType.CRAFTING;
+        if (inventory instanceof InventoryCrafting) {
+            return inventory.getSize() >= 9 ? InventoryType.WORKBENCH : InventoryType.CRAFTING;
         } else if (inventory instanceof PlayerInventory) {
             return InventoryType.PLAYER;
-        } else if (inventory instanceof DropperBlockEntity) {
+        } else if (inventory instanceof TileEntityDropper) {
             return InventoryType.DROPPER;
-        } else if (inventory instanceof DispenserBlockEntity) {
+        } else if (inventory instanceof TileEntityDispenser) {
             return InventoryType.DISPENSER;
-        } else if (inventory instanceof FurnaceBlockEntity) {
+        } else if (inventory instanceof TileEntityFurnace) {
             return InventoryType.FURNACE;
         } else if (this instanceof CraftInventoryEnchanting) {
            return InventoryType.ENCHANTING;
-        } else if (inventory instanceof BrewingStandBlockEntity) {
+        } else if (inventory instanceof TileEntityBrewingStand) {
             return InventoryType.BREWING;
         } else if (inventory instanceof CraftInventoryCustom.MinecraftInventory) {
             return ((CraftInventoryCustom.MinecraftInventory) inventory).getType();
-        } else if (inventory instanceof EnderChestInventory) {
+        } else if (inventory instanceof InventoryEnderChest) {
             return InventoryType.ENDER_CHEST;
         } else if (inventory instanceof InventoryMerchant) {
             return InventoryType.MERCHANT;
-        } else if (inventory instanceof BeaconBlockEntity) {
+        } else if (inventory instanceof TileEntityBeacon) {
             return InventoryType.BEACON;
         } else if (this instanceof CraftInventoryAnvil) {
            return InventoryType.ANVIL;
@@ -463,7 +465,7 @@ public class CraftInventory implements Inventory {
     }
 
     public int getMaxStackSize() {
-        return inventory.getInvMaxStackAmount();
+        return inventory.getMaxStackSize();
     }
 
     public void setMaxStackSize(int size) {

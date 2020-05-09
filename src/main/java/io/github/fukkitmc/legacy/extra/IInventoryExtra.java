@@ -1,6 +1,6 @@
 package io.github.fukkitmc.legacy.extra;
 
-import net.minecraft.item.ItemStack;
+import net.minecraft.server.ItemStack;
 import org.bukkit.craftbukkit.entity.CraftHumanEntity;
 
 public interface IInventoryExtra {

@@ -1,6 +1,6 @@
 package io.github.fukkitmc.legacy.extra;
 
-import net.minecraft.entity.Entity;
+import net.minecraft.server.Entity;
 
 public interface EntityDamageSourceIndirectExtra {
 

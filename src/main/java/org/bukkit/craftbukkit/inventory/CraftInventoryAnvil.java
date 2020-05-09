@@ -1,47 +1,48 @@
 package org.bukkit.craftbukkit.inventory;
 
-import net.minecraft.inventory.Inventory;
+import net.minecraft.server.IInventory;
+
 import org.bukkit.inventory.AnvilInventory;
 import org.bukkit.inventory.ItemStack;
 
 public class CraftInventoryAnvil extends CraftInventory implements AnvilInventory {
-    private final Inventory resultInventory;
+    private final IInventory resultInventory;
 
-    public CraftInventoryAnvil(Inventory inventory, Inventory resultInventory) {
+    public CraftInventoryAnvil(IInventory inventory, IInventory resultInventory) {
         super(inventory);
         this.resultInventory = resultInventory;
     }
 
-    public Inventory getResultInventory() {
+    public IInventory getResultInventory() {
         return resultInventory;
     }
 
-    public Inventory getIngredientsInventory() {
+    public IInventory getIngredientsInventory() {
         return inventory;
     }
 
     @Override
     public ItemStack getItem(int slot) {
-        if (slot < getIngredientsInventory().getInvSize()) {
-            net.minecraft.item.ItemStack item = getIngredientsInventory().getInvStack(slot);
+        if (slot < getIngredientsInventory().getSize()) {
+            net.minecraft.server.ItemStack item = getIngredientsInventory().getItem(slot);
             return item == null ? null : CraftItemStack.asCraftMirror(item);
         } else {
-            net.minecraft.item.ItemStack item = getResultInventory().getInvStack(slot - getIngredientsInventory().getInvSize());
+            net.minecraft.server.ItemStack item = getResultInventory().getItem(slot - getIngredientsInventory().getSize());
             return item == null ? null : CraftItemStack.asCraftMirror(item);
         }
     }
 
     @Override
     public void setItem(int index, ItemStack item) {
-        if (index < getIngredientsInventory().getInvSize()) {
-            getIngredientsInventory().setInvStack(index, (item == null ? null : CraftItemStack.asNMSCopy(item)));
+        if (index < getIngredientsInventory().getSize()) {
+            getIngredientsInventory().setItem(index, (item == null ? null : CraftItemStack.asNMSCopy(item)));
         } else {
-            getResultInventory().setInvStack((index - getIngredientsInventory().getInvSize()), (item == null ? null : CraftItemStack.asNMSCopy(item)));
+            getResultInventory().setItem((index - getIngredientsInventory().getSize()), (item == null ? null : CraftItemStack.asNMSCopy(item)));
         }
     }
 
     @Override
     public int getSize() {
-        return getResultInventory().getInvSize() + getIngredientsInventory().getInvSize();
+        return getResultInventory().getSize() + getIngredientsInventory().getSize();
     }
 }

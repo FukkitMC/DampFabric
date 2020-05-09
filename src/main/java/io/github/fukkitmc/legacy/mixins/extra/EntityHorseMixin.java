@@ -2,9 +2,10 @@ package io.github.fukkitmc.legacy.mixins.extra;
 
 
 import io.github.fukkitmc.legacy.extra.EntityHorseExtra;
-import net.minecraft.entity.passive.HorseBaseEntity;
+import net.minecraft.server.BiomeBase;
+import net.minecraft.server.EntityHorse;
 import org.spongepowered.asm.mixin.Mixin;
 
-@Mixin(HorseBaseEntity.class)
+@Mixin(EntityHorse.class)
 public class EntityHorseMixin implements EntityHorseExtra {
 }

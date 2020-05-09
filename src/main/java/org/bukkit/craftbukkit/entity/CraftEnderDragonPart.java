@@ -1,5 +1,6 @@
 package org.bukkit.craftbukkit.entity;
 
+import net.minecraft.server.EntityComplexPart;
 import org.bukkit.craftbukkit.CraftServer;
 import org.bukkit.entity.EnderDragon;
 import org.bukkit.entity.EnderDragonPart;
@@ -7,7 +8,7 @@ import org.bukkit.entity.Entity;
 import org.bukkit.util.NumberConversions;
 
 public class CraftEnderDragonPart extends CraftComplexPart implements EnderDragonPart {
-    public CraftEnderDragonPart(CraftServer server, net.minecraft.entity.boss.dragon.EnderDragonPart entity) {
+    public CraftEnderDragonPart(CraftServer server, EntityComplexPart entity) {
         super(server, entity);
     }
 
@@ -17,8 +18,8 @@ public class CraftEnderDragonPart extends CraftComplexPart implements EnderDrago
     }
 
     @Override
-    public net.minecraft.entity.boss.dragon.EnderDragonPart getHandle() {
-        return (net.minecraft.entity.boss.dragon.EnderDragonPart) entity;
+    public EntityComplexPart getHandle() {
+        return (EntityComplexPart) entity;
     }
 
     @Override

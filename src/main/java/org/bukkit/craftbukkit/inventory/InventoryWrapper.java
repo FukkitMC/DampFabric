@@ -2,17 +2,19 @@ package org.bukkit.craftbukkit.inventory;
 
 import java.util.ArrayList;
 import java.util.List;
-import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.item.ItemStack;
-import net.minecraft.text.Text;
+
 import io.github.fukkitmc.legacy.extra.IInventoryExtra;
+import net.minecraft.server.EntityHuman;
+import net.minecraft.server.IChatBaseComponent;
+import net.minecraft.server.IInventory;
+import net.minecraft.server.ItemStack;
 import org.bukkit.craftbukkit.entity.CraftHumanEntity;
 import org.bukkit.craftbukkit.util.CraftChatMessage;
 import org.bukkit.entity.HumanEntity;
 import org.bukkit.inventory.Inventory;
 import org.bukkit.inventory.InventoryHolder;
 
-public class InventoryWrapper implements net.minecraft.inventory.Inventory, IInventoryExtra {
+public class InventoryWrapper implements IInventory, IInventoryExtra {
 
     private final Inventory inventory;
     private final List<HumanEntity> viewers = new ArrayList<HumanEntity>();
@@ -22,44 +24,44 @@ public class InventoryWrapper implements net.minecraft.inventory.Inventory, IInv
     }
 
     @Override
-    public int getInvSize() {
+    public int getSize() {
         return inventory.getSize();
     }
 
     @Override
-    public ItemStack getInvStack(int i) {
+    public ItemStack getItem(int i) {
         return CraftItemStack.asNMSCopy(inventory.getItem(i));
     }
 
     @Override
-    public ItemStack takeInvStack(int i, int j) {
+    public ItemStack splitStack(int i, int j) {
         // Copied from CraftItemStack
-        ItemStack stack = getInvStack(i);
+        ItemStack stack = getItem(i);
         ItemStack result;
         if (stack == null) {
             return null;
         }
         if (stack.count <= j) {
-            this.setInvStack(i, null);
+            this.setItem(i, null);
             result = stack;
         } else {
             result = CraftItemStack.copyNMSStack(stack, j);
             stack.count -= j;
         }
-        this.markDirty();
+        this.update();
         return result;
     }
 
     @Override
-    public ItemStack removeInvStack(int i) {
+    public ItemStack splitWithoutUpdate(int i) {
         // Copied from CraftItemStack
-        ItemStack stack = getInvStack(i);
+        ItemStack stack = getItem(i);
         ItemStack result;
         if (stack == null) {
             return null;
         }
         if (stack.count <= 1) {
-            this.setInvStack(i, null);
+            this.setItem(i, null);
             result = stack;
         } else {
             result = CraftItemStack.copyNMSStack(stack, 1);
@@ -69,34 +71,34 @@ public class InventoryWrapper implements net.minecraft.inventory.Inventory, IInv
     }
 
     @Override
-    public void setInvStack(int i, ItemStack itemstack) {
+    public void setItem(int i, ItemStack itemstack) {
         inventory.setItem(i, CraftItemStack.asBukkitCopy(itemstack));
     }
 
     @Override
-    public int getInvMaxStackAmount() {
+    public int getMaxStackSize() {
         return inventory.getMaxStackSize();
     }
 
     @Override
-    public void markDirty() {
+    public void update() {
     }
 
     @Override
-    public boolean canPlayerUseInv(PlayerEntity entityhuman) {
+    public boolean a(EntityHuman entityhuman) {
         return true;
     }
 
     @Override
-    public void onInvOpen(PlayerEntity entityhuman) {
+    public void startOpen(EntityHuman entityhuman) {
     }
 
     @Override
-    public void onInvClose(PlayerEntity entityhuman) {
+    public void closeContainer(EntityHuman entityhuman) {
     }
 
     @Override
-    public boolean isValidInvStack(int i, ItemStack itemstack) {
+    public boolean b(int i, ItemStack itemstack) {
         return true;
     }
 
@@ -121,11 +123,11 @@ public class InventoryWrapper implements net.minecraft.inventory.Inventory, IInv
 
     @Override
     public ItemStack[] getContents() {
-        int size = getInvSize();
+        int size = getSize();
         ItemStack[] items = new ItemStack[size];
 
         for (int i = 0; i < size; i++) {
-            items[i] = getInvStack(i);
+            items[i] = getItem(i);
         }
 
         return items;
@@ -167,7 +169,7 @@ public class InventoryWrapper implements net.minecraft.inventory.Inventory, IInv
     }
 
     @Override
-    public Text getBossBarTitle() {
+    public IChatBaseComponent getScoreboardDisplayName() {
         return CraftChatMessage.fromString(getName())[0];
     }
 }

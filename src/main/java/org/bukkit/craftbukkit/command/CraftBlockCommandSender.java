@@ -1,9 +1,10 @@
 package org.bukkit.craftbukkit.command;
 
 import io.github.fukkitmc.legacy.extra.WorldExtra;
-import net.minecraft.command.CommandSource;
-import net.minecraft.text.Text;
-import net.minecraft.world.CommandBlockExecutor;
+import net.minecraft.server.ICommandListener;
+import net.minecraft.server.CommandBlockListenerAbstract;
+import net.minecraft.server.IChatBaseComponent;
+
 import org.bukkit.block.Block;
 import org.bukkit.command.BlockCommandSender;
 import org.bukkit.craftbukkit.util.CraftChatMessage;
@@ -12,19 +13,19 @@ import org.bukkit.craftbukkit.util.CraftChatMessage;
  * Represents input from a command block
  */
 public class CraftBlockCommandSender extends ServerCommandSender implements BlockCommandSender {
-    private final CommandBlockExecutor commandBlock;
+    private final CommandBlockListenerAbstract commandBlock;
 
-    public CraftBlockCommandSender(CommandBlockExecutor commandBlockListenerAbstract) {
+    public CraftBlockCommandSender(CommandBlockListenerAbstract commandBlockListenerAbstract) {
         super();
         this.commandBlock = commandBlockListenerAbstract;
     }
 
     public Block getBlock() {
-        return ((WorldExtra)commandBlock.getWorld()).getWorld().getBlockAt(commandBlock.getBlockPos().getX(), commandBlock.getBlockPos().getY(), commandBlock.getBlockPos().getZ());
+        return ((WorldExtra)commandBlock.getWorld()).getWorld().getBlockAt(commandBlock.getChunkCoordinates().getX(), commandBlock.getChunkCoordinates().getY(), commandBlock.getChunkCoordinates().getZ());
     }
 
     public void sendMessage(String message) {
-        for (Text component : CraftChatMessage.fromString(message)) {
+        for (IChatBaseComponent component : CraftChatMessage.fromString(message)) {
             commandBlock.sendMessage(component);
         }
     }
@@ -47,7 +48,7 @@ public class CraftBlockCommandSender extends ServerCommandSender implements Bloc
         throw new UnsupportedOperationException("Cannot change operator status of a block");
     }
 
-    public CommandSource getTileEntity() {
+    public ICommandListener getTileEntity() {
         return commandBlock;
     }
 }

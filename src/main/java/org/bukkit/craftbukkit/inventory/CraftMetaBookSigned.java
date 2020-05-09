@@ -1,17 +1,19 @@
 package org.bukkit.craftbukkit.inventory;
 
 import java.util.Map;
-import net.minecraft.nbt.CompoundTag;
-import net.minecraft.nbt.ListTag;
-import net.minecraft.nbt.StringTag;
-import net.minecraft.text.Text;
-import net.minecraft.text.Text.class_1445;
+
+import net.minecraft.server.NBTTagCompound;
+import net.minecraft.server.NBTTagList;
+
 import org.bukkit.Material;
 import org.bukkit.configuration.serialization.DelegateDeserialization;
 import org.bukkit.craftbukkit.inventory.CraftMetaItem.SerializableMeta;
 import org.bukkit.inventory.meta.BookMeta;
 
 import com.google.common.collect.ImmutableMap.Builder;
+import net.minecraft.server.IChatBaseComponent.ChatSerializer;
+import net.minecraft.server.IChatBaseComponent;
+import net.minecraft.server.NBTTagString;
 
 @DelegateDeserialization(SerializableMeta.class)
 class CraftMetaBookSigned extends CraftMetaBook implements BookMeta {
@@ -20,22 +22,22 @@ class CraftMetaBookSigned extends CraftMetaBook implements BookMeta {
         super(meta);
     }
 
-    CraftMetaBookSigned(CompoundTag tag) {
+    CraftMetaBookSigned(NBTTagCompound tag) {
         super(tag, false);
 
         boolean resolved = true;
-        if (tag.contains(RESOLVED.NBT)) {
+        if (tag.hasKey(RESOLVED.NBT)) {
             resolved = tag.getBoolean(RESOLVED.NBT);
         }
 
-        if (tag.contains(BOOK_PAGES.NBT)) {
-            ListTag pages = tag.getList(BOOK_PAGES.NBT, 8);
+        if (tag.hasKey(BOOK_PAGES.NBT)) {
+            NBTTagList pages = tag.getList(BOOK_PAGES.NBT, 8);
 
             for (int i = 0; i < pages.size(); i++) {
                 String page = pages.getString(i);
                 if (resolved) {
                     try {
-                        this.pages.add(class_1445.a(page));
+                        this.pages.add(ChatSerializer.a(page));
                         continue;
                     } catch (Exception e) {
                         // Ignore and treat as an old book
@@ -51,36 +53,36 @@ class CraftMetaBookSigned extends CraftMetaBook implements BookMeta {
     }
 
     @Override
-    void applyToItem(CompoundTag itemData) {
+    void applyToItem(NBTTagCompound itemData) {
         super.applyToItem(itemData, false);
 
         if (hasTitle()) {
-            itemData.putString(BOOK_TITLE.NBT, this.title);
+            itemData.setString(BOOK_TITLE.NBT, this.title);
         } else {
-            itemData.putString(BOOK_TITLE.NBT, " ");
+            itemData.setString(BOOK_TITLE.NBT, " ");
         }
 
         if (hasAuthor()) {
-            itemData.putString(BOOK_AUTHOR.NBT, this.author);
+            itemData.setString(BOOK_AUTHOR.NBT, this.author);
         } else {
-            itemData.putString(BOOK_AUTHOR.NBT, " ");
+            itemData.setString(BOOK_AUTHOR.NBT, " ");
         }
 
         if (hasPages()) {
-            ListTag list = new ListTag();
-            for (Text page : pages) {
-                list.add(new StringTag(
-                    class_1445.a(page)
+            NBTTagList list = new NBTTagList();
+            for (IChatBaseComponent page : pages) {
+                list.add(new NBTTagString(
+                    ChatSerializer.a(page)
                 ));
             }
-            itemData.put(BOOK_PAGES.NBT, list);
+            itemData.set(BOOK_PAGES.NBT, list);
         }        
-        itemData.putBoolean(RESOLVED.NBT, true);
+        itemData.setBoolean(RESOLVED.NBT, true);
 
         if (generation != null) {
-            itemData.putInt(GENERATION.NBT, generation);
+            itemData.setInt(GENERATION.NBT, generation);
         } else {
-            itemData.putInt(GENERATION.NBT, 0);
+            itemData.setInt(GENERATION.NBT, 0);
         }
     }
 

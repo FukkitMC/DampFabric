@@ -7,21 +7,21 @@ import org.bukkit.enchantments.EnchantmentWrapper;
 import org.bukkit.inventory.ItemStack;
 
 public class CraftEnchantment extends Enchantment {
-    private final net.minecraft.enchantment.Enchantment target;
+    private final net.minecraft.server.Enchantment target;
 
-    public CraftEnchantment(net.minecraft.enchantment.Enchantment target) {
+    public CraftEnchantment(net.minecraft.server.Enchantment target) {
         super(target.id);
         this.target = target;
     }
 
     @Override
     public int getMaxLevel() {
-        return target.getMaximumLevel();
+        return target.getMaxLevel();
     }
 
     @Override
     public int getStartLevel() {
-        return target.getMinimumLevel();
+        return target.getStartLevel();
     }
 
     @Override
@@ -54,7 +54,7 @@ public class CraftEnchantment extends Enchantment {
 
     @Override
     public boolean canEnchantItem(ItemStack item) {
-        return target.isAcceptableItem(CraftItemStack.asNMSCopy(item));
+        return target.canEnchant(CraftItemStack.asNMSCopy(item));
     }
 
     @Override
@@ -115,7 +115,7 @@ public class CraftEnchantment extends Enchantment {
         }
     }
 
-    public static net.minecraft.enchantment.Enchantment getRaw(Enchantment enchantment) {
+    public static net.minecraft.server.Enchantment getRaw(Enchantment enchantment) {
         if (enchantment instanceof EnchantmentWrapper) {
             enchantment = ((EnchantmentWrapper) enchantment).getEnchantment();
         }
@@ -136,6 +136,6 @@ public class CraftEnchantment extends Enchantment {
             return false;
         }
         CraftEnchantment ench = (CraftEnchantment) other;
-        return !target.differs(ench.target);
+        return !target.a(ench.target);
     }
 }

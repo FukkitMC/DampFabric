@@ -1,9 +1,11 @@
 package org.bukkit.craftbukkit.scoreboard;
 
 import java.util.Map;
-import net.minecraft.scoreboard.Scoreboard;
-import net.minecraft.scoreboard.ScoreboardObjective;
-import net.minecraft.scoreboard.ScoreboardPlayerScore;
+
+import net.minecraft.server.Scoreboard;
+import net.minecraft.server.ScoreboardObjective;
+import net.minecraft.server.ScoreboardScore;
+
 import org.bukkit.Bukkit;
 import org.bukkit.OfflinePlayer;
 import org.bukkit.scoreboard.Objective;
@@ -39,9 +41,9 @@ final class CraftScore implements Score {
     public int getScore() throws IllegalStateException {
         Scoreboard board = objective.checkState().board;
 
-        if (board.getKnownPlayers().contains(entry)) { // Lazy
-            Map<ScoreboardObjective, ScoreboardPlayerScore> scores = board.getPlayerObjectives(entry);
-            ScoreboardPlayerScore score = scores.get(objective.getHandle());
+        if (board.getPlayers().contains(entry)) { // Lazy
+            Map<ScoreboardObjective, ScoreboardScore> scores = board.getPlayerObjectives(entry);
+            ScoreboardScore score = scores.get(objective.getHandle());
             if (score != null) { // Lazy
                 return score.getScore();
             }
@@ -51,7 +53,7 @@ final class CraftScore implements Score {
     }
 
     public void setScore(int score) throws IllegalStateException {
-        objective.checkState().board.getPlayerScore(entry, objective.getHandle()).setScore(score);
+        objective.checkState().board.getPlayerScoreForObjective(entry, objective.getHandle()).setScore(score);
     }
 
     public CraftScoreboard getScoreboard() {

@@ -1,18 +1,18 @@
 package org.bukkit.craftbukkit.entity;
 
-import net.minecraft.entity.passive.IronGolemEntity;
+import net.minecraft.server.EntityIronGolem;
 import org.bukkit.craftbukkit.CraftServer;
 import org.bukkit.entity.EntityType;
 import org.bukkit.entity.IronGolem;
 
 public class CraftIronGolem extends CraftGolem implements IronGolem {
-    public CraftIronGolem(CraftServer server, IronGolemEntity entity) {
+    public CraftIronGolem(CraftServer server, EntityIronGolem entity) {
         super(server, entity);
     }
 
     @Override
-    public IronGolemEntity getHandle() {
-        return (IronGolemEntity) entity;
+    public EntityIronGolem getHandle() {
+        return (EntityIronGolem) entity;
     }
 
     @Override

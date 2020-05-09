@@ -1,6 +1,6 @@
 package io.github.fukkitmc.legacy.extra;
 
-import net.minecraft.world.chunk.Chunk;
+import net.minecraft.server.Chunk;
 
 public interface ChunkProviderServerExtra {
 

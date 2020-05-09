@@ -1,6 +1,6 @@
 package org.bukkit.craftbukkit.generator;
 
-import net.minecraft.world.World;
+import net.minecraft.server.World;
 
 /**
  * This class is useless. Just fyi.

@@ -1,15 +1,15 @@
 package io.github.fukkitmc.legacy.extra;
 
-import net.minecraft.entity.player.ServerPlayerEntity;
-import net.minecraft.server.world.ServerWorld;
+import net.minecraft.server.EntityPlayer;
+import net.minecraft.server.WorldServer;
 import org.bukkit.Location;
 
 public interface PlayerListExtra {
 
-    ServerPlayerEntity moveToWorld(ServerPlayerEntity entityplayer, int i, boolean flag, Location location, boolean avoidSuffocation);
+    EntityPlayer moveToWorld(EntityPlayer entityplayer, int i, boolean flag, Location location, boolean avoidSuffocation);
 
 
-    void setPlayerFileData(ServerWorld[] aworldserver);
+    void setPlayerFileData(WorldServer[] aworldserver);
 
-    void onPlayerJoin(ServerPlayerEntity player, String joinMessage);
+    void onPlayerJoin(EntityPlayer player, String joinMessage);
 }

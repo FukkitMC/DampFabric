@@ -3,19 +3,21 @@ package org.bukkit.craftbukkit.inventory;
 import java.util.Iterator;
 
 import io.github.fukkitmc.legacy.extra.IRecipeExtra;
+import net.minecraft.server.ItemStack;
 import org.bukkit.inventory.Recipe;
-import net.minecraft.item.ItemStack;
-import net.minecraft.recipe.Recipes;
+
+import net.minecraft.server.CraftingManager;
+import net.minecraft.server.IRecipe;
 import net.minecraft.server.RecipesFurnace;
 
 public class RecipeIterator implements Iterator<Recipe> {
-    private final Iterator<net.minecraft.recipe.Recipe> recipes;
+    private final Iterator<IRecipe> recipes;
     private final Iterator smeltingCustom;
-    private final Iterator<net.minecraft.item.ItemStack> smeltingVanilla;
+    private final Iterator<net.minecraft.server.ItemStack> smeltingVanilla;
     private Iterator<?> removeFrom = null;
 
     public RecipeIterator() {
-        this.recipes = Recipes.getRecipes().getRecipes().iterator();
+        this.recipes = CraftingManager.getInstance().getRecipes().iterator();
         this.smeltingCustom = RecipesFurnace.getInstance().customRecipes.keySet().iterator();
         this.smeltingVanilla = RecipesFurnace.getInstance().recipes.keySet().iterator();
     }
@@ -29,7 +31,7 @@ public class RecipeIterator implements Iterator<Recipe> {
             removeFrom = recipes;
             return ((IRecipeExtra)recipes.next()).toBukkitRecipe();
         } else {
-            net.minecraft.item.ItemStack item;
+            net.minecraft.server.ItemStack item;
             if (smeltingCustom.hasNext()) {
                 removeFrom = smeltingCustom;
                 item = (ItemStack) smeltingCustom.next();

@@ -1,7 +1,8 @@
 package org.bukkit.craftbukkit.entity;
 
 import io.github.fukkitmc.legacy.extra.EntityExtra;
-import net.minecraft.entity.boss.dragon.EnderDragonPart;
+import net.minecraft.server.EntityComplexPart;
+import net.minecraft.server.EntityEnderDragon;
 import org.bukkit.craftbukkit.CraftServer;
 import org.bukkit.entity.ComplexEntityPart;
 import org.bukkit.entity.ComplexLivingEntity;
@@ -9,7 +10,7 @@ import org.bukkit.entity.EntityType;
 import org.bukkit.event.entity.EntityDamageEvent;
 
 public class CraftComplexPart extends CraftEntity implements ComplexEntityPart {
-    public CraftComplexPart(CraftServer server, EnderDragonPart entity) {
+    public CraftComplexPart(CraftServer server, EntityComplexPart entity) {
         super(server, entity);
     }
 
@@ -28,8 +29,8 @@ public class CraftComplexPart extends CraftEntity implements ComplexEntityPart {
     }
 
     @Override
-    public EnderDragonPart getHandle() {
-        return (EnderDragonPart) entity;
+    public EntityComplexPart getHandle() {
+        return (EntityComplexPart) entity;
     }
 
     @Override

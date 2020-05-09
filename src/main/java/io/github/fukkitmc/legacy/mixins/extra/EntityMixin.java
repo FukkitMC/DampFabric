@@ -2,13 +2,7 @@ package io.github.fukkitmc.legacy.mixins.extra;
 
 import io.github.fukkitmc.legacy.extra.EntityExtra;
 import io.github.fukkitmc.legacy.extra.WorldExtra;
-import net.minecraft.command.CommandStats;
-import net.minecraft.entity.Entity;
-import net.minecraft.entity.data.DataTracker;
-import net.minecraft.nbt.CompoundTag;
-import net.minecraft.nbt.ListTag;
 import net.minecraft.server.*;
-import net.minecraft.world.World;
 import org.bukkit.craftbukkit.entity.CraftEntity;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
@@ -19,7 +13,7 @@ import java.util.UUID;
 public abstract class EntityMixin implements EntityExtra {
 
     @Shadow
-    public DataTracker datawatcher;
+    public DataWatcher datawatcher;
 
     @Shadow
     public int fireTicks;
@@ -30,7 +24,7 @@ public abstract class EntityMixin implements EntityExtra {
     @Shadow
     public float pitch;
     @Shadow
-    public CommandStats au;
+    public CommandObjectiveExecutor au;
     @Shadow
     public double R;
     @Shadow
@@ -41,7 +35,7 @@ public abstract class EntityMixin implements EntityExtra {
     public int dimension;
 
     @Shadow
-    public abstract ListTag a(double... ds);
+    public abstract NBTTagList a(double... ds);
 
     @Shadow
     public abstract boolean R();
@@ -50,10 +44,10 @@ public abstract class EntityMixin implements EntityExtra {
     public abstract UUID getUniqueID();
 
     @Shadow
-    public abstract ListTag a(float... fs);
+    public abstract NBTTagList a(float... fs);
 
     @Shadow
-    public abstract void b(CompoundTag nBTTagCompound);
+    public abstract void b(NBTTagCompound nBTTagCompound);
 
     @Override
     public CraftEntity getBukkitEntity() {

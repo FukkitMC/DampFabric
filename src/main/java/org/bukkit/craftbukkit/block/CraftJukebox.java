@@ -1,11 +1,7 @@
 package org.bukkit.craftbukkit.block;
 
-import net.minecraft.block.Blocks;
-import net.minecraft.block.JukeboxBlock;
-import net.minecraft.block.JukeboxBlock.TileEntityRecordPlayer;
-import net.minecraft.item.ItemStack;
 import net.minecraft.server.*;
-import net.minecraft.util.math.BlockPos;
+import net.minecraft.server.BlockJukeBox.TileEntityRecordPlayer;
 import org.bukkit.Effect;
 import org.bukkit.Material;
 import org.bukkit.block.Block;
@@ -50,15 +46,15 @@ public class CraftJukebox extends CraftBlockState implements Jukebox {
         if (!isPlaced()) {
             return;
         }
-        jukebox.markDirty();
+        jukebox.update();
         if (record == Material.AIR) {
-            world.getHandle().setBlockState(new BlockPos(getX(), getY(), getZ()),
-                Blocks.JUKEBOX.getDefaultState()
-                    .with(JukeboxBlock.HAS_RECORD, false), 3);
+            world.getHandle().setTypeAndData(new BlockPosition(getX(), getY(), getZ()),
+                Blocks.JUKEBOX.getBlockData()
+                    .set(BlockJukeBox.HAS_RECORD, false), 3);
         } else {
-            world.getHandle().setBlockState(new BlockPos(getX(), getY(), getZ()),
-                Blocks.JUKEBOX.getDefaultState()
-                    .with(JukeboxBlock.HAS_RECORD, true), 3);
+            world.getHandle().setTypeAndData(new BlockPosition(getX(), getY(), getZ()),
+                Blocks.JUKEBOX.getBlockData()
+                    .set(BlockJukeBox.HAS_RECORD, true), 3);
         }
         world.playEffect(getLocation(), Effect.RECORD_PLAY, record.getId());
     }
@@ -70,7 +66,7 @@ public class CraftJukebox extends CraftBlockState implements Jukebox {
     public boolean eject() {
         requirePlaced();
         boolean result = isPlaying();
-        ((JukeboxBlock) Blocks.JUKEBOX).dropRecord(world.getHandle(), new BlockPos(getX(), getY(), getZ()), null);
+        ((BlockJukeBox) Blocks.JUKEBOX).dropRecord(world.getHandle(), new BlockPosition(getX(), getY(), getZ()), null);
         return result;
     }
 

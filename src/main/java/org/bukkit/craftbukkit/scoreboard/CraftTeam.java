@@ -1,8 +1,9 @@
 package org.bukkit.craftbukkit.scoreboard;
 
 import java.util.Set;
-import net.minecraft.scoreboard.AbstractTeam.VisibilityRule;
+
 import io.github.fukkitmc.legacy.extra.ScoreboardTeamExtra;
+import net.minecraft.server.ScoreboardTeamBase.EnumNameTagVisibility;
 import org.apache.commons.lang.Validate;
 import org.bukkit.Bukkit;
 import org.bukkit.OfflinePlayer;
@@ -11,10 +12,12 @@ import org.bukkit.scoreboard.Team;
 
 import com.google.common.collect.ImmutableSet;
 
-final class CraftTeam extends CraftScoreboardComponent implements Team {
-    private final net.minecraft.scoreboard.Team team;
+import net.minecraft.server.ScoreboardTeam;
 
-    CraftTeam(CraftScoreboard scoreboard, net.minecraft.scoreboard.Team team) {
+final class CraftTeam extends CraftScoreboardComponent implements Team {
+    private final ScoreboardTeam team;
+
+    CraftTeam(CraftScoreboard scoreboard, ScoreboardTeam team) {
         super(scoreboard);
         this.team = team;
     }
@@ -70,13 +73,13 @@ final class CraftTeam extends CraftScoreboardComponent implements Team {
     public boolean allowFriendlyFire() throws IllegalStateException {
         CraftScoreboard scoreboard = checkState();
 
-        return team.isFriendlyFireAllowed();
+        return team.allowFriendlyFire();
     }
 
     public void setAllowFriendlyFire(boolean enabled) throws IllegalStateException {
         CraftScoreboard scoreboard = checkState();
 
-        team.setFriendlyFireAllowed(enabled);
+        team.setAllowFriendlyFire(enabled);
     }
 
     public boolean canSeeFriendlyInvisibles() throws IllegalStateException {
@@ -88,7 +91,7 @@ final class CraftTeam extends CraftScoreboardComponent implements Team {
     public void setCanSeeFriendlyInvisibles(boolean enabled) throws IllegalStateException {
         CraftScoreboard scoreboard = checkState();
 
-        team.setShowFriendlyInvisibles(enabled);
+        team.setCanSeeFriendlyInvisibles(enabled);
     }
 
     public NameTagVisibility getNameTagVisibility() throws IllegalArgumentException {
@@ -100,14 +103,14 @@ final class CraftTeam extends CraftScoreboardComponent implements Team {
     public void setNameTagVisibility(NameTagVisibility visibility) throws IllegalArgumentException {
         CraftScoreboard scoreboard = checkState();
 
-        team.setNameTagVisibilityRule(bukkitToNotch(visibility));
+        team.setNameTagVisibility(bukkitToNotch(visibility));
     }
 
     public Set<OfflinePlayer> getPlayers() throws IllegalStateException {
         CraftScoreboard scoreboard = checkState();
 
         ImmutableSet.Builder<OfflinePlayer> players = ImmutableSet.builder();
-        for (String playerName : team.getPlayerList()) {
+        for (String playerName : team.getPlayerNameSet()) {
             players.add(Bukkit.getOfflinePlayer(playerName));
         }
         return players.build();
@@ -118,7 +121,7 @@ final class CraftTeam extends CraftScoreboardComponent implements Team {
         CraftScoreboard scoreboard = checkState();
 
         ImmutableSet.Builder<String> entries = ImmutableSet.builder();
-        for (String playerName: team.getPlayerList()){
+        for (String playerName: team.getPlayerNameSet()){
             entries.add(playerName);
         }
         return entries.build();
@@ -127,7 +130,7 @@ final class CraftTeam extends CraftScoreboardComponent implements Team {
     public int getSize() throws IllegalStateException {
         CraftScoreboard scoreboard = checkState();
 
-        return team.getPlayerList().size();
+        return team.getPlayerNameSet().size();
     }
 
     public void addPlayer(OfflinePlayer player) throws IllegalStateException, IllegalArgumentException {
@@ -151,7 +154,7 @@ final class CraftTeam extends CraftScoreboardComponent implements Team {
         Validate.notNull(entry, "Entry cannot be null");
         CraftScoreboard scoreboard = checkState();
 
-        if (!team.getPlayerList().contains(entry)) {
+        if (!team.getPlayerNameSet().contains(entry)) {
             return false;
         }
 
@@ -169,7 +172,7 @@ final class CraftTeam extends CraftScoreboardComponent implements Team {
 
         CraftScoreboard scoreboard = checkState();
 
-        return team.getPlayerList().contains(entry);
+        return team.getPlayerNameSet().contains(entry);
     }
 
     @Override
@@ -179,22 +182,22 @@ final class CraftTeam extends CraftScoreboardComponent implements Team {
         scoreboard.board.removeTeam(team);
     }
 
-    public static VisibilityRule bukkitToNotch(NameTagVisibility visibility) {
+    public static EnumNameTagVisibility bukkitToNotch(NameTagVisibility visibility) {
         switch (visibility) {
             case ALWAYS:
-                return VisibilityRule.ALWAYS;
+                return EnumNameTagVisibility.ALWAYS;
             case NEVER:
-                return VisibilityRule.NEVER;
+                return EnumNameTagVisibility.NEVER;
             case HIDE_FOR_OTHER_TEAMS:
-                return VisibilityRule.HIDE_FOR_OTHER_TEAMS;
+                return EnumNameTagVisibility.HIDE_FOR_OTHER_TEAMS;
             case HIDE_FOR_OWN_TEAM:
-                return VisibilityRule.HIDE_FOR_OWN_TEAM;
+                return EnumNameTagVisibility.HIDE_FOR_OWN_TEAM;
             default:
                 throw new IllegalArgumentException("Unknown visibility level " + visibility);
         }
     }
 
-    public static NameTagVisibility notchToBukkit(VisibilityRule visibility) {
+    public static NameTagVisibility notchToBukkit(EnumNameTagVisibility visibility) {
         switch (visibility) {
             case ALWAYS:
                 return NameTagVisibility.ALWAYS;

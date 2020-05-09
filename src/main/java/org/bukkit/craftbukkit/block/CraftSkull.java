@@ -2,8 +2,8 @@ package org.bukkit.craftbukkit.block;
 
 import com.mojang.authlib.GameProfile;
 import io.github.fukkitmc.legacy.extra.MinecraftServerExtra;
-import net.minecraft.block.entity.SkullBlockEntity;
 import net.minecraft.server.MinecraftServer;
+import net.minecraft.server.TileEntitySkull;
 import org.bukkit.Material;
 
 import org.bukkit.SkullType;
@@ -14,7 +14,7 @@ import org.bukkit.craftbukkit.CraftWorld;
 
 public class CraftSkull extends CraftBlockState implements Skull {
     private static final int MAX_OWNER_LENGTH = 16;
-    private final SkullBlockEntity skull;
+    private final TileEntitySkull skull;
     private GameProfile profile;
     private SkullType skullType;
     private byte rotation;
@@ -23,16 +23,16 @@ public class CraftSkull extends CraftBlockState implements Skull {
         super(block);
 
         CraftWorld world = (CraftWorld) block.getWorld();
-        skull = (SkullBlockEntity) world.getTileEntityAt(getX(), getY(), getZ());
-        profile = skull.getOwner();
+        skull = (TileEntitySkull) world.getTileEntityAt(getX(), getY(), getZ());
+        profile = skull.getGameProfile();
         skullType = getSkullType(skull.getSkullType());
         rotation = (byte) skull.rotation;
     }
 
-    public CraftSkull(final Material material, final SkullBlockEntity te) {
+    public CraftSkull(final Material material, final TileEntitySkull te) {
         super(material);
         skull = te;
-        profile = skull.getOwner();
+        profile = skull.getGameProfile();
         skullType = getSkullType(skull.getSkullType());
         rotation = (byte) skull.rotation;
     }
@@ -160,7 +160,7 @@ public class CraftSkull extends CraftBlockState implements Skull {
             return false;
         }
 
-        GameProfile profile = ((MinecraftServerExtra)MinecraftServer.getServer()).getUserCache().findByName(name);
+        GameProfile profile = ((MinecraftServerExtra)MinecraftServer.getServer()).getUserCache().getProfile(name);
         if (profile == null) {
             return false;
         }
@@ -199,20 +199,20 @@ public class CraftSkull extends CraftBlockState implements Skull {
 
         if (result) {
             if (skullType == SkullType.PLAYER) {
-                skull.setOwnerAndType(profile);
+                skull.setGameProfile(profile);
             } else {
                 skull.setSkullType(getSkullType(skullType));
             }
 
             skull.setRotation(rotation);
-            skull.markDirty();
+            skull.update();
         }
 
         return result;
     }
 
     @Override
-    public SkullBlockEntity getTileEntity() {
+    public TileEntitySkull getTileEntity() {
         return skull;
     }
 }

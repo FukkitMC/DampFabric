@@ -3,12 +3,7 @@ package io.github.fukkitmc.legacy.mixins.extra;
 
 import io.github.fukkitmc.legacy.extra.IDataManagerExtra;
 import io.github.fukkitmc.legacy.extra.WorldNBTStorageExtra;
-import net.minecraft.class_632;
-import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.nbt.CompoundTag;
-import net.minecraft.nbt.NbtIo;
 import net.minecraft.server.*;
-import net.minecraft.world.WorldSaveHandler;
 import org.apache.logging.log4j.Logger;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Overwrite;
@@ -17,8 +12,8 @@ import org.spongepowered.asm.mixin.Shadow;
 import java.io.*;
 import java.util.UUID;
 
-@Mixin(value = class_632.class)
-public abstract class WorldNBTStorageMixin implements IDataManagerExtra, WorldSaveHandler, WorldNBTStorageExtra{
+@Mixin(value = WorldNBTStorage.class)
+public abstract class WorldNBTStorageMixin implements IDataManagerExtra, IPlayerFileData, WorldNBTStorageExtra{
     @Shadow public File playerDir;
 
     @Shadow public static Logger a;
@@ -28,12 +23,12 @@ public abstract class WorldNBTStorageMixin implements IDataManagerExtra, WorldSa
     @Shadow public UUID uuid;
 
     @Override
-    public CompoundTag getPlayerData(String s) {
+    public NBTTagCompound getPlayerData(String s) {
         try {
             File file1 = new File(this.playerDir, s + ".dat");
 
             if (file1.exists()) {
-                return NbtIo.readCompressed(new FileInputStream(file1));
+                return NBTCompressedStreamTools.a(new FileInputStream(file1));
             }
         } catch (Exception exception) {
             a.warn("Failed to load player data for " + s);
@@ -93,13 +88,13 @@ public abstract class WorldNBTStorageMixin implements IDataManagerExtra, WorldSa
      * @author
      */
     @Overwrite
-    public void savePlayerData(PlayerEntity entityHuman) {
+    public void save(EntityHuman entityHuman) {
         try {
-            CompoundTag nBTTagCompound = new CompoundTag();
-            entityHuman.writePlayerData(nBTTagCompound);
-            File file = new File(this.playerDir, entityHuman.getUuid().toString() + ".dat.tmp");
-            File file2 = new File(this.playerDir, entityHuman.getUuid().toString() + ".dat");
-            NbtIo.writeCompressed(nBTTagCompound, new FileOutputStream(file));
+            NBTTagCompound nBTTagCompound = new NBTTagCompound();
+            entityHuman.e(nBTTagCompound);
+            File file = new File(this.playerDir, entityHuman.getUniqueID().toString() + ".dat.tmp");
+            File file2 = new File(this.playerDir, entityHuman.getUniqueID().toString() + ".dat");
+            NBTCompressedStreamTools.a(nBTTagCompound, new FileOutputStream(file));
             if (file2.exists()) {
                 file2.delete();
             }
