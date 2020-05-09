@@ -266,9 +266,9 @@ accessible field net/minecraft/server/BlockActionData c I
 mutable field net/minecraft/server/BlockActionData c I
 accessible field net/minecraft/server/BlockActionData d I
 mutable field net/minecraft/server/BlockActionData d I
-extendable class net/minecraft/class_91
-accessible field net/minecraft/class_91 e Ljava/lang/String;
-mutable field net/minecraft/class_91 e Ljava/lang/String;
+
+
+
 accessible field net/minecraft/server/Explosion a Z
 mutable field net/minecraft/server/Explosion a Z
 accessible field net/minecraft/server/Explosion b Z
@@ -291,8 +291,8 @@ accessible field net/minecraft/server/Explosion blocks Ljava/util/List;
 mutable field net/minecraft/server/Explosion blocks Ljava/util/List;
 accessible field net/minecraft/server/Explosion k Ljava/util/Map;
 mutable field net/minecraft/server/Explosion k Ljava/util/Map;
-accessible field net/minecraft/class_94 a [I
-mutable field net/minecraft/class_94 a [I
+
+
 accessible class net/minecraft/server/GameRules$GameRuleValue
 accessible field net/minecraft/server/GameRules$GameRuleValue a Ljava/lang/String;
 mutable field net/minecraft/server/GameRules$GameRuleValue a Ljava/lang/String;
@@ -307,8 +307,8 @@ mutable field net/minecraft/server/GameRules$GameRuleValue e Lnet/minecraft/serv
 extendable class net/minecraft/server/GameRules$EnumGameRuleType
 accessible field net/minecraft/server/GameRules a Ljava/util/TreeMap;
 mutable field net/minecraft/server/GameRules a Ljava/util/TreeMap;
-accessible field net/minecraft/class_98 a [I
-mutable field net/minecraft/class_98 a [I
+
+
 accessible class net/minecraft/server/World$1
 accessible class net/minecraft/server/World$2
 accessible class net/minecraft/server/World$3
@@ -568,18 +568,18 @@ accessible field net/minecraft/server/BiomeCache d Ljava/util/List;
 mutable field net/minecraft/server/BiomeCache d Ljava/util/List;
 extendable method net/minecraft/server/CommandXp d ()[Ljava/lang/String;
 accessible method net/minecraft/server/CommandXp d ()[Ljava/lang/String;
-extendable class net/minecraft/class_120$1
-extendable class net/minecraft/class_120$2
-extendable class net/minecraft/class_120$3
-accessible class net/minecraft/class_120$class_121
-accessible field net/minecraft/class_120 a Lnet/minecraft/class_120$class_121;
-mutable field net/minecraft/class_120 a Lnet/minecraft/class_120$class_121;
-accessible field net/minecraft/class_120 b Lnet/minecraft/class_120$class_121;
-mutable field net/minecraft/class_120 b Lnet/minecraft/class_120$class_121;
-accessible field net/minecraft/class_120 c Lnet/minecraft/class_120$class_121;
-mutable field net/minecraft/class_120 c Lnet/minecraft/class_120$class_121;
-extendable method net/minecraft/class_120 a (Lnet/minecraft/server/IBlockAccess;Lnet/minecraft/server/BlockPosition;Lnet/minecraft/class_120$class_121;)I
-accessible method net/minecraft/class_120 a (Lnet/minecraft/server/IBlockAccess;Lnet/minecraft/server/BlockPosition;Lnet/minecraft/class_120$class_121;)I
+
+
+
+
+
+
+
+
+
+
+
+
 accessible field net/minecraft/server/BiomeDecorator a Lnet/minecraft/server/World;
 mutable field net/minecraft/server/BiomeDecorator a Lnet/minecraft/server/World;
 accessible field net/minecraft/server/BiomeDecorator b Ljava/util/Random;
@@ -1585,8 +1585,6 @@ extendable method net/minecraft/server/BlockReed getStateList ()Lnet/minecraft/s
 accessible method net/minecraft/server/BlockReed getStateList ()Lnet/minecraft/server/BlockStateList;
 extendable method net/minecraft/server/BlockRepeater d (Lnet/minecraft/server/IBlockData;)I
 accessible method net/minecraft/server/BlockRepeater d (Lnet/minecraft/server/IBlockData;)I
-extendable method net/minecraft/server/BlockRepeater e (Lnet/minecraft/server/IBlockData;)Lnet/minecraft/server/IBlockData;
-accessible method net/minecraft/server/BlockRepeater e (Lnet/minecraft/server/IBlockData;)Lnet/minecraft/server/IBlockData;
 extendable method net/minecraft/server/BlockRepeater k (Lnet/minecraft/server/IBlockData;)Lnet/minecraft/server/IBlockData;
 accessible method net/minecraft/server/BlockRepeater k (Lnet/minecraft/server/IBlockData;)Lnet/minecraft/server/IBlockData;
 extendable method net/minecraft/server/BlockRepeater c (Lnet/minecraft/server/Block;)Z
@@ -3785,22 +3783,22 @@ accessible field net/minecraft/server/WorldData K Lnet/minecraft/server/GameRule
 mutable field net/minecraft/server/WorldData K Lnet/minecraft/server/GameRules;
 extendable method net/minecraft/server/WorldData a (Lnet/minecraft/server/NBTTagCompound;Lnet/minecraft/server/NBTTagCompound;)V
 accessible method net/minecraft/server/WorldData a (Lnet/minecraft/server/NBTTagCompound;Lnet/minecraft/server/NBTTagCompound;)V
-accessible field net/minecraft/class_638 a Ljava/lang/String;
-mutable field net/minecraft/class_638 a Ljava/lang/String;
-accessible field net/minecraft/class_638 b Ljava/lang/String;
-mutable field net/minecraft/class_638 b Ljava/lang/String;
-accessible field net/minecraft/class_638 c J
-mutable field net/minecraft/class_638 c J
-accessible field net/minecraft/class_638 d J
-mutable field net/minecraft/class_638 d J
-accessible field net/minecraft/class_638 e Z
-mutable field net/minecraft/class_638 e Z
-accessible field net/minecraft/class_638 f Lnet/minecraft/server/WorldSettings$EnumGamemode;
-mutable field net/minecraft/class_638 f Lnet/minecraft/server/WorldSettings$EnumGamemode;
-accessible field net/minecraft/class_638 g Z
-mutable field net/minecraft/class_638 g Z
-accessible field net/minecraft/class_638 h Z
-mutable field net/minecraft/class_638 h Z
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 accessible field net/minecraft/server/PersistentCollection b Lnet/minecraft/server/IDataManager;
 mutable field net/minecraft/server/PersistentCollection b Lnet/minecraft/server/IDataManager;
 accessible field net/minecraft/server/PersistentCollection a Ljava/util/Map;
@@ -3931,2678 +3929,2678 @@ accessible field net/minecraft/server/IScoreboardCriteria$EnumScoreboardHealthDi
 mutable field net/minecraft/server/IScoreboardCriteria$EnumScoreboardHealthDisplay d Ljava/lang/String;
 accessible field net/minecraft/server/ScoreboardStatisticCriteria j Lnet/minecraft/server/Statistic;
 mutable field net/minecraft/server/ScoreboardStatisticCriteria j Lnet/minecraft/server/Statistic;
-accessible field net/minecraft/class_663 a Ljava/nio/IntBuffer;
-mutable field net/minecraft/class_663 a Ljava/nio/IntBuffer;
-accessible field net/minecraft/class_663 b Ljava/nio/FloatBuffer;
-mutable field net/minecraft/class_663 b Ljava/nio/FloatBuffer;
-accessible field net/minecraft/class_663 c Ljava/nio/FloatBuffer;
-mutable field net/minecraft/class_663 c Ljava/nio/FloatBuffer;
-accessible field net/minecraft/class_663 d Ljava/nio/FloatBuffer;
-mutable field net/minecraft/class_663 d Ljava/nio/FloatBuffer;
-accessible field net/minecraft/class_663 e Lnet/minecraft/server/Vec3D;
-mutable field net/minecraft/class_663 e Lnet/minecraft/server/Vec3D;
-accessible field net/minecraft/class_663 f F
-mutable field net/minecraft/class_663 f F
-accessible field net/minecraft/class_663 g F
-mutable field net/minecraft/class_663 g F
-accessible field net/minecraft/class_663 h F
-mutable field net/minecraft/class_663 h F
-accessible field net/minecraft/class_663 i F
-mutable field net/minecraft/class_663 i F
-accessible field net/minecraft/class_663 j F
-mutable field net/minecraft/class_663 j F
-accessible field net/minecraft/class_665 a I
-mutable field net/minecraft/class_665 a I
-accessible field net/minecraft/class_665 b Lnet/minecraft/server/IChatBaseComponent;
-mutable field net/minecraft/class_665 b Lnet/minecraft/server/IChatBaseComponent;
-accessible field net/minecraft/class_665 c I
-mutable field net/minecraft/class_665 c I
-accessible field net/minecraft/class_666 a Ljava/util/List;
-mutable field net/minecraft/class_666 a Ljava/util/List;
-accessible field net/minecraft/class_666 b Lnet/minecraft/server/IntHashMap;
-mutable field net/minecraft/class_666 b Lnet/minecraft/server/IntHashMap;
-accessible field net/minecraft/class_666 c Ljava/util/Set;
-mutable field net/minecraft/class_666 c Ljava/util/Set;
-accessible field net/minecraft/class_666 d Ljava/lang/String;
-mutable field net/minecraft/class_666 d Ljava/lang/String;
-accessible field net/minecraft/class_666 e I
-mutable field net/minecraft/class_666 e I
-accessible field net/minecraft/class_666 f Ljava/lang/String;
-mutable field net/minecraft/class_666 f Ljava/lang/String;
-accessible field net/minecraft/class_666 g I
-mutable field net/minecraft/class_666 g I
-accessible field net/minecraft/class_666 h Z
-mutable field net/minecraft/class_666 h Z
-accessible field net/minecraft/class_666 i I
-mutable field net/minecraft/class_666 i I
-extendable method net/minecraft/class_666 j ()V
-accessible method net/minecraft/class_666 j ()V
-accessible field net/minecraft/class_667 a Ljava/nio/FloatBuffer;
-mutable field net/minecraft/class_667 a Ljava/nio/FloatBuffer;
-accessible field net/minecraft/class_667 b Lnet/minecraft/server/Vec3D;
-mutable field net/minecraft/class_667 b Lnet/minecraft/server/Vec3D;
-accessible field net/minecraft/class_667 c Lnet/minecraft/server/Vec3D;
-mutable field net/minecraft/class_667 c Lnet/minecraft/server/Vec3D;
-extendable method net/minecraft/class_667 a (DDDD)Ljava/nio/FloatBuffer;
-accessible method net/minecraft/class_667 a (DDDD)Ljava/nio/FloatBuffer;
-extendable method net/minecraft/class_667 a (FFFF)Ljava/nio/FloatBuffer;
-accessible method net/minecraft/class_667 a (FFFF)Ljava/nio/FloatBuffer;
-accessible class net/minecraft/class_669$1
-accessible class net/minecraft/class_669$11
-accessible class net/minecraft/class_669$12
-accessible class net/minecraft/class_669$13
-accessible class net/minecraft/class_669$14
-accessible class net/minecraft/class_669$15
-accessible class net/minecraft/class_669$16
-accessible class net/minecraft/class_669$17
-accessible class net/minecraft/class_669$18
-accessible class net/minecraft/class_669$2
-accessible class net/minecraft/class_669$3
-accessible class net/minecraft/class_669$4
-accessible class net/minecraft/class_669$5
-accessible class net/minecraft/class_669$6
-accessible class net/minecraft/class_669$7
-accessible class net/minecraft/class_669$8
-accessible class net/minecraft/class_669$9
-accessible field net/minecraft/class_669 K Lorg/apache/logging/log4j/Logger;
-mutable field net/minecraft/class_669 K Lorg/apache/logging/log4j/Logger;
-accessible field net/minecraft/class_669 L Lnet/minecraft/server/MinecraftKey;
-mutable field net/minecraft/class_669 L Lnet/minecraft/server/MinecraftKey;
-accessible field net/minecraft/class_669 M Ljava/util/List;
-mutable field net/minecraft/class_669 M Ljava/util/List;
-accessible field net/minecraft/class_669 N Ljava/io/File;
-mutable field net/minecraft/class_669 N Ljava/io/File;
-accessible field net/minecraft/class_669 O Lcom/mojang/authlib/properties/PropertyMap;
-mutable field net/minecraft/class_669 O Lcom/mojang/authlib/properties/PropertyMap;
-accessible field net/minecraft/class_669 P Lcom/mojang/authlib/properties/PropertyMap;
-mutable field net/minecraft/class_669 P Lcom/mojang/authlib/properties/PropertyMap;
-accessible field net/minecraft/class_669 Q Lnet/minecraft/class_910;
-mutable field net/minecraft/class_669 Q Lnet/minecraft/class_910;
-accessible field net/minecraft/class_669 R Lnet/minecraft/class_1232;
-mutable field net/minecraft/class_669 R Lnet/minecraft/class_1232;
-accessible field net/minecraft/class_669 S Lnet/minecraft/class_669;
-mutable field net/minecraft/class_669 S Lnet/minecraft/class_669;
-accessible field net/minecraft/class_669 T Z
-mutable field net/minecraft/class_669 T Z
-accessible field net/minecraft/class_669 U Z
-mutable field net/minecraft/class_669 U Z
-accessible field net/minecraft/class_669 V Z
-mutable field net/minecraft/class_669 V Z
-accessible field net/minecraft/class_669 W Lnet/minecraft/server/CrashReport;
-mutable field net/minecraft/class_669 W Lnet/minecraft/server/CrashReport;
-accessible field net/minecraft/class_669 X Z
-mutable field net/minecraft/class_669 X Z
-accessible field net/minecraft/class_669 Y Lnet/minecraft/class_676;
-mutable field net/minecraft/class_669 Y Lnet/minecraft/class_676;
-accessible field net/minecraft/class_669 Z Lnet/minecraft/server/MojangStatisticsGenerator;
-mutable field net/minecraft/class_669 Z Lnet/minecraft/server/MojangStatisticsGenerator;
-accessible field net/minecraft/class_669 aa Lnet/minecraft/class_1135;
-mutable field net/minecraft/class_669 aa Lnet/minecraft/class_1135;
-accessible field net/minecraft/class_669 ab Lnet/minecraft/class_1150;
-mutable field net/minecraft/class_669 ab Lnet/minecraft/class_1150;
-accessible field net/minecraft/class_669 ac Lnet/minecraft/class_1033;
-mutable field net/minecraft/class_669 ac Lnet/minecraft/class_1033;
-accessible field net/minecraft/class_669 ad Lnet/minecraft/server/Entity;
-mutable field net/minecraft/class_669 ad Lnet/minecraft/server/Entity;
-accessible field net/minecraft/class_669 ae Lnet/minecraft/class_677;
-mutable field net/minecraft/class_669 ae Lnet/minecraft/class_677;
-accessible field net/minecraft/class_669 af Z
-mutable field net/minecraft/class_669 af Z
-accessible field net/minecraft/class_669 ag I
-mutable field net/minecraft/class_669 ag I
-accessible field net/minecraft/class_669 ah I
-mutable field net/minecraft/class_669 ah I
-accessible field net/minecraft/class_669 ai I
-mutable field net/minecraft/class_669 ai I
-accessible field net/minecraft/class_669 aj Lnet/minecraft/class_1315;
-mutable field net/minecraft/class_669 aj Lnet/minecraft/class_1315;
-accessible field net/minecraft/class_669 ak Ljava/io/File;
-mutable field net/minecraft/class_669 ak Ljava/io/File;
-accessible field net/minecraft/class_669 al Ljava/lang/String;
-mutable field net/minecraft/class_669 al Ljava/lang/String;
-accessible field net/minecraft/class_669 am Ljava/net/Proxy;
-mutable field net/minecraft/class_669 am Ljava/net/Proxy;
-accessible field net/minecraft/class_669 an Lnet/minecraft/server/Convertable;
-mutable field net/minecraft/class_669 an Lnet/minecraft/server/Convertable;
-accessible field net/minecraft/class_669 ao I
-mutable field net/minecraft/class_669 ao I
-accessible field net/minecraft/class_669 ap I
-mutable field net/minecraft/class_669 ap I
-accessible field net/minecraft/class_669 aq Ljava/lang/String;
-mutable field net/minecraft/class_669 aq Ljava/lang/String;
-accessible field net/minecraft/class_669 ar I
-mutable field net/minecraft/class_669 ar I
-accessible field net/minecraft/class_669 x J
-mutable field net/minecraft/class_669 x J
-accessible field net/minecraft/class_669 as I
-mutable field net/minecraft/class_669 as I
-accessible field net/minecraft/class_669 z J
-mutable field net/minecraft/class_669 z J
-accessible field net/minecraft/class_669 at Z
-mutable field net/minecraft/class_669 at Z
-accessible field net/minecraft/class_669 au Z
-mutable field net/minecraft/class_669 au Z
-accessible field net/minecraft/class_669 av Lnet/minecraft/server/NetworkManager;
-mutable field net/minecraft/class_669 av Lnet/minecraft/server/NetworkManager;
-accessible field net/minecraft/class_669 aw Z
-mutable field net/minecraft/class_669 aw Z
-accessible field net/minecraft/class_669 ax J
-mutable field net/minecraft/class_669 ax J
-accessible field net/minecraft/class_669 ay Lnet/minecraft/class_1256;
-mutable field net/minecraft/class_669 ay Lnet/minecraft/class_1256;
-accessible field net/minecraft/class_669 az Lnet/minecraft/class_1275;
-mutable field net/minecraft/class_669 az Lnet/minecraft/class_1275;
-accessible field net/minecraft/class_669 aA Ljava/util/List;
-mutable field net/minecraft/class_669 aA Ljava/util/List;
-accessible field net/minecraft/class_669 aB Lnet/minecraft/class_1249;
-mutable field net/minecraft/class_669 aB Lnet/minecraft/class_1249;
-accessible field net/minecraft/class_669 aC Lnet/minecraft/class_1262;
-mutable field net/minecraft/class_669 aC Lnet/minecraft/class_1262;
-accessible field net/minecraft/class_669 aD Lnet/minecraft/class_1270;
-mutable field net/minecraft/class_669 aD Lnet/minecraft/class_1270;
-accessible field net/minecraft/class_669 aE Lnet/minecraft/class_1349;
-mutable field net/minecraft/class_669 aE Lnet/minecraft/class_1349;
-accessible field net/minecraft/class_669 aF Lnet/minecraft/class_1040;
-mutable field net/minecraft/class_669 aF Lnet/minecraft/class_1040;
-accessible field net/minecraft/class_669 aG Lnet/minecraft/class_1230;
-mutable field net/minecraft/class_669 aG Lnet/minecraft/class_1230;
-accessible field net/minecraft/class_669 aH Lnet/minecraft/class_1328;
-mutable field net/minecraft/class_669 aH Lnet/minecraft/class_1328;
-accessible field net/minecraft/class_669 aI Lnet/minecraft/class_1322;
-mutable field net/minecraft/class_669 aI Lnet/minecraft/class_1322;
-accessible field net/minecraft/class_669 aJ Lnet/minecraft/server/MinecraftKey;
-mutable field net/minecraft/class_669 aJ Lnet/minecraft/server/MinecraftKey;
-accessible field net/minecraft/class_669 aK Lcom/mojang/authlib/minecraft/MinecraftSessionService;
-mutable field net/minecraft/class_669 aK Lcom/mojang/authlib/minecraft/MinecraftSessionService;
-accessible field net/minecraft/class_669 aL Lnet/minecraft/class_1266;
-mutable field net/minecraft/class_669 aL Lnet/minecraft/class_1266;
-accessible field net/minecraft/class_669 aM Ljava/util/Queue;
-mutable field net/minecraft/class_669 aM Ljava/util/Queue;
-accessible field net/minecraft/class_669 aN J
-mutable field net/minecraft/class_669 aN J
-accessible field net/minecraft/class_669 aO Ljava/lang/Thread;
-mutable field net/minecraft/class_669 aO Ljava/lang/Thread;
-accessible field net/minecraft/class_669 aP Lnet/minecraft/class_1292;
-mutable field net/minecraft/class_669 aP Lnet/minecraft/class_1292;
-accessible field net/minecraft/class_669 aQ Lnet/minecraft/class_1048;
-mutable field net/minecraft/class_669 aQ Lnet/minecraft/class_1048;
-accessible field net/minecraft/class_669 B Z
-mutable field net/minecraft/class_669 B Z
-accessible field net/minecraft/class_669 H J
-mutable field net/minecraft/class_669 H J
-accessible field net/minecraft/class_669 I I
-mutable field net/minecraft/class_669 I I
-accessible field net/minecraft/class_669 J J
-mutable field net/minecraft/class_669 J J
-accessible field net/minecraft/class_669 aR Ljava/lang/String;
-mutable field net/minecraft/class_669 aR Ljava/lang/String;
-extendable method net/minecraft/class_669 am ()V
-accessible method net/minecraft/class_669 am ()V
-extendable method net/minecraft/class_669 an ()V
-accessible method net/minecraft/class_669 an ()V
-extendable method net/minecraft/class_669 ao ()V
-accessible method net/minecraft/class_669 ao ()V
-extendable method net/minecraft/class_669 ap ()V
-accessible method net/minecraft/class_669 ap ()V
-extendable method net/minecraft/class_669 aq ()V
-accessible method net/minecraft/class_669 aq ()V
-extendable method net/minecraft/class_669 ar ()V
-accessible method net/minecraft/class_669 ar ()V
-extendable method net/minecraft/class_669 as ()Z
-accessible method net/minecraft/class_669 as ()Z
-extendable method net/minecraft/class_669 at ()V
-accessible method net/minecraft/class_669 at ()V
-extendable method net/minecraft/class_669 a (Ljava/io/InputStream;)Ljava/nio/ByteBuffer;
-accessible method net/minecraft/class_669 a (Ljava/io/InputStream;)Ljava/nio/ByteBuffer;
-extendable method net/minecraft/class_669 au ()V
-accessible method net/minecraft/class_669 au ()V
-extendable method net/minecraft/class_669 a (Lnet/minecraft/class_1232;)V
-accessible method net/minecraft/class_669 a (Lnet/minecraft/class_1232;)V
-extendable method net/minecraft/class_669 b (Ljava/lang/String;)V
-accessible method net/minecraft/class_669 b (Ljava/lang/String;)V
-extendable method net/minecraft/class_669 av ()V
-accessible method net/minecraft/class_669 av ()V
-extendable method net/minecraft/class_669 i ()V
-accessible method net/minecraft/class_669 i ()V
-extendable method net/minecraft/class_669 b (I)V
-accessible method net/minecraft/class_669 b (I)V
-extendable method net/minecraft/class_669 a (J)V
-accessible method net/minecraft/class_669 a (J)V
-extendable method net/minecraft/class_669 b (Z)V
-accessible method net/minecraft/class_669 b (Z)V
-extendable method net/minecraft/class_669 aw ()V
-accessible method net/minecraft/class_669 aw ()V
-extendable method net/minecraft/class_669 ax ()V
-accessible method net/minecraft/class_669 ax ()V
-extendable method net/minecraft/class_669 a (II)V
-accessible method net/minecraft/class_669 a (II)V
-extendable method net/minecraft/class_669 ay ()V
-accessible method net/minecraft/class_669 ay ()V
-extendable method net/minecraft/class_669 az ()V
-accessible method net/minecraft/class_669 az ()V
-extendable method net/minecraft/class_669 a (Lnet/minecraft/server/Item;ILnet/minecraft/server/TileEntity;)Lnet/minecraft/server/ItemStack;
-accessible method net/minecraft/class_669 a (Lnet/minecraft/server/Item;ILnet/minecraft/server/TileEntity;)Lnet/minecraft/server/ItemStack;
-extendable method net/minecraft/class_669 aA ()Ljava/lang/String;
-accessible method net/minecraft/class_669 aA ()Ljava/lang/String;
-extendable class net/minecraft/class_671$1
-extendable class net/minecraft/class_671$class_672
-accessible field net/minecraft/class_671$class_672 S Lnet/minecraft/class_671$class_672;
-mutable field net/minecraft/class_671$class_672 S Lnet/minecraft/class_671$class_672;
-accessible field net/minecraft/class_671$class_672 T Z
-mutable field net/minecraft/class_671$class_672 T Z
-accessible field net/minecraft/class_671$class_672 U Z
-mutable field net/minecraft/class_671$class_672 U Z
-accessible field net/minecraft/class_671$class_672 V Ljava/lang/String;
-mutable field net/minecraft/class_671$class_672 V Ljava/lang/String;
-accessible field net/minecraft/class_671$class_672 W F
-mutable field net/minecraft/class_671$class_672 W F
-accessible field net/minecraft/class_671$class_672 X F
-mutable field net/minecraft/class_671$class_672 X F
-extendable method net/minecraft/class_671$class_672 f (F)F
-accessible method net/minecraft/class_671$class_672 f (F)F
-accessible field net/minecraft/class_671 aO Z
-mutable field net/minecraft/class_671 aO Z
-accessible field net/minecraft/class_671 aP Lorg/apache/logging/log4j/Logger;
-mutable field net/minecraft/class_671 aP Lorg/apache/logging/log4j/Logger;
-accessible field net/minecraft/class_671 aQ Lcom/google/gson/Gson;
-mutable field net/minecraft/class_671 aQ Lcom/google/gson/Gson;
-accessible field net/minecraft/class_671 aR Ljava/lang/reflect/ParameterizedType;
-mutable field net/minecraft/class_671 aR Ljava/lang/reflect/ParameterizedType;
-accessible field net/minecraft/class_671 aS [Ljava/lang/String;
-mutable field net/minecraft/class_671 aS [Ljava/lang/String;
-accessible field net/minecraft/class_671 aT [Ljava/lang/String;
-mutable field net/minecraft/class_671 aT [Ljava/lang/String;
-accessible field net/minecraft/class_671 aU [Ljava/lang/String;
-mutable field net/minecraft/class_671 aU [Ljava/lang/String;
-accessible field net/minecraft/class_671 aV [Ljava/lang/String;
-mutable field net/minecraft/class_671 aV [Ljava/lang/String;
-accessible field net/minecraft/class_671 aW [Ljava/lang/String;
-mutable field net/minecraft/class_671 aW [Ljava/lang/String;
-accessible field net/minecraft/class_671 aX [Ljava/lang/String;
-mutable field net/minecraft/class_671 aX [Ljava/lang/String;
-accessible field net/minecraft/class_671 aY [Ljava/lang/String;
-mutable field net/minecraft/class_671 aY [Ljava/lang/String;
-accessible field net/minecraft/class_671 aZ [Ljava/lang/String;
-mutable field net/minecraft/class_671 aZ [Ljava/lang/String;
-accessible field net/minecraft/class_671 ba Ljava/util/Set;
-mutable field net/minecraft/class_671 ba Ljava/util/Set;
-accessible field net/minecraft/class_671 ax [Lnet/minecraft/class_666;
-mutable field net/minecraft/class_671 ax [Lnet/minecraft/class_666;
-accessible field net/minecraft/class_671 bb Ljava/util/Map;
-mutable field net/minecraft/class_671 bb Ljava/util/Map;
-extendable method net/minecraft/class_671 a ([Ljava/lang/String;I)Ljava/lang/String;
-accessible method net/minecraft/class_671 a ([Ljava/lang/String;I)Ljava/lang/String;
-extendable method net/minecraft/class_671 a (Ljava/lang/String;)F
-accessible method net/minecraft/class_671 a (Ljava/lang/String;)F
-accessible field net/minecraft/class_673 a Ljava/lang/String;
-mutable field net/minecraft/class_673 a Ljava/lang/String;
-accessible field net/minecraft/class_673 b Lnet/minecraft/class_669;
-mutable field net/minecraft/class_673 b Lnet/minecraft/class_669;
-accessible field net/minecraft/class_673 c Ljava/lang/String;
-mutable field net/minecraft/class_673 c Ljava/lang/String;
-accessible field net/minecraft/class_673 d J
-mutable field net/minecraft/class_673 d J
-accessible field net/minecraft/class_673 e Z
-mutable field net/minecraft/class_673 e Z
-accessible field net/minecraft/class_673 f Lnet/minecraft/class_684;
-mutable field net/minecraft/class_673 f Lnet/minecraft/class_684;
-accessible field net/minecraft/class_673 g Lnet/minecraft/class_1040;
-mutable field net/minecraft/class_673 g Lnet/minecraft/class_1040;
-extendable method net/minecraft/class_673 d (Ljava/lang/String;)V
-accessible method net/minecraft/class_673 d (Ljava/lang/String;)V
-accessible field net/minecraft/class_674 a Lorg/apache/logging/log4j/Logger;
-mutable field net/minecraft/class_674 a Lorg/apache/logging/log4j/Logger;
-accessible field net/minecraft/class_674 b Ljava/text/DateFormat;
-mutable field net/minecraft/class_674 b Ljava/text/DateFormat;
-accessible field net/minecraft/class_674 c Ljava/nio/IntBuffer;
-mutable field net/minecraft/class_674 c Ljava/nio/IntBuffer;
-accessible field net/minecraft/class_674 d [I
-mutable field net/minecraft/class_674 d [I
-extendable method net/minecraft/class_674 a (Ljava/io/File;)Ljava/io/File;
-accessible method net/minecraft/class_674 a (Ljava/io/File;)Ljava/io/File;
-accessible field net/minecraft/class_676 a F
-mutable field net/minecraft/class_676 a F
-accessible field net/minecraft/class_676 f D
-mutable field net/minecraft/class_676 f D
-accessible field net/minecraft/class_676 g J
-mutable field net/minecraft/class_676 g J
-accessible field net/minecraft/class_676 h J
-mutable field net/minecraft/class_676 h J
-accessible field net/minecraft/class_676 i J
-mutable field net/minecraft/class_676 i J
-accessible field net/minecraft/class_676 j D
-mutable field net/minecraft/class_676 j D
-extendable class net/minecraft/class_677$class_678
-accessible field net/minecraft/class_677$class_678 c Ljava/util/Map;
-mutable field net/minecraft/class_677$class_678 c Ljava/util/Map;
-accessible field net/minecraft/class_677$class_678 d Ljava/lang/String;
-mutable field net/minecraft/class_677$class_678 d Ljava/lang/String;
-accessible field net/minecraft/class_677 a Ljava/lang/String;
-mutable field net/minecraft/class_677 a Ljava/lang/String;
-accessible field net/minecraft/class_677 b Ljava/lang/String;
-mutable field net/minecraft/class_677 b Ljava/lang/String;
-accessible field net/minecraft/class_677 c Ljava/lang/String;
-mutable field net/minecraft/class_677 c Ljava/lang/String;
-accessible field net/minecraft/class_677 d Lnet/minecraft/class_677$class_678;
-mutable field net/minecraft/class_677 d Lnet/minecraft/class_677$class_678;
-accessible field net/minecraft/class_679 c [Lnet/minecraft/server/MinecraftKey;
-mutable field net/minecraft/class_679 c [Lnet/minecraft/server/MinecraftKey;
-accessible field net/minecraft/class_679 d [I
-mutable field net/minecraft/class_679 d [I
-accessible field net/minecraft/class_679 e [B
-mutable field net/minecraft/class_679 e [B
-accessible field net/minecraft/class_679 f [I
-mutable field net/minecraft/class_679 f [I
-accessible field net/minecraft/class_679 g Lnet/minecraft/server/MinecraftKey;
-mutable field net/minecraft/class_679 g Lnet/minecraft/server/MinecraftKey;
-accessible field net/minecraft/class_679 h Lnet/minecraft/class_1232;
-mutable field net/minecraft/class_679 h Lnet/minecraft/class_1232;
-accessible field net/minecraft/class_679 i F
-mutable field net/minecraft/class_679 i F
-accessible field net/minecraft/class_679 j F
-mutable field net/minecraft/class_679 j F
-accessible field net/minecraft/class_679 k Z
-mutable field net/minecraft/class_679 k Z
-accessible field net/minecraft/class_679 l Z
-mutable field net/minecraft/class_679 l Z
-accessible field net/minecraft/class_679 m F
-mutable field net/minecraft/class_679 m F
-accessible field net/minecraft/class_679 n F
-mutable field net/minecraft/class_679 n F
-accessible field net/minecraft/class_679 o F
-mutable field net/minecraft/class_679 o F
-accessible field net/minecraft/class_679 p F
-mutable field net/minecraft/class_679 p F
-accessible field net/minecraft/class_679 q I
-mutable field net/minecraft/class_679 q I
-accessible field net/minecraft/class_679 r Z
-mutable field net/minecraft/class_679 r Z
-accessible field net/minecraft/class_679 s Z
-mutable field net/minecraft/class_679 s Z
-accessible field net/minecraft/class_679 t Z
-mutable field net/minecraft/class_679 t Z
-accessible field net/minecraft/class_679 u Z
-mutable field net/minecraft/class_679 u Z
-accessible field net/minecraft/class_679 v Z
-mutable field net/minecraft/class_679 v Z
-extendable method net/minecraft/class_679 c ()V
-accessible method net/minecraft/class_679 c ()V
-extendable method net/minecraft/class_679 d ()V
-accessible method net/minecraft/class_679 d ()V
-extendable method net/minecraft/class_679 a (CZ)F
-accessible method net/minecraft/class_679 a (CZ)F
-extendable method net/minecraft/class_679 a (IZ)F
-accessible method net/minecraft/class_679 a (IZ)F
-extendable method net/minecraft/class_679 a (I)Lnet/minecraft/server/MinecraftKey;
-accessible method net/minecraft/class_679 a (I)Lnet/minecraft/server/MinecraftKey;
-extendable method net/minecraft/class_679 b (I)V
-accessible method net/minecraft/class_679 b (I)V
-extendable method net/minecraft/class_679 b (CZ)F
-accessible method net/minecraft/class_679 b (CZ)F
-extendable method net/minecraft/class_679 c (Ljava/lang/String;)Ljava/lang/String;
-accessible method net/minecraft/class_679 c (Ljava/lang/String;)Ljava/lang/String;
-extendable method net/minecraft/class_679 e ()V
-accessible method net/minecraft/class_679 e ()V
-extendable method net/minecraft/class_679 a (Ljava/lang/String;Z)V
-accessible method net/minecraft/class_679 a (Ljava/lang/String;Z)V
-extendable method net/minecraft/class_679 a (Ljava/lang/String;IIIIZ)I
-accessible method net/minecraft/class_679 a (Ljava/lang/String;IIIIZ)I
-extendable method net/minecraft/class_679 b (Ljava/lang/String;FFIZ)I
-accessible method net/minecraft/class_679 b (Ljava/lang/String;FFIZ)I
-extendable method net/minecraft/class_679 d (Ljava/lang/String;)Ljava/lang/String;
-accessible method net/minecraft/class_679 d (Ljava/lang/String;)Ljava/lang/String;
-extendable method net/minecraft/class_679 a (Ljava/lang/String;IIIZ)V
-accessible method net/minecraft/class_679 a (Ljava/lang/String;IIIZ)V
-extendable method net/minecraft/class_679 d (Ljava/lang/String;I)Ljava/lang/String;
-accessible method net/minecraft/class_679 d (Ljava/lang/String;I)Ljava/lang/String;
-extendable method net/minecraft/class_679 e (Ljava/lang/String;I)I
-accessible method net/minecraft/class_679 e (Ljava/lang/String;I)I
-extendable method net/minecraft/class_679 c (C)Z
-accessible method net/minecraft/class_679 c (C)Z
-extendable method net/minecraft/class_679 d (C)Z
-accessible method net/minecraft/class_679 d (C)Z
-accessible class net/minecraft/class_680$1
-accessible field net/minecraft/class_680 f Lnet/minecraft/server/MinecraftKey;
-mutable field net/minecraft/class_680 f Lnet/minecraft/server/MinecraftKey;
-accessible field net/minecraft/class_680 g Lnet/minecraft/server/MinecraftKey;
-mutable field net/minecraft/class_680 g Lnet/minecraft/server/MinecraftKey;
-accessible field net/minecraft/class_680 h Lnet/minecraft/server/MinecraftKey;
-mutable field net/minecraft/class_680 h Lnet/minecraft/server/MinecraftKey;
-accessible field net/minecraft/class_680 i Ljava/util/Random;
-mutable field net/minecraft/class_680 i Ljava/util/Random;
-accessible field net/minecraft/class_680 j Lnet/minecraft/class_669;
-mutable field net/minecraft/class_680 j Lnet/minecraft/class_669;
-accessible field net/minecraft/class_680 k Lnet/minecraft/class_1150;
-mutable field net/minecraft/class_680 k Lnet/minecraft/class_1150;
-accessible field net/minecraft/class_680 l Lnet/minecraft/class_686;
-mutable field net/minecraft/class_680 l Lnet/minecraft/class_686;
-accessible field net/minecraft/class_680 m Lnet/minecraft/class_715;
-mutable field net/minecraft/class_680 m Lnet/minecraft/class_715;
-accessible field net/minecraft/class_680 n I
-mutable field net/minecraft/class_680 n I
-accessible field net/minecraft/class_680 o Ljava/lang/String;
-mutable field net/minecraft/class_680 o Ljava/lang/String;
-accessible field net/minecraft/class_680 p I
-mutable field net/minecraft/class_680 p I
-accessible field net/minecraft/class_680 q Z
-mutable field net/minecraft/class_680 q Z
-accessible field net/minecraft/class_680 r I
-mutable field net/minecraft/class_680 r I
-accessible field net/minecraft/class_680 s Lnet/minecraft/server/ItemStack;
-mutable field net/minecraft/class_680 s Lnet/minecraft/server/ItemStack;
-accessible field net/minecraft/class_680 t Lnet/minecraft/class_688;
-mutable field net/minecraft/class_680 t Lnet/minecraft/class_688;
-accessible field net/minecraft/class_680 u Lnet/minecraft/class_716;
-mutable field net/minecraft/class_680 u Lnet/minecraft/class_716;
-accessible field net/minecraft/class_680 v Lnet/minecraft/class_711;
-mutable field net/minecraft/class_680 v Lnet/minecraft/class_711;
-accessible field net/minecraft/class_680 w I
-mutable field net/minecraft/class_680 w I
-accessible field net/minecraft/class_680 x Ljava/lang/String;
-mutable field net/minecraft/class_680 x Ljava/lang/String;
-accessible field net/minecraft/class_680 y Ljava/lang/String;
-mutable field net/minecraft/class_680 y Ljava/lang/String;
-accessible field net/minecraft/class_680 z I
-mutable field net/minecraft/class_680 z I
-accessible field net/minecraft/class_680 A I
-mutable field net/minecraft/class_680 A I
-accessible field net/minecraft/class_680 B I
-mutable field net/minecraft/class_680 B I
-accessible field net/minecraft/class_680 C I
-mutable field net/minecraft/class_680 C I
-accessible field net/minecraft/class_680 D I
-mutable field net/minecraft/class_680 D I
-accessible field net/minecraft/class_680 E J
-mutable field net/minecraft/class_680 E J
-accessible field net/minecraft/class_680 F J
-mutable field net/minecraft/class_680 F J
-extendable method net/minecraft/class_680 a (Lnet/minecraft/class_684;F)V
-accessible method net/minecraft/class_680 a (Lnet/minecraft/class_684;F)V
-extendable method net/minecraft/class_680 b ()Z
-accessible method net/minecraft/class_680 b ()Z
-extendable method net/minecraft/class_680 a (Lnet/minecraft/server/ScoreboardObjective;Lnet/minecraft/class_684;)V
-accessible method net/minecraft/class_680 a (Lnet/minecraft/server/ScoreboardObjective;Lnet/minecraft/class_684;)V
-extendable method net/minecraft/class_680 d (Lnet/minecraft/class_684;)V
-accessible method net/minecraft/class_680 d (Lnet/minecraft/class_684;)V
-extendable method net/minecraft/class_680 j ()V
-accessible method net/minecraft/class_680 j ()V
-extendable method net/minecraft/class_680 e (Lnet/minecraft/class_684;)V
-accessible method net/minecraft/class_680 e (Lnet/minecraft/class_684;)V
-extendable method net/minecraft/class_680 a (FLnet/minecraft/class_684;)V
-accessible method net/minecraft/class_680 a (FLnet/minecraft/class_684;)V
-extendable method net/minecraft/class_680 b (FLnet/minecraft/class_684;)V
-accessible method net/minecraft/class_680 b (FLnet/minecraft/class_684;)V
-extendable method net/minecraft/class_680 a (IIIFLnet/minecraft/server/EntityHuman;)V
-accessible method net/minecraft/class_680 a (IIIFLnet/minecraft/server/EntityHuman;)V
-accessible field net/minecraft/class_681 e F
-mutable field net/minecraft/class_681 e F
-extendable method net/minecraft/class_681 a (IIII)V
-accessible method net/minecraft/class_681 a (IIII)V
-extendable method net/minecraft/class_681 b (IIII)V
-accessible method net/minecraft/class_681 b (IIII)V
-extendable method net/minecraft/class_681 a (IIIIII)V
-accessible method net/minecraft/class_681 a (IIIIII)V
-accessible class net/minecraft/class_682$class_683
-accessible field net/minecraft/class_682$class_683 b Lnet/minecraft/server/WorldMap;
-mutable field net/minecraft/class_682$class_683 b Lnet/minecraft/server/WorldMap;
-accessible field net/minecraft/class_682$class_683 c Lnet/minecraft/class_1219;
-mutable field net/minecraft/class_682$class_683 c Lnet/minecraft/class_1219;
-accessible field net/minecraft/class_682$class_683 d Lnet/minecraft/server/MinecraftKey;
-mutable field net/minecraft/class_682$class_683 d Lnet/minecraft/server/MinecraftKey;
-accessible field net/minecraft/class_682$class_683 e [I
-mutable field net/minecraft/class_682$class_683 e [I
-extendable method net/minecraft/class_682$class_683 a ()V
-accessible method net/minecraft/class_682$class_683 a ()V
-extendable method net/minecraft/class_682$class_683 a (Z)V
-accessible method net/minecraft/class_682$class_683 a (Z)V
-accessible field net/minecraft/class_682 a Lnet/minecraft/server/MinecraftKey;
-mutable field net/minecraft/class_682 a Lnet/minecraft/server/MinecraftKey;
-accessible field net/minecraft/class_682 b Lnet/minecraft/class_1232;
-mutable field net/minecraft/class_682 b Lnet/minecraft/class_1232;
-accessible field net/minecraft/class_682 c Ljava/util/Map;
-mutable field net/minecraft/class_682 c Ljava/util/Map;
-extendable method net/minecraft/class_682 b (Lnet/minecraft/server/WorldMap;)Lnet/minecraft/class_682$class_683;
-accessible method net/minecraft/class_682 b (Lnet/minecraft/server/WorldMap;)Lnet/minecraft/class_682$class_683;
-accessible field net/minecraft/class_684 a D
-mutable field net/minecraft/class_684 a D
-accessible field net/minecraft/class_684 b D
-mutable field net/minecraft/class_684 b D
-accessible field net/minecraft/class_684 c I
-mutable field net/minecraft/class_684 c I
-accessible field net/minecraft/class_684 d I
-mutable field net/minecraft/class_684 d I
-accessible field net/minecraft/class_684 e I
-mutable field net/minecraft/class_684 e I
-accessible field net/minecraft/class_685 a Lnet/minecraft/server/MinecraftKey;
-mutable field net/minecraft/class_685 a Lnet/minecraft/server/MinecraftKey;
-accessible field net/minecraft/class_685 f I
-mutable field net/minecraft/class_685 f I
-accessible field net/minecraft/class_685 g I
-mutable field net/minecraft/class_685 g I
-accessible field net/minecraft/class_685 n Z
-mutable field net/minecraft/class_685 n Z
-extendable method net/minecraft/class_685 a (Z)I
-accessible method net/minecraft/class_685 a (Z)I
-extendable method net/minecraft/class_685 b (Lnet/minecraft/class_669;II)V
-accessible method net/minecraft/class_685 b (Lnet/minecraft/class_669;II)V
-accessible field net/minecraft/class_686 a Lorg/apache/logging/log4j/Logger;
-mutable field net/minecraft/class_686 a Lorg/apache/logging/log4j/Logger;
-accessible field net/minecraft/class_686 f Lnet/minecraft/class_669;
-mutable field net/minecraft/class_686 f Lnet/minecraft/class_669;
-accessible field net/minecraft/class_686 g Ljava/util/List;
-mutable field net/minecraft/class_686 g Ljava/util/List;
-accessible field net/minecraft/class_686 h Ljava/util/List;
-mutable field net/minecraft/class_686 h Ljava/util/List;
-accessible field net/minecraft/class_686 i Ljava/util/List;
-mutable field net/minecraft/class_686 i Ljava/util/List;
-accessible field net/minecraft/class_686 j I
-mutable field net/minecraft/class_686 j I
-accessible field net/minecraft/class_686 k Z
-mutable field net/minecraft/class_686 k Z
-extendable method net/minecraft/class_686 a (Lnet/minecraft/server/IChatBaseComponent;IIZ)V
-accessible method net/minecraft/class_686 a (Lnet/minecraft/server/IChatBaseComponent;IIZ)V
-accessible field net/minecraft/class_688 a Lnet/minecraft/class_669;
-mutable field net/minecraft/class_688 a Lnet/minecraft/class_669;
-accessible field net/minecraft/class_688 f Lnet/minecraft/class_679;
-mutable field net/minecraft/class_688 f Lnet/minecraft/class_679;
-extendable method net/minecraft/class_688 d ()Z
-accessible method net/minecraft/class_688 d ()Z
-extendable method net/minecraft/class_688 a ()V
-accessible method net/minecraft/class_688 a ()V
-extendable method net/minecraft/class_688 b (Lnet/minecraft/class_684;)V
-accessible method net/minecraft/class_688 b (Lnet/minecraft/class_684;)V
-extendable method net/minecraft/class_688 b ()Ljava/util/List;
-accessible method net/minecraft/class_688 b ()Ljava/util/List;
-extendable method net/minecraft/class_688 c ()Ljava/util/List;
-accessible method net/minecraft/class_688 c ()Ljava/util/List;
-extendable method net/minecraft/class_688 e ()V
-accessible method net/minecraft/class_688 e ()V
-extendable method net/minecraft/class_688 c (IIII)I
-accessible method net/minecraft/class_688 c (IIII)I
-extendable method net/minecraft/class_688 a (IIF)I
-accessible method net/minecraft/class_688 a (IIF)I
-extendable method net/minecraft/class_688 a (J)J
-accessible method net/minecraft/class_688 a (J)J
-accessible field net/minecraft/class_689 g I
-mutable field net/minecraft/class_689 g I
-accessible field net/minecraft/class_689 h Lnet/minecraft/class_679;
-mutable field net/minecraft/class_689 h Lnet/minecraft/class_679;
-accessible field net/minecraft/class_689 i I
-mutable field net/minecraft/class_689 i I
-accessible field net/minecraft/class_689 j I
-mutable field net/minecraft/class_689 j I
-accessible field net/minecraft/class_689 k Ljava/lang/String;
-mutable field net/minecraft/class_689 k Ljava/lang/String;
-accessible field net/minecraft/class_689 l I
-mutable field net/minecraft/class_689 l I
-accessible field net/minecraft/class_689 m I
-mutable field net/minecraft/class_689 m I
-accessible field net/minecraft/class_689 n Z
-mutable field net/minecraft/class_689 n Z
-accessible field net/minecraft/class_689 o Z
-mutable field net/minecraft/class_689 o Z
-accessible field net/minecraft/class_689 p Z
-mutable field net/minecraft/class_689 p Z
-accessible field net/minecraft/class_689 q Z
-mutable field net/minecraft/class_689 q Z
-accessible field net/minecraft/class_689 r I
-mutable field net/minecraft/class_689 r I
-accessible field net/minecraft/class_689 s I
-mutable field net/minecraft/class_689 s I
-accessible field net/minecraft/class_689 t I
-mutable field net/minecraft/class_689 t I
-accessible field net/minecraft/class_689 u I
-mutable field net/minecraft/class_689 u I
-accessible field net/minecraft/class_689 v I
-mutable field net/minecraft/class_689 v I
-accessible field net/minecraft/class_689 w Z
-mutable field net/minecraft/class_689 w Z
-accessible field net/minecraft/class_689 x Lnet/minecraft/class_703$class_705;
-mutable field net/minecraft/class_689 x Lnet/minecraft/class_703$class_705;
-accessible field net/minecraft/class_689 y Lcom/google/common/base/Predicate;
-mutable field net/minecraft/class_689 y Lcom/google/common/base/Predicate;
-extendable method net/minecraft/class_689 c (IIII)V
-accessible method net/minecraft/class_689 c (IIII)V
-accessible field net/minecraft/class_690 p F
-mutable field net/minecraft/class_690 p F
-accessible field net/minecraft/class_690 q Ljava/lang/String;
-mutable field net/minecraft/class_690 q Ljava/lang/String;
-accessible field net/minecraft/class_690 r F
-mutable field net/minecraft/class_690 r F
-accessible field net/minecraft/class_690 s F
-mutable field net/minecraft/class_690 s F
-accessible field net/minecraft/class_690 t Lnet/minecraft/class_703$class_705;
-mutable field net/minecraft/class_690 t Lnet/minecraft/class_703$class_705;
-accessible field net/minecraft/class_690 u Lnet/minecraft/class_690$class_691;
-mutable field net/minecraft/class_690 u Lnet/minecraft/class_690$class_691;
-extendable method net/minecraft/class_690 e ()Ljava/lang/String;
-accessible method net/minecraft/class_690 e ()Ljava/lang/String;
-extendable method net/minecraft/class_690 a (Z)I
-accessible method net/minecraft/class_690 a (Z)I
-extendable method net/minecraft/class_690 b (Lnet/minecraft/class_669;II)V
-accessible method net/minecraft/class_690 b (Lnet/minecraft/class_669;II)V
-accessible field net/minecraft/class_692 a I
-mutable field net/minecraft/class_692 a I
-accessible field net/minecraft/class_692 f I
-mutable field net/minecraft/class_692 f I
-accessible field net/minecraft/class_692 k Ljava/util/List;
-mutable field net/minecraft/class_692 k Ljava/util/List;
-accessible field net/minecraft/class_692 l Z
-mutable field net/minecraft/class_692 l Z
-accessible field net/minecraft/class_692 m Z
-mutable field net/minecraft/class_692 m Z
-accessible field net/minecraft/class_692 n I
-mutable field net/minecraft/class_692 n I
-accessible field net/minecraft/class_692 o I
-mutable field net/minecraft/class_692 o I
-accessible field net/minecraft/class_692 p I
-mutable field net/minecraft/class_692 p I
-accessible field net/minecraft/class_692 q I
-mutable field net/minecraft/class_692 q I
-accessible field net/minecraft/class_692 r Lnet/minecraft/class_679;
-mutable field net/minecraft/class_692 r Lnet/minecraft/class_679;
-accessible field net/minecraft/class_692 s I
-mutable field net/minecraft/class_692 s I
-extendable method net/minecraft/class_692 b (Lnet/minecraft/class_669;II)V
-accessible method net/minecraft/class_692 b (Lnet/minecraft/class_669;II)V
-accessible field net/minecraft/class_695 o Z
-mutable field net/minecraft/class_695 o Z
-accessible field net/minecraft/class_695 p Ljava/lang/String;
-mutable field net/minecraft/class_695 p Ljava/lang/String;
-accessible field net/minecraft/class_695 q Lnet/minecraft/class_703$class_705;
-mutable field net/minecraft/class_695 q Lnet/minecraft/class_703$class_705;
-extendable method net/minecraft/class_695 c ()Ljava/lang/String;
-accessible method net/minecraft/class_695 c ()Ljava/lang/String;
-extendable class net/minecraft/class_696$class_697
-accessible field net/minecraft/class_696$class_697 g I
-mutable field net/minecraft/class_696$class_697 g I
-accessible field net/minecraft/class_696$class_697 h I
-mutable field net/minecraft/class_696$class_697 h I
-accessible field net/minecraft/class_696 o Z
-mutable field net/minecraft/class_696 o Z
-extendable method net/minecraft/class_698 a (IZII)V
-accessible method net/minecraft/class_698 a (IZII)V
-extendable method net/minecraft/class_698 a (I)Z
-accessible method net/minecraft/class_698 a (I)Z
-extendable method net/minecraft/class_698 a ()V
-accessible method net/minecraft/class_698 a ()V
-extendable method net/minecraft/class_698 a (IIIIII)V
-accessible method net/minecraft/class_698 a (IIIIII)V
-extendable method net/minecraft/class_698 a (III)V
-accessible method net/minecraft/class_698 a (III)V
-accessible field net/minecraft/class_700 o Lnet/minecraft/class_671$class_672;
-mutable field net/minecraft/class_700 o Lnet/minecraft/class_671$class_672;
-accessible field net/minecraft/class_701$class_702 a Lnet/minecraft/class_669;
-mutable field net/minecraft/class_701$class_702 a Lnet/minecraft/class_669;
-accessible field net/minecraft/class_701$class_702 b Lnet/minecraft/class_685;
-mutable field net/minecraft/class_701$class_702 b Lnet/minecraft/class_685;
-accessible field net/minecraft/class_701$class_702 c Lnet/minecraft/class_685;
-mutable field net/minecraft/class_701$class_702 c Lnet/minecraft/class_685;
-accessible field net/minecraft/class_701 u Ljava/util/List;
-mutable field net/minecraft/class_701 u Ljava/util/List;
-extendable method net/minecraft/class_701 a (Lnet/minecraft/class_669;IILnet/minecraft/class_671$class_672;)Lnet/minecraft/class_685;
-accessible method net/minecraft/class_701 a (Lnet/minecraft/class_669;IILnet/minecraft/class_671$class_672;)Lnet/minecraft/class_685;
-extendable method net/minecraft/class_701 b ()I
-accessible method net/minecraft/class_701 b ()I
-extendable method net/minecraft/class_701 d ()I
-accessible method net/minecraft/class_701 d ()I
-accessible field net/minecraft/class_703$class_704 a Z
-mutable field net/minecraft/class_703$class_704 a Z
-accessible field net/minecraft/class_703$class_706 a Lcom/google/common/base/Predicate;
-mutable field net/minecraft/class_703$class_706 a Lcom/google/common/base/Predicate;
-accessible field net/minecraft/class_703$class_707 a Lnet/minecraft/class_669;
-mutable field net/minecraft/class_703$class_707 a Lnet/minecraft/class_669;
-accessible field net/minecraft/class_703$class_707 b Lnet/minecraft/class_681;
-mutable field net/minecraft/class_703$class_707 b Lnet/minecraft/class_681;
-accessible field net/minecraft/class_703$class_707 c Lnet/minecraft/class_681;
-mutable field net/minecraft/class_703$class_707 c Lnet/minecraft/class_681;
-accessible field net/minecraft/class_703$class_707 d Lnet/minecraft/class_681;
-mutable field net/minecraft/class_703$class_707 d Lnet/minecraft/class_681;
-extendable method net/minecraft/class_703$class_707 a (Lnet/minecraft/class_681;IIIZ)V
-accessible method net/minecraft/class_703$class_707 a (Lnet/minecraft/class_681;IIIZ)V
-extendable method net/minecraft/class_703$class_707 a (Lnet/minecraft/class_685;IIIZ)V
-accessible method net/minecraft/class_703$class_707 a (Lnet/minecraft/class_685;IIIZ)V
-extendable method net/minecraft/class_703$class_707 a (Lnet/minecraft/class_689;IZ)V
-accessible method net/minecraft/class_703$class_707 a (Lnet/minecraft/class_689;IZ)V
-extendable method net/minecraft/class_703$class_707 a (Lnet/minecraft/class_692;IIIZ)V
-accessible method net/minecraft/class_703$class_707 a (Lnet/minecraft/class_692;IIIZ)V
-extendable method net/minecraft/class_703$class_707 a (Lnet/minecraft/class_681;III)Z
-accessible method net/minecraft/class_703$class_707 a (Lnet/minecraft/class_681;III)Z
-extendable method net/minecraft/class_703$class_707 a (Lnet/minecraft/class_685;III)Z
-accessible method net/minecraft/class_703$class_707 a (Lnet/minecraft/class_685;III)Z
-extendable method net/minecraft/class_703$class_707 a (Lnet/minecraft/class_689;III)V
-accessible method net/minecraft/class_703$class_707 a (Lnet/minecraft/class_689;III)V
-extendable method net/minecraft/class_703$class_707 b (Lnet/minecraft/class_681;III)V
-accessible method net/minecraft/class_703$class_707 b (Lnet/minecraft/class_681;III)V
-extendable method net/minecraft/class_703$class_707 b (Lnet/minecraft/class_685;III)V
-accessible method net/minecraft/class_703$class_707 b (Lnet/minecraft/class_685;III)V
-accessible field net/minecraft/class_703$class_709 a I
-mutable field net/minecraft/class_703$class_709 a I
-accessible field net/minecraft/class_703$class_709 b Ljava/lang/String;
-mutable field net/minecraft/class_703$class_709 b Ljava/lang/String;
-accessible field net/minecraft/class_703$class_709 c Z
-mutable field net/minecraft/class_703$class_709 c Z
-accessible field net/minecraft/class_703$class_710 a Lnet/minecraft/class_690$class_691;
-mutable field net/minecraft/class_703$class_710 a Lnet/minecraft/class_690$class_691;
-accessible field net/minecraft/class_703$class_710 b F
-mutable field net/minecraft/class_703$class_710 b F
-accessible field net/minecraft/class_703$class_710 c F
-mutable field net/minecraft/class_703$class_710 c F
-accessible field net/minecraft/class_703$class_710 d F
-mutable field net/minecraft/class_703$class_710 d F
-accessible field net/minecraft/class_703 u Ljava/util/List;
-mutable field net/minecraft/class_703 u Ljava/util/List;
-accessible field net/minecraft/class_703 v Lnet/minecraft/server/IntHashMap;
-mutable field net/minecraft/class_703 v Lnet/minecraft/server/IntHashMap;
-accessible field net/minecraft/class_703 w Ljava/util/List;
-mutable field net/minecraft/class_703 w Ljava/util/List;
-accessible field net/minecraft/class_703 x [[Lnet/minecraft/class_703$class_709;
-mutable field net/minecraft/class_703 x [[Lnet/minecraft/class_703$class_709;
-accessible field net/minecraft/class_703 y I
-mutable field net/minecraft/class_703 y I
-accessible field net/minecraft/class_703 z Lnet/minecraft/class_703$class_705;
-mutable field net/minecraft/class_703 z Lnet/minecraft/class_703$class_705;
-accessible field net/minecraft/class_703 A Lnet/minecraft/class_681;
-mutable field net/minecraft/class_703 A Lnet/minecraft/class_681;
-extendable method net/minecraft/class_703 s ()V
-accessible method net/minecraft/class_703 s ()V
-extendable method net/minecraft/class_703 t ()V
-accessible method net/minecraft/class_703 t ()V
-extendable method net/minecraft/class_703 e (II)V
-accessible method net/minecraft/class_703 e (II)V
-extendable method net/minecraft/class_703 a (Lnet/minecraft/class_681;Z)V
-accessible method net/minecraft/class_703 a (Lnet/minecraft/class_681;Z)V
-extendable method net/minecraft/class_703 a (Lnet/minecraft/class_703$class_709;IZ)Lnet/minecraft/class_681;
-accessible method net/minecraft/class_703 a (Lnet/minecraft/class_703$class_709;IZ)Lnet/minecraft/class_681;
-extendable method net/minecraft/class_703 a (IILnet/minecraft/class_703$class_710;)Lnet/minecraft/class_690;
-accessible method net/minecraft/class_703 a (IILnet/minecraft/class_703$class_710;)Lnet/minecraft/class_690;
-extendable method net/minecraft/class_703 a (IILnet/minecraft/class_703$class_704;)Lnet/minecraft/class_695;
-accessible method net/minecraft/class_703 a (IILnet/minecraft/class_703$class_704;)Lnet/minecraft/class_695;
-extendable method net/minecraft/class_703 a (IILnet/minecraft/class_703$class_706;)Lnet/minecraft/class_689;
-accessible method net/minecraft/class_703 a (IILnet/minecraft/class_703$class_706;)Lnet/minecraft/class_689;
-extendable method net/minecraft/class_703 a (IILnet/minecraft/class_703$class_708;Z)Lnet/minecraft/class_692;
-accessible method net/minecraft/class_703 a (IILnet/minecraft/class_703$class_708;Z)Lnet/minecraft/class_692;
-extendable method net/minecraft/class_703 d ()I
-accessible method net/minecraft/class_703 d ()I
-accessible class net/minecraft/class_711$class_712
-accessible field net/minecraft/class_711 a Lcom/google/common/collect/Ordering;
-mutable field net/minecraft/class_711 a Lcom/google/common/collect/Ordering;
-accessible field net/minecraft/class_711 f Lnet/minecraft/class_669;
-mutable field net/minecraft/class_711 f Lnet/minecraft/class_669;
-accessible field net/minecraft/class_711 g Lnet/minecraft/class_680;
-mutable field net/minecraft/class_711 g Lnet/minecraft/class_680;
-accessible field net/minecraft/class_711 h Lnet/minecraft/server/IChatBaseComponent;
-mutable field net/minecraft/class_711 h Lnet/minecraft/server/IChatBaseComponent;
-accessible field net/minecraft/class_711 i Lnet/minecraft/server/IChatBaseComponent;
-mutable field net/minecraft/class_711 i Lnet/minecraft/server/IChatBaseComponent;
-accessible field net/minecraft/class_711 j J
-mutable field net/minecraft/class_711 j J
-accessible field net/minecraft/class_711 k Z
-mutable field net/minecraft/class_711 k Z
-extendable method net/minecraft/class_711 a (IIILnet/minecraft/class_908;)V
-accessible method net/minecraft/class_711 a (IIILnet/minecraft/class_908;)V
-extendable method net/minecraft/class_711 a (Lnet/minecraft/server/ScoreboardObjective;ILjava/lang/String;IILnet/minecraft/class_908;)V
-accessible method net/minecraft/class_711 a (Lnet/minecraft/server/ScoreboardObjective;ILjava/lang/String;IILnet/minecraft/class_908;)V
-accessible field net/minecraft/class_713 a Lnet/minecraft/class_669;
-mutable field net/minecraft/class_713 a Lnet/minecraft/class_669;
-accessible field net/minecraft/class_713 b I
-mutable field net/minecraft/class_713 b I
-accessible field net/minecraft/class_713 c I
-mutable field net/minecraft/class_713 c I
-accessible field net/minecraft/class_713 d I
-mutable field net/minecraft/class_713 d I
-accessible field net/minecraft/class_713 e I
-mutable field net/minecraft/class_713 e I
-accessible field net/minecraft/class_713 f I
-mutable field net/minecraft/class_713 f I
-accessible field net/minecraft/class_713 g I
-mutable field net/minecraft/class_713 g I
-accessible field net/minecraft/class_713 h I
-mutable field net/minecraft/class_713 h I
-accessible field net/minecraft/class_713 u I
-mutable field net/minecraft/class_713 u I
-accessible field net/minecraft/class_713 v I
-mutable field net/minecraft/class_713 v I
-accessible field net/minecraft/class_713 i I
-mutable field net/minecraft/class_713 i I
-accessible field net/minecraft/class_713 j I
-mutable field net/minecraft/class_713 j I
-accessible field net/minecraft/class_713 k Z
-mutable field net/minecraft/class_713 k Z
-accessible field net/minecraft/class_713 l I
-mutable field net/minecraft/class_713 l I
-accessible field net/minecraft/class_713 m F
-mutable field net/minecraft/class_713 m F
-accessible field net/minecraft/class_713 n F
-mutable field net/minecraft/class_713 n F
-accessible field net/minecraft/class_713 o I
-mutable field net/minecraft/class_713 o I
-accessible field net/minecraft/class_713 p J
-mutable field net/minecraft/class_713 p J
-accessible field net/minecraft/class_713 q Z
-mutable field net/minecraft/class_713 q Z
-accessible field net/minecraft/class_713 r Z
-mutable field net/minecraft/class_713 r Z
-accessible field net/minecraft/class_713 s Z
-mutable field net/minecraft/class_713 s Z
-accessible field net/minecraft/class_713 t I
-mutable field net/minecraft/class_713 t I
-accessible field net/minecraft/class_713 w Z
-mutable field net/minecraft/class_713 w Z
-extendable method net/minecraft/class_713 a (ZI)V
-accessible method net/minecraft/class_713 a (ZI)V
-extendable method net/minecraft/class_713 b ()I
-accessible method net/minecraft/class_713 b ()I
-extendable method net/minecraft/class_713 a (IZII)V
-accessible method net/minecraft/class_713 a (IZII)V
-extendable method net/minecraft/class_713 a (I)Z
-accessible method net/minecraft/class_713 a (I)Z
-extendable method net/minecraft/class_713 k ()I
-accessible method net/minecraft/class_713 k ()I
-extendable method net/minecraft/class_713 a ()V
-accessible method net/minecraft/class_713 a ()V
-extendable method net/minecraft/class_713 a (III)V
-accessible method net/minecraft/class_713 a (III)V
-extendable method net/minecraft/class_713 a (IIIIII)V
-accessible method net/minecraft/class_713 a (IIIIII)V
-extendable method net/minecraft/class_713 a (IILnet/minecraft/class_1041;)V
-accessible method net/minecraft/class_713 a (IILnet/minecraft/class_1041;)V
-extendable method net/minecraft/class_713 a (II)V
-accessible method net/minecraft/class_713 a (II)V
-extendable method net/minecraft/class_713 b (II)V
-accessible method net/minecraft/class_713 b (II)V
-extendable method net/minecraft/class_713 l ()V
-accessible method net/minecraft/class_713 l ()V
-extendable method net/minecraft/class_713 b (IIII)V
-accessible method net/minecraft/class_713 b (IIII)V
-extendable method net/minecraft/class_713 d ()I
-accessible method net/minecraft/class_713 d ()I
-extendable method net/minecraft/class_713 c (IIII)V
-accessible method net/minecraft/class_713 c (IIII)V
-accessible field net/minecraft/class_714 p F
-mutable field net/minecraft/class_714 p F
-accessible field net/minecraft/class_714 q Lnet/minecraft/class_671$class_672;
-mutable field net/minecraft/class_714 q Lnet/minecraft/class_671$class_672;
-accessible field net/minecraft/class_714 r F
-mutable field net/minecraft/class_714 r F
-accessible field net/minecraft/class_714 s F
-mutable field net/minecraft/class_714 s F
-extendable method net/minecraft/class_714 a (Z)I
-accessible method net/minecraft/class_714 a (Z)I
-extendable method net/minecraft/class_714 b (Lnet/minecraft/class_669;II)V
-accessible method net/minecraft/class_714 b (Lnet/minecraft/class_669;II)V
-accessible field net/minecraft/class_715 a Lnet/minecraft/server/MinecraftKey;
-mutable field net/minecraft/class_715 a Lnet/minecraft/server/MinecraftKey;
-accessible field net/minecraft/class_715 b Lnet/minecraft/class_669;
-mutable field net/minecraft/class_715 b Lnet/minecraft/class_669;
-accessible field net/minecraft/class_715 c F
-mutable field net/minecraft/class_715 c F
-accessible field net/minecraft/class_715 d I
-mutable field net/minecraft/class_715 d I
-extendable method net/minecraft/class_715 a (IIII)V
-accessible method net/minecraft/class_715 a (IIII)V
-extendable method net/minecraft/class_715 b ()I
-accessible method net/minecraft/class_715 b ()I
-extendable method net/minecraft/class_715 c ()I
-accessible method net/minecraft/class_715 c ()I
-accessible field net/minecraft/class_716 f Lnet/minecraft/server/MinecraftKey;
-mutable field net/minecraft/class_716 f Lnet/minecraft/server/MinecraftKey;
-accessible field net/minecraft/class_716 g Lnet/minecraft/class_669;
-mutable field net/minecraft/class_716 g Lnet/minecraft/class_669;
-accessible field net/minecraft/class_716 h J
-mutable field net/minecraft/class_716 h J
-accessible field net/minecraft/class_716 i Lnet/minecraft/class_832;
-mutable field net/minecraft/class_716 i Lnet/minecraft/class_832;
-extendable method net/minecraft/class_716 c ()F
-accessible method net/minecraft/class_716 c ()F
-extendable method net/minecraft/class_716 a (Lnet/minecraft/class_684;FIFLnet/minecraft/class_838;)V
-accessible method net/minecraft/class_716 a (Lnet/minecraft/class_684;FIFLnet/minecraft/class_838;)V
-extendable method net/minecraft/class_716 a (IIFFLnet/minecraft/class_836;)V
-accessible method net/minecraft/class_716 a (IIFFLnet/minecraft/class_836;)V
-accessible field net/minecraft/class_717 o Lnet/minecraft/realms/RealmsButton;
-mutable field net/minecraft/class_717 o Lnet/minecraft/realms/RealmsButton;
-accessible field net/minecraft/class_718 u Lnet/minecraft/realms/RealmsClickableScrolledSelectionList;
-mutable field net/minecraft/class_718 u Lnet/minecraft/realms/RealmsClickableScrolledSelectionList;
-extendable method net/minecraft/class_718 b ()I
-accessible method net/minecraft/class_718 b ()I
-extendable method net/minecraft/class_718 a (IZII)V
-accessible method net/minecraft/class_718 a (IZII)V
-extendable method net/minecraft/class_718 a (I)Z
-accessible method net/minecraft/class_718 a (I)Z
-extendable method net/minecraft/class_718 a ()V
-accessible method net/minecraft/class_718 a ()V
-extendable method net/minecraft/class_718 a (IIIIII)V
-accessible method net/minecraft/class_718 a (IIIIII)V
-extendable method net/minecraft/class_718 k ()I
-accessible method net/minecraft/class_718 k ()I
-extendable method net/minecraft/class_718 d ()I
-accessible method net/minecraft/class_718 d ()I
-extendable method net/minecraft/class_718 b (IIII)V
-accessible method net/minecraft/class_718 b (IIII)V
-accessible field net/minecraft/class_719 a Lnet/minecraft/realms/RealmsScreen;
-mutable field net/minecraft/class_719 a Lnet/minecraft/realms/RealmsScreen;
-accessible field net/minecraft/class_720 u Lnet/minecraft/realms/RealmsScrolledSelectionList;
-mutable field net/minecraft/class_720 u Lnet/minecraft/realms/RealmsScrolledSelectionList;
-extendable method net/minecraft/class_720 b ()I
-accessible method net/minecraft/class_720 b ()I
-extendable method net/minecraft/class_720 a (IZII)V
-accessible method net/minecraft/class_720 a (IZII)V
-extendable method net/minecraft/class_720 a (I)Z
-accessible method net/minecraft/class_720 a (I)Z
-extendable method net/minecraft/class_720 a ()V
-accessible method net/minecraft/class_720 a ()V
-extendable method net/minecraft/class_720 a (IIIIII)V
-accessible method net/minecraft/class_720 a (IIIIII)V
-extendable method net/minecraft/class_720 k ()I
-accessible method net/minecraft/class_720 k ()I
-extendable method net/minecraft/class_720 d ()I
-accessible method net/minecraft/class_720 d ()I
-accessible field net/minecraft/class_721 u Lnet/minecraft/realms/RealmsSimpleScrolledSelectionList;
-mutable field net/minecraft/class_721 u Lnet/minecraft/realms/RealmsSimpleScrolledSelectionList;
-extendable method net/minecraft/class_721 b ()I
-accessible method net/minecraft/class_721 b ()I
-extendable method net/minecraft/class_721 a (IZII)V
-accessible method net/minecraft/class_721 a (IZII)V
-extendable method net/minecraft/class_721 a (I)Z
-accessible method net/minecraft/class_721 a (I)Z
-extendable method net/minecraft/class_721 a ()V
-accessible method net/minecraft/class_721 a ()V
-extendable method net/minecraft/class_721 a (IIIIII)V
-accessible method net/minecraft/class_721 a (IIIIII)V
-extendable method net/minecraft/class_721 k ()I
-accessible method net/minecraft/class_721 k ()I
-extendable method net/minecraft/class_721 d ()I
-accessible method net/minecraft/class_721 d ()I
-accessible field net/minecraft/class_722 a [Lnet/minecraft/class_671$class_672;
-mutable field net/minecraft/class_722 a [Lnet/minecraft/class_671$class_672;
-accessible field net/minecraft/class_722 f Lnet/minecraft/class_754;
-mutable field net/minecraft/class_722 f Lnet/minecraft/class_754;
-accessible field net/minecraft/class_722 g Lnet/minecraft/class_671;
-mutable field net/minecraft/class_722 g Lnet/minecraft/class_671;
-accessible field net/minecraft/class_722 h Ljava/lang/String;
-mutable field net/minecraft/class_722 h Ljava/lang/String;
-extendable method net/minecraft/class_722 a (Lnet/minecraft/class_685;)V
-accessible method net/minecraft/class_722 a (Lnet/minecraft/class_685;)V
-accessible field net/minecraft/class_723 f Lorg/apache/logging/log4j/Logger;
-mutable field net/minecraft/class_723 f Lorg/apache/logging/log4j/Logger;
-accessible field net/minecraft/class_723 g Ljava/lang/String;
-mutable field net/minecraft/class_723 g Ljava/lang/String;
-accessible field net/minecraft/class_723 h I
-mutable field net/minecraft/class_723 h I
-accessible field net/minecraft/class_723 i Z
-mutable field net/minecraft/class_723 i Z
-accessible field net/minecraft/class_723 r Z
-mutable field net/minecraft/class_723 r Z
-accessible field net/minecraft/class_723 s I
-mutable field net/minecraft/class_723 s I
-accessible field net/minecraft/class_723 t Ljava/util/List;
-mutable field net/minecraft/class_723 t Ljava/util/List;
-accessible field net/minecraft/class_723 a Lnet/minecraft/class_689;
-mutable field net/minecraft/class_723 a Lnet/minecraft/class_689;
-accessible field net/minecraft/class_723 u Ljava/lang/String;
-mutable field net/minecraft/class_723 u Ljava/lang/String;
-extendable method net/minecraft/class_723 a (CI)V
-accessible method net/minecraft/class_723 a (CI)V
-extendable method net/minecraft/class_723 a (III)V
-accessible method net/minecraft/class_723 a (III)V
-extendable method net/minecraft/class_723 a (Ljava/lang/String;Z)V
-accessible method net/minecraft/class_723 a (Ljava/lang/String;Z)V
-extendable method net/minecraft/class_723 a (Ljava/lang/String;Ljava/lang/String;)V
-accessible method net/minecraft/class_723 a (Ljava/lang/String;Ljava/lang/String;)V
-accessible field net/minecraft/class_724 r Ljava/lang/String;
-mutable field net/minecraft/class_724 r Ljava/lang/String;
-accessible field net/minecraft/class_724 s Ljava/lang/String;
-mutable field net/minecraft/class_724 s Ljava/lang/String;
-accessible field net/minecraft/class_724 t Ljava/lang/String;
-mutable field net/minecraft/class_724 t Ljava/lang/String;
-accessible field net/minecraft/class_724 u Z
-mutable field net/minecraft/class_724 u Z
-extendable method net/minecraft/class_724 a (Lnet/minecraft/class_685;)V
-accessible method net/minecraft/class_724 a (Lnet/minecraft/class_685;)V
-accessible field net/minecraft/class_726 a Lnet/minecraft/class_725;
-mutable field net/minecraft/class_726 a Lnet/minecraft/class_725;
-accessible field net/minecraft/class_726 f Ljava/lang/String;
-mutable field net/minecraft/class_726 f Ljava/lang/String;
-accessible field net/minecraft/class_726 r Ljava/lang/String;
-mutable field net/minecraft/class_726 r Ljava/lang/String;
-accessible field net/minecraft/class_726 s Ljava/util/List;
-mutable field net/minecraft/class_726 s Ljava/util/List;
-accessible field net/minecraft/class_726 g Ljava/lang/String;
-mutable field net/minecraft/class_726 g Ljava/lang/String;
-accessible field net/minecraft/class_726 h Ljava/lang/String;
-mutable field net/minecraft/class_726 h Ljava/lang/String;
-accessible field net/minecraft/class_726 i I
-mutable field net/minecraft/class_726 i I
-accessible field net/minecraft/class_726 t I
-mutable field net/minecraft/class_726 t I
-extendable method net/minecraft/class_726 a (Lnet/minecraft/class_685;)V
-accessible method net/minecraft/class_726 a (Lnet/minecraft/class_685;)V
-accessible class net/minecraft/class_727$1
-accessible field net/minecraft/class_727 a Ljava/util/concurrent/atomic/AtomicInteger;
-mutable field net/minecraft/class_727 a Ljava/util/concurrent/atomic/AtomicInteger;
-accessible field net/minecraft/class_727 f Lorg/apache/logging/log4j/Logger;
-mutable field net/minecraft/class_727 f Lorg/apache/logging/log4j/Logger;
-accessible field net/minecraft/class_727 g Lnet/minecraft/server/NetworkManager;
-mutable field net/minecraft/class_727 g Lnet/minecraft/server/NetworkManager;
-accessible field net/minecraft/class_727 h Z
-mutable field net/minecraft/class_727 h Z
-accessible field net/minecraft/class_727 i Lnet/minecraft/class_754;
-mutable field net/minecraft/class_727 i Lnet/minecraft/class_754;
-extendable method net/minecraft/class_727 a (Ljava/lang/String;I)V
-accessible method net/minecraft/class_727 a (Ljava/lang/String;I)V
-extendable method net/minecraft/class_727 a (CI)V
-accessible method net/minecraft/class_727 a (CI)V
-extendable method net/minecraft/class_727 a (Lnet/minecraft/class_685;)V
-accessible method net/minecraft/class_727 a (Lnet/minecraft/class_685;)V
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 accessible field net/minecraft/server/CommandReplaceItem a Ljava/util/Map;
 mutable field net/minecraft/server/CommandReplaceItem a Ljava/util/Map;
 extendable method net/minecraft/server/CommandReplaceItem e (Ljava/lang/String;)I
 accessible method net/minecraft/server/CommandReplaceItem e (Ljava/lang/String;)I
 extendable method net/minecraft/server/CommandReplaceItem d ()[Ljava/lang/String;
 accessible method net/minecraft/server/CommandReplaceItem d ()[Ljava/lang/String;
-accessible class net/minecraft/class_729$class_730
-extendable method net/minecraft/class_729$class_730 a (IILnet/minecraft/server/ItemStack;)V
-accessible method net/minecraft/class_729$class_730 a (IILnet/minecraft/server/ItemStack;)V
-extendable method net/minecraft/class_729$class_730 e (II)V
-accessible method net/minecraft/class_729$class_730 e (II)V
-extendable method net/minecraft/class_729$class_730 d (IIII)V
-accessible method net/minecraft/class_729$class_730 d (IIII)V
-extendable method net/minecraft/class_729$class_730 b ()I
-accessible method net/minecraft/class_729$class_730 b ()I
-extendable method net/minecraft/class_729$class_730 a (IZII)V
-accessible method net/minecraft/class_729$class_730 a (IZII)V
-extendable method net/minecraft/class_729$class_730 a (I)Z
-accessible method net/minecraft/class_729$class_730 a (I)Z
-extendable method net/minecraft/class_729$class_730 a ()V
-accessible method net/minecraft/class_729$class_730 a ()V
-extendable method net/minecraft/class_729$class_730 a (IIIIII)V
-accessible method net/minecraft/class_729$class_730 a (IIIIII)V
-extendable method net/minecraft/class_729$class_730 d ()I
-accessible method net/minecraft/class_729$class_730 d ()I
-accessible field net/minecraft/class_729 a Lnet/minecraft/class_731;
-mutable field net/minecraft/class_729 a Lnet/minecraft/class_731;
-accessible field net/minecraft/class_729 f Lnet/minecraft/server/WorldGenFlatInfo;
-mutable field net/minecraft/class_729 f Lnet/minecraft/server/WorldGenFlatInfo;
-accessible field net/minecraft/class_729 g Ljava/lang/String;
-mutable field net/minecraft/class_729 g Ljava/lang/String;
-accessible field net/minecraft/class_729 h Ljava/lang/String;
-mutable field net/minecraft/class_729 h Ljava/lang/String;
-accessible field net/minecraft/class_729 i Ljava/lang/String;
-mutable field net/minecraft/class_729 i Ljava/lang/String;
-accessible field net/minecraft/class_729 r Lnet/minecraft/class_729$class_730;
-mutable field net/minecraft/class_729 r Lnet/minecraft/class_729$class_730;
-accessible field net/minecraft/class_729 s Lnet/minecraft/class_685;
-mutable field net/minecraft/class_729 s Lnet/minecraft/class_685;
-accessible field net/minecraft/class_729 t Lnet/minecraft/class_685;
-mutable field net/minecraft/class_729 t Lnet/minecraft/class_685;
-accessible field net/minecraft/class_729 u Lnet/minecraft/class_685;
-mutable field net/minecraft/class_729 u Lnet/minecraft/class_685;
-extendable method net/minecraft/class_729 a (Lnet/minecraft/class_685;)V
-accessible method net/minecraft/class_729 a (Lnet/minecraft/class_685;)V
-extendable method net/minecraft/class_729 g ()Z
-accessible method net/minecraft/class_729 g ()Z
-accessible field net/minecraft/class_731 f Lnet/minecraft/class_754;
-mutable field net/minecraft/class_731 f Lnet/minecraft/class_754;
-accessible field net/minecraft/class_731 g Lnet/minecraft/class_689;
-mutable field net/minecraft/class_731 g Lnet/minecraft/class_689;
-accessible field net/minecraft/class_731 h Lnet/minecraft/class_689;
-mutable field net/minecraft/class_731 h Lnet/minecraft/class_689;
-accessible field net/minecraft/class_731 i Ljava/lang/String;
-mutable field net/minecraft/class_731 i Ljava/lang/String;
-accessible field net/minecraft/class_731 r Ljava/lang/String;
-mutable field net/minecraft/class_731 r Ljava/lang/String;
-accessible field net/minecraft/class_731 s Ljava/lang/String;
-mutable field net/minecraft/class_731 s Ljava/lang/String;
-accessible field net/minecraft/class_731 t Z
-mutable field net/minecraft/class_731 t Z
-accessible field net/minecraft/class_731 u Z
-mutable field net/minecraft/class_731 u Z
-accessible field net/minecraft/class_731 v Z
-mutable field net/minecraft/class_731 v Z
-accessible field net/minecraft/class_731 w Z
-mutable field net/minecraft/class_731 w Z
-accessible field net/minecraft/class_731 x Z
-mutable field net/minecraft/class_731 x Z
-accessible field net/minecraft/class_731 y Z
-mutable field net/minecraft/class_731 y Z
-accessible field net/minecraft/class_731 z Z
-mutable field net/minecraft/class_731 z Z
-accessible field net/minecraft/class_731 A Lnet/minecraft/class_685;
-mutable field net/minecraft/class_731 A Lnet/minecraft/class_685;
-accessible field net/minecraft/class_731 B Lnet/minecraft/class_685;
-mutable field net/minecraft/class_731 B Lnet/minecraft/class_685;
-accessible field net/minecraft/class_731 C Lnet/minecraft/class_685;
-mutable field net/minecraft/class_731 C Lnet/minecraft/class_685;
-accessible field net/minecraft/class_731 D Lnet/minecraft/class_685;
-mutable field net/minecraft/class_731 D Lnet/minecraft/class_685;
-accessible field net/minecraft/class_731 E Lnet/minecraft/class_685;
-mutable field net/minecraft/class_731 E Lnet/minecraft/class_685;
-accessible field net/minecraft/class_731 F Lnet/minecraft/class_685;
-mutable field net/minecraft/class_731 F Lnet/minecraft/class_685;
-accessible field net/minecraft/class_731 G Lnet/minecraft/class_685;
-mutable field net/minecraft/class_731 G Lnet/minecraft/class_685;
-accessible field net/minecraft/class_731 H Ljava/lang/String;
-mutable field net/minecraft/class_731 H Ljava/lang/String;
-accessible field net/minecraft/class_731 I Ljava/lang/String;
-mutable field net/minecraft/class_731 I Ljava/lang/String;
-accessible field net/minecraft/class_731 J Ljava/lang/String;
-mutable field net/minecraft/class_731 J Ljava/lang/String;
-accessible field net/minecraft/class_731 K Ljava/lang/String;
-mutable field net/minecraft/class_731 K Ljava/lang/String;
-accessible field net/minecraft/class_731 L I
-mutable field net/minecraft/class_731 L I
-accessible field net/minecraft/class_731 M [Ljava/lang/String;
-mutable field net/minecraft/class_731 M [Ljava/lang/String;
-extendable method net/minecraft/class_731 a ()V
-accessible method net/minecraft/class_731 a ()V
-extendable method net/minecraft/class_731 f ()V
-accessible method net/minecraft/class_731 f ()V
-extendable method net/minecraft/class_731 a (Lnet/minecraft/class_685;)V
-accessible method net/minecraft/class_731 a (Lnet/minecraft/class_685;)V
-extendable method net/minecraft/class_731 g ()Z
-accessible method net/minecraft/class_731 g ()Z
-extendable method net/minecraft/class_731 h ()V
-accessible method net/minecraft/class_731 h ()V
-extendable method net/minecraft/class_731 a (Z)V
-accessible method net/minecraft/class_731 a (Z)V
-extendable method net/minecraft/class_731 a (CI)V
-accessible method net/minecraft/class_731 a (CI)V
-extendable method net/minecraft/class_731 a (III)V
-accessible method net/minecraft/class_731 a (III)V
-accessible class net/minecraft/class_732$class_733
-accessible class net/minecraft/class_732$class_734
-extendable method net/minecraft/class_732$class_734 b ()I
-accessible method net/minecraft/class_732$class_734 b ()I
-extendable method net/minecraft/class_732$class_734 a (IZII)V
-accessible method net/minecraft/class_732$class_734 a (IZII)V
-extendable method net/minecraft/class_732$class_734 a (I)Z
-accessible method net/minecraft/class_732$class_734 a (I)Z
-extendable method net/minecraft/class_732$class_734 a ()V
-accessible method net/minecraft/class_732$class_734 a ()V
-extendable method net/minecraft/class_732$class_734 a (IILnet/minecraft/server/MinecraftKey;)V
-accessible method net/minecraft/class_732$class_734 a (IILnet/minecraft/server/MinecraftKey;)V
-extendable method net/minecraft/class_732$class_734 a (IIIIII)V
-accessible method net/minecraft/class_732$class_734 a (IIIIII)V
-accessible field net/minecraft/class_732 f Ljava/util/List;
-mutable field net/minecraft/class_732 f Ljava/util/List;
-accessible field net/minecraft/class_732 g Lnet/minecraft/class_732$class_734;
-mutable field net/minecraft/class_732 g Lnet/minecraft/class_732$class_734;
-accessible field net/minecraft/class_732 h Lnet/minecraft/class_685;
-mutable field net/minecraft/class_732 h Lnet/minecraft/class_685;
-accessible field net/minecraft/class_732 i Lnet/minecraft/class_689;
-mutable field net/minecraft/class_732 i Lnet/minecraft/class_689;
-accessible field net/minecraft/class_732 r Lnet/minecraft/class_735;
-mutable field net/minecraft/class_732 r Lnet/minecraft/class_735;
-accessible field net/minecraft/class_732 a Ljava/lang/String;
-mutable field net/minecraft/class_732 a Ljava/lang/String;
-accessible field net/minecraft/class_732 s Ljava/lang/String;
-mutable field net/minecraft/class_732 s Ljava/lang/String;
-accessible field net/minecraft/class_732 t Ljava/lang/String;
-mutable field net/minecraft/class_732 t Ljava/lang/String;
-extendable method net/minecraft/class_732 a (III)V
-accessible method net/minecraft/class_732 a (III)V
-extendable method net/minecraft/class_732 a (CI)V
-accessible method net/minecraft/class_732 a (CI)V
-extendable method net/minecraft/class_732 a (Lnet/minecraft/class_685;)V
-accessible method net/minecraft/class_732 a (Lnet/minecraft/class_685;)V
-extendable method net/minecraft/class_732 g ()Z
-accessible method net/minecraft/class_732 g ()Z
-accessible class net/minecraft/class_735$1
-accessible field net/minecraft/class_735 i Lnet/minecraft/class_731;
-mutable field net/minecraft/class_735 i Lnet/minecraft/class_731;
-accessible field net/minecraft/class_735 a Ljava/lang/String;
-mutable field net/minecraft/class_735 a Ljava/lang/String;
-accessible field net/minecraft/class_735 f Ljava/lang/String;
-mutable field net/minecraft/class_735 f Ljava/lang/String;
-accessible field net/minecraft/class_735 g Ljava/lang/String;
-mutable field net/minecraft/class_735 g Ljava/lang/String;
-accessible field net/minecraft/class_735 h [Ljava/lang/String;
-mutable field net/minecraft/class_735 h [Ljava/lang/String;
-accessible field net/minecraft/class_735 r Lnet/minecraft/class_703;
-mutable field net/minecraft/class_735 r Lnet/minecraft/class_703;
-accessible field net/minecraft/class_735 s Lnet/minecraft/class_685;
-mutable field net/minecraft/class_735 s Lnet/minecraft/class_685;
-accessible field net/minecraft/class_735 t Lnet/minecraft/class_685;
-mutable field net/minecraft/class_735 t Lnet/minecraft/class_685;
-accessible field net/minecraft/class_735 u Lnet/minecraft/class_685;
-mutable field net/minecraft/class_735 u Lnet/minecraft/class_685;
-accessible field net/minecraft/class_735 v Lnet/minecraft/class_685;
-mutable field net/minecraft/class_735 v Lnet/minecraft/class_685;
-accessible field net/minecraft/class_735 w Lnet/minecraft/class_685;
-mutable field net/minecraft/class_735 w Lnet/minecraft/class_685;
-accessible field net/minecraft/class_735 x Lnet/minecraft/class_685;
-mutable field net/minecraft/class_735 x Lnet/minecraft/class_685;
-accessible field net/minecraft/class_735 y Lnet/minecraft/class_685;
-mutable field net/minecraft/class_735 y Lnet/minecraft/class_685;
-accessible field net/minecraft/class_735 z Lnet/minecraft/class_685;
-mutable field net/minecraft/class_735 z Lnet/minecraft/class_685;
-accessible field net/minecraft/class_735 A Z
-mutable field net/minecraft/class_735 A Z
-accessible field net/minecraft/class_735 B I
-mutable field net/minecraft/class_735 B I
-accessible field net/minecraft/class_735 C Z
-mutable field net/minecraft/class_735 C Z
-accessible field net/minecraft/class_735 D Lcom/google/common/base/Predicate;
-mutable field net/minecraft/class_735 D Lcom/google/common/base/Predicate;
-accessible field net/minecraft/class_735 E Lnet/minecraft/server/CustomWorldSettingsFinal$CustomWorldSettings;
-mutable field net/minecraft/class_735 E Lnet/minecraft/server/CustomWorldSettingsFinal$CustomWorldSettings;
-accessible field net/minecraft/class_735 F Lnet/minecraft/server/CustomWorldSettingsFinal$CustomWorldSettings;
-mutable field net/minecraft/class_735 F Lnet/minecraft/server/CustomWorldSettingsFinal$CustomWorldSettings;
-accessible field net/minecraft/class_735 G Ljava/util/Random;
-mutable field net/minecraft/class_735 G Ljava/util/Random;
-extendable method net/minecraft/class_735 f ()V
-accessible method net/minecraft/class_735 f ()V
-extendable method net/minecraft/class_735 a (Z)V
-accessible method net/minecraft/class_735 a (Z)V
-extendable method net/minecraft/class_735 b (IF)Ljava/lang/String;
-accessible method net/minecraft/class_735 b (IF)Ljava/lang/String;
-extendable method net/minecraft/class_735 a (Lnet/minecraft/class_685;)V
-accessible method net/minecraft/class_735 a (Lnet/minecraft/class_685;)V
-extendable method net/minecraft/class_735 g ()V
-accessible method net/minecraft/class_735 g ()V
-extendable method net/minecraft/class_735 b (I)V
-accessible method net/minecraft/class_735 b (I)V
-extendable method net/minecraft/class_735 h ()V
-accessible method net/minecraft/class_735 h ()V
-extendable method net/minecraft/class_735 b (Z)V
-accessible method net/minecraft/class_735 b (Z)V
-extendable method net/minecraft/class_735 i ()V
-accessible method net/minecraft/class_735 i ()V
-extendable method net/minecraft/class_735 a (CI)V
-accessible method net/minecraft/class_735 a (CI)V
-extendable method net/minecraft/class_735 a (F)V
-accessible method net/minecraft/class_735 a (F)V
-extendable method net/minecraft/class_735 a (III)V
-accessible method net/minecraft/class_735 a (III)V
-extendable method net/minecraft/class_735 b (III)V
-accessible method net/minecraft/class_735 b (III)V
-accessible field net/minecraft/class_736 a I
-mutable field net/minecraft/class_736 a I
-accessible field net/minecraft/class_736 f Z
-mutable field net/minecraft/class_736 f Z
-extendable method net/minecraft/class_736 a (CI)V
-accessible method net/minecraft/class_736 a (CI)V
-extendable method net/minecraft/class_736 a (Lnet/minecraft/class_685;)V
-accessible method net/minecraft/class_736 a (Lnet/minecraft/class_685;)V
-accessible field net/minecraft/class_737 a Lorg/apache/logging/log4j/Logger;
-mutable field net/minecraft/class_737 a Lorg/apache/logging/log4j/Logger;
-accessible field net/minecraft/class_737 f Lnet/minecraft/server/MinecraftKey;
-mutable field net/minecraft/class_737 f Lnet/minecraft/server/MinecraftKey;
-extendable method net/minecraft/class_737 a (Lnet/minecraft/class_685;)V
-accessible method net/minecraft/class_737 a (Lnet/minecraft/class_685;)V
-accessible field net/minecraft/class_738 a Lnet/minecraft/class_754;
-mutable field net/minecraft/class_738 a Lnet/minecraft/class_754;
-accessible field net/minecraft/class_738 f Lnet/minecraft/class_910;
-mutable field net/minecraft/class_738 f Lnet/minecraft/class_910;
-accessible field net/minecraft/class_738 g Lnet/minecraft/class_689;
-mutable field net/minecraft/class_738 g Lnet/minecraft/class_689;
-extendable method net/minecraft/class_738 a (Lnet/minecraft/class_685;)V
-accessible method net/minecraft/class_738 a (Lnet/minecraft/class_685;)V
-extendable method net/minecraft/class_738 a (CI)V
-accessible method net/minecraft/class_738 a (CI)V
-extendable method net/minecraft/class_738 a (III)V
-accessible method net/minecraft/class_738 a (III)V
-accessible field net/minecraft/class_739 a Ljava/lang/String;
-mutable field net/minecraft/class_739 a Ljava/lang/String;
-accessible field net/minecraft/class_739 f Lnet/minecraft/server/IChatBaseComponent;
-mutable field net/minecraft/class_739 f Lnet/minecraft/server/IChatBaseComponent;
-accessible field net/minecraft/class_739 g Ljava/util/List;
-mutable field net/minecraft/class_739 g Ljava/util/List;
-accessible field net/minecraft/class_739 h Lnet/minecraft/class_754;
-mutable field net/minecraft/class_739 h Lnet/minecraft/class_754;
-accessible field net/minecraft/class_739 i I
-mutable field net/minecraft/class_739 i I
-extendable method net/minecraft/class_739 a (CI)V
-accessible method net/minecraft/class_739 a (CI)V
-extendable method net/minecraft/class_739 a (Lnet/minecraft/class_685;)V
-accessible method net/minecraft/class_739 a (Lnet/minecraft/class_685;)V
-accessible class net/minecraft/class_740$1
-accessible field net/minecraft/class_740 a Lnet/minecraft/class_754;
-mutable field net/minecraft/class_740 a Lnet/minecraft/class_754;
-accessible field net/minecraft/class_740 f Lnet/minecraft/class_910;
-mutable field net/minecraft/class_740 f Lnet/minecraft/class_910;
-accessible field net/minecraft/class_740 g Lnet/minecraft/class_689;
-mutable field net/minecraft/class_740 g Lnet/minecraft/class_689;
-accessible field net/minecraft/class_740 h Lnet/minecraft/class_689;
-mutable field net/minecraft/class_740 h Lnet/minecraft/class_689;
-accessible field net/minecraft/class_740 i Lnet/minecraft/class_685;
-mutable field net/minecraft/class_740 i Lnet/minecraft/class_685;
-accessible field net/minecraft/class_740 r Lcom/google/common/base/Predicate;
-mutable field net/minecraft/class_740 r Lcom/google/common/base/Predicate;
-extendable method net/minecraft/class_740 a (Lnet/minecraft/class_685;)V
-accessible method net/minecraft/class_740 a (Lnet/minecraft/class_685;)V
-extendable method net/minecraft/class_740 a (CI)V
-accessible method net/minecraft/class_740 a (CI)V
-extendable method net/minecraft/class_740 a (III)V
-accessible method net/minecraft/class_740 a (III)V
-accessible field net/minecraft/class_741 a Ljava/lang/String;
-mutable field net/minecraft/class_741 a Ljava/lang/String;
-accessible field net/minecraft/class_741 f Ljava/lang/String;
-mutable field net/minecraft/class_741 f Ljava/lang/String;
-extendable method net/minecraft/class_741 a (CI)V
-accessible method net/minecraft/class_741 a (CI)V
-extendable method net/minecraft/class_741 a (Lnet/minecraft/class_685;)V
-accessible method net/minecraft/class_741 a (Lnet/minecraft/class_685;)V
-extendable method net/minecraft/class_742 a (CI)V
-accessible method net/minecraft/class_742 a (CI)V
-extendable method net/minecraft/class_742 a (Lnet/minecraft/class_685;)V
-accessible method net/minecraft/class_742 a (Lnet/minecraft/class_685;)V
-extendable method net/minecraft/class_742 f ()V
-accessible method net/minecraft/class_742 f ()V
-accessible class net/minecraft/class_743$class_744
-accessible field net/minecraft/class_743$class_744 v Ljava/util/List;
-mutable field net/minecraft/class_743$class_744 v Ljava/util/List;
-accessible field net/minecraft/class_743$class_744 w Ljava/util/Map;
-mutable field net/minecraft/class_743$class_744 w Ljava/util/Map;
-extendable method net/minecraft/class_743$class_744 b ()I
-accessible method net/minecraft/class_743$class_744 b ()I
-extendable method net/minecraft/class_743$class_744 a (IZII)V
-accessible method net/minecraft/class_743$class_744 a (IZII)V
-extendable method net/minecraft/class_743$class_744 a (I)Z
-accessible method net/minecraft/class_743$class_744 a (I)Z
-extendable method net/minecraft/class_743$class_744 k ()I
-accessible method net/minecraft/class_743$class_744 k ()I
-extendable method net/minecraft/class_743$class_744 a ()V
-accessible method net/minecraft/class_743$class_744 a ()V
-extendable method net/minecraft/class_743$class_744 a (IIIIII)V
-accessible method net/minecraft/class_743$class_744 a (IIIIII)V
-accessible field net/minecraft/class_743 a Lnet/minecraft/class_754;
-mutable field net/minecraft/class_743 a Lnet/minecraft/class_754;
-accessible field net/minecraft/class_743 f Lnet/minecraft/class_743$class_744;
-mutable field net/minecraft/class_743 f Lnet/minecraft/class_743$class_744;
-accessible field net/minecraft/class_743 g Lnet/minecraft/class_671;
-mutable field net/minecraft/class_743 g Lnet/minecraft/class_671;
-accessible field net/minecraft/class_743 h Lnet/minecraft/class_1270;
-mutable field net/minecraft/class_743 h Lnet/minecraft/class_1270;
-accessible field net/minecraft/class_743 i Lnet/minecraft/class_700;
-mutable field net/minecraft/class_743 i Lnet/minecraft/class_700;
-accessible field net/minecraft/class_743 r Lnet/minecraft/class_700;
-mutable field net/minecraft/class_743 r Lnet/minecraft/class_700;
-extendable method net/minecraft/class_743 a (Lnet/minecraft/class_685;)V
-accessible method net/minecraft/class_743 a (Lnet/minecraft/class_685;)V
-accessible class net/minecraft/class_745$1
-accessible field net/minecraft/class_745 f [Lnet/minecraft/class_671$class_672;
-mutable field net/minecraft/class_745 f [Lnet/minecraft/class_671$class_672;
-accessible field net/minecraft/class_745 g Lnet/minecraft/class_754;
-mutable field net/minecraft/class_745 g Lnet/minecraft/class_754;
-accessible field net/minecraft/class_745 h Lnet/minecraft/class_671;
-mutable field net/minecraft/class_745 h Lnet/minecraft/class_671;
-accessible field net/minecraft/class_745 i Lnet/minecraft/class_685;
-mutable field net/minecraft/class_745 i Lnet/minecraft/class_685;
-accessible field net/minecraft/class_745 r Lnet/minecraft/class_696;
-mutable field net/minecraft/class_745 r Lnet/minecraft/class_696;
-accessible field net/minecraft/class_745 a Ljava/lang/String;
-mutable field net/minecraft/class_745 a Ljava/lang/String;
-extendable method net/minecraft/class_745 a (Lnet/minecraft/class_685;)V
-accessible method net/minecraft/class_745 a (Lnet/minecraft/class_685;)V
-extendable method net/minecraft/class_746 a (Lnet/minecraft/class_685;)V
-accessible method net/minecraft/class_746 a (Lnet/minecraft/class_685;)V
-extendable method net/minecraft/class_746 a (CI)V
-accessible method net/minecraft/class_746 a (CI)V
-accessible field net/minecraft/class_747 a I
-mutable field net/minecraft/class_747 a I
-accessible field net/minecraft/class_747 f I
-mutable field net/minecraft/class_747 f I
-extendable method net/minecraft/class_747 a (Lnet/minecraft/class_685;)V
-accessible method net/minecraft/class_747 a (Lnet/minecraft/class_685;)V
-accessible class net/minecraft/class_748$class_749
-accessible class net/minecraft/class_748$class_750
-extendable method net/minecraft/class_748$class_750 a (IILnet/minecraft/server/Item;I)V
-accessible method net/minecraft/class_748$class_750 a (IILnet/minecraft/server/Item;I)V
-extendable method net/minecraft/class_748$class_750 e (II)V
-accessible method net/minecraft/class_748$class_750 e (II)V
-extendable method net/minecraft/class_748$class_750 d (IIII)V
-accessible method net/minecraft/class_748$class_750 d (IIII)V
-extendable method net/minecraft/class_748$class_750 b ()I
-accessible method net/minecraft/class_748$class_750 b ()I
-extendable method net/minecraft/class_748$class_750 a (IZII)V
-accessible method net/minecraft/class_748$class_750 a (IZII)V
-extendable method net/minecraft/class_748$class_750 a (I)Z
-accessible method net/minecraft/class_748$class_750 a (I)Z
-extendable method net/minecraft/class_748$class_750 a ()V
-accessible method net/minecraft/class_748$class_750 a ()V
-extendable method net/minecraft/class_748$class_750 a (IIIIII)V
-accessible method net/minecraft/class_748$class_750 a (IIIIII)V
-accessible field net/minecraft/class_748 a Ljava/util/List;
-mutable field net/minecraft/class_748 a Ljava/util/List;
-accessible field net/minecraft/class_748 f Lnet/minecraft/class_729;
-mutable field net/minecraft/class_748 f Lnet/minecraft/class_729;
-accessible field net/minecraft/class_748 g Ljava/lang/String;
-mutable field net/minecraft/class_748 g Ljava/lang/String;
-accessible field net/minecraft/class_748 h Ljava/lang/String;
-mutable field net/minecraft/class_748 h Ljava/lang/String;
-accessible field net/minecraft/class_748 i Ljava/lang/String;
-mutable field net/minecraft/class_748 i Ljava/lang/String;
-accessible field net/minecraft/class_748 r Lnet/minecraft/class_748$class_750;
-mutable field net/minecraft/class_748 r Lnet/minecraft/class_748$class_750;
-accessible field net/minecraft/class_748 s Lnet/minecraft/class_685;
-mutable field net/minecraft/class_748 s Lnet/minecraft/class_685;
-accessible field net/minecraft/class_748 t Lnet/minecraft/class_689;
-mutable field net/minecraft/class_748 t Lnet/minecraft/class_689;
-extendable method net/minecraft/class_748 a (III)V
-accessible method net/minecraft/class_748 a (III)V
-extendable method net/minecraft/class_748 a (CI)V
-accessible method net/minecraft/class_748 a (CI)V
-extendable method net/minecraft/class_748 a (Lnet/minecraft/class_685;)V
-accessible method net/minecraft/class_748 a (Lnet/minecraft/class_685;)V
-extendable method net/minecraft/class_748 g ()Z
-accessible method net/minecraft/class_748 g ()Z
-extendable method net/minecraft/class_748 a (Ljava/lang/String;Lnet/minecraft/server/Item;Lnet/minecraft/server/BiomeBase;[Lnet/minecraft/server/WorldGenFlatLayerInfo;)V
-accessible method net/minecraft/class_748 a (Ljava/lang/String;Lnet/minecraft/server/Item;Lnet/minecraft/server/BiomeBase;[Lnet/minecraft/server/WorldGenFlatLayerInfo;)V
-extendable method net/minecraft/class_748 a (Ljava/lang/String;Lnet/minecraft/server/Item;Lnet/minecraft/server/BiomeBase;Ljava/util/List;[Lnet/minecraft/server/WorldGenFlatLayerInfo;)V
-accessible method net/minecraft/class_748 a (Ljava/lang/String;Lnet/minecraft/server/Item;Lnet/minecraft/server/BiomeBase;Ljava/util/List;[Lnet/minecraft/server/WorldGenFlatLayerInfo;)V
-extendable method net/minecraft/class_748 a (Ljava/lang/String;Lnet/minecraft/server/Item;ILnet/minecraft/server/BiomeBase;Ljava/util/List;[Lnet/minecraft/server/WorldGenFlatLayerInfo;)V
-accessible method net/minecraft/class_748 a (Ljava/lang/String;Lnet/minecraft/server/Item;ILnet/minecraft/server/BiomeBase;Ljava/util/List;[Lnet/minecraft/server/WorldGenFlatLayerInfo;)V
-accessible field net/minecraft/class_751 a Ljava/lang/String;
-mutable field net/minecraft/class_751 a Ljava/lang/String;
-accessible field net/minecraft/class_751 f Ljava/lang/String;
-mutable field net/minecraft/class_751 f Ljava/lang/String;
-accessible field net/minecraft/class_751 g I
-mutable field net/minecraft/class_751 g I
-accessible field net/minecraft/class_751 h Z
-mutable field net/minecraft/class_751 h Z
-accessible field net/minecraft/class_752 a Lnet/minecraft/class_903;
-mutable field net/minecraft/class_752 a Lnet/minecraft/class_903;
-accessible field net/minecraft/class_752 f I
-mutable field net/minecraft/class_752 f I
-extendable method net/minecraft/class_752 a (CI)V
-accessible method net/minecraft/class_752 a (CI)V
-accessible field net/minecraft/class_753 a Lnet/minecraft/class_754;
-mutable field net/minecraft/class_753 a Lnet/minecraft/class_754;
-accessible field net/minecraft/class_753 f Lnet/minecraft/class_689;
-mutable field net/minecraft/class_753 f Lnet/minecraft/class_689;
-accessible field net/minecraft/class_753 g Ljava/lang/String;
-mutable field net/minecraft/class_753 g Ljava/lang/String;
-extendable method net/minecraft/class_753 a (Lnet/minecraft/class_685;)V
-accessible method net/minecraft/class_753 a (Lnet/minecraft/class_685;)V
-extendable method net/minecraft/class_753 a (CI)V
-accessible method net/minecraft/class_753 a (CI)V
-extendable method net/minecraft/class_753 a (III)V
-accessible method net/minecraft/class_753 a (III)V
-accessible field net/minecraft/class_754 a Lorg/apache/logging/log4j/Logger;
-mutable field net/minecraft/class_754 a Lorg/apache/logging/log4j/Logger;
-accessible field net/minecraft/class_754 f Ljava/util/Set;
-mutable field net/minecraft/class_754 f Ljava/util/Set;
-accessible field net/minecraft/class_754 g Lcom/google/common/base/Splitter;
-mutable field net/minecraft/class_754 g Lcom/google/common/base/Splitter;
-accessible field net/minecraft/class_754 j Lnet/minecraft/class_669;
-mutable field net/minecraft/class_754 j Lnet/minecraft/class_669;
-accessible field net/minecraft/class_754 k Lnet/minecraft/class_1150;
-mutable field net/minecraft/class_754 k Lnet/minecraft/class_1150;
-accessible field net/minecraft/class_754 n Ljava/util/List;
-mutable field net/minecraft/class_754 n Ljava/util/List;
-accessible field net/minecraft/class_754 o Ljava/util/List;
-mutable field net/minecraft/class_754 o Ljava/util/List;
-accessible field net/minecraft/class_754 q Lnet/minecraft/class_679;
-mutable field net/minecraft/class_754 q Lnet/minecraft/class_679;
-accessible field net/minecraft/class_754 h Lnet/minecraft/class_685;
-mutable field net/minecraft/class_754 h Lnet/minecraft/class_685;
-accessible field net/minecraft/class_754 i I
-mutable field net/minecraft/class_754 i I
-accessible field net/minecraft/class_754 r J
-mutable field net/minecraft/class_754 r J
-accessible field net/minecraft/class_754 s I
-mutable field net/minecraft/class_754 s I
-accessible field net/minecraft/class_754 t Ljava/net/URI;
-mutable field net/minecraft/class_754 t Ljava/net/URI;
-extendable method net/minecraft/class_754 a (CI)V
-accessible method net/minecraft/class_754 a (CI)V
-extendable method net/minecraft/class_754 a (Lnet/minecraft/server/ItemStack;II)V
-accessible method net/minecraft/class_754 a (Lnet/minecraft/server/ItemStack;II)V
-extendable method net/minecraft/class_754 a (Ljava/lang/String;II)V
-accessible method net/minecraft/class_754 a (Ljava/lang/String;II)V
-extendable method net/minecraft/class_754 a (Ljava/util/List;II)V
-accessible method net/minecraft/class_754 a (Ljava/util/List;II)V
-extendable method net/minecraft/class_754 a (Lnet/minecraft/server/IChatBaseComponent;II)V
-accessible method net/minecraft/class_754 a (Lnet/minecraft/server/IChatBaseComponent;II)V
-extendable method net/minecraft/class_754 a (Ljava/lang/String;Z)V
-accessible method net/minecraft/class_754 a (Ljava/lang/String;Z)V
-extendable method net/minecraft/class_754 a (Lnet/minecraft/server/IChatBaseComponent;)Z
-accessible method net/minecraft/class_754 a (Lnet/minecraft/server/IChatBaseComponent;)Z
-extendable method net/minecraft/class_754 a (III)V
-accessible method net/minecraft/class_754 a (III)V
-extendable method net/minecraft/class_754 b (III)V
-accessible method net/minecraft/class_754 b (III)V
-extendable method net/minecraft/class_754 a (IIIJ)V
-accessible method net/minecraft/class_754 a (IIIJ)V
-extendable method net/minecraft/class_754 a (Lnet/minecraft/class_685;)V
-accessible method net/minecraft/class_754 a (Lnet/minecraft/class_685;)V
-extendable method net/minecraft/class_754 a (Ljava/net/URI;)V
-accessible method net/minecraft/class_754 a (Ljava/net/URI;)V
-accessible class net/minecraft/class_755$class_756
-extendable method net/minecraft/class_755$class_756 b ()I
-accessible method net/minecraft/class_755$class_756 b ()I
-extendable method net/minecraft/class_755$class_756 a (IZII)V
-accessible method net/minecraft/class_755$class_756 a (IZII)V
-extendable method net/minecraft/class_755$class_756 a (I)Z
-accessible method net/minecraft/class_755$class_756 a (I)Z
-extendable method net/minecraft/class_755$class_756 k ()I
-accessible method net/minecraft/class_755$class_756 k ()I
-extendable method net/minecraft/class_755$class_756 a ()V
-accessible method net/minecraft/class_755$class_756 a ()V
-extendable method net/minecraft/class_755$class_756 a (IIIIII)V
-accessible method net/minecraft/class_755$class_756 a (IIIIII)V
-accessible field net/minecraft/class_755 g Lorg/apache/logging/log4j/Logger;
-mutable field net/minecraft/class_755 g Lorg/apache/logging/log4j/Logger;
-accessible field net/minecraft/class_755 h Ljava/text/DateFormat;
-mutable field net/minecraft/class_755 h Ljava/text/DateFormat;
-accessible field net/minecraft/class_755 a Lnet/minecraft/class_754;
-mutable field net/minecraft/class_755 a Lnet/minecraft/class_754;
-accessible field net/minecraft/class_755 f Ljava/lang/String;
-mutable field net/minecraft/class_755 f Ljava/lang/String;
-accessible field net/minecraft/class_755 i Z
-mutable field net/minecraft/class_755 i Z
-accessible field net/minecraft/class_755 r I
-mutable field net/minecraft/class_755 r I
-accessible field net/minecraft/class_755 s Ljava/util/List;
-mutable field net/minecraft/class_755 s Ljava/util/List;
-accessible field net/minecraft/class_755 t Lnet/minecraft/class_755$class_756;
-mutable field net/minecraft/class_755 t Lnet/minecraft/class_755$class_756;
-accessible field net/minecraft/class_755 u Ljava/lang/String;
-mutable field net/minecraft/class_755 u Ljava/lang/String;
-accessible field net/minecraft/class_755 v Ljava/lang/String;
-mutable field net/minecraft/class_755 v Ljava/lang/String;
-accessible field net/minecraft/class_755 w [Ljava/lang/String;
-mutable field net/minecraft/class_755 w [Ljava/lang/String;
-accessible field net/minecraft/class_755 x Z
-mutable field net/minecraft/class_755 x Z
-accessible field net/minecraft/class_755 y Lnet/minecraft/class_685;
-mutable field net/minecraft/class_755 y Lnet/minecraft/class_685;
-accessible field net/minecraft/class_755 z Lnet/minecraft/class_685;
-mutable field net/minecraft/class_755 z Lnet/minecraft/class_685;
-accessible field net/minecraft/class_755 A Lnet/minecraft/class_685;
-mutable field net/minecraft/class_755 A Lnet/minecraft/class_685;
-accessible field net/minecraft/class_755 B Lnet/minecraft/class_685;
-mutable field net/minecraft/class_755 B Lnet/minecraft/class_685;
-extendable method net/minecraft/class_755 f ()V
-accessible method net/minecraft/class_755 f ()V
-extendable method net/minecraft/class_755 b (I)Ljava/lang/String;
-accessible method net/minecraft/class_755 b (I)Ljava/lang/String;
-extendable method net/minecraft/class_755 h (I)Ljava/lang/String;
-accessible method net/minecraft/class_755 h (I)Ljava/lang/String;
-extendable method net/minecraft/class_755 a (Lnet/minecraft/class_685;)V
-accessible method net/minecraft/class_755 a (Lnet/minecraft/class_685;)V
-accessible field net/minecraft/class_757 a Lnet/minecraft/class_754;
-mutable field net/minecraft/class_757 a Lnet/minecraft/class_754;
-accessible field net/minecraft/class_757 f Lnet/minecraft/class_685;
-mutable field net/minecraft/class_757 f Lnet/minecraft/class_685;
-accessible field net/minecraft/class_757 g Lnet/minecraft/class_685;
-mutable field net/minecraft/class_757 g Lnet/minecraft/class_685;
-accessible field net/minecraft/class_757 h Ljava/lang/String;
-mutable field net/minecraft/class_757 h Ljava/lang/String;
-accessible field net/minecraft/class_757 i Z
-mutable field net/minecraft/class_757 i Z
-extendable method net/minecraft/class_757 a ()V
-accessible method net/minecraft/class_757 a ()V
-extendable method net/minecraft/class_757 a (Lnet/minecraft/class_685;)V
-accessible method net/minecraft/class_757 a (Lnet/minecraft/class_685;)V
-accessible class net/minecraft/class_758$class_759
-accessible field net/minecraft/class_758$class_759 p Lnet/minecraft/class_1966;
-mutable field net/minecraft/class_758$class_759 p Lnet/minecraft/class_1966;
-accessible field net/minecraft/class_758 a Lnet/minecraft/class_754;
-mutable field net/minecraft/class_758 a Lnet/minecraft/class_754;
-accessible field net/minecraft/class_758 f Ljava/lang/String;
-mutable field net/minecraft/class_758 f Ljava/lang/String;
-extendable method net/minecraft/class_758 a (Lnet/minecraft/class_685;)V
-accessible method net/minecraft/class_758 a (Lnet/minecraft/class_685;)V
-extendable method net/minecraft/class_758 a (Lnet/minecraft/class_1966;)Ljava/lang/String;
-accessible method net/minecraft/class_758 a (Lnet/minecraft/class_1966;)Ljava/lang/String;
-accessible class net/minecraft/class_760$class_761
-extendable method net/minecraft/class_760$class_761 b ()I
-accessible method net/minecraft/class_760$class_761 b ()I
-extendable method net/minecraft/class_760$class_761 a (IZII)V
-accessible method net/minecraft/class_760$class_761 a (IZII)V
-extendable method net/minecraft/class_760$class_761 a (I)Z
-accessible method net/minecraft/class_760$class_761 a (I)Z
-extendable method net/minecraft/class_760$class_761 a ()V
-accessible method net/minecraft/class_760$class_761 a ()V
-extendable method net/minecraft/class_760$class_761 a (IIIIII)V
-accessible method net/minecraft/class_760$class_761 a (IIIIII)V
-extendable method net/minecraft/class_760$class_761 d ()I
-accessible method net/minecraft/class_760$class_761 d ()I
-accessible field net/minecraft/class_760 a Lnet/minecraft/class_754;
-mutable field net/minecraft/class_760 a Lnet/minecraft/class_754;
-accessible field net/minecraft/class_760 f Lnet/minecraft/class_671;
-mutable field net/minecraft/class_760 f Lnet/minecraft/class_671;
-accessible field net/minecraft/class_760 g Ljava/util/List;
-mutable field net/minecraft/class_760 g Ljava/util/List;
-accessible field net/minecraft/class_760 h Ljava/util/List;
-mutable field net/minecraft/class_760 h Ljava/util/List;
-accessible field net/minecraft/class_760 i Ljava/lang/String;
-mutable field net/minecraft/class_760 i Ljava/lang/String;
-accessible field net/minecraft/class_760 r [Ljava/lang/String;
-mutable field net/minecraft/class_760 r [Ljava/lang/String;
-accessible field net/minecraft/class_760 s Lnet/minecraft/class_760$class_761;
-mutable field net/minecraft/class_760 s Lnet/minecraft/class_760$class_761;
-accessible field net/minecraft/class_760 t Lnet/minecraft/class_685;
-mutable field net/minecraft/class_760 t Lnet/minecraft/class_685;
-extendable method net/minecraft/class_760 a (Lnet/minecraft/class_685;)V
-accessible method net/minecraft/class_760 a (Lnet/minecraft/class_685;)V
-accessible class net/minecraft/class_762$class_763
-accessible field net/minecraft/class_762$class_763 r Lnet/minecraft/class_1306;
-mutable field net/minecraft/class_762$class_763 r Lnet/minecraft/class_1306;
-accessible field net/minecraft/class_762$class_763 s Ljava/lang/String;
-mutable field net/minecraft/class_762$class_763 s Ljava/lang/String;
-extendable method net/minecraft/class_762$class_763 a (Z)I
-accessible method net/minecraft/class_762$class_763 a (Z)I
-extendable method net/minecraft/class_762$class_763 b (Lnet/minecraft/class_669;II)V
-accessible method net/minecraft/class_762$class_763 b (Lnet/minecraft/class_669;II)V
-accessible field net/minecraft/class_762 f Lnet/minecraft/class_754;
-mutable field net/minecraft/class_762 f Lnet/minecraft/class_754;
-accessible field net/minecraft/class_762 g Lnet/minecraft/class_671;
-mutable field net/minecraft/class_762 g Lnet/minecraft/class_671;
-accessible field net/minecraft/class_762 a Ljava/lang/String;
-mutable field net/minecraft/class_762 a Ljava/lang/String;
-accessible field net/minecraft/class_762 h Ljava/lang/String;
-mutable field net/minecraft/class_762 h Ljava/lang/String;
-extendable method net/minecraft/class_762 a (Lnet/minecraft/class_685;)V
-accessible method net/minecraft/class_762 a (Lnet/minecraft/class_685;)V
-extendable method net/minecraft/class_762 a (Lnet/minecraft/class_1306;)Ljava/lang/String;
-accessible method net/minecraft/class_762 a (Lnet/minecraft/class_1306;)Ljava/lang/String;
-accessible field net/minecraft/class_765 f Ljava/util/concurrent/atomic/AtomicInteger;
-mutable field net/minecraft/class_765 f Ljava/util/concurrent/atomic/AtomicInteger;
-accessible field net/minecraft/class_765 g Lorg/apache/logging/log4j/Logger;
-mutable field net/minecraft/class_765 g Lorg/apache/logging/log4j/Logger;
-accessible field net/minecraft/class_765 h Ljava/util/Random;
-mutable field net/minecraft/class_765 h Ljava/util/Random;
-accessible field net/minecraft/class_765 i F
-mutable field net/minecraft/class_765 i F
-accessible field net/minecraft/class_765 r Ljava/lang/String;
-mutable field net/minecraft/class_765 r Ljava/lang/String;
-accessible field net/minecraft/class_765 s Lnet/minecraft/class_685;
-mutable field net/minecraft/class_765 s Lnet/minecraft/class_685;
-accessible field net/minecraft/class_765 t I
-mutable field net/minecraft/class_765 t I
-accessible field net/minecraft/class_765 u Lnet/minecraft/class_1219;
-mutable field net/minecraft/class_765 u Lnet/minecraft/class_1219;
-accessible field net/minecraft/class_765 v Z
-mutable field net/minecraft/class_765 v Z
-accessible field net/minecraft/class_765 w Ljava/lang/Object;
-mutable field net/minecraft/class_765 w Ljava/lang/Object;
-accessible field net/minecraft/class_765 x Ljava/lang/String;
-mutable field net/minecraft/class_765 x Ljava/lang/String;
-accessible field net/minecraft/class_765 y Ljava/lang/String;
-mutable field net/minecraft/class_765 y Ljava/lang/String;
-accessible field net/minecraft/class_765 z Ljava/lang/String;
-mutable field net/minecraft/class_765 z Ljava/lang/String;
-accessible field net/minecraft/class_765 A Lnet/minecraft/server/MinecraftKey;
-mutable field net/minecraft/class_765 A Lnet/minecraft/server/MinecraftKey;
-accessible field net/minecraft/class_765 B Lnet/minecraft/server/MinecraftKey;
-mutable field net/minecraft/class_765 B Lnet/minecraft/server/MinecraftKey;
-accessible field net/minecraft/class_765 C [Lnet/minecraft/server/MinecraftKey;
-mutable field net/minecraft/class_765 C [Lnet/minecraft/server/MinecraftKey;
-accessible field net/minecraft/class_765 D I
-mutable field net/minecraft/class_765 D I
-accessible field net/minecraft/class_765 E I
-mutable field net/minecraft/class_765 E I
-accessible field net/minecraft/class_765 F I
-mutable field net/minecraft/class_765 F I
-accessible field net/minecraft/class_765 G I
-mutable field net/minecraft/class_765 G I
-accessible field net/minecraft/class_765 H I
-mutable field net/minecraft/class_765 H I
-accessible field net/minecraft/class_765 I I
-mutable field net/minecraft/class_765 I I
-accessible field net/minecraft/class_765 J Lnet/minecraft/server/MinecraftKey;
-mutable field net/minecraft/class_765 J Lnet/minecraft/server/MinecraftKey;
-accessible field net/minecraft/class_765 K Lnet/minecraft/class_685;
-mutable field net/minecraft/class_765 K Lnet/minecraft/class_685;
-extendable method net/minecraft/class_765 a (CI)V
-accessible method net/minecraft/class_765 a (CI)V
-extendable method net/minecraft/class_765 b (II)V
-accessible method net/minecraft/class_765 b (II)V
-extendable method net/minecraft/class_765 c (II)V
-accessible method net/minecraft/class_765 c (II)V
-extendable method net/minecraft/class_765 a (Lnet/minecraft/class_685;)V
-accessible method net/minecraft/class_765 a (Lnet/minecraft/class_685;)V
-extendable method net/minecraft/class_765 b (IIF)V
-accessible method net/minecraft/class_765 b (IIF)V
-extendable method net/minecraft/class_765 a (F)V
-accessible method net/minecraft/class_765 a (F)V
-extendable method net/minecraft/class_765 c (IIF)V
-accessible method net/minecraft/class_765 c (IIF)V
-extendable method net/minecraft/class_765 a (III)V
-accessible method net/minecraft/class_765 a (III)V
-accessible field net/minecraft/class_766 f Lnet/minecraft/class_754;
-mutable field net/minecraft/class_766 f Lnet/minecraft/class_754;
-accessible field net/minecraft/class_766 a Ljava/lang/String;
-mutable field net/minecraft/class_766 a Ljava/lang/String;
-accessible field net/minecraft/class_766 g Lnet/minecraft/class_671;
-mutable field net/minecraft/class_766 g Lnet/minecraft/class_671;
-accessible field net/minecraft/class_766 h Lnet/minecraft/class_698;
-mutable field net/minecraft/class_766 h Lnet/minecraft/class_698;
-accessible field net/minecraft/class_766 i [Lnet/minecraft/class_671$class_672;
-mutable field net/minecraft/class_766 i [Lnet/minecraft/class_671$class_672;
-extendable method net/minecraft/class_766 a (Lnet/minecraft/class_685;)V
-accessible method net/minecraft/class_766 a (Lnet/minecraft/class_685;)V
-extendable method net/minecraft/class_766 a (III)V
-accessible method net/minecraft/class_766 a (III)V
-extendable method net/minecraft/class_766 b (III)V
-accessible method net/minecraft/class_766 b (III)V
-accessible field net/minecraft/class_767 a Lorg/apache/logging/log4j/Logger;
-mutable field net/minecraft/class_767 a Lorg/apache/logging/log4j/Logger;
-accessible field net/minecraft/class_767 f Lnet/minecraft/server/MinecraftKey;
-mutable field net/minecraft/class_767 f Lnet/minecraft/server/MinecraftKey;
-accessible field net/minecraft/class_767 g Lnet/minecraft/server/MinecraftKey;
-mutable field net/minecraft/class_767 g Lnet/minecraft/server/MinecraftKey;
-accessible field net/minecraft/class_767 h I
-mutable field net/minecraft/class_767 h I
-accessible field net/minecraft/class_767 i Ljava/util/List;
-mutable field net/minecraft/class_767 i Ljava/util/List;
-accessible field net/minecraft/class_767 r I
-mutable field net/minecraft/class_767 r I
-accessible field net/minecraft/class_767 s F
-mutable field net/minecraft/class_767 s F
-extendable method net/minecraft/class_767 a (CI)V
-accessible method net/minecraft/class_767 a (CI)V
-extendable method net/minecraft/class_767 a ()V
-accessible method net/minecraft/class_767 a ()V
-extendable method net/minecraft/class_767 b (IIF)V
-accessible method net/minecraft/class_767 b (IIF)V
-accessible field net/minecraft/class_768 a Lnet/minecraft/server/MinecraftKey;
-mutable field net/minecraft/class_768 a Lnet/minecraft/server/MinecraftKey;
-accessible field net/minecraft/class_768 f Lnet/minecraft/class_669;
-mutable field net/minecraft/class_768 f Lnet/minecraft/class_669;
-accessible field net/minecraft/class_768 g I
-mutable field net/minecraft/class_768 g I
-accessible field net/minecraft/class_768 h I
-mutable field net/minecraft/class_768 h I
-accessible field net/minecraft/class_768 i Ljava/lang/String;
-mutable field net/minecraft/class_768 i Ljava/lang/String;
-accessible field net/minecraft/class_768 j Ljava/lang/String;
-mutable field net/minecraft/class_768 j Ljava/lang/String;
-accessible field net/minecraft/class_768 k Lnet/minecraft/server/Achievement;
-mutable field net/minecraft/class_768 k Lnet/minecraft/server/Achievement;
-accessible field net/minecraft/class_768 l J
-mutable field net/minecraft/class_768 l J
-accessible field net/minecraft/class_768 m Lnet/minecraft/class_1150;
-mutable field net/minecraft/class_768 m Lnet/minecraft/class_1150;
-accessible field net/minecraft/class_768 n Z
-mutable field net/minecraft/class_768 n Z
-extendable method net/minecraft/class_768 c ()V
-accessible method net/minecraft/class_768 c ()V
-accessible field net/minecraft/class_769 y I
-mutable field net/minecraft/class_769 y I
-accessible field net/minecraft/class_769 z I
-mutable field net/minecraft/class_769 z I
-accessible field net/minecraft/class_769 A I
-mutable field net/minecraft/class_769 A I
-accessible field net/minecraft/class_769 B I
-mutable field net/minecraft/class_769 B I
-accessible field net/minecraft/class_769 C Lnet/minecraft/server/MinecraftKey;
-mutable field net/minecraft/class_769 C Lnet/minecraft/server/MinecraftKey;
-accessible field net/minecraft/class_769 a Lnet/minecraft/class_754;
-mutable field net/minecraft/class_769 a Lnet/minecraft/class_754;
-accessible field net/minecraft/class_769 f I
-mutable field net/minecraft/class_769 f I
-accessible field net/minecraft/class_769 g I
-mutable field net/minecraft/class_769 g I
-accessible field net/minecraft/class_769 h I
-mutable field net/minecraft/class_769 h I
-accessible field net/minecraft/class_769 i I
-mutable field net/minecraft/class_769 i I
-accessible field net/minecraft/class_769 r F
-mutable field net/minecraft/class_769 r F
-accessible field net/minecraft/class_769 s D
-mutable field net/minecraft/class_769 s D
-accessible field net/minecraft/class_769 t D
-mutable field net/minecraft/class_769 t D
-accessible field net/minecraft/class_769 u D
-mutable field net/minecraft/class_769 u D
-accessible field net/minecraft/class_769 v D
-mutable field net/minecraft/class_769 v D
-accessible field net/minecraft/class_769 w D
-mutable field net/minecraft/class_769 w D
-accessible field net/minecraft/class_769 x D
-mutable field net/minecraft/class_769 x D
-accessible field net/minecraft/class_769 D I
-mutable field net/minecraft/class_769 D I
-accessible field net/minecraft/class_769 E Lnet/minecraft/server/StatisticManager;
-mutable field net/minecraft/class_769 E Lnet/minecraft/server/StatisticManager;
-accessible field net/minecraft/class_769 F Z
-mutable field net/minecraft/class_769 F Z
-extendable method net/minecraft/class_769 a (Lnet/minecraft/class_685;)V
-accessible method net/minecraft/class_769 a (Lnet/minecraft/class_685;)V
-extendable method net/minecraft/class_769 a (CI)V
-accessible method net/minecraft/class_769 a (CI)V
-extendable method net/minecraft/class_769 f ()V
-accessible method net/minecraft/class_769 f ()V
-extendable method net/minecraft/class_769 b (IIF)V
-accessible method net/minecraft/class_769 b (IIF)V
-extendable method net/minecraft/class_769 a (Lnet/minecraft/server/Block;)Lnet/minecraft/class_1231;
-accessible method net/minecraft/class_769 a (Lnet/minecraft/server/Block;)Lnet/minecraft/class_1231;
-accessible class net/minecraft/class_770$class_771$1
-accessible class net/minecraft/class_770$class_771
-extendable method net/minecraft/class_770$class_771 a (IILnet/minecraft/class_1041;)V
-accessible method net/minecraft/class_770$class_771 a (IILnet/minecraft/class_1041;)V
-extendable method net/minecraft/class_770$class_771 a (IIIIII)V
-accessible method net/minecraft/class_770$class_771 a (IIIIII)V
-extendable method net/minecraft/class_770$class_771 b (I)Ljava/lang/String;
-accessible method net/minecraft/class_770$class_771 b (I)Ljava/lang/String;
-accessible class net/minecraft/class_770$class_772
-extendable method net/minecraft/class_770$class_772 b ()I
-accessible method net/minecraft/class_770$class_772 b ()I
-extendable method net/minecraft/class_770$class_772 a (IZII)V
-accessible method net/minecraft/class_770$class_772 a (IZII)V
-extendable method net/minecraft/class_770$class_772 a (I)Z
-accessible method net/minecraft/class_770$class_772 a (I)Z
-extendable method net/minecraft/class_770$class_772 k ()I
-accessible method net/minecraft/class_770$class_772 k ()I
-extendable method net/minecraft/class_770$class_772 a ()V
-accessible method net/minecraft/class_770$class_772 a ()V
-extendable method net/minecraft/class_770$class_772 a (IIIIII)V
-accessible method net/minecraft/class_770$class_772 a (IIIIII)V
-accessible class net/minecraft/class_770$class_773$1
-accessible class net/minecraft/class_770$class_773
-extendable method net/minecraft/class_770$class_773 a (IILnet/minecraft/class_1041;)V
-accessible method net/minecraft/class_770$class_773 a (IILnet/minecraft/class_1041;)V
-extendable method net/minecraft/class_770$class_773 a (IIIIII)V
-accessible method net/minecraft/class_770$class_773 a (IIIIII)V
-extendable method net/minecraft/class_770$class_773 b (I)Ljava/lang/String;
-accessible method net/minecraft/class_770$class_773 b (I)Ljava/lang/String;
-accessible class net/minecraft/class_770$class_774
-accessible field net/minecraft/class_770$class_774 v Ljava/util/List;
-mutable field net/minecraft/class_770$class_774 v Ljava/util/List;
-extendable method net/minecraft/class_770$class_774 b ()I
-accessible method net/minecraft/class_770$class_774 b ()I
-extendable method net/minecraft/class_770$class_774 a (IZII)V
-accessible method net/minecraft/class_770$class_774 a (IZII)V
-extendable method net/minecraft/class_770$class_774 a (I)Z
-accessible method net/minecraft/class_770$class_774 a (I)Z
-extendable method net/minecraft/class_770$class_774 k ()I
-accessible method net/minecraft/class_770$class_774 k ()I
-extendable method net/minecraft/class_770$class_774 a ()V
-accessible method net/minecraft/class_770$class_774 a ()V
-extendable method net/minecraft/class_770$class_774 a (IIIIII)V
-accessible method net/minecraft/class_770$class_774 a (IIIIII)V
-accessible class net/minecraft/class_770$class_775
-accessible field net/minecraft/class_770$class_775 v I
-mutable field net/minecraft/class_770$class_775 v I
-accessible field net/minecraft/class_770$class_775 w Ljava/util/List;
-mutable field net/minecraft/class_770$class_775 w Ljava/util/List;
-accessible field net/minecraft/class_770$class_775 x Ljava/util/Comparator;
-mutable field net/minecraft/class_770$class_775 x Ljava/util/Comparator;
-accessible field net/minecraft/class_770$class_775 y I
-mutable field net/minecraft/class_770$class_775 y I
-accessible field net/minecraft/class_770$class_775 z I
-mutable field net/minecraft/class_770$class_775 z I
-extendable method net/minecraft/class_770$class_775 a (IZII)V
-accessible method net/minecraft/class_770$class_775 a (IZII)V
-extendable method net/minecraft/class_770$class_775 a (I)Z
-accessible method net/minecraft/class_770$class_775 a (I)Z
-extendable method net/minecraft/class_770$class_775 a ()V
-accessible method net/minecraft/class_770$class_775 a ()V
-extendable method net/minecraft/class_770$class_775 a (IILnet/minecraft/class_1041;)V
-accessible method net/minecraft/class_770$class_775 a (IILnet/minecraft/class_1041;)V
-extendable method net/minecraft/class_770$class_775 a (II)V
-accessible method net/minecraft/class_770$class_775 a (II)V
-extendable method net/minecraft/class_770$class_775 b ()I
-accessible method net/minecraft/class_770$class_775 b ()I
-extendable method net/minecraft/class_770$class_775 c (I)Lnet/minecraft/server/CraftingStatistic;
-accessible method net/minecraft/class_770$class_775 c (I)Lnet/minecraft/server/CraftingStatistic;
-extendable method net/minecraft/class_770$class_775 b (I)Ljava/lang/String;
-accessible method net/minecraft/class_770$class_775 b (I)Ljava/lang/String;
-extendable method net/minecraft/class_770$class_775 a (Lnet/minecraft/server/Statistic;IIZ)V
-accessible method net/minecraft/class_770$class_775 a (Lnet/minecraft/server/Statistic;IIZ)V
-extendable method net/minecraft/class_770$class_775 b (II)V
-accessible method net/minecraft/class_770$class_775 b (II)V
-extendable method net/minecraft/class_770$class_775 a (Lnet/minecraft/server/CraftingStatistic;II)V
-accessible method net/minecraft/class_770$class_775 a (Lnet/minecraft/server/CraftingStatistic;II)V
-extendable method net/minecraft/class_770$class_775 d (I)V
-accessible method net/minecraft/class_770$class_775 d (I)V
-accessible field net/minecraft/class_770 a Lnet/minecraft/class_754;
-mutable field net/minecraft/class_770 a Lnet/minecraft/class_754;
-accessible field net/minecraft/class_770 f Ljava/lang/String;
-mutable field net/minecraft/class_770 f Ljava/lang/String;
-accessible field net/minecraft/class_770 g Lnet/minecraft/class_770$class_772;
-mutable field net/minecraft/class_770 g Lnet/minecraft/class_770$class_772;
-accessible field net/minecraft/class_770 h Lnet/minecraft/class_770$class_773;
-mutable field net/minecraft/class_770 h Lnet/minecraft/class_770$class_773;
-accessible field net/minecraft/class_770 i Lnet/minecraft/class_770$class_771;
-mutable field net/minecraft/class_770 i Lnet/minecraft/class_770$class_771;
-accessible field net/minecraft/class_770 r Lnet/minecraft/class_770$class_774;
-mutable field net/minecraft/class_770 r Lnet/minecraft/class_770$class_774;
-accessible field net/minecraft/class_770 s Lnet/minecraft/server/StatisticManager;
-mutable field net/minecraft/class_770 s Lnet/minecraft/server/StatisticManager;
-accessible field net/minecraft/class_770 t Lnet/minecraft/class_713;
-mutable field net/minecraft/class_770 t Lnet/minecraft/class_713;
-accessible field net/minecraft/class_770 u Z
-mutable field net/minecraft/class_770 u Z
-extendable method net/minecraft/class_770 a (Lnet/minecraft/class_685;)V
-accessible method net/minecraft/class_770 a (Lnet/minecraft/class_685;)V
-extendable method net/minecraft/class_770 a (IILnet/minecraft/server/Item;)V
-accessible method net/minecraft/class_770 a (IILnet/minecraft/server/Item;)V
-extendable method net/minecraft/class_770 b (II)V
-accessible method net/minecraft/class_770 b (II)V
-extendable method net/minecraft/class_770 c (IIII)V
-accessible method net/minecraft/class_770 c (IIII)V
-accessible field net/minecraft/class_777$class_778 b Ljava/lang/String;
-mutable field net/minecraft/class_777$class_778 b Ljava/lang/String;
-accessible field net/minecraft/class_777$class_778 c I
-mutable field net/minecraft/class_777$class_778 c I
-accessible field net/minecraft/class_777$class_779 b Lnet/minecraft/class_666;
-mutable field net/minecraft/class_777$class_779 b Lnet/minecraft/class_666;
-accessible field net/minecraft/class_777$class_779 c Ljava/lang/String;
-mutable field net/minecraft/class_777$class_779 c Ljava/lang/String;
-accessible field net/minecraft/class_777$class_779 d Lnet/minecraft/class_685;
-mutable field net/minecraft/class_777$class_779 d Lnet/minecraft/class_685;
-accessible field net/minecraft/class_777$class_779 e Lnet/minecraft/class_685;
-mutable field net/minecraft/class_777$class_779 e Lnet/minecraft/class_685;
-accessible field net/minecraft/class_777 u Lnet/minecraft/class_780;
-mutable field net/minecraft/class_777 u Lnet/minecraft/class_780;
-accessible field net/minecraft/class_777 v Lnet/minecraft/class_669;
-mutable field net/minecraft/class_777 v Lnet/minecraft/class_669;
-accessible field net/minecraft/class_777 w [Lnet/minecraft/class_698$class_699;
-mutable field net/minecraft/class_777 w [Lnet/minecraft/class_698$class_699;
-accessible field net/minecraft/class_777 x I
-mutable field net/minecraft/class_777 x I
-extendable method net/minecraft/class_777 b ()I
-accessible method net/minecraft/class_777 b ()I
-extendable method net/minecraft/class_777 d ()I
-accessible method net/minecraft/class_777 d ()I
-accessible field net/minecraft/class_780 h [Lnet/minecraft/class_671$class_672;
-mutable field net/minecraft/class_780 h [Lnet/minecraft/class_671$class_672;
-accessible field net/minecraft/class_780 i Lnet/minecraft/class_754;
-mutable field net/minecraft/class_780 i Lnet/minecraft/class_754;
-accessible field net/minecraft/class_780 a Ljava/lang/String;
-mutable field net/minecraft/class_780 a Ljava/lang/String;
-accessible field net/minecraft/class_780 r Lnet/minecraft/class_671;
-mutable field net/minecraft/class_780 r Lnet/minecraft/class_671;
-accessible field net/minecraft/class_780 s Lnet/minecraft/class_777;
-mutable field net/minecraft/class_780 s Lnet/minecraft/class_777;
-accessible field net/minecraft/class_780 t Lnet/minecraft/class_685;
-mutable field net/minecraft/class_780 t Lnet/minecraft/class_685;
-extendable method net/minecraft/class_780 a (Lnet/minecraft/class_685;)V
-accessible method net/minecraft/class_780 a (Lnet/minecraft/class_685;)V
-extendable method net/minecraft/class_780 a (III)V
-accessible method net/minecraft/class_780 a (III)V
-extendable method net/minecraft/class_780 b (III)V
-accessible method net/minecraft/class_780 b (III)V
-extendable method net/minecraft/class_780 a (CI)V
-accessible method net/minecraft/class_780 a (CI)V
-accessible field net/minecraft/class_781 a Lnet/minecraft/server/MinecraftKey;
-mutable field net/minecraft/class_781 a Lnet/minecraft/server/MinecraftKey;
-accessible field net/minecraft/class_781 f I
-mutable field net/minecraft/class_781 f I
-accessible field net/minecraft/class_781 g I
-mutable field net/minecraft/class_781 g I
-accessible field net/minecraft/class_781 i I
-mutable field net/minecraft/class_781 i I
-accessible field net/minecraft/class_781 r I
-mutable field net/minecraft/class_781 r I
-accessible field net/minecraft/class_781 u Lnet/minecraft/server/Slot;
-mutable field net/minecraft/class_781 u Lnet/minecraft/server/Slot;
-accessible field net/minecraft/class_781 v Lnet/minecraft/server/Slot;
-mutable field net/minecraft/class_781 v Lnet/minecraft/server/Slot;
-accessible field net/minecraft/class_781 w Z
-mutable field net/minecraft/class_781 w Z
-accessible field net/minecraft/class_781 x Lnet/minecraft/server/ItemStack;
-mutable field net/minecraft/class_781 x Lnet/minecraft/server/ItemStack;
-accessible field net/minecraft/class_781 y I
-mutable field net/minecraft/class_781 y I
-accessible field net/minecraft/class_781 z I
-mutable field net/minecraft/class_781 z I
-accessible field net/minecraft/class_781 A Lnet/minecraft/server/Slot;
-mutable field net/minecraft/class_781 A Lnet/minecraft/server/Slot;
-accessible field net/minecraft/class_781 B J
-mutable field net/minecraft/class_781 B J
-accessible field net/minecraft/class_781 C Lnet/minecraft/server/ItemStack;
-mutable field net/minecraft/class_781 C Lnet/minecraft/server/ItemStack;
-accessible field net/minecraft/class_781 D Lnet/minecraft/server/Slot;
-mutable field net/minecraft/class_781 D Lnet/minecraft/server/Slot;
-accessible field net/minecraft/class_781 E J
-mutable field net/minecraft/class_781 E J
-accessible field net/minecraft/class_781 s Ljava/util/Set;
-mutable field net/minecraft/class_781 s Ljava/util/Set;
-accessible field net/minecraft/class_781 t Z
-mutable field net/minecraft/class_781 t Z
-accessible field net/minecraft/class_781 F I
-mutable field net/minecraft/class_781 F I
-accessible field net/minecraft/class_781 G I
-mutable field net/minecraft/class_781 G I
-accessible field net/minecraft/class_781 H Z
-mutable field net/minecraft/class_781 H Z
-accessible field net/minecraft/class_781 I I
-mutable field net/minecraft/class_781 I I
-accessible field net/minecraft/class_781 J J
-mutable field net/minecraft/class_781 J J
-accessible field net/minecraft/class_781 K Lnet/minecraft/server/Slot;
-mutable field net/minecraft/class_781 K Lnet/minecraft/server/Slot;
-accessible field net/minecraft/class_781 L I
-mutable field net/minecraft/class_781 L I
-accessible field net/minecraft/class_781 M Z
-mutable field net/minecraft/class_781 M Z
-accessible field net/minecraft/class_781 N Lnet/minecraft/server/ItemStack;
-mutable field net/minecraft/class_781 N Lnet/minecraft/server/ItemStack;
-extendable method net/minecraft/class_781 a (Lnet/minecraft/server/ItemStack;IILjava/lang/String;)V
-accessible method net/minecraft/class_781 a (Lnet/minecraft/server/ItemStack;IILjava/lang/String;)V
-extendable method net/minecraft/class_781 b (II)V
-accessible method net/minecraft/class_781 b (II)V
-extendable method net/minecraft/class_781 a (FII)V
-accessible method net/minecraft/class_781 a (FII)V
-extendable method net/minecraft/class_781 a (Lnet/minecraft/server/Slot;)V
-accessible method net/minecraft/class_781 a (Lnet/minecraft/server/Slot;)V
-extendable method net/minecraft/class_781 a ()V
-accessible method net/minecraft/class_781 a ()V
-extendable method net/minecraft/class_781 c (II)Lnet/minecraft/server/Slot;
-accessible method net/minecraft/class_781 c (II)Lnet/minecraft/server/Slot;
-extendable method net/minecraft/class_781 a (III)V
-accessible method net/minecraft/class_781 a (III)V
-extendable method net/minecraft/class_781 a (IIIJ)V
-accessible method net/minecraft/class_781 a (IIIJ)V
-extendable method net/minecraft/class_781 b (III)V
-accessible method net/minecraft/class_781 b (III)V
-extendable method net/minecraft/class_781 a (Lnet/minecraft/server/Slot;II)Z
-accessible method net/minecraft/class_781 a (Lnet/minecraft/server/Slot;II)Z
-extendable method net/minecraft/class_781 c (IIIIII)Z
-accessible method net/minecraft/class_781 c (IIIIII)Z
-extendable method net/minecraft/class_781 a (Lnet/minecraft/server/Slot;III)V
-accessible method net/minecraft/class_781 a (Lnet/minecraft/server/Slot;III)V
-extendable method net/minecraft/class_781 a (CI)V
-accessible method net/minecraft/class_781 a (CI)V
-extendable method net/minecraft/class_781 b (I)Z
-accessible method net/minecraft/class_781 b (I)Z
-accessible field net/minecraft/class_782 u Lnet/minecraft/server/MinecraftKey;
-mutable field net/minecraft/class_782 u Lnet/minecraft/server/MinecraftKey;
-accessible field net/minecraft/class_782 v Lnet/minecraft/server/ContainerAnvil;
-mutable field net/minecraft/class_782 v Lnet/minecraft/server/ContainerAnvil;
-accessible field net/minecraft/class_782 w Lnet/minecraft/class_689;
-mutable field net/minecraft/class_782 w Lnet/minecraft/class_689;
-accessible field net/minecraft/class_782 x Lnet/minecraft/server/PlayerInventory;
-mutable field net/minecraft/class_782 x Lnet/minecraft/server/PlayerInventory;
-extendable method net/minecraft/class_782 b (II)V
-accessible method net/minecraft/class_782 b (II)V
-extendable method net/minecraft/class_782 a (CI)V
-accessible method net/minecraft/class_782 a (CI)V
-extendable method net/minecraft/class_782 a ()V
-accessible method net/minecraft/class_782 a ()V
-extendable method net/minecraft/class_782 a (III)V
-accessible method net/minecraft/class_782 a (III)V
-extendable method net/minecraft/class_782 a (FII)V
-accessible method net/minecraft/class_782 a (FII)V
-accessible class net/minecraft/class_783$class_784
-accessible class net/minecraft/class_783$class_785
-accessible class net/minecraft/class_783$class_786
-accessible field net/minecraft/class_783$class_786 p I
-mutable field net/minecraft/class_783$class_786 p I
-accessible field net/minecraft/class_783$class_786 q I
-mutable field net/minecraft/class_783$class_786 q I
-accessible class net/minecraft/class_783$class_787
-accessible field net/minecraft/class_783$class_787 o Lnet/minecraft/server/MinecraftKey;
-mutable field net/minecraft/class_783$class_787 o Lnet/minecraft/server/MinecraftKey;
-accessible field net/minecraft/class_783$class_787 p I
-mutable field net/minecraft/class_783$class_787 p I
-accessible field net/minecraft/class_783$class_787 q I
-mutable field net/minecraft/class_783$class_787 q I
-accessible field net/minecraft/class_783$class_787 r Z
-mutable field net/minecraft/class_783$class_787 r Z
-accessible field net/minecraft/class_783 u Lorg/apache/logging/log4j/Logger;
-mutable field net/minecraft/class_783 u Lorg/apache/logging/log4j/Logger;
-accessible field net/minecraft/class_783 v Lnet/minecraft/server/MinecraftKey;
-mutable field net/minecraft/class_783 v Lnet/minecraft/server/MinecraftKey;
-accessible field net/minecraft/class_783 w Lnet/minecraft/server/IInventory;
-mutable field net/minecraft/class_783 w Lnet/minecraft/server/IInventory;
-accessible field net/minecraft/class_783 x Lnet/minecraft/class_783$class_785;
-mutable field net/minecraft/class_783 x Lnet/minecraft/class_783$class_785;
-accessible field net/minecraft/class_783 y Z
-mutable field net/minecraft/class_783 y Z
-extendable method net/minecraft/class_783 a (Lnet/minecraft/class_685;)V
-accessible method net/minecraft/class_783 a (Lnet/minecraft/class_685;)V
-extendable method net/minecraft/class_783 b (II)V
-accessible method net/minecraft/class_783 b (II)V
-extendable method net/minecraft/class_783 a (FII)V
-accessible method net/minecraft/class_783 a (FII)V
-accessible class net/minecraft/class_788$class_789
-accessible field net/minecraft/class_788$class_789 o Z
-mutable field net/minecraft/class_788$class_789 o Z
-accessible field net/minecraft/class_788 a Lorg/apache/logging/log4j/Logger;
-mutable field net/minecraft/class_788 a Lorg/apache/logging/log4j/Logger;
-accessible field net/minecraft/class_788 f Lnet/minecraft/server/MinecraftKey;
-mutable field net/minecraft/class_788 f Lnet/minecraft/server/MinecraftKey;
-accessible field net/minecraft/class_788 g Lnet/minecraft/server/EntityHuman;
-mutable field net/minecraft/class_788 g Lnet/minecraft/server/EntityHuman;
-accessible field net/minecraft/class_788 h Lnet/minecraft/server/ItemStack;
-mutable field net/minecraft/class_788 h Lnet/minecraft/server/ItemStack;
-accessible field net/minecraft/class_788 i Z
-mutable field net/minecraft/class_788 i Z
-accessible field net/minecraft/class_788 r Z
-mutable field net/minecraft/class_788 r Z
-accessible field net/minecraft/class_788 s Z
-mutable field net/minecraft/class_788 s Z
-accessible field net/minecraft/class_788 t I
-mutable field net/minecraft/class_788 t I
-accessible field net/minecraft/class_788 u I
-mutable field net/minecraft/class_788 u I
-accessible field net/minecraft/class_788 v I
-mutable field net/minecraft/class_788 v I
-accessible field net/minecraft/class_788 w I
-mutable field net/minecraft/class_788 w I
-accessible field net/minecraft/class_788 x I
-mutable field net/minecraft/class_788 x I
-accessible field net/minecraft/class_788 y Lnet/minecraft/server/NBTTagList;
-mutable field net/minecraft/class_788 y Lnet/minecraft/server/NBTTagList;
-accessible field net/minecraft/class_788 z Ljava/lang/String;
-mutable field net/minecraft/class_788 z Ljava/lang/String;
-accessible field net/minecraft/class_788 A Ljava/util/List;
-mutable field net/minecraft/class_788 A Ljava/util/List;
-accessible field net/minecraft/class_788 B I
-mutable field net/minecraft/class_788 B I
-accessible field net/minecraft/class_788 C Lnet/minecraft/class_788$class_789;
-mutable field net/minecraft/class_788 C Lnet/minecraft/class_788$class_789;
-accessible field net/minecraft/class_788 D Lnet/minecraft/class_788$class_789;
-mutable field net/minecraft/class_788 D Lnet/minecraft/class_788$class_789;
-accessible field net/minecraft/class_788 E Lnet/minecraft/class_685;
-mutable field net/minecraft/class_788 E Lnet/minecraft/class_685;
-accessible field net/minecraft/class_788 F Lnet/minecraft/class_685;
-mutable field net/minecraft/class_788 F Lnet/minecraft/class_685;
-accessible field net/minecraft/class_788 G Lnet/minecraft/class_685;
-mutable field net/minecraft/class_788 G Lnet/minecraft/class_685;
-accessible field net/minecraft/class_788 H Lnet/minecraft/class_685;
-mutable field net/minecraft/class_788 H Lnet/minecraft/class_685;
-extendable method net/minecraft/class_788 f ()V
-accessible method net/minecraft/class_788 f ()V
-extendable method net/minecraft/class_788 a (Z)V
-accessible method net/minecraft/class_788 a (Z)V
-extendable method net/minecraft/class_788 a (Lnet/minecraft/class_685;)V
-accessible method net/minecraft/class_788 a (Lnet/minecraft/class_685;)V
-extendable method net/minecraft/class_788 g ()V
-accessible method net/minecraft/class_788 g ()V
-extendable method net/minecraft/class_788 a (CI)V
-accessible method net/minecraft/class_788 a (CI)V
-extendable method net/minecraft/class_788 b (CI)V
-accessible method net/minecraft/class_788 b (CI)V
-extendable method net/minecraft/class_788 c (CI)V
-accessible method net/minecraft/class_788 c (CI)V
-extendable method net/minecraft/class_788 h ()Ljava/lang/String;
-accessible method net/minecraft/class_788 h ()Ljava/lang/String;
-extendable method net/minecraft/class_788 a (Ljava/lang/String;)V
-accessible method net/minecraft/class_788 a (Ljava/lang/String;)V
-extendable method net/minecraft/class_788 b (Ljava/lang/String;)V
-accessible method net/minecraft/class_788 b (Ljava/lang/String;)V
-extendable method net/minecraft/class_788 a (III)V
-accessible method net/minecraft/class_788 a (III)V
-extendable method net/minecraft/class_788 a (Lnet/minecraft/server/IChatBaseComponent;)Z
-accessible method net/minecraft/class_788 a (Lnet/minecraft/server/IChatBaseComponent;)Z
-accessible field net/minecraft/class_790 u Lnet/minecraft/server/MinecraftKey;
-mutable field net/minecraft/class_790 u Lnet/minecraft/server/MinecraftKey;
-accessible field net/minecraft/class_790 v Lnet/minecraft/server/PlayerInventory;
-mutable field net/minecraft/class_790 v Lnet/minecraft/server/PlayerInventory;
-accessible field net/minecraft/class_790 w Lnet/minecraft/server/IInventory;
-mutable field net/minecraft/class_790 w Lnet/minecraft/server/IInventory;
-extendable method net/minecraft/class_790 b (II)V
-accessible method net/minecraft/class_790 b (II)V
-extendable method net/minecraft/class_790 a (FII)V
-accessible method net/minecraft/class_790 a (FII)V
-accessible field net/minecraft/class_791 a Lorg/apache/logging/log4j/Logger;
-mutable field net/minecraft/class_791 a Lorg/apache/logging/log4j/Logger;
-accessible field net/minecraft/class_791 f Lnet/minecraft/class_689;
-mutable field net/minecraft/class_791 f Lnet/minecraft/class_689;
-accessible field net/minecraft/class_791 g Lnet/minecraft/class_689;
-mutable field net/minecraft/class_791 g Lnet/minecraft/class_689;
-accessible field net/minecraft/class_791 h Lnet/minecraft/server/CommandBlockListenerAbstract;
-mutable field net/minecraft/class_791 h Lnet/minecraft/server/CommandBlockListenerAbstract;
-accessible field net/minecraft/class_791 i Lnet/minecraft/class_685;
-mutable field net/minecraft/class_791 i Lnet/minecraft/class_685;
-accessible field net/minecraft/class_791 r Lnet/minecraft/class_685;
-mutable field net/minecraft/class_791 r Lnet/minecraft/class_685;
-accessible field net/minecraft/class_791 s Lnet/minecraft/class_685;
-mutable field net/minecraft/class_791 s Lnet/minecraft/class_685;
-accessible field net/minecraft/class_791 t Z
-mutable field net/minecraft/class_791 t Z
-extendable method net/minecraft/class_791 a (Lnet/minecraft/class_685;)V
-accessible method net/minecraft/class_791 a (Lnet/minecraft/class_685;)V
-extendable method net/minecraft/class_791 a (CI)V
-accessible method net/minecraft/class_791 a (CI)V
-extendable method net/minecraft/class_791 a (III)V
-accessible method net/minecraft/class_791 a (III)V
-extendable method net/minecraft/class_791 a ()V
-accessible method net/minecraft/class_791 a ()V
-accessible field net/minecraft/class_792 u Lnet/minecraft/server/MinecraftKey;
-mutable field net/minecraft/class_792 u Lnet/minecraft/server/MinecraftKey;
-accessible field net/minecraft/class_792 v Lnet/minecraft/server/IInventory;
-mutable field net/minecraft/class_792 v Lnet/minecraft/server/IInventory;
-accessible field net/minecraft/class_792 w Lnet/minecraft/server/IInventory;
-mutable field net/minecraft/class_792 w Lnet/minecraft/server/IInventory;
-accessible field net/minecraft/class_792 x I
-mutable field net/minecraft/class_792 x I
-extendable method net/minecraft/class_792 b (II)V
-accessible method net/minecraft/class_792 b (II)V
-extendable method net/minecraft/class_792 a (FII)V
-accessible method net/minecraft/class_792 a (FII)V
-accessible field net/minecraft/class_793 u Lnet/minecraft/server/MinecraftKey;
-mutable field net/minecraft/class_793 u Lnet/minecraft/server/MinecraftKey;
-extendable method net/minecraft/class_793 b (II)V
-accessible method net/minecraft/class_793 b (II)V
-extendable method net/minecraft/class_793 a (FII)V
-accessible method net/minecraft/class_793 a (FII)V
-accessible field net/minecraft/class_794 a Lnet/minecraft/class_669;
-mutable field net/minecraft/class_794 a Lnet/minecraft/class_669;
-accessible class net/minecraft/class_795$class_796
-extendable method net/minecraft/class_795$class_796 a (IIZLnet/minecraft/server/EntityHuman;)V
-accessible method net/minecraft/class_795$class_796 a (IIZLnet/minecraft/server/EntityHuman;)V
-accessible class net/minecraft/class_795$class_797
-accessible field net/minecraft/class_795$class_797 b Lnet/minecraft/server/Slot;
-mutable field net/minecraft/class_795$class_797 b Lnet/minecraft/server/Slot;
-accessible field net/minecraft/class_795 u Lnet/minecraft/server/MinecraftKey;
-mutable field net/minecraft/class_795 u Lnet/minecraft/server/MinecraftKey;
-accessible field net/minecraft/class_795 v Lnet/minecraft/server/InventorySubcontainer;
-mutable field net/minecraft/class_795 v Lnet/minecraft/server/InventorySubcontainer;
-accessible field net/minecraft/class_795 w I
-mutable field net/minecraft/class_795 w I
-accessible field net/minecraft/class_795 x F
-mutable field net/minecraft/class_795 x F
-accessible field net/minecraft/class_795 y Z
-mutable field net/minecraft/class_795 y Z
-accessible field net/minecraft/class_795 z Z
-mutable field net/minecraft/class_795 z Z
-accessible field net/minecraft/class_795 A Lnet/minecraft/class_689;
-mutable field net/minecraft/class_795 A Lnet/minecraft/class_689;
-accessible field net/minecraft/class_795 B Ljava/util/List;
-mutable field net/minecraft/class_795 B Ljava/util/List;
-accessible field net/minecraft/class_795 C Lnet/minecraft/server/Slot;
-mutable field net/minecraft/class_795 C Lnet/minecraft/server/Slot;
-accessible field net/minecraft/class_795 D Z
-mutable field net/minecraft/class_795 D Z
-accessible field net/minecraft/class_795 E Lnet/minecraft/class_794;
-mutable field net/minecraft/class_795 E Lnet/minecraft/class_794;
-extendable method net/minecraft/class_795 a (Lnet/minecraft/server/Slot;III)V
-accessible method net/minecraft/class_795 a (Lnet/minecraft/server/Slot;III)V
-extendable method net/minecraft/class_795 a ()V
-accessible method net/minecraft/class_795 a ()V
-extendable method net/minecraft/class_795 a (CI)V
-accessible method net/minecraft/class_795 a (CI)V
-extendable method net/minecraft/class_795 h ()V
-accessible method net/minecraft/class_795 h ()V
-extendable method net/minecraft/class_795 b (II)V
-accessible method net/minecraft/class_795 b (II)V
-extendable method net/minecraft/class_795 a (III)V
-accessible method net/minecraft/class_795 a (III)V
-extendable method net/minecraft/class_795 b (III)V
-accessible method net/minecraft/class_795 b (III)V
-extendable method net/minecraft/class_795 i ()Z
-accessible method net/minecraft/class_795 i ()Z
-extendable method net/minecraft/class_795 b (Lnet/minecraft/server/CreativeModeTab;)V
-accessible method net/minecraft/class_795 b (Lnet/minecraft/server/CreativeModeTab;)V
-extendable method net/minecraft/class_795 a (Lnet/minecraft/server/ItemStack;II)V
-accessible method net/minecraft/class_795 a (Lnet/minecraft/server/ItemStack;II)V
-extendable method net/minecraft/class_795 a (FII)V
-accessible method net/minecraft/class_795 a (FII)V
-extendable method net/minecraft/class_795 a (Lnet/minecraft/server/CreativeModeTab;II)Z
-accessible method net/minecraft/class_795 a (Lnet/minecraft/server/CreativeModeTab;II)Z
-extendable method net/minecraft/class_795 b (Lnet/minecraft/server/CreativeModeTab;II)Z
-accessible method net/minecraft/class_795 b (Lnet/minecraft/server/CreativeModeTab;II)Z
-extendable method net/minecraft/class_795 a (Lnet/minecraft/server/CreativeModeTab;)V
-accessible method net/minecraft/class_795 a (Lnet/minecraft/server/CreativeModeTab;)V
-extendable method net/minecraft/class_795 a (Lnet/minecraft/class_685;)V
-accessible method net/minecraft/class_795 a (Lnet/minecraft/class_685;)V
-accessible field net/minecraft/class_798 v Lnet/minecraft/server/MinecraftKey;
-mutable field net/minecraft/class_798 v Lnet/minecraft/server/MinecraftKey;
-accessible field net/minecraft/class_798 w Lnet/minecraft/server/PlayerInventory;
-mutable field net/minecraft/class_798 w Lnet/minecraft/server/PlayerInventory;
-extendable method net/minecraft/class_798 b (II)V
-accessible method net/minecraft/class_798 b (II)V
-extendable method net/minecraft/class_798 a (FII)V
-accessible method net/minecraft/class_798 a (FII)V
-accessible field net/minecraft/class_799 u Z
-mutable field net/minecraft/class_799 u Z
-extendable method net/minecraft/class_799 a ()V
-accessible method net/minecraft/class_799 a ()V
-extendable method net/minecraft/class_799 f ()V
-accessible method net/minecraft/class_799 f ()V
-accessible field net/minecraft/class_800 a Lnet/minecraft/class_800;
-mutable field net/minecraft/class_800 a Lnet/minecraft/class_800;
-accessible field net/minecraft/class_800 b Ljava/util/Random;
-mutable field net/minecraft/class_800 b Ljava/util/Random;
-accessible field net/minecraft/class_800 c [Ljava/lang/String;
-mutable field net/minecraft/class_800 c [Ljava/lang/String;
-accessible field net/minecraft/class_801 C Lnet/minecraft/server/MinecraftKey;
-mutable field net/minecraft/class_801 C Lnet/minecraft/server/MinecraftKey;
-accessible field net/minecraft/class_801 D Lnet/minecraft/server/MinecraftKey;
-mutable field net/minecraft/class_801 D Lnet/minecraft/server/MinecraftKey;
-accessible field net/minecraft/class_801 E Lnet/minecraft/class_854;
-mutable field net/minecraft/class_801 E Lnet/minecraft/class_854;
-accessible field net/minecraft/class_801 F Lnet/minecraft/server/PlayerInventory;
-mutable field net/minecraft/class_801 F Lnet/minecraft/server/PlayerInventory;
-accessible field net/minecraft/class_801 G Ljava/util/Random;
-mutable field net/minecraft/class_801 G Ljava/util/Random;
-accessible field net/minecraft/class_801 H Lnet/minecraft/server/ContainerEnchantTable;
-mutable field net/minecraft/class_801 H Lnet/minecraft/server/ContainerEnchantTable;
-accessible field net/minecraft/class_801 B Lnet/minecraft/server/ItemStack;
-mutable field net/minecraft/class_801 B Lnet/minecraft/server/ItemStack;
-accessible field net/minecraft/class_801 I Lnet/minecraft/server/INamableTileEntity;
-mutable field net/minecraft/class_801 I Lnet/minecraft/server/INamableTileEntity;
-extendable method net/minecraft/class_801 b (II)V
-accessible method net/minecraft/class_801 b (II)V
-extendable method net/minecraft/class_801 a (III)V
-accessible method net/minecraft/class_801 a (III)V
-extendable method net/minecraft/class_801 a (FII)V
-accessible method net/minecraft/class_801 a (FII)V
-accessible field net/minecraft/class_802 u Lnet/minecraft/server/MinecraftKey;
-mutable field net/minecraft/class_802 u Lnet/minecraft/server/MinecraftKey;
-accessible field net/minecraft/class_802 v Lnet/minecraft/server/PlayerInventory;
-mutable field net/minecraft/class_802 v Lnet/minecraft/server/PlayerInventory;
-accessible field net/minecraft/class_802 w Lnet/minecraft/server/IInventory;
-mutable field net/minecraft/class_802 w Lnet/minecraft/server/IInventory;
-extendable method net/minecraft/class_802 b (II)V
-accessible method net/minecraft/class_802 b (II)V
-extendable method net/minecraft/class_802 a (FII)V
-accessible method net/minecraft/class_802 a (FII)V
-extendable method net/minecraft/class_802 h (I)I
-accessible method net/minecraft/class_802 h (I)I
-extendable method net/minecraft/class_802 i (I)I
-accessible method net/minecraft/class_802 i (I)I
-accessible field net/minecraft/class_804 u Lnet/minecraft/server/MinecraftKey;
-mutable field net/minecraft/class_804 u Lnet/minecraft/server/MinecraftKey;
-accessible field net/minecraft/class_804 v Lnet/minecraft/server/IInventory;
-mutable field net/minecraft/class_804 v Lnet/minecraft/server/IInventory;
-accessible field net/minecraft/class_804 w Lnet/minecraft/server/IInventory;
-mutable field net/minecraft/class_804 w Lnet/minecraft/server/IInventory;
-extendable method net/minecraft/class_804 b (II)V
-accessible method net/minecraft/class_804 b (II)V
-extendable method net/minecraft/class_804 a (FII)V
-accessible method net/minecraft/class_804 a (FII)V
-accessible field net/minecraft/class_805 u Lnet/minecraft/server/MinecraftKey;
-mutable field net/minecraft/class_805 u Lnet/minecraft/server/MinecraftKey;
-accessible field net/minecraft/class_805 v Lnet/minecraft/server/IInventory;
-mutable field net/minecraft/class_805 v Lnet/minecraft/server/IInventory;
-accessible field net/minecraft/class_805 w Lnet/minecraft/server/IInventory;
-mutable field net/minecraft/class_805 w Lnet/minecraft/server/IInventory;
-accessible field net/minecraft/class_805 x Lnet/minecraft/server/EntityHorse;
-mutable field net/minecraft/class_805 x Lnet/minecraft/server/EntityHorse;
-accessible field net/minecraft/class_805 y F
-mutable field net/minecraft/class_805 y F
-accessible field net/minecraft/class_805 z F
-mutable field net/minecraft/class_805 z F
-extendable method net/minecraft/class_805 b (II)V
-accessible method net/minecraft/class_805 b (II)V
-extendable method net/minecraft/class_805 a (FII)V
-accessible method net/minecraft/class_805 a (FII)V
-accessible field net/minecraft/class_806 u F
-mutable field net/minecraft/class_806 u F
-accessible field net/minecraft/class_806 v F
-mutable field net/minecraft/class_806 v F
-extendable method net/minecraft/class_806 b (II)V
-accessible method net/minecraft/class_806 b (II)V
-extendable method net/minecraft/class_806 a (FII)V
-accessible method net/minecraft/class_806 a (FII)V
-extendable method net/minecraft/class_806 a (Lnet/minecraft/class_685;)V
-accessible method net/minecraft/class_806 a (Lnet/minecraft/class_685;)V
-accessible class net/minecraft/class_807$class_808
-accessible field net/minecraft/class_807$class_808 o Z
-mutable field net/minecraft/class_807$class_808 o Z
-accessible field net/minecraft/class_807 u Lorg/apache/logging/log4j/Logger;
-mutable field net/minecraft/class_807 u Lorg/apache/logging/log4j/Logger;
-accessible field net/minecraft/class_807 v Lnet/minecraft/server/MinecraftKey;
-mutable field net/minecraft/class_807 v Lnet/minecraft/server/MinecraftKey;
-accessible field net/minecraft/class_807 w Lnet/minecraft/server/IMerchant;
-mutable field net/minecraft/class_807 w Lnet/minecraft/server/IMerchant;
-accessible field net/minecraft/class_807 x Lnet/minecraft/class_807$class_808;
-mutable field net/minecraft/class_807 x Lnet/minecraft/class_807$class_808;
-accessible field net/minecraft/class_807 y Lnet/minecraft/class_807$class_808;
-mutable field net/minecraft/class_807 y Lnet/minecraft/class_807$class_808;
-accessible field net/minecraft/class_807 z I
-mutable field net/minecraft/class_807 z I
-accessible field net/minecraft/class_807 A Lnet/minecraft/server/IChatBaseComponent;
-mutable field net/minecraft/class_807 A Lnet/minecraft/server/IChatBaseComponent;
-extendable method net/minecraft/class_807 b (II)V
-accessible method net/minecraft/class_807 b (II)V
-extendable method net/minecraft/class_807 a (Lnet/minecraft/class_685;)V
-accessible method net/minecraft/class_807 a (Lnet/minecraft/class_685;)V
-extendable method net/minecraft/class_807 a (FII)V
-accessible method net/minecraft/class_807 a (FII)V
-accessible field net/minecraft/class_809 a Lnet/minecraft/server/TileEntitySign;
-mutable field net/minecraft/class_809 a Lnet/minecraft/server/TileEntitySign;
-accessible field net/minecraft/class_809 f I
-mutable field net/minecraft/class_809 f I
-accessible field net/minecraft/class_809 g I
-mutable field net/minecraft/class_809 g I
-accessible field net/minecraft/class_809 h Lnet/minecraft/class_685;
-mutable field net/minecraft/class_809 h Lnet/minecraft/class_685;
-extendable method net/minecraft/class_809 a (Lnet/minecraft/class_685;)V
-accessible method net/minecraft/class_809 a (Lnet/minecraft/class_685;)V
-extendable method net/minecraft/class_809 a (CI)V
-accessible method net/minecraft/class_809 a (CI)V
-accessible field net/minecraft/class_810 a Lorg/apache/logging/log4j/Logger;
-mutable field net/minecraft/class_810 a Lorg/apache/logging/log4j/Logger;
-accessible field net/minecraft/class_810 f Lnet/minecraft/class_913;
-mutable field net/minecraft/class_810 f Lnet/minecraft/class_913;
-accessible field net/minecraft/class_810 g Lnet/minecraft/class_754;
-mutable field net/minecraft/class_810 g Lnet/minecraft/class_754;
-accessible field net/minecraft/class_810 h Lnet/minecraft/class_814;
-mutable field net/minecraft/class_810 h Lnet/minecraft/class_814;
-accessible field net/minecraft/class_810 i Lnet/minecraft/class_912;
-mutable field net/minecraft/class_810 i Lnet/minecraft/class_912;
-accessible field net/minecraft/class_810 r Lnet/minecraft/class_685;
-mutable field net/minecraft/class_810 r Lnet/minecraft/class_685;
-accessible field net/minecraft/class_810 s Lnet/minecraft/class_685;
-mutable field net/minecraft/class_810 s Lnet/minecraft/class_685;
-accessible field net/minecraft/class_810 t Lnet/minecraft/class_685;
-mutable field net/minecraft/class_810 t Lnet/minecraft/class_685;
-accessible field net/minecraft/class_810 u Z
-mutable field net/minecraft/class_810 u Z
-accessible field net/minecraft/class_810 v Z
-mutable field net/minecraft/class_810 v Z
-accessible field net/minecraft/class_810 w Z
-mutable field net/minecraft/class_810 w Z
-accessible field net/minecraft/class_810 x Z
-mutable field net/minecraft/class_810 x Z
-accessible field net/minecraft/class_810 y Ljava/lang/String;
-mutable field net/minecraft/class_810 y Ljava/lang/String;
-accessible field net/minecraft/class_810 z Lnet/minecraft/class_910;
-mutable field net/minecraft/class_810 z Lnet/minecraft/class_910;
-accessible field net/minecraft/class_810 A Lnet/minecraft/class_1317$class_1320;
-mutable field net/minecraft/class_810 A Lnet/minecraft/class_1317$class_1320;
-accessible field net/minecraft/class_810 B Lnet/minecraft/class_1317$class_1319;
-mutable field net/minecraft/class_810 B Lnet/minecraft/class_1317$class_1319;
-accessible field net/minecraft/class_810 C Z
-mutable field net/minecraft/class_810 C Z
-extendable method net/minecraft/class_810 a (Lnet/minecraft/class_685;)V
-accessible method net/minecraft/class_810 a (Lnet/minecraft/class_685;)V
-extendable method net/minecraft/class_810 i ()V
-accessible method net/minecraft/class_810 i ()V
-extendable method net/minecraft/class_810 a (CI)V
-accessible method net/minecraft/class_810 a (CI)V
-extendable method net/minecraft/class_810 a (Lnet/minecraft/class_910;)V
-accessible method net/minecraft/class_810 a (Lnet/minecraft/class_910;)V
-extendable method net/minecraft/class_810 a (III)V
-accessible method net/minecraft/class_810 a (III)V
-extendable method net/minecraft/class_810 b (III)V
-accessible method net/minecraft/class_810 b (III)V
-accessible field net/minecraft/class_811 a Lnet/minecraft/class_669;
-mutable field net/minecraft/class_811 a Lnet/minecraft/class_669;
-accessible field net/minecraft/class_812 c Lnet/minecraft/class_810;
-mutable field net/minecraft/class_812 c Lnet/minecraft/class_810;
-accessible field net/minecraft/class_812 a Lnet/minecraft/class_669;
-mutable field net/minecraft/class_812 a Lnet/minecraft/class_669;
-accessible field net/minecraft/class_812 b Lnet/minecraft/class_1317$class_1318;
-mutable field net/minecraft/class_812 b Lnet/minecraft/class_1317$class_1318;
-accessible field net/minecraft/class_812 d J
-mutable field net/minecraft/class_812 d J
-accessible class net/minecraft/class_813$1
-accessible field net/minecraft/class_813 a Lorg/apache/logging/log4j/Logger;
-mutable field net/minecraft/class_813 a Lorg/apache/logging/log4j/Logger;
-accessible field net/minecraft/class_813 b Ljava/util/concurrent/ThreadPoolExecutor;
-mutable field net/minecraft/class_813 b Ljava/util/concurrent/ThreadPoolExecutor;
-accessible field net/minecraft/class_813 c Lnet/minecraft/server/MinecraftKey;
-mutable field net/minecraft/class_813 c Lnet/minecraft/server/MinecraftKey;
-accessible field net/minecraft/class_813 d Lnet/minecraft/server/MinecraftKey;
-mutable field net/minecraft/class_813 d Lnet/minecraft/server/MinecraftKey;
-accessible field net/minecraft/class_813 e Lnet/minecraft/class_810;
-mutable field net/minecraft/class_813 e Lnet/minecraft/class_810;
-accessible field net/minecraft/class_813 f Lnet/minecraft/class_669;
-mutable field net/minecraft/class_813 f Lnet/minecraft/class_669;
-accessible field net/minecraft/class_813 g Lnet/minecraft/class_910;
-mutable field net/minecraft/class_813 g Lnet/minecraft/class_910;
-accessible field net/minecraft/class_813 h Lnet/minecraft/server/MinecraftKey;
-mutable field net/minecraft/class_813 h Lnet/minecraft/server/MinecraftKey;
-accessible field net/minecraft/class_813 i Ljava/lang/String;
-mutable field net/minecraft/class_813 i Ljava/lang/String;
-accessible field net/minecraft/class_813 j Lnet/minecraft/class_1219;
-mutable field net/minecraft/class_813 j Lnet/minecraft/class_1219;
-accessible field net/minecraft/class_813 k J
-mutable field net/minecraft/class_813 k J
-extendable method net/minecraft/class_813 a (IILnet/minecraft/server/MinecraftKey;)V
-accessible method net/minecraft/class_813 a (IILnet/minecraft/server/MinecraftKey;)V
-extendable method net/minecraft/class_813 b ()Z
-accessible method net/minecraft/class_813 b ()Z
-extendable method net/minecraft/class_813 c ()V
-accessible method net/minecraft/class_813 c ()V
-accessible field net/minecraft/class_814 u Lnet/minecraft/class_810;
-mutable field net/minecraft/class_814 u Lnet/minecraft/class_810;
-accessible field net/minecraft/class_814 v Ljava/util/List;
-mutable field net/minecraft/class_814 v Ljava/util/List;
-accessible field net/minecraft/class_814 w Ljava/util/List;
-mutable field net/minecraft/class_814 w Ljava/util/List;
-accessible field net/minecraft/class_814 x Lnet/minecraft/class_698$class_699;
-mutable field net/minecraft/class_814 x Lnet/minecraft/class_698$class_699;
-accessible field net/minecraft/class_814 y I
-mutable field net/minecraft/class_814 y I
-extendable method net/minecraft/class_814 b ()I
-accessible method net/minecraft/class_814 b ()I
-extendable method net/minecraft/class_814 a (I)Z
-accessible method net/minecraft/class_814 a (I)Z
-extendable method net/minecraft/class_814 d ()I
-accessible method net/minecraft/class_814 d ()I
-accessible field net/minecraft/class_815 a Lorg/apache/logging/log4j/Logger;
-mutable field net/minecraft/class_815 a Lorg/apache/logging/log4j/Logger;
-accessible field net/minecraft/class_815 f Lnet/minecraft/class_754;
-mutable field net/minecraft/class_815 f Lnet/minecraft/class_754;
-accessible field net/minecraft/class_815 g Ljava/util/List;
-mutable field net/minecraft/class_815 g Ljava/util/List;
-accessible field net/minecraft/class_815 h Ljava/util/List;
-mutable field net/minecraft/class_815 h Ljava/util/List;
-accessible field net/minecraft/class_815 i Lnet/minecraft/class_819;
-mutable field net/minecraft/class_815 i Lnet/minecraft/class_819;
-accessible field net/minecraft/class_815 r Lnet/minecraft/class_821;
-mutable field net/minecraft/class_815 r Lnet/minecraft/class_821;
-accessible field net/minecraft/class_815 s Z
-mutable field net/minecraft/class_815 s Z
-extendable method net/minecraft/class_815 a (Lnet/minecraft/class_685;)V
-accessible method net/minecraft/class_815 a (Lnet/minecraft/class_685;)V
-extendable method net/minecraft/class_815 a (III)V
-accessible method net/minecraft/class_815 a (III)V
-extendable method net/minecraft/class_815 b (III)V
-accessible method net/minecraft/class_815 b (III)V
-accessible class net/minecraft/class_816$1
-accessible field net/minecraft/class_816 c Lnet/minecraft/server/MinecraftKey;
-mutable field net/minecraft/class_816 c Lnet/minecraft/server/MinecraftKey;
-accessible field net/minecraft/class_816 d Lnet/minecraft/server/IChatBaseComponent;
-mutable field net/minecraft/class_816 d Lnet/minecraft/server/IChatBaseComponent;
-accessible field net/minecraft/class_816 e Lnet/minecraft/server/IChatBaseComponent;
-mutable field net/minecraft/class_816 e Lnet/minecraft/server/IChatBaseComponent;
-accessible field net/minecraft/class_816 f Lnet/minecraft/server/IChatBaseComponent;
-mutable field net/minecraft/class_816 f Lnet/minecraft/server/IChatBaseComponent;
-accessible field net/minecraft/class_816 a Lnet/minecraft/class_669;
-mutable field net/minecraft/class_816 a Lnet/minecraft/class_669;
-accessible field net/minecraft/class_816 b Lnet/minecraft/class_815;
-mutable field net/minecraft/class_816 b Lnet/minecraft/class_815;
-extendable method net/minecraft/class_816 a ()I
-accessible method net/minecraft/class_816 a ()I
-extendable method net/minecraft/class_816 b ()Ljava/lang/String;
-accessible method net/minecraft/class_816 b ()Ljava/lang/String;
-extendable method net/minecraft/class_816 c ()Ljava/lang/String;
-accessible method net/minecraft/class_816 c ()Ljava/lang/String;
-extendable method net/minecraft/class_816 d ()V
-accessible method net/minecraft/class_816 d ()V
-extendable method net/minecraft/class_816 e ()Z
-accessible method net/minecraft/class_816 e ()Z
-extendable method net/minecraft/class_816 f ()Z
-accessible method net/minecraft/class_816 f ()Z
-extendable method net/minecraft/class_816 g ()Z
-accessible method net/minecraft/class_816 g ()Z
-extendable method net/minecraft/class_816 h ()Z
-accessible method net/minecraft/class_816 h ()Z
-extendable method net/minecraft/class_816 i ()Z
-accessible method net/minecraft/class_816 i ()Z
-accessible field net/minecraft/class_817 c Lorg/apache/logging/log4j/Logger;
-mutable field net/minecraft/class_817 c Lorg/apache/logging/log4j/Logger;
-accessible field net/minecraft/class_817 d Lnet/minecraft/class_1260;
-mutable field net/minecraft/class_817 d Lnet/minecraft/class_1260;
-accessible field net/minecraft/class_817 e Lnet/minecraft/server/MinecraftKey;
-mutable field net/minecraft/class_817 e Lnet/minecraft/server/MinecraftKey;
-extendable method net/minecraft/class_817 a ()I
-accessible method net/minecraft/class_817 a ()I
-extendable method net/minecraft/class_817 b ()Ljava/lang/String;
-accessible method net/minecraft/class_817 b ()Ljava/lang/String;
-extendable method net/minecraft/class_817 f ()Z
-accessible method net/minecraft/class_817 f ()Z
-extendable method net/minecraft/class_817 g ()Z
-accessible method net/minecraft/class_817 g ()Z
-extendable method net/minecraft/class_817 h ()Z
-accessible method net/minecraft/class_817 h ()Z
-extendable method net/minecraft/class_817 i ()Z
-accessible method net/minecraft/class_817 i ()Z
-extendable method net/minecraft/class_817 c ()Ljava/lang/String;
-accessible method net/minecraft/class_817 c ()Ljava/lang/String;
-extendable method net/minecraft/class_817 d ()V
-accessible method net/minecraft/class_817 d ()V
-extendable method net/minecraft/class_817 e ()Z
-accessible method net/minecraft/class_817 e ()Z
-accessible field net/minecraft/class_818 c Lnet/minecraft/class_1262$class_1263;
-mutable field net/minecraft/class_818 c Lnet/minecraft/class_1262$class_1263;
-extendable method net/minecraft/class_818 d ()V
-accessible method net/minecraft/class_818 d ()V
-extendable method net/minecraft/class_818 a ()I
-accessible method net/minecraft/class_818 a ()I
-extendable method net/minecraft/class_818 b ()Ljava/lang/String;
-accessible method net/minecraft/class_818 b ()Ljava/lang/String;
-extendable method net/minecraft/class_818 c ()Ljava/lang/String;
-accessible method net/minecraft/class_818 c ()Ljava/lang/String;
-extendable method net/minecraft/class_819 e ()Ljava/lang/String;
-accessible method net/minecraft/class_819 e ()Ljava/lang/String;
-accessible field net/minecraft/class_820 u Lnet/minecraft/class_669;
-mutable field net/minecraft/class_820 u Lnet/minecraft/class_669;
-accessible field net/minecraft/class_820 v Ljava/util/List;
-mutable field net/minecraft/class_820 v Ljava/util/List;
-extendable method net/minecraft/class_820 a (IILnet/minecraft/class_1041;)V
-accessible method net/minecraft/class_820 a (IILnet/minecraft/class_1041;)V
-extendable method net/minecraft/class_820 e ()Ljava/lang/String;
-accessible method net/minecraft/class_820 e ()Ljava/lang/String;
-extendable method net/minecraft/class_820 b ()I
-accessible method net/minecraft/class_820 b ()I
-extendable method net/minecraft/class_820 d ()I
-accessible method net/minecraft/class_820 d ()I
-extendable method net/minecraft/class_821 e ()Ljava/lang/String;
-accessible method net/minecraft/class_821 e ()Ljava/lang/String;
-accessible class net/minecraft/class_822$class_823
-extendable method net/minecraft/class_822$class_823 b ()I
-accessible method net/minecraft/class_822$class_823 b ()I
-extendable method net/minecraft/class_822$class_823 a (IZII)V
-accessible method net/minecraft/class_822$class_823 a (IZII)V
-extendable method net/minecraft/class_822$class_823 a (I)Z
-accessible method net/minecraft/class_822$class_823 a (I)Z
-extendable method net/minecraft/class_822$class_823 a ()V
-accessible method net/minecraft/class_822$class_823 a ()V
-extendable method net/minecraft/class_822$class_823 a (IIIIII)V
-accessible method net/minecraft/class_822$class_823 a (IIIIII)V
-extendable method net/minecraft/class_822$class_823 d ()I
-accessible method net/minecraft/class_822$class_823 d ()I
-accessible field net/minecraft/class_822 a Lnet/minecraft/class_754;
-mutable field net/minecraft/class_822 a Lnet/minecraft/class_754;
-accessible field net/minecraft/class_822 f Ljava/lang/String;
-mutable field net/minecraft/class_822 f Ljava/lang/String;
-accessible field net/minecraft/class_822 g Lnet/minecraft/class_822$class_823;
-mutable field net/minecraft/class_822 g Lnet/minecraft/class_822$class_823;
-extendable method net/minecraft/class_822 a (Lnet/minecraft/class_685;)V
-accessible method net/minecraft/class_822 a (Lnet/minecraft/class_685;)V
-accessible field net/minecraft/class_824 a [Lnet/minecraft/class_671$class_672;
-mutable field net/minecraft/class_824 a [Lnet/minecraft/class_671$class_672;
-accessible field net/minecraft/class_824 f [Lnet/minecraft/class_671$class_672;
-mutable field net/minecraft/class_824 f [Lnet/minecraft/class_671$class_672;
-accessible field net/minecraft/class_824 g Lnet/minecraft/class_754;
-mutable field net/minecraft/class_824 g Lnet/minecraft/class_754;
-accessible field net/minecraft/class_824 h Lnet/minecraft/class_671;
-mutable field net/minecraft/class_824 h Lnet/minecraft/class_671;
-accessible field net/minecraft/class_824 i Ljava/lang/String;
-mutable field net/minecraft/class_824 i Ljava/lang/String;
-accessible field net/minecraft/class_824 r Ljava/lang/String;
-mutable field net/minecraft/class_824 r Ljava/lang/String;
-accessible field net/minecraft/class_824 s I
-mutable field net/minecraft/class_824 s I
-accessible field net/minecraft/class_824 t Z
-mutable field net/minecraft/class_824 t Z
-extendable method net/minecraft/class_824 a (Lnet/minecraft/class_685;)V
-accessible method net/minecraft/class_824 a (Lnet/minecraft/class_685;)V
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 accessible class net/minecraft/server/CrashReport$1
 accessible class net/minecraft/server/CrashReport$2
 accessible class net/minecraft/server/CrashReport$3
@@ -6630,298 +6628,298 @@ extendable method net/minecraft/server/CrashReport h ()V
 accessible method net/minecraft/server/CrashReport h ()V
 extendable method net/minecraft/server/CrashReport i ()Ljava/lang/String;
 accessible method net/minecraft/server/CrashReport i ()Ljava/lang/String;
-extendable class net/minecraft/class_827$class_828
-accessible field net/minecraft/class_827$class_828 m Lnet/minecraft/server/IChatBaseComponent;
-mutable field net/minecraft/class_827$class_828 m Lnet/minecraft/server/IChatBaseComponent;
-accessible field net/minecraft/class_827$class_828 n Lnet/minecraft/server/IChatBaseComponent;
-mutable field net/minecraft/class_827$class_828 n Lnet/minecraft/server/IChatBaseComponent;
-accessible field net/minecraft/class_827 a Lorg/apache/logging/log4j/Logger;
-mutable field net/minecraft/class_827 a Lorg/apache/logging/log4j/Logger;
-accessible field net/minecraft/class_827 f Lnet/minecraft/server/IChatBaseComponent;
-mutable field net/minecraft/class_827 f Lnet/minecraft/server/IChatBaseComponent;
-accessible field net/minecraft/class_827 g Lnet/minecraft/class_754;
-mutable field net/minecraft/class_827 g Lnet/minecraft/class_754;
-accessible field net/minecraft/class_827 h Lnet/minecraft/class_827$class_828;
-mutable field net/minecraft/class_827 h Lnet/minecraft/class_827$class_828;
-accessible field net/minecraft/class_827 i Ljava/util/List;
-mutable field net/minecraft/class_827 i Ljava/util/List;
-accessible field net/minecraft/class_827 r Ljava/util/List;
-mutable field net/minecraft/class_827 r Ljava/util/List;
-extendable method net/minecraft/class_827 a (Lnet/minecraft/class_685;)V
-accessible method net/minecraft/class_827 a (Lnet/minecraft/class_685;)V
-extendable method net/minecraft/class_827 a (Ljava/lang/String;)V
-accessible method net/minecraft/class_827 a (Ljava/lang/String;)V
-accessible field net/minecraft/class_829 a Lnet/minecraft/server/EnumChatFormat;
-mutable field net/minecraft/class_829 a Lnet/minecraft/server/EnumChatFormat;
-accessible field net/minecraft/class_829 f Lnet/minecraft/server/EnumChatFormat;
-mutable field net/minecraft/class_829 f Lnet/minecraft/server/EnumChatFormat;
-accessible field net/minecraft/class_829 g Lnet/minecraft/server/EnumChatFormat;
-mutable field net/minecraft/class_829 g Lnet/minecraft/server/EnumChatFormat;
-accessible field net/minecraft/class_829 h Ltv/twitch/chat/ChatUserInfo;
-mutable field net/minecraft/class_829 h Ltv/twitch/chat/ChatUserInfo;
-accessible field net/minecraft/class_829 i Lnet/minecraft/server/IChatBaseComponent;
-mutable field net/minecraft/class_829 i Lnet/minecraft/server/IChatBaseComponent;
-accessible field net/minecraft/class_829 r Ljava/util/List;
-mutable field net/minecraft/class_829 r Ljava/util/List;
-accessible field net/minecraft/class_829 s Lnet/minecraft/class_1349;
-mutable field net/minecraft/class_829 s Lnet/minecraft/class_1349;
-accessible field net/minecraft/class_829 t I
-mutable field net/minecraft/class_829 t I
-extendable method net/minecraft/class_829 a (Lnet/minecraft/class_685;)V
-accessible method net/minecraft/class_829 a (Lnet/minecraft/class_685;)V
-accessible field net/minecraft/class_830 a Lcom/mojang/authlib/GameProfile;
-mutable field net/minecraft/class_830 a Lcom/mojang/authlib/GameProfile;
-accessible field net/minecraft/class_830 b Lnet/minecraft/server/MinecraftKey;
-mutable field net/minecraft/class_830 b Lnet/minecraft/server/MinecraftKey;
-accessible field net/minecraft/class_831 a Ljava/util/List;
-mutable field net/minecraft/class_831 a Ljava/util/List;
-extendable class net/minecraft/class_832$1
-accessible class net/minecraft/class_832$class_833
-accessible class net/minecraft/class_832$class_834
-accessible field net/minecraft/class_832$class_834 a I
-mutable field net/minecraft/class_832$class_834 a I
-accessible field net/minecraft/class_832$class_834 b Z
-mutable field net/minecraft/class_832$class_834 b Z
-accessible field net/minecraft/class_832 b Lnet/minecraft/class_836;
-mutable field net/minecraft/class_832 b Lnet/minecraft/class_836;
-accessible field net/minecraft/class_832 c Lnet/minecraft/class_836;
-mutable field net/minecraft/class_832 c Lnet/minecraft/class_836;
-accessible field net/minecraft/class_832 d Lnet/minecraft/class_836;
-mutable field net/minecraft/class_832 d Lnet/minecraft/class_836;
-accessible field net/minecraft/class_832 e Lnet/minecraft/class_836;
-mutable field net/minecraft/class_832 e Lnet/minecraft/class_836;
-accessible field net/minecraft/class_832 f Lnet/minecraft/class_837;
-mutable field net/minecraft/class_832 f Lnet/minecraft/class_837;
-accessible field net/minecraft/class_832 g Ljava/util/List;
-mutable field net/minecraft/class_832 g Ljava/util/List;
-accessible field net/minecraft/class_832 h Lnet/minecraft/class_835;
-mutable field net/minecraft/class_832 h Lnet/minecraft/class_835;
-accessible field net/minecraft/class_832 i I
-mutable field net/minecraft/class_832 i I
-accessible field net/minecraft/class_832 j I
-mutable field net/minecraft/class_832 j I
-accessible field net/minecraft/class_838 a Lnet/minecraft/class_835;
-mutable field net/minecraft/class_838 a Lnet/minecraft/class_835;
-accessible field net/minecraft/class_838 b Ljava/util/List;
-mutable field net/minecraft/class_838 b Ljava/util/List;
-accessible field net/minecraft/class_838 c I
-mutable field net/minecraft/class_838 c I
-extendable class net/minecraft/class_839$1
-accessible field net/minecraft/class_839 a Lcom/google/common/collect/Ordering;
-mutable field net/minecraft/class_839 a Lcom/google/common/collect/Ordering;
-accessible field net/minecraft/class_839 b Ljava/util/List;
-mutable field net/minecraft/class_839 b Ljava/util/List;
-accessible class net/minecraft/class_840$class_841
-accessible field net/minecraft/class_840$class_841 b Lnet/minecraft/server/ScoreboardTeam;
-mutable field net/minecraft/class_840$class_841 b Lnet/minecraft/server/ScoreboardTeam;
-accessible field net/minecraft/class_840$class_841 c Lnet/minecraft/server/MinecraftKey;
-mutable field net/minecraft/class_840$class_841 c Lnet/minecraft/server/MinecraftKey;
-accessible field net/minecraft/class_840$class_841 d Ljava/util/List;
-mutable field net/minecraft/class_840$class_841 d Ljava/util/List;
-accessible field net/minecraft/class_840 a Ljava/util/List;
-mutable field net/minecraft/class_840 a Ljava/util/List;
-accessible field net/minecraft/class_851 a Lnet/minecraft/class_900;
-mutable field net/minecraft/class_851 a Lnet/minecraft/class_900;
-accessible field net/minecraft/class_851 b Lnet/minecraft/class_900;
-mutable field net/minecraft/class_851 b Lnet/minecraft/class_900;
-accessible field net/minecraft/class_851 c Lnet/minecraft/class_900;
-mutable field net/minecraft/class_851 c Lnet/minecraft/class_900;
-accessible field net/minecraft/class_851 d Lnet/minecraft/class_900;
-mutable field net/minecraft/class_851 d Lnet/minecraft/class_900;
-accessible field net/minecraft/class_851 e Lnet/minecraft/class_900;
-mutable field net/minecraft/class_851 e Lnet/minecraft/class_900;
-accessible field net/minecraft/class_851 f Lnet/minecraft/class_900;
-mutable field net/minecraft/class_851 f Lnet/minecraft/class_900;
-accessible field net/minecraft/class_852 a [Lnet/minecraft/class_900;
-mutable field net/minecraft/class_852 a [Lnet/minecraft/class_900;
-accessible field net/minecraft/class_852 b Lnet/minecraft/class_900;
-mutable field net/minecraft/class_852 b Lnet/minecraft/class_900;
-accessible field net/minecraft/class_861 a [[I
-mutable field net/minecraft/class_861 a [[I
-accessible field net/minecraft/class_861 b [[I
-mutable field net/minecraft/class_861 b [[I
-accessible field net/minecraft/class_861 c I
-mutable field net/minecraft/class_861 c I
-accessible field net/minecraft/class_861 d [Lnet/minecraft/class_900;
-mutable field net/minecraft/class_861 d [Lnet/minecraft/class_900;
-accessible field net/minecraft/class_862 a Lnet/minecraft/class_900;
-mutable field net/minecraft/class_862 a Lnet/minecraft/class_900;
-accessible field net/minecraft/class_862 b [Lnet/minecraft/class_900;
-mutable field net/minecraft/class_862 b [Lnet/minecraft/class_900;
-accessible field net/minecraft/class_863 a Lnet/minecraft/class_900;
-mutable field net/minecraft/class_863 a Lnet/minecraft/class_900;
-accessible field net/minecraft/class_863 b Lnet/minecraft/class_900;
-mutable field net/minecraft/class_863 b Lnet/minecraft/class_900;
-accessible field net/minecraft/class_863 c [Lnet/minecraft/class_900;
-mutable field net/minecraft/class_863 c [Lnet/minecraft/class_900;
-accessible field net/minecraft/class_863 d [Lnet/minecraft/class_900;
-mutable field net/minecraft/class_863 d [Lnet/minecraft/class_900;
-accessible field net/minecraft/class_864 a Lnet/minecraft/class_900;
-mutable field net/minecraft/class_864 a Lnet/minecraft/class_900;
-accessible field net/minecraft/class_864 b Lnet/minecraft/class_900;
-mutable field net/minecraft/class_864 b Lnet/minecraft/class_900;
-accessible field net/minecraft/class_864 c Lnet/minecraft/class_900;
-mutable field net/minecraft/class_864 c Lnet/minecraft/class_900;
-accessible field net/minecraft/class_864 d Lnet/minecraft/class_900;
-mutable field net/minecraft/class_864 d Lnet/minecraft/class_900;
-accessible field net/minecraft/class_864 e Lnet/minecraft/class_900;
-mutable field net/minecraft/class_864 e Lnet/minecraft/class_900;
-accessible field net/minecraft/class_864 f Lnet/minecraft/class_900;
-mutable field net/minecraft/class_864 f Lnet/minecraft/class_900;
-accessible field net/minecraft/class_864 g Lnet/minecraft/class_900;
-mutable field net/minecraft/class_864 g Lnet/minecraft/class_900;
-accessible field net/minecraft/class_864 h Lnet/minecraft/class_900;
-mutable field net/minecraft/class_864 h Lnet/minecraft/class_900;
-accessible field net/minecraft/class_864 i Lnet/minecraft/class_900;
-mutable field net/minecraft/class_864 i Lnet/minecraft/class_900;
-accessible field net/minecraft/class_864 j Lnet/minecraft/class_900;
-mutable field net/minecraft/class_864 j Lnet/minecraft/class_900;
-accessible field net/minecraft/class_864 k Lnet/minecraft/class_900;
-mutable field net/minecraft/class_864 k Lnet/minecraft/class_900;
-accessible field net/minecraft/class_864 l Lnet/minecraft/class_900;
-mutable field net/minecraft/class_864 l Lnet/minecraft/class_900;
-accessible field net/minecraft/class_864 m Lnet/minecraft/class_900;
-mutable field net/minecraft/class_864 m Lnet/minecraft/class_900;
-accessible field net/minecraft/class_864 n Lnet/minecraft/class_900;
-mutable field net/minecraft/class_864 n Lnet/minecraft/class_900;
-accessible field net/minecraft/class_864 o Lnet/minecraft/class_900;
-mutable field net/minecraft/class_864 o Lnet/minecraft/class_900;
-accessible field net/minecraft/class_864 v Lnet/minecraft/class_900;
-mutable field net/minecraft/class_864 v Lnet/minecraft/class_900;
-accessible field net/minecraft/class_864 w Lnet/minecraft/class_900;
-mutable field net/minecraft/class_864 w Lnet/minecraft/class_900;
-accessible field net/minecraft/class_864 x Lnet/minecraft/class_900;
-mutable field net/minecraft/class_864 x Lnet/minecraft/class_900;
-accessible field net/minecraft/class_864 y Lnet/minecraft/class_900;
-mutable field net/minecraft/class_864 y Lnet/minecraft/class_900;
-accessible field net/minecraft/class_864 z Lnet/minecraft/class_900;
-mutable field net/minecraft/class_864 z Lnet/minecraft/class_900;
-accessible field net/minecraft/class_864 A Lnet/minecraft/class_900;
-mutable field net/minecraft/class_864 A Lnet/minecraft/class_900;
-accessible field net/minecraft/class_864 B Lnet/minecraft/class_900;
-mutable field net/minecraft/class_864 B Lnet/minecraft/class_900;
-accessible field net/minecraft/class_864 C Lnet/minecraft/class_900;
-mutable field net/minecraft/class_864 C Lnet/minecraft/class_900;
-accessible field net/minecraft/class_864 D Lnet/minecraft/class_900;
-mutable field net/minecraft/class_864 D Lnet/minecraft/class_900;
-accessible field net/minecraft/class_864 E Lnet/minecraft/class_900;
-mutable field net/minecraft/class_864 E Lnet/minecraft/class_900;
-accessible field net/minecraft/class_864 F Lnet/minecraft/class_900;
-mutable field net/minecraft/class_864 F Lnet/minecraft/class_900;
-accessible field net/minecraft/class_864 G Lnet/minecraft/class_900;
-mutable field net/minecraft/class_864 G Lnet/minecraft/class_900;
-accessible field net/minecraft/class_864 H Lnet/minecraft/class_900;
-mutable field net/minecraft/class_864 H Lnet/minecraft/class_900;
-accessible field net/minecraft/class_864 I Lnet/minecraft/class_900;
-mutable field net/minecraft/class_864 I Lnet/minecraft/class_900;
-accessible field net/minecraft/class_864 J Lnet/minecraft/class_900;
-mutable field net/minecraft/class_864 J Lnet/minecraft/class_900;
-accessible field net/minecraft/class_864 K Lnet/minecraft/class_900;
-mutable field net/minecraft/class_864 K Lnet/minecraft/class_900;
-accessible field net/minecraft/class_864 L Lnet/minecraft/class_900;
-mutable field net/minecraft/class_864 L Lnet/minecraft/class_900;
-accessible field net/minecraft/class_864 M Lnet/minecraft/class_900;
-mutable field net/minecraft/class_864 M Lnet/minecraft/class_900;
-accessible field net/minecraft/class_864 N Lnet/minecraft/class_900;
-mutable field net/minecraft/class_864 N Lnet/minecraft/class_900;
-accessible field net/minecraft/class_864 O Lnet/minecraft/class_900;
-mutable field net/minecraft/class_864 O Lnet/minecraft/class_900;
-accessible field net/minecraft/class_864 P Lnet/minecraft/class_900;
-mutable field net/minecraft/class_864 P Lnet/minecraft/class_900;
-accessible field net/minecraft/class_864 Q Lnet/minecraft/class_900;
-mutable field net/minecraft/class_864 Q Lnet/minecraft/class_900;
-accessible field net/minecraft/class_864 R Lnet/minecraft/class_900;
-mutable field net/minecraft/class_864 R Lnet/minecraft/class_900;
-accessible field net/minecraft/class_864 S Lnet/minecraft/class_900;
-mutable field net/minecraft/class_864 S Lnet/minecraft/class_900;
-extendable method net/minecraft/class_864 a (Lnet/minecraft/class_900;FFF)V
-accessible method net/minecraft/class_864 a (Lnet/minecraft/class_900;FFF)V
-extendable method net/minecraft/class_864 a (FFF)F
-accessible method net/minecraft/class_864 a (FFF)F
-accessible field net/minecraft/class_865 b Lnet/minecraft/class_900;
-mutable field net/minecraft/class_865 b Lnet/minecraft/class_900;
-accessible field net/minecraft/class_868 a [Lnet/minecraft/class_900;
-mutable field net/minecraft/class_868 a [Lnet/minecraft/class_900;
-accessible field net/minecraft/class_868 b Lnet/minecraft/class_900;
-mutable field net/minecraft/class_868 b Lnet/minecraft/class_900;
-accessible field net/minecraft/class_871 a Ljava/util/Map;
-mutable field net/minecraft/class_871 a Ljava/util/Map;
-extendable method net/minecraft/class_871 a (Ljava/lang/String;II)V
-accessible method net/minecraft/class_871 a (Ljava/lang/String;II)V
-accessible field net/minecraft/class_872 a Lnet/minecraft/class_900;
-mutable field net/minecraft/class_872 a Lnet/minecraft/class_900;
-accessible field net/minecraft/class_872 b Lnet/minecraft/class_900;
-mutable field net/minecraft/class_872 b Lnet/minecraft/class_900;
-accessible field net/minecraft/class_872 c Lnet/minecraft/class_900;
-mutable field net/minecraft/class_872 c Lnet/minecraft/class_900;
-accessible field net/minecraft/class_872 d Lnet/minecraft/class_900;
-mutable field net/minecraft/class_872 d Lnet/minecraft/class_900;
-accessible field net/minecraft/class_872 e Lnet/minecraft/class_900;
-mutable field net/minecraft/class_872 e Lnet/minecraft/class_900;
-accessible field net/minecraft/class_872 f Lnet/minecraft/class_900;
-mutable field net/minecraft/class_872 f Lnet/minecraft/class_900;
-accessible field net/minecraft/class_872 g Lnet/minecraft/class_900;
-mutable field net/minecraft/class_872 g Lnet/minecraft/class_900;
-accessible field net/minecraft/class_872 h Lnet/minecraft/class_900;
-mutable field net/minecraft/class_872 h Lnet/minecraft/class_900;
-accessible field net/minecraft/class_872 i I
-mutable field net/minecraft/class_872 i I
-accessible field net/minecraft/class_874 w Lnet/minecraft/class_900;
-mutable field net/minecraft/class_874 w Lnet/minecraft/class_900;
-accessible field net/minecraft/class_874 x Lnet/minecraft/class_900;
-mutable field net/minecraft/class_874 x Lnet/minecraft/class_900;
-accessible field net/minecraft/class_874 y Z
-mutable field net/minecraft/class_874 y Z
-accessible field net/minecraft/class_875 c Z
-mutable field net/minecraft/class_875 c Z
-accessible field net/minecraft/class_876 g F
-mutable field net/minecraft/class_876 g F
-accessible field net/minecraft/class_876 h F
-mutable field net/minecraft/class_876 h F
-accessible field net/minecraft/class_877 a Lnet/minecraft/class_900;
-mutable field net/minecraft/class_877 a Lnet/minecraft/class_900;
-accessible field net/minecraft/class_877 b Lnet/minecraft/class_900;
-mutable field net/minecraft/class_877 b Lnet/minecraft/class_900;
-accessible field net/minecraft/class_877 c Lnet/minecraft/class_900;
-mutable field net/minecraft/class_877 c Lnet/minecraft/class_900;
-accessible field net/minecraft/class_877 d Lnet/minecraft/class_900;
-mutable field net/minecraft/class_877 d Lnet/minecraft/class_900;
-accessible field net/minecraft/class_877 e Lnet/minecraft/class_900;
-mutable field net/minecraft/class_877 e Lnet/minecraft/class_900;
-accessible field net/minecraft/class_877 f Lnet/minecraft/class_900;
-mutable field net/minecraft/class_877 f Lnet/minecraft/class_900;
-accessible field net/minecraft/class_877 g Lnet/minecraft/class_900;
-mutable field net/minecraft/class_877 g Lnet/minecraft/class_900;
-accessible field net/minecraft/class_877 h Lnet/minecraft/class_900;
-mutable field net/minecraft/class_877 h Lnet/minecraft/class_900;
-accessible field net/minecraft/class_877 i Lnet/minecraft/class_900;
-mutable field net/minecraft/class_877 i Lnet/minecraft/class_900;
-accessible field net/minecraft/class_877 j Lnet/minecraft/class_900;
-mutable field net/minecraft/class_877 j Lnet/minecraft/class_900;
-accessible field net/minecraft/class_877 k Lnet/minecraft/class_900;
-mutable field net/minecraft/class_877 k Lnet/minecraft/class_900;
-accessible field net/minecraft/class_877 l Lnet/minecraft/class_900;
-mutable field net/minecraft/class_877 l Lnet/minecraft/class_900;
-accessible field net/minecraft/class_877 m F
-mutable field net/minecraft/class_877 m F
-accessible field net/minecraft/class_877 n F
-mutable field net/minecraft/class_877 n F
-extendable method net/minecraft/class_877 a (Lnet/minecraft/class_900;FFF)V
-accessible method net/minecraft/class_877 a (Lnet/minecraft/class_900;FFF)V
-accessible field net/minecraft/class_878 i F
-mutable field net/minecraft/class_878 i F
-accessible field net/minecraft/class_879 i F
-mutable field net/minecraft/class_879 i F
-accessible field net/minecraft/class_881 a [Lnet/minecraft/class_900;
-mutable field net/minecraft/class_881 a [Lnet/minecraft/class_900;
-accessible field net/minecraft/class_881 b [Lnet/minecraft/class_900;
-mutable field net/minecraft/class_881 b [Lnet/minecraft/class_900;
-accessible field net/minecraft/class_881 c [F
-mutable field net/minecraft/class_881 c [F
-accessible field net/minecraft/class_881 d [[I
-mutable field net/minecraft/class_881 d [[I
-accessible field net/minecraft/class_881 e [[I
-mutable field net/minecraft/class_881 e [[I
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 extendable method net/minecraft/server/CommandScoreboard b (Lnet/minecraft/server/ICommandListener;[Ljava/lang/String;)Z
 accessible method net/minecraft/server/CommandScoreboard b (Lnet/minecraft/server/ICommandListener;[Ljava/lang/String;)Z
 extendable method net/minecraft/server/CommandScoreboard d ()Lnet/minecraft/server/Scoreboard;
@@ -6968,1781 +6966,1781 @@ extendable method net/minecraft/server/CommandScoreboard a (Z)Ljava/util/List;
 accessible method net/minecraft/server/CommandScoreboard a (Z)Ljava/util/List;
 extendable method net/minecraft/server/CommandScoreboard e ()Ljava/util/List;
 accessible method net/minecraft/server/CommandScoreboard e ()Ljava/util/List;
-accessible field net/minecraft/class_885 a Lnet/minecraft/class_900;
-mutable field net/minecraft/class_885 a Lnet/minecraft/class_900;
-accessible field net/minecraft/class_885 b Lnet/minecraft/class_900;
-mutable field net/minecraft/class_885 b Lnet/minecraft/class_900;
-accessible field net/minecraft/class_885 c Lnet/minecraft/class_900;
-mutable field net/minecraft/class_885 c Lnet/minecraft/class_900;
-accessible field net/minecraft/class_885 d Lnet/minecraft/class_900;
-mutable field net/minecraft/class_885 d Lnet/minecraft/class_900;
-accessible field net/minecraft/class_888 a Lnet/minecraft/class_900;
-mutable field net/minecraft/class_888 a Lnet/minecraft/class_900;
-accessible field net/minecraft/class_888 b [Lnet/minecraft/class_900;
-mutable field net/minecraft/class_888 b [Lnet/minecraft/class_900;
-extendable method net/minecraft/class_890 a (FF)F
-accessible method net/minecraft/class_890 a (FF)F
-accessible field net/minecraft/class_893 h Lnet/minecraft/class_900;
-mutable field net/minecraft/class_893 h Lnet/minecraft/class_900;
-accessible field net/minecraft/class_893 i Lnet/minecraft/class_900;
-mutable field net/minecraft/class_893 i Lnet/minecraft/class_900;
-accessible field net/minecraft/class_894 a [Lnet/minecraft/class_900;
-mutable field net/minecraft/class_894 a [Lnet/minecraft/class_900;
-accessible field net/minecraft/class_894 b [Lnet/minecraft/class_900;
-mutable field net/minecraft/class_894 b [Lnet/minecraft/class_900;
-accessible field net/minecraft/class_895 g Lnet/minecraft/class_900;
-mutable field net/minecraft/class_895 g Lnet/minecraft/class_900;
-accessible field net/minecraft/class_895 h Lnet/minecraft/class_900;
-mutable field net/minecraft/class_895 h Lnet/minecraft/class_900;
-accessible field net/minecraft/class_897 a Lnet/minecraft/class_900;
-mutable field net/minecraft/class_897 a Lnet/minecraft/class_900;
-accessible field net/minecraft/class_897 b Lnet/minecraft/class_900;
-mutable field net/minecraft/class_897 b Lnet/minecraft/class_900;
-accessible field net/minecraft/class_897 c Lnet/minecraft/class_900;
-mutable field net/minecraft/class_897 c Lnet/minecraft/class_900;
-accessible field net/minecraft/class_897 d Lnet/minecraft/class_900;
-mutable field net/minecraft/class_897 d Lnet/minecraft/class_900;
-accessible field net/minecraft/class_897 e Lnet/minecraft/class_900;
-mutable field net/minecraft/class_897 e Lnet/minecraft/class_900;
-accessible field net/minecraft/class_897 f Lnet/minecraft/class_900;
-mutable field net/minecraft/class_897 f Lnet/minecraft/class_900;
-accessible field net/minecraft/class_897 g Lnet/minecraft/class_900;
-mutable field net/minecraft/class_897 g Lnet/minecraft/class_900;
-accessible field net/minecraft/class_897 h Lnet/minecraft/class_900;
-mutable field net/minecraft/class_897 h Lnet/minecraft/class_900;
-accessible field net/minecraft/class_897 i Lnet/minecraft/class_900;
-mutable field net/minecraft/class_897 i Lnet/minecraft/class_900;
-accessible field net/minecraft/class_897 j Lnet/minecraft/class_900;
-mutable field net/minecraft/class_897 j Lnet/minecraft/class_900;
-accessible field net/minecraft/class_897 k Lnet/minecraft/class_900;
-mutable field net/minecraft/class_897 k Lnet/minecraft/class_900;
-accessible field net/minecraft/class_897 l Lnet/minecraft/class_900;
-mutable field net/minecraft/class_897 l Lnet/minecraft/class_900;
-accessible field net/minecraft/class_897 m F
-mutable field net/minecraft/class_897 m F
-extendable method net/minecraft/class_897 a (D)F
-accessible method net/minecraft/class_897 a (D)F
-accessible field net/minecraft/class_898 a Lnet/minecraft/class_900;
-mutable field net/minecraft/class_898 a Lnet/minecraft/class_900;
-accessible field net/minecraft/class_898 b Lnet/minecraft/class_900;
-mutable field net/minecraft/class_898 b Lnet/minecraft/class_900;
-accessible field net/minecraft/class_898 c Lnet/minecraft/class_900;
-mutable field net/minecraft/class_898 c Lnet/minecraft/class_900;
-accessible field net/minecraft/class_899 h [Lnet/minecraft/class_889;
-mutable field net/minecraft/class_899 h [Lnet/minecraft/class_889;
-accessible field net/minecraft/class_899 i [Lnet/minecraft/class_875;
-mutable field net/minecraft/class_899 i [Lnet/minecraft/class_875;
-accessible field net/minecraft/class_900 r I
-mutable field net/minecraft/class_900 r I
-accessible field net/minecraft/class_900 s I
-mutable field net/minecraft/class_900 s I
-accessible field net/minecraft/class_900 t Z
-mutable field net/minecraft/class_900 t Z
-accessible field net/minecraft/class_900 u I
-mutable field net/minecraft/class_900 u I
-accessible field net/minecraft/class_900 v Lnet/minecraft/class_871;
-mutable field net/minecraft/class_900 v Lnet/minecraft/class_871;
-extendable method net/minecraft/class_900 d (F)V
-accessible method net/minecraft/class_900 d (F)V
-accessible class net/minecraft/class_902$1
-accessible field net/minecraft/class_902 a Lorg/apache/logging/log4j/Logger;
-mutable field net/minecraft/class_902 a Lorg/apache/logging/log4j/Logger;
-accessible field net/minecraft/class_902 b Lnet/minecraft/class_669;
-mutable field net/minecraft/class_902 b Lnet/minecraft/class_669;
-accessible field net/minecraft/class_902 c Lnet/minecraft/class_754;
-mutable field net/minecraft/class_902 c Lnet/minecraft/class_754;
-accessible field net/minecraft/class_902 d Lnet/minecraft/server/NetworkManager;
-mutable field net/minecraft/class_902 d Lnet/minecraft/server/NetworkManager;
-accessible field net/minecraft/class_902 e Lcom/mojang/authlib/GameProfile;
-mutable field net/minecraft/class_902 e Lcom/mojang/authlib/GameProfile;
-extendable method net/minecraft/class_902 b ()Lcom/mojang/authlib/minecraft/MinecraftSessionService;
-accessible method net/minecraft/class_902 b ()Lcom/mojang/authlib/minecraft/MinecraftSessionService;
-accessible class net/minecraft/class_903$1
-accessible class net/minecraft/class_903$2
-accessible class net/minecraft/class_903$3$1$1
-accessible class net/minecraft/class_903$3$1
-accessible class net/minecraft/class_903$3
-accessible field net/minecraft/class_903 b Lorg/apache/logging/log4j/Logger;
-mutable field net/minecraft/class_903 b Lorg/apache/logging/log4j/Logger;
-accessible field net/minecraft/class_903 c Lnet/minecraft/server/NetworkManager;
-mutable field net/minecraft/class_903 c Lnet/minecraft/server/NetworkManager;
-accessible field net/minecraft/class_903 d Lcom/mojang/authlib/GameProfile;
-mutable field net/minecraft/class_903 d Lcom/mojang/authlib/GameProfile;
-accessible field net/minecraft/class_903 e Lnet/minecraft/class_754;
-mutable field net/minecraft/class_903 e Lnet/minecraft/class_754;
-accessible field net/minecraft/class_903 f Lnet/minecraft/class_669;
-mutable field net/minecraft/class_903 f Lnet/minecraft/class_669;
-accessible field net/minecraft/class_903 g Lnet/minecraft/class_907;
-mutable field net/minecraft/class_903 g Lnet/minecraft/class_907;
-accessible field net/minecraft/class_903 h Z
-mutable field net/minecraft/class_903 h Z
-accessible field net/minecraft/class_903 i Ljava/util/Map;
-mutable field net/minecraft/class_903 i Ljava/util/Map;
-accessible field net/minecraft/class_903 j Z
-mutable field net/minecraft/class_903 j Z
-accessible field net/minecraft/class_903 k Ljava/util/Random;
-mutable field net/minecraft/class_903 k Ljava/util/Random;
-accessible field net/minecraft/class_904 a Lorg/apache/logging/log4j/Logger;
-mutable field net/minecraft/class_904 a Lorg/apache/logging/log4j/Logger;
-accessible field net/minecraft/class_904 b Lnet/minecraft/server/Chunk;
-mutable field net/minecraft/class_904 b Lnet/minecraft/server/Chunk;
-accessible field net/minecraft/class_904 c Lnet/minecraft/server/LongHashMap;
-mutable field net/minecraft/class_904 c Lnet/minecraft/server/LongHashMap;
-accessible field net/minecraft/class_904 d Ljava/util/List;
-mutable field net/minecraft/class_904 d Ljava/util/List;
-accessible field net/minecraft/class_904 e Lnet/minecraft/server/World;
-mutable field net/minecraft/class_904 e Lnet/minecraft/server/World;
-accessible field net/minecraft/class_906 a Lnet/minecraft/class_669;
-mutable field net/minecraft/class_906 a Lnet/minecraft/class_669;
-accessible field net/minecraft/class_906 b Lnet/minecraft/class_903;
-mutable field net/minecraft/class_906 b Lnet/minecraft/class_903;
-accessible field net/minecraft/class_906 c Lnet/minecraft/server/BlockPosition;
-mutable field net/minecraft/class_906 c Lnet/minecraft/server/BlockPosition;
-accessible field net/minecraft/class_906 d Lnet/minecraft/server/ItemStack;
-mutable field net/minecraft/class_906 d Lnet/minecraft/server/ItemStack;
-accessible field net/minecraft/class_906 e F
-mutable field net/minecraft/class_906 e F
-accessible field net/minecraft/class_906 f F
-mutable field net/minecraft/class_906 f F
-accessible field net/minecraft/class_906 g I
-mutable field net/minecraft/class_906 g I
-accessible field net/minecraft/class_906 h Z
-mutable field net/minecraft/class_906 h Z
-accessible field net/minecraft/class_906 i Lnet/minecraft/server/WorldSettings$EnumGamemode;
-mutable field net/minecraft/class_906 i Lnet/minecraft/server/WorldSettings$EnumGamemode;
-accessible field net/minecraft/class_906 j I
-mutable field net/minecraft/class_906 j I
-extendable method net/minecraft/class_906 a (Lnet/minecraft/server/BlockPosition;)Z
-accessible method net/minecraft/class_906 a (Lnet/minecraft/server/BlockPosition;)Z
-extendable method net/minecraft/class_906 n ()V
-accessible method net/minecraft/class_906 n ()V
-accessible class net/minecraft/class_907$1
-accessible class net/minecraft/class_907$2
-accessible class net/minecraft/class_907$3
-accessible class net/minecraft/class_907$4
-accessible field net/minecraft/class_907 a Lnet/minecraft/class_903;
-mutable field net/minecraft/class_907 a Lnet/minecraft/class_903;
-accessible field net/minecraft/class_907 b Lnet/minecraft/class_904;
-mutable field net/minecraft/class_907 b Lnet/minecraft/class_904;
-accessible field net/minecraft/class_907 c Ljava/util/Set;
-mutable field net/minecraft/class_907 c Ljava/util/Set;
-accessible field net/minecraft/class_907 d Ljava/util/Set;
-mutable field net/minecraft/class_907 d Ljava/util/Set;
-accessible field net/minecraft/class_907 I Lnet/minecraft/class_669;
-mutable field net/minecraft/class_907 I Lnet/minecraft/class_669;
-accessible field net/minecraft/class_907 J Ljava/util/Set;
-mutable field net/minecraft/class_907 J Ljava/util/Set;
-extendable method net/minecraft/class_907 k ()Lnet/minecraft/server/IChunkProvider;
-accessible method net/minecraft/class_907 k ()Lnet/minecraft/server/IChunkProvider;
-extendable method net/minecraft/class_907 h ()V
-accessible method net/minecraft/class_907 h ()V
-extendable method net/minecraft/class_907 a (Lnet/minecraft/server/Entity;)V
-accessible method net/minecraft/class_907 a (Lnet/minecraft/server/Entity;)V
-extendable method net/minecraft/class_907 b (Lnet/minecraft/server/Entity;)V
-accessible method net/minecraft/class_907 b (Lnet/minecraft/server/Entity;)V
-extendable method net/minecraft/class_907 p ()V
-accessible method net/minecraft/class_907 p ()V
-extendable method net/minecraft/class_907 q ()I
-accessible method net/minecraft/class_907 q ()I
-accessible class net/minecraft/class_908$1
-accessible field net/minecraft/class_908 a Lcom/mojang/authlib/GameProfile;
-mutable field net/minecraft/class_908 a Lcom/mojang/authlib/GameProfile;
-accessible field net/minecraft/class_908 b Lnet/minecraft/server/WorldSettings$EnumGamemode;
-mutable field net/minecraft/class_908 b Lnet/minecraft/server/WorldSettings$EnumGamemode;
-accessible field net/minecraft/class_908 c I
-mutable field net/minecraft/class_908 c I
-accessible field net/minecraft/class_908 d Z
-mutable field net/minecraft/class_908 d Z
-accessible field net/minecraft/class_908 e Lnet/minecraft/server/MinecraftKey;
-mutable field net/minecraft/class_908 e Lnet/minecraft/server/MinecraftKey;
-accessible field net/minecraft/class_908 f Lnet/minecraft/server/MinecraftKey;
-mutable field net/minecraft/class_908 f Lnet/minecraft/server/MinecraftKey;
-accessible field net/minecraft/class_908 g Ljava/lang/String;
-mutable field net/minecraft/class_908 g Ljava/lang/String;
-accessible field net/minecraft/class_908 h Lnet/minecraft/server/IChatBaseComponent;
-mutable field net/minecraft/class_908 h Lnet/minecraft/server/IChatBaseComponent;
-accessible field net/minecraft/class_908 i I
-mutable field net/minecraft/class_908 i I
-accessible field net/minecraft/class_908 j I
-mutable field net/minecraft/class_908 j I
-accessible field net/minecraft/class_908 k J
-mutable field net/minecraft/class_908 k J
-accessible field net/minecraft/class_908 l J
-mutable field net/minecraft/class_908 l J
-accessible field net/minecraft/class_908 m J
-mutable field net/minecraft/class_908 m J
-extendable method net/minecraft/class_908 a (Lnet/minecraft/server/WorldSettings$EnumGamemode;)V
-accessible method net/minecraft/class_908 a (Lnet/minecraft/server/WorldSettings$EnumGamemode;)V
-extendable method net/minecraft/class_908 a (I)V
-accessible method net/minecraft/class_908 a (I)V
-extendable method net/minecraft/class_908 j ()V
-accessible method net/minecraft/class_908 j ()V
-accessible field net/minecraft/class_909 a Ljava/lang/String;
-mutable field net/minecraft/class_909 a Ljava/lang/String;
-accessible field net/minecraft/class_909 b I
-mutable field net/minecraft/class_909 b I
-extendable method net/minecraft/class_909 b (Ljava/lang/String;)[Ljava/lang/String;
-accessible method net/minecraft/class_909 b (Ljava/lang/String;)[Ljava/lang/String;
-extendable method net/minecraft/class_909 a (Ljava/lang/String;I)I
-accessible method net/minecraft/class_909 a (Ljava/lang/String;I)I
-extendable class net/minecraft/class_910$class_911
-accessible field net/minecraft/class_910$class_911 d Lnet/minecraft/server/IChatBaseComponent;
-mutable field net/minecraft/class_910$class_911 d Lnet/minecraft/server/IChatBaseComponent;
-accessible field net/minecraft/class_910 j Lnet/minecraft/class_910$class_911;
-mutable field net/minecraft/class_910 j Lnet/minecraft/class_910$class_911;
-accessible field net/minecraft/class_910 k Ljava/lang/String;
-mutable field net/minecraft/class_910 k Ljava/lang/String;
-accessible field net/minecraft/class_910 l Z
-mutable field net/minecraft/class_910 l Z
-accessible field net/minecraft/class_912 a Lorg/apache/logging/log4j/Logger;
-mutable field net/minecraft/class_912 a Lorg/apache/logging/log4j/Logger;
-accessible field net/minecraft/class_912 b Lnet/minecraft/class_669;
-mutable field net/minecraft/class_912 b Lnet/minecraft/class_669;
-accessible field net/minecraft/class_912 c Ljava/util/List;
-mutable field net/minecraft/class_912 c Ljava/util/List;
-accessible class net/minecraft/class_913$1
-accessible field net/minecraft/class_913$1 d Z
-mutable field net/minecraft/class_913$1 d Z
-accessible field net/minecraft/class_913$1 e Z
-mutable field net/minecraft/class_913$1 e Z
-accessible field net/minecraft/class_913$1 f J
-mutable field net/minecraft/class_913$1 f J
-accessible class net/minecraft/class_913$2$1
-extendable method net/minecraft/class_913$2$1 a (Lio/netty/channel/ChannelHandlerContext;Lio/netty/buffer/ByteBuf;)V
-accessible method net/minecraft/class_913$2$1 a (Lio/netty/channel/ChannelHandlerContext;Lio/netty/buffer/ByteBuf;)V
-accessible class net/minecraft/class_913$2
-extendable method net/minecraft/class_913$2 initChannel (Lio/netty/channel/Channel;)V
-accessible method net/minecraft/class_913$2 initChannel (Lio/netty/channel/Channel;)V
-accessible field net/minecraft/class_913 a Lcom/google/common/base/Splitter;
-mutable field net/minecraft/class_913 a Lcom/google/common/base/Splitter;
-accessible field net/minecraft/class_913 b Lorg/apache/logging/log4j/Logger;
-mutable field net/minecraft/class_913 b Lorg/apache/logging/log4j/Logger;
-accessible field net/minecraft/class_913 c Ljava/util/List;
-mutable field net/minecraft/class_913 c Ljava/util/List;
-extendable method net/minecraft/class_913 b (Lnet/minecraft/class_910;)V
-accessible method net/minecraft/class_913 b (Lnet/minecraft/class_910;)V
-accessible field net/minecraft/class_922 a F
-mutable field net/minecraft/class_922 a F
-accessible field net/minecraft/class_925 a Lnet/minecraft/server/Material;
-mutable field net/minecraft/class_925 a Lnet/minecraft/server/Material;
-accessible field net/minecraft/class_925 az I
-mutable field net/minecraft/class_925 az I
-accessible field net/minecraft/class_928 a F
-mutable field net/minecraft/class_928 a F
-accessible field net/minecraft/class_928 az D
-mutable field net/minecraft/class_928 az D
-accessible field net/minecraft/class_928 aA D
-mutable field net/minecraft/class_928 aA D
-accessible field net/minecraft/class_928 aB D
-mutable field net/minecraft/class_928 aB D
-accessible field net/minecraft/class_932$class_934 a I
-mutable field net/minecraft/class_932$class_934 a I
-accessible field net/minecraft/class_932$class_934 az Z
-mutable field net/minecraft/class_932$class_934 az Z
-accessible field net/minecraft/class_932$class_934 aA Z
-mutable field net/minecraft/class_932$class_934 aA Z
-accessible field net/minecraft/class_932$class_934 aB Lnet/minecraft/class_959;
-mutable field net/minecraft/class_932$class_934 aB Lnet/minecraft/class_959;
-accessible field net/minecraft/class_932$class_934 aC F
-mutable field net/minecraft/class_932$class_934 aC F
-accessible field net/minecraft/class_932$class_934 aD F
-mutable field net/minecraft/class_932$class_934 aD F
-accessible field net/minecraft/class_932$class_934 aE F
-mutable field net/minecraft/class_932$class_934 aE F
-accessible field net/minecraft/class_932$class_934 aF Z
-mutable field net/minecraft/class_932$class_934 aF Z
-accessible field net/minecraft/class_932$class_935 az I
-mutable field net/minecraft/class_932$class_935 az I
-accessible field net/minecraft/class_932$class_935 aA Lnet/minecraft/class_959;
-mutable field net/minecraft/class_932$class_935 aA Lnet/minecraft/class_959;
-accessible field net/minecraft/class_932$class_935 aB Lnet/minecraft/server/NBTTagList;
-mutable field net/minecraft/class_932$class_935 aB Lnet/minecraft/server/NBTTagList;
-accessible field net/minecraft/class_932$class_935 a Z
-mutable field net/minecraft/class_932$class_935 a Z
-extendable method net/minecraft/class_932$class_935 l ()Z
-accessible method net/minecraft/class_932$class_935 l ()Z
-extendable method net/minecraft/class_932$class_935 a (DDDDDD[I[IZZ)V
-accessible method net/minecraft/class_932$class_935 a (DDDDDD[I[IZZ)V
-extendable method net/minecraft/class_932$class_935 a (DI[I[IZZ)V
-accessible method net/minecraft/class_932$class_935 a (DI[I[IZZ)V
-extendable method net/minecraft/class_932$class_935 a (D[[D[I[IZZZ)V
-accessible method net/minecraft/class_932$class_935 a (D[[D[I[IZZZ)V
-extendable method net/minecraft/class_932$class_935 a ([I[IZZ)V
-accessible method net/minecraft/class_932$class_935 a ([I[IZZ)V
-accessible field net/minecraft/class_937 a F
-mutable field net/minecraft/class_937 a F
-accessible field net/minecraft/class_939 a Lnet/minecraft/server/MinecraftKey;
-mutable field net/minecraft/class_939 a Lnet/minecraft/server/MinecraftKey;
-accessible field net/minecraft/class_939 az I
-mutable field net/minecraft/class_939 az I
-accessible field net/minecraft/class_939 aA I
-mutable field net/minecraft/class_939 aA I
-accessible field net/minecraft/class_939 aB Lnet/minecraft/class_1232;
-mutable field net/minecraft/class_939 aB Lnet/minecraft/class_1232;
-accessible field net/minecraft/class_941 a F
-mutable field net/minecraft/class_941 a F
-accessible field net/minecraft/class_944 a Lnet/minecraft/server/MinecraftKey;
-mutable field net/minecraft/class_944 a Lnet/minecraft/server/MinecraftKey;
-accessible field net/minecraft/class_944 az Lnet/minecraft/class_1241;
-mutable field net/minecraft/class_944 az Lnet/minecraft/class_1241;
-accessible field net/minecraft/class_944 aA I
-mutable field net/minecraft/class_944 aA I
-accessible field net/minecraft/class_944 aB I
-mutable field net/minecraft/class_944 aB I
-accessible field net/minecraft/class_944 aC Lnet/minecraft/class_1232;
-mutable field net/minecraft/class_944 aC Lnet/minecraft/class_1232;
-accessible field net/minecraft/class_944 aD F
-mutable field net/minecraft/class_944 aD F
-accessible field net/minecraft/class_946 a I
-mutable field net/minecraft/class_946 a I
-accessible field net/minecraft/class_946 az I
-mutable field net/minecraft/class_946 az I
-accessible field net/minecraft/class_948 a Lnet/minecraft/server/Entity;
-mutable field net/minecraft/class_948 a Lnet/minecraft/server/Entity;
-accessible field net/minecraft/class_948 az Lnet/minecraft/server/Entity;
-mutable field net/minecraft/class_948 az Lnet/minecraft/server/Entity;
-accessible field net/minecraft/class_948 aA I
-mutable field net/minecraft/class_948 aA I
-accessible field net/minecraft/class_948 aB I
-mutable field net/minecraft/class_948 aB I
-accessible field net/minecraft/class_948 aC F
-mutable field net/minecraft/class_948 aC F
-accessible field net/minecraft/class_948 aD Lnet/minecraft/class_1135;
-mutable field net/minecraft/class_948 aD Lnet/minecraft/class_1135;
-accessible field net/minecraft/class_951 a F
-mutable field net/minecraft/class_951 a F
-accessible field net/minecraft/class_953 a Lnet/minecraft/server/EntityLiving;
-mutable field net/minecraft/class_953 a Lnet/minecraft/server/EntityLiving;
-accessible field net/minecraft/class_956 a F
-mutable field net/minecraft/class_956 a F
-accessible field net/minecraft/class_958 b I
-mutable field net/minecraft/class_958 b I
-accessible field net/minecraft/class_958 c I
-mutable field net/minecraft/class_958 c I
-accessible field net/minecraft/class_958 d F
-mutable field net/minecraft/class_958 d F
-accessible field net/minecraft/class_958 e F
-mutable field net/minecraft/class_958 e F
-accessible field net/minecraft/class_958 f I
-mutable field net/minecraft/class_958 f I
-accessible field net/minecraft/class_958 g I
-mutable field net/minecraft/class_958 g I
-accessible field net/minecraft/class_958 h F
-mutable field net/minecraft/class_958 h F
-accessible field net/minecraft/class_958 i F
-mutable field net/minecraft/class_958 i F
-accessible field net/minecraft/class_958 ar F
-mutable field net/minecraft/class_958 ar F
-accessible field net/minecraft/class_958 as F
-mutable field net/minecraft/class_958 as F
-accessible field net/minecraft/class_958 at F
-mutable field net/minecraft/class_958 at F
-accessible field net/minecraft/class_958 au F
-mutable field net/minecraft/class_958 au F
-accessible field net/minecraft/class_958 av Lnet/minecraft/class_1231;
-mutable field net/minecraft/class_958 av Lnet/minecraft/class_1231;
-extendable method net/minecraft/class_958 s_ ()Z
-accessible method net/minecraft/class_958 s_ ()Z
-extendable method net/minecraft/class_958 h ()V
-accessible method net/minecraft/class_958 h ()V
-accessible class net/minecraft/class_959$1
-accessible class net/minecraft/class_959$2
-accessible class net/minecraft/class_959$3
-accessible class net/minecraft/class_959$4
-accessible field net/minecraft/class_959 b Lnet/minecraft/server/MinecraftKey;
-mutable field net/minecraft/class_959 b Lnet/minecraft/server/MinecraftKey;
-accessible field net/minecraft/class_959 a Lnet/minecraft/server/World;
-mutable field net/minecraft/class_959 a Lnet/minecraft/server/World;
-accessible field net/minecraft/class_959 c [[Ljava/util/List;
-mutable field net/minecraft/class_959 c [[Ljava/util/List;
-accessible field net/minecraft/class_959 d Ljava/util/List;
-mutable field net/minecraft/class_959 d Ljava/util/List;
-accessible field net/minecraft/class_959 e Lnet/minecraft/class_1232;
-mutable field net/minecraft/class_959 e Lnet/minecraft/class_1232;
-accessible field net/minecraft/class_959 f Ljava/util/Random;
-mutable field net/minecraft/class_959 f Ljava/util/Random;
-accessible field net/minecraft/class_959 g Ljava/util/Map;
-mutable field net/minecraft/class_959 g Ljava/util/Map;
-extendable method net/minecraft/class_959 c ()V
-accessible method net/minecraft/class_959 c ()V
-extendable method net/minecraft/class_959 a (I)V
-accessible method net/minecraft/class_959 a (I)V
-extendable method net/minecraft/class_959 a (Ljava/util/List;)V
-accessible method net/minecraft/class_959 a (Ljava/util/List;)V
-extendable method net/minecraft/class_959 d (Lnet/minecraft/class_958;)V
-accessible method net/minecraft/class_959 d (Lnet/minecraft/class_958;)V
-extendable method net/minecraft/class_959 a (Lnet/minecraft/class_958;II)V
-accessible method net/minecraft/class_959 a (Lnet/minecraft/class_958;II)V
-accessible field net/minecraft/class_961 a F
-mutable field net/minecraft/class_961 a F
-accessible field net/minecraft/class_963 a F
-mutable field net/minecraft/class_963 a F
-accessible field net/minecraft/class_963 az D
-mutable field net/minecraft/class_963 az D
-accessible field net/minecraft/class_963 aA D
-mutable field net/minecraft/class_963 aA D
-accessible field net/minecraft/class_963 aB D
-mutable field net/minecraft/class_963 aB D
-accessible field net/minecraft/class_965 a F
-mutable field net/minecraft/class_965 a F
-accessible field net/minecraft/class_967 a F
-mutable field net/minecraft/class_967 a F
-accessible field net/minecraft/class_969 a F
-mutable field net/minecraft/class_969 a F
-accessible field net/minecraft/class_971 a Ljava/util/Random;
-mutable field net/minecraft/class_971 a Ljava/util/Random;
-accessible field net/minecraft/class_971 az I
-mutable field net/minecraft/class_971 az I
-accessible field net/minecraft/class_986 a Lnet/minecraft/server/IBlockData;
-mutable field net/minecraft/class_986 a Lnet/minecraft/server/IBlockData;
-accessible field net/minecraft/class_986 az Lnet/minecraft/server/BlockPosition;
-mutable field net/minecraft/class_986 az Lnet/minecraft/server/BlockPosition;
-accessible field net/minecraft/class_988 a Lnet/minecraft/server/Entity;
-mutable field net/minecraft/class_988 a Lnet/minecraft/server/Entity;
-accessible field net/minecraft/class_988 az I
-mutable field net/minecraft/class_988 az I
-accessible field net/minecraft/class_988 aA I
-mutable field net/minecraft/class_988 aA I
-accessible field net/minecraft/class_988 aB Lnet/minecraft/server/EnumParticle;
-mutable field net/minecraft/class_988 aB Lnet/minecraft/server/EnumParticle;
-accessible field net/minecraft/class_993 a Lnet/minecraft/class_908;
-mutable field net/minecraft/class_993 a Lnet/minecraft/class_908;
-extendable method net/minecraft/class_993 b ()Lnet/minecraft/class_908;
-accessible method net/minecraft/class_993 b ()Lnet/minecraft/class_908;
-accessible field net/minecraft/class_995 e Lnet/minecraft/class_671;
-mutable field net/minecraft/class_995 e Lnet/minecraft/class_671;
-accessible field net/minecraft/class_996 bJ Lnet/minecraft/server/StatisticManager;
-mutable field net/minecraft/class_996 bJ Lnet/minecraft/server/StatisticManager;
-accessible field net/minecraft/class_996 bK D
-mutable field net/minecraft/class_996 bK D
-accessible field net/minecraft/class_996 bL D
-mutable field net/minecraft/class_996 bL D
-accessible field net/minecraft/class_996 bM D
-mutable field net/minecraft/class_996 bM D
-accessible field net/minecraft/class_996 bN F
-mutable field net/minecraft/class_996 bN F
-accessible field net/minecraft/class_996 bO F
-mutable field net/minecraft/class_996 bO F
-accessible field net/minecraft/class_996 bP Z
-mutable field net/minecraft/class_996 bP Z
-accessible field net/minecraft/class_996 bQ Z
-mutable field net/minecraft/class_996 bQ Z
-accessible field net/minecraft/class_996 bR I
-mutable field net/minecraft/class_996 bR I
-accessible field net/minecraft/class_996 bS Z
-mutable field net/minecraft/class_996 bS Z
-accessible field net/minecraft/class_996 bT Ljava/lang/String;
-mutable field net/minecraft/class_996 bT Ljava/lang/String;
-accessible field net/minecraft/class_996 c Lnet/minecraft/class_669;
-mutable field net/minecraft/class_996 c Lnet/minecraft/class_669;
-accessible field net/minecraft/class_996 d I
-mutable field net/minecraft/class_996 d I
-accessible field net/minecraft/class_996 bU I
-mutable field net/minecraft/class_996 bU I
-accessible field net/minecraft/class_996 bV F
-mutable field net/minecraft/class_996 bV F
-extendable method net/minecraft/class_996 a (Lnet/minecraft/server/EntityItem;)V
-accessible method net/minecraft/class_996 a (Lnet/minecraft/server/EntityItem;)V
-extendable method net/minecraft/class_996 d (Lnet/minecraft/server/DamageSource;F)V
-accessible method net/minecraft/class_996 d (Lnet/minecraft/server/DamageSource;F)V
-extendable method net/minecraft/class_996 r ()V
-accessible method net/minecraft/class_996 r ()V
-extendable method net/minecraft/class_996 j (DDD)Z
-accessible method net/minecraft/class_996 j (DDD)Z
-extendable method net/minecraft/class_996 e (Lnet/minecraft/server/BlockPosition;)Z
-accessible method net/minecraft/class_996 e (Lnet/minecraft/server/BlockPosition;)Z
-extendable method net/minecraft/class_996 A ()Z
-accessible method net/minecraft/class_996 A ()Z
-accessible field net/minecraft/class_997 a Z
-mutable field net/minecraft/class_997 a Z
-accessible field net/minecraft/class_997 b I
-mutable field net/minecraft/class_997 b I
-accessible field net/minecraft/class_997 c D
-mutable field net/minecraft/class_997 c D
-accessible field net/minecraft/class_997 d D
-mutable field net/minecraft/class_997 d D
-accessible field net/minecraft/class_997 e D
-mutable field net/minecraft/class_997 e D
-accessible field net/minecraft/class_997 f D
-mutable field net/minecraft/class_997 f D
-accessible field net/minecraft/class_997 g D
-mutable field net/minecraft/class_997 g D
-accessible field net/minecraft/class_998 a Ljava/lang/String;
-mutable field net/minecraft/class_998 a Ljava/lang/String;
-accessible field net/minecraft/class_998 b Lnet/minecraft/server/IChatBaseComponent;
-mutable field net/minecraft/class_998 b Lnet/minecraft/server/IChatBaseComponent;
-accessible field net/minecraft/class_999 a Ljava/lang/String;
-mutable field net/minecraft/class_999 a Ljava/lang/String;
-accessible field net/minecraft/class_999 b Ljava/util/Map;
-mutable field net/minecraft/class_999 b Ljava/util/Map;
-extendable class net/minecraft/class_1001
-accessible class net/minecraft/class_1002$1
-accessible field net/minecraft/class_1002$class_1003 b [I
-mutable field net/minecraft/class_1002$class_1003 b [I
-accessible field net/minecraft/class_1002$class_1003 c Lnet/minecraft/class_1241;
-mutable field net/minecraft/class_1002$class_1003 c Lnet/minecraft/class_1241;
-accessible field net/minecraft/class_1002 a Ljava/nio/ByteBuffer;
-mutable field net/minecraft/class_1002 a Ljava/nio/ByteBuffer;
-accessible field net/minecraft/class_1002 b Ljava/nio/IntBuffer;
-mutable field net/minecraft/class_1002 b Ljava/nio/IntBuffer;
-accessible field net/minecraft/class_1002 c Ljava/nio/ShortBuffer;
-mutable field net/minecraft/class_1002 c Ljava/nio/ShortBuffer;
-accessible field net/minecraft/class_1002 d Ljava/nio/FloatBuffer;
-mutable field net/minecraft/class_1002 d Ljava/nio/FloatBuffer;
-accessible field net/minecraft/class_1002 e I
-mutable field net/minecraft/class_1002 e I
-accessible field net/minecraft/class_1002 f Lnet/minecraft/class_1242;
-mutable field net/minecraft/class_1002 f Lnet/minecraft/class_1242;
-accessible field net/minecraft/class_1002 g I
-mutable field net/minecraft/class_1002 g I
-accessible field net/minecraft/class_1002 h Z
-mutable field net/minecraft/class_1002 h Z
-accessible field net/minecraft/class_1002 i I
-mutable field net/minecraft/class_1002 i I
-accessible field net/minecraft/class_1002 j D
-mutable field net/minecraft/class_1002 j D
-accessible field net/minecraft/class_1002 k D
-mutable field net/minecraft/class_1002 k D
-accessible field net/minecraft/class_1002 l D
-mutable field net/minecraft/class_1002 l D
-accessible field net/minecraft/class_1002 m Lnet/minecraft/class_1241;
-mutable field net/minecraft/class_1002 m Lnet/minecraft/class_1241;
-accessible field net/minecraft/class_1002 n Z
-mutable field net/minecraft/class_1002 n Z
-extendable method net/minecraft/class_1002 b (I)V
-accessible method net/minecraft/class_1002 b (I)V
-extendable method net/minecraft/class_1002 j ()I
-accessible method net/minecraft/class_1002 j ()I
-extendable method net/minecraft/class_1002 a (Ljava/nio/FloatBuffer;FFFII)F
-accessible method net/minecraft/class_1002 a (Ljava/nio/FloatBuffer;FFFII)F
-extendable method net/minecraft/class_1002 c (I)I
-accessible method net/minecraft/class_1002 c (I)I
-extendable method net/minecraft/class_1002 b (II)V
-accessible method net/minecraft/class_1002 b (II)V
-extendable method net/minecraft/class_1002 a (IIIII)V
-accessible method net/minecraft/class_1002 a (IIIII)V
-extendable method net/minecraft/class_1002 k ()V
-accessible method net/minecraft/class_1002 k ()V
-accessible field net/minecraft/class_1005 f Lnet/minecraft/server/IBlockData;
-mutable field net/minecraft/class_1005 f Lnet/minecraft/server/IBlockData;
-accessible field net/minecraft/class_1005 g Lnet/minecraft/server/BlockPosition;
-mutable field net/minecraft/class_1005 g Lnet/minecraft/server/BlockPosition;
-accessible field net/minecraft/class_1005 h [I
-mutable field net/minecraft/class_1005 h [I
-accessible field net/minecraft/class_1005 i [Lnet/minecraft/server/IBlockData;
-mutable field net/minecraft/class_1005 i [Lnet/minecraft/server/IBlockData;
-extendable method net/minecraft/class_1005 c (Lnet/minecraft/server/BlockPosition;)Lnet/minecraft/server/IBlockData;
-accessible method net/minecraft/class_1005 c (Lnet/minecraft/server/BlockPosition;)Lnet/minecraft/server/IBlockData;
-extendable method net/minecraft/class_1005 e (Lnet/minecraft/server/BlockPosition;)I
-accessible method net/minecraft/class_1005 e (Lnet/minecraft/server/BlockPosition;)I
-accessible field net/minecraft/class_1006 a [Lnet/minecraft/class_1002;
-mutable field net/minecraft/class_1006 a [Lnet/minecraft/class_1002;
-accessible field net/minecraft/class_1007 c D
-mutable field net/minecraft/class_1007 c D
-accessible field net/minecraft/class_1007 d D
-mutable field net/minecraft/class_1007 d D
-accessible field net/minecraft/class_1007 e D
-mutable field net/minecraft/class_1007 e D
-accessible field net/minecraft/class_1007 a Ljava/util/List;
-mutable field net/minecraft/class_1007 a Ljava/util/List;
-accessible field net/minecraft/class_1007 b Z
-mutable field net/minecraft/class_1007 b Z
-accessible field net/minecraft/class_1008 b Lnet/minecraft/server/TileEntityChest;
-mutable field net/minecraft/class_1008 b Lnet/minecraft/server/TileEntityChest;
-accessible field net/minecraft/class_1008 c Lnet/minecraft/server/TileEntityChest;
-mutable field net/minecraft/class_1008 c Lnet/minecraft/server/TileEntityChest;
-accessible field net/minecraft/class_1008 d Lnet/minecraft/server/TileEntityEnderChest;
-mutable field net/minecraft/class_1008 d Lnet/minecraft/server/TileEntityEnderChest;
-accessible field net/minecraft/class_1008 e Lnet/minecraft/server/TileEntityBanner;
-mutable field net/minecraft/class_1008 e Lnet/minecraft/server/TileEntityBanner;
-accessible field net/minecraft/class_1008 f Lnet/minecraft/server/TileEntitySkull;
-mutable field net/minecraft/class_1008 f Lnet/minecraft/server/TileEntitySkull;
-extendable class net/minecraft/class_1009$class_1010
-extendable class net/minecraft/class_1009
-accessible field net/minecraft/class_1009 g [Lnet/minecraft/class_1009;
-mutable field net/minecraft/class_1009 g [Lnet/minecraft/class_1009;
-accessible field net/minecraft/class_1009 h [Lnet/minecraft/class_1009$class_1011;
-mutable field net/minecraft/class_1009 h [Lnet/minecraft/class_1009$class_1011;
-accessible class net/minecraft/class_1012$1
-accessible class net/minecraft/class_1012$2
-accessible class net/minecraft/class_1012$3
-accessible class net/minecraft/class_1012$4
-accessible field net/minecraft/class_1012 e Lorg/apache/logging/log4j/Logger;
-mutable field net/minecraft/class_1012 e Lorg/apache/logging/log4j/Logger;
-accessible field net/minecraft/class_1012 f Lnet/minecraft/server/MinecraftKey;
-mutable field net/minecraft/class_1012 f Lnet/minecraft/server/MinecraftKey;
-accessible field net/minecraft/class_1012 g Lnet/minecraft/server/MinecraftKey;
-mutable field net/minecraft/class_1012 g Lnet/minecraft/server/MinecraftKey;
-accessible field net/minecraft/class_1012 h Lnet/minecraft/class_669;
-mutable field net/minecraft/class_1012 h Lnet/minecraft/class_669;
-accessible field net/minecraft/class_1012 i Lnet/minecraft/class_1258;
-mutable field net/minecraft/class_1012 i Lnet/minecraft/class_1258;
-accessible field net/minecraft/class_1012 j Ljava/util/Random;
-mutable field net/minecraft/class_1012 j Ljava/util/Random;
-accessible field net/minecraft/class_1012 k F
-mutable field net/minecraft/class_1012 k F
-accessible field net/minecraft/class_1012 l Lnet/minecraft/class_682;
-mutable field net/minecraft/class_1012 l Lnet/minecraft/class_682;
-accessible field net/minecraft/class_1012 m I
-mutable field net/minecraft/class_1012 m I
-accessible field net/minecraft/class_1012 n Lnet/minecraft/server/Entity;
-mutable field net/minecraft/class_1012 n Lnet/minecraft/server/Entity;
-accessible field net/minecraft/class_1012 o Lnet/minecraft/class_1708;
-mutable field net/minecraft/class_1012 o Lnet/minecraft/class_1708;
-accessible field net/minecraft/class_1012 p Lnet/minecraft/class_1708;
-mutable field net/minecraft/class_1012 p Lnet/minecraft/class_1708;
-accessible field net/minecraft/class_1012 q F
-mutable field net/minecraft/class_1012 q F
-accessible field net/minecraft/class_1012 r F
-mutable field net/minecraft/class_1012 r F
-accessible field net/minecraft/class_1012 s F
-mutable field net/minecraft/class_1012 s F
-accessible field net/minecraft/class_1012 t F
-mutable field net/minecraft/class_1012 t F
-accessible field net/minecraft/class_1012 u F
-mutable field net/minecraft/class_1012 u F
-accessible field net/minecraft/class_1012 v F
-mutable field net/minecraft/class_1012 v F
-accessible field net/minecraft/class_1012 w F
-mutable field net/minecraft/class_1012 w F
-accessible field net/minecraft/class_1012 x F
-mutable field net/minecraft/class_1012 x F
-accessible field net/minecraft/class_1012 y F
-mutable field net/minecraft/class_1012 y F
-accessible field net/minecraft/class_1012 z F
-mutable field net/minecraft/class_1012 z F
-accessible field net/minecraft/class_1012 A F
-mutable field net/minecraft/class_1012 A F
-accessible field net/minecraft/class_1012 B Z
-mutable field net/minecraft/class_1012 B Z
-accessible field net/minecraft/class_1012 C Z
-mutable field net/minecraft/class_1012 C Z
-accessible field net/minecraft/class_1012 D Z
-mutable field net/minecraft/class_1012 D Z
-accessible field net/minecraft/class_1012 E J
-mutable field net/minecraft/class_1012 E J
-accessible field net/minecraft/class_1012 F J
-mutable field net/minecraft/class_1012 F J
-accessible field net/minecraft/class_1012 G Lnet/minecraft/class_1219;
-mutable field net/minecraft/class_1012 G Lnet/minecraft/class_1219;
-accessible field net/minecraft/class_1012 H [I
-mutable field net/minecraft/class_1012 H [I
-accessible field net/minecraft/class_1012 I Lnet/minecraft/server/MinecraftKey;
-mutable field net/minecraft/class_1012 I Lnet/minecraft/server/MinecraftKey;
-accessible field net/minecraft/class_1012 J Z
-mutable field net/minecraft/class_1012 J Z
-accessible field net/minecraft/class_1012 K F
-mutable field net/minecraft/class_1012 K F
-accessible field net/minecraft/class_1012 L F
-mutable field net/minecraft/class_1012 L F
-accessible field net/minecraft/class_1012 M I
-mutable field net/minecraft/class_1012 M I
-accessible field net/minecraft/class_1012 N [F
-mutable field net/minecraft/class_1012 N [F
-accessible field net/minecraft/class_1012 O [F
-mutable field net/minecraft/class_1012 O [F
-accessible field net/minecraft/class_1012 P Ljava/nio/FloatBuffer;
-mutable field net/minecraft/class_1012 P Ljava/nio/FloatBuffer;
-accessible field net/minecraft/class_1012 Q F
-mutable field net/minecraft/class_1012 Q F
-accessible field net/minecraft/class_1012 R F
-mutable field net/minecraft/class_1012 R F
-accessible field net/minecraft/class_1012 S F
-mutable field net/minecraft/class_1012 S F
-accessible field net/minecraft/class_1012 T F
-mutable field net/minecraft/class_1012 T F
-accessible field net/minecraft/class_1012 U F
-mutable field net/minecraft/class_1012 U F
-accessible field net/minecraft/class_1012 V I
-mutable field net/minecraft/class_1012 V I
-accessible field net/minecraft/class_1012 W Z
-mutable field net/minecraft/class_1012 W Z
-accessible field net/minecraft/class_1012 X D
-mutable field net/minecraft/class_1012 X D
-accessible field net/minecraft/class_1012 Y D
-mutable field net/minecraft/class_1012 Y D
-accessible field net/minecraft/class_1012 Z D
-mutable field net/minecraft/class_1012 Z D
-accessible field net/minecraft/class_1012 aa Lnet/minecraft/class_1212;
-mutable field net/minecraft/class_1012 aa Lnet/minecraft/class_1212;
-accessible field net/minecraft/class_1012 ab [Lnet/minecraft/server/MinecraftKey;
-mutable field net/minecraft/class_1012 ab [Lnet/minecraft/server/MinecraftKey;
-accessible field net/minecraft/class_1012 ac I
-mutable field net/minecraft/class_1012 ac I
-accessible field net/minecraft/class_1012 ad Z
-mutable field net/minecraft/class_1012 ad Z
-accessible field net/minecraft/class_1012 ae I
-mutable field net/minecraft/class_1012 ae I
-extendable method net/minecraft/class_1012 a (Lnet/minecraft/server/MinecraftKey;)V
-accessible method net/minecraft/class_1012 a (Lnet/minecraft/server/MinecraftKey;)V
-extendable method net/minecraft/class_1012 l ()V
-accessible method net/minecraft/class_1012 l ()V
-extendable method net/minecraft/class_1012 a (FZ)F
-accessible method net/minecraft/class_1012 a (FZ)F
-extendable method net/minecraft/class_1012 d (F)V
-accessible method net/minecraft/class_1012 d (F)V
-extendable method net/minecraft/class_1012 e (F)V
-accessible method net/minecraft/class_1012 e (F)V
-extendable method net/minecraft/class_1012 f (F)V
-accessible method net/minecraft/class_1012 f (F)V
-extendable method net/minecraft/class_1012 a (FI)V
-accessible method net/minecraft/class_1012 a (FI)V
-extendable method net/minecraft/class_1012 b (FI)V
-accessible method net/minecraft/class_1012 b (FI)V
-extendable method net/minecraft/class_1012 m ()V
-accessible method net/minecraft/class_1012 m ()V
-extendable method net/minecraft/class_1012 g (F)V
-accessible method net/minecraft/class_1012 g (F)V
-extendable method net/minecraft/class_1012 a (Lnet/minecraft/server/EntityLiving;F)F
-accessible method net/minecraft/class_1012 a (Lnet/minecraft/server/EntityLiving;F)F
-extendable method net/minecraft/class_1012 n ()Z
-accessible method net/minecraft/class_1012 n ()Z
-extendable method net/minecraft/class_1012 h (F)V
-accessible method net/minecraft/class_1012 h (F)V
-extendable method net/minecraft/class_1012 a (IFJ)V
-accessible method net/minecraft/class_1012 a (IFJ)V
-extendable method net/minecraft/class_1012 a (Lnet/minecraft/class_1036;FI)V
-accessible method net/minecraft/class_1012 a (Lnet/minecraft/class_1036;FI)V
-extendable method net/minecraft/class_1012 o ()V
-accessible method net/minecraft/class_1012 o ()V
-extendable method net/minecraft/class_1012 c (F)V
-accessible method net/minecraft/class_1012 c (F)V
-extendable method net/minecraft/class_1012 i (F)V
-accessible method net/minecraft/class_1012 i (F)V
-extendable method net/minecraft/class_1012 a (IF)V
-accessible method net/minecraft/class_1012 a (IF)V
-extendable method net/minecraft/class_1012 a (FFFF)Ljava/nio/FloatBuffer;
-accessible method net/minecraft/class_1012 a (FFFF)Ljava/nio/FloatBuffer;
-accessible class net/minecraft/class_1013$class_1014
-accessible class net/minecraft/class_1013$class_1015
-accessible class net/minecraft/class_1013$class_1016
-accessible field net/minecraft/class_1013$class_1016 a I
-mutable field net/minecraft/class_1013$class_1016 a I
-accessible field net/minecraft/class_1013$class_1016 b Z
-mutable field net/minecraft/class_1013$class_1016 b Z
-accessible class net/minecraft/class_1013$class_1017
-accessible class net/minecraft/class_1013$class_1018
-accessible class net/minecraft/class_1013$class_1019
-accessible class net/minecraft/class_1013$class_1020
-accessible class net/minecraft/class_1013$class_1021
-accessible class net/minecraft/class_1013$class_1022
-accessible class net/minecraft/class_1013$class_1023
-accessible class net/minecraft/class_1013$class_1024
-accessible class net/minecraft/class_1013$class_1025
-accessible class net/minecraft/class_1013$class_1026
-accessible class net/minecraft/class_1013$class_1027
-extendable class net/minecraft/class_1013$class_1028
-accessible class net/minecraft/class_1013$class_1029
-accessible class net/minecraft/class_1013$class_1030
-accessible class net/minecraft/class_1013$class_1031
-accessible field net/minecraft/class_1013 a Lnet/minecraft/class_1013$class_1014;
-mutable field net/minecraft/class_1013 a Lnet/minecraft/class_1013$class_1014;
-accessible field net/minecraft/class_1013 b Lnet/minecraft/class_1013$class_1016;
-mutable field net/minecraft/class_1013 b Lnet/minecraft/class_1013$class_1016;
-accessible field net/minecraft/class_1013 c [Lnet/minecraft/class_1013$class_1016;
-mutable field net/minecraft/class_1013 c [Lnet/minecraft/class_1013$class_1016;
-accessible field net/minecraft/class_1013 d Lnet/minecraft/class_1013$class_1021;
-mutable field net/minecraft/class_1013 d Lnet/minecraft/class_1013$class_1021;
-accessible field net/minecraft/class_1013 e Lnet/minecraft/class_1013$class_1015;
-mutable field net/minecraft/class_1013 e Lnet/minecraft/class_1013$class_1015;
-accessible field net/minecraft/class_1013 f Lnet/minecraft/class_1013$class_1023;
-mutable field net/minecraft/class_1013 f Lnet/minecraft/class_1013$class_1023;
-accessible field net/minecraft/class_1013 g Lnet/minecraft/class_1013$class_1024;
-mutable field net/minecraft/class_1013 g Lnet/minecraft/class_1013$class_1024;
-accessible field net/minecraft/class_1013 h Lnet/minecraft/class_1013$class_1022;
-mutable field net/minecraft/class_1013 h Lnet/minecraft/class_1013$class_1022;
-accessible field net/minecraft/class_1013 i Lnet/minecraft/class_1013$class_1025;
-mutable field net/minecraft/class_1013 i Lnet/minecraft/class_1013$class_1025;
-accessible field net/minecraft/class_1013 j Lnet/minecraft/class_1013$class_1019;
-mutable field net/minecraft/class_1013 j Lnet/minecraft/class_1013$class_1019;
-accessible field net/minecraft/class_1013 k Lnet/minecraft/class_1013$class_1030;
-mutable field net/minecraft/class_1013 k Lnet/minecraft/class_1013$class_1030;
-accessible field net/minecraft/class_1013 l Lnet/minecraft/class_1013$class_1017;
-mutable field net/minecraft/class_1013 l Lnet/minecraft/class_1013$class_1017;
-accessible field net/minecraft/class_1013 m Lnet/minecraft/class_1013$class_1027;
-mutable field net/minecraft/class_1013 m Lnet/minecraft/class_1013$class_1027;
-accessible field net/minecraft/class_1013 n Lnet/minecraft/class_1013$class_1016;
-mutable field net/minecraft/class_1013 n Lnet/minecraft/class_1013$class_1016;
-accessible field net/minecraft/class_1013 o I
-mutable field net/minecraft/class_1013 o I
-accessible field net/minecraft/class_1013 p [Lnet/minecraft/class_1013$class_1031;
-mutable field net/minecraft/class_1013 p [Lnet/minecraft/class_1013$class_1031;
-accessible field net/minecraft/class_1013 q I
-mutable field net/minecraft/class_1013 q I
-accessible field net/minecraft/class_1013 r Lnet/minecraft/class_1013$class_1016;
-mutable field net/minecraft/class_1013 r Lnet/minecraft/class_1013$class_1016;
-accessible field net/minecraft/class_1013 s Lnet/minecraft/class_1013$class_1020;
-mutable field net/minecraft/class_1013 s Lnet/minecraft/class_1013$class_1020;
-accessible field net/minecraft/class_1013 t Lnet/minecraft/class_1013$class_1018;
-mutable field net/minecraft/class_1013 t Lnet/minecraft/class_1013$class_1018;
-extendable method net/minecraft/class_1013 c (Lnet/minecraft/class_1013$class_1028;)Lnet/minecraft/class_1013$class_1029;
-accessible method net/minecraft/class_1013 c (Lnet/minecraft/class_1013$class_1028;)Lnet/minecraft/class_1013$class_1029;
-accessible field net/minecraft/class_1033 a Lnet/minecraft/server/MinecraftKey;
-mutable field net/minecraft/class_1033 a Lnet/minecraft/server/MinecraftKey;
-accessible field net/minecraft/class_1033 b Lnet/minecraft/server/MinecraftKey;
-mutable field net/minecraft/class_1033 b Lnet/minecraft/server/MinecraftKey;
-accessible field net/minecraft/class_1033 c Lnet/minecraft/class_669;
-mutable field net/minecraft/class_1033 c Lnet/minecraft/class_669;
-accessible field net/minecraft/class_1033 d Lnet/minecraft/server/ItemStack;
-mutable field net/minecraft/class_1033 d Lnet/minecraft/server/ItemStack;
-accessible field net/minecraft/class_1033 e F
-mutable field net/minecraft/class_1033 e F
-accessible field net/minecraft/class_1033 f F
-mutable field net/minecraft/class_1033 f F
-accessible field net/minecraft/class_1033 g Lnet/minecraft/class_1135;
-mutable field net/minecraft/class_1033 g Lnet/minecraft/class_1135;
-accessible field net/minecraft/class_1033 h Lnet/minecraft/class_1150;
-mutable field net/minecraft/class_1033 h Lnet/minecraft/class_1150;
-accessible field net/minecraft/class_1033 i I
-mutable field net/minecraft/class_1033 i I
-extendable method net/minecraft/class_1033 a (Lnet/minecraft/server/Block;)Z
-accessible method net/minecraft/class_1033 a (Lnet/minecraft/server/Block;)Z
-extendable method net/minecraft/class_1033 a (FF)V
-accessible method net/minecraft/class_1033 a (FF)V
-extendable method net/minecraft/class_1033 a (Lnet/minecraft/class_993;)V
-accessible method net/minecraft/class_1033 a (Lnet/minecraft/class_993;)V
-extendable method net/minecraft/class_1033 a (Lnet/minecraft/class_996;F)V
-accessible method net/minecraft/class_1033 a (Lnet/minecraft/class_996;F)V
-extendable method net/minecraft/class_1033 c (F)F
-accessible method net/minecraft/class_1033 c (F)F
-extendable method net/minecraft/class_1033 a (Lnet/minecraft/class_1208;)V
-accessible method net/minecraft/class_1033 a (Lnet/minecraft/class_1208;)V
-extendable method net/minecraft/class_1033 b (Lnet/minecraft/class_1208;)V
-accessible method net/minecraft/class_1033 b (Lnet/minecraft/class_1208;)V
-extendable method net/minecraft/class_1033 b (Lnet/minecraft/class_993;)V
-accessible method net/minecraft/class_1033 b (Lnet/minecraft/class_993;)V
-extendable method net/minecraft/class_1033 a (Lnet/minecraft/class_993;FFF)V
-accessible method net/minecraft/class_1033 a (Lnet/minecraft/class_993;FFF)V
-extendable method net/minecraft/class_1033 a (Lnet/minecraft/class_993;FF)V
-accessible method net/minecraft/class_1033 a (Lnet/minecraft/class_993;FF)V
-extendable method net/minecraft/class_1033 d (F)V
-accessible method net/minecraft/class_1033 d (F)V
-extendable method net/minecraft/class_1033 a (Lnet/minecraft/class_993;F)V
-accessible method net/minecraft/class_1033 a (Lnet/minecraft/class_993;F)V
-extendable method net/minecraft/class_1033 b (FF)V
-accessible method net/minecraft/class_1033 b (FF)V
-extendable method net/minecraft/class_1033 a (FLnet/minecraft/class_993;)V
-accessible method net/minecraft/class_1033 a (FLnet/minecraft/class_993;)V
-extendable method net/minecraft/class_1033 d ()V
-accessible method net/minecraft/class_1033 d ()V
-extendable method net/minecraft/class_1033 a (FLnet/minecraft/class_1231;)V
-accessible method net/minecraft/class_1033 a (FLnet/minecraft/class_1231;)V
-extendable method net/minecraft/class_1033 e (F)V
-accessible method net/minecraft/class_1033 e (F)V
-extendable method net/minecraft/class_1033 f (F)V
-accessible method net/minecraft/class_1033 f (F)V
-accessible field net/minecraft/class_1034 a Ljava/util/Map;
-mutable field net/minecraft/class_1034 a Ljava/util/Map;
-accessible field net/minecraft/class_1034 b Ljava/util/Map;
-mutable field net/minecraft/class_1034 b Ljava/util/Map;
-accessible field net/minecraft/class_1034 c Ljava/util/Map;
-mutable field net/minecraft/class_1034 c Ljava/util/Map;
-accessible field net/minecraft/class_1034 d Lnet/minecraft/class_1292;
-mutable field net/minecraft/class_1034 d Lnet/minecraft/class_1292;
-extendable method net/minecraft/class_1034 b (Lnet/minecraft/server/ItemStack;)I
-accessible method net/minecraft/class_1034 b (Lnet/minecraft/server/ItemStack;)I
-extendable method net/minecraft/class_1034 b (Lnet/minecraft/server/Item;I)Lnet/minecraft/class_1288;
-accessible method net/minecraft/class_1034 b (Lnet/minecraft/server/Item;I)Lnet/minecraft/class_1288;
-extendable method net/minecraft/class_1034 c (Lnet/minecraft/server/Item;I)I
-accessible method net/minecraft/class_1034 c (Lnet/minecraft/server/Item;I)I
-accessible class net/minecraft/class_1036$1
-accessible class net/minecraft/class_1036$class_1037
-accessible field net/minecraft/class_1036$class_1037 a Lnet/minecraft/class_1111;
-mutable field net/minecraft/class_1036$class_1037 a Lnet/minecraft/class_1111;
-accessible field net/minecraft/class_1036$class_1037 b Lnet/minecraft/server/EnumDirection;
-mutable field net/minecraft/class_1036$class_1037 b Lnet/minecraft/server/EnumDirection;
-accessible field net/minecraft/class_1036$class_1037 c Ljava/util/Set;
-mutable field net/minecraft/class_1036$class_1037 c Ljava/util/Set;
-accessible field net/minecraft/class_1036$class_1037 d I
-mutable field net/minecraft/class_1036$class_1037 d I
-accessible field net/minecraft/class_1036 b Lorg/apache/logging/log4j/Logger;
-mutable field net/minecraft/class_1036 b Lorg/apache/logging/log4j/Logger;
-accessible field net/minecraft/class_1036 c Lnet/minecraft/server/MinecraftKey;
-mutable field net/minecraft/class_1036 c Lnet/minecraft/server/MinecraftKey;
-accessible field net/minecraft/class_1036 d Lnet/minecraft/server/MinecraftKey;
-mutable field net/minecraft/class_1036 d Lnet/minecraft/server/MinecraftKey;
-accessible field net/minecraft/class_1036 e Lnet/minecraft/server/MinecraftKey;
-mutable field net/minecraft/class_1036 e Lnet/minecraft/server/MinecraftKey;
-accessible field net/minecraft/class_1036 f Lnet/minecraft/server/MinecraftKey;
-mutable field net/minecraft/class_1036 f Lnet/minecraft/server/MinecraftKey;
-accessible field net/minecraft/class_1036 g Lnet/minecraft/server/MinecraftKey;
-mutable field net/minecraft/class_1036 g Lnet/minecraft/server/MinecraftKey;
-accessible field net/minecraft/class_1036 h Lnet/minecraft/class_669;
-mutable field net/minecraft/class_1036 h Lnet/minecraft/class_669;
-accessible field net/minecraft/class_1036 i Lnet/minecraft/class_1232;
-mutable field net/minecraft/class_1036 i Lnet/minecraft/class_1232;
-accessible field net/minecraft/class_1036 j Lnet/minecraft/class_1135;
-mutable field net/minecraft/class_1036 j Lnet/minecraft/class_1135;
-accessible field net/minecraft/class_1036 k Lnet/minecraft/class_907;
-mutable field net/minecraft/class_1036 k Lnet/minecraft/class_907;
-accessible field net/minecraft/class_1036 l Ljava/util/Set;
-mutable field net/minecraft/class_1036 l Ljava/util/Set;
-accessible field net/minecraft/class_1036 m Ljava/util/List;
-mutable field net/minecraft/class_1036 m Ljava/util/List;
-accessible field net/minecraft/class_1036 n Ljava/util/Set;
-mutable field net/minecraft/class_1036 n Ljava/util/Set;
-accessible field net/minecraft/class_1036 o Lnet/minecraft/class_1045;
-mutable field net/minecraft/class_1036 o Lnet/minecraft/class_1045;
-accessible field net/minecraft/class_1036 p I
-mutable field net/minecraft/class_1036 p I
-accessible field net/minecraft/class_1036 q I
-mutable field net/minecraft/class_1036 q I
-accessible field net/minecraft/class_1036 r I
-mutable field net/minecraft/class_1036 r I
-accessible field net/minecraft/class_1036 s Lnet/minecraft/class_1241;
-mutable field net/minecraft/class_1036 s Lnet/minecraft/class_1241;
-accessible field net/minecraft/class_1036 t Lnet/minecraft/class_1240;
-mutable field net/minecraft/class_1036 t Lnet/minecraft/class_1240;
-accessible field net/minecraft/class_1036 u Lnet/minecraft/class_1240;
-mutable field net/minecraft/class_1036 u Lnet/minecraft/class_1240;
-accessible field net/minecraft/class_1036 v Lnet/minecraft/class_1240;
-mutable field net/minecraft/class_1036 v Lnet/minecraft/class_1240;
-accessible field net/minecraft/class_1036 w I
-mutable field net/minecraft/class_1036 w I
-accessible field net/minecraft/class_1036 x Ljava/util/Map;
-mutable field net/minecraft/class_1036 x Ljava/util/Map;
-accessible field net/minecraft/class_1036 y Ljava/util/Map;
-mutable field net/minecraft/class_1036 y Ljava/util/Map;
-accessible field net/minecraft/class_1036 z [Lnet/minecraft/class_1231;
-mutable field net/minecraft/class_1036 z [Lnet/minecraft/class_1231;
-accessible field net/minecraft/class_1036 A Lnet/minecraft/class_1040;
-mutable field net/minecraft/class_1036 A Lnet/minecraft/class_1040;
-accessible field net/minecraft/class_1036 B Lnet/minecraft/class_1212;
-mutable field net/minecraft/class_1036 B Lnet/minecraft/class_1212;
-accessible field net/minecraft/class_1036 C D
-mutable field net/minecraft/class_1036 C D
-accessible field net/minecraft/class_1036 D D
-mutable field net/minecraft/class_1036 D D
-accessible field net/minecraft/class_1036 E D
-mutable field net/minecraft/class_1036 E D
-accessible field net/minecraft/class_1036 F I
-mutable field net/minecraft/class_1036 F I
-accessible field net/minecraft/class_1036 G I
-mutable field net/minecraft/class_1036 G I
-accessible field net/minecraft/class_1036 H I
-mutable field net/minecraft/class_1036 H I
-accessible field net/minecraft/class_1036 I D
-mutable field net/minecraft/class_1036 I D
-accessible field net/minecraft/class_1036 J D
-mutable field net/minecraft/class_1036 J D
-accessible field net/minecraft/class_1036 K D
-mutable field net/minecraft/class_1036 K D
-accessible field net/minecraft/class_1036 L D
-mutable field net/minecraft/class_1036 L D
-accessible field net/minecraft/class_1036 M D
-mutable field net/minecraft/class_1036 M D
-accessible field net/minecraft/class_1036 N Lnet/minecraft/class_1106;
-mutable field net/minecraft/class_1036 N Lnet/minecraft/class_1106;
-accessible field net/minecraft/class_1036 O Lnet/minecraft/class_1007;
-mutable field net/minecraft/class_1036 O Lnet/minecraft/class_1007;
-accessible field net/minecraft/class_1036 P I
-mutable field net/minecraft/class_1036 P I
-accessible field net/minecraft/class_1036 Q I
-mutable field net/minecraft/class_1036 Q I
-accessible field net/minecraft/class_1036 R I
-mutable field net/minecraft/class_1036 R I
-accessible field net/minecraft/class_1036 S I
-mutable field net/minecraft/class_1036 S I
-accessible field net/minecraft/class_1036 T I
-mutable field net/minecraft/class_1036 T I
-accessible field net/minecraft/class_1036 U Z
-mutable field net/minecraft/class_1036 U Z
-accessible field net/minecraft/class_1036 V Lnet/minecraft/class_1120;
-mutable field net/minecraft/class_1036 V Lnet/minecraft/class_1120;
-accessible field net/minecraft/class_1036 W [Lorg/lwjgl/util/vector/Vector4f;
-mutable field net/minecraft/class_1036 W [Lorg/lwjgl/util/vector/Vector4f;
-accessible field net/minecraft/class_1036 X Lnet/minecraft/class_1354;
-mutable field net/minecraft/class_1036 X Lnet/minecraft/class_1354;
-accessible field net/minecraft/class_1036 Y Z
-mutable field net/minecraft/class_1036 Y Z
-accessible field net/minecraft/class_1036 a Lnet/minecraft/class_1112;
-mutable field net/minecraft/class_1036 a Lnet/minecraft/class_1112;
-accessible field net/minecraft/class_1036 Z D
-mutable field net/minecraft/class_1036 Z D
-accessible field net/minecraft/class_1036 aa D
-mutable field net/minecraft/class_1036 aa D
-accessible field net/minecraft/class_1036 ab D
-mutable field net/minecraft/class_1036 ab D
-accessible field net/minecraft/class_1036 ac Z
-mutable field net/minecraft/class_1036 ac Z
-extendable method net/minecraft/class_1036 n ()V
-accessible method net/minecraft/class_1036 n ()V
-extendable method net/minecraft/class_1036 d ()Z
-accessible method net/minecraft/class_1036 d ()Z
-extendable method net/minecraft/class_1036 o ()V
-accessible method net/minecraft/class_1036 o ()V
-extendable method net/minecraft/class_1036 p ()V
-accessible method net/minecraft/class_1036 p ()V
-extendable method net/minecraft/class_1036 a (Lnet/minecraft/class_1002;FZ)V
-accessible method net/minecraft/class_1036 a (Lnet/minecraft/class_1002;FZ)V
-extendable method net/minecraft/class_1036 q ()V
-accessible method net/minecraft/class_1036 q ()V
-extendable method net/minecraft/class_1036 a (Lnet/minecraft/class_1002;)V
-accessible method net/minecraft/class_1036 a (Lnet/minecraft/class_1002;)V
-extendable method net/minecraft/class_1036 e ()V
-accessible method net/minecraft/class_1036 e ()V
-extendable method net/minecraft/class_1036 a (Lnet/minecraft/server/BlockPosition;Lnet/minecraft/class_1111;)Z
-accessible method net/minecraft/class_1036 a (Lnet/minecraft/server/BlockPosition;Lnet/minecraft/class_1111;)Z
-extendable method net/minecraft/class_1036 c (Lnet/minecraft/server/BlockPosition;)Ljava/util/Set;
-accessible method net/minecraft/class_1036 c (Lnet/minecraft/server/BlockPosition;)Ljava/util/Set;
-extendable method net/minecraft/class_1036 a (Lnet/minecraft/server/BlockPosition;Lnet/minecraft/class_1111;Lnet/minecraft/server/EnumDirection;)Lnet/minecraft/class_1111;
-accessible method net/minecraft/class_1036 a (Lnet/minecraft/server/BlockPosition;Lnet/minecraft/class_1111;Lnet/minecraft/server/EnumDirection;)Lnet/minecraft/class_1111;
-extendable method net/minecraft/class_1036 a (DDD)V
-accessible method net/minecraft/class_1036 a (DDD)V
-extendable method net/minecraft/class_1036 a (Lnet/minecraft/server/Entity;D)Lorg/lwjgl/util/vector/Vector3f;
-accessible method net/minecraft/class_1036 a (Lnet/minecraft/server/Entity;D)Lorg/lwjgl/util/vector/Vector3f;
-extendable method net/minecraft/class_1036 a (Lnet/minecraft/class_91;)V
-accessible method net/minecraft/class_1036 a (Lnet/minecraft/class_91;)V
-extendable method net/minecraft/class_1036 a (Ljava/util/Iterator;)V
-accessible method net/minecraft/class_1036 a (Ljava/util/Iterator;)V
-extendable method net/minecraft/class_1036 r ()V
-accessible method net/minecraft/class_1036 r ()V
-extendable method net/minecraft/class_1036 c (FI)V
-accessible method net/minecraft/class_1036 c (FI)V
-extendable method net/minecraft/class_1036 s ()V
-accessible method net/minecraft/class_1036 s ()V
-extendable method net/minecraft/class_1036 t ()V
-accessible method net/minecraft/class_1036 t ()V
-extendable method net/minecraft/class_1036 b (IIIIII)V
-accessible method net/minecraft/class_1036 b (IIIIII)V
-extendable method net/minecraft/class_1036 a (Lnet/minecraft/server/EnumParticle;DDDDDD[I)V
-accessible method net/minecraft/class_1036 a (Lnet/minecraft/server/EnumParticle;DDDDDD[I)V
-extendable method net/minecraft/class_1036 b (IZDDDDDD[I)Lnet/minecraft/class_958;
-accessible method net/minecraft/class_1036 b (IZDDDDDD[I)Lnet/minecraft/class_958;
-accessible field net/minecraft/class_1038 a [I
-mutable field net/minecraft/class_1038 a [I
-accessible field net/minecraft/class_1038 b I
-mutable field net/minecraft/class_1038 b I
-accessible field net/minecraft/class_1038 c I
-mutable field net/minecraft/class_1038 c I
-extendable method net/minecraft/class_1038 a (IIII)V
-accessible method net/minecraft/class_1038 a (IIII)V
-extendable method net/minecraft/class_1038 b (IIII)V
-accessible method net/minecraft/class_1038 b (IIII)V
-extendable method net/minecraft/class_1038 c (IIII)Z
-accessible method net/minecraft/class_1038 c (IIII)Z
-accessible field net/minecraft/class_1041 a Lnet/minecraft/class_1002;
-mutable field net/minecraft/class_1041 a Lnet/minecraft/class_1002;
-accessible field net/minecraft/class_1041 b Lnet/minecraft/class_1004;
-mutable field net/minecraft/class_1041 b Lnet/minecraft/class_1004;
-accessible field net/minecraft/class_1041 c Lnet/minecraft/class_1041;
-mutable field net/minecraft/class_1041 c Lnet/minecraft/class_1041;
-extendable method net/minecraft/class_1042 a ()V
-accessible method net/minecraft/class_1042 a ()V
-accessible field net/minecraft/class_1043 a Lnet/minecraft/class_1240;
-mutable field net/minecraft/class_1043 a Lnet/minecraft/class_1240;
-accessible field net/minecraft/class_1045 a Lnet/minecraft/class_1036;
-mutable field net/minecraft/class_1045 a Lnet/minecraft/class_1036;
-accessible field net/minecraft/class_1045 b Lnet/minecraft/server/World;
-mutable field net/minecraft/class_1045 b Lnet/minecraft/server/World;
-accessible field net/minecraft/class_1045 c I
-mutable field net/minecraft/class_1045 c I
-accessible field net/minecraft/class_1045 d I
-mutable field net/minecraft/class_1045 d I
-accessible field net/minecraft/class_1045 e I
-mutable field net/minecraft/class_1045 e I
-extendable method net/minecraft/class_1045 a (Lnet/minecraft/class_1112;)V
-accessible method net/minecraft/class_1045 a (Lnet/minecraft/class_1112;)V
-extendable method net/minecraft/class_1045 a (I)V
-accessible method net/minecraft/class_1045 a (I)V
-extendable method net/minecraft/class_1045 a (III)I
-accessible method net/minecraft/class_1045 a (III)I
-extendable method net/minecraft/class_1045 a (Lnet/minecraft/server/BlockPosition;)Lnet/minecraft/class_1111;
-accessible method net/minecraft/class_1045 a (Lnet/minecraft/server/BlockPosition;)Lnet/minecraft/class_1111;
-accessible class net/minecraft/class_1047$1
-extendable method net/minecraft/class_1047$1 a (Lnet/minecraft/server/IBlockData;)Lnet/minecraft/class_1293;
-accessible method net/minecraft/class_1047$1 a (Lnet/minecraft/server/IBlockData;)Lnet/minecraft/class_1293;
-accessible class net/minecraft/class_1047$2
-extendable method net/minecraft/class_1047$2 a (Lnet/minecraft/server/IBlockData;)Lnet/minecraft/class_1293;
-accessible method net/minecraft/class_1047$2 a (Lnet/minecraft/server/IBlockData;)Lnet/minecraft/class_1293;
-accessible class net/minecraft/class_1047$3
-extendable method net/minecraft/class_1047$3 a (Lnet/minecraft/server/IBlockData;)Lnet/minecraft/class_1293;
-accessible method net/minecraft/class_1047$3 a (Lnet/minecraft/server/IBlockData;)Lnet/minecraft/class_1293;
-accessible class net/minecraft/class_1047$4
-extendable method net/minecraft/class_1047$4 a (Lnet/minecraft/server/IBlockData;)Lnet/minecraft/class_1293;
-accessible method net/minecraft/class_1047$4 a (Lnet/minecraft/server/IBlockData;)Lnet/minecraft/class_1293;
-accessible class net/minecraft/class_1047$5
-extendable method net/minecraft/class_1047$5 a (Lnet/minecraft/server/IBlockData;)Lnet/minecraft/class_1293;
-accessible method net/minecraft/class_1047$5 a (Lnet/minecraft/server/IBlockData;)Lnet/minecraft/class_1293;
-accessible class net/minecraft/class_1047$6
-extendable method net/minecraft/class_1047$6 a (Lnet/minecraft/server/IBlockData;)Lnet/minecraft/class_1293;
-accessible method net/minecraft/class_1047$6 a (Lnet/minecraft/server/IBlockData;)Lnet/minecraft/class_1293;
-accessible class net/minecraft/class_1047$7
-extendable method net/minecraft/class_1047$7 a (Lnet/minecraft/server/IBlockData;)Lnet/minecraft/class_1293;
-accessible method net/minecraft/class_1047$7 a (Lnet/minecraft/server/IBlockData;)Lnet/minecraft/class_1293;
-accessible field net/minecraft/class_1047 a Ljava/util/Map;
-mutable field net/minecraft/class_1047 a Ljava/util/Map;
-accessible field net/minecraft/class_1047 b Lnet/minecraft/class_1084;
-mutable field net/minecraft/class_1047 b Lnet/minecraft/class_1084;
-accessible field net/minecraft/class_1047 c Lnet/minecraft/class_1292;
-mutable field net/minecraft/class_1047 c Lnet/minecraft/class_1292;
-extendable method net/minecraft/class_1047 d ()V
-accessible method net/minecraft/class_1047 d ()V
-accessible field net/minecraft/class_1048 a Lnet/minecraft/class_1047;
-mutable field net/minecraft/class_1048 a Lnet/minecraft/class_1047;
-accessible field net/minecraft/class_1048 b Lnet/minecraft/class_671;
-mutable field net/minecraft/class_1048 b Lnet/minecraft/class_671;
-accessible field net/minecraft/class_1048 c Lnet/minecraft/class_1050;
-mutable field net/minecraft/class_1048 c Lnet/minecraft/class_1050;
-accessible field net/minecraft/class_1048 d Lnet/minecraft/class_1046;
-mutable field net/minecraft/class_1048 d Lnet/minecraft/class_1046;
-accessible field net/minecraft/class_1048 e Lnet/minecraft/class_1049;
-mutable field net/minecraft/class_1048 e Lnet/minecraft/class_1049;
-extendable method net/minecraft/class_1048 a (Lnet/minecraft/server/IBlockData;Lnet/minecraft/server/BlockPosition;)Lnet/minecraft/class_1288;
-accessible method net/minecraft/class_1048 a (Lnet/minecraft/server/IBlockData;Lnet/minecraft/server/BlockPosition;)Lnet/minecraft/class_1288;
-accessible field net/minecraft/class_1049 a [Lnet/minecraft/class_1231;
-mutable field net/minecraft/class_1049 a [Lnet/minecraft/class_1231;
-accessible field net/minecraft/class_1049 b [Lnet/minecraft/class_1231;
-mutable field net/minecraft/class_1049 b [Lnet/minecraft/class_1231;
-extendable method net/minecraft/class_1049 a ()V
-accessible method net/minecraft/class_1049 a ()V
-extendable method net/minecraft/class_1049 a (Lnet/minecraft/server/IBlockAccess;Lnet/minecraft/server/BlockPosition;Lnet/minecraft/server/Material;)F
-accessible method net/minecraft/class_1049 a (Lnet/minecraft/server/IBlockAccess;Lnet/minecraft/server/BlockPosition;Lnet/minecraft/server/Material;)F
-extendable class net/minecraft/class_1050$class_1051
-accessible field net/minecraft/class_1050$class_1051 g [Lnet/minecraft/server/EnumDirection;
-mutable field net/minecraft/class_1050$class_1051 g [Lnet/minecraft/server/EnumDirection;
-accessible field net/minecraft/class_1050$class_1051 h F
-mutable field net/minecraft/class_1050$class_1051 h F
-accessible field net/minecraft/class_1050$class_1051 i Z
-mutable field net/minecraft/class_1050$class_1051 i Z
-accessible field net/minecraft/class_1050$class_1051 j [Lnet/minecraft/class_1050$class_1054;
-mutable field net/minecraft/class_1050$class_1051 j [Lnet/minecraft/class_1050$class_1054;
-accessible field net/minecraft/class_1050$class_1051 k [Lnet/minecraft/class_1050$class_1054;
-mutable field net/minecraft/class_1050$class_1051 k [Lnet/minecraft/class_1050$class_1054;
-accessible field net/minecraft/class_1050$class_1051 l [Lnet/minecraft/class_1050$class_1054;
-mutable field net/minecraft/class_1050$class_1051 l [Lnet/minecraft/class_1050$class_1054;
-accessible field net/minecraft/class_1050$class_1051 m [Lnet/minecraft/class_1050$class_1054;
-mutable field net/minecraft/class_1050$class_1051 m [Lnet/minecraft/class_1050$class_1054;
-accessible field net/minecraft/class_1050$class_1051 n [Lnet/minecraft/class_1050$class_1051;
-mutable field net/minecraft/class_1050$class_1051 n [Lnet/minecraft/class_1050$class_1051;
-accessible class net/minecraft/class_1050$class_1052
-accessible field net/minecraft/class_1050$class_1052 b [F
-mutable field net/minecraft/class_1050$class_1052 b [F
-accessible field net/minecraft/class_1050$class_1052 c [I
-mutable field net/minecraft/class_1050$class_1052 c [I
-extendable method net/minecraft/class_1050$class_1052 a (IIII)I
-accessible method net/minecraft/class_1050$class_1052 a (IIII)I
-extendable method net/minecraft/class_1050$class_1052 a (IIIIFFFF)I
-accessible method net/minecraft/class_1050$class_1052 a (IIIIFFFF)I
-extendable class net/minecraft/class_1050$class_1053
-accessible field net/minecraft/class_1050$class_1053 g I
-mutable field net/minecraft/class_1050$class_1053 g I
-accessible field net/minecraft/class_1050$class_1053 h I
-mutable field net/minecraft/class_1050$class_1053 h I
-accessible field net/minecraft/class_1050$class_1053 i I
-mutable field net/minecraft/class_1050$class_1053 i I
-accessible field net/minecraft/class_1050$class_1053 j I
-mutable field net/minecraft/class_1050$class_1053 j I
-accessible field net/minecraft/class_1050$class_1053 k [Lnet/minecraft/class_1050$class_1053;
-mutable field net/minecraft/class_1050$class_1053 k [Lnet/minecraft/class_1050$class_1053;
-extendable class net/minecraft/class_1050$class_1054
-accessible field net/minecraft/class_1050$class_1054 m I
-mutable field net/minecraft/class_1050$class_1054 m I
-extendable method net/minecraft/class_1050 a (Lnet/minecraft/server/IBlockAccess;Lnet/minecraft/server/Block;Lnet/minecraft/server/BlockPosition;Lnet/minecraft/class_1002;Ljava/util/List;[FLjava/util/BitSet;Lnet/minecraft/class_1050$class_1052;)V
-accessible method net/minecraft/class_1050 a (Lnet/minecraft/server/IBlockAccess;Lnet/minecraft/server/Block;Lnet/minecraft/server/BlockPosition;Lnet/minecraft/class_1002;Ljava/util/List;[FLjava/util/BitSet;Lnet/minecraft/class_1050$class_1052;)V
-extendable method net/minecraft/class_1050 a (Lnet/minecraft/server/Block;[ILnet/minecraft/server/EnumDirection;[FLjava/util/BitSet;)V
-accessible method net/minecraft/class_1050 a (Lnet/minecraft/server/Block;[ILnet/minecraft/server/EnumDirection;[FLjava/util/BitSet;)V
-extendable method net/minecraft/class_1050 a (Lnet/minecraft/server/IBlockAccess;Lnet/minecraft/server/Block;Lnet/minecraft/server/BlockPosition;Lnet/minecraft/server/EnumDirection;IZLnet/minecraft/class_1002;Ljava/util/List;Ljava/util/BitSet;)V
-accessible method net/minecraft/class_1050 a (Lnet/minecraft/server/IBlockAccess;Lnet/minecraft/server/Block;Lnet/minecraft/server/BlockPosition;Lnet/minecraft/server/EnumDirection;IZLnet/minecraft/class_1002;Ljava/util/List;Ljava/util/BitSet;)V
-extendable method net/minecraft/class_1050 a (FFFFLjava/util/List;)V
-accessible method net/minecraft/class_1050 a (FFFFLjava/util/List;)V
-accessible field net/minecraft/class_1055 a [I
-mutable field net/minecraft/class_1055 a [I
-accessible field net/minecraft/class_1055 b I
-mutable field net/minecraft/class_1055 b I
-accessible field net/minecraft/class_1055 c Lnet/minecraft/server/EnumDirection;
-mutable field net/minecraft/class_1055 c Lnet/minecraft/server/EnumDirection;
-accessible class net/minecraft/class_1056$class_1057
-extendable method net/minecraft/class_1056$class_1057 a (Lcom/google/gson/JsonObject;)Lnet/minecraft/class_1060;
-accessible method net/minecraft/class_1056$class_1057 a (Lcom/google/gson/JsonObject;)Lnet/minecraft/class_1060;
-extendable method net/minecraft/class_1056$class_1057 b (Lcom/google/gson/JsonObject;)F
-accessible method net/minecraft/class_1056$class_1057 b (Lcom/google/gson/JsonObject;)F
-extendable method net/minecraft/class_1056$class_1057 c (Lcom/google/gson/JsonObject;)Lnet/minecraft/server/EnumDirection$EnumAxis;
-accessible method net/minecraft/class_1056$class_1057 c (Lcom/google/gson/JsonObject;)Lnet/minecraft/server/EnumDirection$EnumAxis;
-extendable method net/minecraft/class_1056$class_1057 a (Lcom/google/gson/JsonDeserializationContext;Lcom/google/gson/JsonObject;)Ljava/util/Map;
-accessible method net/minecraft/class_1056$class_1057 a (Lcom/google/gson/JsonDeserializationContext;Lcom/google/gson/JsonObject;)Ljava/util/Map;
-extendable method net/minecraft/class_1056$class_1057 b (Lcom/google/gson/JsonDeserializationContext;Lcom/google/gson/JsonObject;)Ljava/util/Map;
-accessible method net/minecraft/class_1056$class_1057 b (Lcom/google/gson/JsonDeserializationContext;Lcom/google/gson/JsonObject;)Ljava/util/Map;
-extendable method net/minecraft/class_1056$class_1057 a (Ljava/lang/String;)Lnet/minecraft/server/EnumDirection;
-accessible method net/minecraft/class_1056$class_1057 a (Ljava/lang/String;)Lnet/minecraft/server/EnumDirection;
-extendable method net/minecraft/class_1056$class_1057 d (Lcom/google/gson/JsonObject;)Lorg/lwjgl/util/vector/Vector3f;
-accessible method net/minecraft/class_1056$class_1057 d (Lcom/google/gson/JsonObject;)Lorg/lwjgl/util/vector/Vector3f;
-extendable method net/minecraft/class_1056$class_1057 e (Lcom/google/gson/JsonObject;)Lorg/lwjgl/util/vector/Vector3f;
-accessible method net/minecraft/class_1056$class_1057 e (Lcom/google/gson/JsonObject;)Lorg/lwjgl/util/vector/Vector3f;
-extendable method net/minecraft/class_1056$class_1057 a (Lcom/google/gson/JsonObject;Ljava/lang/String;)Lorg/lwjgl/util/vector/Vector3f;
-accessible method net/minecraft/class_1056$class_1057 a (Lcom/google/gson/JsonObject;Ljava/lang/String;)Lorg/lwjgl/util/vector/Vector3f;
-extendable method net/minecraft/class_1056 a ()V
-accessible method net/minecraft/class_1056 a ()V
-extendable method net/minecraft/class_1056 a (Lnet/minecraft/server/EnumDirection;)[F
-accessible method net/minecraft/class_1056 a (Lnet/minecraft/server/EnumDirection;)[F
-accessible class net/minecraft/class_1058$class_1059
-extendable method net/minecraft/class_1058$class_1059 a (Lcom/google/gson/JsonObject;)I
-accessible method net/minecraft/class_1058$class_1059 a (Lcom/google/gson/JsonObject;)I
-extendable method net/minecraft/class_1058$class_1059 b (Lcom/google/gson/JsonObject;)Ljava/lang/String;
-accessible method net/minecraft/class_1058$class_1059 b (Lcom/google/gson/JsonObject;)Ljava/lang/String;
-extendable method net/minecraft/class_1058$class_1059 c (Lcom/google/gson/JsonObject;)Lnet/minecraft/server/EnumDirection;
-accessible method net/minecraft/class_1058$class_1059 c (Lcom/google/gson/JsonObject;)Lnet/minecraft/server/EnumDirection;
-accessible class net/minecraft/class_1061$class_1062
-extendable method net/minecraft/class_1061$class_1062 a (Lcom/google/gson/JsonObject;)I
-accessible method net/minecraft/class_1061$class_1062 a (Lcom/google/gson/JsonObject;)I
-extendable method net/minecraft/class_1061$class_1062 b (Lcom/google/gson/JsonObject;)[F
-accessible method net/minecraft/class_1061$class_1062 b (Lcom/google/gson/JsonObject;)[F
-extendable method net/minecraft/class_1061 d (I)I
-accessible method net/minecraft/class_1061 d (I)I
-extendable class net/minecraft/class_1063$class_1064
-extendable method net/minecraft/class_1063$class_1065 b (Lcom/google/gson/JsonObject;)Ljava/util/Map;
-accessible method net/minecraft/class_1063$class_1065 b (Lcom/google/gson/JsonObject;)Ljava/util/Map;
-extendable method net/minecraft/class_1063$class_1065 c (Lcom/google/gson/JsonObject;)Ljava/lang/String;
-accessible method net/minecraft/class_1063$class_1065 c (Lcom/google/gson/JsonObject;)Ljava/lang/String;
-extendable method net/minecraft/class_1063$class_1065 a (Lcom/google/gson/JsonObject;)Z
-accessible method net/minecraft/class_1063$class_1065 a (Lcom/google/gson/JsonObject;)Z
-extendable method net/minecraft/class_1063$class_1065 a (Lcom/google/gson/JsonDeserializationContext;Lcom/google/gson/JsonObject;)Ljava/util/List;
-accessible method net/minecraft/class_1063$class_1065 a (Lcom/google/gson/JsonDeserializationContext;Lcom/google/gson/JsonObject;)Ljava/util/List;
-accessible field net/minecraft/class_1063 f Lorg/apache/logging/log4j/Logger;
-mutable field net/minecraft/class_1063 f Lorg/apache/logging/log4j/Logger;
-accessible field net/minecraft/class_1063 a Lcom/google/gson/Gson;
-mutable field net/minecraft/class_1063 a Lcom/google/gson/Gson;
-accessible field net/minecraft/class_1063 g Ljava/util/List;
-mutable field net/minecraft/class_1063 g Ljava/util/List;
-accessible field net/minecraft/class_1063 h Z
-mutable field net/minecraft/class_1063 h Z
-accessible field net/minecraft/class_1063 i Z
-mutable field net/minecraft/class_1063 i Z
-accessible field net/minecraft/class_1063 j Lnet/minecraft/class_1080;
-mutable field net/minecraft/class_1063 j Lnet/minecraft/class_1080;
-accessible field net/minecraft/class_1063 c Ljava/util/Map;
-mutable field net/minecraft/class_1063 c Ljava/util/Map;
-accessible field net/minecraft/class_1063 d Lnet/minecraft/class_1063;
-mutable field net/minecraft/class_1063 d Lnet/minecraft/class_1063;
-accessible field net/minecraft/class_1063 e Lnet/minecraft/server/MinecraftKey;
-mutable field net/minecraft/class_1063 e Lnet/minecraft/server/MinecraftKey;
-extendable method net/minecraft/class_1063 h ()Z
-accessible method net/minecraft/class_1063 h ()Z
-extendable method net/minecraft/class_1063 a (Ljava/lang/String;Lnet/minecraft/class_1063$class_1064;)Ljava/lang/String;
-accessible method net/minecraft/class_1063 a (Ljava/lang/String;Lnet/minecraft/class_1063$class_1064;)Ljava/lang/String;
-extendable method net/minecraft/class_1063 d (Ljava/lang/String;)Z
-accessible method net/minecraft/class_1063 d (Ljava/lang/String;)Z
-extendable method net/minecraft/class_1063 a (Lnet/minecraft/class_1080$class_1082;)Lnet/minecraft/class_1078;
-accessible method net/minecraft/class_1063 a (Lnet/minecraft/class_1080$class_1082;)Lnet/minecraft/class_1078;
-extendable method net/minecraft/class_1067$class_1068 a (Lcom/google/gson/JsonDeserializationContext;Lcom/google/gson/JsonObject;)Ljava/util/List;
-accessible method net/minecraft/class_1067$class_1068 a (Lcom/google/gson/JsonDeserializationContext;Lcom/google/gson/JsonObject;)Ljava/util/List;
-extendable method net/minecraft/class_1067$class_1068 a (Lcom/google/gson/JsonDeserializationContext;Ljava/util/Map$Entry;)Lnet/minecraft/class_1067$class_1072;
-accessible method net/minecraft/class_1067$class_1068 a (Lcom/google/gson/JsonDeserializationContext;Ljava/util/Map$Entry;)Lnet/minecraft/class_1067$class_1072;
-extendable method net/minecraft/class_1067$class_1070$class_1071 a (Ljava/lang/String;)Lnet/minecraft/server/MinecraftKey;
-accessible method net/minecraft/class_1067$class_1070$class_1071 a (Ljava/lang/String;)Lnet/minecraft/server/MinecraftKey;
-extendable method net/minecraft/class_1067$class_1070$class_1071 d (Lcom/google/gson/JsonObject;)Z
-accessible method net/minecraft/class_1067$class_1070$class_1071 d (Lcom/google/gson/JsonObject;)Z
-extendable method net/minecraft/class_1067$class_1070$class_1071 a (Lcom/google/gson/JsonObject;)Lnet/minecraft/class_1289;
-accessible method net/minecraft/class_1067$class_1070$class_1071 a (Lcom/google/gson/JsonObject;)Lnet/minecraft/class_1289;
-extendable method net/minecraft/class_1067$class_1070$class_1071 b (Lcom/google/gson/JsonObject;)Ljava/lang/String;
-accessible method net/minecraft/class_1067$class_1070$class_1071 b (Lcom/google/gson/JsonObject;)Ljava/lang/String;
-extendable method net/minecraft/class_1067$class_1070$class_1071 c (Lcom/google/gson/JsonObject;)I
-accessible method net/minecraft/class_1067$class_1070$class_1071 c (Lcom/google/gson/JsonObject;)I
-accessible field net/minecraft/class_1067$class_1070 a Lnet/minecraft/server/MinecraftKey;
-mutable field net/minecraft/class_1067$class_1070 a Lnet/minecraft/server/MinecraftKey;
-accessible field net/minecraft/class_1067$class_1070 b Lnet/minecraft/class_1289;
-mutable field net/minecraft/class_1067$class_1070 b Lnet/minecraft/class_1289;
-accessible field net/minecraft/class_1067$class_1070 c Z
-mutable field net/minecraft/class_1067$class_1070 c Z
-accessible field net/minecraft/class_1067$class_1070 d I
-mutable field net/minecraft/class_1067$class_1070 d I
-accessible field net/minecraft/class_1067$class_1072 a Ljava/lang/String;
-mutable field net/minecraft/class_1067$class_1072 a Ljava/lang/String;
-accessible field net/minecraft/class_1067$class_1072 b Ljava/util/List;
-mutable field net/minecraft/class_1067$class_1072 b Ljava/util/List;
-accessible field net/minecraft/class_1067 a Lcom/google/gson/Gson;
-mutable field net/minecraft/class_1067 a Lcom/google/gson/Gson;
-accessible field net/minecraft/class_1067 b Ljava/util/Map;
-mutable field net/minecraft/class_1067 b Ljava/util/Map;
-accessible field net/minecraft/class_1073 d Lnet/minecraft/class_1231;
-mutable field net/minecraft/class_1073 d Lnet/minecraft/class_1231;
-extendable method net/minecraft/class_1073 e ()V
-accessible method net/minecraft/class_1073 e ()V
-extendable method net/minecraft/class_1073 a (I)V
-accessible method net/minecraft/class_1073 a (I)V
-accessible field net/minecraft/class_1074 a F
-mutable field net/minecraft/class_1074 a F
-accessible field net/minecraft/class_1074 b F
-mutable field net/minecraft/class_1074 b F
-extendable method net/minecraft/class_1074 a (Lnet/minecraft/class_1058;Lnet/minecraft/class_1231;Lnet/minecraft/server/EnumDirection;[FLnet/minecraft/class_1289;Lnet/minecraft/class_1060;ZZ)[I
-accessible method net/minecraft/class_1074 a (Lnet/minecraft/class_1058;Lnet/minecraft/class_1231;Lnet/minecraft/server/EnumDirection;[FLnet/minecraft/class_1289;Lnet/minecraft/class_1060;ZZ)[I
-extendable method net/minecraft/class_1074 a (Lnet/minecraft/server/EnumDirection;)I
-accessible method net/minecraft/class_1074 a (Lnet/minecraft/server/EnumDirection;)I
-extendable method net/minecraft/class_1074 b (Lnet/minecraft/server/EnumDirection;)F
-accessible method net/minecraft/class_1074 b (Lnet/minecraft/server/EnumDirection;)F
-extendable method net/minecraft/class_1074 a (Lorg/lwjgl/util/vector/Vector3f;Lorg/lwjgl/util/vector/Vector3f;)[F
-accessible method net/minecraft/class_1074 a (Lorg/lwjgl/util/vector/Vector3f;Lorg/lwjgl/util/vector/Vector3f;)[F
-extendable method net/minecraft/class_1074 a ([IILnet/minecraft/server/EnumDirection;Lnet/minecraft/class_1058;[FLnet/minecraft/class_1231;Lnet/minecraft/class_1289;Lnet/minecraft/class_1060;ZZ)V
-accessible method net/minecraft/class_1074 a ([IILnet/minecraft/server/EnumDirection;Lnet/minecraft/class_1058;[FLnet/minecraft/class_1231;Lnet/minecraft/class_1289;Lnet/minecraft/class_1060;ZZ)V
-extendable method net/minecraft/class_1074 a ([IIILorg/lwjgl/util/vector/Vector3f;ILnet/minecraft/class_1231;Lnet/minecraft/class_1061;)V
-accessible method net/minecraft/class_1074 a ([IIILorg/lwjgl/util/vector/Vector3f;ILnet/minecraft/class_1231;Lnet/minecraft/class_1061;)V
-extendable method net/minecraft/class_1074 a (Lorg/lwjgl/util/vector/Vector3f;Lnet/minecraft/class_1060;)V
-accessible method net/minecraft/class_1074 a (Lorg/lwjgl/util/vector/Vector3f;Lnet/minecraft/class_1060;)V
-extendable method net/minecraft/class_1074 a (Lorg/lwjgl/util/vector/Vector3f;Lorg/lwjgl/util/vector/Vector3f;Lorg/lwjgl/util/vector/Matrix4f;Lorg/lwjgl/util/vector/Vector3f;)V
-accessible method net/minecraft/class_1074 a (Lorg/lwjgl/util/vector/Vector3f;Lorg/lwjgl/util/vector/Vector3f;Lorg/lwjgl/util/vector/Matrix4f;Lorg/lwjgl/util/vector/Vector3f;)V
-extendable method net/minecraft/class_1074 a ()Lorg/lwjgl/util/vector/Matrix4f;
-accessible method net/minecraft/class_1074 a ()Lorg/lwjgl/util/vector/Matrix4f;
-extendable method net/minecraft/class_1074 a ([ILnet/minecraft/server/EnumDirection;)V
-accessible method net/minecraft/class_1074 a ([ILnet/minecraft/server/EnumDirection;)V
-extendable method net/minecraft/class_1074 a (I[ILnet/minecraft/server/EnumDirection;Lnet/minecraft/class_1061;Lnet/minecraft/class_1231;)V
-accessible method net/minecraft/class_1074 a (I[ILnet/minecraft/server/EnumDirection;Lnet/minecraft/class_1061;Lnet/minecraft/class_1231;)V
-accessible class net/minecraft/class_1075$class_1076
-accessible field net/minecraft/class_1075$class_1076 a Lnet/minecraft/class_1075$class_1077;
-mutable field net/minecraft/class_1075$class_1076 a Lnet/minecraft/class_1075$class_1077;
-accessible field net/minecraft/class_1075$class_1076 b I
-mutable field net/minecraft/class_1075$class_1076 b I
-accessible field net/minecraft/class_1075$class_1076 c I
-mutable field net/minecraft/class_1075$class_1076 c I
-accessible field net/minecraft/class_1075$class_1076 d I
-mutable field net/minecraft/class_1075$class_1076 d I
-extendable class net/minecraft/class_1075$class_1077
-accessible field net/minecraft/class_1075$class_1077 e Lnet/minecraft/server/EnumDirection;
-mutable field net/minecraft/class_1075$class_1077 e Lnet/minecraft/server/EnumDirection;
-accessible field net/minecraft/class_1075$class_1077 f I
-mutable field net/minecraft/class_1075$class_1077 f I
-accessible field net/minecraft/class_1075$class_1077 g I
-mutable field net/minecraft/class_1075$class_1077 g I
-extendable method net/minecraft/class_1075$class_1077 d ()Z
-accessible method net/minecraft/class_1075$class_1077 d ()Z
-extendable method net/minecraft/class_1075 a (ILjava/lang/String;Lnet/minecraft/class_1231;)Ljava/util/List;
-accessible method net/minecraft/class_1075 a (ILjava/lang/String;Lnet/minecraft/class_1231;)Ljava/util/List;
-extendable method net/minecraft/class_1075 a (Lnet/minecraft/class_1231;Ljava/lang/String;I)Ljava/util/List;
-accessible method net/minecraft/class_1075 a (Lnet/minecraft/class_1231;Ljava/lang/String;I)Ljava/util/List;
-extendable method net/minecraft/class_1075 a (Lnet/minecraft/class_1231;)Ljava/util/List;
-accessible method net/minecraft/class_1075 a (Lnet/minecraft/class_1231;)Ljava/util/List;
-extendable method net/minecraft/class_1075 a (Lnet/minecraft/class_1075$class_1077;Ljava/util/List;[IIIIIZ)V
-accessible method net/minecraft/class_1075 a (Lnet/minecraft/class_1075$class_1077;Ljava/util/List;[IIIIIZ)V
-extendable method net/minecraft/class_1075 a (Ljava/util/List;Lnet/minecraft/class_1075$class_1077;II)V
-accessible method net/minecraft/class_1075 a (Ljava/util/List;Lnet/minecraft/class_1075$class_1077;II)V
-extendable method net/minecraft/class_1075 a ([IIIII)Z
-accessible method net/minecraft/class_1075 a ([IIIII)Z
-accessible class net/minecraft/class_1078$class_1079
-accessible field net/minecraft/class_1078$class_1079 a Lorg/lwjgl/util/vector/Vector3f;
-mutable field net/minecraft/class_1078$class_1079 a Lorg/lwjgl/util/vector/Vector3f;
-accessible field net/minecraft/class_1078$class_1079 b Lorg/lwjgl/util/vector/Vector3f;
-mutable field net/minecraft/class_1078$class_1079 b Lorg/lwjgl/util/vector/Vector3f;
-accessible field net/minecraft/class_1078$class_1079 c Lorg/lwjgl/util/vector/Vector3f;
-mutable field net/minecraft/class_1078$class_1079 c Lorg/lwjgl/util/vector/Vector3f;
-extendable method net/minecraft/class_1078$class_1079 a (Lcom/google/gson/JsonObject;Ljava/lang/String;Lorg/lwjgl/util/vector/Vector3f;)Lorg/lwjgl/util/vector/Vector3f;
-accessible method net/minecraft/class_1078$class_1079 a (Lcom/google/gson/JsonObject;Ljava/lang/String;Lorg/lwjgl/util/vector/Vector3f;)Lorg/lwjgl/util/vector/Vector3f;
-accessible class net/minecraft/class_1080$class_1081
-extendable method net/minecraft/class_1080$class_1081 a (Lcom/google/gson/JsonDeserializationContext;Lcom/google/gson/JsonObject;Ljava/lang/String;)Lnet/minecraft/class_1078;
-accessible method net/minecraft/class_1080$class_1081 a (Lcom/google/gson/JsonDeserializationContext;Lcom/google/gson/JsonObject;Ljava/lang/String;)Lnet/minecraft/class_1078;
-extendable class net/minecraft/class_1080$class_1082
-accessible field net/minecraft/class_1083 b Ljava/util/Map;
-mutable field net/minecraft/class_1083 b Ljava/util/Map;
-extendable method net/minecraft/class_1083 a (Lnet/minecraft/server/IBlockData;)Lnet/minecraft/class_1293;
-accessible method net/minecraft/class_1083 a (Lnet/minecraft/server/IBlockData;)Lnet/minecraft/class_1293;
-accessible field net/minecraft/class_1084 a Ljava/util/Map;
-mutable field net/minecraft/class_1084 a Ljava/util/Map;
-accessible field net/minecraft/class_1084 b Ljava/util/Set;
-mutable field net/minecraft/class_1084 b Ljava/util/Set;
-extendable method net/minecraft/class_1085 a (Lnet/minecraft/server/IBlockData;)Lnet/minecraft/class_1293;
-accessible method net/minecraft/class_1085 a (Lnet/minecraft/server/IBlockData;)Lnet/minecraft/class_1293;
-accessible field net/minecraft/class_1086$class_1087 a Lnet/minecraft/server/IBlockState;
-mutable field net/minecraft/class_1086$class_1087 a Lnet/minecraft/server/IBlockState;
-accessible field net/minecraft/class_1086$class_1087 b Ljava/lang/String;
-mutable field net/minecraft/class_1086$class_1087 b Ljava/lang/String;
-accessible field net/minecraft/class_1086$class_1087 c Ljava/util/List;
-mutable field net/minecraft/class_1086$class_1087 c Ljava/util/List;
-accessible field net/minecraft/class_1086 a Lnet/minecraft/server/IBlockState;
-mutable field net/minecraft/class_1086 a Lnet/minecraft/server/IBlockState;
-accessible field net/minecraft/class_1086 c Ljava/lang/String;
-mutable field net/minecraft/class_1086 c Ljava/lang/String;
-accessible field net/minecraft/class_1086 d Ljava/util/List;
-mutable field net/minecraft/class_1086 d Ljava/util/List;
-extendable method net/minecraft/class_1086 a (Lnet/minecraft/server/IBlockData;)Lnet/minecraft/class_1293;
-accessible method net/minecraft/class_1086 a (Lnet/minecraft/server/IBlockData;)Lnet/minecraft/class_1293;
-accessible class net/minecraft/class_1090$class_1091
-accessible field net/minecraft/class_1090 c Ljava/util/Map;
-mutable field net/minecraft/class_1090 c Ljava/util/Map;
-accessible field net/minecraft/class_1090 d Lnet/minecraft/server/MinecraftKey;
-mutable field net/minecraft/class_1090 d Lnet/minecraft/server/MinecraftKey;
-accessible field net/minecraft/class_1090 e Lnet/minecraft/class_850;
-mutable field net/minecraft/class_1090 e Lnet/minecraft/class_850;
-extendable method net/minecraft/class_1090 a (Lnet/minecraft/server/TileEntityBanner;)Lnet/minecraft/server/MinecraftKey;
-accessible method net/minecraft/class_1090 a (Lnet/minecraft/server/TileEntityBanner;)Lnet/minecraft/server/MinecraftKey;
-accessible field net/minecraft/class_1092 c Lnet/minecraft/server/MinecraftKey;
-mutable field net/minecraft/class_1092 c Lnet/minecraft/server/MinecraftKey;
-accessible field net/minecraft/class_1093 m Ljava/util/Map;
-mutable field net/minecraft/class_1093 m Ljava/util/Map;
-accessible field net/minecraft/class_1093 n Lnet/minecraft/class_679;
-mutable field net/minecraft/class_1093 n Lnet/minecraft/class_679;
-accessible field net/minecraft/class_1094 a [Lnet/minecraft/server/MinecraftKey;
-mutable field net/minecraft/class_1094 a [Lnet/minecraft/server/MinecraftKey;
-accessible field net/minecraft/class_1094 b Lnet/minecraft/class_1093;
-mutable field net/minecraft/class_1094 b Lnet/minecraft/class_1093;
-extendable method net/minecraft/class_1094 a (Lnet/minecraft/server/MinecraftKey;)V
-accessible method net/minecraft/class_1094 a (Lnet/minecraft/server/MinecraftKey;)V
-extendable method net/minecraft/class_1094 b ()Lnet/minecraft/server/World;
-accessible method net/minecraft/class_1094 b ()Lnet/minecraft/server/World;
-accessible field net/minecraft/class_1095 c Lnet/minecraft/server/MinecraftKey;
-mutable field net/minecraft/class_1095 c Lnet/minecraft/server/MinecraftKey;
-accessible field net/minecraft/class_1095 d Lnet/minecraft/server/MinecraftKey;
-mutable field net/minecraft/class_1095 d Lnet/minecraft/server/MinecraftKey;
-accessible field net/minecraft/class_1095 e Lnet/minecraft/server/MinecraftKey;
-mutable field net/minecraft/class_1095 e Lnet/minecraft/server/MinecraftKey;
-accessible field net/minecraft/class_1095 f Lnet/minecraft/server/MinecraftKey;
-mutable field net/minecraft/class_1095 f Lnet/minecraft/server/MinecraftKey;
-accessible field net/minecraft/class_1095 g Lnet/minecraft/server/MinecraftKey;
-mutable field net/minecraft/class_1095 g Lnet/minecraft/server/MinecraftKey;
-accessible field net/minecraft/class_1095 h Lnet/minecraft/server/MinecraftKey;
-mutable field net/minecraft/class_1095 h Lnet/minecraft/server/MinecraftKey;
-accessible field net/minecraft/class_1095 i Lnet/minecraft/class_855;
-mutable field net/minecraft/class_1095 i Lnet/minecraft/class_855;
-accessible field net/minecraft/class_1095 j Lnet/minecraft/class_855;
-mutable field net/minecraft/class_1095 j Lnet/minecraft/class_855;
-accessible field net/minecraft/class_1095 k Z
-mutable field net/minecraft/class_1095 k Z
-accessible field net/minecraft/class_1096 c Lnet/minecraft/server/MinecraftKey;
-mutable field net/minecraft/class_1096 c Lnet/minecraft/server/MinecraftKey;
-accessible field net/minecraft/class_1096 d Lnet/minecraft/class_854;
-mutable field net/minecraft/class_1096 d Lnet/minecraft/class_854;
-accessible field net/minecraft/class_1097 c Lnet/minecraft/server/MinecraftKey;
-mutable field net/minecraft/class_1097 c Lnet/minecraft/server/MinecraftKey;
-accessible field net/minecraft/class_1097 d Lnet/minecraft/class_855;
-mutable field net/minecraft/class_1097 d Lnet/minecraft/class_855;
-accessible field net/minecraft/class_1099 c Lnet/minecraft/class_1048;
-mutable field net/minecraft/class_1099 c Lnet/minecraft/class_1048;
-accessible field net/minecraft/class_1100 c Lnet/minecraft/server/MinecraftKey;
-mutable field net/minecraft/class_1100 c Lnet/minecraft/server/MinecraftKey;
-accessible field net/minecraft/class_1100 d Lnet/minecraft/class_880;
-mutable field net/minecraft/class_1100 d Lnet/minecraft/class_880;
-accessible field net/minecraft/class_1101 d Lnet/minecraft/server/MinecraftKey;
-mutable field net/minecraft/class_1101 d Lnet/minecraft/server/MinecraftKey;
-accessible field net/minecraft/class_1101 e Lnet/minecraft/server/MinecraftKey;
-mutable field net/minecraft/class_1101 e Lnet/minecraft/server/MinecraftKey;
-accessible field net/minecraft/class_1101 f Lnet/minecraft/server/MinecraftKey;
-mutable field net/minecraft/class_1101 f Lnet/minecraft/server/MinecraftKey;
-accessible field net/minecraft/class_1101 g Lnet/minecraft/server/MinecraftKey;
-mutable field net/minecraft/class_1101 g Lnet/minecraft/server/MinecraftKey;
-accessible field net/minecraft/class_1101 h Lnet/minecraft/class_882;
-mutable field net/minecraft/class_1101 h Lnet/minecraft/class_882;
-accessible field net/minecraft/class_1101 i Lnet/minecraft/class_882;
-mutable field net/minecraft/class_1101 i Lnet/minecraft/class_882;
-accessible field net/minecraft/class_1102 d Lnet/minecraft/server/MinecraftKey;
-mutable field net/minecraft/class_1102 d Lnet/minecraft/server/MinecraftKey;
-accessible field net/minecraft/class_1102 e Lnet/minecraft/server/MinecraftKey;
-mutable field net/minecraft/class_1102 e Lnet/minecraft/server/MinecraftKey;
-accessible field net/minecraft/class_1102 f Ljava/util/Random;
-mutable field net/minecraft/class_1102 f Ljava/util/Random;
-accessible field net/minecraft/class_1102 c Ljava/nio/FloatBuffer;
-mutable field net/minecraft/class_1102 c Ljava/nio/FloatBuffer;
-extendable method net/minecraft/class_1102 a (FFFF)Ljava/nio/FloatBuffer;
-accessible method net/minecraft/class_1102 a (FFFF)Ljava/nio/FloatBuffer;
-extendable class net/minecraft/class_1103$class_1104
-extendable class net/minecraft/class_1103$class_1105
-accessible field net/minecraft/class_1103 a Lnet/minecraft/class_1111;
-mutable field net/minecraft/class_1103 a Lnet/minecraft/class_1111;
-accessible field net/minecraft/class_1103 b Ljava/util/concurrent/locks/ReentrantLock;
-mutable field net/minecraft/class_1103 b Ljava/util/concurrent/locks/ReentrantLock;
-accessible field net/minecraft/class_1103 c Ljava/util/List;
-mutable field net/minecraft/class_1103 c Ljava/util/List;
-accessible field net/minecraft/class_1103 d Lnet/minecraft/class_1103$class_1105;
-mutable field net/minecraft/class_1103 d Lnet/minecraft/class_1103$class_1105;
-accessible field net/minecraft/class_1103 e Lnet/minecraft/class_1006;
-mutable field net/minecraft/class_1103 e Lnet/minecraft/class_1006;
-accessible field net/minecraft/class_1103 f Lnet/minecraft/class_1108;
-mutable field net/minecraft/class_1103 f Lnet/minecraft/class_1108;
-accessible field net/minecraft/class_1103 g Lnet/minecraft/class_1103$class_1104;
-mutable field net/minecraft/class_1103 g Lnet/minecraft/class_1103$class_1104;
-accessible field net/minecraft/class_1103 h Z
-mutable field net/minecraft/class_1103 h Z
-accessible class net/minecraft/class_1106$1
-accessible class net/minecraft/class_1106$2
-accessible class net/minecraft/class_1106$3
-accessible field net/minecraft/class_1106 a Lorg/apache/logging/log4j/Logger;
-mutable field net/minecraft/class_1106 a Lorg/apache/logging/log4j/Logger;
-accessible field net/minecraft/class_1106 b Ljava/util/concurrent/ThreadFactory;
-mutable field net/minecraft/class_1106 b Ljava/util/concurrent/ThreadFactory;
-accessible field net/minecraft/class_1106 c Ljava/util/List;
-mutable field net/minecraft/class_1106 c Ljava/util/List;
-accessible field net/minecraft/class_1106 d Ljava/util/concurrent/BlockingQueue;
-mutable field net/minecraft/class_1106 d Ljava/util/concurrent/BlockingQueue;
-accessible field net/minecraft/class_1106 e Ljava/util/concurrent/BlockingQueue;
-mutable field net/minecraft/class_1106 e Ljava/util/concurrent/BlockingQueue;
-accessible field net/minecraft/class_1106 f Lnet/minecraft/class_1004;
-mutable field net/minecraft/class_1106 f Lnet/minecraft/class_1004;
-accessible field net/minecraft/class_1106 g Lnet/minecraft/class_1043;
-mutable field net/minecraft/class_1106 g Lnet/minecraft/class_1043;
-accessible field net/minecraft/class_1106 h Ljava/util/Queue;
-mutable field net/minecraft/class_1106 h Ljava/util/Queue;
-accessible field net/minecraft/class_1106 i Lnet/minecraft/class_1107;
-mutable field net/minecraft/class_1106 i Lnet/minecraft/class_1107;
-extendable method net/minecraft/class_1106 a (Lnet/minecraft/class_1002;ILnet/minecraft/class_1111;)V
-accessible method net/minecraft/class_1106 a (Lnet/minecraft/class_1002;ILnet/minecraft/class_1111;)V
-extendable method net/minecraft/class_1106 a (Lnet/minecraft/class_1002;Lnet/minecraft/class_1240;)V
-accessible method net/minecraft/class_1106 a (Lnet/minecraft/class_1002;Lnet/minecraft/class_1240;)V
-accessible class net/minecraft/class_1107$1
-accessible class net/minecraft/class_1107$2
-accessible field net/minecraft/class_1107 a Lorg/apache/logging/log4j/Logger;
-mutable field net/minecraft/class_1107 a Lorg/apache/logging/log4j/Logger;
-accessible field net/minecraft/class_1107 b Lnet/minecraft/class_1106;
-mutable field net/minecraft/class_1107 b Lnet/minecraft/class_1106;
-accessible field net/minecraft/class_1107 c Lnet/minecraft/class_1006;
-mutable field net/minecraft/class_1107 c Lnet/minecraft/class_1006;
-extendable method net/minecraft/class_1107 a (Lnet/minecraft/class_1103;)V
-accessible method net/minecraft/class_1107 a (Lnet/minecraft/class_1103;)V
-extendable method net/minecraft/class_1107 b ()Lnet/minecraft/class_1006;
-accessible method net/minecraft/class_1107 b ()Lnet/minecraft/class_1006;
-extendable method net/minecraft/class_1107 b (Lnet/minecraft/class_1103;)V
-accessible method net/minecraft/class_1107 b (Lnet/minecraft/class_1103;)V
-extendable class net/minecraft/class_1108$1
-extendable method net/minecraft/class_1108$1 a (Lnet/minecraft/class_91;)V
-accessible method net/minecraft/class_1108$1 a (Lnet/minecraft/class_91;)V
-accessible field net/minecraft/class_1108 b [Z
-mutable field net/minecraft/class_1108 b [Z
-accessible field net/minecraft/class_1108 c [Z
-mutable field net/minecraft/class_1108 c [Z
-accessible field net/minecraft/class_1108 d Z
-mutable field net/minecraft/class_1108 d Z
-accessible field net/minecraft/class_1108 e Ljava/util/List;
-mutable field net/minecraft/class_1108 e Ljava/util/List;
-accessible field net/minecraft/class_1108 f Lnet/minecraft/class_1115;
-mutable field net/minecraft/class_1108 f Lnet/minecraft/class_1115;
-accessible field net/minecraft/class_1108 g Lnet/minecraft/class_1002$class_1003;
-mutable field net/minecraft/class_1108 g Lnet/minecraft/class_1002$class_1003;
-extendable method net/minecraft/class_1108 a (Lnet/minecraft/class_91;)V
-accessible method net/minecraft/class_1108 a (Lnet/minecraft/class_91;)V
-accessible field net/minecraft/class_1110 d I
-mutable field net/minecraft/class_1110 d I
-accessible field net/minecraft/class_1111 d Lnet/minecraft/server/World;
-mutable field net/minecraft/class_1111 d Lnet/minecraft/server/World;
-accessible field net/minecraft/class_1111 e Lnet/minecraft/class_1036;
-mutable field net/minecraft/class_1111 e Lnet/minecraft/class_1036;
-accessible field net/minecraft/class_1111 f Lnet/minecraft/server/BlockPosition;
-mutable field net/minecraft/class_1111 f Lnet/minecraft/server/BlockPosition;
-accessible field net/minecraft/class_1111 g Ljava/util/concurrent/locks/ReentrantLock;
-mutable field net/minecraft/class_1111 g Ljava/util/concurrent/locks/ReentrantLock;
-accessible field net/minecraft/class_1111 h Ljava/util/concurrent/locks/ReentrantLock;
-mutable field net/minecraft/class_1111 h Ljava/util/concurrent/locks/ReentrantLock;
-accessible field net/minecraft/class_1111 i Lnet/minecraft/class_1103;
-mutable field net/minecraft/class_1111 i Lnet/minecraft/class_1103;
-accessible field net/minecraft/class_1111 j Ljava/util/Set;
-mutable field net/minecraft/class_1111 j Ljava/util/Set;
-accessible field net/minecraft/class_1111 k I
-mutable field net/minecraft/class_1111 k I
-accessible field net/minecraft/class_1111 l Ljava/nio/FloatBuffer;
-mutable field net/minecraft/class_1111 l Ljava/nio/FloatBuffer;
-accessible field net/minecraft/class_1111 m [Lnet/minecraft/class_1240;
-mutable field net/minecraft/class_1111 m [Lnet/minecraft/class_1240;
-accessible field net/minecraft/class_1111 n I
-mutable field net/minecraft/class_1111 n I
-accessible field net/minecraft/class_1111 o Z
-mutable field net/minecraft/class_1111 o Z
-accessible field net/minecraft/class_1111 p Ljava/util/EnumMap;
-mutable field net/minecraft/class_1111 p Ljava/util/EnumMap;
-extendable method net/minecraft/class_1111 b ()V
-accessible method net/minecraft/class_1111 b ()V
-extendable method net/minecraft/class_1111 a (Lnet/minecraft/class_1002;Lnet/minecraft/server/BlockPosition;)V
-accessible method net/minecraft/class_1111 a (Lnet/minecraft/class_1002;Lnet/minecraft/server/BlockPosition;)V
-extendable method net/minecraft/class_1111 a (Lnet/minecraft/class_91;FFFLnet/minecraft/class_1002;Lnet/minecraft/class_1108;)V
-accessible method net/minecraft/class_1111 a (Lnet/minecraft/class_91;FFFLnet/minecraft/class_1002;Lnet/minecraft/class_1108;)V
-extendable method net/minecraft/class_1111 m ()V
-accessible method net/minecraft/class_1111 m ()V
-accessible field net/minecraft/class_1114 a I
-mutable field net/minecraft/class_1114 a I
-accessible field net/minecraft/class_1114 b I
-mutable field net/minecraft/class_1114 b I
-accessible field net/minecraft/class_1114 c I
-mutable field net/minecraft/class_1114 c I
-accessible field net/minecraft/class_1114 d Ljava/util/BitSet;
-mutable field net/minecraft/class_1114 d Ljava/util/BitSet;
-accessible field net/minecraft/class_1114 e [I
-mutable field net/minecraft/class_1114 e [I
-accessible field net/minecraft/class_1114 f I
-mutable field net/minecraft/class_1114 f I
-extendable method net/minecraft/class_1114 c (Lnet/minecraft/server/BlockPosition;)I
-accessible method net/minecraft/class_1114 c (Lnet/minecraft/server/BlockPosition;)I
-extendable method net/minecraft/class_1114 a (III)I
-accessible method net/minecraft/class_1114 a (III)I
-extendable method net/minecraft/class_1114 a (I)Ljava/util/Set;
-accessible method net/minecraft/class_1114 a (I)Ljava/util/Set;
-extendable method net/minecraft/class_1114 a (ILjava/util/Set;)V
-accessible method net/minecraft/class_1114 a (ILjava/util/Set;)V
-extendable method net/minecraft/class_1114 a (ILnet/minecraft/server/EnumDirection;)I
-accessible method net/minecraft/class_1114 a (ILnet/minecraft/server/EnumDirection;)I
-accessible field net/minecraft/class_1115 a I
-mutable field net/minecraft/class_1115 a I
-accessible field net/minecraft/class_1115 b Ljava/util/BitSet;
-mutable field net/minecraft/class_1115 b Ljava/util/BitSet;
-accessible field net/minecraft/class_1118 e Lnet/minecraft/class_1118;
-mutable field net/minecraft/class_1118 e Lnet/minecraft/class_1118;
-accessible field net/minecraft/class_1118 f Ljava/nio/FloatBuffer;
-mutable field net/minecraft/class_1118 f Ljava/nio/FloatBuffer;
-accessible field net/minecraft/class_1118 g Ljava/nio/FloatBuffer;
-mutable field net/minecraft/class_1118 g Ljava/nio/FloatBuffer;
-accessible field net/minecraft/class_1118 h Ljava/nio/FloatBuffer;
-mutable field net/minecraft/class_1118 h Ljava/nio/FloatBuffer;
-extendable method net/minecraft/class_1118 a ([F)V
-accessible method net/minecraft/class_1118 a ([F)V
-accessible field net/minecraft/class_1119 a Lnet/minecraft/class_1120;
-mutable field net/minecraft/class_1119 a Lnet/minecraft/class_1120;
-accessible field net/minecraft/class_1119 b D
-mutable field net/minecraft/class_1119 b D
-accessible field net/minecraft/class_1119 c D
-mutable field net/minecraft/class_1119 c D
-accessible field net/minecraft/class_1119 d D
-mutable field net/minecraft/class_1119 d D
-extendable method net/minecraft/class_1120 a ([FDDD)D
-accessible method net/minecraft/class_1120 a ([FDDD)D
-accessible class net/minecraft/class_1121$1
-extendable method net/minecraft/class_1121$1 a ()V
-accessible method net/minecraft/class_1121$1 a ()V
-extendable method net/minecraft/class_1121 a (Lnet/minecraft/server/EntityArmorStand;)Lnet/minecraft/server/MinecraftKey;
-accessible method net/minecraft/class_1121 a (Lnet/minecraft/server/EntityArmorStand;)Lnet/minecraft/server/MinecraftKey;
-extendable method net/minecraft/class_1121 a (Lnet/minecraft/server/EntityArmorStand;FFF)V
-accessible method net/minecraft/class_1121 a (Lnet/minecraft/server/EntityArmorStand;FFF)V
-extendable method net/minecraft/class_1121 b (Lnet/minecraft/server/EntityArmorStand;)Z
-accessible method net/minecraft/class_1121 b (Lnet/minecraft/server/EntityArmorStand;)Z
-accessible field net/minecraft/class_1122 a Lnet/minecraft/server/MinecraftKey;
-mutable field net/minecraft/class_1122 a Lnet/minecraft/server/MinecraftKey;
-extendable method net/minecraft/class_1122 a (Lnet/minecraft/server/EntityArrow;)Lnet/minecraft/server/MinecraftKey;
-accessible method net/minecraft/class_1122 a (Lnet/minecraft/server/EntityArrow;)Lnet/minecraft/server/MinecraftKey;
-accessible field net/minecraft/class_1123 a Lnet/minecraft/server/MinecraftKey;
-mutable field net/minecraft/class_1123 a Lnet/minecraft/server/MinecraftKey;
-extendable method net/minecraft/class_1123 a (Lnet/minecraft/server/EntityBat;)Lnet/minecraft/server/MinecraftKey;
-accessible method net/minecraft/class_1123 a (Lnet/minecraft/server/EntityBat;)Lnet/minecraft/server/MinecraftKey;
-extendable method net/minecraft/class_1123 a (Lnet/minecraft/server/EntityBat;F)V
-accessible method net/minecraft/class_1123 a (Lnet/minecraft/server/EntityBat;F)V
-extendable method net/minecraft/class_1123 a (Lnet/minecraft/server/EntityBat;FFF)V
-accessible method net/minecraft/class_1123 a (Lnet/minecraft/server/EntityBat;FFF)V
-accessible field net/minecraft/class_1124 a Lnet/minecraft/server/MinecraftKey;
-mutable field net/minecraft/class_1124 a Lnet/minecraft/server/MinecraftKey;
-extendable method net/minecraft/class_1124 a (Lnet/minecraft/server/EntityBlaze;)Lnet/minecraft/server/MinecraftKey;
-accessible method net/minecraft/class_1124 a (Lnet/minecraft/server/EntityBlaze;)Lnet/minecraft/server/MinecraftKey;
-accessible field net/minecraft/class_1125 e Lnet/minecraft/server/MinecraftKey;
-mutable field net/minecraft/class_1125 e Lnet/minecraft/server/MinecraftKey;
-accessible field net/minecraft/class_1125 a Lnet/minecraft/class_871;
-mutable field net/minecraft/class_1125 a Lnet/minecraft/class_871;
-extendable method net/minecraft/class_1125 a (Lnet/minecraft/server/EntityBoat;)Lnet/minecraft/server/MinecraftKey;
-accessible method net/minecraft/class_1125 a (Lnet/minecraft/server/EntityBoat;)Lnet/minecraft/server/MinecraftKey;
-accessible field net/minecraft/class_1126 a Lnet/minecraft/server/MinecraftKey;
-mutable field net/minecraft/class_1126 a Lnet/minecraft/server/MinecraftKey;
-extendable method net/minecraft/class_1126 a (Lnet/minecraft/server/EntityCaveSpider;F)V
-accessible method net/minecraft/class_1126 a (Lnet/minecraft/server/EntityCaveSpider;F)V
-extendable method net/minecraft/class_1126 a (Lnet/minecraft/server/EntityCaveSpider;)Lnet/minecraft/server/MinecraftKey;
-accessible method net/minecraft/class_1126 a (Lnet/minecraft/server/EntityCaveSpider;)Lnet/minecraft/server/MinecraftKey;
-accessible field net/minecraft/class_1127 a Lnet/minecraft/server/MinecraftKey;
-mutable field net/minecraft/class_1127 a Lnet/minecraft/server/MinecraftKey;
-extendable method net/minecraft/class_1127 a (Lnet/minecraft/server/EntityChicken;)Lnet/minecraft/server/MinecraftKey;
-accessible method net/minecraft/class_1127 a (Lnet/minecraft/server/EntityChicken;)Lnet/minecraft/server/MinecraftKey;
-extendable method net/minecraft/class_1127 a (Lnet/minecraft/server/EntityChicken;F)F
-accessible method net/minecraft/class_1127 a (Lnet/minecraft/server/EntityChicken;F)F
-accessible field net/minecraft/class_1128 a Lnet/minecraft/server/MinecraftKey;
-mutable field net/minecraft/class_1128 a Lnet/minecraft/server/MinecraftKey;
-extendable method net/minecraft/class_1128 a (Lnet/minecraft/server/EntityCow;)Lnet/minecraft/server/MinecraftKey;
-accessible method net/minecraft/class_1128 a (Lnet/minecraft/server/EntityCow;)Lnet/minecraft/server/MinecraftKey;
-accessible field net/minecraft/class_1129 a Lnet/minecraft/server/MinecraftKey;
-mutable field net/minecraft/class_1129 a Lnet/minecraft/server/MinecraftKey;
-extendable method net/minecraft/class_1129 a (Lnet/minecraft/server/EntityCreeper;F)V
-accessible method net/minecraft/class_1129 a (Lnet/minecraft/server/EntityCreeper;F)V
-extendable method net/minecraft/class_1129 a (Lnet/minecraft/server/EntityCreeper;FF)I
-accessible method net/minecraft/class_1129 a (Lnet/minecraft/server/EntityCreeper;FF)I
-extendable method net/minecraft/class_1129 a (Lnet/minecraft/server/EntityCreeper;)Lnet/minecraft/server/MinecraftKey;
-accessible method net/minecraft/class_1129 a (Lnet/minecraft/server/EntityCreeper;)Lnet/minecraft/server/MinecraftKey;
-extendable method net/minecraft/class_1130 a (Lnet/minecraft/server/Entity;)Lnet/minecraft/server/MinecraftKey;
-accessible method net/minecraft/class_1130 a (Lnet/minecraft/server/Entity;)Lnet/minecraft/server/MinecraftKey;
-accessible field net/minecraft/class_1131 a Lnet/minecraft/server/MinecraftKey;
-mutable field net/minecraft/class_1131 a Lnet/minecraft/server/MinecraftKey;
-accessible field net/minecraft/class_1131 e Lnet/minecraft/class_871;
-mutable field net/minecraft/class_1131 e Lnet/minecraft/class_871;
-extendable method net/minecraft/class_1131 a (Lnet/minecraft/server/EntityEnderCrystal;)Lnet/minecraft/server/MinecraftKey;
-accessible method net/minecraft/class_1131 a (Lnet/minecraft/server/EntityEnderCrystal;)Lnet/minecraft/server/MinecraftKey;
-accessible field net/minecraft/class_1132 e Lnet/minecraft/server/MinecraftKey;
-mutable field net/minecraft/class_1132 e Lnet/minecraft/server/MinecraftKey;
-accessible field net/minecraft/class_1132 j Lnet/minecraft/server/MinecraftKey;
-mutable field net/minecraft/class_1132 j Lnet/minecraft/server/MinecraftKey;
-accessible field net/minecraft/class_1132 k Lnet/minecraft/server/MinecraftKey;
-mutable field net/minecraft/class_1132 k Lnet/minecraft/server/MinecraftKey;
-accessible field net/minecraft/class_1132 a Lnet/minecraft/class_897;
-mutable field net/minecraft/class_1132 a Lnet/minecraft/class_897;
-extendable method net/minecraft/class_1132 a (Lnet/minecraft/server/EntityEnderDragon;FFF)V
-accessible method net/minecraft/class_1132 a (Lnet/minecraft/server/EntityEnderDragon;FFF)V
-extendable method net/minecraft/class_1132 a (Lnet/minecraft/server/EntityEnderDragon;FFFFFF)V
-accessible method net/minecraft/class_1132 a (Lnet/minecraft/server/EntityEnderDragon;FFFFFF)V
-extendable method net/minecraft/class_1132 a (Lnet/minecraft/server/EntityEnderDragon;DDDF)V
-accessible method net/minecraft/class_1132 a (Lnet/minecraft/server/EntityEnderDragon;DDDF)V
-extendable method net/minecraft/class_1132 a (Lnet/minecraft/server/EntityEnderDragon;)Lnet/minecraft/server/MinecraftKey;
-accessible method net/minecraft/class_1132 a (Lnet/minecraft/server/EntityEnderDragon;)Lnet/minecraft/server/MinecraftKey;
-accessible field net/minecraft/class_1133 a Lnet/minecraft/server/MinecraftKey;
-mutable field net/minecraft/class_1133 a Lnet/minecraft/server/MinecraftKey;
-accessible field net/minecraft/class_1133 e Lnet/minecraft/class_860;
-mutable field net/minecraft/class_1133 e Lnet/minecraft/class_860;
-accessible field net/minecraft/class_1133 j Ljava/util/Random;
-mutable field net/minecraft/class_1133 j Ljava/util/Random;
-extendable method net/minecraft/class_1133 a (Lnet/minecraft/server/EntityEnderman;)Lnet/minecraft/server/MinecraftKey;
-accessible method net/minecraft/class_1133 a (Lnet/minecraft/server/EntityEnderman;)Lnet/minecraft/server/MinecraftKey;
-accessible field net/minecraft/class_1134 a Lnet/minecraft/server/MinecraftKey;
-mutable field net/minecraft/class_1134 a Lnet/minecraft/server/MinecraftKey;
-extendable method net/minecraft/class_1134 a (Lnet/minecraft/server/EntityEndermite;)F
-accessible method net/minecraft/class_1134 a (Lnet/minecraft/server/EntityEndermite;)F
-extendable method net/minecraft/class_1134 b (Lnet/minecraft/server/EntityEndermite;)Lnet/minecraft/server/MinecraftKey;
-accessible method net/minecraft/class_1134 b (Lnet/minecraft/server/EntityEndermite;)Lnet/minecraft/server/MinecraftKey;
-accessible field net/minecraft/class_1135 k Ljava/util/Map;
-mutable field net/minecraft/class_1135 k Ljava/util/Map;
-accessible field net/minecraft/class_1135 l Ljava/util/Map;
-mutable field net/minecraft/class_1135 l Ljava/util/Map;
-accessible field net/minecraft/class_1135 m Lnet/minecraft/class_1208;
-mutable field net/minecraft/class_1135 m Lnet/minecraft/class_1208;
-accessible field net/minecraft/class_1135 n Lnet/minecraft/class_679;
-mutable field net/minecraft/class_1135 n Lnet/minecraft/class_679;
-accessible field net/minecraft/class_1135 o D
-mutable field net/minecraft/class_1135 o D
-accessible field net/minecraft/class_1135 p D
-mutable field net/minecraft/class_1135 p D
-accessible field net/minecraft/class_1135 q D
-mutable field net/minecraft/class_1135 q D
-accessible field net/minecraft/class_1135 r Z
-mutable field net/minecraft/class_1135 r Z
-accessible field net/minecraft/class_1135 s Z
-mutable field net/minecraft/class_1135 s Z
-accessible field net/minecraft/class_1135 t Z
-mutable field net/minecraft/class_1135 t Z
-extendable method net/minecraft/class_1135 b (Lnet/minecraft/server/Entity;DDDFF)V
-accessible method net/minecraft/class_1135 b (Lnet/minecraft/server/Entity;DDDFF)V
-accessible field net/minecraft/class_1136 a Lnet/minecraft/server/MinecraftKey;
-mutable field net/minecraft/class_1136 a Lnet/minecraft/server/MinecraftKey;
-accessible field net/minecraft/class_1136 b Lnet/minecraft/class_1135;
-mutable field net/minecraft/class_1136 b Lnet/minecraft/class_1135;
-accessible field net/minecraft/class_1136 c F
-mutable field net/minecraft/class_1136 c F
-accessible field net/minecraft/class_1136 d F
-mutable field net/minecraft/class_1136 d F
-extendable method net/minecraft/class_1136 a (Lnet/minecraft/server/Entity;DDD)V
-accessible method net/minecraft/class_1136 a (Lnet/minecraft/server/Entity;DDD)V
-extendable method net/minecraft/class_1136 b (Lnet/minecraft/server/Entity;)Z
-accessible method net/minecraft/class_1136 b (Lnet/minecraft/server/Entity;)Z
-extendable method net/minecraft/class_1136 a (Lnet/minecraft/server/Entity;DDDLjava/lang/String;FD)V
-accessible method net/minecraft/class_1136 a (Lnet/minecraft/server/Entity;DDDLjava/lang/String;FD)V
-extendable method net/minecraft/class_1136 a (Lnet/minecraft/server/Entity;)Lnet/minecraft/server/MinecraftKey;
-accessible method net/minecraft/class_1136 a (Lnet/minecraft/server/Entity;)Lnet/minecraft/server/MinecraftKey;
-extendable method net/minecraft/class_1136 c (Lnet/minecraft/server/Entity;)Z
-accessible method net/minecraft/class_1136 c (Lnet/minecraft/server/Entity;)Z
-extendable method net/minecraft/class_1136 a (Lnet/minecraft/server/Entity;DDDF)V
-accessible method net/minecraft/class_1136 a (Lnet/minecraft/server/Entity;DDDF)V
-extendable method net/minecraft/class_1136 c (Lnet/minecraft/server/Entity;DDDFF)V
-accessible method net/minecraft/class_1136 c (Lnet/minecraft/server/Entity;DDDFF)V
-extendable method net/minecraft/class_1136 a ()Lnet/minecraft/server/World;
-accessible method net/minecraft/class_1136 a ()Lnet/minecraft/server/World;
-extendable method net/minecraft/class_1136 a (Lnet/minecraft/server/Block;DDDLnet/minecraft/server/BlockPosition;FFDDD)V
-accessible method net/minecraft/class_1136 a (Lnet/minecraft/server/Block;DDDLnet/minecraft/server/BlockPosition;FFDDD)V
-extendable method net/minecraft/class_1136 a (Lnet/minecraft/server/Entity;Ljava/lang/String;DDDI)V
-accessible method net/minecraft/class_1136 a (Lnet/minecraft/server/Entity;Ljava/lang/String;DDDI)V
-accessible field net/minecraft/class_1137 a Lnet/minecraft/server/MinecraftKey;
-mutable field net/minecraft/class_1137 a Lnet/minecraft/server/MinecraftKey;
-extendable method net/minecraft/class_1137 a (Lnet/minecraft/server/EntityExperienceOrb;)Lnet/minecraft/server/MinecraftKey;
-accessible method net/minecraft/class_1137 a (Lnet/minecraft/server/EntityExperienceOrb;)Lnet/minecraft/server/MinecraftKey;
-extendable method net/minecraft/class_1138 a (Lnet/minecraft/server/EntityFallingBlock;)Lnet/minecraft/server/MinecraftKey;
-accessible method net/minecraft/class_1138 a (Lnet/minecraft/server/EntityFallingBlock;)Lnet/minecraft/server/MinecraftKey;
-accessible field net/minecraft/class_1139 a F
-mutable field net/minecraft/class_1139 a F
-extendable method net/minecraft/class_1139 a (Lnet/minecraft/server/EntityFireball;)Lnet/minecraft/server/MinecraftKey;
-accessible method net/minecraft/class_1139 a (Lnet/minecraft/server/EntityFireball;)Lnet/minecraft/server/MinecraftKey;
-accessible field net/minecraft/class_1140 a Lnet/minecraft/server/MinecraftKey;
-mutable field net/minecraft/class_1140 a Lnet/minecraft/server/MinecraftKey;
-extendable method net/minecraft/class_1140 a (Lnet/minecraft/server/EntityFishingHook;)Lnet/minecraft/server/MinecraftKey;
-accessible method net/minecraft/class_1140 a (Lnet/minecraft/server/EntityFishingHook;)Lnet/minecraft/server/MinecraftKey;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 accessible class net/minecraft/server/CommandSpreadPlayers$Location2D
 accessible field net/minecraft/server/CommandSpreadPlayers$Location2D a D
 mutable field net/minecraft/server/CommandSpreadPlayers$Location2D a D
@@ -8764,1893 +8762,10 @@ extendable method net/minecraft/server/CommandSpreadPlayers a (Ljava/util/List;L
 accessible method net/minecraft/server/CommandSpreadPlayers a (Ljava/util/List;Lnet/minecraft/server/World;[Lnet/minecraft/server/CommandSpreadPlayers$Location2D;Z)D
 extendable method net/minecraft/server/CommandSpreadPlayers a (Ljava/util/Random;IDDDD)[Lnet/minecraft/server/CommandSpreadPlayers$Location2D;
 accessible method net/minecraft/server/CommandSpreadPlayers a (Ljava/util/Random;IDDDD)[Lnet/minecraft/server/CommandSpreadPlayers$Location2D;
-accessible field net/minecraft/class_1143 a Lnet/minecraft/server/MinecraftKey;
-mutable field net/minecraft/class_1143 a Lnet/minecraft/server/MinecraftKey;
-accessible field net/minecraft/class_1143 e Lnet/minecraft/server/MinecraftKey;
-mutable field net/minecraft/class_1143 e Lnet/minecraft/server/MinecraftKey;
-extendable method net/minecraft/class_1143 a (Lnet/minecraft/server/EntityGhast;)Lnet/minecraft/server/MinecraftKey;
-accessible method net/minecraft/class_1143 a (Lnet/minecraft/server/EntityGhast;)Lnet/minecraft/server/MinecraftKey;
-extendable method net/minecraft/class_1143 a (Lnet/minecraft/server/EntityGhast;F)V
-accessible method net/minecraft/class_1143 a (Lnet/minecraft/server/EntityGhast;F)V
-accessible class net/minecraft/class_1144$1
-extendable method net/minecraft/class_1144$1 a ()V
-accessible method net/minecraft/class_1144$1 a ()V
-accessible field net/minecraft/class_1144 a Lnet/minecraft/server/MinecraftKey;
-mutable field net/minecraft/class_1144 a Lnet/minecraft/server/MinecraftKey;
-accessible field net/minecraft/class_1144 e F
-mutable field net/minecraft/class_1144 e F
-extendable method net/minecraft/class_1144 a (Lnet/minecraft/server/EntityGiantZombie;F)V
-accessible method net/minecraft/class_1144 a (Lnet/minecraft/server/EntityGiantZombie;F)V
-extendable method net/minecraft/class_1144 a (Lnet/minecraft/server/EntityGiantZombie;)Lnet/minecraft/server/MinecraftKey;
-accessible method net/minecraft/class_1144 a (Lnet/minecraft/server/EntityGiantZombie;)Lnet/minecraft/server/MinecraftKey;
-accessible field net/minecraft/class_1145 e Lnet/minecraft/server/MinecraftKey;
-mutable field net/minecraft/class_1145 e Lnet/minecraft/server/MinecraftKey;
-accessible field net/minecraft/class_1145 j Lnet/minecraft/server/MinecraftKey;
-mutable field net/minecraft/class_1145 j Lnet/minecraft/server/MinecraftKey;
-accessible field net/minecraft/class_1145 k Lnet/minecraft/server/MinecraftKey;
-mutable field net/minecraft/class_1145 k Lnet/minecraft/server/MinecraftKey;
-accessible field net/minecraft/class_1145 a I
-mutable field net/minecraft/class_1145 a I
-extendable method net/minecraft/class_1145 a (Lnet/minecraft/server/EntityLiving;DF)Lnet/minecraft/server/Vec3D;
-accessible method net/minecraft/class_1145 a (Lnet/minecraft/server/EntityLiving;DF)Lnet/minecraft/server/Vec3D;
-extendable method net/minecraft/class_1145 a (Lnet/minecraft/server/EntityGuardian;F)V
-accessible method net/minecraft/class_1145 a (Lnet/minecraft/server/EntityGuardian;F)V
-extendable method net/minecraft/class_1145 a (Lnet/minecraft/server/EntityGuardian;)Lnet/minecraft/server/MinecraftKey;
-accessible method net/minecraft/class_1145 a (Lnet/minecraft/server/EntityGuardian;)Lnet/minecraft/server/MinecraftKey;
-accessible field net/minecraft/class_1146 a Ljava/util/Map;
-mutable field net/minecraft/class_1146 a Ljava/util/Map;
-accessible field net/minecraft/class_1146 e Lnet/minecraft/server/MinecraftKey;
-mutable field net/minecraft/class_1146 e Lnet/minecraft/server/MinecraftKey;
-accessible field net/minecraft/class_1146 j Lnet/minecraft/server/MinecraftKey;
-mutable field net/minecraft/class_1146 j Lnet/minecraft/server/MinecraftKey;
-accessible field net/minecraft/class_1146 k Lnet/minecraft/server/MinecraftKey;
-mutable field net/minecraft/class_1146 k Lnet/minecraft/server/MinecraftKey;
-accessible field net/minecraft/class_1146 l Lnet/minecraft/server/MinecraftKey;
-mutable field net/minecraft/class_1146 l Lnet/minecraft/server/MinecraftKey;
-accessible field net/minecraft/class_1146 m Lnet/minecraft/server/MinecraftKey;
-mutable field net/minecraft/class_1146 m Lnet/minecraft/server/MinecraftKey;
-extendable method net/minecraft/class_1146 a (Lnet/minecraft/server/EntityHorse;F)V
-accessible method net/minecraft/class_1146 a (Lnet/minecraft/server/EntityHorse;F)V
-extendable method net/minecraft/class_1146 a (Lnet/minecraft/server/EntityHorse;)Lnet/minecraft/server/MinecraftKey;
-accessible method net/minecraft/class_1146 a (Lnet/minecraft/server/EntityHorse;)Lnet/minecraft/server/MinecraftKey;
-extendable method net/minecraft/class_1146 b (Lnet/minecraft/server/EntityHorse;)Lnet/minecraft/server/MinecraftKey;
-accessible method net/minecraft/class_1146 b (Lnet/minecraft/server/EntityHorse;)Lnet/minecraft/server/MinecraftKey;
-accessible field net/minecraft/class_1147 j Lnet/minecraft/server/MinecraftKey;
-mutable field net/minecraft/class_1147 j Lnet/minecraft/server/MinecraftKey;
-accessible field net/minecraft/class_1147 a Lnet/minecraft/class_866;
-mutable field net/minecraft/class_1147 a Lnet/minecraft/class_866;
-accessible field net/minecraft/class_1147 e F
-mutable field net/minecraft/class_1147 e F
-extendable method net/minecraft/class_1147 a (Lnet/minecraft/server/EntityInsentient;)Lnet/minecraft/server/MinecraftKey;
-accessible method net/minecraft/class_1147 a (Lnet/minecraft/server/EntityInsentient;)Lnet/minecraft/server/MinecraftKey;
-accessible field net/minecraft/class_1148 a Lnet/minecraft/class_1150;
-mutable field net/minecraft/class_1148 a Lnet/minecraft/class_1150;
-accessible field net/minecraft/class_1148 e Ljava/util/Random;
-mutable field net/minecraft/class_1148 e Ljava/util/Random;
-extendable method net/minecraft/class_1148 a (Lnet/minecraft/server/EntityItem;DDDFLnet/minecraft/class_1288;)I
-accessible method net/minecraft/class_1148 a (Lnet/minecraft/server/EntityItem;DDDFLnet/minecraft/class_1288;)I
-extendable method net/minecraft/class_1148 a (Lnet/minecraft/server/ItemStack;)I
-accessible method net/minecraft/class_1148 a (Lnet/minecraft/server/ItemStack;)I
-extendable method net/minecraft/class_1148 a (Lnet/minecraft/server/EntityItem;)Lnet/minecraft/server/MinecraftKey;
-accessible method net/minecraft/class_1148 a (Lnet/minecraft/server/EntityItem;)Lnet/minecraft/server/MinecraftKey;
-accessible field net/minecraft/class_1149 a Lnet/minecraft/server/MinecraftKey;
-mutable field net/minecraft/class_1149 a Lnet/minecraft/server/MinecraftKey;
-accessible field net/minecraft/class_1149 e Lnet/minecraft/class_669;
-mutable field net/minecraft/class_1149 e Lnet/minecraft/class_669;
-accessible field net/minecraft/class_1149 f Lnet/minecraft/class_1293;
-mutable field net/minecraft/class_1149 f Lnet/minecraft/class_1293;
-accessible field net/minecraft/class_1149 g Lnet/minecraft/class_1293;
-mutable field net/minecraft/class_1149 g Lnet/minecraft/class_1293;
-accessible field net/minecraft/class_1149 h Lnet/minecraft/class_1150;
-mutable field net/minecraft/class_1149 h Lnet/minecraft/class_1150;
-extendable method net/minecraft/class_1149 a (Lnet/minecraft/server/EntityItemFrame;)Lnet/minecraft/server/MinecraftKey;
-accessible method net/minecraft/class_1149 a (Lnet/minecraft/server/EntityItemFrame;)Lnet/minecraft/server/MinecraftKey;
-extendable method net/minecraft/class_1149 b (Lnet/minecraft/server/EntityItemFrame;)V
-accessible method net/minecraft/class_1149 b (Lnet/minecraft/server/EntityItemFrame;)V
-extendable method net/minecraft/class_1149 a (Lnet/minecraft/server/EntityItemFrame;DDD)V
-accessible method net/minecraft/class_1149 a (Lnet/minecraft/server/EntityItemFrame;DDD)V
-accessible class net/minecraft/class_1150$1
-accessible class net/minecraft/class_1150$2
-accessible class net/minecraft/class_1150$3
-accessible class net/minecraft/class_1150$4
-accessible class net/minecraft/class_1150$5
-accessible class net/minecraft/class_1150$6
-accessible class net/minecraft/class_1150$7
-accessible class net/minecraft/class_1150$8
-accessible class net/minecraft/class_1150$9
-accessible field net/minecraft/class_1150 b Lnet/minecraft/server/MinecraftKey;
-mutable field net/minecraft/class_1150 b Lnet/minecraft/server/MinecraftKey;
-accessible field net/minecraft/class_1150 c Z
-mutable field net/minecraft/class_1150 c Z
-accessible field net/minecraft/class_1150 d Lnet/minecraft/class_1034;
-mutable field net/minecraft/class_1150 d Lnet/minecraft/class_1034;
-accessible field net/minecraft/class_1150 e Lnet/minecraft/class_1232;
-mutable field net/minecraft/class_1150 e Lnet/minecraft/class_1232;
-extendable method net/minecraft/class_1150 a (Lnet/minecraft/server/Item;ILjava/lang/String;)V
-accessible method net/minecraft/class_1150 a (Lnet/minecraft/server/Item;ILjava/lang/String;)V
-extendable method net/minecraft/class_1150 a (Lnet/minecraft/server/Block;ILjava/lang/String;)V
-accessible method net/minecraft/class_1150 a (Lnet/minecraft/server/Block;ILjava/lang/String;)V
-extendable method net/minecraft/class_1150 a (Lnet/minecraft/server/Block;Ljava/lang/String;)V
-accessible method net/minecraft/class_1150 a (Lnet/minecraft/server/Block;Ljava/lang/String;)V
-extendable method net/minecraft/class_1150 a (Lnet/minecraft/server/Item;Ljava/lang/String;)V
-accessible method net/minecraft/class_1150 a (Lnet/minecraft/server/Item;Ljava/lang/String;)V
-extendable method net/minecraft/class_1150 a (Lnet/minecraft/class_1288;Lnet/minecraft/server/ItemStack;)V
-accessible method net/minecraft/class_1150 a (Lnet/minecraft/class_1288;Lnet/minecraft/server/ItemStack;)V
-extendable method net/minecraft/class_1150 a (Lnet/minecraft/class_1288;I)V
-accessible method net/minecraft/class_1150 a (Lnet/minecraft/class_1288;I)V
-extendable method net/minecraft/class_1150 a (Lnet/minecraft/class_1288;ILnet/minecraft/server/ItemStack;)V
-accessible method net/minecraft/class_1150 a (Lnet/minecraft/class_1288;ILnet/minecraft/server/ItemStack;)V
-extendable method net/minecraft/class_1150 a (Lnet/minecraft/class_1288;)V
-accessible method net/minecraft/class_1150 a (Lnet/minecraft/class_1288;)V
-extendable method net/minecraft/class_1150 a (Lnet/minecraft/class_1002;Lnet/minecraft/class_1055;)V
-accessible method net/minecraft/class_1150 a (Lnet/minecraft/class_1002;Lnet/minecraft/class_1055;)V
-extendable method net/minecraft/class_1150 a (Lnet/minecraft/class_1002;Lnet/minecraft/class_1055;I)V
-accessible method net/minecraft/class_1150 a (Lnet/minecraft/class_1002;Lnet/minecraft/class_1055;I)V
-extendable method net/minecraft/class_1150 a (Lnet/minecraft/class_1002;Ljava/util/List;ILnet/minecraft/server/ItemStack;)V
-accessible method net/minecraft/class_1150 a (Lnet/minecraft/class_1002;Ljava/util/List;ILnet/minecraft/server/ItemStack;)V
-extendable method net/minecraft/class_1150 b (Lnet/minecraft/server/ItemStack;)V
-accessible method net/minecraft/class_1150 b (Lnet/minecraft/server/ItemStack;)V
-extendable method net/minecraft/class_1150 a (Lnet/minecraft/server/ItemStack;Lnet/minecraft/class_1288;Lnet/minecraft/class_1080$class_1082;)V
-accessible method net/minecraft/class_1150 a (Lnet/minecraft/server/ItemStack;Lnet/minecraft/class_1288;Lnet/minecraft/class_1080$class_1082;)V
-extendable method net/minecraft/class_1150 a (Lnet/minecraft/class_1078;)Z
-accessible method net/minecraft/class_1150 a (Lnet/minecraft/class_1078;)Z
-extendable method net/minecraft/class_1150 a (IIZ)V
-accessible method net/minecraft/class_1150 a (IIZ)V
-extendable method net/minecraft/class_1150 a (Lnet/minecraft/class_1002;IIIIIIII)V
-accessible method net/minecraft/class_1150 a (Lnet/minecraft/class_1002;IIIIIIII)V
-extendable method net/minecraft/class_1150 b ()V
-accessible method net/minecraft/class_1150 b ()V
-accessible field net/minecraft/class_1151 a Lnet/minecraft/server/MinecraftKey;
-mutable field net/minecraft/class_1151 a Lnet/minecraft/server/MinecraftKey;
-extendable method net/minecraft/class_1151 a (Lnet/minecraft/server/EntityMagmaCube;)Lnet/minecraft/server/MinecraftKey;
-accessible method net/minecraft/class_1151 a (Lnet/minecraft/server/EntityMagmaCube;)Lnet/minecraft/server/MinecraftKey;
-extendable method net/minecraft/class_1151 a (Lnet/minecraft/server/EntityMagmaCube;F)V
-accessible method net/minecraft/class_1151 a (Lnet/minecraft/server/EntityMagmaCube;F)V
-accessible field net/minecraft/class_1152 a Lnet/minecraft/server/MinecraftKey;
-mutable field net/minecraft/class_1152 a Lnet/minecraft/server/MinecraftKey;
-accessible field net/minecraft/class_1152 e Lnet/minecraft/class_869;
-mutable field net/minecraft/class_1152 e Lnet/minecraft/class_869;
-extendable method net/minecraft/class_1152 a (Lnet/minecraft/server/EntityLeash;)Lnet/minecraft/server/MinecraftKey;
-accessible method net/minecraft/class_1152 a (Lnet/minecraft/server/EntityLeash;)Lnet/minecraft/server/MinecraftKey;
-extendable method net/minecraft/class_1153 a (Lnet/minecraft/server/EntityLightning;)Lnet/minecraft/server/MinecraftKey;
-accessible method net/minecraft/class_1153 a (Lnet/minecraft/server/EntityLightning;)Lnet/minecraft/server/MinecraftKey;
-accessible field net/minecraft/class_1154 a Lorg/apache/logging/log4j/Logger;
-mutable field net/minecraft/class_1154 a Lorg/apache/logging/log4j/Logger;
-accessible field net/minecraft/class_1154 e Lnet/minecraft/class_1219;
-mutable field net/minecraft/class_1154 e Lnet/minecraft/class_1219;
-accessible field net/minecraft/class_1154 f Lnet/minecraft/class_871;
-mutable field net/minecraft/class_1154 f Lnet/minecraft/class_871;
-accessible field net/minecraft/class_1154 g Ljava/nio/FloatBuffer;
-mutable field net/minecraft/class_1154 g Ljava/nio/FloatBuffer;
-accessible field net/minecraft/class_1154 h Ljava/util/List;
-mutable field net/minecraft/class_1154 h Ljava/util/List;
-accessible field net/minecraft/class_1154 i Z
-mutable field net/minecraft/class_1154 i Z
-extendable method net/minecraft/class_1154 a (Lnet/minecraft/class_1198;)Z
-accessible method net/minecraft/class_1154 a (Lnet/minecraft/class_1198;)Z
-extendable method net/minecraft/class_1154 b (Lnet/minecraft/class_1198;)Z
-accessible method net/minecraft/class_1154 b (Lnet/minecraft/class_1198;)Z
-extendable method net/minecraft/class_1154 a (FFF)F
-accessible method net/minecraft/class_1154 a (FFF)F
-extendable method net/minecraft/class_1154 c (Lnet/minecraft/server/EntityLiving;)Z
-accessible method net/minecraft/class_1154 c (Lnet/minecraft/server/EntityLiving;)Z
-extendable method net/minecraft/class_1154 e ()V
-accessible method net/minecraft/class_1154 e ()V
-extendable method net/minecraft/class_1154 a (Lnet/minecraft/server/EntityLiving;FFFFFF)V
-accessible method net/minecraft/class_1154 a (Lnet/minecraft/server/EntityLiving;FFFFFF)V
-extendable method net/minecraft/class_1154 c (Lnet/minecraft/server/EntityLiving;F)Z
-accessible method net/minecraft/class_1154 c (Lnet/minecraft/server/EntityLiving;F)Z
-extendable method net/minecraft/class_1154 a (Lnet/minecraft/server/EntityLiving;FZ)Z
-accessible method net/minecraft/class_1154 a (Lnet/minecraft/server/EntityLiving;FZ)Z
-extendable method net/minecraft/class_1154 f ()V
-accessible method net/minecraft/class_1154 f ()V
-extendable method net/minecraft/class_1154 a (Lnet/minecraft/server/EntityLiving;DDD)V
-accessible method net/minecraft/class_1154 a (Lnet/minecraft/server/EntityLiving;DDD)V
-extendable method net/minecraft/class_1154 a (Lnet/minecraft/server/EntityLiving;FFF)V
-accessible method net/minecraft/class_1154 a (Lnet/minecraft/server/EntityLiving;FFF)V
-extendable method net/minecraft/class_1154 d (Lnet/minecraft/server/EntityLiving;F)F
-accessible method net/minecraft/class_1154 d (Lnet/minecraft/server/EntityLiving;F)F
-extendable method net/minecraft/class_1154 b (Lnet/minecraft/server/EntityLiving;F)F
-accessible method net/minecraft/class_1154 b (Lnet/minecraft/server/EntityLiving;F)F
-extendable method net/minecraft/class_1154 a (Lnet/minecraft/server/EntityLiving;FFFFFFF)V
-accessible method net/minecraft/class_1154 a (Lnet/minecraft/server/EntityLiving;FFFFFFF)V
-extendable method net/minecraft/class_1154 b (Lnet/minecraft/server/EntityLiving;)F
-accessible method net/minecraft/class_1154 b (Lnet/minecraft/server/EntityLiving;)F
-extendable method net/minecraft/class_1154 a (Lnet/minecraft/server/EntityLiving;FF)I
-accessible method net/minecraft/class_1154 a (Lnet/minecraft/server/EntityLiving;FF)I
-extendable method net/minecraft/class_1154 a (Lnet/minecraft/server/EntityLiving;F)V
-accessible method net/minecraft/class_1154 a (Lnet/minecraft/server/EntityLiving;F)V
-extendable method net/minecraft/class_1154 a (Lnet/minecraft/server/EntityLiving;)Z
-accessible method net/minecraft/class_1154 a (Lnet/minecraft/server/EntityLiving;)Z
-accessible field net/minecraft/class_1155 e Lnet/minecraft/server/MinecraftKey;
-mutable field net/minecraft/class_1155 e Lnet/minecraft/server/MinecraftKey;
-accessible field net/minecraft/class_1155 a Lnet/minecraft/class_871;
-mutable field net/minecraft/class_1155 a Lnet/minecraft/class_871;
-extendable method net/minecraft/class_1155 a (Lnet/minecraft/server/EntityMinecartAbstract;)Lnet/minecraft/server/MinecraftKey;
-accessible method net/minecraft/class_1155 a (Lnet/minecraft/server/EntityMinecartAbstract;)Lnet/minecraft/server/MinecraftKey;
-extendable method net/minecraft/class_1155 a (Lnet/minecraft/server/EntityMinecartAbstract;FLnet/minecraft/server/IBlockData;)V
-accessible method net/minecraft/class_1155 a (Lnet/minecraft/server/EntityMinecartAbstract;FLnet/minecraft/server/IBlockData;)V
-extendable method net/minecraft/class_1156 a (Lnet/minecraft/server/EntityMinecartMobSpawner;FLnet/minecraft/server/IBlockData;)V
-accessible method net/minecraft/class_1156 a (Lnet/minecraft/server/EntityMinecartMobSpawner;FLnet/minecraft/server/IBlockData;)V
-extendable method net/minecraft/class_1157 b (Lnet/minecraft/server/EntityInsentient;)Z
-accessible method net/minecraft/class_1157 b (Lnet/minecraft/server/EntityInsentient;)Z
-extendable method net/minecraft/class_1157 a (DDD)D
-accessible method net/minecraft/class_1157 a (DDD)D
-extendable method net/minecraft/class_1157 b (Lnet/minecraft/server/EntityInsentient;DDDFF)V
-accessible method net/minecraft/class_1157 b (Lnet/minecraft/server/EntityInsentient;DDDFF)V
-accessible field net/minecraft/class_1158 a Lnet/minecraft/server/MinecraftKey;
-mutable field net/minecraft/class_1158 a Lnet/minecraft/server/MinecraftKey;
-extendable method net/minecraft/class_1158 a (Lnet/minecraft/server/EntityMushroomCow;)Lnet/minecraft/server/MinecraftKey;
-accessible method net/minecraft/class_1158 a (Lnet/minecraft/server/EntityMushroomCow;)Lnet/minecraft/server/MinecraftKey;
-accessible field net/minecraft/class_1159 a Lnet/minecraft/server/MinecraftKey;
-mutable field net/minecraft/class_1159 a Lnet/minecraft/server/MinecraftKey;
-accessible field net/minecraft/class_1159 e Lnet/minecraft/server/MinecraftKey;
-mutable field net/minecraft/class_1159 e Lnet/minecraft/server/MinecraftKey;
-accessible field net/minecraft/class_1159 j Lnet/minecraft/server/MinecraftKey;
-mutable field net/minecraft/class_1159 j Lnet/minecraft/server/MinecraftKey;
-accessible field net/minecraft/class_1159 k Lnet/minecraft/server/MinecraftKey;
-mutable field net/minecraft/class_1159 k Lnet/minecraft/server/MinecraftKey;
-extendable method net/minecraft/class_1159 a (Lnet/minecraft/server/EntityOcelot;)Lnet/minecraft/server/MinecraftKey;
-accessible method net/minecraft/class_1159 a (Lnet/minecraft/server/EntityOcelot;)Lnet/minecraft/server/MinecraftKey;
-extendable method net/minecraft/class_1159 a (Lnet/minecraft/server/EntityOcelot;F)V
-accessible method net/minecraft/class_1159 a (Lnet/minecraft/server/EntityOcelot;F)V
-accessible field net/minecraft/class_1160 a Lnet/minecraft/server/MinecraftKey;
-mutable field net/minecraft/class_1160 a Lnet/minecraft/server/MinecraftKey;
-extendable method net/minecraft/class_1160 a (Lnet/minecraft/server/EntityPainting;)Lnet/minecraft/server/MinecraftKey;
-accessible method net/minecraft/class_1160 a (Lnet/minecraft/server/EntityPainting;)Lnet/minecraft/server/MinecraftKey;
-extendable method net/minecraft/class_1160 a (Lnet/minecraft/server/EntityPainting;IIII)V
-accessible method net/minecraft/class_1160 a (Lnet/minecraft/server/EntityPainting;IIII)V
-extendable method net/minecraft/class_1160 a (Lnet/minecraft/server/EntityPainting;FF)V
-accessible method net/minecraft/class_1160 a (Lnet/minecraft/server/EntityPainting;FF)V
-accessible field net/minecraft/class_1161 a Lnet/minecraft/server/MinecraftKey;
-mutable field net/minecraft/class_1161 a Lnet/minecraft/server/MinecraftKey;
-extendable method net/minecraft/class_1161 a (Lnet/minecraft/server/EntityPig;)Lnet/minecraft/server/MinecraftKey;
-accessible method net/minecraft/class_1161 a (Lnet/minecraft/server/EntityPig;)Lnet/minecraft/server/MinecraftKey;
-accessible class net/minecraft/class_1162$1
-extendable method net/minecraft/class_1162$1 a ()V
-accessible method net/minecraft/class_1162$1 a ()V
-accessible field net/minecraft/class_1162 j Lnet/minecraft/server/MinecraftKey;
-mutable field net/minecraft/class_1162 j Lnet/minecraft/server/MinecraftKey;
-extendable method net/minecraft/class_1162 a (Lnet/minecraft/server/EntityPigZombie;)Lnet/minecraft/server/MinecraftKey;
-accessible method net/minecraft/class_1162 a (Lnet/minecraft/server/EntityPigZombie;)Lnet/minecraft/server/MinecraftKey;
-accessible field net/minecraft/class_1163 a Lnet/minecraft/server/MinecraftKey;
-mutable field net/minecraft/class_1163 a Lnet/minecraft/server/MinecraftKey;
-accessible field net/minecraft/class_1163 e Lnet/minecraft/server/MinecraftKey;
-mutable field net/minecraft/class_1163 e Lnet/minecraft/server/MinecraftKey;
-accessible field net/minecraft/class_1163 j Lnet/minecraft/server/MinecraftKey;
-mutable field net/minecraft/class_1163 j Lnet/minecraft/server/MinecraftKey;
-accessible field net/minecraft/class_1163 k Lnet/minecraft/server/MinecraftKey;
-mutable field net/minecraft/class_1163 k Lnet/minecraft/server/MinecraftKey;
-accessible field net/minecraft/class_1163 l Lnet/minecraft/server/MinecraftKey;
-mutable field net/minecraft/class_1163 l Lnet/minecraft/server/MinecraftKey;
-accessible field net/minecraft/class_1163 m Lnet/minecraft/server/MinecraftKey;
-mutable field net/minecraft/class_1163 m Lnet/minecraft/server/MinecraftKey;
-accessible field net/minecraft/class_1163 n Lnet/minecraft/server/MinecraftKey;
-mutable field net/minecraft/class_1163 n Lnet/minecraft/server/MinecraftKey;
-accessible field net/minecraft/class_1163 o Lnet/minecraft/server/MinecraftKey;
-mutable field net/minecraft/class_1163 o Lnet/minecraft/server/MinecraftKey;
-extendable method net/minecraft/class_1163 a (Lnet/minecraft/server/EntityRabbit;)Lnet/minecraft/server/MinecraftKey;
-accessible method net/minecraft/class_1163 a (Lnet/minecraft/server/EntityRabbit;)Lnet/minecraft/server/MinecraftKey;
-accessible field net/minecraft/class_1164 a Lnet/minecraft/server/MinecraftKey;
-mutable field net/minecraft/class_1164 a Lnet/minecraft/server/MinecraftKey;
-extendable method net/minecraft/class_1164 a (Lnet/minecraft/server/EntitySheep;)Lnet/minecraft/server/MinecraftKey;
-accessible method net/minecraft/class_1164 a (Lnet/minecraft/server/EntitySheep;)Lnet/minecraft/server/MinecraftKey;
-accessible field net/minecraft/class_1165 a Lnet/minecraft/server/MinecraftKey;
-mutable field net/minecraft/class_1165 a Lnet/minecraft/server/MinecraftKey;
-extendable method net/minecraft/class_1165 a (Lnet/minecraft/server/EntitySilverfish;)F
-accessible method net/minecraft/class_1165 a (Lnet/minecraft/server/EntitySilverfish;)F
-extendable method net/minecraft/class_1165 b (Lnet/minecraft/server/EntitySilverfish;)Lnet/minecraft/server/MinecraftKey;
-accessible method net/minecraft/class_1165 b (Lnet/minecraft/server/EntitySilverfish;)Lnet/minecraft/server/MinecraftKey;
-accessible class net/minecraft/class_1166$1
-extendable method net/minecraft/class_1166$1 a ()V
-accessible method net/minecraft/class_1166$1 a ()V
-accessible field net/minecraft/class_1166 j Lnet/minecraft/server/MinecraftKey;
-mutable field net/minecraft/class_1166 j Lnet/minecraft/server/MinecraftKey;
-accessible field net/minecraft/class_1166 k Lnet/minecraft/server/MinecraftKey;
-mutable field net/minecraft/class_1166 k Lnet/minecraft/server/MinecraftKey;
-extendable method net/minecraft/class_1166 a (Lnet/minecraft/server/EntitySkeleton;F)V
-accessible method net/minecraft/class_1166 a (Lnet/minecraft/server/EntitySkeleton;F)V
-extendable method net/minecraft/class_1166 a (Lnet/minecraft/server/EntitySkeleton;)Lnet/minecraft/server/MinecraftKey;
-accessible method net/minecraft/class_1166 a (Lnet/minecraft/server/EntitySkeleton;)Lnet/minecraft/server/MinecraftKey;
-accessible field net/minecraft/class_1167 a Lnet/minecraft/server/MinecraftKey;
-mutable field net/minecraft/class_1167 a Lnet/minecraft/server/MinecraftKey;
-extendable method net/minecraft/class_1167 a (Lnet/minecraft/server/EntitySlime;F)V
-accessible method net/minecraft/class_1167 a (Lnet/minecraft/server/EntitySlime;F)V
-extendable method net/minecraft/class_1167 a (Lnet/minecraft/server/EntitySlime;)Lnet/minecraft/server/MinecraftKey;
-accessible method net/minecraft/class_1167 a (Lnet/minecraft/server/EntitySlime;)Lnet/minecraft/server/MinecraftKey;
-accessible field net/minecraft/class_1168 a Lnet/minecraft/server/MinecraftKey;
-mutable field net/minecraft/class_1168 a Lnet/minecraft/server/MinecraftKey;
-extendable method net/minecraft/class_1168 a (Lnet/minecraft/server/EntitySnowman;)Lnet/minecraft/server/MinecraftKey;
-accessible method net/minecraft/class_1168 a (Lnet/minecraft/server/EntitySnowman;)Lnet/minecraft/server/MinecraftKey;
 extendable method net/minecraft/server/CommandStats d ()[Ljava/lang/String;
 accessible method net/minecraft/server/CommandStats d ()[Ljava/lang/String;
 extendable method net/minecraft/server/CommandStats e ()Ljava/util/List;
 accessible method net/minecraft/server/CommandStats e ()Ljava/util/List;
-accessible field net/minecraft/class_1170 a Lnet/minecraft/server/MinecraftKey;
-mutable field net/minecraft/class_1170 a Lnet/minecraft/server/MinecraftKey;
-extendable method net/minecraft/class_1170 b (Lnet/minecraft/server/EntitySpider;)F
-accessible method net/minecraft/class_1170 b (Lnet/minecraft/server/EntitySpider;)F
-extendable method net/minecraft/class_1170 a (Lnet/minecraft/server/EntitySpider;)Lnet/minecraft/server/MinecraftKey;
-accessible method net/minecraft/class_1170 a (Lnet/minecraft/server/EntitySpider;)Lnet/minecraft/server/MinecraftKey;
-accessible field net/minecraft/class_1171 a Lnet/minecraft/server/MinecraftKey;
-mutable field net/minecraft/class_1171 a Lnet/minecraft/server/MinecraftKey;
-extendable method net/minecraft/class_1171 a (Lnet/minecraft/server/EntitySquid;)Lnet/minecraft/server/MinecraftKey;
-accessible method net/minecraft/class_1171 a (Lnet/minecraft/server/EntitySquid;)Lnet/minecraft/server/MinecraftKey;
-extendable method net/minecraft/class_1171 a (Lnet/minecraft/server/EntitySquid;FFF)V
-accessible method net/minecraft/class_1171 a (Lnet/minecraft/server/EntitySquid;FFF)V
-extendable method net/minecraft/class_1171 a (Lnet/minecraft/server/EntitySquid;F)F
-accessible method net/minecraft/class_1171 a (Lnet/minecraft/server/EntitySquid;F)F
-accessible field net/minecraft/class_1172 a Lnet/minecraft/server/Item;
-mutable field net/minecraft/class_1172 a Lnet/minecraft/server/Item;
-accessible field net/minecraft/class_1172 e Lnet/minecraft/class_1150;
-mutable field net/minecraft/class_1172 e Lnet/minecraft/class_1150;
-extendable method net/minecraft/class_1172 a (Lnet/minecraft/server/Entity;)Lnet/minecraft/server/MinecraftKey;
-accessible method net/minecraft/class_1172 a (Lnet/minecraft/server/Entity;)Lnet/minecraft/server/MinecraftKey;
-extendable method net/minecraft/class_1174 a (Lnet/minecraft/server/EntityMinecartTNT;FLnet/minecraft/server/IBlockData;)V
-accessible method net/minecraft/class_1174 a (Lnet/minecraft/server/EntityMinecartTNT;FLnet/minecraft/server/IBlockData;)V
-extendable method net/minecraft/class_1175 a (Lnet/minecraft/server/EntityTNTPrimed;)Lnet/minecraft/server/MinecraftKey;
-accessible method net/minecraft/class_1175 a (Lnet/minecraft/server/EntityTNTPrimed;)Lnet/minecraft/server/MinecraftKey;
-accessible field net/minecraft/class_1176 a Lnet/minecraft/server/MinecraftKey;
-mutable field net/minecraft/class_1176 a Lnet/minecraft/server/MinecraftKey;
-extendable method net/minecraft/class_1176 a (Lnet/minecraft/server/EntityIronGolem;)Lnet/minecraft/server/MinecraftKey;
-accessible method net/minecraft/class_1176 a (Lnet/minecraft/server/EntityIronGolem;)Lnet/minecraft/server/MinecraftKey;
-extendable method net/minecraft/class_1176 a (Lnet/minecraft/server/EntityIronGolem;FFF)V
-accessible method net/minecraft/class_1176 a (Lnet/minecraft/server/EntityIronGolem;FFF)V
-accessible field net/minecraft/class_1177 a Lnet/minecraft/server/MinecraftKey;
-mutable field net/minecraft/class_1177 a Lnet/minecraft/server/MinecraftKey;
-accessible field net/minecraft/class_1177 e Lnet/minecraft/server/MinecraftKey;
-mutable field net/minecraft/class_1177 e Lnet/minecraft/server/MinecraftKey;
-accessible field net/minecraft/class_1177 j Lnet/minecraft/server/MinecraftKey;
-mutable field net/minecraft/class_1177 j Lnet/minecraft/server/MinecraftKey;
-accessible field net/minecraft/class_1177 k Lnet/minecraft/server/MinecraftKey;
-mutable field net/minecraft/class_1177 k Lnet/minecraft/server/MinecraftKey;
-accessible field net/minecraft/class_1177 l Lnet/minecraft/server/MinecraftKey;
-mutable field net/minecraft/class_1177 l Lnet/minecraft/server/MinecraftKey;
-accessible field net/minecraft/class_1177 m Lnet/minecraft/server/MinecraftKey;
-mutable field net/minecraft/class_1177 m Lnet/minecraft/server/MinecraftKey;
-extendable method net/minecraft/class_1177 a (Lnet/minecraft/server/EntityVillager;)Lnet/minecraft/server/MinecraftKey;
-accessible method net/minecraft/class_1177 a (Lnet/minecraft/server/EntityVillager;)Lnet/minecraft/server/MinecraftKey;
-extendable method net/minecraft/class_1177 a (Lnet/minecraft/server/EntityVillager;F)V
-accessible method net/minecraft/class_1177 a (Lnet/minecraft/server/EntityVillager;F)V
-accessible field net/minecraft/class_1178 a Lnet/minecraft/server/MinecraftKey;
-mutable field net/minecraft/class_1178 a Lnet/minecraft/server/MinecraftKey;
-extendable method net/minecraft/class_1178 a (Lnet/minecraft/server/EntityWitch;)Lnet/minecraft/server/MinecraftKey;
-accessible method net/minecraft/class_1178 a (Lnet/minecraft/server/EntityWitch;)Lnet/minecraft/server/MinecraftKey;
-extendable method net/minecraft/class_1178 a (Lnet/minecraft/server/EntityWitch;F)V
-accessible method net/minecraft/class_1178 a (Lnet/minecraft/server/EntityWitch;F)V
-accessible field net/minecraft/class_1179 a Lnet/minecraft/server/MinecraftKey;
-mutable field net/minecraft/class_1179 a Lnet/minecraft/server/MinecraftKey;
-accessible field net/minecraft/class_1179 e Lnet/minecraft/server/MinecraftKey;
-mutable field net/minecraft/class_1179 e Lnet/minecraft/server/MinecraftKey;
-extendable method net/minecraft/class_1179 a (Lnet/minecraft/server/EntityWither;)Lnet/minecraft/server/MinecraftKey;
-accessible method net/minecraft/class_1179 a (Lnet/minecraft/server/EntityWither;)Lnet/minecraft/server/MinecraftKey;
-extendable method net/minecraft/class_1179 a (Lnet/minecraft/server/EntityWither;F)V
-accessible method net/minecraft/class_1179 a (Lnet/minecraft/server/EntityWither;F)V
-accessible field net/minecraft/class_1180 a Lnet/minecraft/server/MinecraftKey;
-mutable field net/minecraft/class_1180 a Lnet/minecraft/server/MinecraftKey;
-accessible field net/minecraft/class_1180 e Lnet/minecraft/server/MinecraftKey;
-mutable field net/minecraft/class_1180 e Lnet/minecraft/server/MinecraftKey;
-accessible field net/minecraft/class_1180 f Lnet/minecraft/class_882;
-mutable field net/minecraft/class_1180 f Lnet/minecraft/class_882;
-extendable method net/minecraft/class_1180 a (FFF)F
-accessible method net/minecraft/class_1180 a (FFF)F
-extendable method net/minecraft/class_1180 a (Lnet/minecraft/server/EntityWitherSkull;)Lnet/minecraft/server/MinecraftKey;
-accessible method net/minecraft/class_1180 a (Lnet/minecraft/server/EntityWitherSkull;)Lnet/minecraft/server/MinecraftKey;
-accessible field net/minecraft/class_1181 a Lnet/minecraft/server/MinecraftKey;
-mutable field net/minecraft/class_1181 a Lnet/minecraft/server/MinecraftKey;
-accessible field net/minecraft/class_1181 e Lnet/minecraft/server/MinecraftKey;
-mutable field net/minecraft/class_1181 e Lnet/minecraft/server/MinecraftKey;
-accessible field net/minecraft/class_1181 j Lnet/minecraft/server/MinecraftKey;
-mutable field net/minecraft/class_1181 j Lnet/minecraft/server/MinecraftKey;
-extendable method net/minecraft/class_1181 a (Lnet/minecraft/server/EntityWolf;F)F
-accessible method net/minecraft/class_1181 a (Lnet/minecraft/server/EntityWolf;F)F
-extendable method net/minecraft/class_1181 a (Lnet/minecraft/server/EntityWolf;)Lnet/minecraft/server/MinecraftKey;
-accessible method net/minecraft/class_1181 a (Lnet/minecraft/server/EntityWolf;)Lnet/minecraft/server/MinecraftKey;
-accessible class net/minecraft/class_1182$1
-extendable method net/minecraft/class_1182$1 a ()V
-accessible method net/minecraft/class_1182$1 a ()V
-accessible field net/minecraft/class_1182 j Lnet/minecraft/server/MinecraftKey;
-mutable field net/minecraft/class_1182 j Lnet/minecraft/server/MinecraftKey;
-accessible field net/minecraft/class_1182 k Lnet/minecraft/server/MinecraftKey;
-mutable field net/minecraft/class_1182 k Lnet/minecraft/server/MinecraftKey;
-accessible field net/minecraft/class_1182 l Lnet/minecraft/class_866;
-mutable field net/minecraft/class_1182 l Lnet/minecraft/class_866;
-accessible field net/minecraft/class_1182 m Lnet/minecraft/class_892;
-mutable field net/minecraft/class_1182 m Lnet/minecraft/class_892;
-accessible field net/minecraft/class_1182 n Ljava/util/List;
-mutable field net/minecraft/class_1182 n Ljava/util/List;
-accessible field net/minecraft/class_1182 o Ljava/util/List;
-mutable field net/minecraft/class_1182 o Ljava/util/List;
-extendable method net/minecraft/class_1182 a (Lnet/minecraft/server/EntityZombie;)Lnet/minecraft/server/MinecraftKey;
-accessible method net/minecraft/class_1182 a (Lnet/minecraft/server/EntityZombie;)Lnet/minecraft/server/MinecraftKey;
-extendable method net/minecraft/class_1182 b (Lnet/minecraft/server/EntityZombie;)V
-accessible method net/minecraft/class_1182 b (Lnet/minecraft/server/EntityZombie;)V
-extendable method net/minecraft/class_1182 a (Lnet/minecraft/server/EntityZombie;FFF)V
-accessible method net/minecraft/class_1182 a (Lnet/minecraft/server/EntityZombie;FFF)V
-accessible field net/minecraft/class_1183 b Lnet/minecraft/server/MinecraftKey;
-mutable field net/minecraft/class_1183 b Lnet/minecraft/server/MinecraftKey;
-accessible field net/minecraft/class_1183 c Lnet/minecraft/class_871;
-mutable field net/minecraft/class_1183 c Lnet/minecraft/class_871;
-accessible field net/minecraft/class_1183 d Lnet/minecraft/class_871;
-mutable field net/minecraft/class_1183 d Lnet/minecraft/class_871;
-accessible field net/minecraft/class_1183 a Lnet/minecraft/class_1154;
-mutable field net/minecraft/class_1183 a Lnet/minecraft/class_1154;
-accessible field net/minecraft/class_1183 e F
-mutable field net/minecraft/class_1183 e F
-accessible field net/minecraft/class_1183 f F
-mutable field net/minecraft/class_1183 f F
-accessible field net/minecraft/class_1183 g F
-mutable field net/minecraft/class_1183 g F
-accessible field net/minecraft/class_1183 h F
-mutable field net/minecraft/class_1183 h F
-accessible field net/minecraft/class_1183 i Z
-mutable field net/minecraft/class_1183 i Z
-accessible field net/minecraft/class_1183 j Ljava/util/Map;
-mutable field net/minecraft/class_1183 j Ljava/util/Map;
-extendable method net/minecraft/class_1183 a (Lnet/minecraft/server/EntityLiving;FFFFFFFI)V
-accessible method net/minecraft/class_1183 a (Lnet/minecraft/server/EntityLiving;FFFFFFFI)V
-extendable method net/minecraft/class_1183 b (I)Z
-accessible method net/minecraft/class_1183 b (I)Z
-extendable method net/minecraft/class_1183 a (Lnet/minecraft/server/EntityLiving;Lnet/minecraft/class_871;FFFFFFF)V
-accessible method net/minecraft/class_1183 a (Lnet/minecraft/server/EntityLiving;Lnet/minecraft/class_871;FFFFFFF)V
-extendable method net/minecraft/class_1183 a (Lnet/minecraft/server/ItemArmor;Z)Lnet/minecraft/server/MinecraftKey;
-accessible method net/minecraft/class_1183 a (Lnet/minecraft/server/ItemArmor;Z)Lnet/minecraft/server/MinecraftKey;
-extendable method net/minecraft/class_1183 a (Lnet/minecraft/server/ItemArmor;ZLjava/lang/String;)Lnet/minecraft/server/MinecraftKey;
-accessible method net/minecraft/class_1183 a (Lnet/minecraft/server/ItemArmor;ZLjava/lang/String;)Lnet/minecraft/server/MinecraftKey;
-extendable method net/minecraft/class_1183 a ()V
-accessible method net/minecraft/class_1183 a ()V
-extendable method net/minecraft/class_1183 a (Lnet/minecraft/class_871;I)V
-accessible method net/minecraft/class_1183 a (Lnet/minecraft/class_871;I)V
-accessible field net/minecraft/class_1184 a Lnet/minecraft/class_1154;
-mutable field net/minecraft/class_1184 a Lnet/minecraft/class_1154;
-accessible field net/minecraft/class_1185 a Lnet/minecraft/class_1208;
-mutable field net/minecraft/class_1185 a Lnet/minecraft/class_1208;
-accessible field net/minecraft/class_1186 a Lnet/minecraft/class_1133;
-mutable field net/minecraft/class_1186 a Lnet/minecraft/class_1133;
-accessible field net/minecraft/class_1187 a Lnet/minecraft/server/MinecraftKey;
-mutable field net/minecraft/class_1187 a Lnet/minecraft/server/MinecraftKey;
-accessible field net/minecraft/class_1187 b Lnet/minecraft/class_1129;
-mutable field net/minecraft/class_1187 b Lnet/minecraft/class_1129;
-accessible field net/minecraft/class_1187 c Lnet/minecraft/class_859;
-mutable field net/minecraft/class_1187 c Lnet/minecraft/class_859;
-accessible field net/minecraft/class_1188 a Lnet/minecraft/class_900;
-mutable field net/minecraft/class_1188 a Lnet/minecraft/class_900;
-accessible field net/minecraft/class_1189 a Lnet/minecraft/class_1208;
-mutable field net/minecraft/class_1189 a Lnet/minecraft/class_1208;
-accessible field net/minecraft/class_1191 a Lnet/minecraft/server/MinecraftKey;
-mutable field net/minecraft/class_1191 a Lnet/minecraft/server/MinecraftKey;
-accessible field net/minecraft/class_1191 b Lnet/minecraft/class_1132;
-mutable field net/minecraft/class_1191 b Lnet/minecraft/class_1132;
-accessible field net/minecraft/class_1192 a Lnet/minecraft/server/MinecraftKey;
-mutable field net/minecraft/class_1192 a Lnet/minecraft/server/MinecraftKey;
-accessible field net/minecraft/class_1192 b Lnet/minecraft/class_1133;
-mutable field net/minecraft/class_1192 b Lnet/minecraft/class_1133;
-extendable method net/minecraft/class_1193 a ()V
-accessible method net/minecraft/class_1193 a ()V
-extendable method net/minecraft/class_1193 a (Lnet/minecraft/class_866;I)V
-accessible method net/minecraft/class_1193 a (Lnet/minecraft/class_866;I)V
-extendable method net/minecraft/class_1193 a (Lnet/minecraft/class_866;)V
-accessible method net/minecraft/class_1193 a (Lnet/minecraft/class_866;)V
-accessible field net/minecraft/class_1194 a Lnet/minecraft/class_1154;
-mutable field net/minecraft/class_1194 a Lnet/minecraft/class_1154;
-accessible field net/minecraft/class_1195 a Lnet/minecraft/class_1158;
-mutable field net/minecraft/class_1195 a Lnet/minecraft/class_1158;
-accessible field net/minecraft/class_1197 a Lnet/minecraft/server/MinecraftKey;
-mutable field net/minecraft/class_1197 a Lnet/minecraft/server/MinecraftKey;
-accessible field net/minecraft/class_1197 b Lnet/minecraft/class_1161;
-mutable field net/minecraft/class_1197 b Lnet/minecraft/class_1161;
-accessible field net/minecraft/class_1197 c Lnet/minecraft/class_873;
-mutable field net/minecraft/class_1197 c Lnet/minecraft/class_873;
-accessible field net/minecraft/class_1199 a Lnet/minecraft/server/MinecraftKey;
-mutable field net/minecraft/class_1199 a Lnet/minecraft/server/MinecraftKey;
-accessible field net/minecraft/class_1199 b Lnet/minecraft/class_1164;
-mutable field net/minecraft/class_1199 b Lnet/minecraft/class_1164;
-accessible field net/minecraft/class_1199 c Lnet/minecraft/class_878;
-mutable field net/minecraft/class_1199 c Lnet/minecraft/class_878;
-accessible field net/minecraft/class_1200 a Lnet/minecraft/class_1167;
-mutable field net/minecraft/class_1200 a Lnet/minecraft/class_1167;
-accessible field net/minecraft/class_1200 b Lnet/minecraft/class_871;
-mutable field net/minecraft/class_1200 b Lnet/minecraft/class_871;
-accessible field net/minecraft/class_1201 a Lnet/minecraft/class_1168;
-mutable field net/minecraft/class_1201 a Lnet/minecraft/class_1168;
-accessible field net/minecraft/class_1202 a Lnet/minecraft/server/MinecraftKey;
-mutable field net/minecraft/class_1202 a Lnet/minecraft/server/MinecraftKey;
-accessible field net/minecraft/class_1202 b Lnet/minecraft/class_1170;
-mutable field net/minecraft/class_1202 b Lnet/minecraft/class_1170;
-extendable method net/minecraft/class_1203 a ()V
-accessible method net/minecraft/class_1203 a ()V
-accessible field net/minecraft/class_1204 a Lnet/minecraft/class_1176;
-mutable field net/minecraft/class_1204 a Lnet/minecraft/class_1176;
-accessible field net/minecraft/class_1205 a Lnet/minecraft/class_1178;
-mutable field net/minecraft/class_1205 a Lnet/minecraft/class_1178;
-accessible field net/minecraft/class_1206 a Lnet/minecraft/server/MinecraftKey;
-mutable field net/minecraft/class_1206 a Lnet/minecraft/server/MinecraftKey;
-accessible field net/minecraft/class_1206 b Lnet/minecraft/class_1179;
-mutable field net/minecraft/class_1206 b Lnet/minecraft/class_1179;
-accessible field net/minecraft/class_1206 c Lnet/minecraft/class_894;
-mutable field net/minecraft/class_1206 c Lnet/minecraft/class_894;
-accessible field net/minecraft/class_1207 a Lnet/minecraft/server/MinecraftKey;
-mutable field net/minecraft/class_1207 a Lnet/minecraft/server/MinecraftKey;
-accessible field net/minecraft/class_1207 b Lnet/minecraft/class_1181;
-mutable field net/minecraft/class_1207 b Lnet/minecraft/class_1181;
-accessible field net/minecraft/class_1208 a Z
-mutable field net/minecraft/class_1208 a Z
-extendable method net/minecraft/class_1208 d (Lnet/minecraft/class_993;)V
-accessible method net/minecraft/class_1208 d (Lnet/minecraft/class_993;)V
-extendable method net/minecraft/class_1208 a (Lnet/minecraft/class_993;)Lnet/minecraft/server/MinecraftKey;
-accessible method net/minecraft/class_1208 a (Lnet/minecraft/class_993;)Lnet/minecraft/server/MinecraftKey;
-extendable method net/minecraft/class_1208 a (Lnet/minecraft/class_993;F)V
-accessible method net/minecraft/class_1208 a (Lnet/minecraft/class_993;F)V
-extendable method net/minecraft/class_1208 a (Lnet/minecraft/class_993;DDDLjava/lang/String;FD)V
-accessible method net/minecraft/class_1208 a (Lnet/minecraft/class_993;DDDLjava/lang/String;FD)V
-extendable method net/minecraft/class_1208 a (Lnet/minecraft/class_993;DDD)V
-accessible method net/minecraft/class_1208 a (Lnet/minecraft/class_993;DDD)V
-extendable method net/minecraft/class_1208 a (Lnet/minecraft/class_993;FFF)V
-accessible method net/minecraft/class_1208 a (Lnet/minecraft/class_993;FFF)V
-accessible field net/minecraft/class_1209 a Lnet/minecraft/class_1209;
-mutable field net/minecraft/class_1209 a Lnet/minecraft/class_1209;
-accessible field net/minecraft/class_1209 b I
-mutable field net/minecraft/class_1209 b I
-accessible field net/minecraft/class_1209 c I
-mutable field net/minecraft/class_1209 c I
-accessible field net/minecraft/class_1209 d I
-mutable field net/minecraft/class_1209 d I
-accessible field net/minecraft/class_1209 e I
-mutable field net/minecraft/class_1209 e I
-accessible field net/minecraft/class_1209 f I
-mutable field net/minecraft/class_1209 f I
-accessible field net/minecraft/class_1209 g Z
-mutable field net/minecraft/class_1209 g Z
-accessible field net/minecraft/class_1209 h Z
-mutable field net/minecraft/class_1209 h Z
-extendable method net/minecraft/class_1209 a (Ljava/lang/String;)I
-accessible method net/minecraft/class_1209 a (Ljava/lang/String;)I
-extendable method net/minecraft/class_1209 b (Ljava/lang/String;)I
-accessible method net/minecraft/class_1209 b (Ljava/lang/String;)I
-accessible field net/minecraft/class_1211 a Lorg/apache/logging/log4j/Logger;
-mutable field net/minecraft/class_1211 a Lorg/apache/logging/log4j/Logger;
-accessible field net/minecraft/class_1211 b Lnet/minecraft/class_1210;
-mutable field net/minecraft/class_1211 b Lnet/minecraft/class_1210;
-accessible field net/minecraft/class_1211 c Lnet/minecraft/class_1211;
-mutable field net/minecraft/class_1211 c Lnet/minecraft/class_1211;
-accessible field net/minecraft/class_1211 d I
-mutable field net/minecraft/class_1211 d I
-accessible field net/minecraft/class_1211 e Z
-mutable field net/minecraft/class_1211 e Z
-accessible field net/minecraft/class_1211 f Ljava/util/Map;
-mutable field net/minecraft/class_1211 f Ljava/util/Map;
-accessible field net/minecraft/class_1211 g Ljava/util/List;
-mutable field net/minecraft/class_1211 g Ljava/util/List;
-accessible field net/minecraft/class_1211 h Ljava/util/List;
-mutable field net/minecraft/class_1211 h Ljava/util/List;
-accessible field net/minecraft/class_1211 i Ljava/util/List;
-mutable field net/minecraft/class_1211 i Ljava/util/List;
-accessible field net/minecraft/class_1211 j Ljava/util/List;
-mutable field net/minecraft/class_1211 j Ljava/util/List;
-accessible field net/minecraft/class_1211 k Ljava/util/Map;
-mutable field net/minecraft/class_1211 k Ljava/util/Map;
-accessible field net/minecraft/class_1211 l I
-mutable field net/minecraft/class_1211 l I
-accessible field net/minecraft/class_1211 m Ljava/lang/String;
-mutable field net/minecraft/class_1211 m Ljava/lang/String;
-accessible field net/minecraft/class_1211 n Z
-mutable field net/minecraft/class_1211 n Z
-accessible field net/minecraft/class_1211 o Z
-mutable field net/minecraft/class_1211 o Z
-accessible field net/minecraft/class_1211 p Lnet/minecraft/class_1209;
-mutable field net/minecraft/class_1211 p Lnet/minecraft/class_1209;
-accessible field net/minecraft/class_1211 q Ljava/util/List;
-mutable field net/minecraft/class_1211 q Ljava/util/List;
-accessible field net/minecraft/class_1211 r Ljava/util/List;
-mutable field net/minecraft/class_1211 r Ljava/util/List;
-accessible field net/minecraft/class_1211 s Lnet/minecraft/class_1214;
-mutable field net/minecraft/class_1211 s Lnet/minecraft/class_1214;
-accessible field net/minecraft/class_1211 t Lnet/minecraft/class_1214;
-mutable field net/minecraft/class_1211 t Lnet/minecraft/class_1214;
-extendable method net/minecraft/class_1211 i ()V
-accessible method net/minecraft/class_1211 i ()V
-extendable method net/minecraft/class_1211 a (Lcom/google/gson/JsonElement;)V
-accessible method net/minecraft/class_1211 a (Lcom/google/gson/JsonElement;)V
-extendable method net/minecraft/class_1211 b (Lcom/google/gson/JsonElement;)V
-accessible method net/minecraft/class_1211 b (Lcom/google/gson/JsonElement;)V
-accessible field net/minecraft/class_1212 a Lnet/minecraft/class_1040;
-mutable field net/minecraft/class_1212 a Lnet/minecraft/class_1040;
-accessible field net/minecraft/class_1212 b Lnet/minecraft/class_1258;
-mutable field net/minecraft/class_1212 b Lnet/minecraft/class_1258;
-accessible field net/minecraft/class_1212 c Ljava/lang/String;
-mutable field net/minecraft/class_1212 c Ljava/lang/String;
-accessible field net/minecraft/class_1212 d Ljava/util/List;
-mutable field net/minecraft/class_1212 d Ljava/util/List;
-accessible field net/minecraft/class_1212 e Ljava/util/Map;
-mutable field net/minecraft/class_1212 e Ljava/util/Map;
-accessible field net/minecraft/class_1212 f Ljava/util/List;
-mutable field net/minecraft/class_1212 f Ljava/util/List;
-accessible field net/minecraft/class_1212 g Lorg/lwjgl/util/vector/Matrix4f;
-mutable field net/minecraft/class_1212 g Lorg/lwjgl/util/vector/Matrix4f;
-accessible field net/minecraft/class_1212 h I
-mutable field net/minecraft/class_1212 h I
-accessible field net/minecraft/class_1212 i I
-mutable field net/minecraft/class_1212 i I
-accessible field net/minecraft/class_1212 j F
-mutable field net/minecraft/class_1212 j F
-accessible field net/minecraft/class_1212 k F
-mutable field net/minecraft/class_1212 k F
-extendable method net/minecraft/class_1212 a (Lcom/google/gson/JsonElement;)V
-accessible method net/minecraft/class_1212 a (Lcom/google/gson/JsonElement;)V
-extendable method net/minecraft/class_1212 a (Lnet/minecraft/class_1232;Lcom/google/gson/JsonElement;)V
-accessible method net/minecraft/class_1212 a (Lnet/minecraft/class_1232;Lcom/google/gson/JsonElement;)V
-extendable method net/minecraft/class_1212 b (Lcom/google/gson/JsonElement;)V
-accessible method net/minecraft/class_1212 b (Lcom/google/gson/JsonElement;)V
-extendable method net/minecraft/class_1212 c ()V
-accessible method net/minecraft/class_1212 c ()V
-extendable method net/minecraft/class_1212 b (Ljava/lang/String;)Lnet/minecraft/class_1040;
-accessible method net/minecraft/class_1212 b (Ljava/lang/String;)Lnet/minecraft/class_1040;
-accessible field net/minecraft/class_1213 c Lnet/minecraft/class_1211;
-mutable field net/minecraft/class_1213 c Lnet/minecraft/class_1211;
-accessible field net/minecraft/class_1213 d Ljava/util/List;
-mutable field net/minecraft/class_1213 d Ljava/util/List;
-accessible field net/minecraft/class_1213 e Ljava/util/List;
-mutable field net/minecraft/class_1213 e Ljava/util/List;
-accessible field net/minecraft/class_1213 f Ljava/util/List;
-mutable field net/minecraft/class_1213 f Ljava/util/List;
-accessible field net/minecraft/class_1213 g Ljava/util/List;
-mutable field net/minecraft/class_1213 g Ljava/util/List;
-accessible field net/minecraft/class_1213 h Lorg/lwjgl/util/vector/Matrix4f;
-mutable field net/minecraft/class_1213 h Lorg/lwjgl/util/vector/Matrix4f;
-extendable method net/minecraft/class_1213 d ()V
-accessible method net/minecraft/class_1213 d ()V
-extendable class net/minecraft/class_1214$class_1215
-accessible field net/minecraft/class_1214$class_1215 c Ljava/lang/String;
-mutable field net/minecraft/class_1214$class_1215 c Ljava/lang/String;
-accessible field net/minecraft/class_1214$class_1215 d Ljava/lang/String;
-mutable field net/minecraft/class_1214$class_1215 d Ljava/lang/String;
-accessible field net/minecraft/class_1214$class_1215 e I
-mutable field net/minecraft/class_1214$class_1215 e I
-accessible field net/minecraft/class_1214$class_1215 f Ljava/util/Map;
-mutable field net/minecraft/class_1214$class_1215 f Ljava/util/Map;
-extendable method net/minecraft/class_1214$class_1215 b ()Ljava/lang/String;
-accessible method net/minecraft/class_1214$class_1215 b ()Ljava/lang/String;
-extendable method net/minecraft/class_1214$class_1215 c ()I
-accessible method net/minecraft/class_1214$class_1215 c ()I
-extendable method net/minecraft/class_1214$class_1215 d ()Ljava/util/Map;
-accessible method net/minecraft/class_1214$class_1215 d ()Ljava/util/Map;
-accessible field net/minecraft/class_1214 a Lnet/minecraft/class_1214$class_1215;
-mutable field net/minecraft/class_1214 a Lnet/minecraft/class_1214$class_1215;
-accessible field net/minecraft/class_1214 b Ljava/lang/String;
-mutable field net/minecraft/class_1214 b Ljava/lang/String;
-accessible field net/minecraft/class_1214 c I
-mutable field net/minecraft/class_1214 c I
-accessible field net/minecraft/class_1214 d I
-mutable field net/minecraft/class_1214 d I
-extendable method net/minecraft/class_1214 a (Ljava/io/BufferedInputStream;)[B
-accessible method net/minecraft/class_1214 a (Ljava/io/BufferedInputStream;)[B
-accessible field net/minecraft/class_1216 a Lorg/apache/logging/log4j/Logger;
-mutable field net/minecraft/class_1216 a Lorg/apache/logging/log4j/Logger;
-accessible field net/minecraft/class_1216 b Lnet/minecraft/class_1216;
-mutable field net/minecraft/class_1216 b Lnet/minecraft/class_1216;
-accessible field net/minecraft/class_1217 a Lorg/apache/logging/log4j/Logger;
-mutable field net/minecraft/class_1217 a Lorg/apache/logging/log4j/Logger;
-accessible field net/minecraft/class_1217 b I
-mutable field net/minecraft/class_1217 b I
-accessible field net/minecraft/class_1217 c I
-mutable field net/minecraft/class_1217 c I
-accessible field net/minecraft/class_1217 d I
-mutable field net/minecraft/class_1217 d I
-accessible field net/minecraft/class_1217 e Ljava/nio/IntBuffer;
-mutable field net/minecraft/class_1217 e Ljava/nio/IntBuffer;
-accessible field net/minecraft/class_1217 f Ljava/nio/FloatBuffer;
-mutable field net/minecraft/class_1217 f Ljava/nio/FloatBuffer;
-accessible field net/minecraft/class_1217 g Ljava/lang/String;
-mutable field net/minecraft/class_1217 g Ljava/lang/String;
-accessible field net/minecraft/class_1217 h Z
-mutable field net/minecraft/class_1217 h Z
-accessible field net/minecraft/class_1217 i Lnet/minecraft/class_1211;
-mutable field net/minecraft/class_1217 i Lnet/minecraft/class_1211;
-extendable method net/minecraft/class_1217 h ()V
-accessible method net/minecraft/class_1217 h ()V
-extendable method net/minecraft/class_1217 i ()V
-accessible method net/minecraft/class_1217 i ()V
-extendable method net/minecraft/class_1217 j ()V
-accessible method net/minecraft/class_1217 j ()V
-extendable method net/minecraft/class_1217 k ()V
-accessible method net/minecraft/class_1217 k ()V
-accessible field net/minecraft/class_1218 a I
-mutable field net/minecraft/class_1218 a I
-accessible field net/minecraft/class_1218 b Z
-mutable field net/minecraft/class_1218 b Z
-accessible field net/minecraft/class_1218 c Z
-mutable field net/minecraft/class_1218 c Z
-accessible field net/minecraft/class_1218 d Z
-mutable field net/minecraft/class_1218 d Z
-accessible field net/minecraft/class_1218 e Z
-mutable field net/minecraft/class_1218 e Z
-accessible field net/minecraft/class_1219 f [I
-mutable field net/minecraft/class_1219 f [I
-accessible field net/minecraft/class_1219 g I
-mutable field net/minecraft/class_1219 g I
-accessible field net/minecraft/class_1219 h I
-mutable field net/minecraft/class_1219 h I
-accessible class net/minecraft/class_1221$1
-accessible field net/minecraft/class_1221 g Lorg/apache/logging/log4j/Logger;
-mutable field net/minecraft/class_1221 g Lorg/apache/logging/log4j/Logger;
-accessible field net/minecraft/class_1221 h Ljava/util/concurrent/atomic/AtomicInteger;
-mutable field net/minecraft/class_1221 h Ljava/util/concurrent/atomic/AtomicInteger;
-accessible field net/minecraft/class_1221 i Ljava/io/File;
-mutable field net/minecraft/class_1221 i Ljava/io/File;
-accessible field net/minecraft/class_1221 j Ljava/lang/String;
-mutable field net/minecraft/class_1221 j Ljava/lang/String;
-accessible field net/minecraft/class_1221 k Lnet/minecraft/class_1032;
-mutable field net/minecraft/class_1221 k Lnet/minecraft/class_1032;
-accessible field net/minecraft/class_1221 l Ljava/awt/image/BufferedImage;
-mutable field net/minecraft/class_1221 l Ljava/awt/image/BufferedImage;
-accessible field net/minecraft/class_1221 m Ljava/lang/Thread;
-mutable field net/minecraft/class_1221 m Ljava/lang/Thread;
-accessible field net/minecraft/class_1221 n Z
-mutable field net/minecraft/class_1221 n Z
-extendable method net/minecraft/class_1221 g ()V
-accessible method net/minecraft/class_1221 g ()V
-extendable method net/minecraft/class_1221 d ()V
-accessible method net/minecraft/class_1221 d ()V
-accessible field net/minecraft/class_1223 f Lorg/apache/logging/log4j/Logger;
-mutable field net/minecraft/class_1223 f Lorg/apache/logging/log4j/Logger;
-accessible field net/minecraft/class_1223 g Lnet/minecraft/server/MinecraftKey;
-mutable field net/minecraft/class_1223 g Lnet/minecraft/server/MinecraftKey;
-accessible field net/minecraft/class_1223 h Ljava/util/List;
-mutable field net/minecraft/class_1223 h Ljava/util/List;
-accessible field net/minecraft/class_1223 i Ljava/util/List;
-mutable field net/minecraft/class_1223 i Ljava/util/List;
-accessible field net/minecraft/class_1224 g Lorg/apache/logging/log4j/Logger;
-mutable field net/minecraft/class_1224 g Lorg/apache/logging/log4j/Logger;
-accessible field net/minecraft/class_1225 g Lorg/apache/logging/log4j/Logger;
-mutable field net/minecraft/class_1225 g Lorg/apache/logging/log4j/Logger;
-accessible field net/minecraft/class_1225 f Lnet/minecraft/server/MinecraftKey;
-mutable field net/minecraft/class_1225 f Lnet/minecraft/server/MinecraftKey;
-accessible field net/minecraft/class_1226$class_1227 a Lnet/minecraft/class_1231;
-mutable field net/minecraft/class_1226$class_1227 a Lnet/minecraft/class_1231;
-accessible field net/minecraft/class_1226$class_1227 b I
-mutable field net/minecraft/class_1226$class_1227 b I
-accessible field net/minecraft/class_1226$class_1227 c I
-mutable field net/minecraft/class_1226$class_1227 c I
-accessible field net/minecraft/class_1226$class_1227 d I
-mutable field net/minecraft/class_1226$class_1227 d I
-accessible field net/minecraft/class_1226$class_1227 e Z
-mutable field net/minecraft/class_1226$class_1227 e Z
-accessible field net/minecraft/class_1226$class_1227 f F
-mutable field net/minecraft/class_1226$class_1227 f F
-accessible field net/minecraft/class_1226$class_1228 a I
-mutable field net/minecraft/class_1226$class_1228 a I
-accessible field net/minecraft/class_1226$class_1228 b I
-mutable field net/minecraft/class_1226$class_1228 b I
-accessible field net/minecraft/class_1226$class_1228 c I
-mutable field net/minecraft/class_1226$class_1228 c I
-accessible field net/minecraft/class_1226$class_1228 d I
-mutable field net/minecraft/class_1226$class_1228 d I
-accessible field net/minecraft/class_1226$class_1228 e Ljava/util/List;
-mutable field net/minecraft/class_1226$class_1228 e Ljava/util/List;
-accessible field net/minecraft/class_1226$class_1228 f Lnet/minecraft/class_1226$class_1227;
-mutable field net/minecraft/class_1226$class_1228 f Lnet/minecraft/class_1226$class_1227;
-accessible field net/minecraft/class_1226 a I
-mutable field net/minecraft/class_1226 a I
-accessible field net/minecraft/class_1226 b Ljava/util/Set;
-mutable field net/minecraft/class_1226 b Ljava/util/Set;
-accessible field net/minecraft/class_1226 c Ljava/util/List;
-mutable field net/minecraft/class_1226 c Ljava/util/List;
-accessible field net/minecraft/class_1226 d I
-mutable field net/minecraft/class_1226 d I
-accessible field net/minecraft/class_1226 e I
-mutable field net/minecraft/class_1226 e I
-accessible field net/minecraft/class_1226 f I
-mutable field net/minecraft/class_1226 f I
-accessible field net/minecraft/class_1226 g I
-mutable field net/minecraft/class_1226 g I
-accessible field net/minecraft/class_1226 h Z
-mutable field net/minecraft/class_1226 h Z
-accessible field net/minecraft/class_1226 i I
-mutable field net/minecraft/class_1226 i I
-extendable method net/minecraft/class_1226 b (II)I
-accessible method net/minecraft/class_1226 b (II)I
-extendable method net/minecraft/class_1226 a (Lnet/minecraft/class_1226$class_1227;)Z
-accessible method net/minecraft/class_1226 a (Lnet/minecraft/class_1226$class_1227;)Z
-extendable method net/minecraft/class_1226 b (Lnet/minecraft/class_1226$class_1227;)Z
-accessible method net/minecraft/class_1226 b (Lnet/minecraft/class_1226$class_1227;)Z
-accessible field net/minecraft/class_1229 a Lnet/minecraft/class_1226$class_1227;
-mutable field net/minecraft/class_1229 a Lnet/minecraft/class_1226$class_1227;
-accessible class net/minecraft/class_1230$1
-accessible class net/minecraft/class_1230$2
-accessible class net/minecraft/class_1230$3
-accessible field net/minecraft/class_1230 h Lorg/apache/logging/log4j/Logger;
-mutable field net/minecraft/class_1230 h Lorg/apache/logging/log4j/Logger;
-accessible field net/minecraft/class_1230 i Ljava/util/List;
-mutable field net/minecraft/class_1230 i Ljava/util/List;
-accessible field net/minecraft/class_1230 j Ljava/util/Map;
-mutable field net/minecraft/class_1230 j Ljava/util/Map;
-accessible field net/minecraft/class_1230 k Ljava/util/Map;
-mutable field net/minecraft/class_1230 k Ljava/util/Map;
-accessible field net/minecraft/class_1230 l Ljava/lang/String;
-mutable field net/minecraft/class_1230 l Ljava/lang/String;
-accessible field net/minecraft/class_1230 m Lnet/minecraft/class_1222;
-mutable field net/minecraft/class_1230 m Lnet/minecraft/class_1222;
-accessible field net/minecraft/class_1230 n I
-mutable field net/minecraft/class_1230 n I
-accessible field net/minecraft/class_1230 o Lnet/minecraft/class_1231;
-mutable field net/minecraft/class_1230 o Lnet/minecraft/class_1231;
-extendable method net/minecraft/class_1230 g ()V
-accessible method net/minecraft/class_1230 g ()V
-extendable method net/minecraft/class_1230 a (Lnet/minecraft/server/MinecraftKey;I)Lnet/minecraft/server/MinecraftKey;
-accessible method net/minecraft/class_1230 a (Lnet/minecraft/server/MinecraftKey;I)Lnet/minecraft/server/MinecraftKey;
-accessible class net/minecraft/class_1231$1
-accessible field net/minecraft/class_1231 j Ljava/lang/String;
-mutable field net/minecraft/class_1231 j Ljava/lang/String;
-accessible field net/minecraft/class_1231 a Ljava/util/List;
-mutable field net/minecraft/class_1231 a Ljava/util/List;
-accessible field net/minecraft/class_1231 b [[I
-mutable field net/minecraft/class_1231 b [[I
-accessible field net/minecraft/class_1231 k Lnet/minecraft/class_1278;
-mutable field net/minecraft/class_1231 k Lnet/minecraft/class_1278;
-accessible field net/minecraft/class_1231 c Z
-mutable field net/minecraft/class_1231 c Z
-accessible field net/minecraft/class_1231 d I
-mutable field net/minecraft/class_1231 d I
-accessible field net/minecraft/class_1231 e I
-mutable field net/minecraft/class_1231 e I
-accessible field net/minecraft/class_1231 f I
-mutable field net/minecraft/class_1231 f I
-accessible field net/minecraft/class_1231 g I
-mutable field net/minecraft/class_1231 g I
-accessible field net/minecraft/class_1231 l F
-mutable field net/minecraft/class_1231 l F
-accessible field net/minecraft/class_1231 m F
-mutable field net/minecraft/class_1231 m F
-accessible field net/minecraft/class_1231 n F
-mutable field net/minecraft/class_1231 n F
-accessible field net/minecraft/class_1231 o F
-mutable field net/minecraft/class_1231 o F
-accessible field net/minecraft/class_1231 h I
-mutable field net/minecraft/class_1231 h I
-accessible field net/minecraft/class_1231 i I
-mutable field net/minecraft/class_1231 i I
-accessible field net/minecraft/class_1231 p Ljava/lang/String;
-mutable field net/minecraft/class_1231 p Ljava/lang/String;
-accessible field net/minecraft/class_1231 q Ljava/lang/String;
-mutable field net/minecraft/class_1231 q Ljava/lang/String;
-extendable method net/minecraft/class_1231 a (Lnet/minecraft/server/MinecraftKey;)Lnet/minecraft/class_1231;
-accessible method net/minecraft/class_1231 a (Lnet/minecraft/server/MinecraftKey;)Lnet/minecraft/class_1231;
-extendable method net/minecraft/class_1231 n ()V
-accessible method net/minecraft/class_1231 n ()V
-extendable method net/minecraft/class_1231 e (I)V
-accessible method net/minecraft/class_1231 e (I)V
-extendable method net/minecraft/class_1231 a ([[IIII)[[I
-accessible method net/minecraft/class_1231 a ([[IIII)[[I
-extendable method net/minecraft/class_1231 o ()V
-accessible method net/minecraft/class_1231 o ()V
-accessible class net/minecraft/class_1232$1
-accessible field net/minecraft/class_1232 a Lorg/apache/logging/log4j/Logger;
-mutable field net/minecraft/class_1232 a Lorg/apache/logging/log4j/Logger;
-accessible field net/minecraft/class_1232 b Ljava/util/Map;
-mutable field net/minecraft/class_1232 b Ljava/util/Map;
-accessible field net/minecraft/class_1232 c Ljava/util/List;
-mutable field net/minecraft/class_1232 c Ljava/util/List;
-accessible field net/minecraft/class_1232 d Ljava/util/Map;
-mutable field net/minecraft/class_1232 d Ljava/util/Map;
-accessible field net/minecraft/class_1232 e Lnet/minecraft/class_1258;
-mutable field net/minecraft/class_1232 e Lnet/minecraft/class_1258;
-accessible field net/minecraft/class_1234 c Lorg/apache/logging/log4j/Logger;
-mutable field net/minecraft/class_1234 c Lorg/apache/logging/log4j/Logger;
-accessible field net/minecraft/class_1234 d Ljava/nio/IntBuffer;
-mutable field net/minecraft/class_1234 d Ljava/nio/IntBuffer;
-accessible field net/minecraft/class_1234 e [I
-mutable field net/minecraft/class_1234 e [I
-extendable method net/minecraft/class_1234 a (IIIIZ)I
-accessible method net/minecraft/class_1234 a (IIIIZ)I
-extendable method net/minecraft/class_1234 a (IIIII)I
-accessible method net/minecraft/class_1234 a (IIIII)I
-extendable method net/minecraft/class_1234 a (I[IIIIIZZZ)V
-accessible method net/minecraft/class_1234 a (I[IIIIIZZZ)V
-extendable method net/minecraft/class_1234 a (Ljava/awt/image/BufferedImage;IIZZ)V
-accessible method net/minecraft/class_1234 a (Ljava/awt/image/BufferedImage;IIZZ)V
-extendable method net/minecraft/class_1234 a (Z)V
-accessible method net/minecraft/class_1234 a (Z)V
-extendable method net/minecraft/class_1234 b (Z)V
-accessible method net/minecraft/class_1234 b (Z)V
-extendable method net/minecraft/class_1234 a (ZZ)V
-accessible method net/minecraft/class_1234 a (ZZ)V
-extendable method net/minecraft/class_1234 a ([II)V
-accessible method net/minecraft/class_1234 a ([II)V
-extendable method net/minecraft/class_1234 b ([III)V
-accessible method net/minecraft/class_1234 b ([III)V
-extendable method net/minecraft/class_1234 b (I)V
-accessible method net/minecraft/class_1234 b (I)V
-accessible field net/minecraft/class_1237 j D
-mutable field net/minecraft/class_1237 j D
-accessible field net/minecraft/class_1237 k D
-mutable field net/minecraft/class_1237 k D
-accessible field net/minecraft/class_1240 a I
-mutable field net/minecraft/class_1240 a I
-accessible field net/minecraft/class_1240 b Lnet/minecraft/class_1241;
-mutable field net/minecraft/class_1240 b Lnet/minecraft/class_1241;
-accessible field net/minecraft/class_1240 c I
-mutable field net/minecraft/class_1240 c I
-accessible field net/minecraft/class_1241 a Lorg/apache/logging/log4j/Logger;
-mutable field net/minecraft/class_1241 a Lorg/apache/logging/log4j/Logger;
-accessible field net/minecraft/class_1241 b Ljava/util/List;
-mutable field net/minecraft/class_1241 b Ljava/util/List;
-accessible field net/minecraft/class_1241 c Ljava/util/List;
-mutable field net/minecraft/class_1241 c Ljava/util/List;
-accessible field net/minecraft/class_1241 d I
-mutable field net/minecraft/class_1241 d I
-accessible field net/minecraft/class_1241 e I
-mutable field net/minecraft/class_1241 e I
-accessible field net/minecraft/class_1241 f Ljava/util/List;
-mutable field net/minecraft/class_1241 f Ljava/util/List;
-accessible field net/minecraft/class_1241 g I
-mutable field net/minecraft/class_1241 g I
-extendable method net/minecraft/class_1241 j ()Z
-accessible method net/minecraft/class_1241 j ()Z
-extendable class net/minecraft/class_1242$class_1243
-accessible field net/minecraft/class_1242$class_1243 h I
-mutable field net/minecraft/class_1242$class_1243 h I
-accessible field net/minecraft/class_1242$class_1243 i Ljava/lang/String;
-mutable field net/minecraft/class_1242$class_1243 i Ljava/lang/String;
-accessible field net/minecraft/class_1242$class_1243 j I
-mutable field net/minecraft/class_1242$class_1243 j I
-extendable class net/minecraft/class_1242$class_1244
-accessible field net/minecraft/class_1242$class_1244 h Ljava/lang/String;
-mutable field net/minecraft/class_1242$class_1244 h Ljava/lang/String;
-accessible field net/minecraft/class_1242 a Lorg/apache/logging/log4j/Logger;
-mutable field net/minecraft/class_1242 a Lorg/apache/logging/log4j/Logger;
-accessible field net/minecraft/class_1242 b Lnet/minecraft/class_1242$class_1243;
-mutable field net/minecraft/class_1242 b Lnet/minecraft/class_1242$class_1243;
-accessible field net/minecraft/class_1242 c Lnet/minecraft/class_1242$class_1244;
-mutable field net/minecraft/class_1242 c Lnet/minecraft/class_1242$class_1244;
-accessible field net/minecraft/class_1242 d I
-mutable field net/minecraft/class_1242 d I
-accessible field net/minecraft/class_1242 e I
-mutable field net/minecraft/class_1242 e I
-extendable method net/minecraft/class_1242 a (ILnet/minecraft/class_1242$class_1244;)Z
-accessible method net/minecraft/class_1242 a (ILnet/minecraft/class_1242$class_1244;)Z
-accessible field net/minecraft/class_1245 b Lorg/apache/logging/log4j/Logger;
-mutable field net/minecraft/class_1245 b Lorg/apache/logging/log4j/Logger;
-accessible field net/minecraft/class_1245 a Ljava/io/File;
-mutable field net/minecraft/class_1245 a Ljava/io/File;
-extendable method net/minecraft/class_1245 c (Lnet/minecraft/server/MinecraftKey;)Ljava/lang/String;
-accessible method net/minecraft/class_1245 c (Lnet/minecraft/server/MinecraftKey;)Ljava/lang/String;
-extendable method net/minecraft/class_1245 a (Ljava/io/File;Ljava/io/File;)Ljava/lang/String;
-accessible method net/minecraft/class_1245 a (Ljava/io/File;Ljava/io/File;)Ljava/lang/String;
-extendable method net/minecraft/class_1245 a (Ljava/lang/String;)Ljava/io/InputStream;
-accessible method net/minecraft/class_1245 a (Ljava/lang/String;)Ljava/io/InputStream;
-extendable method net/minecraft/class_1245 b (Ljava/lang/String;)Z
-accessible method net/minecraft/class_1245 b (Ljava/lang/String;)Z
-extendable method net/minecraft/class_1245 c (Ljava/lang/String;)V
-accessible method net/minecraft/class_1245 c (Ljava/lang/String;)V
-extendable method net/minecraft/class_1245 a (Lnet/minecraft/class_1275;Ljava/io/InputStream;Ljava/lang/String;)Lnet/minecraft/class_1273;
-accessible method net/minecraft/class_1245 a (Lnet/minecraft/class_1275;Ljava/io/InputStream;Ljava/lang/String;)Lnet/minecraft/class_1273;
-accessible field net/minecraft/class_1246 a Lorg/apache/logging/log4j/Logger;
-mutable field net/minecraft/class_1246 a Lorg/apache/logging/log4j/Logger;
-accessible field net/minecraft/class_1246 b Ljava/util/Map;
-mutable field net/minecraft/class_1246 b Ljava/util/Map;
-accessible field net/minecraft/class_1247 a Lnet/minecraft/server/MinecraftKey;
-mutable field net/minecraft/class_1247 a Lnet/minecraft/server/MinecraftKey;
-accessible field net/minecraft/class_1247 b Lnet/minecraft/server/MinecraftKey;
-mutable field net/minecraft/class_1247 b Lnet/minecraft/server/MinecraftKey;
-extendable method net/minecraft/class_1247 c (Ljava/util/UUID;)Z
-accessible method net/minecraft/class_1247 c (Ljava/util/UUID;)Z
-accessible field net/minecraft/class_1249 b Ljava/util/Map;
-mutable field net/minecraft/class_1249 b Ljava/util/Map;
-extendable method net/minecraft/class_1249 d (Lnet/minecraft/server/MinecraftKey;)Ljava/io/InputStream;
-accessible method net/minecraft/class_1249 d (Lnet/minecraft/server/MinecraftKey;)Ljava/io/InputStream;
-accessible class net/minecraft/class_1250$class_1251
-accessible field net/minecraft/class_1250$class_1251 a Ljava/io/InputStream;
-mutable field net/minecraft/class_1250$class_1251 a Ljava/io/InputStream;
-accessible field net/minecraft/class_1250$class_1251 b Ljava/lang/String;
-mutable field net/minecraft/class_1250$class_1251 b Ljava/lang/String;
-accessible field net/minecraft/class_1250$class_1251 c Z
-mutable field net/minecraft/class_1250$class_1251 c Z
-extendable method net/minecraft/class_1250$class_1251 finalize ()V
-accessible method net/minecraft/class_1250$class_1251 finalize ()V
-accessible field net/minecraft/class_1250 b Lorg/apache/logging/log4j/Logger;
-mutable field net/minecraft/class_1250 b Lorg/apache/logging/log4j/Logger;
-accessible field net/minecraft/class_1250 a Ljava/util/List;
-mutable field net/minecraft/class_1250 a Ljava/util/List;
-accessible field net/minecraft/class_1250 c Lnet/minecraft/class_1275;
-mutable field net/minecraft/class_1250 c Lnet/minecraft/class_1275;
-extendable method net/minecraft/class_1250 a (Lnet/minecraft/server/MinecraftKey;Lnet/minecraft/class_1260;)Ljava/io/InputStream;
-accessible method net/minecraft/class_1250 a (Lnet/minecraft/server/MinecraftKey;Lnet/minecraft/class_1260;)Ljava/io/InputStream;
-extendable method net/minecraft/class_1250 c (Lnet/minecraft/server/MinecraftKey;)Lnet/minecraft/server/MinecraftKey;
-accessible method net/minecraft/class_1250 c (Lnet/minecraft/server/MinecraftKey;)Lnet/minecraft/server/MinecraftKey;
-accessible field net/minecraft/class_1252 c Ljava/util/zip/ZipFile;
-mutable field net/minecraft/class_1252 c Ljava/util/zip/ZipFile;
-extendable method net/minecraft/class_1252 d ()Ljava/util/zip/ZipFile;
-accessible method net/minecraft/class_1252 d ()Ljava/util/zip/ZipFile;
-extendable method net/minecraft/class_1252 a (Ljava/lang/String;)Ljava/io/InputStream;
-accessible method net/minecraft/class_1252 a (Ljava/lang/String;)Ljava/io/InputStream;
-extendable method net/minecraft/class_1252 finalize ()V
-accessible method net/minecraft/class_1252 finalize ()V
-extendable method net/minecraft/class_1253 a (Ljava/lang/String;)Ljava/io/InputStream;
-accessible method net/minecraft/class_1253 a (Ljava/lang/String;)Ljava/io/InputStream;
-extendable method net/minecraft/class_1253 b (Ljava/lang/String;)Z
-accessible method net/minecraft/class_1253 b (Ljava/lang/String;)Z
-accessible field net/minecraft/class_1254 a Lnet/minecraft/server/MinecraftKey;
-mutable field net/minecraft/class_1254 a Lnet/minecraft/server/MinecraftKey;
-accessible field net/minecraft/class_1255 a Lnet/minecraft/server/MinecraftKey;
-mutable field net/minecraft/class_1255 a Lnet/minecraft/server/MinecraftKey;
-extendable class net/minecraft/class_1262$1
-accessible class net/minecraft/class_1262$2
-accessible class net/minecraft/class_1262$3
-accessible field net/minecraft/class_1262$class_1263 b Ljava/io/File;
-mutable field net/minecraft/class_1262$class_1263 b Ljava/io/File;
-accessible field net/minecraft/class_1262$class_1263 c Lnet/minecraft/class_1260;
-mutable field net/minecraft/class_1262$class_1263 c Lnet/minecraft/class_1260;
-accessible field net/minecraft/class_1262$class_1263 d Lnet/minecraft/class_1284;
-mutable field net/minecraft/class_1262$class_1263 d Lnet/minecraft/class_1284;
-accessible field net/minecraft/class_1262$class_1263 e Ljava/awt/image/BufferedImage;
-mutable field net/minecraft/class_1262$class_1263 e Ljava/awt/image/BufferedImage;
-accessible field net/minecraft/class_1262$class_1263 f Lnet/minecraft/server/MinecraftKey;
-mutable field net/minecraft/class_1262$class_1263 f Lnet/minecraft/server/MinecraftKey;
-accessible field net/minecraft/class_1262 c Lorg/apache/logging/log4j/Logger;
-mutable field net/minecraft/class_1262 c Lorg/apache/logging/log4j/Logger;
-accessible field net/minecraft/class_1262 d Ljava/io/FileFilter;
-mutable field net/minecraft/class_1262 d Ljava/io/FileFilter;
-accessible field net/minecraft/class_1262 e Ljava/io/File;
-mutable field net/minecraft/class_1262 e Ljava/io/File;
-accessible field net/minecraft/class_1262 f Ljava/io/File;
-mutable field net/minecraft/class_1262 f Ljava/io/File;
-accessible field net/minecraft/class_1262 g Lnet/minecraft/class_1260;
-mutable field net/minecraft/class_1262 g Lnet/minecraft/class_1260;
-accessible field net/minecraft/class_1262 h Ljava/util/concurrent/locks/ReentrantLock;
-mutable field net/minecraft/class_1262 h Ljava/util/concurrent/locks/ReentrantLock;
-accessible field net/minecraft/class_1262 i Lcom/google/common/util/concurrent/ListenableFuture;
-mutable field net/minecraft/class_1262 i Lcom/google/common/util/concurrent/ListenableFuture;
-accessible field net/minecraft/class_1262 j Ljava/util/List;
-mutable field net/minecraft/class_1262 j Ljava/util/List;
-accessible field net/minecraft/class_1262 k Ljava/util/List;
-mutable field net/minecraft/class_1262 k Ljava/util/List;
-extendable method net/minecraft/class_1262 g ()V
-accessible method net/minecraft/class_1262 g ()V
-extendable method net/minecraft/class_1262 h ()Ljava/util/List;
-accessible method net/minecraft/class_1262 h ()Ljava/util/List;
-extendable method net/minecraft/class_1262 i ()V
-accessible method net/minecraft/class_1262 i ()V
-accessible class net/minecraft/class_1264$1
-accessible field net/minecraft/class_1264 a Lorg/apache/logging/log4j/Logger;
-mutable field net/minecraft/class_1264 a Lorg/apache/logging/log4j/Logger;
-accessible field net/minecraft/class_1264 b Lcom/google/common/base/Joiner;
-mutable field net/minecraft/class_1264 b Lcom/google/common/base/Joiner;
-accessible field net/minecraft/class_1264 c Ljava/util/Map;
-mutable field net/minecraft/class_1264 c Ljava/util/Map;
-accessible field net/minecraft/class_1264 d Ljava/util/List;
-mutable field net/minecraft/class_1264 d Ljava/util/List;
-accessible field net/minecraft/class_1264 e Ljava/util/Set;
-mutable field net/minecraft/class_1264 e Ljava/util/Set;
-accessible field net/minecraft/class_1264 f Lnet/minecraft/class_1275;
-mutable field net/minecraft/class_1264 f Lnet/minecraft/class_1275;
-extendable method net/minecraft/class_1264 b ()V
-accessible method net/minecraft/class_1264 b ()V
-extendable method net/minecraft/class_1264 c ()V
-accessible method net/minecraft/class_1264 c ()V
-accessible field net/minecraft/class_1265 a Ljava/util/Map;
-mutable field net/minecraft/class_1265 a Ljava/util/Map;
-accessible field net/minecraft/class_1265 b Ljava/lang/String;
-mutable field net/minecraft/class_1265 b Ljava/lang/String;
-accessible field net/minecraft/class_1265 c Lnet/minecraft/server/MinecraftKey;
-mutable field net/minecraft/class_1265 c Lnet/minecraft/server/MinecraftKey;
-accessible field net/minecraft/class_1265 d Ljava/io/InputStream;
-mutable field net/minecraft/class_1265 d Ljava/io/InputStream;
-accessible field net/minecraft/class_1265 e Ljava/io/InputStream;
-mutable field net/minecraft/class_1265 e Ljava/io/InputStream;
-accessible field net/minecraft/class_1265 f Lnet/minecraft/class_1275;
-mutable field net/minecraft/class_1265 f Lnet/minecraft/class_1275;
-accessible field net/minecraft/class_1265 g Z
-mutable field net/minecraft/class_1265 g Z
-accessible field net/minecraft/class_1265 h Lcom/google/gson/JsonObject;
-mutable field net/minecraft/class_1265 h Lcom/google/gson/JsonObject;
-accessible class net/minecraft/class_1266$1
-accessible class net/minecraft/class_1266$2
-accessible class net/minecraft/class_1266$3$1
-accessible class net/minecraft/class_1266$3
-accessible field net/minecraft/class_1266 a Ljava/util/concurrent/ExecutorService;
-mutable field net/minecraft/class_1266 a Ljava/util/concurrent/ExecutorService;
-accessible field net/minecraft/class_1266 b Lnet/minecraft/class_1232;
-mutable field net/minecraft/class_1266 b Lnet/minecraft/class_1232;
-accessible field net/minecraft/class_1266 c Ljava/io/File;
-mutable field net/minecraft/class_1266 c Ljava/io/File;
-accessible field net/minecraft/class_1266 d Lcom/mojang/authlib/minecraft/MinecraftSessionService;
-mutable field net/minecraft/class_1266 d Lcom/mojang/authlib/minecraft/MinecraftSessionService;
-accessible field net/minecraft/class_1266 e Lcom/google/common/cache/LoadingCache;
-mutable field net/minecraft/class_1266 e Lcom/google/common/cache/LoadingCache;
-accessible field net/minecraft/class_1268 a Lnet/minecraft/class_1271;
-mutable field net/minecraft/class_1268 a Lnet/minecraft/class_1271;
-extendable method net/minecraft/class_1268 a (Lnet/minecraft/class_1271;)V
-accessible method net/minecraft/class_1268 a (Lnet/minecraft/class_1271;)V
-accessible field net/minecraft/class_1269 a Ljava/lang/String;
-mutable field net/minecraft/class_1269 a Ljava/lang/String;
-accessible field net/minecraft/class_1269 b Ljava/lang/String;
-mutable field net/minecraft/class_1269 b Ljava/lang/String;
-accessible field net/minecraft/class_1269 c Ljava/lang/String;
-mutable field net/minecraft/class_1269 c Ljava/lang/String;
-accessible field net/minecraft/class_1269 d Z
-mutable field net/minecraft/class_1269 d Z
-accessible field net/minecraft/class_1270 b Lorg/apache/logging/log4j/Logger;
-mutable field net/minecraft/class_1270 b Lorg/apache/logging/log4j/Logger;
-accessible field net/minecraft/class_1270 c Lnet/minecraft/class_1275;
-mutable field net/minecraft/class_1270 c Lnet/minecraft/class_1275;
-accessible field net/minecraft/class_1270 d Ljava/lang/String;
-mutable field net/minecraft/class_1270 d Ljava/lang/String;
-accessible field net/minecraft/class_1270 a Lnet/minecraft/class_1271;
-mutable field net/minecraft/class_1270 a Lnet/minecraft/class_1271;
-accessible field net/minecraft/class_1270 e Ljava/util/Map;
-mutable field net/minecraft/class_1270 e Ljava/util/Map;
-accessible field net/minecraft/class_1271 b Lcom/google/common/base/Splitter;
-mutable field net/minecraft/class_1271 b Lcom/google/common/base/Splitter;
-accessible field net/minecraft/class_1271 c Ljava/util/regex/Pattern;
-mutable field net/minecraft/class_1271 c Ljava/util/regex/Pattern;
-accessible field net/minecraft/class_1271 a Ljava/util/Map;
-mutable field net/minecraft/class_1271 a Ljava/util/Map;
-accessible field net/minecraft/class_1271 d Z
-mutable field net/minecraft/class_1271 d Z
-extendable method net/minecraft/class_1271 b ()V
-accessible method net/minecraft/class_1271 b ()V
-extendable method net/minecraft/class_1271 a (Ljava/util/List;)V
-accessible method net/minecraft/class_1271 a (Ljava/util/List;)V
-extendable method net/minecraft/class_1271 a (Ljava/io/InputStream;)V
-accessible method net/minecraft/class_1271 a (Ljava/io/InputStream;)V
-extendable method net/minecraft/class_1271 b (Ljava/lang/String;)Ljava/lang/String;
-accessible method net/minecraft/class_1271 b (Ljava/lang/String;)Ljava/lang/String;
-accessible class net/minecraft/class_1275$class_1276
-accessible field net/minecraft/class_1275$class_1276 a Lnet/minecraft/class_1274;
-mutable field net/minecraft/class_1275$class_1276 a Lnet/minecraft/class_1274;
-accessible field net/minecraft/class_1275$class_1276 b Ljava/lang/Class;
-mutable field net/minecraft/class_1275$class_1276 b Ljava/lang/Class;
-accessible field net/minecraft/class_1275 a Lnet/minecraft/server/IRegistry;
-mutable field net/minecraft/class_1275 a Lnet/minecraft/server/IRegistry;
-accessible field net/minecraft/class_1275 b Lcom/google/gson/GsonBuilder;
-mutable field net/minecraft/class_1275 b Lcom/google/gson/GsonBuilder;
-accessible field net/minecraft/class_1275 c Lcom/google/gson/Gson;
-mutable field net/minecraft/class_1275 c Lcom/google/gson/Gson;
-extendable method net/minecraft/class_1275 a ()Lcom/google/gson/Gson;
-accessible method net/minecraft/class_1275 a ()Lcom/google/gson/Gson;
-accessible field net/minecraft/class_1277 a I
-mutable field net/minecraft/class_1277 a I
-accessible field net/minecraft/class_1277 b I
-mutable field net/minecraft/class_1277 b I
-accessible field net/minecraft/class_1278 a Ljava/util/List;
-mutable field net/minecraft/class_1278 a Ljava/util/List;
-accessible field net/minecraft/class_1278 b I
-mutable field net/minecraft/class_1278 b I
-accessible field net/minecraft/class_1278 c I
-mutable field net/minecraft/class_1278 c I
-accessible field net/minecraft/class_1278 d I
-mutable field net/minecraft/class_1278 d I
-accessible field net/minecraft/class_1278 e Z
-mutable field net/minecraft/class_1278 e Z
-extendable method net/minecraft/class_1278 d (I)Lnet/minecraft/class_1277;
-accessible method net/minecraft/class_1278 d (I)Lnet/minecraft/class_1277;
-extendable method net/minecraft/class_1279 a (ILcom/google/gson/JsonElement;)Lnet/minecraft/class_1277;
-accessible method net/minecraft/class_1279 a (ILcom/google/gson/JsonElement;)Lnet/minecraft/class_1277;
-accessible field net/minecraft/class_1280 a [F
-mutable field net/minecraft/class_1280 a [F
-accessible field net/minecraft/class_1280 b [F
-mutable field net/minecraft/class_1280 b [F
-accessible field net/minecraft/class_1280 c [F
-mutable field net/minecraft/class_1280 c [F
-accessible field net/minecraft/class_1282 a Ljava/util/Collection;
-mutable field net/minecraft/class_1282 a Ljava/util/Collection;
-accessible field net/minecraft/class_1284 a Lnet/minecraft/server/IChatBaseComponent;
-mutable field net/minecraft/class_1284 a Lnet/minecraft/server/IChatBaseComponent;
-accessible field net/minecraft/class_1284 b I
-mutable field net/minecraft/class_1284 b I
-accessible field net/minecraft/class_1286 a Z
-mutable field net/minecraft/class_1286 a Z
-accessible field net/minecraft/class_1286 b Z
-mutable field net/minecraft/class_1286 b Z
-accessible field net/minecraft/class_1286 c Ljava/util/List;
-mutable field net/minecraft/class_1286 c Ljava/util/List;
-extendable class net/minecraft/class_1289
-accessible field net/minecraft/class_1289 q Ljava/util/Map;
-mutable field net/minecraft/class_1289 q Ljava/util/Map;
-accessible field net/minecraft/class_1289 r I
-mutable field net/minecraft/class_1289 r I
-accessible field net/minecraft/class_1289 s Lorg/lwjgl/util/vector/Matrix4f;
-mutable field net/minecraft/class_1289 s Lorg/lwjgl/util/vector/Matrix4f;
-accessible field net/minecraft/class_1289 t I
-mutable field net/minecraft/class_1289 t I
-accessible field net/minecraft/class_1289 u I
-mutable field net/minecraft/class_1289 u I
-extendable method net/minecraft/class_1289 b (II)I
-accessible method net/minecraft/class_1289 b (II)I
-accessible field net/minecraft/class_1290 a Lnet/minecraft/class_1080;
-mutable field net/minecraft/class_1290 a Lnet/minecraft/class_1080;
-accessible class net/minecraft/class_1291$1
-accessible class net/minecraft/class_1291$2
-accessible field net/minecraft/class_1291 b Ljava/util/Set;
-mutable field net/minecraft/class_1291 b Ljava/util/Set;
-accessible field net/minecraft/class_1291 c Lorg/apache/logging/log4j/Logger;
-mutable field net/minecraft/class_1291 c Lorg/apache/logging/log4j/Logger;
-accessible field net/minecraft/class_1291 a Lnet/minecraft/class_1293;
-mutable field net/minecraft/class_1291 a Lnet/minecraft/class_1293;
-accessible field net/minecraft/class_1291 d Ljava/util/Map;
-mutable field net/minecraft/class_1291 d Ljava/util/Map;
-accessible field net/minecraft/class_1291 e Lcom/google/common/base/Joiner;
-mutable field net/minecraft/class_1291 e Lcom/google/common/base/Joiner;
-accessible field net/minecraft/class_1291 f Lnet/minecraft/class_1258;
-mutable field net/minecraft/class_1291 f Lnet/minecraft/class_1258;
-accessible field net/minecraft/class_1291 g Ljava/util/Map;
-mutable field net/minecraft/class_1291 g Ljava/util/Map;
-accessible field net/minecraft/class_1291 h Ljava/util/Map;
-mutable field net/minecraft/class_1291 h Ljava/util/Map;
-accessible field net/minecraft/class_1291 i Ljava/util/Map;
-mutable field net/minecraft/class_1291 i Ljava/util/Map;
-accessible field net/minecraft/class_1291 j Lnet/minecraft/class_1230;
-mutable field net/minecraft/class_1291 j Lnet/minecraft/class_1230;
-accessible field net/minecraft/class_1291 k Lnet/minecraft/class_1047;
-mutable field net/minecraft/class_1291 k Lnet/minecraft/class_1047;
-accessible field net/minecraft/class_1291 l Lnet/minecraft/class_1074;
-mutable field net/minecraft/class_1291 l Lnet/minecraft/class_1074;
-accessible field net/minecraft/class_1291 m Lnet/minecraft/class_1075;
-mutable field net/minecraft/class_1291 m Lnet/minecraft/class_1075;
-accessible field net/minecraft/class_1291 n Lnet/minecraft/server/RegistrySimple;
-mutable field net/minecraft/class_1291 n Lnet/minecraft/server/RegistrySimple;
-accessible field net/minecraft/class_1291 o Lnet/minecraft/class_1063;
-mutable field net/minecraft/class_1291 o Lnet/minecraft/class_1063;
-accessible field net/minecraft/class_1291 p Lnet/minecraft/class_1063;
-mutable field net/minecraft/class_1291 p Lnet/minecraft/class_1063;
-accessible field net/minecraft/class_1291 q Lnet/minecraft/class_1063;
-mutable field net/minecraft/class_1291 q Lnet/minecraft/class_1063;
-accessible field net/minecraft/class_1291 r Lnet/minecraft/class_1063;
-mutable field net/minecraft/class_1291 r Lnet/minecraft/class_1063;
-accessible field net/minecraft/class_1291 s Ljava/util/Map;
-mutable field net/minecraft/class_1291 s Ljava/util/Map;
-accessible field net/minecraft/class_1291 t Ljava/util/Map;
-mutable field net/minecraft/class_1291 t Ljava/util/Map;
-accessible field net/minecraft/class_1291 u Ljava/util/Map;
-mutable field net/minecraft/class_1291 u Ljava/util/Map;
-extendable method net/minecraft/class_1291 b ()V
-accessible method net/minecraft/class_1291 b ()V
-extendable method net/minecraft/class_1291 a (Ljava/util/Collection;)V
-accessible method net/minecraft/class_1291 a (Ljava/util/Collection;)V
-extendable method net/minecraft/class_1291 a (Lnet/minecraft/class_1067;Lnet/minecraft/class_1293;)V
-accessible method net/minecraft/class_1291 a (Lnet/minecraft/class_1067;Lnet/minecraft/class_1293;)V
-extendable method net/minecraft/class_1291 a (Lnet/minecraft/server/MinecraftKey;)Lnet/minecraft/class_1067;
-accessible method net/minecraft/class_1291 a (Lnet/minecraft/server/MinecraftKey;)Lnet/minecraft/class_1067;
-extendable method net/minecraft/class_1291 b (Lnet/minecraft/server/MinecraftKey;)Lnet/minecraft/server/MinecraftKey;
-accessible method net/minecraft/class_1291 b (Lnet/minecraft/server/MinecraftKey;)Lnet/minecraft/server/MinecraftKey;
-extendable method net/minecraft/class_1291 c ()V
-accessible method net/minecraft/class_1291 c ()V
-extendable method net/minecraft/class_1291 c (Lnet/minecraft/server/MinecraftKey;)Lnet/minecraft/class_1063;
-accessible method net/minecraft/class_1291 c (Lnet/minecraft/server/MinecraftKey;)Lnet/minecraft/class_1063;
-extendable method net/minecraft/class_1291 d (Lnet/minecraft/server/MinecraftKey;)Lnet/minecraft/server/MinecraftKey;
-accessible method net/minecraft/class_1291 d (Lnet/minecraft/server/MinecraftKey;)Lnet/minecraft/server/MinecraftKey;
-extendable method net/minecraft/class_1291 d ()V
-accessible method net/minecraft/class_1291 d ()V
-extendable method net/minecraft/class_1291 e ()V
-accessible method net/minecraft/class_1291 e ()V
-extendable method net/minecraft/class_1291 a (Lnet/minecraft/server/Item;)Ljava/util/List;
-accessible method net/minecraft/class_1291 a (Lnet/minecraft/server/Item;)Ljava/util/List;
-extendable method net/minecraft/class_1291 a (Ljava/lang/String;)Lnet/minecraft/server/MinecraftKey;
-accessible method net/minecraft/class_1291 a (Ljava/lang/String;)Lnet/minecraft/server/MinecraftKey;
-extendable method net/minecraft/class_1291 f ()V
-accessible method net/minecraft/class_1291 f ()V
-extendable method net/minecraft/class_1291 g ()Ljava/util/Set;
-accessible method net/minecraft/class_1291 g ()Ljava/util/Set;
-extendable method net/minecraft/class_1291 a (Lnet/minecraft/class_1063;Lnet/minecraft/class_1289;Z)Lnet/minecraft/class_1288;
-accessible method net/minecraft/class_1291 a (Lnet/minecraft/class_1063;Lnet/minecraft/class_1289;Z)Lnet/minecraft/class_1288;
-extendable method net/minecraft/class_1291 a (Lnet/minecraft/class_1056;Lnet/minecraft/class_1058;Lnet/minecraft/class_1231;Lnet/minecraft/server/EnumDirection;Lnet/minecraft/class_1289;Z)Lnet/minecraft/class_1055;
-accessible method net/minecraft/class_1291 a (Lnet/minecraft/class_1056;Lnet/minecraft/class_1058;Lnet/minecraft/class_1231;Lnet/minecraft/server/EnumDirection;Lnet/minecraft/class_1289;Z)Lnet/minecraft/class_1055;
-extendable method net/minecraft/class_1291 h ()V
-accessible method net/minecraft/class_1291 h ()V
-extendable method net/minecraft/class_1291 i ()V
-accessible method net/minecraft/class_1291 i ()V
-extendable method net/minecraft/class_1291 e (Lnet/minecraft/server/MinecraftKey;)Ljava/util/List;
-accessible method net/minecraft/class_1291 e (Lnet/minecraft/server/MinecraftKey;)Ljava/util/List;
-extendable method net/minecraft/class_1291 f (Lnet/minecraft/server/MinecraftKey;)Lnet/minecraft/server/MinecraftKey;
-accessible method net/minecraft/class_1291 f (Lnet/minecraft/server/MinecraftKey;)Lnet/minecraft/server/MinecraftKey;
-extendable method net/minecraft/class_1291 a (Lnet/minecraft/class_1063;)Ljava/util/Set;
-accessible method net/minecraft/class_1291 a (Lnet/minecraft/class_1063;)Ljava/util/Set;
-extendable method net/minecraft/class_1291 j ()V
-accessible method net/minecraft/class_1291 j ()V
-extendable method net/minecraft/class_1291 k ()Ljava/util/Set;
-accessible method net/minecraft/class_1291 k ()Ljava/util/Set;
-extendable method net/minecraft/class_1291 b (Lnet/minecraft/class_1063;)Z
-accessible method net/minecraft/class_1291 b (Lnet/minecraft/class_1063;)Z
-extendable method net/minecraft/class_1291 c (Lnet/minecraft/class_1063;)Z
-accessible method net/minecraft/class_1291 c (Lnet/minecraft/class_1063;)Z
-extendable method net/minecraft/class_1291 l ()V
-accessible method net/minecraft/class_1291 l ()V
-extendable method net/minecraft/class_1291 d (Lnet/minecraft/class_1063;)Lnet/minecraft/class_1063;
-accessible method net/minecraft/class_1291 d (Lnet/minecraft/class_1063;)Lnet/minecraft/class_1063;
-accessible field net/minecraft/class_1292 a Lnet/minecraft/server/IRegistry;
-mutable field net/minecraft/class_1292 a Lnet/minecraft/server/IRegistry;
-accessible field net/minecraft/class_1292 b Lnet/minecraft/class_1230;
-mutable field net/minecraft/class_1292 b Lnet/minecraft/class_1230;
-accessible field net/minecraft/class_1292 c Lnet/minecraft/class_1047;
-mutable field net/minecraft/class_1292 c Lnet/minecraft/class_1047;
-accessible field net/minecraft/class_1292 d Lnet/minecraft/class_1288;
-mutable field net/minecraft/class_1292 d Lnet/minecraft/class_1288;
-accessible field net/minecraft/class_1293 c Ljava/lang/String;
-mutable field net/minecraft/class_1293 c Ljava/lang/String;
-extendable method net/minecraft/class_1293 b (Ljava/lang/String;)[Ljava/lang/String;
-accessible method net/minecraft/class_1293 b (Ljava/lang/String;)[Ljava/lang/String;
-accessible field net/minecraft/class_1294$class_1295 a Ljava/util/List;
-mutable field net/minecraft/class_1294$class_1295 a Ljava/util/List;
-accessible field net/minecraft/class_1294$class_1295 b Ljava/util/List;
-mutable field net/minecraft/class_1294$class_1295 b Ljava/util/List;
-accessible field net/minecraft/class_1294$class_1295 c Z
-mutable field net/minecraft/class_1294$class_1295 c Z
-accessible field net/minecraft/class_1294$class_1295 d Lnet/minecraft/class_1231;
-mutable field net/minecraft/class_1294$class_1295 d Lnet/minecraft/class_1231;
-accessible field net/minecraft/class_1294$class_1295 e Z
-mutable field net/minecraft/class_1294$class_1295 e Z
-accessible field net/minecraft/class_1294$class_1295 f Lnet/minecraft/class_1080;
-mutable field net/minecraft/class_1294$class_1295 f Lnet/minecraft/class_1080;
-extendable method net/minecraft/class_1294$class_1295 a (Lnet/minecraft/class_1288;Lnet/minecraft/class_1231;Lnet/minecraft/server/EnumDirection;)V
-accessible method net/minecraft/class_1294$class_1295 a (Lnet/minecraft/class_1288;Lnet/minecraft/class_1231;Lnet/minecraft/server/EnumDirection;)V
-extendable method net/minecraft/class_1294$class_1295 a (Lnet/minecraft/class_1288;Lnet/minecraft/class_1231;)V
-accessible method net/minecraft/class_1294$class_1295 a (Lnet/minecraft/class_1288;Lnet/minecraft/class_1231;)V
-accessible field net/minecraft/class_1294 a Ljava/util/List;
-mutable field net/minecraft/class_1294 a Ljava/util/List;
-accessible field net/minecraft/class_1294 b Ljava/util/List;
-mutable field net/minecraft/class_1294 b Ljava/util/List;
-accessible field net/minecraft/class_1294 c Z
-mutable field net/minecraft/class_1294 c Z
-accessible field net/minecraft/class_1294 d Z
-mutable field net/minecraft/class_1294 d Z
-accessible field net/minecraft/class_1294 e Lnet/minecraft/class_1231;
-mutable field net/minecraft/class_1294 e Lnet/minecraft/class_1231;
-accessible field net/minecraft/class_1294 f Lnet/minecraft/class_1080;
-mutable field net/minecraft/class_1294 f Lnet/minecraft/class_1080;
-accessible field net/minecraft/class_1296$class_1297 a Ljava/util/List;
-mutable field net/minecraft/class_1296$class_1297 a Ljava/util/List;
-accessible class net/minecraft/class_1296$class_1298
-accessible field net/minecraft/class_1296$class_1298 b Lnet/minecraft/class_1288;
-mutable field net/minecraft/class_1296$class_1298 b Lnet/minecraft/class_1288;
-extendable method net/minecraft/class_1296$class_1298 a ()I
-accessible method net/minecraft/class_1296$class_1298 a ()I
-accessible field net/minecraft/class_1296 a I
-mutable field net/minecraft/class_1296 a I
-accessible field net/minecraft/class_1296 b Ljava/util/List;
-mutable field net/minecraft/class_1296 b Ljava/util/List;
-accessible field net/minecraft/class_1296 c Lnet/minecraft/class_1288;
-mutable field net/minecraft/class_1296 c Lnet/minecraft/class_1288;
-accessible field net/minecraft/class_1300 a Lnet/minecraft/server/MinecraftKey;
-mutable field net/minecraft/class_1300 a Lnet/minecraft/server/MinecraftKey;
-accessible field net/minecraft/class_1300 b F
-mutable field net/minecraft/class_1300 b F
-accessible field net/minecraft/class_1300 c F
-mutable field net/minecraft/class_1300 c F
-accessible field net/minecraft/class_1300 d F
-mutable field net/minecraft/class_1300 d F
-accessible field net/minecraft/class_1300 e F
-mutable field net/minecraft/class_1300 e F
-accessible field net/minecraft/class_1300 f F
-mutable field net/minecraft/class_1300 f F
-accessible field net/minecraft/class_1300 g Z
-mutable field net/minecraft/class_1300 g Z
-accessible field net/minecraft/class_1300 h I
-mutable field net/minecraft/class_1300 h I
-accessible field net/minecraft/class_1300 i Lnet/minecraft/class_1311$class_1312;
-mutable field net/minecraft/class_1300 i Lnet/minecraft/class_1311$class_1312;
-accessible field net/minecraft/class_1301 j Z
-mutable field net/minecraft/class_1301 j Z
-accessible field net/minecraft/class_1302 k Lnet/minecraft/server/EntityGuardian;
-mutable field net/minecraft/class_1302 k Lnet/minecraft/server/EntityGuardian;
-accessible field net/minecraft/class_1303 k Lnet/minecraft/server/EntityMinecartAbstract;
-mutable field net/minecraft/class_1303 k Lnet/minecraft/server/EntityMinecartAbstract;
-accessible field net/minecraft/class_1303 l F
-mutable field net/minecraft/class_1303 l F
-accessible field net/minecraft/class_1304 k Lnet/minecraft/server/EntityHuman;
-mutable field net/minecraft/class_1304 k Lnet/minecraft/server/EntityHuman;
-accessible field net/minecraft/class_1304 l Lnet/minecraft/server/EntityMinecartAbstract;
-mutable field net/minecraft/class_1304 l Lnet/minecraft/server/EntityMinecartAbstract;
-extendable class net/minecraft/class_1306
-accessible field net/minecraft/class_1306 j Ljava/util/Map;
-mutable field net/minecraft/class_1306 j Ljava/util/Map;
-accessible field net/minecraft/class_1306 k Ljava/util/Map;
-mutable field net/minecraft/class_1306 k Ljava/util/Map;
-accessible field net/minecraft/class_1306 l Ljava/lang/String;
-mutable field net/minecraft/class_1306 l Ljava/lang/String;
-accessible field net/minecraft/class_1306 m I
-mutable field net/minecraft/class_1306 m I
-extendable class net/minecraft/class_1307$class_1308$class_1309
-accessible field net/minecraft/class_1307$class_1308$class_1309 c Ljava/lang/String;
-mutable field net/minecraft/class_1307$class_1308$class_1309 c Ljava/lang/String;
-accessible field net/minecraft/class_1307$class_1308 a Ljava/lang/String;
-mutable field net/minecraft/class_1307$class_1308 a Ljava/lang/String;
-accessible field net/minecraft/class_1307$class_1308 b F
-mutable field net/minecraft/class_1307$class_1308 b F
-accessible field net/minecraft/class_1307$class_1308 c F
-mutable field net/minecraft/class_1307$class_1308 c F
-accessible field net/minecraft/class_1307$class_1308 d I
-mutable field net/minecraft/class_1307$class_1308 d I
-accessible field net/minecraft/class_1307$class_1308 e Lnet/minecraft/class_1307$class_1308$class_1309;
-mutable field net/minecraft/class_1307$class_1308 e Lnet/minecraft/class_1307$class_1308$class_1309;
-accessible field net/minecraft/class_1307$class_1308 f Z
-mutable field net/minecraft/class_1307$class_1308 f Z
-accessible field net/minecraft/class_1307 a Ljava/util/List;
-mutable field net/minecraft/class_1307 a Ljava/util/List;
-accessible field net/minecraft/class_1307 b Z
-mutable field net/minecraft/class_1307 b Z
-accessible field net/minecraft/class_1307 c Lnet/minecraft/class_1306;
-mutable field net/minecraft/class_1307 c Lnet/minecraft/class_1306;
-extendable class net/minecraft/class_1311$class_1312
-accessible field net/minecraft/class_1311$class_1312 c I
-mutable field net/minecraft/class_1311$class_1312 c I
-accessible field net/minecraft/class_1314 f Lnet/minecraft/server/NBTTagCompound;
-mutable field net/minecraft/class_1314 f Lnet/minecraft/server/NBTTagCompound;
-extendable method net/minecraft/class_1314 savePlayerFile (Lnet/minecraft/server/EntityPlayer;)V
-accessible method net/minecraft/class_1314 savePlayerFile (Lnet/minecraft/server/EntityPlayer;)V
-accessible class net/minecraft/class_1315$1
-accessible class net/minecraft/class_1315$2
-accessible class net/minecraft/class_1315$3
-accessible field net/minecraft/class_1315 k Lorg/apache/logging/log4j/Logger;
-mutable field net/minecraft/class_1315 k Lorg/apache/logging/log4j/Logger;
-accessible field net/minecraft/class_1315 l Lnet/minecraft/class_669;
-mutable field net/minecraft/class_1315 l Lnet/minecraft/class_669;
-accessible field net/minecraft/class_1315 m Lnet/minecraft/server/WorldSettings;
-mutable field net/minecraft/class_1315 m Lnet/minecraft/server/WorldSettings;
-accessible field net/minecraft/class_1315 n Z
-mutable field net/minecraft/class_1315 n Z
-accessible field net/minecraft/class_1315 o Z
-mutable field net/minecraft/class_1315 o Z
-accessible field net/minecraft/class_1315 p Lnet/minecraft/class_1321;
-mutable field net/minecraft/class_1315 p Lnet/minecraft/class_1321;
-extendable method net/minecraft/class_1315 h ()Lnet/minecraft/server/CommandDispatcher;
-accessible method net/minecraft/class_1315 h ()Lnet/minecraft/server/CommandDispatcher;
-extendable method net/minecraft/class_1315 a (Ljava/lang/String;Ljava/lang/String;JLnet/minecraft/server/WorldType;Ljava/lang/String;)V
-accessible method net/minecraft/class_1315 a (Ljava/lang/String;Ljava/lang/String;JLnet/minecraft/server/WorldType;Ljava/lang/String;)V
-extendable method net/minecraft/class_1315 i ()Z
-accessible method net/minecraft/class_1315 i ()Z
-extendable method net/minecraft/class_1315 A ()V
-accessible method net/minecraft/class_1315 A ()V
-extendable method net/minecraft/class_1315 a (Lnet/minecraft/server/CrashReport;)V
-accessible method net/minecraft/class_1315 a (Lnet/minecraft/server/CrashReport;)V
-accessible field net/minecraft/class_1317$class_1318 a Ljava/lang/String;
-mutable field net/minecraft/class_1317$class_1318 a Ljava/lang/String;
-accessible field net/minecraft/class_1317$class_1318 b Ljava/lang/String;
-mutable field net/minecraft/class_1317$class_1318 b Ljava/lang/String;
-accessible field net/minecraft/class_1317$class_1318 c J
-mutable field net/minecraft/class_1317$class_1318 c J
-accessible field net/minecraft/class_1317$class_1319 a Lnet/minecraft/class_1317$class_1320;
-mutable field net/minecraft/class_1317$class_1319 a Lnet/minecraft/class_1317$class_1320;
-accessible field net/minecraft/class_1317$class_1319 b Ljava/net/InetAddress;
-mutable field net/minecraft/class_1317$class_1319 b Ljava/net/InetAddress;
-accessible field net/minecraft/class_1317$class_1319 c Ljava/net/MulticastSocket;
-mutable field net/minecraft/class_1317$class_1319 c Ljava/net/MulticastSocket;
-accessible field net/minecraft/class_1317$class_1320 b Ljava/util/List;
-mutable field net/minecraft/class_1317$class_1320 b Ljava/util/List;
-accessible field net/minecraft/class_1317$class_1320 a Z
-mutable field net/minecraft/class_1317$class_1320 a Z
-accessible field net/minecraft/class_1317 a Ljava/util/concurrent/atomic/AtomicInteger;
-mutable field net/minecraft/class_1317 a Ljava/util/concurrent/atomic/AtomicInteger;
-accessible field net/minecraft/class_1317 b Lorg/apache/logging/log4j/Logger;
-mutable field net/minecraft/class_1317 b Lorg/apache/logging/log4j/Logger;
-accessible field net/minecraft/class_1321 a Ljava/util/concurrent/atomic/AtomicInteger;
-mutable field net/minecraft/class_1321 a Ljava/util/concurrent/atomic/AtomicInteger;
-accessible field net/minecraft/class_1321 b Lorg/apache/logging/log4j/Logger;
-mutable field net/minecraft/class_1321 b Lorg/apache/logging/log4j/Logger;
-accessible field net/minecraft/class_1321 c Ljava/lang/String;
-mutable field net/minecraft/class_1321 c Ljava/lang/String;
-accessible field net/minecraft/class_1321 d Ljava/net/DatagramSocket;
-mutable field net/minecraft/class_1321 d Ljava/net/DatagramSocket;
-accessible field net/minecraft/class_1321 e Z
-mutable field net/minecraft/class_1321 e Z
-accessible field net/minecraft/class_1321 f Ljava/lang/String;
-mutable field net/minecraft/class_1321 f Ljava/lang/String;
-extendable class net/minecraft/class_1322$class_1323
-accessible field net/minecraft/class_1322$class_1323 h Lnet/minecraft/server/MinecraftKey;
-mutable field net/minecraft/class_1322$class_1323 h Lnet/minecraft/server/MinecraftKey;
-accessible field net/minecraft/class_1322$class_1323 i I
-mutable field net/minecraft/class_1322$class_1323 i I
-accessible field net/minecraft/class_1322$class_1323 j I
-mutable field net/minecraft/class_1322$class_1323 j I
-accessible field net/minecraft/class_1322 a Ljava/util/Random;
-mutable field net/minecraft/class_1322 a Ljava/util/Random;
-accessible field net/minecraft/class_1322 b Lnet/minecraft/class_669;
-mutable field net/minecraft/class_1322 b Lnet/minecraft/class_669;
-accessible field net/minecraft/class_1322 c Lnet/minecraft/class_1311;
-mutable field net/minecraft/class_1322 c Lnet/minecraft/class_1311;
-accessible field net/minecraft/class_1322 d I
-mutable field net/minecraft/class_1322 d I
-accessible field net/minecraft/class_1324 a Lnet/minecraft/server/MinecraftKey;
-mutable field net/minecraft/class_1324 a Lnet/minecraft/server/MinecraftKey;
-accessible field net/minecraft/class_1324 b Z
-mutable field net/minecraft/class_1324 b Z
-accessible field net/minecraft/class_1324 c D
-mutable field net/minecraft/class_1324 c D
-accessible field net/minecraft/class_1324 d D
-mutable field net/minecraft/class_1324 d D
-accessible class net/minecraft/class_1325$1$1
-accessible class net/minecraft/class_1325$1
-accessible class net/minecraft/class_1325$2$1
-extendable class net/minecraft/class_1325$2
-extendable method net/minecraft/class_1325$2 openConnection (Ljava/net/URL;)Ljava/net/URLConnection;
-accessible method net/minecraft/class_1325$2 openConnection (Ljava/net/URL;)Ljava/net/URLConnection;
-accessible class net/minecraft/class_1325$class_1326
-accessible field net/minecraft/class_1325 a Lorg/apache/logging/log4j/Marker;
-mutable field net/minecraft/class_1325 a Lorg/apache/logging/log4j/Marker;
-accessible field net/minecraft/class_1325 b Lorg/apache/logging/log4j/Logger;
-mutable field net/minecraft/class_1325 b Lorg/apache/logging/log4j/Logger;
-accessible field net/minecraft/class_1325 c Lnet/minecraft/class_1328;
-mutable field net/minecraft/class_1325 c Lnet/minecraft/class_1328;
-accessible field net/minecraft/class_1325 d Lnet/minecraft/class_671;
-mutable field net/minecraft/class_1325 d Lnet/minecraft/class_671;
-accessible field net/minecraft/class_1325 e Lnet/minecraft/class_1325$class_1326;
-mutable field net/minecraft/class_1325 e Lnet/minecraft/class_1325$class_1326;
-accessible field net/minecraft/class_1325 f Z
-mutable field net/minecraft/class_1325 f Z
-accessible field net/minecraft/class_1325 g I
-mutable field net/minecraft/class_1325 g I
-accessible field net/minecraft/class_1325 h Ljava/util/Map;
-mutable field net/minecraft/class_1325 h Ljava/util/Map;
-accessible field net/minecraft/class_1325 i Ljava/util/Map;
-mutable field net/minecraft/class_1325 i Ljava/util/Map;
-accessible field net/minecraft/class_1325 j Ljava/util/Map;
-mutable field net/minecraft/class_1325 j Ljava/util/Map;
-accessible field net/minecraft/class_1325 k Lcom/google/common/collect/Multimap;
-mutable field net/minecraft/class_1325 k Lcom/google/common/collect/Multimap;
-accessible field net/minecraft/class_1325 l Ljava/util/List;
-mutable field net/minecraft/class_1325 l Ljava/util/List;
-accessible field net/minecraft/class_1325 m Ljava/util/Map;
-mutable field net/minecraft/class_1325 m Ljava/util/Map;
-accessible field net/minecraft/class_1325 n Ljava/util/Map;
-mutable field net/minecraft/class_1325 n Ljava/util/Map;
-extendable method net/minecraft/class_1325 i ()V
-accessible method net/minecraft/class_1325 i ()V
-extendable method net/minecraft/class_1325 a (Lnet/minecraft/class_1306;)F
-accessible method net/minecraft/class_1325 a (Lnet/minecraft/class_1306;)F
-extendable method net/minecraft/class_1325 a (Lnet/minecraft/class_1311;Lnet/minecraft/class_1324;)F
-accessible method net/minecraft/class_1325 a (Lnet/minecraft/class_1311;Lnet/minecraft/class_1324;)F
-extendable method net/minecraft/class_1325 a (Lnet/minecraft/class_1311;Lnet/minecraft/class_1324;Lnet/minecraft/class_1306;)F
-accessible method net/minecraft/class_1325 a (Lnet/minecraft/class_1311;Lnet/minecraft/class_1324;Lnet/minecraft/class_1306;)F
-extendable method net/minecraft/class_1325 a (Lnet/minecraft/server/MinecraftKey;)Ljava/net/URL;
-accessible method net/minecraft/class_1325 a (Lnet/minecraft/server/MinecraftKey;)Ljava/net/URL;
-accessible field net/minecraft/class_1327 a Ljava/util/List;
-mutable field net/minecraft/class_1327 a Ljava/util/List;
-accessible field net/minecraft/class_1327 b Ljava/util/Random;
-mutable field net/minecraft/class_1327 b Ljava/util/Random;
-accessible field net/minecraft/class_1327 c Lnet/minecraft/server/MinecraftKey;
-mutable field net/minecraft/class_1327 c Lnet/minecraft/server/MinecraftKey;
-accessible field net/minecraft/class_1327 d Lnet/minecraft/class_1306;
-mutable field net/minecraft/class_1327 d Lnet/minecraft/class_1306;
-accessible field net/minecraft/class_1327 e D
-mutable field net/minecraft/class_1327 e D
-accessible field net/minecraft/class_1327 f D
-mutable field net/minecraft/class_1327 f D
-extendable class net/minecraft/class_1328$1
-accessible class net/minecraft/class_1328$2
-accessible field net/minecraft/class_1328$2 a Lnet/minecraft/server/MinecraftKey;
-mutable field net/minecraft/class_1328$2 a Lnet/minecraft/server/MinecraftKey;
-accessible field net/minecraft/class_1328 b Lorg/apache/logging/log4j/Logger;
-mutable field net/minecraft/class_1328 b Lorg/apache/logging/log4j/Logger;
-accessible field net/minecraft/class_1328 c Lcom/google/gson/Gson;
-mutable field net/minecraft/class_1328 c Lcom/google/gson/Gson;
-accessible field net/minecraft/class_1328 d Ljava/lang/reflect/ParameterizedType;
-mutable field net/minecraft/class_1328 d Ljava/lang/reflect/ParameterizedType;
-accessible field net/minecraft/class_1328 e Lnet/minecraft/class_1330;
-mutable field net/minecraft/class_1328 e Lnet/minecraft/class_1330;
-accessible field net/minecraft/class_1328 f Lnet/minecraft/class_1325;
-mutable field net/minecraft/class_1328 f Lnet/minecraft/class_1325;
-accessible field net/minecraft/class_1328 g Lnet/minecraft/class_1258;
-mutable field net/minecraft/class_1328 g Lnet/minecraft/class_1258;
-extendable method net/minecraft/class_1328 a (Ljava/io/InputStream;)Ljava/util/Map;
-accessible method net/minecraft/class_1328 a (Ljava/io/InputStream;)Ljava/util/Map;
-extendable method net/minecraft/class_1328 a (Lnet/minecraft/server/MinecraftKey;Lnet/minecraft/class_1307;)V
-accessible method net/minecraft/class_1328 a (Lnet/minecraft/server/MinecraftKey;Lnet/minecraft/class_1307;)V
-accessible field net/minecraft/class_1330 a Ljava/util/Map;
-mutable field net/minecraft/class_1330 a Ljava/util/Map;
-extendable method net/minecraft/class_1330 b ()Ljava/util/Map;
-accessible method net/minecraft/class_1330 b ()Ljava/util/Map;
-accessible field net/minecraft/class_1332 a Lnet/minecraft/class_1324;
-mutable field net/minecraft/class_1332 a Lnet/minecraft/class_1324;
-accessible field net/minecraft/class_1332 b I
-mutable field net/minecraft/class_1332 b I
-accessible field net/minecraft/class_1336 a Lcom/google/gson/Gson;
-mutable field net/minecraft/class_1336 a Lcom/google/gson/Gson;
-accessible field net/minecraft/class_1336 b Ljava/lang/String;
-mutable field net/minecraft/class_1336 b Ljava/lang/String;
-accessible field net/minecraft/class_1336 c Ljava/lang/String;
-mutable field net/minecraft/class_1336 c Ljava/lang/String;
-accessible field net/minecraft/class_1336 d Ljava/util/Map;
-mutable field net/minecraft/class_1336 d Ljava/util/Map;
-accessible class net/minecraft/class_1337$1
-accessible class net/minecraft/class_1337$2
-extendable class net/minecraft/class_1337$class_1338
-accessible field net/minecraft/class_1337 D Lorg/apache/logging/log4j/Logger;
-mutable field net/minecraft/class_1337 D Lorg/apache/logging/log4j/Logger;
-accessible field net/minecraft/class_1337 a I
-mutable field net/minecraft/class_1337 a I
-accessible field net/minecraft/class_1337 b I
-mutable field net/minecraft/class_1337 b I
-accessible field net/minecraft/class_1337 E Lnet/minecraft/class_1700;
-mutable field net/minecraft/class_1337 E Lnet/minecraft/class_1700;
-accessible field net/minecraft/class_1337 F Ljava/lang/String;
-mutable field net/minecraft/class_1337 F Ljava/lang/String;
-accessible field net/minecraft/class_1337 c Lnet/minecraft/class_1337$class_1339;
-mutable field net/minecraft/class_1337 c Lnet/minecraft/class_1337$class_1339;
-accessible field net/minecraft/class_1337 d Ljava/lang/String;
-mutable field net/minecraft/class_1337 d Ljava/lang/String;
-accessible field net/minecraft/class_1337 e Ljava/lang/String;
-mutable field net/minecraft/class_1337 e Ljava/lang/String;
-accessible field net/minecraft/class_1337 f Ljava/lang/String;
-mutable field net/minecraft/class_1337 f Ljava/lang/String;
-accessible field net/minecraft/class_1337 g Z
-mutable field net/minecraft/class_1337 g Z
-accessible field net/minecraft/class_1337 h Ltv/twitch/Core;
-mutable field net/minecraft/class_1337 h Ltv/twitch/Core;
-accessible field net/minecraft/class_1337 i Ltv/twitch/broadcast/Stream;
-mutable field net/minecraft/class_1337 i Ltv/twitch/broadcast/Stream;
-accessible field net/minecraft/class_1337 j Ljava/util/List;
-mutable field net/minecraft/class_1337 j Ljava/util/List;
-accessible field net/minecraft/class_1337 k Ljava/util/List;
-mutable field net/minecraft/class_1337 k Ljava/util/List;
-accessible field net/minecraft/class_1337 l Z
-mutable field net/minecraft/class_1337 l Z
-accessible field net/minecraft/class_1337 m Z
-mutable field net/minecraft/class_1337 m Z
-accessible field net/minecraft/class_1337 n Z
-mutable field net/minecraft/class_1337 n Z
-accessible field net/minecraft/class_1337 o Lnet/minecraft/class_1337$class_1338;
-mutable field net/minecraft/class_1337 o Lnet/minecraft/class_1337$class_1338;
-accessible field net/minecraft/class_1337 p Ljava/lang/String;
-mutable field net/minecraft/class_1337 p Ljava/lang/String;
-accessible field net/minecraft/class_1337 q Ltv/twitch/broadcast/VideoParams;
-mutable field net/minecraft/class_1337 q Ltv/twitch/broadcast/VideoParams;
-accessible field net/minecraft/class_1337 r Ltv/twitch/broadcast/AudioParams;
-mutable field net/minecraft/class_1337 r Ltv/twitch/broadcast/AudioParams;
-accessible field net/minecraft/class_1337 s Ltv/twitch/broadcast/IngestList;
-mutable field net/minecraft/class_1337 s Ltv/twitch/broadcast/IngestList;
-accessible field net/minecraft/class_1337 t Ltv/twitch/broadcast/IngestServer;
-mutable field net/minecraft/class_1337 t Ltv/twitch/broadcast/IngestServer;
-accessible field net/minecraft/class_1337 u Ltv/twitch/AuthToken;
-mutable field net/minecraft/class_1337 u Ltv/twitch/AuthToken;
-accessible field net/minecraft/class_1337 v Ltv/twitch/broadcast/ChannelInfo;
-mutable field net/minecraft/class_1337 v Ltv/twitch/broadcast/ChannelInfo;
-accessible field net/minecraft/class_1337 w Ltv/twitch/broadcast/UserInfo;
-mutable field net/minecraft/class_1337 w Ltv/twitch/broadcast/UserInfo;
-accessible field net/minecraft/class_1337 x Ltv/twitch/broadcast/StreamInfo;
-mutable field net/minecraft/class_1337 x Ltv/twitch/broadcast/StreamInfo;
-accessible field net/minecraft/class_1337 y Ltv/twitch/broadcast/ArchivingState;
-mutable field net/minecraft/class_1337 y Ltv/twitch/broadcast/ArchivingState;
-accessible field net/minecraft/class_1337 z J
-mutable field net/minecraft/class_1337 z J
-accessible field net/minecraft/class_1337 A Lnet/minecraft/class_1346;
-mutable field net/minecraft/class_1337 A Lnet/minecraft/class_1346;
-accessible field net/minecraft/class_1337 G Ltv/twitch/ErrorCode;
-mutable field net/minecraft/class_1337 G Ltv/twitch/ErrorCode;
-accessible field net/minecraft/class_1337 B Ltv/twitch/broadcast/IStreamCallbacks;
-mutable field net/minecraft/class_1337 B Ltv/twitch/broadcast/IStreamCallbacks;
-accessible field net/minecraft/class_1337 C Ltv/twitch/broadcast/IStatCallbacks;
-mutable field net/minecraft/class_1337 C Ltv/twitch/broadcast/IStatCallbacks;
-extendable method net/minecraft/class_1337 y ()Z
-accessible method net/minecraft/class_1337 y ()Z
-extendable method net/minecraft/class_1337 B ()Ltv/twitch/broadcast/PixelFormat;
-accessible method net/minecraft/class_1337 B ()Ltv/twitch/broadcast/PixelFormat;
-extendable method net/minecraft/class_1337 a (Lnet/minecraft/class_1337$class_1338;)V
-accessible method net/minecraft/class_1337 a (Lnet/minecraft/class_1337$class_1338;)V
-extendable method net/minecraft/class_1337 L ()V
-accessible method net/minecraft/class_1337 L ()V
-extendable method net/minecraft/class_1337 O ()Z
-accessible method net/minecraft/class_1337 O ()Z
-extendable method net/minecraft/class_1337 P ()V
-accessible method net/minecraft/class_1337 P ()V
-extendable method net/minecraft/class_1337 a (Ltv/twitch/ErrorCode;)Z
-accessible method net/minecraft/class_1337 a (Ltv/twitch/ErrorCode;)Z
-extendable method net/minecraft/class_1337 d (Ljava/lang/String;)V
-accessible method net/minecraft/class_1337 d (Ljava/lang/String;)V
-extendable method net/minecraft/class_1337 e (Ljava/lang/String;)V
-accessible method net/minecraft/class_1337 e (Ljava/lang/String;)V
-accessible class net/minecraft/class_1340$1
-extendable class net/minecraft/class_1340$class_1341
-accessible field net/minecraft/class_1340$class_1342 a Ljava/lang/String;
-mutable field net/minecraft/class_1340$class_1342 a Ljava/lang/String;
-accessible field net/minecraft/class_1340$class_1342 b Z
-mutable field net/minecraft/class_1340$class_1342 b Z
-accessible field net/minecraft/class_1340$class_1342 c Lnet/minecraft/class_1340$class_1341;
-mutable field net/minecraft/class_1340$class_1342 c Lnet/minecraft/class_1340$class_1341;
-accessible field net/minecraft/class_1340$class_1342 d Ljava/util/List;
-mutable field net/minecraft/class_1340$class_1342 d Ljava/util/List;
-accessible field net/minecraft/class_1340$class_1342 e Ljava/util/LinkedList;
-mutable field net/minecraft/class_1340$class_1342 e Ljava/util/LinkedList;
-accessible field net/minecraft/class_1340$class_1342 f Ljava/util/LinkedList;
-mutable field net/minecraft/class_1340$class_1342 f Ljava/util/LinkedList;
-accessible field net/minecraft/class_1340$class_1342 g Ltv/twitch/chat/ChatBadgeData;
-mutable field net/minecraft/class_1340$class_1342 g Ltv/twitch/chat/ChatBadgeData;
-extendable method net/minecraft/class_1340$class_1342 a (Lnet/minecraft/class_1340$class_1341;)V
-accessible method net/minecraft/class_1340$class_1342 a (Lnet/minecraft/class_1340$class_1341;)V
-extendable method net/minecraft/class_1340$class_1342 h ()V
-accessible method net/minecraft/class_1340$class_1342 h ()V
-extendable method net/minecraft/class_1340$class_1342 i ()V
-accessible method net/minecraft/class_1340$class_1342 i ()V
-extendable method net/minecraft/class_1340$class_1342 j ()V
-accessible method net/minecraft/class_1340$class_1342 j ()V
-extendable method net/minecraft/class_1340$class_1342 c (Ljava/lang/String;)V
-accessible method net/minecraft/class_1340$class_1342 c (Ljava/lang/String;)V
-extendable method net/minecraft/class_1340$class_1342 d (Ljava/lang/String;)V
-accessible method net/minecraft/class_1340$class_1342 d (Ljava/lang/String;)V
-extendable method net/minecraft/class_1340$class_1342 k ()V
-accessible method net/minecraft/class_1340$class_1342 k ()V
-extendable class net/minecraft/class_1340$class_1343
-extendable class net/minecraft/class_1340$class_1344
-accessible field net/minecraft/class_1340 q Lorg/apache/logging/log4j/Logger;
-mutable field net/minecraft/class_1340 q Lorg/apache/logging/log4j/Logger;
-accessible field net/minecraft/class_1340 a Lnet/minecraft/class_1340$class_1345;
-mutable field net/minecraft/class_1340 a Lnet/minecraft/class_1340$class_1345;
-accessible field net/minecraft/class_1340 b Ljava/lang/String;
-mutable field net/minecraft/class_1340 b Ljava/lang/String;
-accessible field net/minecraft/class_1340 c Ljava/lang/String;
-mutable field net/minecraft/class_1340 c Ljava/lang/String;
-accessible field net/minecraft/class_1340 d Ljava/lang/String;
-mutable field net/minecraft/class_1340 d Ljava/lang/String;
-accessible field net/minecraft/class_1340 e Ltv/twitch/Core;
-mutable field net/minecraft/class_1340 e Ltv/twitch/Core;
-accessible field net/minecraft/class_1340 f Ltv/twitch/chat/Chat;
-mutable field net/minecraft/class_1340 f Ltv/twitch/chat/Chat;
-accessible field net/minecraft/class_1340 g Lnet/minecraft/class_1340$class_1343;
-mutable field net/minecraft/class_1340 g Lnet/minecraft/class_1340$class_1343;
-accessible field net/minecraft/class_1340 h Ltv/twitch/AuthToken;
-mutable field net/minecraft/class_1340 h Ltv/twitch/AuthToken;
-accessible field net/minecraft/class_1340 i Ljava/util/HashMap;
-mutable field net/minecraft/class_1340 i Ljava/util/HashMap;
-accessible field net/minecraft/class_1340 j I
-mutable field net/minecraft/class_1340 j I
-accessible field net/minecraft/class_1340 k Lnet/minecraft/class_1340$class_1344;
-mutable field net/minecraft/class_1340 k Lnet/minecraft/class_1340$class_1344;
-accessible field net/minecraft/class_1340 l Lnet/minecraft/class_1340$class_1344;
-mutable field net/minecraft/class_1340 l Lnet/minecraft/class_1340$class_1344;
-accessible field net/minecraft/class_1340 m Ltv/twitch/chat/ChatEmoticonData;
-mutable field net/minecraft/class_1340 m Ltv/twitch/chat/ChatEmoticonData;
-accessible field net/minecraft/class_1340 n I
-mutable field net/minecraft/class_1340 n I
-accessible field net/minecraft/class_1340 o I
-mutable field net/minecraft/class_1340 o I
-accessible field net/minecraft/class_1340 p Ltv/twitch/chat/IChatAPIListener;
-mutable field net/minecraft/class_1340 p Ltv/twitch/chat/IChatAPIListener;
-extendable method net/minecraft/class_1340 a (Ljava/lang/String;Z)Z
-accessible method net/minecraft/class_1340 a (Ljava/lang/String;Z)Z
-extendable method net/minecraft/class_1340 a (Lnet/minecraft/class_1340$class_1343;)V
-accessible method net/minecraft/class_1340 a (Lnet/minecraft/class_1340$class_1343;)V
-extendable method net/minecraft/class_1340 r ()V
-accessible method net/minecraft/class_1340 r ()V
-extendable method net/minecraft/class_1340 s ()V
-accessible method net/minecraft/class_1340 s ()V
-extendable method net/minecraft/class_1340 t ()V
-accessible method net/minecraft/class_1340 t ()V
-extendable method net/minecraft/class_1340 n (Ljava/lang/String;)V
-accessible method net/minecraft/class_1340 n (Ljava/lang/String;)V
-accessible class net/minecraft/class_1346$1
-accessible class net/minecraft/class_1346$2
-extendable class net/minecraft/class_1346$class_1348
-accessible field net/minecraft/class_1346 a Lnet/minecraft/class_1346$class_1347;
-mutable field net/minecraft/class_1346 a Lnet/minecraft/class_1346$class_1347;
-accessible field net/minecraft/class_1346 b Ltv/twitch/broadcast/Stream;
-mutable field net/minecraft/class_1346 b Ltv/twitch/broadcast/Stream;
-accessible field net/minecraft/class_1346 c Ltv/twitch/broadcast/IngestList;
-mutable field net/minecraft/class_1346 c Ltv/twitch/broadcast/IngestList;
-accessible field net/minecraft/class_1346 d Lnet/minecraft/class_1346$class_1348;
-mutable field net/minecraft/class_1346 d Lnet/minecraft/class_1346$class_1348;
-accessible field net/minecraft/class_1346 e J
-mutable field net/minecraft/class_1346 e J
-accessible field net/minecraft/class_1346 f J
-mutable field net/minecraft/class_1346 f J
-accessible field net/minecraft/class_1346 g J
-mutable field net/minecraft/class_1346 g J
-accessible field net/minecraft/class_1346 h Ltv/twitch/broadcast/RTMPState;
-mutable field net/minecraft/class_1346 h Ltv/twitch/broadcast/RTMPState;
-accessible field net/minecraft/class_1346 i Ltv/twitch/broadcast/VideoParams;
-mutable field net/minecraft/class_1346 i Ltv/twitch/broadcast/VideoParams;
-accessible field net/minecraft/class_1346 j Ltv/twitch/broadcast/AudioParams;
-mutable field net/minecraft/class_1346 j Ltv/twitch/broadcast/AudioParams;
-accessible field net/minecraft/class_1346 k J
-mutable field net/minecraft/class_1346 k J
-accessible field net/minecraft/class_1346 l Ljava/util/List;
-mutable field net/minecraft/class_1346 l Ljava/util/List;
-accessible field net/minecraft/class_1346 m Z
-mutable field net/minecraft/class_1346 m Z
-accessible field net/minecraft/class_1346 n Ltv/twitch/broadcast/IStreamCallbacks;
-mutable field net/minecraft/class_1346 n Ltv/twitch/broadcast/IStreamCallbacks;
-accessible field net/minecraft/class_1346 o Ltv/twitch/broadcast/IStatCallbacks;
-mutable field net/minecraft/class_1346 o Ltv/twitch/broadcast/IStatCallbacks;
-accessible field net/minecraft/class_1346 p Ltv/twitch/broadcast/IngestServer;
-mutable field net/minecraft/class_1346 p Ltv/twitch/broadcast/IngestServer;
-accessible field net/minecraft/class_1346 q Z
-mutable field net/minecraft/class_1346 q Z
-accessible field net/minecraft/class_1346 r Z
-mutable field net/minecraft/class_1346 r Z
-accessible field net/minecraft/class_1346 s I
-mutable field net/minecraft/class_1346 s I
-accessible field net/minecraft/class_1346 t I
-mutable field net/minecraft/class_1346 t I
-accessible field net/minecraft/class_1346 u J
-mutable field net/minecraft/class_1346 u J
-accessible field net/minecraft/class_1346 v F
-mutable field net/minecraft/class_1346 v F
-accessible field net/minecraft/class_1346 w F
-mutable field net/minecraft/class_1346 w F
-accessible field net/minecraft/class_1346 x Z
-mutable field net/minecraft/class_1346 x Z
-accessible field net/minecraft/class_1346 y Z
-mutable field net/minecraft/class_1346 y Z
-accessible field net/minecraft/class_1346 z Z
-mutable field net/minecraft/class_1346 z Z
-accessible field net/minecraft/class_1346 A Ltv/twitch/broadcast/IStreamCallbacks;
-mutable field net/minecraft/class_1346 A Ltv/twitch/broadcast/IStreamCallbacks;
-accessible field net/minecraft/class_1346 B Ltv/twitch/broadcast/IStatCallbacks;
-mutable field net/minecraft/class_1346 B Ltv/twitch/broadcast/IStatCallbacks;
-extendable method net/minecraft/class_1346 a (Ltv/twitch/broadcast/IngestServer;)Z
-accessible method net/minecraft/class_1346 a (Ltv/twitch/broadcast/IngestServer;)Z
-extendable method net/minecraft/class_1346 b (Ltv/twitch/broadcast/IngestServer;)V
-accessible method net/minecraft/class_1346 b (Ltv/twitch/broadcast/IngestServer;)V
-extendable method net/minecraft/class_1346 n ()J
-accessible method net/minecraft/class_1346 n ()J
-extendable method net/minecraft/class_1346 o ()V
-accessible method net/minecraft/class_1346 o ()V
-extendable method net/minecraft/class_1346 c (Ltv/twitch/broadcast/IngestServer;)Z
-accessible method net/minecraft/class_1346 c (Ltv/twitch/broadcast/IngestServer;)Z
-extendable method net/minecraft/class_1346 p ()V
-accessible method net/minecraft/class_1346 p ()V
-extendable method net/minecraft/class_1346 a (Lnet/minecraft/class_1346$class_1348;)V
-accessible method net/minecraft/class_1346 a (Lnet/minecraft/class_1346$class_1348;)V
-extendable class net/minecraft/class_1349$class_1350
-accessible class net/minecraft/class_1351$1$1
-accessible class net/minecraft/class_1351$1
-accessible field net/minecraft/class_1351 b Lorg/apache/logging/log4j/Logger;
-mutable field net/minecraft/class_1351 b Lorg/apache/logging/log4j/Logger;
-accessible field net/minecraft/class_1351 c Lnet/minecraft/class_1337;
-mutable field net/minecraft/class_1351 c Lnet/minecraft/class_1337;
-accessible field net/minecraft/class_1351 d Lnet/minecraft/class_1340;
-mutable field net/minecraft/class_1351 d Lnet/minecraft/class_1340;
-accessible field net/minecraft/class_1351 e Ljava/lang/String;
-mutable field net/minecraft/class_1351 e Ljava/lang/String;
-accessible field net/minecraft/class_1351 f Lnet/minecraft/class_669;
-mutable field net/minecraft/class_1351 f Lnet/minecraft/class_669;
-accessible field net/minecraft/class_1351 g Lnet/minecraft/server/IChatBaseComponent;
-mutable field net/minecraft/class_1351 g Lnet/minecraft/server/IChatBaseComponent;
-accessible field net/minecraft/class_1351 h Ljava/util/Map;
-mutable field net/minecraft/class_1351 h Ljava/util/Map;
-accessible field net/minecraft/class_1351 i Lnet/minecraft/class_1040;
-mutable field net/minecraft/class_1351 i Lnet/minecraft/class_1040;
-accessible field net/minecraft/class_1351 j Z
-mutable field net/minecraft/class_1351 j Z
-accessible field net/minecraft/class_1351 k I
-mutable field net/minecraft/class_1351 k I
-accessible field net/minecraft/class_1351 l J
-mutable field net/minecraft/class_1351 l J
-accessible field net/minecraft/class_1351 m Z
-mutable field net/minecraft/class_1351 m Z
-accessible field net/minecraft/class_1351 n Z
-mutable field net/minecraft/class_1351 n Z
-accessible field net/minecraft/class_1351 o Z
-mutable field net/minecraft/class_1351 o Z
-accessible field net/minecraft/class_1351 p Z
-mutable field net/minecraft/class_1351 p Z
-accessible field net/minecraft/class_1351 q Lnet/minecraft/class_1349$class_1350;
-mutable field net/minecraft/class_1351 q Lnet/minecraft/class_1349$class_1350;
-accessible field net/minecraft/class_1351 r Z
-mutable field net/minecraft/class_1351 r Z
-extendable method net/minecraft/class_1351 F ()V
-accessible method net/minecraft/class_1351 F ()V
-extendable method net/minecraft/class_1351 a (Ljava/lang/String;Ltv/twitch/chat/ChatRawMessage;)V
-accessible method net/minecraft/class_1351 a (Ljava/lang/String;Ltv/twitch/chat/ChatRawMessage;)V
-extendable method net/minecraft/class_1351 a (Ljava/util/Set;Ljava/util/Set;I)Z
-accessible method net/minecraft/class_1351 a (Ljava/util/Set;Ljava/util/Set;I)Z
-accessible field net/minecraft/class_1352 a Ljava/lang/Throwable;
-mutable field net/minecraft/class_1352 a Ljava/lang/Throwable;
-accessible field net/minecraft/class_1355 T I
-mutable field net/minecraft/class_1355 T I
-accessible field net/minecraft/class_1355 U Z
-mutable field net/minecraft/class_1355 U Z
-accessible field net/minecraft/class_1355 V Z
-mutable field net/minecraft/class_1355 V Z
-accessible field net/minecraft/class_1355 W Z
-mutable field net/minecraft/class_1355 W Z
-accessible field net/minecraft/class_1355 X Z
-mutable field net/minecraft/class_1355 X Z
-accessible field net/minecraft/class_1355 Y Z
-mutable field net/minecraft/class_1355 Y Z
-accessible field net/minecraft/class_1355 Z Ljava/lang/String;
-mutable field net/minecraft/class_1355 Z Ljava/lang/String;
-accessible field net/minecraft/class_1355 aa Ljava/lang/String;
-mutable field net/minecraft/class_1355 aa Ljava/lang/String;
-accessible field net/minecraft/class_1355 ab Z
-mutable field net/minecraft/class_1355 ab Z
 extendable method net/minecraft/server/CommandTime a (Lnet/minecraft/server/ICommandListener;I)V
 accessible method net/minecraft/server/CommandTime a (Lnet/minecraft/server/ICommandListener;I)V
 extendable method net/minecraft/server/CommandTime b (Lnet/minecraft/server/ICommandListener;I)V
@@ -12094,16 +10209,16 @@ extendable method net/minecraft/server/DispenserRegistry b ()V
 accessible method net/minecraft/server/DispenserRegistry b ()V
 extendable method net/minecraft/server/DispenserRegistry d ()V
 accessible method net/minecraft/server/DispenserRegistry d ()V
-accessible field net/minecraft/class_1609$class_1610 a Ljava/lang/String;
-mutable field net/minecraft/class_1609$class_1610 a Ljava/lang/String;
-accessible field net/minecraft/class_1609$class_1610 b Ljava/util/List;
-mutable field net/minecraft/class_1609$class_1610 b Ljava/util/List;
-extendable method net/minecraft/class_1609$class_1610 a (Ljava/lang/String;)V
-accessible method net/minecraft/class_1609$class_1610 a (Ljava/lang/String;)V
-accessible field net/minecraft/class_1609 a Ljava/util/List;
-mutable field net/minecraft/class_1609 a Ljava/util/List;
-accessible field net/minecraft/class_1609 b Ljava/lang/String;
-mutable field net/minecraft/class_1609 b Ljava/lang/String;
+
+
+
+
+
+
+
+
+
+
 accessible field net/minecraft/server/EULA a Lorg/apache/logging/log4j/Logger;
 mutable field net/minecraft/server/EULA a Lorg/apache/logging/log4j/Logger;
 accessible field net/minecraft/server/EULA b Ljava/io/File;
@@ -12179,8 +10294,6 @@ extendable method net/minecraft/server/DedicatedServer a (Lnet/minecraft/server/
 accessible method net/minecraft/server/DedicatedServer a (Lnet/minecraft/server/CrashReport;)V
 extendable method net/minecraft/server/DedicatedServer z ()V
 accessible method net/minecraft/server/DedicatedServer z ()V
-extendable method net/minecraft/server/DedicatedServer B ()V
-accessible method net/minecraft/server/DedicatedServer B ()V
 extendable method net/minecraft/server/DedicatedServer aR ()Z
 accessible method net/minecraft/server/DedicatedServer aR ()Z
 extendable method net/minecraft/server/DedicatedServer aU ()V
@@ -12230,14 +10343,14 @@ extendable method net/minecraft/server/GuiStatsComponent a ()V
 accessible method net/minecraft/server/GuiStatsComponent a ()V
 extendable method net/minecraft/server/GuiStatsComponent a ([J)D
 accessible method net/minecraft/server/GuiStatsComponent a ([J)D
-accessible field net/minecraft/class_1625 a I
-mutable field net/minecraft/class_1625 a I
-accessible field net/minecraft/class_1625 b Lnet/minecraft/server/BlockPosition;
-mutable field net/minecraft/class_1625 b Lnet/minecraft/server/BlockPosition;
-accessible field net/minecraft/class_1625 c I
-mutable field net/minecraft/class_1625 c I
-accessible field net/minecraft/class_1625 d I
-mutable field net/minecraft/class_1625 d I
+
+
+
+
+
+
+
+
 accessible field net/minecraft/server/DemoWorldServer I J
 mutable field net/minecraft/server/DemoWorldServer I J
 accessible field net/minecraft/server/DemoPlayerInteractManager c Z
@@ -12503,10 +10616,10 @@ extendable method net/minecraft/server/LegacyPingHandler a (Lio/netty/channel/Ch
 accessible method net/minecraft/server/LegacyPingHandler a (Lio/netty/channel/ChannelHandlerContext;Lio/netty/buffer/ByteBuf;)V
 extendable method net/minecraft/server/LegacyPingHandler a (Ljava/lang/String;)Lio/netty/buffer/ByteBuf;
 accessible method net/minecraft/server/LegacyPingHandler a (Ljava/lang/String;)Lio/netty/buffer/ByteBuf;
-accessible field net/minecraft/class_1641 a Lnet/minecraft/server/MinecraftServer;
-mutable field net/minecraft/class_1641 a Lnet/minecraft/server/MinecraftServer;
-accessible field net/minecraft/class_1641 b Lnet/minecraft/server/NetworkManager;
-mutable field net/minecraft/class_1641 b Lnet/minecraft/server/NetworkManager;
+
+
+
+
 extendable class net/minecraft/server/ServerConnection$1
 extendable method net/minecraft/server/ServerConnection$1 a ()Lio/netty/channel/nio/NioEventLoopGroup;
 accessible method net/minecraft/server/ServerConnection$1 a ()Lio/netty/channel/nio/NioEventLoopGroup;
@@ -12935,8 +11048,8 @@ extendable method net/minecraft/server/RemoteControlListener g ()V
 accessible method net/minecraft/server/RemoteControlListener g ()V
 accessible field net/minecraft/server/Achievement k Ljava/lang/String;
 mutable field net/minecraft/server/Achievement k Ljava/lang/String;
-accessible field net/minecraft/server/Achievement l Lnet/minecraft/class_1677;
-mutable field net/minecraft/server/Achievement l Lnet/minecraft/class_1677;
+
+
 accessible field net/minecraft/server/Achievement m Z
 mutable field net/minecraft/server/Achievement m Z
 accessible field net/minecraft/server/CraftingStatistic a Lnet/minecraft/server/Item;
@@ -13048,16 +11161,16 @@ accessible field net/minecraft/realms/RealmsAnvilLevelStorageSource levelStorage
 mutable field net/minecraft/realms/RealmsAnvilLevelStorageSource levelStorageSource Lnet/minecraft/server/Convertable;
 accessible field net/minecraft/realms/RealmsBridge LOGGER Lorg/apache/logging/log4j/Logger;
 mutable field net/minecraft/realms/RealmsBridge LOGGER Lorg/apache/logging/log4j/Logger;
-accessible field net/minecraft/realms/RealmsBridge previousScreen Lnet/minecraft/class_754;
-mutable field net/minecraft/realms/RealmsBridge previousScreen Lnet/minecraft/class_754;
-accessible field net/minecraft/realms/RealmsBufferBuilder b Lnet/minecraft/class_1002;
-mutable field net/minecraft/realms/RealmsBufferBuilder b Lnet/minecraft/class_1002;
+
+
+
+
 accessible field net/minecraft/realms/RealmsButton WIDGETS_LOCATION Lnet/minecraft/server/MinecraftKey;
 mutable field net/minecraft/realms/RealmsButton WIDGETS_LOCATION Lnet/minecraft/server/MinecraftKey;
-accessible field net/minecraft/realms/RealmsButton proxy Lnet/minecraft/class_717;
-mutable field net/minecraft/realms/RealmsButton proxy Lnet/minecraft/class_717;
-accessible field net/minecraft/realms/RealmsClickableScrolledSelectionList proxy Lnet/minecraft/class_718;
-mutable field net/minecraft/realms/RealmsClickableScrolledSelectionList proxy Lnet/minecraft/class_718;
+
+
+
+
 extendable method net/minecraft/realms/RealmsClickableScrolledSelectionList renderItem (IIIILnet/minecraft/realms/Tezzelator;II)V
 accessible method net/minecraft/realms/RealmsClickableScrolledSelectionList renderItem (IIIILnet/minecraft/realms/Tezzelator;II)V
 extendable method net/minecraft/realms/RealmsClickableScrolledSelectionList renderList (IIII)V
@@ -13071,16 +11184,16 @@ accessible field net/minecraft/realms/RealmsConnect aborted Z
 mutable field net/minecraft/realms/RealmsConnect aborted Z
 accessible field net/minecraft/realms/RealmsConnect connection Lnet/minecraft/server/NetworkManager;
 mutable field net/minecraft/realms/RealmsConnect connection Lnet/minecraft/server/NetworkManager;
-accessible field net/minecraft/realms/RealmsEditBox editBox Lnet/minecraft/class_689;
-mutable field net/minecraft/realms/RealmsEditBox editBox Lnet/minecraft/class_689;
-accessible field net/minecraft/realms/RealmsLevelSummary levelSummary Lnet/minecraft/class_638;
-mutable field net/minecraft/realms/RealmsLevelSummary levelSummary Lnet/minecraft/class_638;
-accessible field net/minecraft/realms/RealmsScreen minecraft Lnet/minecraft/class_669;
-mutable field net/minecraft/realms/RealmsScreen minecraft Lnet/minecraft/class_669;
-accessible field net/minecraft/realms/RealmsScreen proxy Lnet/minecraft/class_719;
-mutable field net/minecraft/realms/RealmsScreen proxy Lnet/minecraft/class_719;
-accessible field net/minecraft/realms/RealmsScrolledSelectionList proxy Lnet/minecraft/class_720;
-mutable field net/minecraft/realms/RealmsScrolledSelectionList proxy Lnet/minecraft/class_720;
+
+
+
+
+
+
+
+
+
+
 extendable method net/minecraft/realms/RealmsScrolledSelectionList renderItem (IIIILnet/minecraft/realms/Tezzelator;II)V
 accessible method net/minecraft/realms/RealmsScrolledSelectionList renderItem (IIIILnet/minecraft/realms/Tezzelator;II)V
 extendable method net/minecraft/realms/RealmsScrolledSelectionList renderList (IIII)V
@@ -13096,8 +11209,8 @@ accessible field net/minecraft/realms/RealmsServerStatusPinger LOGGER Lorg/apach
 mutable field net/minecraft/realms/RealmsServerStatusPinger LOGGER Lorg/apache/logging/log4j/Logger;
 accessible field net/minecraft/realms/RealmsServerStatusPinger connections Ljava/util/List;
 mutable field net/minecraft/realms/RealmsServerStatusPinger connections Ljava/util/List;
-accessible field net/minecraft/realms/RealmsSimpleScrolledSelectionList proxy Lnet/minecraft/class_721;
-mutable field net/minecraft/realms/RealmsSimpleScrolledSelectionList proxy Lnet/minecraft/class_721;
+
+
 extendable method net/minecraft/realms/RealmsSimpleScrolledSelectionList renderItem (IIIILnet/minecraft/realms/Tezzelator;II)V
 accessible method net/minecraft/realms/RealmsSimpleScrolledSelectionList renderItem (IIIILnet/minecraft/realms/Tezzelator;II)V
 extendable method net/minecraft/realms/RealmsSimpleScrolledSelectionList renderList (IIII)V
@@ -13110,10 +11223,10 @@ accessible field net/minecraft/realms/RealmsSliderButton steps I
 mutable field net/minecraft/realms/RealmsSliderButton steps I
 extendable method net/minecraft/realms/RealmsSliderButton clampSteps (F)F
 accessible method net/minecraft/realms/RealmsSliderButton clampSteps (F)F
-accessible field net/minecraft/realms/RealmsVertexFormat v Lnet/minecraft/class_1241;
-mutable field net/minecraft/realms/RealmsVertexFormat v Lnet/minecraft/class_1241;
-accessible field net/minecraft/realms/RealmsVertexFormatElement v Lnet/minecraft/class_1242;
-mutable field net/minecraft/realms/RealmsVertexFormatElement v Lnet/minecraft/class_1242;
+
+
+
+
 accessible class net/minecraft/server/MinecraftServer$1
 accessible field net/minecraft/server/MinecraftServer$1 b J
 mutable field net/minecraft/server/MinecraftServer$1 b J
@@ -13252,14 +11365,14 @@ extendable method net/minecraft/server/MinecraftEncryption a (ILjava/security/Ke
 accessible method net/minecraft/server/MinecraftEncryption a (ILjava/security/Key;[B)[B
 extendable method net/minecraft/server/MinecraftEncryption a (ILjava/lang/String;Ljava/security/Key;)Ljavax/crypto/Cipher;
 accessible method net/minecraft/server/MinecraftEncryption a (ILjava/lang/String;Ljava/security/Key;)Ljavax/crypto/Cipher;
-accessible field net/minecraft/class_1692 a [J
-mutable field net/minecraft/class_1692 a [J
-accessible field net/minecraft/class_1692 b I
-mutable field net/minecraft/class_1692 b I
-accessible field net/minecraft/class_1692 c I
-mutable field net/minecraft/class_1692 c I
-accessible field net/minecraft/class_1692 d I
-mutable field net/minecraft/class_1692 d I
+
+
+
+
+
+
+
+
 extendable class net/minecraft/server/HttpUtilities$1
 accessible field net/minecraft/server/HttpUtilities b Ljava/util/concurrent/atomic/AtomicInteger;
 mutable field net/minecraft/server/HttpUtilities b Ljava/util/concurrent/atomic/AtomicInteger;
@@ -13269,8 +11382,8 @@ extendable method net/minecraft/server/HttpUtilities a (Ljava/net/URL;Ljava/lang
 accessible method net/minecraft/server/HttpUtilities a (Ljava/net/URL;Ljava/lang/String;Z)Ljava/lang/String;
 accessible field net/minecraft/server/InsensitiveStringMap a Ljava/util/Map;
 mutable field net/minecraft/server/InsensitiveStringMap a Ljava/util/Map;
-accessible field net/minecraft/class_1696 a [Ljava/lang/Integer;
-mutable field net/minecraft/class_1696 a [Ljava/lang/Integer;
+
+
 accessible class net/minecraft/server/IntHashMap$IntHashMapEntry
 accessible field net/minecraft/server/IntHashMap$IntHashMapEntry a I
 mutable field net/minecraft/server/IntHashMap$IntHashMapEntry a I
@@ -13308,16 +11421,16 @@ accessible field net/minecraft/server/LazyInitVar b Z
 mutable field net/minecraft/server/LazyInitVar b Z
 extendable method net/minecraft/server/LazyInitVar init ()Ljava/lang/Object;
 accessible method net/minecraft/server/LazyInitVar init ()Ljava/lang/Object;
-accessible field net/minecraft/class_1700 a [Ljava/lang/Object;
-mutable field net/minecraft/class_1700 a [Ljava/lang/Object;
-accessible field net/minecraft/class_1700 b Ljava/lang/Class;
-mutable field net/minecraft/class_1700 b Ljava/lang/Class;
-accessible field net/minecraft/class_1700 c Ljava/util/concurrent/locks/ReadWriteLock;
-mutable field net/minecraft/class_1700 c Ljava/util/concurrent/locks/ReadWriteLock;
-accessible field net/minecraft/class_1700 d I
-mutable field net/minecraft/class_1700 d I
-accessible field net/minecraft/class_1700 e I
-mutable field net/minecraft/class_1700 e I
+
+
+
+
+
+
+
+
+
+
 accessible class net/minecraft/server/LongHashMap$LongHashMapEntry
 accessible field net/minecraft/server/LongHashMap$LongHashMapEntry a J
 mutable field net/minecraft/server/LongHashMap$LongHashMapEntry a J
@@ -13383,12 +11496,12 @@ accessible field net/minecraft/server/MethodProfiler e Ljava/lang/String;
 mutable field net/minecraft/server/MethodProfiler e Ljava/lang/String;
 accessible field net/minecraft/server/MethodProfiler f Ljava/util/Map;
 mutable field net/minecraft/server/MethodProfiler f Ljava/util/Map;
-accessible field net/minecraft/class_1708 a F
-mutable field net/minecraft/class_1708 a F
-accessible field net/minecraft/class_1708 b F
-mutable field net/minecraft/class_1708 b F
-accessible field net/minecraft/class_1708 c F
-mutable field net/minecraft/class_1708 c F
+
+
+
+
+
+
 accessible field net/minecraft/server/UtilColor a Ljava/util/regex/Pattern;
 mutable field net/minecraft/server/UtilColor a Ljava/util/regex/Pattern;
 accessible field net/minecraft/server/Tuple a Ljava/lang/Object;
@@ -15372,8 +13485,6 @@ extendable method net/minecraft/server/EntityEnderCrystal a (Lnet/minecraft/serv
 accessible method net/minecraft/server/EntityEnderCrystal a (Lnet/minecraft/server/NBTTagCompound;)V
 accessible field net/minecraft/server/EntityEnderDragon target Lnet/minecraft/server/Entity;
 mutable field net/minecraft/server/EntityEnderDragon target Lnet/minecraft/server/Entity;
-extendable method net/minecraft/server/EntityEnderDragon initAttributes ()V
-accessible method net/minecraft/server/EntityEnderDragon initAttributes ()V
 extendable method net/minecraft/server/EntityEnderDragon h ()V
 accessible method net/minecraft/server/EntityEnderDragon h ()V
 extendable method net/minecraft/server/EntityEnderDragon n ()V
@@ -16036,8 +14147,6 @@ extendable method net/minecraft/server/EntityMagmaCube cf ()Lnet/minecraft/serve
 accessible method net/minecraft/server/EntityMagmaCube cf ()Lnet/minecraft/server/EntitySlime;
 extendable method net/minecraft/server/EntityMagmaCube getLoot ()Lnet/minecraft/server/Item;
 accessible method net/minecraft/server/EntityMagmaCube getLoot ()Lnet/minecraft/server/Item;
-extendable method net/minecraft/server/EntityMagmaCube dropDeathLoot (ZI)V
-accessible method net/minecraft/server/EntityMagmaCube dropDeathLoot (ZI)V
 extendable method net/minecraft/server/EntityMagmaCube cg ()I
 accessible method net/minecraft/server/EntityMagmaCube cg ()I
 extendable method net/minecraft/server/EntityMagmaCube ch ()V
@@ -16326,14 +14435,14 @@ extendable method net/minecraft/server/EntityZombie setSize (FF)V
 accessible method net/minecraft/server/EntityZombie setSize (FF)V
 extendable method net/minecraft/server/EntityZombie a (F)V
 accessible method net/minecraft/server/EntityZombie a (F)V
-accessible field net/minecraft/class_1951 a Lnet/minecraft/server/InventoryMerchant;
-mutable field net/minecraft/class_1951 a Lnet/minecraft/server/InventoryMerchant;
-accessible field net/minecraft/class_1951 b Lnet/minecraft/server/EntityHuman;
-mutable field net/minecraft/class_1951 b Lnet/minecraft/server/EntityHuman;
-accessible field net/minecraft/class_1951 c Lnet/minecraft/server/MerchantRecipeList;
-mutable field net/minecraft/class_1951 c Lnet/minecraft/server/MerchantRecipeList;
-accessible field net/minecraft/class_1951 d Lnet/minecraft/server/IChatBaseComponent;
-mutable field net/minecraft/class_1951 d Lnet/minecraft/server/IChatBaseComponent;
+
+
+
+
+
+
+
+
 accessible class net/minecraft/server/EntityVillager$MerchantRecipeOptionBuy
 accessible class net/minecraft/server/EntityVillager$MerchantRecipeOptionBook
 accessible class net/minecraft/server/EntityVillager$MerchantRecipeOptionEnchant
@@ -16506,15 +14615,15 @@ extendable method net/minecraft/server/EntityHuman alwaysGivesExp ()Z
 accessible method net/minecraft/server/EntityHuman alwaysGivesExp ()Z
 extendable method net/minecraft/server/EntityHuman s_ ()Z
 accessible method net/minecraft/server/EntityHuman s_ ()Z
-extendable class net/minecraft/class_1966
-accessible field net/minecraft/class_1966 h I
-mutable field net/minecraft/class_1966 h I
-accessible field net/minecraft/class_1966 i I
-mutable field net/minecraft/class_1966 i I
-accessible field net/minecraft/class_1966 j Ljava/lang/String;
-mutable field net/minecraft/class_1966 j Ljava/lang/String;
-accessible field net/minecraft/class_1966 k Lnet/minecraft/server/IChatBaseComponent;
-mutable field net/minecraft/class_1966 k Lnet/minecraft/server/IChatBaseComponent;
+
+
+
+
+
+
+
+
+
 accessible field net/minecraft/server/EntityArrow d I
 mutable field net/minecraft/server/EntityArrow d I
 accessible field net/minecraft/server/EntityArrow e I
